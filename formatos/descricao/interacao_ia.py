@@ -1,13 +1,3 @@
-# As descrições por definição são um formato onde o usuário ao fornecer o tema sendo:
-# Nome de um cidade
-# Nome de um estado
-# Nome de um pais
-# Nome de um ponto turistico(Praia; Parque; Museu; etc)
-# Nome de um lugar genérico(Shopping; Comércio; Restaurante; Hotel; Aeroporto; etc)
-# Nome de um evento(Rock in Rio; Carnaval; Oktoberfest; etc)
-# Nome de uma empresa
-# Nome de Terminal/Rodoviária
-
 # Para temas enquadrados como [pais; estado; cidade e bairro/região]:
 """
     PAÍS: Quando o tema for um país, devemos descrever o país de forma geral, buscando trazer elementos
@@ -78,39 +68,40 @@
         Para quem chega de outras cidades, vale considerar rotas de ônibus que desembarcam próximo à região, evitando deslocamentos longos dentro da própria capital.
         "   
 """
-"""
-Teste simples de chamada à API da OpenAI usando LangChain.
 
-Setup:
-    pip install langchain langchain-openai python-dotenv
 
-    Crie um arquivo .env na raiz do projeto com:
-        OPENAI_API_KEY=sk-sua-chave-aqui
-
-Uso:
-    python teste_langchain_openai.py
-"""
+{
+  "prompts": {
+    "informativo": {
+      "tom": "informativo",
+      "descricao": "Foco em transmitir informações factuais e úteis sobre a cidade, sem apelo comercial.",
+      "template": "Você é um redator de SEO especializado em conteúdo sobre cidades para um site de transporte rodoviário.\n\nCom base nas descrições abaixo, coletadas de diferentes sites sobre {cidade}, escreva um texto ORIGINAL e ÚNICO sobre a cidade, com tom informativo e objetivo. Priorize dados factuais, pontos de interesse, contexto histórico/geográfico e motivos comuns de viagem (turismo, negócios, visita familiar).\n\nIMPORTANTE:\n- Não copie frases das fontes, apenas se baseie nas informações factuais\n- Sintetize e reescreva completamente com suas próprias palavras\n- Evite linguagem promocional ou apelos de venda\n- Priorize informações específicas e verificáveis (não invente dados)\n\nDescrições coletadas:\n{fontes_texto}\n\nTexto final sobre {cidade}:"
+    },
+    "vendas": {
+      "tom": "vendas",
+      "descricao": "Foco em converter o leitor em comprador, com chamada direta para ação e argumentos de compra.",
+      "template": "Você é um redator de SEO especializado em conteúdo sobre cidades para um site de transporte rodoviário.\n\nCom base nas descrições abaixo, coletadas de diferentes sites sobre {cidade}, escreva um texto ORIGINAL e ÚNICO sobre a cidade, com tom de vendas, focado em converter o leitor em comprador da passagem. Destaque a facilidade e vantagem de viajar para {cidade} agora, use gatilhos de urgência/oportunidade quando fizer sentido, e conduza o leitor a considerar a compra da passagem.\n\nIMPORTANTE:\n- Não copie frases das fontes, apenas se baseie nas informações factuais\n- Sintetize e reescreva completamente com suas próprias palavras\n- Use chamada para ação (ex: 'garanta sua passagem', 'aproveite para conhecer')\n- Priorize informações específicas e verificáveis (não invente dados)\n\nDescrições coletadas:\n{fontes_texto}\n\nTexto final sobre {cidade}:"
+    },
+    "promocional": {
+      "tom": "promocional",
+      "descricao": "Foco em destacar atrativos e experiências da cidade de forma envolvente, sem necessariamente pedir a compra diretamente.",
+      "template": "Você é um redator de SEO especializado em conteúdo sobre cidades para um site de transporte rodoviário.\n\nCom base nas descrições abaixo, coletadas de diferentes sites sobre {cidade}, escreva um texto ORIGINAL e ÚNICO sobre a cidade, com tom promocional, destacando os atrativos turísticos, experiências e diferenciais da cidade de forma envolvente e convidativa. O objetivo é despertar o desejo de visitar {cidade}, sem necessariamente incluir chamada direta para compra.\n\nIMPORTANTE:\n- Não copie frases das fontes, apenas se baseie nas informações factuais\n- Sintetize e reescreva completamente com suas próprias palavras\n- Use linguagem envolvente e descritiva, sem exageros irreais ou clickbait\n- Priorize informações específicas e verificáveis (não invente dados)\n\nDescrições coletadas:\n{fontes_texto}\n\nTexto final sobre {cidade}:"
+    }
+  }
+}
 
 import os
-
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
+from langchain_core.documents import Document
 
-# Carrega as variáveis do arquivo .env (inclusive a OPENAI_API_KEY)
+
 load_dotenv()
 
-# Confirma que a chave foi carregada antes de tentar chamar a API
 if not os.environ.get("OPENAI_API_KEY"):
     raise ValueError(
         "OPENAI_API_KEY não encontrada. Confira se o arquivo .env existe "
         "na raiz do projeto e tem a linha OPENAI_API_KEY=sk-..."
     )
 
-# Cria o modelo (troque o model se quiser usar outro, ex: "gpt-4o-mini")
 modelo = ChatOpenAI(model="gpt-4o-mini", temperature=0.7)
-
-# Faz uma chamada simples de teste
-resposta = modelo.invoke("Diga 'oi' e confirme que a chamada da API funcionou.")
-
-print("Resposta do modelo:")
-print(resposta.content)
