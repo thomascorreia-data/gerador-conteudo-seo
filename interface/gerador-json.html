@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Prensa — Montar Entrada</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <div class="masthead">
+    <h1>PREN<span>SA</span></h1>
+    <div class="sub">MONTAR JSON DE ENTRADA · ENVELOPE + TEMAS</div>
+  </div>
+
+  <div class="layout">
+    <div class="controls">
+
+      <div class="panel">
+        <span class="label">Configurações padrão do lote</span>
+        <div class="row">
+          <label class="label" style="color:var(--muted);">Requisitor</label>
+          <input type="text" id="requisitor" placeholder="Nome do Requisitor">
+        </div>
+        <div class="two-col row">
+          <div>
+            <label class="label" style="color:var(--muted);">Formato</label>
+            <select id="formato">
+              <option>Descrição</option>
+              <option>Artigo</option>
+              <option>Post</option>
+              <option>FAQ</option>
+            </select>
+            <input type="text" id="formatoOutro" placeholder="Digite o formato" style="display:none; margin-top:6px;">
+          </div>
+          <div>
+            <label class="label" style="color:var(--muted);">Autor</label>
+            <input type="text" id="autor" placeholder="Nome do Autor">
+          </div>
+        </div>
+        <div class="two-col row">
+          <div>
+            <label class="label" style="color:var(--muted);">Tom</label>
+            <select id="tom">
+              <option>Informativo</option>
+              <option>Vendas</option>
+              <option>Promocional</option>
+            </select>
+            <input type="text" id="tomOutro" placeholder="Digite o tom" style="display:none; margin-top:6px;">
+          </div>
+          <div>
+            <label class="label" style="color:var(--muted);">Média de palavras</label>
+            <input type="number" id="mediaPalavras" value="300" min="10" step="10">
+          </div>
+        </div>
+        <div class="row">
+          <label class="label" style="color:var(--muted);">Palavras-chave (para pesquisa/SEO)</label>
+          <input type="text" id="palavrasChave" placeholder="ex: buser; ônibus; viagem barata">
+        </div>
+      </div>
+
+      <div class="panel">
+        <span class="label">Os conteúdos deste lote são semelhantes?</span>
+        <div class="toggle-group">
+          <button class="toggle-btn active" id="modeSim">Sim, todos iguais</button>
+          <button class="toggle-btn" id="modeNao">Não, variam por tema</button>
+        </div>
+        <div class="hint" id="modeHint">Todos os temas usarão o formato, autor, tom e tamanho definidos acima. Você só precisa listar os temas.</div>
+
+        <div id="modeSimBlock">
+          <div class="row">
+            <label class="label" style="color:var(--muted);">Temas (um por linha)</label>
+            <textarea id="temasSimples" rows="8" placeholder="Pq a Buser é uma ótima opção para viajar de ônibus
+Como a Buser está revolucionando o transporte rodoviário
+Vantagens de usar a Buser para suas viagens"></textarea>
+          </div>
+        </div>
+
+        <div id="modeNaoBlock" style="display:none;">
+          <div id="themeCards"></div>
+          <button class="btn" id="addThemeBtn" style="width:100%;">+ Adicionar tema</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <label class="label" style="color:var(--muted);">Endereço da API</label>
+        <input type="text" id="apiUrl" value="http://127.0.0.1:8000/normalizar" style="margin-bottom:12px;">
+        <button class="btn-primary" id="buildBtn">Gerar JSON de entrada</button>
+        <div id="errorBox"></div>
+      </div>
+    </div>
+
+    <div class="panel output-panel">
+      <div class="output-header">
+        <span class="tag" id="outputTag">JSON DE SAÍDA</span>
+        <div>
+          <button class="icon-btn" id="copyBtn">copiar</button>
+          <button class="icon-btn" id="downloadBtn">baixar .json</button>
+        </div>
+      </div>
+      <div class="empty-state" id="emptyState">Preencha as configurações e clique em "Gerar JSON de entrada".<br>O resultado aparece aqui, pronto para copiar ou baixar.</div>
+      <pre id="rawJson" style="display:none;"></pre>
+    </div>
+  </div>
+</div>
+
+<script>
+let mode = 'sim'; // 'sim' | 'nao'
+let themeCounter = 0;
+let ultimoResultadoFinal = null; // guarda o JSON já normalizado, vindo da API
+
+
+
+function getEnvelopeValue(selectId, otherId){
+  const sel = document.getElementById(selectId).value;
+  if(sel === '__outro') return document.getElementById(otherId).value.trim();
+  return sel;
+}
+
+// ---- alternância de modo ----
+document.getElementById('modeSim').onclick = () => setMode('sim');
+document.getElementById('modeNao').onclick = () => setMode('nao');
+
+function setMode(m){
+  mode = m;
+  document.getElementById('modeSim').classList.toggle('active', m==='sim');
+  document.getElementById('modeNao').classList.toggle('active', m==='nao');
+  document.getElementById('modeSimBlock').style.display = m==='sim' ? 'block' : 'none';
+  document.getElementById('modeNaoBlock').style.display = m==='nao' ? 'block' : 'none';
+  document.getElementById('modeHint').textContent = m==='sim'
+    ? 'Todos os temas usarão o formato, autor, tom e tamanho definidos acima. Você só precisa listar os temas.'
+    : 'Cada tema começa com os valores padrão acima, mas você pode alterar formato, autor, tom ou tamanho individualmente.';
+  if(m==='nao' && document.getElementById('themeCards').children.length === 0){
+    addThemeCard(); // começa com pelo menos um
+  }
+}
+
+// ---- cartões de tema individuais (modo "Não") ----
+function addThemeCard(prefill){
+  themeCounter++;
+  const id = 'theme_' + themeCounter;
+  const div = document.createElement('div');
+  div.className = 'theme-card';
+  div.dataset.id = id;
+  div.innerHTML = `
+    <div class="theme-card-head">
+      <span class="num">Tema ${themeCounter}</span>
+      <div>
+        <button class="icon-btn" data-fill="${id}">usar valores do envelope</button>
+        <button class="btn-danger" data-remove="${id}">remover</button>
+      </div>
+    </div>
+    <div class="row">
+      <textarea class="t-tema" rows="2" placeholder="Descreva o tema deste conteúdo específico"></textarea>
+    </div>
+    <div class="three-col row">
+      <input type="text" class="t-formato" placeholder="Formato (padrão: herdar)">
+      <input type="text" class="t-autor" placeholder="Autor (padrão: herdar)">
+      <input type="text" class="t-tom" placeholder="Tom (padrão: herdar)">
+    </div>
+    <div class="two-col row">
+      <input type="number" class="t-media" placeholder="Média de palavras (padrão: herdar)" min="10" step="10">
+      <input type="text" class="t-palavraschave" placeholder="Palavras-chave (padrão: herdar)">
+    </div>
+  `;
+  div.querySelector('[data-remove]').onclick = () => div.remove();
+  div.querySelector('[data-fill]').onclick = () => fillCardFromEnvelope(div);
+  document.getElementById('themeCards').appendChild(div);
+}
+
+function fillCardFromEnvelope(card){
+  card.querySelector('.t-formato').value = getEnvelopeValue('formato', 'formatoOutro');
+  card.querySelector('.t-autor').value = document.getElementById('autor').value.trim();
+  card.querySelector('.t-tom').value = getEnvelopeValue('tom', 'tomOutro');
+  card.querySelector('.t-media').value = document.getElementById('mediaPalavras').value;
+  card.querySelector('.t-palavraschave').value = document.getElementById('palavrasChave').value.trim();
+}
+
+document.getElementById('addThemeBtn').onclick = () => addThemeCard();
+
+// ---- montagem do JSON de ENTRADA (envelope + Temas) ----
+// Isso é só o payload que vai ser mandado pra API normalizar.
+// Não é mais o resultado final mostrado na tela.
+function montarPayloadEnvelope(){
+  const errorBox = document.getElementById('errorBox');
+  errorBox.innerHTML = '';
+
+  const requisitor = document.getElementById('requisitor').value.trim();
+  const formatoEnvelope = getEnvelopeValue('formato', 'formatoOutro');
+  const autorEnvelope = document.getElementById('autor').value.trim();
+  const tomEnvelope = getEnvelopeValue('tom', 'tomOutro');
+  const mediaEnvelope = parseInt(document.getElementById('mediaPalavras').value, 10) || 300;
+  const palavrasChaveEnvelope = document.getElementById('palavrasChave').value.trim();
+
+  if(!requisitor){ errorBox.innerHTML = '<div class="error-box">Preencha o Requisitor.</div>'; return null; }
+  if(!formatoEnvelope){ errorBox.innerHTML = '<div class="error-box">Preencha o Formato.</div>'; return null; }
+
+  let temas;
+
+  if(mode === 'sim'){
+    const linhas = document.getElementById('temasSimples').value
+      .split('\n')
+      .map(l => l.trim())
+      .filter(l => l.length > 0);
+    if(linhas.length === 0){ errorBox.innerHTML = '<div class="error-box">Adicione pelo menos um tema.</div>'; return null; }
+    temas = linhas; // array de strings
+  } else {
+    const cards = Array.from(document.getElementById('themeCards').children);
+    if(cards.length === 0){ errorBox.innerHTML = '<div class="error-box">Adicione pelo menos um tema.</div>'; return null; }
+
+    temas = [];
+    for(const card of cards){
+      const temaTexto = card.querySelector('.t-tema').value.trim();
+      if(!temaTexto){ errorBox.innerHTML = '<div class="error-box">Todo tema precisa de uma descrição.</div>'; return null; }
+
+      const obj = { tema: temaTexto };
+      const formatoItem = card.querySelector('.t-formato').value.trim();
+      const autorItem = card.querySelector('.t-autor').value.trim();
+      const tomItem = card.querySelector('.t-tom').value.trim();
+      const mediaItem = card.querySelector('.t-media').value.trim();
+      const palavrasChaveItem = card.querySelector('.t-palavraschave').value.trim();
+
+      // só inclui o campo se o usuário digitou algo DIFERENTE do padrão do envelope
+      if(formatoItem && formatoItem !== formatoEnvelope) obj["Formato"] = formatoItem;
+      if(autorItem && autorItem !== autorEnvelope) obj["Autor"] = autorItem;
+      if(tomItem && tomItem !== tomEnvelope) obj["Tom"] = tomItem;
+      if(mediaItem && parseInt(mediaItem,10) !== mediaEnvelope) obj["Média de Palavras Por Conteúdo"] = parseInt(mediaItem,10);
+      if(palavrasChaveItem && palavrasChaveItem !== palavrasChaveEnvelope) obj["Palavras-chave"] = palavrasChaveItem;
+
+      temas.push(obj);
+    }
+  }
+
+  return {
+    "Requisitor": requisitor,
+    "Quantidade de Conteúdo": temas.length,
+    "Autor": autorEnvelope || requisitor,
+    "Formato": formatoEnvelope,
+    "Média de Palavras Por Conteúdo": mediaEnvelope,
+    "Tom": tomEnvelope || "Informativo",
+    "Palavras-chave": palavrasChaveEnvelope || undefined,
+    "Temas": temas
+  };
+}
+
+// ---- chamada à API + exibição do resultado final normalizado ----
+async function gerarJsonViaApi(){
+  const errorBox = document.getElementById('errorBox');
+  const buildBtn = document.getElementById('buildBtn');
+
+  const payload = montarPayloadEnvelope();
+  if(!payload) return; // erro de validação já mostrado dentro da função acima
+
+  const apiUrl = document.getElementById('apiUrl').value.trim();
+  if(!apiUrl){ errorBox.innerHTML = '<div class="error-box">Preencha o endereço da API.</div>'; return; }
+
+  errorBox.innerHTML = '';
+  buildBtn.disabled = true;
+  buildBtn.textContent = 'Gerando...';
+
+  try{
+    const response = await fetch(apiUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ payload })
+    });
+
+    const data = await response.json();
+
+    if(!response.ok){
+      // A API devolve {"detail": "mensagem"} em caso de erro (400/500)
+      throw new Error(data.detail || `Erro HTTP ${response.status}`);
+    }
+
+    exibirResultadoFinal(data);
+
+  }catch(err){
+    console.error(err);
+    errorBox.innerHTML = `<div class="error-box">
+      Não foi possível gerar o JSON: ${escapeHtml(err.message)}<br><br>
+      Verifique se a API está rodando (uvicorn api:app --reload --port 8000) e se o endereço acima está correto.
+    </div>`;
+  }finally{
+    buildBtn.disabled = false;
+    buildBtn.textContent = 'Gerar JSON de entrada';
+  }
+}
+
+function exibirResultadoFinal(data){
+  ultimoResultadoFinal = data.resultado;
+
+  document.getElementById('emptyState').style.display = 'none';
+  const pre = document.getElementById('rawJson');
+  pre.style.display = 'block';
+  pre.textContent = JSON.stringify(data.resultado, null, 4);
+  document.getElementById('outputTag').textContent = `JSON DE SAÍDA · ${data.total_itens} TEMA(S)`;
+
+  // Mostra avisos (ex: "Quantidade de Conteúdo" divergente) sem travar nada
+  const errorBox = document.getElementById('errorBox');
+  if(data.avisos && data.avisos.length > 0){
+    errorBox.innerHTML = data.avisos
+      .map(a => `<div class="error-box" style="border-color:var(--brass); color:var(--brass); background:rgba(212,162,76,0.12);">${escapeHtml(a)}</div>`)
+      .join('');
+  }
+}
+
+function escapeHtml(str){
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+document.getElementById('buildBtn').onclick = gerarJsonViaApi;
+
+document.getElementById('copyBtn').onclick = () => {
+  const text = document.getElementById('rawJson').textContent;
+  if(!text) return;
+  navigator.clipboard.writeText(text).then(()=>{
+    const btn = document.getElementById('copyBtn');
+    const original = btn.textContent;
+    btn.textContent = 'copiado!';
+    setTimeout(()=>btn.textContent = original, 1200);
+  });
+};
+
+document.getElementById('downloadBtn').onclick = () => {
+  const text = document.getElementById('rawJson').textContent;
+  if(!text) return;
+  const blob = new Blob([text], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'conteudo-normalizado.json';
+  a.click();
+  URL.revokeObjectURL(url);
+};
+</script>
+</body>
+</html>

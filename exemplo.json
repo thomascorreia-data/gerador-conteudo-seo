@@ -1,0 +1,32 @@
+{
+    "Requisitor": "Lucas",
+    "Quantidade de Conteúdo": 1,
+    "Autor": "Lucas",
+    "Formato": "Post",
+    "Média de Palavras Por Conteúdo": 300,
+    "Tom": "Informativo", 
+    "Temas": 
+    [
+        {
+            "Formato": "Post",
+            "Autor": "Lucas",
+            "Média de Palavras Por Conteúdo": 300,
+            "Tom": "Informativo",
+            "tema": "Pq a Buser é uma ótima opção para viajar de ônibus"
+        },
+        {
+            "Formato": "Post",
+            "Autor": "José",
+            "Média de Palavras Por Conteúdo": 300,
+            "Tom": "Informativo",
+            "tema": "Como a Buser está revolucionando o transporte rodoviário"
+        },
+        {
+            "Formato": "Post",
+            "Autor": "Buser",
+            "Média de Palavras Por Conteúdo": 200,
+            "Tom": "Dicas",
+            "tema": "Vantagens de usar a Buser para suas viagens"
+        }
+    ]
+}
