@@ -1,13 +1,3 @@
-# As descrições por definição são um formato onde o usuário ao fornecer o tema sendo:
-# Nome de um cidade
-# Nome de um estado
-# Nome de um pais
-# Nome de um ponto turistico(Praia; Parque; Museu; etc)
-# Nome de um lugar genérico(Shopping; Comércio; Restaurante; Hotel; Aeroporto; etc)
-# Nome de um evento(Rock in Rio; Carnaval; Oktoberfest; etc)
-# Nome de uma empresa
-# Nome de Terminal/Rodoviária
-
 import json
 from base_cidade import coletando_conteudo
 from base_pontos_turisticos import coletar_ponto_turistico

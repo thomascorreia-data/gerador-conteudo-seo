@@ -24,7 +24,13 @@ for _dir in (_DIR_FORMATOS, _DIR_DESCRICAO):
     if _dir not in sys.path:
         sys.path.insert(0, _dir)
 
-from descricao.interacao_ia import gerar_descricao_por_tema, TOM_PADRAO, MEDIA_PALAVRAS_PADRAO  # noqa: E402
+from descricao.interpretador_descricao import interpretador  # noqa: E402
+from descricao.interacao_ia import (  # noqa: E402
+    gerar_descricao,
+    TOM_PADRAO,
+    MEDIA_PALAVRAS_PADRAO,
+    PALAVRAS_CHAVE_PADRAO,
+)
 
 FORMATOS_DESCRICAO = {"descrição", "descricao"}
 
@@ -32,7 +38,10 @@ FORMATOS_DESCRICAO = {"descrição", "descricao"}
 def gerar_conteudo(itens: list) -> list:
     """
     Recebe a lista de itens normalizada (saída de normalizar_lote) e devolve
-    a mesma lista, com "conteudo_gerado" (ou "erro") preenchido em cada item.
+    a mesma lista, com "categoria_identificada" e "conteudo_gerado" (ou
+    "erro") preenchidos em cada item. A categoria vem do interpretador, que
+    é chamado aqui (em vez de usar gerar_descricao_por_tema) justamente para
+    conseguir expor essa classificação como metadado no resultado.
     """
     resultados = []
 
@@ -48,11 +57,15 @@ def gerar_conteudo(itens: list) -> list:
             continue
 
         try:
-            item_resultado["conteudo_gerado"] = gerar_descricao_por_tema(
-                tema=item["tema"],
+            classificacao = interpretador(item["tema"])
+            item_resultado["categoria_identificada"] = classificacao["categoria"]
+            item_resultado["conteudo_gerado"] = gerar_descricao(
+                categoria=classificacao["categoria"],
+                entidade=classificacao["entidade"],
+                fontes=classificacao["fontes"],
                 tom=item.get("tom") or TOM_PADRAO,
                 media_palavras=item.get("media_palavras") or MEDIA_PALAVRAS_PADRAO,
-                palavras_chave=item.get("palavras_chave"),
+                palavras_chave=item.get("palavras_chave") or PALAVRAS_CHAVE_PADRAO,
             )
         except Exception as erro:
             item_resultado["erro"] = str(erro)

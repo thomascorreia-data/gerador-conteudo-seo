@@ -97,18 +97,15 @@ Vantagens de usar a Buser para suas viagens"></textarea>
         <div>
           <button class="icon-btn" id="copyBtn">copiar</button>
           <button class="icon-btn" id="downloadBtn">baixar .json</button>
+          <button class="icon-btn" id="downloadCsvBtn" style="display:none;">baixar .csv</button>
         </div>
       </div>
       <div class="empty-state" id="emptyState">Preencha as configurações e clique em "Gerar JSON de entrada".<br>O resultado aparece aqui, pronto para copiar ou baixar.</div>
       <pre id="rawJson" style="display:none;"></pre>
+      <div id="conteudoGeradoList" style="display:none;"></div>
 
       <div id="gerarConteudoBox" style="display:none; margin-top:16px;">
         <button class="btn-primary" id="gerarConteudoBtn">Gerar conteúdo com IA</button>
-      </div>
-
-      <div id="conteudoGeradoPanel" style="display:none; margin-top:16px;">
-        <span class="tag">CONTEÚDO GERADO</span>
-        <div id="conteudoGeradoList" style="margin-top:10px;"></div>
       </div>
     </div>
   </div>
@@ -118,6 +115,7 @@ Vantagens de usar a Buser para suas viagens"></textarea>
 let mode = 'sim'; // 'sim' | 'nao'
 let themeCounter = 0;
 let ultimoResultadoFinal = null; // guarda o JSON já normalizado, vindo da API
+let ultimoConteudoGerado = null; // guarda os itens com o texto gerado pela IA
 
 
 
@@ -298,6 +296,7 @@ async function gerarJsonViaApi(){
 
 function exibirResultadoFinal(data){
   ultimoResultadoFinal = data.resultado;
+  ultimoConteudoGerado = null;
 
   document.getElementById('emptyState').style.display = 'none';
   const pre = document.getElementById('rawJson');
@@ -305,10 +304,12 @@ function exibirResultadoFinal(data){
   pre.textContent = JSON.stringify(data.resultado, null, 4);
   document.getElementById('outputTag').textContent = `JSON DE SAÍDA · ${data.total_itens} TEMA(S)`;
 
-  // Habilita o próximo passo (mandar esse resultado pro gerador de conteúdo)
-  // e esconde o conteúdo gerado de uma rodada anterior, se houver.
+  // Uma nova rodada de normalização volta a mostrar o JSON no lugar de um
+  // conteúdo gerado anteriormente (se houver) e esconde o botão de CSV,
+  // que só faz sentido depois de gerar conteúdo de novo.
+  document.getElementById('conteudoGeradoList').style.display = 'none';
+  document.getElementById('downloadCsvBtn').style.display = 'none';
   document.getElementById('gerarConteudoBox').style.display = 'block';
-  document.getElementById('conteudoGeradoPanel').style.display = 'none';
 
   // Mostra avisos (ex: "Quantidade de Conteúdo" divergente) sem travar nada
   const errorBox = document.getElementById('errorBox');
@@ -365,7 +366,14 @@ async function gerarConteudoViaApi(){
 }
 
 function exibirConteudoGerado(resultados){
-  const painel = document.getElementById('conteudoGeradoPanel');
+  ultimoConteudoGerado = resultados;
+
+  // Apaga o JSON normalizado da tela (fica só guardado em memória pro
+  // "baixar .json" continuar funcionando) e escreve as descrições geradas
+  // no mesmo lugar, em vez de empilhar um painel novo embaixo.
+  document.getElementById('emptyState').style.display = 'none';
+  document.getElementById('rawJson').style.display = 'none';
+
   const lista = document.getElementById('conteudoGeradoList');
   lista.innerHTML = '';
 
@@ -375,7 +383,10 @@ function exibirConteudoGerado(resultados){
 
     const head = document.createElement('div');
     head.className = 'theme-card-head';
-    head.innerHTML = `<span class="num">${escapeHtml(item.tema || item.id || '')}</span>`;
+    const metadados = [item.tema, item.categoria_identificada, item.tom]
+      .filter(Boolean)
+      .join(' · ');
+    head.innerHTML = `<span class="num">${escapeHtml(metadados || item.id || '')}</span>`;
     card.appendChild(head);
 
     const corpo = document.createElement('div');
@@ -391,7 +402,9 @@ function exibirConteudoGerado(resultados){
     lista.appendChild(card);
   });
 
-  painel.style.display = 'block';
+  lista.style.display = 'block';
+  document.getElementById('outputTag').textContent = `DESCRIÇÕES GERADAS · ${resultados.length} ITEM(S)`;
+  document.getElementById('downloadCsvBtn').style.display = 'inline-block';
 }
 
 document.getElementById('gerarConteudoBtn').onclick = gerarConteudoViaApi;
@@ -404,8 +417,22 @@ function escapeHtml(str){
 
 document.getElementById('buildBtn').onclick = gerarJsonViaApi;
 
+function mostrandoConteudoGerado(){
+  return document.getElementById('conteudoGeradoList').style.display !== 'none';
+}
+
+function montarTextoDescricoes(resultados){
+  return resultados.map(item => {
+    const cabecalho = `# ${item.tema || item.id || ''} (${item.categoria_identificada || '—'} · ${item.tom || '—'})`;
+    const corpo = item.erro ? `[erro] ${item.erro}` : (item.conteudo_gerado || '');
+    return `${cabecalho}\n${corpo}`;
+  }).join('\n\n');
+}
+
 document.getElementById('copyBtn').onclick = () => {
-  const text = document.getElementById('rawJson').textContent;
+  const text = mostrandoConteudoGerado()
+    ? montarTextoDescricoes(ultimoConteudoGerado || [])
+    : document.getElementById('rawJson').textContent;
   if(!text) return;
   navigator.clipboard.writeText(text).then(()=>{
     const btn = document.getElementById('copyBtn');
@@ -416,13 +443,78 @@ document.getElementById('copyBtn').onclick = () => {
 };
 
 document.getElementById('downloadBtn').onclick = () => {
+  // Baixa o JSON que está visível no momento: o normalizado (antes de
+  // gerar conteúdo) ou o das descrições geradas (depois).
+  if(mostrandoConteudoGerado()){
+    if(!ultimoConteudoGerado || ultimoConteudoGerado.length === 0) return;
+    baixarArquivo(
+      JSON.stringify(ultimoConteudoGerado, null, 4),
+      'descricoes-geradas.json',
+      'application/json'
+    );
+    return;
+  }
+
   const text = document.getElementById('rawJson').textContent;
   if(!text) return;
-  const blob = new Blob([text], {type:'application/json'});
+  baixarArquivo(text, 'conteudo-normalizado.json', 'application/json');
+};
+
+function baixarArquivo(conteudo, nomeArquivo, tipo){
+  const blob = new Blob([conteudo], {type: tipo});
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
-  a.download = 'conteudo-normalizado.json';
+  a.download = nomeArquivo;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+// ---- exportação em CSV das descrições geradas (com os metadados) ----
+const CSV_SEPARADOR = ';';
+
+function escaparCsv(valor){
+  const texto = String(valor ?? '');
+  if(new RegExp(`["${CSV_SEPARADOR}\\n\\r]`).test(texto)){
+    return '"' + texto.replace(/"/g, '""') + '"';
+  }
+  return texto;
+}
+
+function montarCsvDescricoes(resultados){
+  const colunas = [
+    ['tema', 'Tema'],
+    ['categoria_identificada', 'Categoria identificada'],
+    ['tom', 'Tom'],
+    ['media_palavras', 'Média de palavras'],
+    ['palavras_chave', 'Palavras-chave'],
+    ['conteudo_gerado', 'Descrição gerada'],
+    ['erro', 'Erro'],
+  ];
+
+  const linhas = [colunas.map(([, titulo]) => escaparCsv(titulo)).join(CSV_SEPARADOR)];
+
+  resultados.forEach(item => {
+    const linha = colunas.map(([chave]) => {
+      let valor = item[chave];
+      if(Array.isArray(valor)) valor = valor.join(' | ');
+      return escaparCsv(valor);
+    });
+    linhas.push(linha.join(CSV_SEPARADOR));
+  });
+
+  return linhas.join('\r\n');
+}
+
+document.getElementById('downloadCsvBtn').onclick = () => {
+  if(!ultimoConteudoGerado || ultimoConteudoGerado.length === 0) return;
+  const csv = montarCsvDescricoes(ultimoConteudoGerado);
+  // BOM (﻿) na frente pro Excel abrir os acentos certinho no Windows.
+  const blob = new Blob(['﻿' + csv], {type: 'text/csv;charset=utf-8;'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'descricoes-geradas.csv';
   a.click();
   URL.revokeObjectURL(url);
 };
