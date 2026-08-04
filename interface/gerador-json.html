@@ -84,8 +84,6 @@ Vantagens de usar a Buser para suas viagens"></textarea>
       </div>
 
       <div class="panel">
-        <label class="label" style="color:var(--muted);">Endereço da API</label>
-        <input type="text" id="apiUrl" value="http://127.0.0.1:8000/normalizar" style="margin-bottom:12px;">
         <button class="btn-primary" id="buildBtn">Gerar JSON de entrada</button>
         <div id="errorBox"></div>
       </div>
@@ -145,6 +143,10 @@ function setMode(m){
 
 // ---- cartões de tema individuais (modo "Não") ----
 function addThemeCard(prefill){
+  // themeCounter só serve pra gerar um id interno único (data-fill/data-remove);
+  // o número mostrado ao usuário ("Tema N") é recalculado por
+  // renumerarThemeCards() com base na posição real dos cards que sobraram,
+  // pra não ficar pulando número depois de remover um tema do meio/fim.
   themeCounter++;
   const id = 'theme_' + themeCounter;
   const div = document.createElement('div');
@@ -152,7 +154,7 @@ function addThemeCard(prefill){
   div.dataset.id = id;
   div.innerHTML = `
     <div class="theme-card-head">
-      <span class="num">Tema ${themeCounter}</span>
+      <span class="num">Tema</span>
       <div>
         <button class="icon-btn" data-fill="${id}">usar valores do envelope</button>
         <button class="btn-danger" data-remove="${id}">remover</button>
@@ -171,9 +173,16 @@ function addThemeCard(prefill){
       <input type="text" class="t-palavraschave" placeholder="Palavras-chave (padrão: herdar)">
     </div>
   `;
-  div.querySelector('[data-remove]').onclick = () => div.remove();
+  div.querySelector('[data-remove]').onclick = () => { div.remove(); renumerarThemeCards(); };
   div.querySelector('[data-fill]').onclick = () => fillCardFromEnvelope(div);
   document.getElementById('themeCards').appendChild(div);
+  renumerarThemeCards();
+}
+
+function renumerarThemeCards(){
+  Array.from(document.getElementById('themeCards').children).forEach((card, indice) => {
+    card.querySelector('.num').textContent = `Tema ${indice + 1}`;
+  });
 }
 
 function fillCardFromEnvelope(card){
@@ -259,15 +268,15 @@ async function gerarJsonViaApi(){
   const payload = montarPayloadEnvelope();
   if(!payload) return; // erro de validação já mostrado dentro da função acima
 
-  const apiUrl = document.getElementById('apiUrl').value.trim();
-  if(!apiUrl){ errorBox.innerHTML = '<div class="error-box">Preencha o endereço da API.</div>'; return; }
-
   errorBox.innerHTML = '';
   buildBtn.disabled = true;
   buildBtn.textContent = 'Gerando...';
 
   try{
-    const response = await fetch(apiUrl, {
+    // Caminho relativo: a interface é sempre servida pela própria API
+    // (StaticFiles em /interface), então "/normalizar" já aponta pro
+    // mesmo host/porta que carregou esta página — nada pra configurar.
+    const response = await fetch('/normalizar', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ payload })
@@ -286,7 +295,7 @@ async function gerarJsonViaApi(){
     console.error(err);
     errorBox.innerHTML = `<div class="error-box">
       Não foi possível gerar o JSON: ${escapeHtml(err.message)}<br><br>
-      Verifique se a API está rodando (uvicorn api:app --reload --port 8000) e se o endereço acima está correto.
+      Verifique se a API está rodando (python start.py).
     </div>`;
   }finally{
     buildBtn.disabled = false;
@@ -330,17 +339,12 @@ async function gerarConteudoViaApi(){
     return;
   }
 
-  // Reaproveita o host/porta configurados no campo "Endereço da API",
-  // só troca o caminho de /normalizar para /gerar.
-  const apiUrl = document.getElementById('apiUrl').value.trim();
-  const gerarUrl = apiUrl.replace(/\/normalizar\/?$/, '/gerar');
-
   errorBox.innerHTML = '';
   btn.disabled = true;
   btn.textContent = 'Gerando conteúdo...';
 
   try{
-    const response = await fetch(gerarUrl, {
+    const response = await fetch('/gerar', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ itens: ultimoResultadoFinal })

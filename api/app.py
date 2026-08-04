@@ -19,7 +19,6 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
-
 from formatos.transformacaoJson import normalizar_lote
 from formatos.gerando import gerar_conteudo
 
@@ -60,10 +59,8 @@ def normalizar(requisicao: RequisicaoNormalizar):
     try:
         resultado, avisos = normalizar_lote(requisicao.payload)
     except ValueError as erro:
-        # Erro de validação do próprio conteúdo enviado (ex: "Temas" ausente)
         raise HTTPException(status_code=400, detail=str(erro))
     except Exception as erro:
-        # Qualquer outro erro inesperado
         raise HTTPException(status_code=500, detail=f"Erro interno: {erro}")
 
     return {
