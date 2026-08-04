@@ -107,6 +107,16 @@ Vantagens de usar a Buser para suas viagens"></textarea>
       </div>
     </div>
   </div>
+
+  <div id="avisoModalOverlay" class="modal-overlay" style="display:none;">
+    <div class="modal-box">
+      <div class="modal-header">
+        <span class="tag" style="color:var(--danger);">AVISO</span>
+        <button class="icon-btn" id="avisoModalClose">fechar</button>
+      </div>
+      <div id="avisoModalBody" class="modal-body"></div>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -409,7 +419,50 @@ function exibirConteudoGerado(resultados){
   lista.style.display = 'block';
   document.getElementById('outputTag').textContent = `DESCRIÇÕES GERADAS · ${resultados.length} ITEM(S)`;
   document.getElementById('downloadCsvBtn').style.display = 'inline-block';
+
+  // Hoje só cidade e ponto turístico têm coleta + prompt implementados —
+  // qualquer outro formato/categoria volta com "erro" em vez de texto.
+  // Isso não é visível o suficiente só como card vermelho na lista, então
+  // avisa também num pop-up.
+  const itensComErro = resultados.filter(item => item.erro);
+  if(itensComErro.length > 0){
+    mostrarAvisoItensComErro(itensComErro, resultados.length);
+  }
 }
+
+function mostrarAvisoItensComErro(itensComErro, totalItens){
+  const lista = itensComErro
+    .map(item => `<li><strong>${escapeHtml(item.tema || item.id || '')}</strong>: ${escapeHtml(item.erro)}</li>`)
+    .join('');
+
+  mostrarAvisoModal(`
+    <p>${itensComErro.length} de ${totalItens} item(ns) não puderam ser gerados:</p>
+    <ul>${lista}</ul>
+    <p style="margin-top:12px; color:var(--muted);">
+      Hoje só as categorias <strong style="color:var(--text);">cidade</strong> e
+      <strong style="color:var(--text);">ponto turístico</strong> têm geração de
+      descrição implementada. Outros formatos e categorias ainda não são
+      suportados.
+    </p>
+  `);
+}
+
+function mostrarAvisoModal(html){
+  document.getElementById('avisoModalBody').innerHTML = html;
+  document.getElementById('avisoModalOverlay').style.display = 'flex';
+}
+
+function esconderAvisoModal(){
+  document.getElementById('avisoModalOverlay').style.display = 'none';
+}
+
+document.getElementById('avisoModalClose').onclick = esconderAvisoModal;
+document.getElementById('avisoModalOverlay').onclick = (evento) => {
+  if(evento.target.id === 'avisoModalOverlay') esconderAvisoModal();
+};
+document.addEventListener('keydown', (evento) => {
+  if(evento.key === 'Escape') esconderAvisoModal();
+});
 
 document.getElementById('gerarConteudoBtn').onclick = gerarConteudoViaApi;
 
