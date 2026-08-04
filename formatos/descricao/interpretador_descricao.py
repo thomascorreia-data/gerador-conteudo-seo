@@ -39,7 +39,7 @@ Dado o tema abaixo, identifique a categoria mais adequada entre:
 - cidade
 - estado
 - pais
-- ponto_turistico (praia, parque, museu, monumento, etc.)
+- ponto_turistico (praia, parque, museu, monumento, avenidas famosas,etc.)
 - lugar_generico (shopping, comércio, restaurante, hotel, aeroporto, etc.)
 - evento (festival, show, feira, etc.)
 - empresa (nome de operadora/empresa de transporte)
@@ -87,27 +87,40 @@ def classificar_tema(tema: str) -> dict:
     return resultado
 
 
-def interpretador(tema: str):
+def interpretador(tema: str) -> dict:
     """
-    Recebe o tema, classifica sua categoria e roteia para a função
-    de coleta de conteúdo correspondente.
+    Recebe o tema, classifica sua categoria, roteia para a função de coleta
+    correspondente e devolve tudo já normalizado para a geração do texto:
+
+        {
+            "categoria": "cidade" | "ponto_turistico" | "terminal_rodoviaria" | ...,
+            "entidade": nome a usar no prompt (ex: "Salvador", "Hopi Hari"),
+            "fontes": {nome_da_fonte: {"paragrafos"/"conteudo": ..., "erro": ...}, ...},
+        }
     """
     classificacao = classificar_tema(tema)
     categoria = classificacao["categoria"]
 
-    print(f"[interpretador] Tema: '{tema}' -> Categoria: '{categoria}' "
-          f"(confiança: {classificacao.get('confianca')})")
+    #print(f"[interpretador] Tema: '{tema}' -> Categoria: '{categoria}' "
+    #     f"(confiança: {classificacao.get('confianca')})")
 
     if categoria == "cidade":
         cidade = classificacao.get("cidade") or classificacao["entidade"]
         estado = classificacao.get("estado")
-        return coletando_conteudo(cidade, estado)
+        fontes = coletando_conteudo(cidade, estado)
+        return {"categoria": categoria, "entidade": cidade, "fontes": fontes}
 
     elif categoria == "ponto_turistico":
-        return coletar_ponto_turistico(classificacao["entidade"])
+        entidade = classificacao["entidade"]
+        resultado = coletar_ponto_turistico(entidade)
+        if resultado.get("erro"):
+            raise ValueError(resultado["erro"])
+        return {"categoria": categoria, "entidade": entidade, "fontes": resultado["fontes"]}
 
     elif categoria == "terminal_rodoviaria":
-        return coletar_rodoviaria(classificacao["entidade"])
+        entidade = classificacao["entidade"]
+        resultado = coletar_rodoviaria(entidade)
+        return {"categoria": categoria, "entidade": entidade, "fontes": resultado["fontes"]}
 
     elif categoria == "estado":
         raise NotImplementedError("Coleta para 'estado' ainda não implementada")
@@ -129,5 +142,5 @@ def interpretador(tema: str):
 
 
 if __name__ == "__main__":
-    resultado = interpretador("Praia de Porto de Galinhas")
+    resultado = interpretador("Avenida Paulista")
     print(resultado)

@@ -6,3 +6,5 @@ Requests==2.34.2
 Unidecode==1.4.0
 lxml
 python-dotenv
+uvicorn==0.52.1
+langchain-openai

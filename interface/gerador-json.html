@@ -101,6 +101,15 @@ Vantagens de usar a Buser para suas viagens"></textarea>
       </div>
       <div class="empty-state" id="emptyState">Preencha as configurações e clique em "Gerar JSON de entrada".<br>O resultado aparece aqui, pronto para copiar ou baixar.</div>
       <pre id="rawJson" style="display:none;"></pre>
+
+      <div id="gerarConteudoBox" style="display:none; margin-top:16px;">
+        <button class="btn-primary" id="gerarConteudoBtn">Gerar conteúdo com IA</button>
+      </div>
+
+      <div id="conteudoGeradoPanel" style="display:none; margin-top:16px;">
+        <span class="tag">CONTEÚDO GERADO</span>
+        <div id="conteudoGeradoList" style="margin-top:10px;"></div>
+      </div>
     </div>
   </div>
 </div>
@@ -296,6 +305,11 @@ function exibirResultadoFinal(data){
   pre.textContent = JSON.stringify(data.resultado, null, 4);
   document.getElementById('outputTag').textContent = `JSON DE SAÍDA · ${data.total_itens} TEMA(S)`;
 
+  // Habilita o próximo passo (mandar esse resultado pro gerador de conteúdo)
+  // e esconde o conteúdo gerado de uma rodada anterior, se houver.
+  document.getElementById('gerarConteudoBox').style.display = 'block';
+  document.getElementById('conteudoGeradoPanel').style.display = 'none';
+
   // Mostra avisos (ex: "Quantidade de Conteúdo" divergente) sem travar nada
   const errorBox = document.getElementById('errorBox');
   if(data.avisos && data.avisos.length > 0){
@@ -304,6 +318,83 @@ function exibirResultadoFinal(data){
       .join('');
   }
 }
+
+// ---- envio do JSON normalizado pro gerador + exibição do conteúdo gerado ----
+async function gerarConteudoViaApi(){
+  const errorBox = document.getElementById('errorBox');
+  const btn = document.getElementById('gerarConteudoBtn');
+
+  if(!ultimoResultadoFinal){
+    errorBox.innerHTML = '<div class="error-box">Gere o JSON de entrada primeiro.</div>';
+    return;
+  }
+
+  // Reaproveita o host/porta configurados no campo "Endereço da API",
+  // só troca o caminho de /normalizar para /gerar.
+  const apiUrl = document.getElementById('apiUrl').value.trim();
+  const gerarUrl = apiUrl.replace(/\/normalizar\/?$/, '/gerar');
+
+  errorBox.innerHTML = '';
+  btn.disabled = true;
+  btn.textContent = 'Gerando conteúdo...';
+
+  try{
+    const response = await fetch(gerarUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ itens: ultimoResultadoFinal })
+    });
+
+    const data = await response.json();
+
+    if(!response.ok){
+      throw new Error(data.detail || `Erro HTTP ${response.status}`);
+    }
+
+    exibirConteudoGerado(data.resultados);
+
+  }catch(err){
+    console.error(err);
+    errorBox.innerHTML = `<div class="error-box">
+      Não foi possível gerar o conteúdo: ${escapeHtml(err.message)}
+    </div>`;
+  }finally{
+    btn.disabled = false;
+    btn.textContent = 'Gerar conteúdo com IA';
+  }
+}
+
+function exibirConteudoGerado(resultados){
+  const painel = document.getElementById('conteudoGeradoPanel');
+  const lista = document.getElementById('conteudoGeradoList');
+  lista.innerHTML = '';
+
+  resultados.forEach(item => {
+    const card = document.createElement('div');
+    card.className = 'theme-card';
+
+    const head = document.createElement('div');
+    head.className = 'theme-card-head';
+    head.innerHTML = `<span class="num">${escapeHtml(item.tema || item.id || '')}</span>`;
+    card.appendChild(head);
+
+    const corpo = document.createElement('div');
+    if(item.erro){
+      corpo.innerHTML = `<div class="error-box">${escapeHtml(item.erro)}</div>`;
+    } else {
+      corpo.style.whiteSpace = 'pre-wrap';
+      corpo.style.lineHeight = '1.55';
+      corpo.textContent = item.conteudo_gerado || '';
+    }
+    card.appendChild(corpo);
+
+    lista.appendChild(card);
+  });
+
+  painel.style.display = 'block';
+}
+
+document.getElementById('gerarConteudoBtn').onclick = gerarConteudoViaApi;
 
 function escapeHtml(str){
   const div = document.createElement('div');

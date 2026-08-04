@@ -14,13 +14,14 @@ Documentação automática (Swagger) em:
     http://127.0.0.1:8000/docs
 """
 
-from typing import Any, Dict
+from typing import Any, Dict, List
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
 from formatos.transformacaoJson import normalizar_lote
+from formatos.gerando import gerar_conteudo
 
 app = FastAPI(title="API Prensa — Normalização de Entrada")
 
@@ -41,6 +42,11 @@ class RequisicaoNormalizar(BaseModel):
     # campos variam (acento, espaço, etc.) e isso já é tratado dentro de
     # normalizar_lote.
     payload: Dict[str, Any]
+
+
+class RequisicaoGerar(BaseModel):
+    # Recebe a lista já normalizada (o "resultado" devolvido por /normalizar).
+    itens: List[Dict[str, Any]]
 
 app.mount("/interface", StaticFiles(directory="interface"), name="interface")
 
@@ -64,4 +70,17 @@ def normalizar(requisicao: RequisicaoNormalizar):
         "resultado": resultado,
         "avisos": avisos,
         "total_itens": len(resultado),
+    }
+
+
+@app.post("/gerar")
+def gerar(requisicao: RequisicaoGerar):
+    try:
+        resultados = gerar_conteudo(requisicao.itens)
+    except Exception as erro:
+        raise HTTPException(status_code=500, detail=f"Erro interno: {erro}")
+
+    return {
+        "resultados": resultados,
+        "total_itens": len(resultados),
     }
