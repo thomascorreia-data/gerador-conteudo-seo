@@ -14,8 +14,14 @@ nenhuma requisição extra):
     pra buscar os primeiros parágrafos (mesmo padrão do base_cidade.py).
 
 Requer SERPAPI_API_KEY no arquivo .env na raiz do projeto.
+
+Pra não gastar cota da SerpApi repetindo a mesma empresa em teste, o
+resultado de cada busca bem-sucedida é salvo em cache_empresas.json (nesta
+mesma pasta). Da próxima vez que essa empresa for pedida, o resultado
+salvo é reaproveitado e nenhuma requisição nova é feita.
 """
 
+import json
 import os
 import re
 import time
@@ -29,6 +35,8 @@ load_dotenv()
 
 SERPAPI_URL = "https://serpapi.com/search"
 SERPAPI_API_KEY = os.environ.get("SERPAPI_API_KEY")
+
+CAMINHO_CACHE = os.path.join(os.path.dirname(__file__), "cache_empresas.json")
 
 HEADERS = {
     "User-Agent": (
@@ -66,6 +74,23 @@ def _extrair_dominio(url: str) -> str:
 def _slug(texto: str) -> str:
     """Remove acentos/pontuação e baixa a caixa, só letras e números."""
     return re.sub(r"[^a-z0-9]", "", unidecode(texto or "").lower())
+
+
+def _carregar_cache() -> dict:
+    if not os.path.exists(CAMINHO_CACHE):
+        return {}
+    try:
+        with open(CAMINHO_CACHE, encoding="utf-8") as arquivo:
+            return json.load(arquivo)
+    except (json.JSONDecodeError, OSError):
+        return {}
+
+
+def _salvar_no_cache(chave: str, resultado: dict) -> None:
+    cache = _carregar_cache()
+    cache[chave] = resultado
+    with open(CAMINHO_CACHE, "w", encoding="utf-8") as arquivo:
+        json.dump(cache, arquivo, ensure_ascii=False, indent=2)
 
 
 def _e_dominio_nao_oficial(dominio: str) -> bool:
@@ -296,13 +321,18 @@ def _extrair_top_sites(dados: dict, nome_empresa: str, limite: int = 10) -> dict
     return resultado
 
 
-def coletar_empresa(nome_empresa: str) -> dict:
+def coletar_empresa(nome_empresa: str, usar_cache: bool = True) -> dict:
     """
     Recebe o nome de uma empresa e coleta, numa única busca no Google:
       - o AI Overview sobre ela;
       - o top 10 de resultados orgânicos da SERP (só título/link/description,
         sem visitar nenhum dos sites), de onde também tenta identificar qual
         parece ser o site oficial da empresa e qual é a Wikipédia.
+
+    Por padrão (usar_cache=True), antes de gastar cota da SerpApi, confere
+    se essa empresa já tem resultado salvo em cache_empresas.json — se
+    tiver, devolve ele direto, sem nenhuma requisição nova. Passe
+    usar_cache=False pra forçar uma busca de verdade mesmo com cache salvo.
 
     Retorna:
         {
@@ -321,6 +351,13 @@ def coletar_empresa(nome_empresa: str) -> dict:
             },
         }
     """
+    chave_cache = _slug(nome_empresa)
+
+    if usar_cache:
+        cache = _carregar_cache()
+        if chave_cache in cache:
+            return cache[chave_cache]
+
     dados, erro_busca = _buscar_serp(nome_empresa)
 
     if erro_busca:
@@ -350,7 +387,15 @@ def coletar_empresa(nome_empresa: str) -> dict:
             "erro": wikipedia.get("erro"),
         }
 
-    return {"empresa": nome_empresa, "fontes": fontes}
+    resultado = {"empresa": nome_empresa, "fontes": fontes}
+
+    # Só cacheia busca que de fato rodou (erro_busca é falha de infra —
+    # chave ausente, timeout etc. — não queremos "travar" esse erro em
+    # cache; erros por fonte, como "sem AI Overview", são normais e cacheáveis).
+    if usar_cache and not erro_busca:
+        _salvar_no_cache(chave_cache, resultado)
+
+    return resultado
 
 
 if __name__ == "__main__":
