@@ -112,7 +112,7 @@ def gerar_descricao(
 
 
 TOM_PADRAO = "informativo"
-MEDIA_PALAVRAS_PADRAO = 300
+MEDIA_PALAVRAS_PADRAO = 100
 PALAVRAS_CHAVE_PADRAO = ["buser", "viagem barata", "passagem", "onibus"]
 
 
@@ -143,5 +143,5 @@ def gerar_descricao_por_tema(
 
 
 if __name__ == "__main__":
-    texto = gerar_descricao_por_tema("MASP")
+    texto = gerar_descricao_por_tema("Eucatur", tom="informativo")
     print(texto)

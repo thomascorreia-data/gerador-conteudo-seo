@@ -1,1 +1,9 @@
 .env
+
+# Rascunhos de teste (arquivos que eu crio pra debugar, não fazem parte do projeto)
+scratch_*
+scratch/
+
+# Cache de bytecode do Python
+__pycache__/
+*.pyc

@@ -48,9 +48,18 @@
     "promocional": {}
   },
   "empresa": {
-    "informativo": {},
-    "vendas": {},
-    "promocional": {}
+    "informativo": {
+      "descricao": "Foco em transmitir informações factuais e úteis sobre a empresa, sem apelo comercial.",
+      "template": "Você é um redator de SEO especializado em conteúdo sobre empresas de transporte rodoviário para um site do setor.\n\nCom base nas informações abaixo, coletadas de diferentes fontes sobre {entidade}, escreva um texto ORIGINAL e ÚNICO sobre essa empresa, com tom informativo e objetivo. Priorize dados factuais: o que a empresa faz, como funciona, história, diferenciais e reputação.\n\nIMPORTANTE:\n- Não copie frases das fontes, apenas se baseie nas informações factuais\n- Sintetize e reescreva completamente com suas próprias palavras\n- Evite linguagem promocional ou apelos de venda\n- Priorize informações específicas e verificáveis (não invente dados)\n\nInformações coletadas:\n{fontes_texto}\n\nTexto final sobre {entidade}:"
+    },
+    "vendas": {
+      "descricao": "Foco em converter o leitor em comprador, com chamada direta para ação e argumentos de compra.",
+      "template": "Você é um redator de SEO especializado em conteúdo sobre empresas de transporte rodoviário para um site do setor.\n\nCom base nas informações abaixo, coletadas de diferentes fontes sobre {entidade}, escreva um texto ORIGINAL e ÚNICO sobre essa empresa, com tom de vendas, focado em converter o leitor em comprador da passagem. Destaque a confiabilidade, os diferenciais e as vantagens de viajar com {entidade}, use gatilhos de urgência/oportunidade quando fizer sentido, e conduza o leitor a considerar a compra da passagem.\n\nIMPORTANTE:\n- Não copie frases das fontes, apenas se baseie nas informações factuais\n- Sintetize e reescreva completamente com suas próprias palavras\n- Use chamada para ação (ex: 'garanta sua passagem', 'viaje com quem você confia')\n- Cite a Buser explicitamente pelo nome, apresentando-a como a forma de comprar a passagem com {entidade}\n- Priorize informações específicas e verificáveis (não invente dados)\n\nInformações coletadas:\n{fontes_texto}\n\nTexto final sobre {entidade}:"
+    },
+    "promocional": {
+      "descricao": "Foco em destacar a reputação e os diferenciais da empresa de forma envolvente, sem necessariamente pedir a compra diretamente.",
+      "template": "Você é um redator de SEO especializado em conteúdo sobre empresas de transporte rodoviário para um site do setor.\n\nCom base nas informações abaixo, coletadas de diferentes fontes sobre {entidade}, escreva um texto ORIGINAL e ÚNICO sobre essa empresa, com tom promocional, destacando a reputação, os diferenciais e a experiência de viajar com {entidade} de forma envolvente e convidativa. O objetivo é gerar confiança no leitor, sem necessariamente incluir chamada direta para compra.\n\nIMPORTANTE:\n- Não copie frases das fontes, apenas se baseie nas informações factuais\n- Sintetize e reescreva completamente com suas próprias palavras\n- Use linguagem envolvente e descritiva, sem exageros irreais ou clickbait\n- Cite a Buser explicitamente pelo nome, mencionando-a como a opção pra viajar com {entidade}\n- Priorize informações específicas e verificáveis (não invente dados)\n\nInformações coletadas:\n{fontes_texto}\n\nTexto final sobre {entidade}:"
+    }
   },
   "terminal_rodoviaria": {
     "informativo": {},

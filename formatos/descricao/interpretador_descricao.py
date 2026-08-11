@@ -2,11 +2,11 @@ import json
 from base_cidade import coletando_conteudo
 from base_pontos_turisticos import coletar_ponto_turistico
 from base_rodoviarias import coletar_rodoviaria
+from base_empresas import coletar_empresa
 # from base_estados import coletar_estado
 # from base_paises import coletar_pais
 # from base_lugares_genericos import coletar_lugar_generico
 # from base_eventos import coletar_evento
-# from base_empresas import coletar_empresa
 
 import os
 from dotenv import load_dotenv
@@ -125,7 +125,9 @@ def interpretador(tema: str) -> dict:
         raise NotImplementedError("Coleta para 'evento' ainda não implementada")
 
     elif categoria == "empresa":
-        raise NotImplementedError("Coleta para 'empresa' ainda não implementada")
+        entidade = classificacao["entidade"]
+        resultado = coletar_empresa(entidade)
+        return {"categoria": categoria, "entidade": entidade, "fontes": resultado["fontes"]}
 
     else:
         raise ValueError(f"Categoria não tratada: {categoria}")
