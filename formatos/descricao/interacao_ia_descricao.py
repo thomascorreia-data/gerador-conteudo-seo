@@ -108,7 +108,35 @@ def gerar_descricao(
         )
 
     resposta = modelo.invoke(prompt, **kwargs_modelo)
-    return resposta.content.strip()
+    texto_gerado = resposta.content.strip()
+
+    # Toda descrição passa pelo humanizador antes de sair daqui — é a
+    # única função de geração que existe no módulo, então nenhuma chamada
+    # (API, CLI, gerando.py) escapa dessa revisão final.
+    return humanizar_texto(texto_gerado)
+
+
+def humanizar_texto(texto_gerado: str) -> str:
+    """
+    Etapa final de revisão: reescreve o texto gerado pra soar mais natural
+    e menos "de IA", preservando fatos e diferenciais da Buser já citados.
+    Roda pra qualquer categoria/tom, sempre — o prompt vem do bloco
+    "humanizador" (fora das categorias) em prompts_descricao.json.
+    """
+    dados_humanizador = PROMPTS_POR_CATEGORIA.get("humanizador")
+    if not dados_humanizador or not dados_humanizador.get("template"):
+        return texto_gerado
+
+    prompt = dados_humanizador["template"].format(texto_gerado=texto_gerado)
+
+    try:
+        resposta = modelo.invoke(prompt)
+        return resposta.content.strip()
+    except Exception:
+        # Se a humanização falhar por qualquer motivo (rate limit, etc.),
+        # não trava a geração inteira — devolve o texto original, que já
+        # é válido, em vez de propagar o erro.
+        return texto_gerado
 
 
 TOM_PADRAO = "informativo"

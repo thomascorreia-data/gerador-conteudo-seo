@@ -25,7 +25,7 @@ for _dir in (_DIR_FORMATOS, _DIR_DESCRICAO):
         sys.path.insert(0, _dir)
 
 from descricao.interpretador_descricao import interpretador  # noqa: E402
-from descricao.interacao_ia import (  # noqa: E402
+from formatos.descricao.interacao_ia_descricao import (  # noqa: E402
     gerar_descricao,
     TOM_PADRAO,
     MEDIA_PALAVRAS_PADRAO,
