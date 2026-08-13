@@ -23,6 +23,14 @@
   .layout{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
   @media (max-width:900px){ .layout{grid-template-columns:1fr;} }
 
+  /* Sem isso, o grid estica .controls pra acompanhar a altura da LINHA
+     (que cresce junto com o conteúdo gerado no .output-panel), e aí o JS
+     que sincroniza as alturas (gerador-json.html) entra num loop: copia
+     do .controls uma altura que só ficou grande por causa do próprio
+     .output-panel. align-self:start faz .controls manter sua altura
+     natural (a do formulário), que é o valor real que queremos copiar. */
+  .controls{align-self:start;}
+
   .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;}
   .panel + .panel{margin-top:16px;}
 
@@ -96,8 +104,16 @@
     padding:9px 12px; margin-bottom:8px; font-size:14px;
   }
 
-  .output-panel{min-height:400px; display:flex; flex-direction:column;}
-  .output-header{display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:8px;}
+  /* Acompanha a altura da coluna da esquerda (.controls), que é quem
+     manda no tamanho da linha do grid — min-height:0 aqui é o que evita
+     que o CONTEÚDO deste painel force a linha (e a coluna da esquerda
+     junto) a crescer. O que não couber rola dentro do próprio bloco
+     (ver #rawJson, #conteudoGeradoList e .empty-state abaixo). */
+  .output-panel{
+    min-height:0;
+    display:flex; flex-direction:column; overflow:hidden;
+  }
+  .output-header{display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:8px; flex-shrink:0;}
   .output-header .tag{font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:1px;}
   .icon-btn{
     background:transparent; border:1px solid var(--line); color:var(--muted);
@@ -107,15 +123,19 @@
   .icon-btn:hover{border-color:var(--brass); color:var(--brass);}
 
   #rawJson{
-    flex:1; background:var(--bg); border:1px dashed var(--line); border-radius:var(--radius);
+    flex:1; min-height:0; background:var(--bg); border:1px dashed var(--line); border-radius:var(--radius);
     padding:16px; font-family:'JetBrains Mono',monospace; font-size:12.5px;
-    white-space:pre-wrap; overflow-y:auto; line-height:1.55; min-height:300px;
+    white-space:pre-wrap; overflow-y:auto; line-height:1.55;
+  }
+  #conteudoGeradoList{
+    flex:1; min-height:0; overflow-y:auto; padding-right:4px;
   }
   .empty-state{
     color:var(--muted); font-family:'JetBrains Mono',monospace; font-size:13px;
     display:flex; align-items:center; justify-content:center; text-align:center;
-    flex:1; border:1px dashed var(--line); border-radius:var(--radius); padding:30px;
+    flex:1; min-height:0; border:1px dashed var(--line); border-radius:var(--radius); padding:30px;
   }
+  #gerarConteudoBox{flex-shrink:0;}
 
   .error-box{
     background:rgba(196,97,76,0.15); border:1px solid var(--danger); color:var(--danger);

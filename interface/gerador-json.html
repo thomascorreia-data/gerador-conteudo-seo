@@ -575,6 +575,30 @@ document.getElementById('downloadCsvBtn').onclick = () => {
   a.click();
   URL.revokeObjectURL(url);
 };
+
+// ---- mantém o painel da direita do mesmo tamanho do bloco esquerdo ----
+// O CSS Grid sozinho não resolve isso: a linha do grid sempre cresce até
+// caber o maior item dos dois lados, então quando o conteúdo gerado é
+// grande, ele estica a linha inteira (e o painel esquerdo junto). Por
+// isso sincronizamos a altura via JS: o painel da direita sempre copia a
+// altura atual do painel esquerdo, e o que não couber rola por dentro.
+function sincronizarAlturaPainel(){
+  const controls = document.querySelector('.controls');
+  const painel = document.querySelector('.output-panel');
+
+  // Abaixo de 900px a interface empilha em uma coluna só (ver style.css);
+  // nesse modo cada bloco deve usar sua altura natural, sem sincronizar.
+  if(window.innerWidth <= 900){
+    painel.style.height = '';
+    return;
+  }
+
+  painel.style.height = controls.getBoundingClientRect().height + 'px';
+}
+
+new ResizeObserver(sincronizarAlturaPainel).observe(document.querySelector('.controls'));
+window.addEventListener('resize', sincronizarAlturaPainel);
+sincronizarAlturaPainel();
 </script>
 </body>
 </html>
