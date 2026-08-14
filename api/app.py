@@ -15,7 +15,7 @@ Documentação automática (Swagger) em:
 """
 
 from typing import Any, Dict, List
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
@@ -33,6 +33,21 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+@app.middleware("http")
+async def desabilitar_cache_da_interface(request: Request, call_next):
+    """
+    Sem isso, o navegador guarda em cache o HTML/CSS/JS de /interface e,
+    depois de qualquer alteração no código, continua rodando a versão
+    antiga até um hard-refresh manual (Ctrl+Shift+R) — o que já causou
+    bastante confusão de debug (comportamento "corrigido" que não
+    aparecia porque a página carregada nem tinha o fix ainda).
+    """
+    resposta = await call_next(request)
+    if request.url.path.startswith("/interface"):
+        resposta.headers["Cache-Control"] = "no-store, must-revalidate"
+    return resposta
 
 
 class RequisicaoNormalizar(BaseModel):

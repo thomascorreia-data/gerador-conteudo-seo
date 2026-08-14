@@ -129,8 +129,17 @@ def humanizar_texto(texto_gerado: str) -> str:
 
     prompt = dados_humanizador["template"].format(texto_gerado=texto_gerado)
 
+    # Mesmo problema que a geração original tinha antes de ganhar max_tokens:
+    # "mantenha o tamanho aproximado" no prompt é só uma sugestão, o modelo
+    # pode ignorá-la e devolver um texto bem maior que o original — mesmo
+    # que a geração já tivesse respeitado media_palavras. O teto aqui usa o
+    # tamanho do PRÓPRIO texto de entrada (não media_palavras), porque o
+    # contrato do humanizador é preservar o tamanho, não mirar um alvo novo.
+    palavras_originais = len(texto_gerado.split())
+    max_tokens = int(palavras_originais * 1.8) + 40
+
     try:
-        resposta = modelo.invoke(prompt)
+        resposta = modelo.invoke(prompt, max_tokens=max_tokens)
         return resposta.content.strip()
     except Exception:
         # Se a humanização falhar por qualquer motivo (rate limit, etc.),
@@ -141,7 +150,13 @@ def humanizar_texto(texto_gerado: str) -> str:
 
 TOM_PADRAO = "informativo"
 MEDIA_PALAVRAS_PADRAO = 100
-PALAVRAS_CHAVE_PADRAO = ["buser", "viagem barata", "passagem", "onibus"]
+# "buser" não entra aqui: isso é usado como fallback sempre que o usuário
+# deixa o campo de palavras-chave em branco, e forçar a marca como
+# "palavra-chave" faz o modelo citá-la mesmo no tom informativo (que pede
+# EXPLICITAMENTE pra evitar linguagem promocional). Citar a Buser é papel
+# das instruções de tom (vendas/promocional já pedem isso no template),
+# não do mecanismo de palavras-chave de SEO.
+PALAVRAS_CHAVE_PADRAO = ["passagem", "onibus"]
 
 
 def gerar_descricao_por_tema(
