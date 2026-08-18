@@ -65,5 +65,58 @@
         "erro": null
       }
     }
+  },
+  "expressojk": {
+    "empresa": "Expresso JK",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": "A Expresso JK é uma empresa brasileira de transporte rodoviário de passageiros e fretamento, com atuação em rotas interestaduais e intermunicipais (ligando regiões como o Distrito Federal, Goiás e o Sudeste), além de ser uma das viações associadas ao modelo de expansão da plataforma\n\nBuser. Principais Atividades Transporte de Passageiros: Operação de linhas regulares de ônibus. Turismo e Fretamento:\nServiços de aluguel de ônibus para viagens programadas e excursões. Frota: Disponibiliza veículos modernos, incluindo categorias executivas e leito. Gostaria de saber informações sobre linhas específicas, horários de passagens ou contatos de atendimento da Expresso JK?",
+        "referencias": [],
+        "erro": null
+      },
+      "Google_TopSites": {
+        "conteudo": "Expresso JK (@expressojk) · Ceilândia, DF: A união entre tradição e tecnologia vai levar você cada vez mais longe. A gente pensou em tudo pra facilitar e agilizar sua viagem, sem deixar de lado a ... Viação Expresso JK - Passagens de Ônibus: As principais rotas da Viação Expresso JK incluem as conexões entre as principais cidades dos estados do Nordeste e do Norte do Brasil, como Recife, Fortaleza, ... Expresso Jk: Somos Transportes e Serviços, sempre com você. Nosso compromisso é com a sua satisfação e um ótimo relacionamento. Conte com nossa solidez e venha conversar ... Empresa Expresso JK Transporte Ltda – AGR: Termo de Autorização nº 301.2025 – Expresso JK Transporte Ltda. Preço das Passagens. ANO 2026. Linha Convencional nº 9533.301-00 – Goiânia a Caldas Novas (via ... Expresso JK – Apps no Google Play: Desfrute da comodidade e segurança ao adquirir suas passagens através do aplicativo Expresso JK. Garanta uma experiência de compra rápida e prática, sem abrir ... Expresso JK on Instagram: \"Precisou viajar? Conte a ...: Hoje, sabemos que podemos contribuir ainda mais para o transporte rodoviário brasileiro — e queremos fazer isso de dentro pra fora. É por isso ... Expresso JK | Ceilândia DF: Transporte, Turismo e Fretamento com qualidade, segurança e o conforto que você merece! 󱞴 Transportation Service. 󱙶. Follow. Details. 󰡍. 3 Reviews.",
+        "sites": [
+          {
+            "titulo": "Expresso JK (@expressojk) · Ceilândia, DF",
+            "link": "https://www.instagram.com/expressojk/",
+            "snippet": "A união entre tradição e tecnologia vai levar você cada vez mais longe. A gente pensou em tudo pra facilitar e agilizar sua viagem, sem deixar de lado a ..."
+          },
+          {
+            "titulo": "Viação Expresso JK - Passagens de Ônibus",
+            "link": "https://queropassagem.com.br/auto-viacao-expresso-jk",
+            "snippet": "As principais rotas da Viação Expresso JK incluem as conexões entre as principais cidades dos estados do Nordeste e do Norte do Brasil, como Recife, Fortaleza, ..."
+          },
+          {
+            "titulo": "Expresso Jk",
+            "link": "https://www.reclameaqui.com.br/empresa/expresso-jk-transportes/",
+            "snippet": "Somos Transportes e Serviços, sempre com você. Nosso compromisso é com a sua satisfação e um ótimo relacionamento. Conte com nossa solidez e venha conversar ..."
+          },
+          {
+            "titulo": "Empresa Expresso JK Transporte Ltda – AGR",
+            "link": "https://goias.gov.br/agr/empresa-expresso-jk-transporte-ltda/",
+            "snippet": "Termo de Autorização nº 301.2025 – Expresso JK Transporte Ltda. Preço das Passagens. ANO 2026. Linha Convencional nº 9533.301-00 – Goiânia a Caldas Novas (via ..."
+          },
+          {
+            "titulo": "Expresso JK – Apps no Google Play",
+            "link": "https://play.google.com/store/apps/details?id=br.com.tisistema.vendaweb.jk&hl=pt_BR",
+            "snippet": "Desfrute da comodidade e segurança ao adquirir suas passagens através do aplicativo Expresso JK. Garanta uma experiência de compra rápida e prática, sem abrir ..."
+          },
+          {
+            "titulo": "Expresso JK on Instagram: \"Precisou viajar? Conte a ...",
+            "link": "https://www.instagram.com/reel/DIRKs91Odni/",
+            "snippet": "Hoje, sabemos que podemos contribuir ainda mais para o transporte rodoviário brasileiro — e queremos fazer isso de dentro pra fora. É por isso ..."
+          },
+          {
+            "titulo": "Expresso JK | Ceilândia DF",
+            "link": "https://www.facebook.com/Expressojktransportes/?locale=pt_BR",
+            "snippet": "Transporte, Turismo e Fretamento com qualidade, segurança e o conforto que você merece! 󱞴 Transportation Service. 󱙶. Follow. Details. 󰡍. 3 Reviews."
+          }
+        ],
+        "site_oficial": null,
+        "wikipedia": null,
+        "erro": null
+      }
+    }
   }
 }
