@@ -1,5 +1,5 @@
 """
-Coleta, via SerpApi (https://serpapi.com/), o top 15 de resultados orgânicos
+Coleta, via Serper (https://serper.dev/), o top 15 de resultados orgânicos
 do Google pra uma empresa (título, link e snippet/description — sem visitar
 os sites, só o que a própria busca já traz).
 
@@ -10,9 +10,9 @@ nenhuma requisição extra):
     a ÚNICA fonte do top 15 pra qual fazemos uma requisição de verdade,
     pra buscar os primeiros parágrafos (mesmo padrão do base_cidade.py).
 
-Requer SERPAPI_API_KEY no arquivo .env na raiz do projeto.
+Requer SERPER_API_KEY no arquivo .env na raiz do projeto.
 
-Pra não gastar cota da SerpApi repetindo a mesma empresa em teste, o
+Pra não gastar cota da Serper repetindo a mesma empresa em teste, o
 resultado de cada busca bem-sucedida é salvo em cache_empresas.json (nesta
 mesma pasta). Da próxima vez que essa empresa for pedida, o resultado
 salvo é reaproveitado e nenhuma requisição nova é feita.
@@ -29,8 +29,8 @@ from unidecode import unidecode
 
 load_dotenv()
 
-SERPAPI_URL = "https://serpapi.com/search"
-SERPAPI_API_KEY = os.environ.get("SERPAPI_API_KEY")
+SERPER_URL = "https://google.serper.dev/search"
+SERPER_API_KEY = os.environ.get("SERPER_API_KEY")
 
 CAMINHO_CACHE = os.path.join(os.path.dirname(__file__), "cache_empresas.json")
 
@@ -161,34 +161,34 @@ def _coletar_paragrafos_wikipedia(url: str) -> tuple:
 
 def _buscar_serp(nome_empresa: str):
     """
-    Faz a única chamada de busca à SerpApi. Devolve (dados, erro).
+    Faz a única chamada de busca à Serper. Devolve (dados, erro).
     """
-    if not SERPAPI_API_KEY:
+    if not SERPER_API_KEY:
         erro = (
-            "SERPAPI_API_KEY não encontrada. Confira se o arquivo .env existe "
-            "na raiz do projeto e tem a linha SERPAPI_API_KEY=..."
+            "SERPER_API_KEY não encontrada. Confira se o arquivo .env existe "
+            "na raiz do projeto e tem a linha SERPER_API_KEY=..."
         )
         return None, erro
 
-    params = {
-        "engine": "google",
+    headers = {
+        "X-API-KEY": SERPER_API_KEY,
+        "Content-Type": "application/json",
+    }
+    body = {
         "q": nome_empresa,
-        "hl": "pt-br",
         "gl": "br",
-        # Sem isso, o Google/SerpApi só devolve a 1ª página (~10 resultados).
-        # Pedimos 20 pra ter folga: alguns resultados de imagem/vídeo/mapa
-        # não contam como "organic_results", então o número que sobra às
-        # vezes vem menor do que o pedido.
+        "hl": "pt-br",
+        # Diferente da SerpApi, a Serper respeita "num" numa chamada só —
+        # não precisa de uma segunda página pra ter mais que ~10 resultados.
         "num": 20,
-        "api_key": SERPAPI_API_KEY,
     }
 
     try:
-        resp = requests.get(SERPAPI_URL, params=params, timeout=15)
+        resp = requests.post(SERPER_URL, headers=headers, json=body, timeout=15)
         resp.raise_for_status()
         return resp.json(), None
     except Exception as e:
-        return None, f"Erro ao consultar a SerpApi: {e}"
+        return None, f"Erro ao consultar a Serper: {e}"
 
 
 def _extrair_top_sites(dados: dict, nome_empresa: str, limite: int = 15) -> dict:
@@ -200,7 +200,7 @@ def _extrair_top_sites(dados: dict, nome_empresa: str, limite: int = 15) -> dict
         "erro": None,
     }
 
-    organicos = dados.get("organic_results", [])[:limite]
+    organicos = dados.get("organic", [])[:limite]
     if not organicos:
         resultado["erro"] = f"Nenhum resultado orgânico encontrado para '{nome_empresa}'."
         return resultado
@@ -241,7 +241,7 @@ def coletar_empresa(nome_empresa: str, usar_cache: bool = True) -> dict:
     de onde também tenta identificar qual parece ser o site oficial da
     empresa e qual é a Wikipédia.
 
-    Por padrão (usar_cache=True), antes de gastar cota da SerpApi, confere
+    Por padrão (usar_cache=True), antes de gastar cota da Serper, confere
     se essa empresa já tem resultado salvo em cache_empresas.json — se
     tiver, devolve ele direto, sem nenhuma requisição nova. Passe
     usar_cache=False pra forçar uma busca de verdade mesmo com cache salvo.
