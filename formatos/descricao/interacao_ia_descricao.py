@@ -186,5 +186,5 @@ def gerar_descricao_por_tema(
 
 
 if __name__ == "__main__":
-    texto = gerar_descricao_por_tema("ALLESTUR", tom="vendas", media_palavras=100)
+    texto = gerar_descricao_por_tema("Expresso JK", tom="vendas", media_palavras=100)
     print(texto)
