@@ -56,6 +56,7 @@ def gerar_descricao(
     tom: str = "informativo",
     media_palavras: int = None,
     palavras_chave: list = None,
+    classificacao_tipo: dict = None,
 ) -> str:
     """
     Função genérica de geração: dado que o interpretador já identificou a
@@ -81,7 +82,16 @@ def gerar_descricao(
     if not fontes_texto:
         raise ValueError(f"Nenhuma fonte com conteúdo coletado para '{entidade}'.")
 
-    prompt = dados_tom["template"].format(entidade=entidade, fontes_texto=fontes_texto)
+    # Só a categoria "empresa" tem {instrucao_tipo_empresa} no template — nas
+    # demais, o .format() simplesmente ignora esse kwarg (não é KeyError
+    # passar um nome a mais que não aparece na string).
+    instrucao_tipo_empresa = (classificacao_tipo or {}).get("instrucao", "")
+
+    prompt = dados_tom["template"].format(
+        entidade=entidade,
+        fontes_texto=fontes_texto,
+        instrucao_tipo_empresa=instrucao_tipo_empresa,
+    )
 
     kwargs_modelo = {}
     if media_palavras:
@@ -112,11 +122,15 @@ def gerar_descricao(
 
     # Toda descrição passa pelo humanizador antes de sair daqui — é a
     # única função de geração que existe no módulo, então nenhuma chamada
-    # (API, CLI, gerando.py) escapa dessa revisão final.
-    return humanizar_texto(texto_gerado)
+    # (API, CLI, gerando.py) escapa dessa revisão final. Repassa a mesma
+    # instrução de tipo de empresa: sem isso, o humanizador tinha sua
+    # própria regra de auto-classificação (menos informada, sem acesso à
+    # análise de palavras-chave feita em base_empresas.py) e podia desfazer
+    # a escolha de "passagem"/"viagem" que a geração acima já acertou.
+    return humanizar_texto(texto_gerado, instrucao_tipo_empresa)
 
 
-def humanizar_texto(texto_gerado: str) -> str:
+def humanizar_texto(texto_gerado: str, instrucao_tipo_empresa: str = "") -> str:
     """
     Etapa final de revisão: reescreve o texto gerado pra soar mais natural
     e menos "de IA", preservando fatos e diferenciais da Buser já citados.
@@ -127,7 +141,10 @@ def humanizar_texto(texto_gerado: str) -> str:
     if not dados_humanizador or not dados_humanizador.get("template"):
         return texto_gerado
 
-    prompt = dados_humanizador["template"].format(texto_gerado=texto_gerado)
+    prompt = dados_humanizador["template"].format(
+        texto_gerado=texto_gerado,
+        instrucao_tipo_empresa=instrucao_tipo_empresa,
+    )
 
     # Mesmo problema que a geração original tinha antes de ganhar max_tokens:
     # "mantenha o tamanho aproximado" no prompt é só uma sugestão, o modelo
@@ -182,6 +199,7 @@ def gerar_descricao_por_tema(
         tom=tom,
         media_palavras=media_palavras,
         palavras_chave=palavras_chave,
+        classificacao_tipo=resultado.get("classificacao_tipo"),
     )
 
 

@@ -86,6 +86,8 @@ def interpretador(tema: str) -> dict:
             "categoria": "cidade" | "ponto_turistico" | "terminal_rodoviaria" | ...,
             "entidade": nome a usar no prompt (ex: "Salvador", "Hopi Hari"),
             "fontes": {nome_da_fonte: {"paragrafos"/"conteudo": ..., "erro": ...}, ...},
+            "classificacao_tipo": só presente pra categoria "empresa" (ver
+                base_empresas.coletar_empresa) — None nas demais categorias,
         }
     """
     classificacao = classificar_tema(tema)
@@ -127,7 +129,12 @@ def interpretador(tema: str) -> dict:
     elif categoria == "empresa":
         entidade = classificacao["entidade"]
         resultado = coletar_empresa(entidade)
-        return {"categoria": categoria, "entidade": entidade, "fontes": resultado["fontes"]}
+        return {
+            "categoria": categoria,
+            "entidade": entidade,
+            "fontes": resultado["fontes"],
+            "classificacao_tipo": resultado.get("classificacao_tipo"),
+        }
 
     else:
         raise ValueError(f"Categoria não tratada: {categoria}")

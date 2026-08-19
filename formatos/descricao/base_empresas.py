@@ -97,6 +97,95 @@ def _e_dominio_nao_oficial(dominio: str) -> bool:
     return any(dominio == d or dominio.endswith("." + d) for d in DOMINIOS_NAO_OFICIAIS)
 
 
+# Termos que indicam operação de linha regular vs. só fretamento/turismo,
+# verificados manualmente contra o texto real já coletado (AI Overview +
+# snippets do Google) de Allestur (fretamento puro) e Expresso JK (híbrida)
+# em cache_empresas.json — os dois casos batem com a classificação correta.
+TERMOS_LINHA_REGULAR = [
+    "linha regular", "linhas regulares", "linha fixa", "linhas fixas",
+    "linha convencional", "linhas convencionais",
+]
+TERMOS_FRETAMENTO = [
+    "fretamento", "turismo", "excursao", "excursoes",
+    "aluguel de onibus", "viagens em grupo",
+]
+
+
+def _normalizar_para_busca(texto: str) -> str:
+    """Baixa a caixa e remove acentos, mas MANTÉM os espaços — diferente de
+    _slug(), que existe pra gerar chave de cache e não serve aqui porque
+    juntaria "linha regular" em "linharegular", quebrando a busca por frase."""
+    return unidecode(texto or "").lower()
+
+
+def _texto_para_classificacao(fontes: dict) -> str:
+    """Junta o 'conteudo' de cada fonte já coletada (AI Overview, TopSites,
+    Wikipedia) num texto só, normalizado, pra buscar os termos acima."""
+    partes = [dados.get("conteudo") or "" for dados in fontes.values()]
+    return _normalizar_para_busca(" ".join(partes))
+
+
+def _instrucao_tipo_empresa(tipo: str, entidade: str) -> str:
+    """Frase pronta pra injetar no prompt de geração — troca a auto-
+    classificação que antes pedíamos ao modelo fazer (e que ele errava com
+    frequência pra empresas híbridas) por uma decisão determinística feita
+    aqui em código, a partir do texto já coletado."""
+    textos = {
+        "linha_regular": (
+            f'{entidade} opera linha regular de ônibus (classificação automática, '
+            f'baseada nas fontes coletadas). Use "passagem" em todas as menções.'
+        ),
+        "hibrida": (
+            f'{entidade} opera linha regular de ônibus e também faz fretamento/turismo '
+            f'(classificação automática, baseada nas fontes coletadas). Use "passagem" em '
+            f'todas as menções, e pode citar as duas atividades no texto (ex: "opera linhas '
+            f'regulares e também realiza fretamento para excursões").'
+        ),
+        "fretamento": (
+            f'{entidade} faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha '
+            f'regular (classificação automática, baseada nas fontes coletadas). Use "viagem" '
+            f'em vez de "passagem" em todas as menções, e não restrinja o texto exclusivamente '
+            f'a "transporte rodoviário" — pode incluir roteiros, destinos e serviços de viagem '
+            f'coerentes com o fretamento.'
+        ),
+        "ambiguo": (
+            f'Não foi possível identificar com clareza, nas fontes coletadas, se {entidade} '
+            f'opera linha regular ou só fretamento/turismo. Use "viagem" em vez de "passagem" '
+            f'em todas as menções — é o termo mais seguro nesse caso, evita afirmar algo que '
+            f'pode não ser verdade.'
+        ),
+    }
+    return textos[tipo]
+
+
+def _classificar_tipo_empresa(fontes: dict, entidade: str) -> dict:
+    """
+    Decide, por palavras-chave no texto já coletado (sem nenhuma chamada
+    extra de API ou de LLM), se a empresa opera linha regular, fretamento/
+    turismo, as duas coisas (híbrida) ou não deixa isso claro (ambíguo).
+    """
+    texto = _texto_para_classificacao(fontes)
+    tem_regular = any(termo in texto for termo in TERMOS_LINHA_REGULAR)
+    tem_fretamento = any(termo in texto for termo in TERMOS_FRETAMENTO)
+
+    if tem_regular and tem_fretamento:
+        tipo = "hibrida"
+    elif tem_regular:
+        tipo = "linha_regular"
+    elif tem_fretamento:
+        tipo = "fretamento"
+    else:
+        tipo = "ambiguo"
+
+    palavra = "viagem" if tipo in ("fretamento", "ambiguo") else "passagem"
+
+    return {
+        "tipo": tipo,
+        "palavra": palavra,
+        "instrucao": _instrucao_tipo_empresa(tipo, entidade),
+    }
+
+
 def _identificar_site_oficial(sites: list, nome_empresa: str) -> dict:
     """
     Entre os resultados já coletados, tenta achar o que parece ser o site
@@ -349,6 +438,11 @@ def coletar_empresa(nome_empresa: str, usar_cache: bool = True) -> dict:
                 # só aparece se achou a Wikipédia no top 10:
                 "Wikipedia": {"conteudo": ..., "erro": ...},
             },
+            "classificacao_tipo": {
+                "tipo": "linha_regular" | "hibrida" | "fretamento" | "ambiguo",
+                "palavra": "passagem" | "viagem",
+                "instrucao": str,  # pronta pra injetar no prompt de geração
+            },
         }
     """
     chave_cache = _slug(nome_empresa)
@@ -356,7 +450,17 @@ def coletar_empresa(nome_empresa: str, usar_cache: bool = True) -> dict:
     if usar_cache:
         cache = _carregar_cache()
         if chave_cache in cache:
-            return cache[chave_cache]
+            resultado_cache = cache[chave_cache]
+            # Cache salvo antes dessa classificação existir não tem o campo
+            # ainda — calcula em cima do que já foi coletado (sem gastar
+            # nenhuma chamada nova) e atualiza o cache pra não repetir isso
+            # a cada chamada futura.
+            if "classificacao_tipo" not in resultado_cache:
+                resultado_cache["classificacao_tipo"] = _classificar_tipo_empresa(
+                    resultado_cache["fontes"], nome_empresa
+                )
+                _salvar_no_cache(chave_cache, resultado_cache)
+            return resultado_cache
 
     dados, erro_busca = _buscar_serp(nome_empresa)
 
@@ -387,7 +491,11 @@ def coletar_empresa(nome_empresa: str, usar_cache: bool = True) -> dict:
             "erro": wikipedia.get("erro"),
         }
 
-    resultado = {"empresa": nome_empresa, "fontes": fontes}
+    resultado = {
+        "empresa": nome_empresa,
+        "fontes": fontes,
+        "classificacao_tipo": _classificar_tipo_empresa(fontes, nome_empresa),
+    }
 
     # Só cacheia busca que de fato rodou (erro_busca é falha de infra —
     # chave ausente, timeout etc. — não queremos "travar" esse erro em

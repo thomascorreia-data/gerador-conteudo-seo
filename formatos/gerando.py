@@ -66,6 +66,7 @@ def gerar_conteudo(itens: list) -> list:
                 tom=item.get("tom") or TOM_PADRAO,
                 media_palavras=item.get("media_palavras") or MEDIA_PALAVRAS_PADRAO,
                 palavras_chave=item.get("palavras_chave") or PALAVRAS_CHAVE_PADRAO,
+                classificacao_tipo=classificacao.get("classificacao_tipo"),
             )
         except Exception as erro:
             item_resultado["erro"] = str(erro)
