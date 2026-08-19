@@ -1,97 +1,54 @@
 {
-  "expressojk": {
-    "empresa": "Expresso JK",
-    "fontes": {
-      "Google_TopSites": {
-        "conteudo": "Viação Expresso JK - Passagens de Ônibus: As principais rotas da Viação Expresso JK incluem as conexões entre as principais cidades dos estados do Nordeste e do Norte do Brasil, como Recife, Fortaleza, ... Expresso JK (@expressojk) · Ceilândia, DF: | 0800 023 1212 | sac@expressojk.com.br | (61) 93500-6245 · Expresso JK, muito mais que transporte! Conforto, segurança e qualidade nas suas ... Expresso JK – Apps no Google Play: Desfrute da comodidade e segurança ao adquirir suas passagens através do aplicativo Expresso JK. Garanta uma experiência de compra rápida e prática, sem abrir ... Expresso JK - App Store: Receba tudo em tempo real! Agora o app envia notificações instantâneas para novidades, alertas e mensagens importantes. Atualize e fique por ... Expresso JK on Instagram: \"Precisou viajar? Conte a ...: Seja qual for o roteiro ou o motivo da viagem, deixa o trajeto com a gente! Enquanto você reclina a poltrona e curte cada minuto de descanso, a ... Expresso JK: Novo número para realização de reservas via Whatsapp! Entre em contato conosco através do número (61) 93500-6245. Expresso JK: Passagens de Ônibus: Escolha seu método favorito para comprar sua passagem de ônibus da Expresso JK: Pix, transferência ou parcele em até 12x no cartão de crédito. Cadastre-se ... Passagens de Ônibus EXPRESSO JK: Você pode comprar passagens de EXPRESSO JK diretamente na Busbud. Pesquise a rota que você deseja, compare vários horários e preços que EXPRESSO JK oferece, ... Expresso JK, muito mais do que transporte! #expressojk #jk ...: Expresso JK, muito mais do que transporte! #expressojk #jk #onibus #transporte #turismo #fretamento #viagem #viajar #estrada #brasilia # ...",
-        "sites": [
-          {
-            "titulo": "Viação Expresso JK - Passagens de Ônibus",
-            "link": "https://queropassagem.com.br/auto-viacao-expresso-jk",
-            "snippet": "As principais rotas da Viação Expresso JK incluem as conexões entre as principais cidades dos estados do Nordeste e do Norte do Brasil, como Recife, Fortaleza, ..."
-          },
-          {
-            "titulo": "Expresso JK (@expressojk) · Ceilândia, DF",
-            "link": "https://www.instagram.com/expressojk/",
-            "snippet": "| 0800 023 1212 | sac@expressojk.com.br | (61) 93500-6245 · Expresso JK, muito mais que transporte! Conforto, segurança e qualidade nas suas ..."
-          },
-          {
-            "titulo": "Expresso JK – Apps no Google Play",
-            "link": "https://play.google.com/store/apps/details?id=br.com.tisistema.vendaweb.jk&hl=pt_BR",
-            "snippet": "Desfrute da comodidade e segurança ao adquirir suas passagens através do aplicativo Expresso JK. Garanta uma experiência de compra rápida e prática, sem abrir ..."
-          },
-          {
-            "titulo": "Expresso JK - App Store",
-            "link": "https://apps.apple.com/br/app/expresso-jk/id6738703636",
-            "snippet": "Receba tudo em tempo real! Agora o app envia notificações instantâneas para novidades, alertas e mensagens importantes. Atualize e fique por ..."
-          },
-          {
-            "titulo": "Expresso JK on Instagram: \"Precisou viajar? Conte a ...",
-            "link": "https://www.instagram.com/reel/DIRKs91Odni/",
-            "snippet": "Seja qual for o roteiro ou o motivo da viagem, deixa o trajeto com a gente! Enquanto você reclina a poltrona e curte cada minuto de descanso, a ..."
-          },
-          {
-            "titulo": "Expresso JK",
-            "link": "https://www.facebook.com/Expressojktransportes/posts/novo-n%C3%BAmero-para-realiza%C3%A7%C3%A3o-de-reservas-via-whatsapp-entre-em-contato-conosco-at/1306067438191161/",
-            "snippet": "Novo número para realização de reservas via Whatsapp! Entre em contato conosco através do número (61) 93500-6245."
-          },
-          {
-            "titulo": "Expresso JK: Passagens de Ônibus",
-            "link": "https://www.buson.com.br/viacao/expressojk",
-            "snippet": "Escolha seu método favorito para comprar sua passagem de ônibus da Expresso JK: Pix, transferência ou parcele em até 12x no cartão de crédito. Cadastre-se ..."
-          },
-          {
-            "titulo": "Passagens de Ônibus EXPRESSO JK",
-            "link": "https://www.busbud.com/pt/empresa-de-onibus/expresso-jk",
-            "snippet": "Você pode comprar passagens de EXPRESSO JK diretamente na Busbud. Pesquise a rota que você deseja, compare vários horários e preços que EXPRESSO JK oferece, ..."
-          },
-          {
-            "titulo": "Expresso JK, muito mais do que transporte! #expressojk #jk ...",
-            "link": "https://www.facebook.com/Expressojktransportes/videos/expresso-jk-muito-mais-do-que-transporte-expressojk-jk-onibus-transporte-turismo/1237051787567830/",
-            "snippet": "Expresso JK, muito mais do que transporte! #expressojk #jk #onibus #transporte #turismo #fretamento #viagem #viajar #estrada #brasilia # ..."
-          }
-        ],
-        "site_oficial": null,
-        "wikipedia": null,
-        "erro": null
-      }
-    }
-  },
   "allestur": {
-    "empresa": "Allestur",
+    "empresa": "ALLESTUR",
     "fontes": {
+      "Google_AIOverview": {
+        "conteudo": "A Allestur (Allestur Viagens e Turismo) é uma agência de viagens e turismo fundada em 1982, localizada em Joinville, Santa Catarina. Serviços Oferecidos Excursões e Fretamentos: Possui frota própria de ônibus para excursões rodoviárias e viagens regionais. Turismo Nacional e Internacional:\nVenda de pacotes aéreos, passagens, reservas de hotéis, seguros de viagem e emissão de vistos. Atendimento Corporativo: Gestão de viagens de negócios e suporte logístico para feiras, congressos e eventos. Você pode conferir mais detalhes e opções de roteiros diretamente no\nSite Oficial da Allestur\n. Se você precisar de mais informações, gostaria de saber: Detalhes sobre os contatos ou endereço\nda agência? Informações sobre algum pacote ou excursão específica?",
+        "referencias": [],
+        "erro": null
+      },
       "Google_TopSites": {
-        "conteudo": "allestur: Agência de Viagens e Turismo mais completa da cidade, com frota própria! Allestur - Joinville, SC: 9.4K+ followers · 525 posts · Agência de Viagens e Turismo | Joinville | Desde 1982 | Viajar é viver. Allestur Viagens e Turismo | Joinville SC: Valores: ▪️Adultos (de 12 a 59 anos): R$ 699,00 ▪️Idosos (a partir de 60 anos): R$ 670,00 ▪️Crianças (05 a 11 anos): R$ 630,00 ▪️Crianças de Colo (00 a ... Allestur: Allestur é confiável? ... Essa empresa ainda não é verificada e não possui o selo de confiança do Reclame aqui. Saiba o que verificamos. Desempenho. 6 meses 12 ... Allestur, Joinville: Opiniões e contato: Descubra o mundo de aventuras e experiências inesquecíveis com a Allestur, sua agência de viagens de confiança localizada em Joinville, Santa Catarina. Allestur Viagens e Turismo #LeonardoAbrantes: Localizada na Rua Visconde de Taunay, 856, sala 01 no centro de Joinville - SC, a Allestur Viagens e Turismo é uma agência especializada na ... Allestur Alles Turismo LTDA 76540582000160 Joinville: A empresa Allestur de CNPJ 76.540.582/0001-60, fundada em 08/11/1982 e com razão social Alles Turismo LTDA, está localizada na cidade Joinville do estado Santa ...",
+        "conteudo": "EMPRESA: A Allestur Viagens e Turismo é uma agência especializada na gestão de viagens desde 1982. Oferecemos soluções eficientes com rapidez nos serviços e temos o ... allestur: Agência de Viagens e Turismo mais completa da cidade, com frota própria! Allestur Viagens e Turismo #LeonardoAbrantes: A Allestur trabalha em parceria com as melhores empresas de serviços ... Fontes: www.allestur.com.br/empresa onibusbrasil.com/empresa ... Allestur - Joinville, SC: Representamos Municípios e empresas de diversos segmentos que, juntos, promovem as belezas, os sabores, aromas e a diversidade cultural do Meio-Oeste ... Contato | Joinville | Allestur Viagens e Turismo: Rua Visconde de Taunay, 856, sala 01, Centro / Joinville, SC. Tel | Fax 47 3433-1503 - Cel / Whatts 47 9 9634-0102. ENTRAMOS EM CONTATO COM VOCÊ! ALLESTUR VIAGENS E TURISMO LTDA - ME: O CNPJ da empresa ALLESTUR VIAGENS E TURISMO LTDA - ME ALLESTUR VIAGENS E TURISMO é 97.164.800/0001-80. Com sede em SANTA MARIA, RS, possui 31 anos, 11 meses e ... Allestur: Saiba se a empresa Allestur é confiável, segundo os consumidores. Se tiver problemas, reclame, resolva, avalie. Reclame Aqui. Allestur, Joinville: Opiniões e contato: Descubra o mundo de aventuras e experiências inesquecíveis com a Allestur, sua agência de viagens de confiança localizada em Joinville, Santa Catarina. Allestur Alles Turismo LTDA 76540582000160 Joinville: A empresa Allestur de CNPJ 76.540.582/0001-60, fundada em 08/11/1982 e com razão social Alles Turismo LTDA, está localizada na cidade Joinville do estado Santa ...",
         "sites": [
+          {
+            "titulo": "EMPRESA",
+            "link": "https://www.allestur.com.br/empresa",
+            "snippet": "A Allestur Viagens e Turismo é uma agência especializada na gestão de viagens desde 1982. Oferecemos soluções eficientes com rapidez nos serviços e temos o ..."
+          },
           {
             "titulo": "allestur",
             "link": "https://www.allestur.com.br/",
             "snippet": "Agência de Viagens e Turismo mais completa da cidade, com frota própria!"
           },
           {
-            "titulo": "Allestur - Joinville, SC",
-            "link": "https://www.instagram.com/allestur/?hl=pt",
-            "snippet": "9.4K+ followers · 525 posts · Agência de Viagens e Turismo | Joinville | Desde 1982 | Viajar é viver."
+            "titulo": "Allestur Viagens e Turismo #LeonardoAbrantes",
+            "link": "https://www.youtube.com/watch?v=dQFLrHtU0P8",
+            "snippet": "A Allestur trabalha em parceria com as melhores empresas de serviços ... Fontes: www.allestur.com.br/empresa onibusbrasil.com/empresa ..."
           },
           {
-            "titulo": "Allestur Viagens e Turismo | Joinville SC",
-            "link": "https://www.facebook.com/allestur/?locale=pt_BR",
-            "snippet": "Valores: ▪️Adultos (de 12 a 59 anos): R$ 699,00 ▪️Idosos (a partir de 60 anos): R$ 670,00 ▪️Crianças (05 a 11 anos): R$ 630,00 ▪️Crianças de Colo (00 a ..."
+            "titulo": "Allestur - Joinville, SC",
+            "link": "https://www.instagram.com/allestur/?hl=pt",
+            "snippet": "Representamos Municípios e empresas de diversos segmentos que, juntos, promovem as belezas, os sabores, aromas e a diversidade cultural do Meio-Oeste ..."
+          },
+          {
+            "titulo": "Contato | Joinville | Allestur Viagens e Turismo",
+            "link": "https://www.allestur.com.br/contato",
+            "snippet": "Rua Visconde de Taunay, 856, sala 01, Centro / Joinville, SC. Tel | Fax 47 3433-1503 - Cel / Whatts 47 9 9634-0102. ENTRAMOS EM CONTATO COM VOCÊ!"
+          },
+          {
+            "titulo": "ALLESTUR VIAGENS E TURISMO LTDA - ME",
+            "link": "https://empresas.serasaexperian.com.br/consulta-gratis/ALLESTUR-VIAGENS-E-TURISMO-LTDA-ME-97164800000180",
+            "snippet": "O CNPJ da empresa ALLESTUR VIAGENS E TURISMO LTDA - ME ALLESTUR VIAGENS E TURISMO é 97.164.800/0001-80. Com sede em SANTA MARIA, RS, possui 31 anos, 11 meses e ..."
           },
           {
             "titulo": "Allestur",
             "link": "https://www.reclameaqui.com.br/empresa/allestur/",
-            "snippet": "Allestur é confiável? ... Essa empresa ainda não é verificada e não possui o selo de confiança do Reclame aqui. Saiba o que verificamos. Desempenho. 6 meses 12 ..."
+            "snippet": "Saiba se a empresa Allestur é confiável, segundo os consumidores. Se tiver problemas, reclame, resolva, avalie. Reclame Aqui."
           },
           {
             "titulo": "Allestur, Joinville: Opiniões e contato",
             "link": "https://agenciasdeviagens.org/pt-br/i/144918-allestur/",
             "snippet": "Descubra o mundo de aventuras e experiências inesquecíveis com a Allestur, sua agência de viagens de confiança localizada em Joinville, Santa Catarina."
-          },
-          {
-            "titulo": "Allestur Viagens e Turismo #LeonardoAbrantes",
-            "link": "https://www.youtube.com/watch?v=dQFLrHtU0P8",
-            "snippet": "Localizada na Rua Visconde de Taunay, 856, sala 01 no centro de Joinville - SC, a Allestur Viagens e Turismo é uma agência especializada na ..."
           },
           {
             "titulo": "Allestur Alles Turismo LTDA 76540582000160 Joinville",
@@ -100,10 +57,63 @@
           }
         ],
         "site_oficial": {
-          "titulo": "allestur",
-          "link": "https://www.allestur.com.br/",
-          "snippet": "Agência de Viagens e Turismo mais completa da cidade, com frota própria!"
+          "titulo": "EMPRESA",
+          "link": "https://www.allestur.com.br/empresa",
+          "snippet": "A Allestur Viagens e Turismo é uma agência especializada na gestão de viagens desde 1982. Oferecemos soluções eficientes com rapidez nos serviços e temos o ..."
         },
+        "wikipedia": null,
+        "erro": null
+      }
+    }
+  },
+  "expressojk": {
+    "empresa": "Expresso JK",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": "A Expresso JK é uma empresa brasileira de transporte rodoviário de passageiros e fretamento, com atuação em rotas interestaduais e intermunicipais (ligando regiões como o Distrito Federal, Goiás e o Sudeste), além de ser uma das viações associadas ao modelo de expansão da plataforma\n\nBuser. Principais Atividades Transporte de Passageiros: Operação de linhas regulares de ônibus. Turismo e Fretamento:\nServiços de aluguel de ônibus para viagens programadas e excursões. Frota: Disponibiliza veículos modernos, incluindo categorias executivas e leito. Gostaria de saber informações sobre linhas específicas, horários de passagens ou contatos de atendimento da Expresso JK?",
+        "referencias": [],
+        "erro": null
+      },
+      "Google_TopSites": {
+        "conteudo": "Expresso JK (@expressojk) · Ceilândia, DF: A união entre tradição e tecnologia vai levar você cada vez mais longe. A gente pensou em tudo pra facilitar e agilizar sua viagem, sem deixar de lado a ... Viação Expresso JK - Passagens de Ônibus: As principais rotas da Viação Expresso JK incluem as conexões entre as principais cidades dos estados do Nordeste e do Norte do Brasil, como Recife, Fortaleza, ... Expresso Jk: Somos Transportes e Serviços, sempre com você. Nosso compromisso é com a sua satisfação e um ótimo relacionamento. Conte com nossa solidez e venha conversar ... Empresa Expresso JK Transporte Ltda – AGR: Termo de Autorização nº 301.2025 – Expresso JK Transporte Ltda. Preço das Passagens. ANO 2026. Linha Convencional nº 9533.301-00 – Goiânia a Caldas Novas (via ... Expresso JK – Apps no Google Play: Desfrute da comodidade e segurança ao adquirir suas passagens através do aplicativo Expresso JK. Garanta uma experiência de compra rápida e prática, sem abrir ... Expresso JK on Instagram: \"Precisou viajar? Conte a ...: Hoje, sabemos que podemos contribuir ainda mais para o transporte rodoviário brasileiro — e queremos fazer isso de dentro pra fora. É por isso ... Expresso JK | Ceilândia DF: Transporte, Turismo e Fretamento com qualidade, segurança e o conforto que você merece! 󱞴 Transportation Service. 󱙶. Follow. Details. 󰡍. 3 Reviews.",
+        "sites": [
+          {
+            "titulo": "Expresso JK (@expressojk) · Ceilândia, DF",
+            "link": "https://www.instagram.com/expressojk/",
+            "snippet": "A união entre tradição e tecnologia vai levar você cada vez mais longe. A gente pensou em tudo pra facilitar e agilizar sua viagem, sem deixar de lado a ..."
+          },
+          {
+            "titulo": "Viação Expresso JK - Passagens de Ônibus",
+            "link": "https://queropassagem.com.br/auto-viacao-expresso-jk",
+            "snippet": "As principais rotas da Viação Expresso JK incluem as conexões entre as principais cidades dos estados do Nordeste e do Norte do Brasil, como Recife, Fortaleza, ..."
+          },
+          {
+            "titulo": "Expresso Jk",
+            "link": "https://www.reclameaqui.com.br/empresa/expresso-jk-transportes/",
+            "snippet": "Somos Transportes e Serviços, sempre com você. Nosso compromisso é com a sua satisfação e um ótimo relacionamento. Conte com nossa solidez e venha conversar ..."
+          },
+          {
+            "titulo": "Empresa Expresso JK Transporte Ltda – AGR",
+            "link": "https://goias.gov.br/agr/empresa-expresso-jk-transporte-ltda/",
+            "snippet": "Termo de Autorização nº 301.2025 – Expresso JK Transporte Ltda. Preço das Passagens. ANO 2026. Linha Convencional nº 9533.301-00 – Goiânia a Caldas Novas (via ..."
+          },
+          {
+            "titulo": "Expresso JK – Apps no Google Play",
+            "link": "https://play.google.com/store/apps/details?id=br.com.tisistema.vendaweb.jk&hl=pt_BR",
+            "snippet": "Desfrute da comodidade e segurança ao adquirir suas passagens através do aplicativo Expresso JK. Garanta uma experiência de compra rápida e prática, sem abrir ..."
+          },
+          {
+            "titulo": "Expresso JK on Instagram: \"Precisou viajar? Conte a ...",
+            "link": "https://www.instagram.com/reel/DIRKs91Odni/",
+            "snippet": "Hoje, sabemos que podemos contribuir ainda mais para o transporte rodoviário brasileiro — e queremos fazer isso de dentro pra fora. É por isso ..."
+          },
+          {
+            "titulo": "Expresso JK | Ceilândia DF",
+            "link": "https://www.facebook.com/Expressojktransportes/?locale=pt_BR",
+            "snippet": "Transporte, Turismo e Fretamento com qualidade, segurança e o conforto que você merece! 󱞴 Transportation Service. 󱙶. Follow. Details. 󰡍. 3 Reviews."
+          }
+        ],
+        "site_oficial": null,
         "wikipedia": null,
         "erro": null
       }

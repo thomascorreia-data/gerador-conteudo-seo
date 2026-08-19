@@ -1,13 +1,16 @@
 """
-Coleta, via SerpApi (https://serpapi.com/), o top 15 de resultados orgânicos
-do Google pra uma empresa (título, link e snippet/description — sem visitar
-os sites, só o que a própria busca já traz).
+Coleta, via SerpApi (https://serpapi.com/), duas fontes sobre uma empresa a
+partir da MESMA busca no Google (economiza cota da API):
+  - o AI Overview (endpoint oficial e assíncrono da SerpApi, sem scraping
+    direto do google.com);
+  - o top 10 de resultados orgânicos da SERP (título, link e snippet/
+    description — sem visitar os sites, só o que a própria busca já traz).
 
-Em cima desse top 15, o módulo tenta identificar (por domínio/nome, sem
+Em cima desse top 10, o módulo tenta identificar (por domínio/nome, sem
 nenhuma requisição extra):
   - qual resultado parece ser o site oficial da empresa;
   - qual resultado é a página da Wikipédia, se houver — e, se achar, essa é
-    a ÚNICA fonte do top 15 pra qual fazemos uma requisição de verdade,
+    a ÚNICA fonte do top 10 pra qual fazemos uma requisição de verdade,
     pra buscar os primeiros parágrafos (mesmo padrão do base_cidade.py).
 
 Requer SERPAPI_API_KEY no arquivo .env na raiz do projeto.
@@ -21,6 +24,7 @@ salvo é reaproveitado e nenhuma requisição nova é feita.
 import json
 import os
 import re
+import time
 import requests
 from urllib.parse import urlparse
 from bs4 import BeautifulSoup
@@ -125,7 +129,7 @@ def _identificar_wikipedia(sites: list) -> dict:
 
 def _coletar_paragrafos_wikipedia(url: str) -> tuple:
     """
-    Busca a página da Wikipédia encontrada no top 15 e extrai os primeiros
+    Busca a página da Wikipédia encontrada no top 10 e extrai os primeiros
     parágrafos (a introdução do artigo), no mesmo padrão de base_cidade.py.
     Devolve (paragrafos, erro).
     """
@@ -159,9 +163,63 @@ def _coletar_paragrafos_wikipedia(url: str) -> tuple:
     return paragrafos_limpos, None
 
 
+def _texto_dos_blocos(blocos: list) -> str:
+    """Achata os text_blocks do AI Overview (parágrafos, listas, etc.) num único texto."""
+    partes = []
+    for bloco in blocos:
+        tipo = bloco.get("type")
+        if tipo == "paragraph":
+            partes.append(bloco.get("snippet", ""))
+        elif tipo in ("list", "expandable"):
+            for item in bloco.get("list", []):
+                titulo = item.get("title")
+                snippet = item.get("snippet", "")
+                partes.append(f"{titulo}: {snippet}" if titulo else snippet)
+        elif bloco.get("snippet"):
+            partes.append(bloco["snippet"])
+    return " ".join(p for p in partes if p)
+
+
+def _resolver_ai_overview_assincrono(page_token: str, tentativas: int = 5, espera_segundos: float = 2.0):
+    """
+    A busca inicial pode devolver só um "page_token" (o Overview ainda
+    está sendo processado do lado do Google). Nesse caso, a própria SerpApi
+    documenta consultar esse endpoint dedicado até o status sair de
+    "Processing" — é o fluxo oficial da API, não uma tentativa de forçar
+    o Google direto.
+    """
+    params = {
+        "engine": "google_ai_overview",
+        "page_token": page_token,
+        "api_key": SERPAPI_API_KEY,
+    }
+
+    for tentativa in range(1, tentativas + 1):
+        try:
+            resp = requests.get(SERPAPI_URL, params=params, timeout=15)
+            resp.raise_for_status()
+            dados = resp.json()
+        except Exception as e:
+            return None, f"Erro ao consultar o AI Overview (tentativa {tentativa}): {e}"
+
+        blocos = dados.get("ai_overview", {}).get("text_blocks")
+        if blocos:
+            return blocos, None
+
+        status = dados.get("search_metadata", {}).get("status", "")
+        if status != "Processing":
+            return None, f"SerpApi não retornou o AI Overview (status: {status or 'desconhecido'})."
+
+        time.sleep(espera_segundos)
+
+    return None, f"AI Overview não ficou pronto a tempo ({tentativas} tentativas)."
+
+
 def _buscar_serp(nome_empresa: str):
     """
-    Faz a única chamada de busca à SerpApi. Devolve (dados, erro).
+    Faz a única chamada de busca à SerpApi. Devolve (dados, erro) — os dois
+    extratores (_extrair_ai_overview e _extrair_top_sites) trabalham em
+    cima do mesmo `dados`, sem gastar uma segunda busca.
     """
     if not SERPAPI_API_KEY:
         erro = (
@@ -170,16 +228,17 @@ def _buscar_serp(nome_empresa: str):
         )
         return None, erro
 
+    # Buscar só o nome da empresa raramente ativa o AI Overview (é mais um
+    # resultado de marca/site oficial). Frases no formato pergunta ativam
+    # com muito mais consistência — testado com "Buser" isolado (sem
+    # overview) vs. "o que é a empresa Buser" (com overview).
+    query = f"o que é a empresa {nome_empresa}"
+
     params = {
         "engine": "google",
-        "q": nome_empresa,
+        "q": query,
         "hl": "pt-br",
         "gl": "br",
-        # Sem isso, o Google/SerpApi só devolve a 1ª página (~10 resultados).
-        # Pedimos 20 pra ter folga: alguns resultados de imagem/vídeo/mapa
-        # não contam como "organic_results", então o número que sobra às
-        # vezes vem menor do que o pedido.
-        "num": 20,
         "api_key": SERPAPI_API_KEY,
     }
 
@@ -191,7 +250,35 @@ def _buscar_serp(nome_empresa: str):
         return None, f"Erro ao consultar a SerpApi: {e}"
 
 
-def _extrair_top_sites(dados: dict, nome_empresa: str, limite: int = 15) -> dict:
+def _extrair_ai_overview(dados: dict, nome_empresa: str) -> dict:
+    resultado = {"conteudo": None, "referencias": [], "erro": None}
+
+    ai_overview = dados.get("ai_overview")
+    if not ai_overview:
+        resultado["erro"] = f"Google não retornou AI Overview para '{nome_empresa}'."
+        return resultado
+
+    blocos = ai_overview.get("text_blocks")
+
+    page_token = ai_overview.get("page_token")
+    if not blocos and page_token:
+        blocos, erro = _resolver_ai_overview_assincrono(page_token)
+        if erro:
+            resultado["erro"] = erro
+            return resultado
+
+    if not blocos:
+        resultado["erro"] = f"AI Overview vazio para '{nome_empresa}'."
+        return resultado
+
+    resultado["conteudo"] = _texto_dos_blocos(blocos)
+    resultado["referencias"] = [
+        ref.get("link") for ref in ai_overview.get("references", []) if ref.get("link")
+    ]
+    return resultado
+
+
+def _extrair_top_sites(dados: dict, nome_empresa: str, limite: int = 10) -> dict:
     resultado = {
         "conteudo": None,
         "sites": [],
@@ -215,7 +302,7 @@ def _extrair_top_sites(dados: dict, nome_empresa: str, limite: int = 15) -> dict
             "snippet": snippet,
         })
         # Só usamos a description que a própria SERP já trouxe — nenhuma
-        # requisição extra é feita pros 15 sites.
+        # requisição extra é feita pros 10 sites.
         if snippet:
             blocos_texto.append(f"{titulo}: {snippet}" if titulo else snippet)
 
@@ -224,7 +311,7 @@ def _extrair_top_sites(dados: dict, nome_empresa: str, limite: int = 15) -> dict
 
     wikipedia = _identificar_wikipedia(resultado["sites"])
     if wikipedia:
-        # Única fonte do top 15 pra qual fazemos uma requisição de verdade:
+        # Única fonte do top 10 pra qual fazemos uma requisição de verdade:
         # a introdução do artigo da Wikipédia, no padrão do base_cidade.py.
         paragrafos, erro_wikipedia = _coletar_paragrafos_wikipedia(wikipedia["link"])
         wikipedia["paragrafos"] = paragrafos
@@ -236,10 +323,11 @@ def _extrair_top_sites(dados: dict, nome_empresa: str, limite: int = 15) -> dict
 
 def coletar_empresa(nome_empresa: str, usar_cache: bool = True) -> dict:
     """
-    Recebe o nome de uma empresa e coleta o top 15 de resultados orgânicos
-    do Google (só título/link/description, sem visitar nenhum dos sites),
-    de onde também tenta identificar qual parece ser o site oficial da
-    empresa e qual é a Wikipédia.
+    Recebe o nome de uma empresa e coleta, numa única busca no Google:
+      - o AI Overview sobre ela;
+      - o top 10 de resultados orgânicos da SERP (só título/link/description,
+        sem visitar nenhum dos sites), de onde também tenta identificar qual
+        parece ser o site oficial da empresa e qual é a Wikipédia.
 
     Por padrão (usar_cache=True), antes de gastar cota da SerpApi, confere
     se essa empresa já tem resultado salvo em cache_empresas.json — se
@@ -250,6 +338,7 @@ def coletar_empresa(nome_empresa: str, usar_cache: bool = True) -> dict:
         {
             "empresa": str,
             "fontes": {
+                "Google_AIOverview": {"conteudo": ..., "referencias": [...], "erro": ...},
                 "Google_TopSites": {
                     "conteudo": ...,
                     "sites": [{"titulo":..., "link":..., "snippet":...}, ...],
@@ -257,7 +346,7 @@ def coletar_empresa(nome_empresa: str, usar_cache: bool = True) -> dict:
                     "wikipedia": {"titulo":..., "link":..., "snippet":..., "paragrafos": [...], "erro": ...} | None,
                     "erro": ...,
                 },
-                # só aparece se achou a Wikipédia no top 15:
+                # só aparece se achou a Wikipédia no top 10:
                 "Wikipedia": {"conteudo": ..., "erro": ...},
             },
         }
@@ -272,18 +361,21 @@ def coletar_empresa(nome_empresa: str, usar_cache: bool = True) -> dict:
     dados, erro_busca = _buscar_serp(nome_empresa)
 
     if erro_busca:
+        resultado_ai_overview = {"conteudo": None, "referencias": [], "erro": erro_busca}
         resultado_top_sites = {
             "conteudo": None, "sites": [], "site_oficial": None, "wikipedia": None,
             "erro": erro_busca,
         }
     else:
+        resultado_ai_overview = _extrair_ai_overview(dados, nome_empresa)
         resultado_top_sites = _extrair_top_sites(dados, nome_empresa)
 
     fontes = {
+        "Google_AIOverview": resultado_ai_overview,
         "Google_TopSites": resultado_top_sites,
     }
 
-    # Promove os parágrafos da Wikípedia (coletados dentro de
+    # Promove os parágrafos da Wikipédia (coletados dentro de
     # Google_TopSites) pra uma fonte própria no nível raiz — é onde
     # montar_fontes_texto (interacao_ia.py) sabe procurar "conteudo"/
     # "paragrafos" de cada fonte. Sem isso, esse texto ficaria coletado
@@ -299,8 +391,7 @@ def coletar_empresa(nome_empresa: str, usar_cache: bool = True) -> dict:
 
     # Só cacheia busca que de fato rodou (erro_busca é falha de infra —
     # chave ausente, timeout etc. — não queremos "travar" esse erro em
-    # cache; erros por fonte, como "sem resultado orgânico", são normais
-    # e cacheáveis).
+    # cache; erros por fonte, como "sem AI Overview", são normais e cacheáveis).
     if usar_cache and not erro_busca:
         _salvar_no_cache(chave_cache, resultado)
 
