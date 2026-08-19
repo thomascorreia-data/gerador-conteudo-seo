@@ -4,10 +4,11 @@ itens com "tema", "tom", "media_palavras", "palavras_chave", "formato", etc.,
 no mesmo formato de formatos/descricao/descricao_entrada.json) e gera o
 conteúdo de cada item.
 
-Hoje só o formato "Descrição" tem gerador implementado (delega para
-formatos/descricao/interacao_ia.py, que já cuida de classificar o tema e
-coletar as fontes via interpretador_descricao). Itens de outros formatos
-(Post, Artigo, ...) não travam o lote — voltam com um "erro" no próprio item.
+Hoje só o formato "Descrição" tem gerador implementado (delega para o grafo
+em formatos/descricao/grafo_descricao.py, que classifica o tema, coleta as
+fontes, gera, humaniza e revisa — refazendo a geração se o revisor
+reprovar). Itens de outros formatos (Post, Artigo, ...) não travam o lote —
+voltam com um "erro" no próprio item.
 """
 
 import json
@@ -24,9 +25,8 @@ for _dir in (_DIR_FORMATOS, _DIR_DESCRICAO):
     if _dir not in sys.path:
         sys.path.insert(0, _dir)
 
-from descricao.interpretador_descricao import interpretador  # noqa: E402
+from descricao.grafo_descricao import gerar_descricao_via_grafo  # noqa: E402
 from formatos.descricao.interacao_ia_descricao import (  # noqa: E402
-    gerar_descricao,
     TOM_PADRAO,
     MEDIA_PALAVRAS_PADRAO,
     PALAVRAS_CHAVE_PADRAO,
@@ -39,9 +39,8 @@ def gerar_conteudo(itens: list) -> list:
     """
     Recebe a lista de itens normalizada (saída de normalizar_lote) e devolve
     a mesma lista, com "categoria_identificada" e "conteudo_gerado" (ou
-    "erro") preenchidos em cada item. A categoria vem do interpretador, que
-    é chamado aqui (em vez de usar gerar_descricao_por_tema) justamente para
-    conseguir expor essa classificação como metadado no resultado.
+    "erro") preenchidos em cada item. Categoria, coleta, geração, humanização
+    e revisão rodam todas dentro do grafo — aqui só extraímos o resultado.
     """
     resultados = []
 
@@ -57,17 +56,17 @@ def gerar_conteudo(itens: list) -> list:
             continue
 
         try:
-            classificacao = interpretador(item["tema"])
-            item_resultado["categoria_identificada"] = classificacao["categoria"]
-            item_resultado["conteudo_gerado"] = gerar_descricao(
-                categoria=classificacao["categoria"],
-                entidade=classificacao["entidade"],
-                fontes=classificacao["fontes"],
+            resultado = gerar_descricao_via_grafo(
+                tema=item["tema"],
                 tom=item.get("tom") or TOM_PADRAO,
                 media_palavras=item.get("media_palavras") or MEDIA_PALAVRAS_PADRAO,
                 palavras_chave=item.get("palavras_chave") or PALAVRAS_CHAVE_PADRAO,
-                classificacao_tipo=classificacao.get("classificacao_tipo"),
             )
+            item_resultado["categoria_identificada"] = resultado.get("categoria")
+            if resultado.get("erro"):
+                item_resultado["erro"] = resultado["erro"]
+            else:
+                item_resultado["conteudo_gerado"] = resultado["texto_humanizado"]
         except Exception as erro:
             item_resultado["erro"] = str(erro)
 

@@ -49,7 +49,7 @@ def montar_fontes_texto(fontes: dict) -> str:
     return "\n\n".join(blocos)
 
 
-def gerar_descricao(
+def gerar_texto_bruto(
     categoria: str,
     entidade: str,
     fontes: dict,
@@ -59,10 +59,12 @@ def gerar_descricao(
     classificacao_tipo: dict = None,
 ) -> str:
     """
-    Função genérica de geração: dado que o interpretador já identificou a
-    categoria do tema (cidade, ponto_turistico, etc.) e já coletou as
-    fontes correspondentes, monta o prompt certo (categoria x tom) a partir
-    de prompts_descricao.json e chama o modelo.
+    Monta o prompt certo (categoria x tom) a partir de prompts_descricao.json
+    e chama o modelo — só a geração bruta, SEM passar pelo humanizador.
+    Separada de gerar_descricao() pra poder ser chamada isoladamente pelo
+    grafo (formatos/descricao/grafo_descricao.py), que roda humanizar e
+    revisor como nós próprios e pode voltar a chamar só esta função de novo
+    se o revisor reprovar.
     """
     dados_categoria = PROMPTS_POR_CATEGORIA.get(categoria)
     if not dados_categoria:
@@ -118,15 +120,39 @@ def gerar_descricao(
         )
 
     resposta = modelo.invoke(prompt, **kwargs_modelo)
-    texto_gerado = resposta.content.strip()
+    return resposta.content.strip()
 
-    # Toda descrição passa pelo humanizador antes de sair daqui — é a
-    # única função de geração que existe no módulo, então nenhuma chamada
-    # (API, CLI, gerando.py) escapa dessa revisão final. Repassa a mesma
-    # instrução de tipo de empresa: sem isso, o humanizador tinha sua
-    # própria regra de auto-classificação (menos informada, sem acesso à
-    # análise de palavras-chave feita em base_empresas.py) e podia desfazer
-    # a escolha de "passagem"/"viagem" que a geração acima já acertou.
+
+def gerar_descricao(
+    categoria: str,
+    entidade: str,
+    fontes: dict,
+    tom: str = "informativo",
+    media_palavras: int = None,
+    palavras_chave: list = None,
+    classificacao_tipo: dict = None,
+) -> str:
+    """
+    Ponto de entrada de geração completo (gera + humaniza), mantido pra quem
+    ainda chama direto (CLI, testes manuais). O grafo não usa esta função —
+    ele chama gerar_texto_bruto() e humanizar_texto() como nós separados,
+    com o revisor entre eles decidindo se repete a geração.
+    """
+    texto_gerado = gerar_texto_bruto(
+        categoria=categoria,
+        entidade=entidade,
+        fontes=fontes,
+        tom=tom,
+        media_palavras=media_palavras,
+        palavras_chave=palavras_chave,
+        classificacao_tipo=classificacao_tipo,
+    )
+
+    # Repassa a mesma instrução de tipo de empresa pro humanizador: sem
+    # isso, ele tinha sua própria regra de auto-classificação (menos
+    # informada) e podia desfazer a escolha de "passagem"/"viagem" que a
+    # geração acima já acertou.
+    instrucao_tipo_empresa = (classificacao_tipo or {}).get("instrucao", "")
     return humanizar_texto(texto_gerado, instrucao_tipo_empresa)
 
 

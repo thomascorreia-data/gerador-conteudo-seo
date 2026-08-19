@@ -1,0 +1,40 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	__start__([<p>__start__</p>]):::first
+	classificar_tema(classificar_tema)
+	coletar_empresa(coletar_empresa)
+	coletar_ponto_turistico(coletar_ponto_turistico)
+	coletar_cidade(coletar_cidade)
+	coletar_terminal_rodoviaria(coletar_terminal_rodoviaria)
+	categoria_nao_implementada(categoria_nao_implementada)
+	gerar(gerar)
+	humanizar(humanizar)
+	revisor(revisor)
+	incrementar_tentativa(incrementar_tentativa)
+	marcar_erro(marcar_erro)
+	__end__([<p>__end__</p>]):::last
+	__start__ --> classificar_tema;
+	classificar_tema -.-> categoria_nao_implementada;
+	classificar_tema -.-> coletar_cidade;
+	classificar_tema -.-> coletar_empresa;
+	classificar_tema -.-> coletar_ponto_turistico;
+	classificar_tema -.-> coletar_terminal_rodoviaria;
+	coletar_cidade --> gerar;
+	coletar_empresa --> gerar;
+	coletar_ponto_turistico --> gerar;
+	coletar_terminal_rodoviaria --> gerar;
+	gerar --> humanizar;
+	humanizar --> revisor;
+	incrementar_tentativa --> gerar;
+	revisor -. &nbsp;aprovado&nbsp; .-> __end__;
+	revisor -. &nbsp;tentar_de_novo&nbsp; .-> incrementar_tentativa;
+	revisor -. &nbsp;esgotado&nbsp; .-> marcar_erro;
+	categoria_nao_implementada --> __end__;
+	marcar_erro --> __end__;
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc
