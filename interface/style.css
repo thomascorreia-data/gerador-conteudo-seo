@@ -96,6 +96,7 @@
   .theme-card{background:var(--bg); border:1px solid var(--line); border-radius:var(--radius); padding:14px; margin-bottom:12px;}
   .theme-card-head{display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;}
   .theme-card-head .num{font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--sage); text-transform:uppercase;}
+  .theme-card-head .num.erro{color:var(--danger);}
 
   .simple-list{list-style:none; margin:0; padding:0;}
   .simple-list li{

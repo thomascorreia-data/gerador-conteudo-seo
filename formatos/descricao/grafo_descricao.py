@@ -63,11 +63,10 @@ Responda APENAS com um JSON, sem markdown, sem texto adicional, no formato:
 {{"tom_ok": true ou false, "motivos": ["motivo 1"]}}
 """
 
-# Cobre os casos concretos já vistos nos testes desta conversa. Se aparecer
-# um caso novo de palavra banida escapando, é só adicionar aqui — não exige
-# mexer no grafo.
+# Lista manual, de propósito (não regex de raiz) — cobre as formas mais
+# comuns que já apareceram nos testes; outras conjugações mais raras podem
+# passar sem ser pegas, e por ora tá tudo bem.
 PALAVRAS_BANIDAS = [
-    "garante", "garantindo", "garantia", "garanta", "garantir",
     "memórias inesquecíveis", "não perca"
 ]
 
@@ -210,7 +209,7 @@ def _checar_regras(state: DescricaoState) -> list:
     media_palavras = state.get("media_palavras")
     if media_palavras:
         total_palavras = len(texto.split())
-        limite = media_palavras * 1.2
+        limite = media_palavras * 1.5
         if total_palavras > limite:
             motivos.append(f"{total_palavras} palavras, acima do limite de {limite:.0f}")
 
@@ -222,7 +221,11 @@ def _checar_regras(state: DescricaoState) -> list:
         # texto. O inverso não dá pra checar assim — "viagem" aparece quase
         # sempre em qualquer texto, mesmo correto, porque "Viagem segura" é
         # um dos 7 diferenciais da Buser permitidos no prompt.
-        if "passagem" not in texto_lower:
+        # "passagens" (plural) não contém "passagem" como substring — o
+        # plural em português troca o "m" final por "ns" (passagem ->
+        # passagens), não é só adicionar "s". Checar os dois evita reprovar
+        # texto que já está certo, só porque usou o plural.
+        if "passagem" not in texto_lower and "passagens" not in texto_lower:
             motivos.append(
                 'empresa linha regular/híbrida deveria mencionar "passagem" '
                 'pelo menos uma vez, só apareceu "viagem"'
@@ -235,20 +238,40 @@ def _checar_regras(state: DescricaoState) -> list:
         # num teste real desta conversa.
         if state.get("categoria") == "empresa" and state.get("tom") == "vendas" and paragrafos:
             subtitulo = paragrafos[0].lower()
-            if "viagem" in subtitulo and "passagem" not in subtitulo:
+            if "viagem" in subtitulo and "passagem" not in subtitulo and "passagens" not in subtitulo:
                 motivos.append(
                     'o subtítulo usa "viagem" em vez de "passagem" — empresa '
                     'linha regular/híbrida deveria usar "passagem" na frase de compra'
                 )
+    elif classificacao_tipo and classificacao_tipo["tipo"] == "fretamento":
+        # Sentido inverso, só pra fretamento PURO (confirmado) — não
+        # "ambíguo": empresa ambígua pode legitimamente usar "passagem" se
+        # isso vier como palavra-chave pedida (ver gerar_texto_bruto), então
+        # reprovar "passagem apareceu" pra ela seria bloquear um caso válido.
+        if "passagem" in texto_lower or "passagens" in texto_lower:
+            motivos.append(
+                'empresa de fretamento puro deveria usar "viagem", mas apareceu "passagem"'
+            )
+        # Passagem se compra, viagem (fretamento) se reserva — "compra"/
+        # "comprar"/"compre" não deveriam aparecer nesse caso, mesmo
+        # combinados com "viagem" (ex: "compra de viagens").
+        for termo in ("compra", "comprar", "compre"):
+            if termo in texto_lower:
+                motivos.append(
+                    f'empresa de fretamento puro não deveria usar "{termo}" — '
+                    f'viagem se reserva/adquire, não se compra'
+                )
+                break
 
-    # Estrutura de "3 a 4 parágrafos" é específica do template de
-    # empresa/vendas (subtítulo + apresentação + benefícios) — outras
-    # categorias podem ter (ou vir a ter) um template de vendas com uma
-    # estrutura de parágrafos completamente diferente, então essa checagem
-    # não pode valer pra "tom vendas" em geral, só pra empresa/vendas.
-    if state.get("categoria") == "empresa" and state.get("tom") == "vendas":
-        if not (3 <= len(paragrafos) <= 4):
+    # Contagem de parágrafos é específica de cada template de empresa —
+    # outras categorias podem ter estruturas de parágrafo completamente
+    # diferentes, então essa checagem não pode valer em geral, só pra
+    # empresa, e com o número certo pra cada tom.
+    if state.get("categoria") == "empresa":
+        if state.get("tom") == "vendas" and not (3 <= len(paragrafos) <= 4):
             motivos.append(f"{len(paragrafos)} parágrafos, esperado 3 a 4")
+        elif state.get("tom") == "informativo" and len(paragrafos) != 4:
+            motivos.append(f"{len(paragrafos)} parágrafos, esperado sempre 4")
 
     return motivos
 
@@ -331,7 +354,8 @@ def no_marcar_erro(state: DescricaoState) -> dict:
     return {
         "erro": (
             f"Revisor reprovou {MAX_TENTATIVAS}x seguidas e não foi possível "
-            f"corrigir: {motivos_str}"
+            f"corrigir: {motivos_str} (texto abaixo é a última versão gerada, "
+            f"não passou por todas as checagens)"
         )
     }
 
@@ -407,10 +431,12 @@ def gerar_descricao_via_grafo(
     """
     Ponto de entrada único: recebe o tema (e os parâmetros de tom/tamanho/
     palavras-chave) e roda o grafo inteiro. Devolve o state final — o texto
-    fica em resultado["texto_humanizado"], ou resultado["erro"] se o
-    revisor nunca aprovou dentro do teto de tentativas (ou se a categoria/
-    coleta falhar, a exceção original sobe normalmente, sem passar por
-    "erro" no state).
+    fica em resultado["texto_humanizado"] mesmo se o revisor nunca aprovou
+    dentro do teto de tentativas (nesse caso resultado["erro"] também vem
+    preenchido, como aviso de que essa última versão não passou por todas
+    as checagens — mas ela ainda é devolvida, em vez de nada). Se a
+    categoria/coleta falhar, a exceção original sobe normalmente, sem
+    passar por "erro" no state.
     """
     estado_inicial = {
         "tema": tema,

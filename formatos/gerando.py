@@ -63,10 +63,13 @@ def gerar_conteudo(itens: list) -> list:
                 palavras_chave=item.get("palavras_chave") or PALAVRAS_CHAVE_PADRAO,
             )
             item_resultado["categoria_identificada"] = resultado.get("categoria")
+            # Mesmo se o revisor nunca aprovou dentro do teto de tentativas,
+            # a última versão gerada continua em texto_humanizado — devolve
+            # ela junto do erro (como aviso), em vez de não devolver nada.
+            if resultado.get("texto_humanizado"):
+                item_resultado["conteudo_gerado"] = resultado["texto_humanizado"]
             if resultado.get("erro"):
                 item_resultado["erro"] = resultado["erro"]
-            else:
-                item_resultado["conteudo_gerado"] = resultado["texto_humanizado"]
         except Exception as erro:
             item_resultado["erro"] = str(erro)
 

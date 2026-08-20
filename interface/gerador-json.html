@@ -401,16 +401,27 @@ function exibirConteudoGerado(resultados){
     const metadados = [item.tema, item.categoria_identificada, item.tom]
       .filter(Boolean)
       .join(' · ');
-    head.innerHTML = `<span class="num">${escapeHtml(metadados || item.id || '')}</span>`;
+    const classeNum = item.erro ? 'num erro' : 'num';
+    head.innerHTML = `<span class="${classeNum}">${escapeHtml(metadados || item.id || '')}</span>`;
     card.appendChild(head);
 
     const corpo = document.createElement('div');
     if(item.erro){
-      corpo.innerHTML = `<div class="error-box">${escapeHtml(item.erro)}</div>`;
-    } else {
-      corpo.style.whiteSpace = 'pre-wrap';
-      corpo.style.lineHeight = '1.55';
-      corpo.textContent = item.conteudo_gerado || '';
+      const erroBox = document.createElement('div');
+      erroBox.className = 'error-box';
+      erroBox.textContent = item.erro;
+      corpo.appendChild(erroBox);
+    }
+    // Mesmo com erro, o grafo devolve a última versão gerada (não passou
+    // por todas as checagens, mas ainda é texto aproveitável) — mostra
+    // sempre que existir, com o erro acima como aviso.
+    if(item.conteudo_gerado){
+      const texto = document.createElement('div');
+      texto.style.whiteSpace = 'pre-wrap';
+      texto.style.lineHeight = '1.55';
+      if(item.erro) texto.style.marginTop = '12px';
+      texto.textContent = item.conteudo_gerado;
+      corpo.appendChild(texto);
     }
     card.appendChild(corpo);
 
@@ -482,8 +493,10 @@ function mostrandoConteudoGerado(){
 function montarTextoDescricoes(resultados){
   return resultados.map(item => {
     const cabecalho = `# ${item.tema || item.id || ''} (${item.categoria_identificada || '—'} · ${item.tom || '—'})`;
-    const corpo = item.erro ? `[erro] ${item.erro}` : (item.conteudo_gerado || '');
-    return `${cabecalho}\n${corpo}`;
+    const partes = [];
+    if(item.erro) partes.push(`[erro] ${item.erro}`);
+    if(item.conteudo_gerado) partes.push(item.conteudo_gerado);
+    return `${cabecalho}\n${partes.join('\n\n')}`;
   }).join('\n\n');
 }
 

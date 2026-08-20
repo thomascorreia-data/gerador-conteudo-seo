@@ -146,7 +146,9 @@ def _instrucao_tipo_empresa(tipo: str, entidade: str) -> str:
             f'regular (classificação automática, baseada nas fontes coletadas). Use "viagem" '
             f'em vez de "passagem" em todas as menções, e não restrinja o texto exclusivamente '
             f'a "transporte rodoviário" — pode incluir roteiros, destinos e serviços de viagem '
-            f'coerentes com o fretamento.'
+            f'coerentes com o fretamento. NÃO use "compra"/"comprar"/"compre" em nenhuma menção: '
+            f'passagem se compra, viagem (fretamento) se reserva — use "reservar", "adquirir" ou '
+            f'"encontrar" no lugar de "comprar".'
         ),
         "ambiguo": (
             f'Não foi possível identificar com clareza, nas fontes coletadas, se {entidade} '

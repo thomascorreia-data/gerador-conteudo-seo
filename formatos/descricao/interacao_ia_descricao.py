@@ -119,9 +119,24 @@ def gerar_texto_bruto(
         kwargs_modelo["max_tokens"] = int(media_palavras * 1.8) + 40
 
     if palavras_chave:
+        palavras_chave_efetivas = palavras_chave
+        if classificacao_tipo and classificacao_tipo.get("tipo") == "fretamento":
+            # Só fretamento PURO (confirmado, não "ambíguo") não pode ter
+            # "passagem" de jeito nenhum — pra linha regular, híbrida ou
+            # ambígua, "passagem" como palavra-chave é permitido normalmente.
+            # Sem esse filtro, pedir "passagem" como palavra-chave pra uma
+            # empresa de fretamento puro conflita direto com a instrução de
+            # tipo de empresa ("use viagem, não passagem") no mesmo prompt —
+            # e o modelo tende a priorizar a palavra-chave pedida. Troca
+            # "passagem"/"passagens" por "viagem" na lista antes de montar a
+            # instrução, só nesse caso específico.
+            palavras_chave_efetivas = [
+                "viagem" if p.strip().lower() in ("passagem", "passagens") else p
+                for p in palavras_chave
+            ]
         prompt += (
             "\n\nInclua de forma natural, sem forçar, as seguintes palavras-chave: "
-            + ", ".join(palavras_chave)
+            + ", ".join(palavras_chave_efetivas)
             + "."
         )
 
@@ -205,13 +220,7 @@ def humanizar_texto(texto_gerado: str, instrucao_tipo_empresa: str = "") -> str:
 
 TOM_PADRAO = "informativo"
 MEDIA_PALAVRAS_PADRAO = 100
-# "buser" não entra aqui: isso é usado como fallback sempre que o usuário
-# deixa o campo de palavras-chave em branco, e forçar a marca como
-# "palavra-chave" faz o modelo citá-la mesmo no tom informativo (que pede
-# EXPLICITAMENTE pra evitar linguagem promocional). Citar a Buser é papel
-# das instruções de tom (vendas/promocional já pedem isso no template),
-# não do mecanismo de palavras-chave de SEO.
-PALAVRAS_CHAVE_PADRAO = ["passagem", "onibus"]
+PALAVRAS_CHAVE_PADRAO = ["viagem", "onibus"]
 
 
 def gerar_descricao_por_tema(
