@@ -57,6 +57,7 @@ def gerar_texto_bruto(
     media_palavras: int = None,
     palavras_chave: list = None,
     classificacao_tipo: dict = None,
+    instrucao_extra: str = None,
 ) -> str:
     """
     Monta o prompt certo (categoria x tom) a partir de prompts_descricao.json
@@ -65,6 +66,11 @@ def gerar_texto_bruto(
     grafo (formatos/descricao/grafo_descricao.py), que roda humanizar e
     revisor como nós próprios e pode voltar a chamar só esta função de novo
     se o revisor reprovar.
+
+    instrucao_extra: usado pelo grafo numa nova tentativa depois de uma
+    reprovação — carrega o motivo específico da reprovação anterior, pra
+    não repetir o mesmo erro às cegas numa reamostragem sem nenhuma pista
+    do que falhou da vez passada.
     """
     dados_categoria = PROMPTS_POR_CATEGORIA.get(categoria)
     if not dados_categoria:
@@ -118,6 +124,12 @@ def gerar_texto_bruto(
             + ", ".join(palavras_chave)
             + "."
         )
+
+    if instrucao_extra:
+        # Fica por último de propósito: é a última coisa que o modelo lê
+        # antes de escrever, então tem mais peso que uma correção enterrada
+        # no meio do prompt.
+        prompt += f"\n\n{instrucao_extra}"
 
     resposta = modelo.invoke(prompt, **kwargs_modelo)
     return resposta.content.strip()

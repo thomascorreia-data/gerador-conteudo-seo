@@ -14,6 +14,7 @@ graph TD;
 	gerar(gerar)
 	humanizar(humanizar)
 	revisor(revisor)
+	revisor_ia(revisor_ia)
 	incrementar_tentativa(incrementar_tentativa)
 	marcar_erro(marcar_erro)
 	__end__([<p>__end__</p>]):::last
@@ -30,9 +31,12 @@ graph TD;
 	gerar --> humanizar;
 	humanizar --> revisor;
 	incrementar_tentativa --> gerar;
-	revisor -. &nbsp;aprovado&nbsp; .-> __end__;
 	revisor -. &nbsp;tentar_de_novo&nbsp; .-> incrementar_tentativa;
 	revisor -. &nbsp;esgotado&nbsp; .-> marcar_erro;
+	revisor -. &nbsp;aprovado&nbsp; .-> revisor_ia;
+	revisor_ia -. &nbsp;aprovado&nbsp; .-> __end__;
+	revisor_ia -. &nbsp;tentar_de_novo&nbsp; .-> incrementar_tentativa;
+	revisor_ia -. &nbsp;esgotado&nbsp; .-> marcar_erro;
 	categoria_nao_implementada --> __end__;
 	marcar_erro --> __end__;
 	classDef default fill:#f2f0ff,line-height:1.2

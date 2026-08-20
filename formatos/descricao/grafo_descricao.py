@@ -2,18 +2,28 @@
 Grafo LangGraph que substitui o par interpretador_descricao + interacao_ia_
 descricao como ponto de entrada de geração: classifica o tema, roteia pra
 coleta certa por categoria, gera, humaniza e revisa o resultado — voltando
-pra geração se o revisor reprovar, até um teto de tentativas.
+pra geração se algum revisor reprovar, até um teto de tentativas.
 
 Só a coleta (e, pra empresa, a classificação de tipo) é ramificada por
-categoria. Gerar, humanizar e revisar são nós únicos, compartilhados por
-qualquer categoria — o humanizador já funciona assim hoje (roda pra
-qualquer descrição, não só empresa), então não faz sentido duplicar esse
-trecho por categoria só porque o revisor é novo.
+categoria. Gerar, humanizar e os dois revisores são nós únicos,
+compartilhados por qualquer categoria — o humanizador já funciona assim
+hoje (roda pra qualquer descrição, não só empresa), então não faz sentido
+duplicar esse trecho por categoria só porque os revisores são novos.
+
+Existem dois revisores em sequência, barato primeiro:
+  1. `revisor` — determinístico (sem LLM): palavra banida, contagem de
+     palavras, passagem/viagem (só empresa), estrutura de parágrafos (só
+     tom vendas). Roda sempre, é de graça.
+  2. `revisor_ia` — só roda se o (1) já tiver aprovado. Usa outro invoke
+     pra julgar TOM e REGRAS PROIBIDAS "em espírito" contra o próprio
+     template de geração (categoria x tom), pegando paráfrases que o
+     determinístico não pode detectar por string exata.
 
 Desenho completo (com o motivo de cada decisão) em:
 https://claude.ai/code/artifact/29df91fe-b5f2-4d65-81b8-33f7bb445103
 """
 
+import json
 from typing import TypedDict
 
 from langgraph.graph import StateGraph, END
@@ -23,9 +33,33 @@ from base_empresas import coletar_empresa
 from base_pontos_turisticos import coletar_ponto_turistico
 from base_cidade import coletando_conteudo
 from base_rodoviarias import coletar_rodoviaria
-from interacao_ia_descricao import gerar_texto_bruto, humanizar_texto
+from interacao_ia_descricao import gerar_texto_bruto, humanizar_texto, modelo, PROMPTS_POR_CATEGORIA
 
 MAX_TENTATIVAS = 3
+
+# Revisor de IA: pega o TEMPLATE de verdade (categoria x tom) já usado na
+# geração e pede pra outro invoke julgar o texto final contra ele. Isso é o
+# que deixa esse revisor geral — não precisa manter uma segunda cópia das
+# regras por categoria, ele lê as mesmas regras que já estão em
+# prompts_descricao.json, sejam quais forem.
+PROMPT_REVISOR_IA = """Você é um revisor de qualidade de textos gerados por IA para um site de conteúdo sobre transporte rodoviário (Buser).
+
+Abaixo estão as INSTRUÇÕES de geração originais (o prompt usado pra criar o texto) e o TEXTO FINAL já pronto, depois de gerado e humanizado.
+
+Cheque duas coisas. Conte como violação mesmo quando ela usa sinônimos ou uma frase reformulada — não precisa ser a string exata de alguma proibição citada nas instruções:
+
+1. TOM: o texto realmente soa como o tom pedido ("{tom}")? Ex: um texto do tom "vendas" sem nenhum benefício de compra citado, ou um texto "informativo"/"promocional" com linguagem de urgência e apelo de venda direto, é uma falha de tom.
+2. REGRAS PROIBIDAS: o texto quebra, em espírito, alguma proibição citada nas instruções (palavra banida parafraseada, admissão de falta de dado, frase de urgência, elogio genérico sem sustentação, atribuição de qualidade/preço fora do permitido, etc.)?
+
+INSTRUÇÕES DE GERAÇÃO (a parte final, de "Informações coletadas"/fontes em diante, não é uma regra — ignore):
+{instrucoes}
+
+TEXTO FINAL:
+{texto}
+
+Responda APENAS com um JSON, sem markdown, sem texto adicional, no formato:
+{{"tom_ok": true ou false, "regras_ok": true ou false, "motivos": ["motivo 1", "motivo 2"]}}
+"""
 
 # Cobre os casos concretos já vistos nos testes desta conversa. Se aparecer
 # um caso novo de palavra banida escapando, é só adicionar aqui — não exige
@@ -58,9 +92,15 @@ class DescricaoState(TypedDict, total=False):
     texto_gerado: str
     texto_humanizado: str
 
-    # revisor
+    # revisor determinístico
     revisao: dict  # {"aprovado": bool, "motivos": [str, ...]}
+    # revisor de IA (só roda se o determinístico já tiver aprovado)
+    revisao_ia: dict  # {"tom_ok": bool, "regras_ok": bool, "motivos": [str, ...]}
     tentativas: int
+    # motivos da última reprovação (de qualquer um dos dois revisores) —
+    # injetado como instrução extra na próxima chamada de "gerar", pra não
+    # reamostrar às cegas repetindo o mesmo erro
+    motivos_reprovacao: list
 
     # saída
     erro: str
@@ -123,6 +163,16 @@ def no_categoria_nao_implementada(state: DescricaoState) -> dict:
 
 
 def no_gerar(state: DescricaoState) -> dict:
+    instrucao_extra = None
+    motivos_reprovacao = state.get("motivos_reprovacao")
+    if motivos_reprovacao:
+        motivos_str = "; ".join(motivos_reprovacao)
+        instrucao_extra = (
+            f"ATENÇÃO: a tentativa anterior de gerar este texto foi reprovada "
+            f"pelos seguintes motivos: {motivos_str}. Corrija isso especificamente "
+            f"nesta nova tentativa, sem repetir o mesmo erro."
+        )
+
     texto = gerar_texto_bruto(
         categoria=state["categoria"],
         entidade=state["entidade"],
@@ -131,6 +181,7 @@ def no_gerar(state: DescricaoState) -> dict:
         media_palavras=state.get("media_palavras"),
         palavras_chave=state.get("palavras_chave"),
         classificacao_tipo=state.get("classificacao_tipo"),
+        instrucao_extra=instrucao_extra,
     )
     return {"texto_gerado": texto}
 
@@ -161,22 +212,39 @@ def _checar_regras(state: DescricaoState) -> list:
         if total_palavras > limite:
             motivos.append(f"{total_palavras} palavras, acima do limite de {limite:.0f}")
 
+    paragrafos = [p for p in texto.split("\n\n") if p.strip()]
+
     classificacao_tipo = state.get("classificacao_tipo")
     if classificacao_tipo and classificacao_tipo["palavra"] == "passagem":
-        # Só checa esse sentido (linha regular/híbrida -> "passagem" tem que
-        # aparecer). O inverso não dá pra checar assim: "viagem" aparece
-        # quase sempre em qualquer texto, mesmo correto, porque "Viagem
-        # segura" é um dos 7 diferenciais da Buser permitidos no prompt —
-        # checar "viagem presente e passagem ausente" reprovava até texto
-        # certo de empresa fretamento puro.
+        # Checagem 1 (ampla): "passagem" tem que aparecer em algum lugar do
+        # texto. O inverso não dá pra checar assim — "viagem" aparece quase
+        # sempre em qualquer texto, mesmo correto, porque "Viagem segura" é
+        # um dos 7 diferenciais da Buser permitidos no prompt.
         if "passagem" not in texto_lower:
             motivos.append(
                 'empresa linha regular/híbrida deveria mencionar "passagem" '
                 'pelo menos uma vez, só apareceu "viagem"'
             )
+        # Checagem 2 (pontual): no tom vendas, o SUBTÍTULO (parágrafo 1) é
+        # a frase de compra ("Reserve sua passagem/viagem...") e é onde a
+        # regra mais importa — a checagem 1 sozinha deixa passar um texto
+        # que erra exatamente aí (usa "viagem" no subtítulo) desde que
+        # "passagem" apareça em qualquer outro parágrafo, como aconteceu
+        # num teste real desta conversa.
+        if state.get("categoria") == "empresa" and state.get("tom") == "vendas" and paragrafos:
+            subtitulo = paragrafos[0].lower()
+            if "viagem" in subtitulo and "passagem" not in subtitulo:
+                motivos.append(
+                    'o subtítulo usa "viagem" em vez de "passagem" — empresa '
+                    'linha regular/híbrida deveria usar "passagem" na frase de compra'
+                )
 
-    if state.get("tom") == "vendas":
-        paragrafos = [p for p in texto.split("\n\n") if p.strip()]
+    # Estrutura de "3 a 4 parágrafos" é específica do template de
+    # empresa/vendas (subtítulo + apresentação + benefícios) — outras
+    # categorias podem ter (ou vir a ter) um template de vendas com uma
+    # estrutura de parágrafos completamente diferente, então essa checagem
+    # não pode valer pra "tom vendas" em geral, só pra empresa/vendas.
+    if state.get("categoria") == "empresa" and state.get("tom") == "vendas":
         if not (3 <= len(paragrafos) <= 4):
             motivos.append(f"{len(paragrafos)} parágrafos, esperado 3 a 4")
 
@@ -185,27 +253,84 @@ def _checar_regras(state: DescricaoState) -> list:
 
 def no_revisor(state: DescricaoState) -> dict:
     motivos = _checar_regras(state)
-    return {"revisao": {"aprovado": not motivos, "motivos": motivos}}
+    # Limpa uma avaliação de IA de uma tentativa anterior — sem isso, se
+    # esta rodada for reprovada aqui (antes de chegar no revisor_ia de
+    # novo), marcar_erro poderia misturar motivos de uma tentativa velha.
+    return {"revisao": {"aprovado": not motivos, "motivos": motivos}, "revisao_ia": None}
 
 
-def _apos_revisor(state: DescricaoState) -> str:
-    if state["revisao"]["aprovado"]:
-        return "aprovado"
+def no_revisor_ia(state: DescricaoState) -> dict:
+    """Só roda depois do revisor determinístico aprovar — barato descarta
+    primeiro, a IA só julga o que já passou nas regras de string/contagem.
+    Usa o template real (categoria x tom) como as "regras", então cobre
+    qualquer categoria sem precisar duplicar lista nenhuma aqui."""
+    categoria = state["categoria"]
+    tom = (state.get("tom") or "informativo").strip().lower()
+    instrucoes = PROMPTS_POR_CATEGORIA.get(categoria, {}).get(tom, {}).get("template", "")
+
+    prompt = PROMPT_REVISOR_IA.format(tom=tom, instrucoes=instrucoes, texto=state["texto_humanizado"])
+    resposta = modelo.invoke(prompt)
+    texto_resposta = resposta.content.strip().replace("```json", "").replace("```", "").strip()
+
+    try:
+        avaliacao = json.loads(texto_resposta)
+    except json.JSONDecodeError:
+        # Se a IA não devolver JSON válido, não trava o pipeline num retry
+        # infinito por causa de um erro de formatação dela mesma — trata
+        # como aprovado (o determinístico já rodou e aprovou antes disso).
+        avaliacao = {
+            "tom_ok": True,
+            "regras_ok": True,
+            "motivos": [f"revisor_ia devolveu resposta não-JSON: {texto_resposta[:200]}"],
+        }
+
+    return {"revisao_ia": avaliacao}
+
+
+def _decidir_retry_ou_esgotado(state: DescricaoState) -> str:
     if state.get("tentativas", 0) + 1 >= MAX_TENTATIVAS:
         return "esgotado"
     return "tentar_de_novo"
 
 
+def _apos_revisor(state: DescricaoState) -> str:
+    if state["revisao"]["aprovado"]:
+        return "aprovado"
+    return _decidir_retry_ou_esgotado(state)
+
+
+def _apos_revisor_ia(state: DescricaoState) -> str:
+    avaliacao = state["revisao_ia"]
+    if avaliacao["tom_ok"] and avaliacao["regras_ok"]:
+        return "aprovado"
+    return _decidir_retry_ou_esgotado(state)
+
+
+def _motivos_da_reprovacao(state: DescricaoState) -> list:
+    """Junta os motivos de quem reprovou desta vez — revisor determinístico
+    ou revisor_ia, o outro fica vazio/aprovado nesse ponto, então dá pra
+    somar os dois sem checar qual foi."""
+    motivos = list((state.get("revisao") or {}).get("motivos") or [])
+    revisao_ia = state.get("revisao_ia")
+    if revisao_ia and not (revisao_ia.get("tom_ok") and revisao_ia.get("regras_ok")):
+        motivos.extend(revisao_ia.get("motivos") or [])
+    return motivos
+
+
 def no_incrementar_tentativa(state: DescricaoState) -> dict:
-    return {"tentativas": state.get("tentativas", 0) + 1}
+    return {
+        "tentativas": state.get("tentativas", 0) + 1,
+        "motivos_reprovacao": _motivos_da_reprovacao(state),
+    }
 
 
 def no_marcar_erro(state: DescricaoState) -> dict:
-    motivos = "; ".join(state["revisao"]["motivos"])
+    motivos = _motivos_da_reprovacao(state)
+    motivos_str = "; ".join(motivos) if motivos else "motivo não registrado"
     return {
         "erro": (
             f"Revisor reprovou {MAX_TENTATIVAS}x seguidas e não foi possível "
-            f"corrigir: {motivos}"
+            f"corrigir: {motivos_str}"
         )
     }
 
@@ -226,6 +351,7 @@ def construir_grafo():
     grafo.add_node("gerar", no_gerar)
     grafo.add_node("humanizar", no_humanizar)
     grafo.add_node("revisor", no_revisor)
+    grafo.add_node("revisor_ia", no_revisor_ia)
     grafo.add_node("incrementar_tentativa", no_incrementar_tentativa)
     grafo.add_node("marcar_erro", no_marcar_erro)
 
@@ -253,6 +379,11 @@ def construir_grafo():
     grafo.add_edge("humanizar", "revisor")
 
     grafo.add_conditional_edges("revisor", _apos_revisor, {
+        "aprovado": "revisor_ia",
+        "tentar_de_novo": "incrementar_tentativa",
+        "esgotado": "marcar_erro",
+    })
+    grafo.add_conditional_edges("revisor_ia", _apos_revisor_ia, {
         "aprovado": END,
         "tentar_de_novo": "incrementar_tentativa",
         "esgotado": "marcar_erro",
@@ -294,6 +425,7 @@ if __name__ == "__main__":
     resultado = gerar_descricao_via_grafo("Expresso JK", tom="vendas", media_palavras=100)
     print(f"categoria: {resultado.get('categoria')}")
     print(f"tentativas: {resultado.get('tentativas')}")
-    print(f"revisao: {resultado.get('revisao')}")
+    print(f"revisao (determinístico): {resultado.get('revisao')}")
+    print(f"revisao_ia: {resultado.get('revisao_ia')}")
     print()
     print(resultado.get("erro") or resultado.get("texto_humanizado"))
