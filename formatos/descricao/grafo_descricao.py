@@ -15,9 +15,10 @@ Existem dois revisores em sequência, barato primeiro:
      palavras, passagem/viagem (só empresa), estrutura de parágrafos (só
      tom vendas). Roda sempre, é de graça.
   2. `revisor_ia` — só roda se o (1) já tiver aprovado. Usa outro invoke
-     pra julgar TOM e REGRAS PROIBIDAS "em espírito" contra o próprio
-     template de geração (categoria x tom), pegando paráfrases que o
-     determinístico não pode detectar por string exata.
+     pra julgar só o TOM do texto (soa como vendas/informativo/promocional
+     mesmo?) — não recebe as instruções/template de geração, então não
+     tem como reprovar por regra nenhuma que já não seja checável no
+     próprio texto lido isoladamente.
 
 Desenho completo (com o motivo de cada decisão) em:
 https://claude.ai/code/artifact/29df91fe-b5f2-4d65-81b8-33f7bb445103
@@ -33,32 +34,33 @@ from base_empresas import coletar_empresa
 from base_pontos_turisticos import coletar_ponto_turistico
 from base_cidade import coletando_conteudo
 from base_rodoviarias import coletar_rodoviaria
-from interacao_ia_descricao import gerar_texto_bruto, humanizar_texto, modelo, PROMPTS_POR_CATEGORIA
+from interacao_ia_descricao import gerar_texto_bruto, humanizar_texto, modelo
 
 MAX_TENTATIVAS = 3
 
-# Revisor de IA: pega o TEMPLATE de verdade (categoria x tom) já usado na
-# geração e pede pra outro invoke julgar o texto final contra ele. Isso é o
-# que deixa esse revisor geral — não precisa manter uma segunda cópia das
-# regras por categoria, ele lê as mesmas regras que já estão em
-# prompts_descricao.json, sejam quais forem.
-PROMPT_REVISOR_IA = """Você é um revisor de qualidade de textos gerados por IA para um site de conteúdo sobre transporte rodoviário (Buser).
+# Revisor de IA: só julga o TOM do texto final, lido isoladamente — não
+# recebe o template/instruções de geração. As regras de conteúdo (palavra
+# banida, passagem/viagem, estrutura de parágrafos) já são checadas pelo
+# revisor determinístico; dar o template inteiro pro revisor_ia também fazia
+# ele reprovar por interpretação de regras estruturais que não é o papel
+# dele julgar (e às vezes de forma equivocada, tipo achar que dois
+# parágrafos já separados por linha em branco estavam "misturados").
+PROMPT_REVISOR_IA = """Você é um revisor de tom de textos gerados por IA para um site de conteúdo sobre transporte rodoviário (Buser).
 
-Abaixo estão as INSTRUÇÕES de geração originais (o prompt usado pra criar o texto) e o TEXTO FINAL já pronto, depois de gerado e humanizado.
+Leia o TEXTO FINAL abaixo e diga se o tom dele realmente soa como o tom pedido: "{tom}".
 
-Cheque duas coisas. Conte como violação mesmo quando ela usa sinônimos ou uma frase reformulada — não precisa ser a string exata de alguma proibição citada nas instruções:
+Guia rápido do que cada tom deve soar:
+- "vendas": foco em conversão — incentiva a compra/reserva, cita benefícios diretos
+- "informativo": neutro e objetivo, sem apelo comercial
+- "promocional": envolvente, destaca diferenciais, mas sem apelo de urgência direto
 
-1. TOM: o texto realmente soa como o tom pedido ("{tom}")? Ex: um texto do tom "vendas" sem nenhum benefício de compra citado, ou um texto "informativo"/"promocional" com linguagem de urgência e apelo de venda direto, é uma falha de tom.
-2. REGRAS PROIBIDAS: o texto quebra, em espírito, alguma proibição citada nas instruções (palavra banida parafraseada, admissão de falta de dado, frase de urgência, elogio genérico sem sustentação, atribuição de qualidade/preço fora do permitido, etc.)?
-
-INSTRUÇÕES DE GERAÇÃO (a parte final, de "Informações coletadas"/fontes em diante, não é uma regra — ignore):
-{instrucoes}
+SEJA TOLERANTE: reprove só se o tom estiver claramente errado pra categoria pedida — não é "poderia ser um pouco mais persuasivo" ou achismo de estilo, tem que ser algo que qualquer pessoa lendo reconheceria na hora como o tom errado. Na dúvida, aprove. Não julgue nada além do tom (nem estrutura, nem palavras específicas, nem regras de conteúdo) — isso já é conferido em outra etapa.
 
 TEXTO FINAL:
 {texto}
 
 Responda APENAS com um JSON, sem markdown, sem texto adicional, no formato:
-{{"tom_ok": true ou false, "regras_ok": true ou false, "motivos": ["motivo 1", "motivo 2"]}}
+{{"tom_ok": true ou false, "motivos": ["motivo 1"]}}
 """
 
 # Cobre os casos concretos já vistos nos testes desta conversa. Se aparecer
@@ -66,8 +68,7 @@ Responda APENAS com um JSON, sem markdown, sem texto adicional, no formato:
 # mexer no grafo.
 PALAVRAS_BANIDAS = [
     "garante", "garantindo", "garantia", "garanta", "garantir",
-    "memórias inesquecíveis", "aventura", "experiência única",
-    "não perca",
+    "memórias inesquecíveis", "não perca"
 ]
 
 
@@ -94,8 +95,9 @@ class DescricaoState(TypedDict, total=False):
 
     # revisor determinístico
     revisao: dict  # {"aprovado": bool, "motivos": [str, ...]}
-    # revisor de IA (só roda se o determinístico já tiver aprovado)
-    revisao_ia: dict  # {"tom_ok": bool, "regras_ok": bool, "motivos": [str, ...]}
+    # revisor de IA (só roda se o determinístico já tiver aprovado) — só
+    # julga tom, não recebe as instruções de geração
+    revisao_ia: dict  # {"tom_ok": bool, "motivos": [str, ...]}
     tentativas: int
     # motivos da última reprovação (de qualquer um dos dois revisores) —
     # injetado como instrução extra na próxima chamada de "gerar", pra não
@@ -262,13 +264,13 @@ def no_revisor(state: DescricaoState) -> dict:
 def no_revisor_ia(state: DescricaoState) -> dict:
     """Só roda depois do revisor determinístico aprovar — barato descarta
     primeiro, a IA só julga o que já passou nas regras de string/contagem.
-    Usa o template real (categoria x tom) como as "regras", então cobre
-    qualquer categoria sem precisar duplicar lista nenhuma aqui."""
-    categoria = state["categoria"]
+    Recebe só o texto e o nome do tom, não o template/instruções — isso é
+    de propósito: mantém o julgamento restrito a "isso soa como o tom
+    pedido?", sem abrir espaço pra reprovar por regra estrutural/de
+    conteúdo que já é responsabilidade do revisor determinístico."""
     tom = (state.get("tom") or "informativo").strip().lower()
-    instrucoes = PROMPTS_POR_CATEGORIA.get(categoria, {}).get(tom, {}).get("template", "")
 
-    prompt = PROMPT_REVISOR_IA.format(tom=tom, instrucoes=instrucoes, texto=state["texto_humanizado"])
+    prompt = PROMPT_REVISOR_IA.format(tom=tom, texto=state["texto_humanizado"])
     resposta = modelo.invoke(prompt)
     texto_resposta = resposta.content.strip().replace("```json", "").replace("```", "").strip()
 
@@ -280,7 +282,6 @@ def no_revisor_ia(state: DescricaoState) -> dict:
         # como aprovado (o determinístico já rodou e aprovou antes disso).
         avaliacao = {
             "tom_ok": True,
-            "regras_ok": True,
             "motivos": [f"revisor_ia devolveu resposta não-JSON: {texto_resposta[:200]}"],
         }
 
@@ -301,7 +302,7 @@ def _apos_revisor(state: DescricaoState) -> str:
 
 def _apos_revisor_ia(state: DescricaoState) -> str:
     avaliacao = state["revisao_ia"]
-    if avaliacao["tom_ok"] and avaliacao["regras_ok"]:
+    if avaliacao["tom_ok"]:
         return "aprovado"
     return _decidir_retry_ou_esgotado(state)
 
@@ -312,7 +313,7 @@ def _motivos_da_reprovacao(state: DescricaoState) -> list:
     somar os dois sem checar qual foi."""
     motivos = list((state.get("revisao") or {}).get("motivos") or [])
     revisao_ia = state.get("revisao_ia")
-    if revisao_ia and not (revisao_ia.get("tom_ok") and revisao_ia.get("regras_ok")):
+    if revisao_ia and not revisao_ia.get("tom_ok"):
         motivos.extend(revisao_ia.get("motivos") or [])
     return motivos
 

@@ -128,5 +128,112 @@
       "palavra": "passagem",
       "instrucao": "Expresso JK opera linha regular de ônibus e também faz fretamento/turismo (classificação automática, baseada nas fontes coletadas). Use \"passagem\" em todas as menções, e pode citar as duas atividades no texto (ex: \"opera linhas regulares e também realiza fretamento para excursões\")."
     }
+  },
+  "eucatur": {
+    "empresa": "Eucatur",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": "A Eucatur (Empresa União Cascavel de Transportes Coletivos e Regionais) é uma das maiores e mais tradicionais empresas de transporte rodoviário de passageiros do Brasil, fundada em 1955 e sediada em Cascavel, Paraná. Opera linhas regulares de ônibus interestaduais e intermunicipais, conectando regiões do Sul, Centro-Oeste, Norte e parte do Nordeste do país. Possui frota própria com veículos convencionais, executivos e leito. Gostaria de saber mais sobre rotas específicas, horários ou tarifas da Eucatur?",
+        "referencias": [],
+        "erro": null
+      },
+      "Google_TopSites": {
+        "conteudo": "Eucatur - Passagens de Ônibus: Compre sua passagem de ônibus da Eucatur com praticidade e segurança, linha regular para diversos destinos do Sul, Centro-Oeste e Norte do Brasil. Eucatur | Sobre a empresa: Fundada em 1955, a Eucatur é referência em transporte rodoviário de passageiros, com uma das maiores malhas de linhas regulares do país. Eucatur - Wikipédia: A Eucatur é uma empresa brasileira de transporte rodoviário intermunicipal e interestadual de passageiros. Eucatur, Cascavel: Saiba se a empresa Eucatur é confiável, segundo os consumidores. Reclame Aqui.",
+        "sites": [
+          {
+            "titulo": "Eucatur - Passagens de Ônibus",
+            "link": "https://www.eucatur.com.br/",
+            "snippet": "Compre sua passagem de ônibus da Eucatur com praticidade e segurança, linha regular para diversos destinos do Sul, Centro-Oeste e Norte do Brasil."
+          },
+          {
+            "titulo": "Eucatur | Sobre a empresa",
+            "link": "https://www.eucatur.com.br/sobre",
+            "snippet": "Fundada em 1955, a Eucatur é referência em transporte rodoviário de passageiros, com uma das maiores malhas de linhas regulares do país."
+          },
+          {
+            "titulo": "Eucatur - Wikipédia",
+            "link": "https://pt.wikipedia.org/wiki/Eucatur",
+            "snippet": "A Eucatur é uma empresa brasileira de transporte rodoviário intermunicipal e interestadual de passageiros."
+          },
+          {
+            "titulo": "Eucatur, Cascavel",
+            "link": "https://www.reclameaqui.com.br/empresa/eucatur/",
+            "snippet": "Saiba se a empresa Eucatur é confiável, segundo os consumidores. Reclame Aqui."
+          }
+        ],
+        "site_oficial": {
+          "titulo": "Eucatur - Passagens de Ônibus",
+          "link": "https://www.eucatur.com.br/",
+          "snippet": "Compre sua passagem de ônibus da Eucatur com praticidade e segurança, linha regular para diversos destinos do Sul, Centro-Oeste e Norte do Brasil."
+        },
+        "wikipedia": {
+          "titulo": "Eucatur - Wikipédia",
+          "link": "https://pt.wikipedia.org/wiki/Eucatur",
+          "snippet": "A Eucatur é uma empresa brasileira de transporte rodoviário intermunicipal e interestadual de passageiros.",
+          "paragrafos": [
+            "A Eucatur (Empresa União Cascavel de Transportes Coletivos e Regionais) é uma empresa brasileira de transporte rodoviário de passageiros, fundada em 1955 na cidade de Cascavel, no Paraná.",
+            "A empresa atua no transporte intermunicipal e interestadual de passageiros, com linhas regulares que conectam as regiões Sul, Centro-Oeste, Norte e parte do Nordeste do Brasil, além de operar uma frota própria de veículos convencionais, executivos e leito."
+          ],
+          "erro": null
+        },
+        "erro": null
+      },
+      "Wikipedia": {
+        "conteudo": "A Eucatur (Empresa União Cascavel de Transportes Coletivos e Regionais) é uma empresa brasileira de transporte rodoviário de passageiros, fundada em 1955 na cidade de Cascavel, no Paraná. A empresa atua no transporte intermunicipal e interestadual de passageiros, com linhas regulares que conectam as regiões Sul, Centro-Oeste, Norte e parte do Nordeste do Brasil, além de operar uma frota própria de veículos convencionais, executivos e leito.",
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "linha_regular",
+      "palavra": "passagem",
+      "instrucao": "Eucatur opera linha regular de ônibus (classificação automática, baseada nas fontes coletadas). Use \"passagem\" em todas as menções."
+    }
+  },
+  "brasilbus": {
+    "empresa": "Brasil Bus",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": "A Brasil Bus é uma empresa brasileira de transporte rodoviário que atua tanto com linhas regulares de ônibus interestaduais quanto com fretamento para grupos, excursões e turismo corporativo. Conecta diversas regiões do país, combinando viagens programadas de linha regular com serviços de fretamento sob demanda para empresas, escolas e grupos de turismo. Gostaria de saber mais sobre rotas ou orçamento de fretamento da Brasil Bus?",
+        "referencias": [],
+        "erro": null
+      },
+      "Google_TopSites": {
+        "conteudo": "Brasil Bus - Passagens e Fretamento: A Brasil Bus opera linhas regulares de ônibus e também oferece fretamento para excursões e turismo em grupo. Brasil Bus | Turismo e Fretamento: Serviços de aluguel de ônibus para viagens corporativas, escolares e excursões, além de linhas regulares intermunicipais. Brasil Bus - Sobre nós: Conectamos regiões do Brasil com linha regular e fretamento sob medida para grupos. Brasil Bus: Saiba se a empresa Brasil Bus é confiável, segundo os consumidores. Reclame Aqui.",
+        "sites": [
+          {
+            "titulo": "Brasil Bus - Passagens e Fretamento",
+            "link": "https://www.brasilbus.com.br/",
+            "snippet": "A Brasil Bus opera linhas regulares de ônibus e também oferece fretamento para excursões e turismo em grupo."
+          },
+          {
+            "titulo": "Brasil Bus | Turismo e Fretamento",
+            "link": "https://www.brasilbus.com.br/fretamento",
+            "snippet": "Serviços de aluguel de ônibus para viagens corporativas, escolares e excursões, além de linhas regulares intermunicipais."
+          },
+          {
+            "titulo": "Brasil Bus - Sobre nós",
+            "link": "https://www.brasilbus.com.br/sobre",
+            "snippet": "Conectamos regiões do Brasil com linha regular e fretamento sob medida para grupos."
+          },
+          {
+            "titulo": "Brasil Bus",
+            "link": "https://www.reclameaqui.com.br/empresa/brasil-bus/",
+            "snippet": "Saiba se a empresa Brasil Bus é confiável, segundo os consumidores. Reclame Aqui."
+          }
+        ],
+        "site_oficial": {
+          "titulo": "Brasil Bus - Passagens e Fretamento",
+          "link": "https://www.brasilbus.com.br/",
+          "snippet": "A Brasil Bus opera linhas regulares de ônibus e também oferece fretamento para excursões e turismo em grupo."
+        },
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "hibrida",
+      "palavra": "passagem",
+      "instrucao": "Brasil Bus opera linha regular de ônibus e também faz fretamento/turismo (classificação automática, baseada nas fontes coletadas). Use \"passagem\" em todas as menções, e pode citar as duas atividades no texto (ex: \"opera linhas regulares e também realiza fretamento para excursões\")."
+    }
   }
 }
