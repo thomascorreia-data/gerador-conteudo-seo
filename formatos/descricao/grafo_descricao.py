@@ -25,16 +25,18 @@ https://claude.ai/code/artifact/29df91fe-b5f2-4d65-81b8-33f7bb445103
 """
 
 import json
+import re
 from typing import TypedDict
 
 from langgraph.graph import StateGraph, END
+from unidecode import unidecode
 
 from interpretador_descricao import classificar_tema
 from base_empresas import coletar_empresa
 from base_pontos_turisticos import coletar_ponto_turistico
 from base_cidade import coletando_conteudo
 from base_rodoviarias import coletar_rodoviaria
-from interacao_ia_descricao import gerar_texto_bruto, humanizar_texto, modelo
+from interacao_ia_descricao import gerar_texto_bruto, humanizar_texto, modelo, montar_fontes_texto
 
 MAX_TENTATIVAS = 3
 
@@ -69,6 +71,48 @@ Responda APENAS com um JSON, sem markdown, sem texto adicional, no formato:
 PALAVRAS_BANIDAS = [
     "memórias inesquecíveis", "não perca"
 ]
+
+# Pega a alegação de "sede em {cidade}" no texto gerado, pra conferir se
+# essa cidade realmente aparece nas fontes coletadas — achado num teste
+# real: o modelo alegou "sede em São Paulo" pra uma empresa cujas fontes só
+# mencionavam "Ceilândia, DF", confundindo uma rota (conecta ao Sudeste)
+# com a sede de fato. Cobre os verbos mais comuns nos exemplos do prompt;
+# frase com verbo diferente desses passa sem checar.
+PADRAO_SEDE = re.compile(
+    r"(?:com sede em|sediada em|localizada em|situada em|baseada em)\s+([^,.\n(]{2,40})",
+    re.IGNORECASE,
+)
+
+# Palavras que indicam, na FONTE, que a cidade ali perto é mesmo a sede —
+# não uma cidade de rota. Sem isso, "cidade aparece em algum lugar das
+# fontes" dá falso positivo: testado ao vivo, uma empresa teve "São Paulo"
+# citado só como cidade de ROTA na fonte ("conecta São Paulo, Uberlândia,
+# Goiânia..."), e o modelo promoveu essa cidade de rota a "sede" — a
+# checagem antiga deixava passar porque a string existia na fonte, só que
+# no contexto errado.
+PALAVRAS_CONTEXTO_SEDE = ["sede", "sediada", "matriz", "localizada", "situada", "baseada", "fundada"]
+JANELA_CONTEXTO_SEDE = 60  # caracteres pra cada lado da cidade, na fonte
+
+
+def _cidade_sede_bate_com_fontes(texto: str, fontes_texto: str) -> bool:
+    """True se o texto não alegar sede nenhuma, ou se a cidade alegada
+    aparecer nas fontes coletadas PERTO de uma palavra de contexto de sede
+    (não só em qualquer lugar — pode ser só uma cidade de rota)."""
+    encontrado = PADRAO_SEDE.search(texto)
+    if not encontrado:
+        return True
+    cidade_alegada = unidecode(encontrado.group(1).strip()).lower()
+    if not cidade_alegada:
+        return True
+
+    fontes_normalizadas = unidecode(fontes_texto).lower()
+    for ocorrencia in re.finditer(re.escape(cidade_alegada), fontes_normalizadas):
+        inicio = max(0, ocorrencia.start() - JANELA_CONTEXTO_SEDE)
+        fim = min(len(fontes_normalizadas), ocorrencia.end() + JANELA_CONTEXTO_SEDE)
+        janela = fontes_normalizadas[inicio:fim]
+        if any(palavra in janela for palavra in PALAVRAS_CONTEXTO_SEDE):
+            return True
+    return False
 
 
 class DescricaoState(TypedDict, total=False):
@@ -214,6 +258,15 @@ def _checar_regras(state: DescricaoState) -> list:
             motivos.append(f"{total_palavras} palavras, acima do limite de {limite:.0f}")
 
     paragrafos = [p for p in texto.split("\n\n") if p.strip()]
+
+    if state.get("categoria") == "empresa":
+        fontes_texto = montar_fontes_texto(state.get("fontes") or {})
+        if fontes_texto and not _cidade_sede_bate_com_fontes(texto, fontes_texto):
+            motivos.append(
+                'a cidade citada como sede não aparece nas fontes coletadas — '
+                'não invente a sede, só cite se estiver explícita nas fontes '
+                '(cuidado pra não confundir uma cidade de rota com a sede)'
+            )
 
     classificacao_tipo = state.get("classificacao_tipo")
     if classificacao_tipo and classificacao_tipo["palavra"] == "passagem":
