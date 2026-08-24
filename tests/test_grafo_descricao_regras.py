@@ -1,0 +1,159 @@
+from grafo_descricao import _checar_regras
+
+
+def _fontes(texto: str) -> dict:
+    return {"Google_AIOverview": {"conteudo": texto, "erro": None}}
+
+
+def _state(texto_humanizado: str, **extra) -> dict:
+    base = {"texto_humanizado": texto_humanizado, "categoria": "cidade", "tom": "informativo"}
+    base.update(extra)
+    return base
+
+
+# --- palavra/frase banida -----------------------------------------------
+
+def test_frase_banida_reprova():
+    motivos = _checar_regras(_state("Prepare-se para memórias inesquecíveis nessa viagem."))
+    assert any("banida" in m for m in motivos)
+
+
+def test_texto_sem_frase_banida_nao_reprova_por_isso():
+    motivos = _checar_regras(_state("Um texto qualquer, sem nenhuma frase proibida."))
+    assert not any("banida" in m for m in motivos)
+
+
+# --- limite de palavras ----------------------------------------------------
+
+def test_estoura_limite_de_palavras():
+    texto = " ".join(["palavra"] * 20)
+    motivos = _checar_regras(_state(texto, media_palavras=10))
+    assert any("acima do limite" in m for m in motivos)
+
+
+def test_dentro_do_limite_de_palavras_nao_reprova():
+    texto = " ".join(["palavra"] * 10)
+    motivos = _checar_regras(_state(texto, media_palavras=10))
+    assert not any("acima do limite" in m for m in motivos)
+
+
+# --- sede (só empresa) ------------------------------------------------------
+
+def test_sede_inventada_nao_grounded_reprova():
+    fontes = _fontes("A empresa conecta Sao Paulo, Uberlandia e Goiania em suas rotas.")
+    texto = "Com sede em São Paulo, a empresa se destaca no setor."
+    motivos = _checar_regras(_state(texto, categoria="empresa", fontes=fontes))
+    assert any("sede" in m for m in motivos)
+
+
+def test_sede_confirmada_na_fonte_nao_reprova():
+    fontes = _fontes("A empresa e sediada em Cascavel (PR) e atua em todo o Brasil.")
+    texto = "Com sede em Cascavel, a empresa se destaca no setor."
+    motivos = _checar_regras(_state(texto, categoria="empresa", fontes=fontes))
+    assert not any("sede" in m for m in motivos)
+
+
+def test_sem_alegacao_de_sede_nao_reprova():
+    fontes = _fontes("A empresa atua em todo o Brasil.")
+    texto = "A empresa se destaca no setor de transporte rodoviário."
+    motivos = _checar_regras(_state(texto, categoria="empresa", fontes=fontes))
+    assert not any("sede" in m for m in motivos)
+
+
+# --- passagem/viagem (só empresa) -------------------------------------------
+
+def test_linha_regular_sem_passagem_reprova():
+    texto = "A empresa oferece uma viagem segura e confortável."
+    motivos = _checar_regras(_state(
+        texto, categoria="empresa",
+        classificacao_tipo={"tipo": "linha_regular", "palavra": "passagem"},
+    ))
+    assert any("passagem" in m for m in motivos)
+
+
+def test_linha_regular_com_passagem_no_plural_nao_reprova():
+    texto = "Compre suas passagens com a empresa."
+    motivos = _checar_regras(_state(
+        texto, categoria="empresa",
+        classificacao_tipo={"tipo": "linha_regular", "palavra": "passagem"},
+    ))
+    assert not any('só apareceu "viagem"' in m for m in motivos)
+
+
+def test_hibrida_vendas_subtitulo_com_viagem_reprova():
+    texto = "Reserve sua viagem com a empresa pela Buser.\n\nEla atua em todo o país.\n\nCompre sua passagem com facilidade."
+    motivos = _checar_regras(_state(
+        texto, categoria="empresa", tom="vendas",
+        classificacao_tipo={"tipo": "hibrida", "palavra": "passagem"},
+    ))
+    assert any("subtítulo usa" in m for m in motivos)
+
+
+def test_fretamento_puro_com_passagem_reprova():
+    texto = "Compre sua passagem com a empresa de fretamento."
+    motivos = _checar_regras(_state(
+        texto, categoria="empresa",
+        classificacao_tipo={"tipo": "fretamento", "palavra": "viagem"},
+    ))
+    assert any('deveria usar "viagem"' in m for m in motivos)
+
+
+def test_fretamento_puro_com_verbo_comprar_reprova():
+    texto = "Você pode comprar sua viagem com a empresa de fretamento."
+    motivos = _checar_regras(_state(
+        texto, categoria="empresa",
+        classificacao_tipo={"tipo": "fretamento", "palavra": "viagem"},
+    ))
+    assert any("não deveria usar" in m for m in motivos)
+
+
+def test_fretamento_puro_correto_nao_reprova():
+    # tom="promocional" de propósito: não exige contagem de parágrafo (só
+    # vendas/informativo exigem) — isola a checagem de palavra que este
+    # teste quer verificar, sem interferência de outra regra.
+    texto = "Reserve sua viagem com a empresa de fretamento."
+    motivos = _checar_regras(_state(
+        texto, categoria="empresa", tom="promocional",
+        classificacao_tipo={"tipo": "fretamento", "palavra": "viagem"},
+    ))
+    assert motivos == []
+
+
+def test_ambigua_pode_usar_passagem_sem_reprovar():
+    # "ambiguo" não é "fretamento" -> a checagem inversa não se aplica
+    texto = "Compre sua passagem com a empresa."
+    motivos = _checar_regras(_state(
+        texto, categoria="empresa", tom="promocional",
+        classificacao_tipo={"tipo": "ambiguo", "palavra": "viagem"},
+    ))
+    assert motivos == []
+
+
+# --- contagem de parágrafos (só empresa) ------------------------------------
+
+def test_empresa_vendas_com_2_paragrafos_reprova():
+    texto = "Parágrafo um.\n\nParágrafo dois."
+    motivos = _checar_regras(_state(texto, categoria="empresa", tom="vendas"))
+    assert any("parágrafos" in m for m in motivos)
+
+
+def test_empresa_vendas_com_3_paragrafos_nao_reprova_por_estrutura():
+    texto = "Parágrafo um.\n\nParágrafo dois.\n\nParágrafo três."
+    motivos = _checar_regras(_state(texto, categoria="empresa", tom="vendas"))
+    assert not any("parágrafos" in m for m in motivos)
+
+
+def test_empresa_informativo_precisa_de_exatamente_4_paragrafos():
+    tres_paragrafos = "Um.\n\nDois.\n\nTrês."
+    motivos = _checar_regras(_state(tres_paragrafos, categoria="empresa", tom="informativo"))
+    assert any("esperado sempre 4" in m for m in motivos)
+
+    quatro_paragrafos = "Um.\n\nDois.\n\nTrês.\n\nQuatro."
+    motivos = _checar_regras(_state(quatro_paragrafos, categoria="empresa", tom="informativo"))
+    assert not any("esperado sempre 4" in m for m in motivos)
+
+
+def test_cidade_nao_exige_contagem_de_paragrafos():
+    texto = "Só um parágrafo aqui."
+    motivos = _checar_regras(_state(texto, categoria="cidade", tom="vendas"))
+    assert not any("parágrafos" in m for m in motivos)

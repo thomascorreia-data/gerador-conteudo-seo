@@ -7,3 +7,6 @@ scratch/
 # Cache de bytecode do Python
 __pycache__/
 *.pyc
+
+# Cache do pytest
+.pytest_cache/

@@ -114,3 +114,24 @@ Se preferir não ativar o venv, dá pra rodar direto com:
    de cada tema, coleta as informações e escreve o texto.
 5. Copie o resultado, baixe o `.json` ou exporte o `.csv` (com tema,
    categoria identificada, tom e o texto gerado).
+
+## Testes e CI/CD
+
+Testes em [`tests/`](tests/) — só lógica pura (regras do revisor, classificação de
+tipo de empresa, normalização de JSON, rotas simples da API), sem chamar
+OpenAI/SerpApi de verdade. Pra rodar localmente:
+
+```powershell
+.\venv\Scripts\python.exe -m pip install -r requirements-dev.txt
+.\venv\Scripts\python.exe -m pytest tests/ -v
+```
+
+**CI**: [`.github/workflows/ci.yml`](.github/workflows/ci.yml) roda essa suíte a cada
+push/PR pra `main`.
+
+**CD**: o deploy (ex: Render) já acontece automaticamente a partir do git, fora
+desse workflow. Pra fazer o CI realmente travar um deploy com teste quebrado,
+a forma mais simples é configurar uma [regra de proteção da branch
+`main`](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches)
+no GitHub exigindo que o check `testes` passe antes de permitir merge — isso
+não está configurado por padrão (é uma config do repositório, não do código).
