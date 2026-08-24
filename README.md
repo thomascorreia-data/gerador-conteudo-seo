@@ -39,8 +39,11 @@ Cada passo alimenta o próximo:
       depois um revisor de IA (só tom) — e volta pro passo 3 se algum reprovar, até um teto de tentativas.
       Mesmo esgotando as tentativas, a última versão gerada é devolvida (com um aviso), nunca nada.
 
-   Desenho completo do grafo (com o motivo de cada decisão) em
-   [`formatos/descricao/explicacao_descricao_grafo/`](formatos/descricao/explicacao_descricao_grafo/grafo_descricao.md).
+   ![Grafo de geração de descrições](formatos/descricao/explicacao_descricao_grafo/grafo_descricao.png)
+
+   Essa imagem vem direto do grafo compilado (não é um desenho à mão) — se os nós/arestas do
+   código mudarem, ela pode ficar desatualizada até ser regerada. Desenho completo, com o motivo
+   de cada decisão, em [`formatos/descricao/explicacao_descricao_grafo/`](formatos/descricao/explicacao_descricao_grafo/grafo_descricao.md).
    A estratégia de prompt de cada categoria — o que cada uma pede e por quê — está documentada em
    [`formatos/descricao/estrategias/`](formatos/descricao/estrategias/README.md).
 
