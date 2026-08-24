@@ -220,7 +220,7 @@ def humanizar_texto(texto_gerado: str, instrucao_tipo_empresa: str = "") -> str:
 
 TOM_PADRAO = "informativo"
 MEDIA_PALAVRAS_PADRAO = 100
-PALAVRAS_CHAVE_PADRAO = ["viagem", "onibus"]
+PALAVRAS_CHAVE_PADRAO = ["viagem"]
 
 
 def gerar_descricao_por_tema(
