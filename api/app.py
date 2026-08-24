@@ -17,6 +17,7 @@ Documentação automática (Swagger) em:
 from typing import Any, Dict, List
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from formatos.transformacaoJson import normalizar_lote
@@ -63,6 +64,14 @@ class RequisicaoGerar(BaseModel):
     itens: List[Dict[str, Any]]
 
 app.mount("/interface", StaticFiles(directory="interface"), name="interface")
+
+
+@app.get("/")
+def raiz():
+    """Sem isso, abrir a URL base do serviço (sem caminho nenhum) cai num
+    404 — não tem nada cadastrado em "/". Redireciona direto pra interface."""
+    return RedirectResponse(url="/interface/gerador-json.html")
+
 
 @app.get("/health")
 def health():
