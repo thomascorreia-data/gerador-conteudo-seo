@@ -256,16 +256,35 @@ def coletar_ponto_turistico(nome_ponto: str) -> dict:
         "fontes": {},
     }
 
+    # Cidade só é usada pra montar a URL da Wikivoyage (que lista atrações
+    # por cidade) — não achar uma não deveria travar a coleta inteira,
+    # porque a Wikipédia busca pelo nome do ponto direto, sem depender de
+    # cidade nenhuma. Isso acontece de verdade com pontos grandes demais
+    # pra "pertencer" a uma cidade só (ex: Lençóis Maranhenses é um parque
+    # nacional que atravessa vários municípios — o Nominatim devolve o
+    # estado, não uma cidade).
     if localizacao["erro"]:
-        resultado["erro"] = f"Falha ao identificar cidade: {localizacao['erro']}"
-        return resultado
+        resultado["aviso_cidade"] = f"Não foi possível identificar a cidade: {localizacao['erro']}"
 
     time.sleep(1)  # respeita o limite de 1 req/s do Nominatim
 
     for nome_fonte, config in pontos_turisticos.items():
+        # Sem cidade, pula fonte que precisa dela em vez de montar uma URL
+        # quebrada (com "None" no meio) e gastar uma requisição à toa.
+        if resultado["cidade"] is None and "{Cidade}" in config["url"]:
+            resultado["fontes"][nome_fonte] = {
+                "url": None,
+                "conteudo": None,
+                "erro": "Cidade não identificada — fonte pulada.",
+            }
+            continue
         resultado["fontes"][nome_fonte] = _coletar_fonte(
-            nome_fonte, config, nome_ponto, localizacao["cidade"]
+            nome_fonte, config, nome_ponto, resultado["cidade"]
         )
+
+    # Só é erro de verdade se NENHUMA fonte trouxe conteúdo nenhum.
+    if not any(f.get("conteudo") for f in resultado["fontes"].values()):
+        resultado["erro"] = "Nenhuma fonte trouxe conteúdo (nem Wikivoyage, nem Wikipédia)."
 
     return resultado
 
