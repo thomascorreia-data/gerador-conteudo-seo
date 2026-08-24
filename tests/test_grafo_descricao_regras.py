@@ -108,12 +108,18 @@ def test_fretamento_puro_com_verbo_comprar_reprova():
 
 
 def test_fretamento_puro_correto_nao_reprova():
-    # tom="promocional" de propósito: não exige contagem de parágrafo (só
-    # vendas/informativo exigem) — isola a checagem de palavra que este
-    # teste quer verificar, sem interferência de outra regra.
-    texto = "Reserve sua viagem com a empresa de fretamento."
+    # 4 parágrafos de verdade: hoje TODOS os tons de empresa exigem alguma
+    # contagem (vendas: 3-4, informativo/promocional: exatamente 4), então
+    # não tem mais um tom que "escape" dessa checagem pra isolar só a
+    # palavra — o texto de teste precisa estar completo mesmo.
+    texto = (
+        "Parágrafo um.\n\n"
+        "Parágrafo dois.\n\n"
+        "Reserve sua viagem com a empresa de fretamento.\n\n"
+        "Parágrafo quatro."
+    )
     motivos = _checar_regras(_state(
-        texto, categoria="empresa", tom="promocional",
+        texto, categoria="empresa", tom="informativo",
         classificacao_tipo={"tipo": "fretamento", "palavra": "viagem"},
     ))
     assert motivos == []
@@ -121,9 +127,14 @@ def test_fretamento_puro_correto_nao_reprova():
 
 def test_ambigua_pode_usar_passagem_sem_reprovar():
     # "ambiguo" não é "fretamento" -> a checagem inversa não se aplica
-    texto = "Compre sua passagem com a empresa."
+    texto = (
+        "Parágrafo um.\n\n"
+        "Parágrafo dois.\n\n"
+        "Compre sua passagem com a empresa.\n\n"
+        "Parágrafo quatro."
+    )
     motivos = _checar_regras(_state(
-        texto, categoria="empresa", tom="promocional",
+        texto, categoria="empresa", tom="informativo",
         classificacao_tipo={"tipo": "ambiguo", "palavra": "viagem"},
     ))
     assert motivos == []
@@ -150,6 +161,16 @@ def test_empresa_informativo_precisa_de_exatamente_4_paragrafos():
 
     quatro_paragrafos = "Um.\n\nDois.\n\nTrês.\n\nQuatro."
     motivos = _checar_regras(_state(quatro_paragrafos, categoria="empresa", tom="informativo"))
+    assert not any("esperado sempre 4" in m for m in motivos)
+
+
+def test_empresa_promocional_tambem_precisa_de_exatamente_4_paragrafos():
+    tres_paragrafos = "Um.\n\nDois.\n\nTrês."
+    motivos = _checar_regras(_state(tres_paragrafos, categoria="empresa", tom="promocional"))
+    assert any("esperado sempre 4" in m for m in motivos)
+
+    quatro_paragrafos = "Um.\n\nDois.\n\nTrês.\n\nQuatro."
+    motivos = _checar_regras(_state(quatro_paragrafos, categoria="empresa", tom="promocional"))
     assert not any("esperado sempre 4" in m for m in motivos)
 
 

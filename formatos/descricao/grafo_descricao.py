@@ -323,7 +323,7 @@ def _checar_regras(state: DescricaoState) -> list:
     if state.get("categoria") == "empresa":
         if state.get("tom") == "vendas" and not (3 <= len(paragrafos) <= 4):
             motivos.append(f"{len(paragrafos)} parágrafos, esperado 3 a 4")
-        elif state.get("tom") == "informativo" and len(paragrafos) != 4:
+        elif state.get("tom") in ("informativo", "promocional") and len(paragrafos) != 4:
             motivos.append(f"{len(paragrafos)} parágrafos, esperado sempre 4")
 
     return motivos
