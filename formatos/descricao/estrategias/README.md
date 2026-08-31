@@ -8,11 +8,12 @@ Cada categoria de tema (`empresa`, `cidade`, `ponto_turistico`, ...) tem seu pr�
 - [**Cidade**](cidade.md) — texto livre, sem few-shot, 3 tons
 - [**Ponto turístico**](ponto_turistico.md) — estrutura parecida com cidade, com uma nota sobre um risco já conhecido
 - [**Terminal rodoviário**](terminal_rodoviaria.md) — mesmo padrão de cidade/ponto turístico, sem classificação de tipo
-- [**Lugar genérico**](lugar_generico.md) — prompt pronto, mas sem coletor de verdade ainda: todo texto sai do conhecimento geral do modelo, sinalizado com aviso
+- [**Lugar genérico**](lugar_generico.md) — coleta simples, só Wikipédia (sem geocodificação), fallback pro conhecimento geral do modelo quando a página não existe
+- [**Evento**](evento.md) — mesmo padrão de lugar genérico, com um cuidado a mais pra não confundir a edição local de um evento com a versão internacional homônima mais famosa
 
 ## Categorias não implementadas
 
-- [**Estado, país, evento**](nao_implementadas.md) — nada implementado ainda (nem coleta, nem prompt)
+- [**Estado, país**](nao_implementadas.md) — nada implementado ainda (nem coleta, nem prompt)
 
 ## Como esse conteúdo é usado
 

@@ -37,6 +37,7 @@ from base_pontos_turisticos import coletar_ponto_turistico
 from base_cidade import coletando_conteudo
 from base_rodoviarias import coletar_rodoviaria
 from base_lugares_genericos import coletar_lugar_generico
+from base_eventos import coletar_evento
 from interacao_ia_descricao import gerar_texto_bruto, humanizar_texto, modelo, montar_fontes_texto
 
 MAX_TENTATIVAS = 3
@@ -178,6 +179,7 @@ def _rotear_por_categoria(state: DescricaoState) -> str:
         "cidade": "coletar_cidade",
         "terminal_rodoviaria": "coletar_terminal_rodoviaria",
         "lugar_generico": "coletar_lugar_generico",
+        "evento": "coletar_evento",
     }.get(state["categoria"], "categoria_nao_implementada")
 
 
@@ -219,6 +221,17 @@ def no_coletar_lugar_generico(state: DescricaoState) -> dict:
     # sai do conhecimento geral do modelo, sinalizado com aviso) em vez de
     # travar a descrição inteira.
     resultado = coletar_lugar_generico(state["entidade"])
+    return {"fontes": resultado["fontes"]}
+
+
+def no_coletar_evento(state: DescricaoState) -> dict:
+    # Mesma receita de no_coletar_lugar_generico: coletor só de Wikipédia
+    # (ver base_eventos.py) — página ausente/desambiguação vira "sem_fontes"
+    # em no_gerar, em vez de travar a descrição inteira. Passa "cidade"
+    # também: o classificador às vezes separa o nome genérico do evento da
+    # cidade (ex: "Oktoberfest" + "Blumenau"), e sem a cidade a busca cairia
+    # na página do evento internacional homônimo mais famoso.
+    resultado = coletar_evento(state["entidade"], cidade=state.get("cidade"))
     return {"fontes": resultado["fontes"]}
 
 
@@ -448,6 +461,7 @@ def construir_grafo():
     grafo.add_node("coletar_cidade", no_coletar_cidade)
     grafo.add_node("coletar_terminal_rodoviaria", no_coletar_terminal_rodoviaria)
     grafo.add_node("coletar_lugar_generico", no_coletar_lugar_generico)
+    grafo.add_node("coletar_evento", no_coletar_evento)
     grafo.add_node("categoria_nao_implementada", no_categoria_nao_implementada)
     grafo.add_node("gerar", no_gerar)
     grafo.add_node("humanizar", no_humanizar)
@@ -464,6 +478,7 @@ def construir_grafo():
         "coletar_cidade": "coletar_cidade",
         "coletar_terminal_rodoviaria": "coletar_terminal_rodoviaria",
         "coletar_lugar_generico": "coletar_lugar_generico",
+        "coletar_evento": "coletar_evento",
         "categoria_nao_implementada": "categoria_nao_implementada",
     })
 
@@ -474,6 +489,7 @@ def construir_grafo():
     grafo.add_edge("coletar_cidade", "gerar")
     grafo.add_edge("coletar_terminal_rodoviaria", "gerar")
     grafo.add_edge("coletar_lugar_generico", "gerar")
+    grafo.add_edge("coletar_evento", "gerar")
     # Na prática a exceção sobe antes de chegar no END; a aresta só existe
     # pra o grafo ficar bem-formado (todo nó precisa levar a algum lugar).
     grafo.add_edge("categoria_nao_implementada", END)

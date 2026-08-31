@@ -1,4 +1,4 @@
-from grafo_descricao import _checar_regras, _rotear_por_categoria, no_coletar_lugar_generico
+from grafo_descricao import _checar_regras, _rotear_por_categoria, no_coletar_lugar_generico, no_coletar_evento
 
 
 def _fontes(texto: str) -> dict:
@@ -14,13 +14,14 @@ def test_roteamento_reconhece_todas_as_categorias_implementadas():
         "cidade": "coletar_cidade",
         "terminal_rodoviaria": "coletar_terminal_rodoviaria",
         "lugar_generico": "coletar_lugar_generico",
+        "evento": "coletar_evento",
     }
     for categoria, no_esperado in esperado.items():
         assert _rotear_por_categoria({"categoria": categoria}) == no_esperado
 
 
 def test_roteamento_categoria_desconhecida_cai_em_nao_implementada():
-    assert _rotear_por_categoria({"categoria": "evento"}) == "categoria_nao_implementada"
+    assert _rotear_por_categoria({"categoria": "estado"}) == "categoria_nao_implementada"
 
 
 def test_coletar_lugar_generico_chama_o_coletor_com_a_entidade(monkeypatch):
@@ -39,6 +40,24 @@ def test_coletar_lugar_generico_chama_o_coletor_com_a_entidade(monkeypatch):
     resultado = no_coletar_lugar_generico({"entidade": "Shopping Eldorado"})
 
     assert chamadas == ["Shopping Eldorado"]
+    assert resultado == {"fontes": {"Wikipedia": {"url": "u", "conteudo": "c", "erro": None}}}
+
+
+def test_coletar_evento_chama_o_coletor_com_entidade_e_cidade(monkeypatch):
+    # Mesmo padrão de no_coletar_lugar_generico, mas também repassa
+    # "cidade" — coletar_evento usa isso pra desambiguar eventos cujo nome
+    # colide com uma versão internacional mais famosa (ver base_eventos.py).
+    chamadas = []
+
+    def _fake_coletar(nome_evento, cidade=None):
+        chamadas.append((nome_evento, cidade))
+        return {"evento": nome_evento, "fontes": {"Wikipedia": {"url": "u", "conteudo": "c", "erro": None}}}
+
+    monkeypatch.setattr("grafo_descricao.coletar_evento", _fake_coletar)
+
+    resultado = no_coletar_evento({"entidade": "Oktoberfest", "cidade": "Blumenau"})
+
+    assert chamadas == [("Oktoberfest", "Blumenau")]
     assert resultado == {"fontes": {"Wikipedia": {"url": "u", "conteudo": "c", "erro": None}}}
 
 

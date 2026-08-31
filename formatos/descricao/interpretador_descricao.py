@@ -5,8 +5,8 @@ from base_rodoviarias import coletar_rodoviaria
 from base_empresas import coletar_empresa
 # from base_estados import coletar_estado
 # from base_paises import coletar_pais
-# from base_lugares_genericos import coletar_lugar_generico
-# from base_eventos import coletar_evento
+from base_lugares_genericos import coletar_lugar_generico
+from base_eventos import coletar_evento
 
 import os
 from dotenv import load_dotenv
@@ -121,10 +121,14 @@ def interpretador(tema: str) -> dict:
         raise NotImplementedError("Coleta para 'pais' ainda não implementada")
 
     elif categoria == "lugar_generico":
-        raise NotImplementedError("Coleta para 'lugar_generico' ainda não implementada")
+        entidade = classificacao["entidade"]
+        resultado = coletar_lugar_generico(entidade)
+        return {"categoria": categoria, "entidade": entidade, "fontes": resultado["fontes"]}
 
     elif categoria == "evento":
-        raise NotImplementedError("Coleta para 'evento' ainda não implementada")
+        entidade = classificacao["entidade"]
+        resultado = coletar_evento(entidade, cidade=classificacao.get("cidade"))
+        return {"categoria": categoria, "entidade": entidade, "fontes": resultado["fontes"]}
 
     elif categoria == "empresa":
         entidade = classificacao["entidade"]

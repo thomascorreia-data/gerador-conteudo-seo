@@ -11,6 +11,7 @@ graph TD;
 	coletar_cidade(coletar_cidade)
 	coletar_terminal_rodoviaria(coletar_terminal_rodoviaria)
 	coletar_lugar_generico(coletar_lugar_generico)
+	coletar_evento(coletar_evento)
 	categoria_nao_implementada(categoria_nao_implementada)
 	gerar(gerar)
 	humanizar(humanizar)
@@ -23,11 +24,13 @@ graph TD;
 	classificar_tema -.-> categoria_nao_implementada;
 	classificar_tema -.-> coletar_cidade;
 	classificar_tema -.-> coletar_empresa;
+	classificar_tema -.-> coletar_evento;
 	classificar_tema -.-> coletar_lugar_generico;
 	classificar_tema -.-> coletar_ponto_turistico;
 	classificar_tema -.-> coletar_terminal_rodoviaria;
 	coletar_cidade --> gerar;
 	coletar_empresa --> gerar;
+	coletar_evento --> gerar;
 	coletar_lugar_generico --> gerar;
 	coletar_ponto_turistico --> gerar;
 	coletar_terminal_rodoviaria --> gerar;

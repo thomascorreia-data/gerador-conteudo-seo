@@ -2,20 +2,11 @@
 
 Categoria pra lugares que não são cidade, ponto turístico "clássico" nem terminal — shopping, comércio, restaurante, hotel, aeroporto, etc. Estrutura livre, sem few-shot, mesmo estilo de [cidade](cidade.md) e [ponto turístico](ponto_turistico.md).
 
-## De onde vêm os dados: de lugar nenhum, por enquanto
+## De onde vêm os dados: só Wikipédia, sem geocodificação
 
-Diferente de todas as outras categorias prontas, **não existe coletor nenhum pra `lugar_generico`** — nenhum `base_lugares_genericos.py`, nenhuma raspagem, nenhuma API. O nó `coletar_lugar_generico` (em [`grafo_descricao.py`](../grafo_descricao.py)) devolve fontes vazias de propósito:
+Diferente de [ponto_turistico](ponto_turistico.md) e [terminal_rodoviaria](terminal_rodoviaria.md), a coleta pra `lugar_generico` ([`base_lugares_genericos.py`](../base_lugares_genericos.py)) não usa Nominatim nem precisa identificar cidade antes: o próprio nome do lugar já é a chave de busca direta na Wikipédia (`https://pt.wikipedia.org/wiki/{lugar}`). É a categoria mais simples de coletar do projeto — sem geocodificação, sem múltiplas fontes, só uma raspagem direta da introdução do artigo.
 
-```python
-def no_coletar_lugar_generico(state: DescricaoState) -> dict:
-    return {"fontes": {}}
-```
-
-Isso aciona o fallback "sem fontes" que existe no grafo pra qualquer categoria (ver [`explicacao_descricao_grafo/grafo_descricao.md`](../explicacao_descricao_grafo/grafo_descricao.md)): o texto é gerado do conhecimento geral do modelo, e o resultado final sai marcado com `"sem_fontes": true` (e um `"aviso"` explicando isso, em `gerando.py`/na interface). Ou seja: **toda descrição de `lugar_generico` hoje é gerada sem verificação nenhuma contra fonte real** — vale conferir manualmente antes de publicar, sempre.
-
-## Por que fazer assim em vez de esperar por um coletor de verdade
-
-O pedido original era só "gera o prompt" — construir um coletor de verdade (identificar o lugar, escolher fontes confiáveis tipo Google/Wikipédia, tratar os mesmos problemas de ambiguidade que já apareceram em [ponto_turistico](ponto_turistico.md) e [terminal_rodoviaria](terminal_rodoviaria.md)) é um trabalho bem maior. Como o fallback "sem fontes" já existia (construído pra cobrir falha de coleta nas outras categorias), aproveitá-lo aqui deixa a categoria utilizável imediatamente, com o risco de alucinação sinalizado de forma explícita — em vez de ficar travada em `NotImplementedError` esperando um coletor nunca escrito.
+Se a página não existir, for uma página de desambiguação, ou não tiver parágrafo nenhum, a coleta não levanta exceção — devolve `"conteudo": None` e um `"erro"` explicando o motivo. Isso aciona o fallback "sem fontes" que existe no grafo pra qualquer categoria (ver [`explicacao_descricao_grafo/grafo_descricao.md`](../explicacao_descricao_grafo/grafo_descricao.md)): o texto é gerado do conhecimento geral do modelo, e o resultado final sai marcado com `"sem_fontes": true` (e um `"aviso"` explicando isso, em `gerando.py`/na interface). Nomes bem conhecidos (grandes shoppings, aeroportos, hotéis famosos) costumam ter artigo na Wikipédia e saem com dado real; nomes muito genéricos ou pouco conhecidos caem no fallback.
 
 ## Os 3 tons
 
@@ -24,6 +15,6 @@ Mesmo padrão de `cidade`/`ponto_turistico`:
 - **`vendas`** — cita a Buser e exatamente 3 dos 7 diferenciais (mesma lista das outras categorias), com chamada pra ação
 - **`promocional`** — envolvente, cita a Buser, sem CTA direto
 
-## Quando vale construir um coletor de verdade
+## Quando vale evoluir a coleta
 
-Se essa categoria passar a ser usada com frequência (ou se as alucinações viradas de "conhecimento geral" começarem a ser um problema recorrente), vale construir um `base_lugares_genericos.py` de verdade — mesma receita das outras: identificar o lugar (Nominatim, como `ponto_turistico`/`terminal_rodoviaria` já fazem), coletar de Wikipédia/site oficial, e então o nó do grafo passa a devolver fontes reais em vez de `{}`, desligando o fallback automaticamente (ele só entra em ação quando as fontes vêm vazias).
+Se páginas ambíguas ou nomes muito genéricos virarem um problema recorrente (caindo no fallback com frequência), vale considerar outras fontes além da Wikipédia (site oficial do lugar, Google) — mesmo caminho que [evento](evento.md) já percorreu ao lidar com nomes de eventos que colidem com uma versão internacional mais famosa e homônima.
