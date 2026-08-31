@@ -56,10 +56,14 @@ cidade = {
 
 def gerar_formatos_cidade(nome: str, uf: str) -> tuple[str, str]:
     """Retorna (cidade_uf, Cidade) a partir do nome bruto + UF.
-    cidade_uf -> 'brasilia-df' (sem acento, minúsculo, hífen)
+    cidade_uf -> 'brasilia-df' (sem acento, minúsculo, hífen), ou None se
+                 uf não foi identificado (ClickBus/QueroPassagem/DeOnibus
+                 precisam da UF pra montar a URL — ficam sem essa)
     Cidade     -> 'Brasília' (com acento, underscore se tiver espaço)"""
     nome_limpo = nome.strip()
-    cidade_uf = unidecode(nome_limpo).lower().replace(" ", "-") + "-" + uf.lower()
+    cidade_uf = None
+    if uf:
+        cidade_uf = unidecode(nome_limpo).lower().replace(" ", "-") + "-" + uf.lower()
     Cidade = nome_limpo.replace(" ", "_")
     return cidade_uf, Cidade
 
@@ -73,6 +77,19 @@ def coletando_conteudo(nome: str, uf: str) -> dict[str, dict[str, str]]:
     resultados = {}
 
     for site, config in cidade.items():
+        # 3 das 4 fontes (ClickBus/QueroPassagem/DeOnibus) precisam da UF
+        # pra montar a URL — se o classificador não identificou o estado,
+        # cidade_uf vem None e essas ficam sem como montar URL nenhuma.
+        # Wikipedia (só precisa de {Cidade}) continua tentando normalmente.
+        if cidade_uf is None and "{cidade_uf}" in config["url"]:
+            resultados[site] = {
+                "url": None,
+                "titulo": None,
+                "paragrafos": [],
+                "erro": "UF não identificada — fonte pulada.",
+            }
+            continue
+
         url = config["url"].format(cidade_uf=cidade_uf, Cidade=Cidade)
         container = config["container"]
         titulo_sel = config["titulo"]
