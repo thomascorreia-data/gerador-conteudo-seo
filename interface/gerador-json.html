@@ -412,14 +412,23 @@ function exibirConteudoGerado(resultados){
       erroBox.textContent = item.erro;
       corpo.appendChild(erroBox);
     }
+    if(item.aviso){
+      const avisoBox = document.createElement('div');
+      avisoBox.className = 'error-box';
+      avisoBox.style.borderColor = 'var(--brass)';
+      avisoBox.style.color = 'var(--brass)';
+      avisoBox.style.background = 'rgba(212,162,76,0.12)';
+      avisoBox.textContent = item.aviso;
+      corpo.appendChild(avisoBox);
+    }
     // Mesmo com erro, o grafo devolve a última versão gerada (não passou
     // por todas as checagens, mas ainda é texto aproveitável) — mostra
-    // sempre que existir, com o erro acima como aviso.
+    // sempre que existir, com o erro/aviso acima.
     if(item.conteudo_gerado){
       const texto = document.createElement('div');
       texto.style.whiteSpace = 'pre-wrap';
       texto.style.lineHeight = '1.55';
-      if(item.erro) texto.style.marginTop = '12px';
+      if(item.erro || item.aviso) texto.style.marginTop = '12px';
       texto.textContent = item.conteudo_gerado;
       corpo.appendChild(texto);
     }

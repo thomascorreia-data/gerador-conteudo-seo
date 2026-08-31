@@ -36,6 +36,7 @@ from base_empresas import coletar_empresa
 from base_pontos_turisticos import coletar_ponto_turistico
 from base_cidade import coletando_conteudo
 from base_rodoviarias import coletar_rodoviaria
+from base_lugares_genericos import coletar_lugar_generico
 from interacao_ia_descricao import gerar_texto_bruto, humanizar_texto, modelo, montar_fontes_texto
 
 MAX_TENTATIVAS = 3
@@ -135,6 +136,11 @@ class DescricaoState(TypedDict, total=False):
     # geração / humanização
     texto_gerado: str
     texto_humanizado: str
+    # True quando a coleta não achou fonte real nenhuma e o texto foi
+    # gerado do conhecimento geral do modelo, sem grounding — sinaliza pra
+    # quem for usar o resultado que esse item não foi verificado contra
+    # dado nenhum, ao contrário do resto (que sempre é checado)
+    sem_fontes: bool
 
     # revisor determinístico
     revisao: dict  # {"aprovado": bool, "motivos": [str, ...]}
@@ -171,6 +177,7 @@ def _rotear_por_categoria(state: DescricaoState) -> str:
         "ponto_turistico": "coletar_ponto_turistico",
         "cidade": "coletar_cidade",
         "terminal_rodoviaria": "coletar_terminal_rodoviaria",
+        "lugar_generico": "coletar_lugar_generico",
     }.get(state["categoria"], "categoria_nao_implementada")
 
 
@@ -186,9 +193,11 @@ def no_coletar_empresa(state: DescricaoState) -> dict:
 
 
 def no_coletar_ponto_turistico(state: DescricaoState) -> dict:
+    # Não levanta mais erro aqui mesmo se "erro" vier preenchido (nenhuma
+    # fonte trouxe conteúdo) — deixa seguir pra geração, que sabe lidar com
+    # fontes vazias (ver "sem_fontes" em no_gerar), em vez de travar a
+    # descrição inteira por causa de uma coleta que não achou nada.
     resultado = coletar_ponto_turistico(state["entidade"])
-    if resultado.get("erro"):
-        raise ValueError(resultado["erro"])
     return {"fontes": resultado["fontes"]}
 
 
@@ -200,6 +209,16 @@ def no_coletar_cidade(state: DescricaoState) -> dict:
 
 def no_coletar_terminal_rodoviaria(state: DescricaoState) -> dict:
     resultado = coletar_rodoviaria(state["entidade"])
+    return {"fontes": resultado["fontes"]}
+
+
+def no_coletar_lugar_generico(state: DescricaoState) -> dict:
+    # Coletor só de Wikipédia (ver base_lugares_genericos.py) — se a página
+    # não existir/for desambiguação, "fontes" volta com conteudo=None e erro
+    # preenchido, o que aciona o fallback "sem_fontes" em no_gerar (texto
+    # sai do conhecimento geral do modelo, sinalizado com aviso) em vez de
+    # travar a descrição inteira.
+    resultado = coletar_lugar_generico(state["entidade"])
     return {"fontes": resultado["fontes"]}
 
 
@@ -228,7 +247,10 @@ def no_gerar(state: DescricaoState) -> dict:
         classificacao_tipo=state.get("classificacao_tipo"),
         instrucao_extra=instrucao_extra,
     )
-    return {"texto_gerado": texto}
+    # gerar_texto_bruto não devolve isso (mantém o retorno simples, uma
+    # string só) — recalcula aqui, de graça, só pra sinalizar no state.
+    sem_fontes = not montar_fontes_texto(state.get("fontes") or {})
+    return {"texto_gerado": texto, "sem_fontes": sem_fontes}
 
 
 def no_humanizar(state: DescricaoState) -> dict:
@@ -425,6 +447,7 @@ def construir_grafo():
     grafo.add_node("coletar_ponto_turistico", no_coletar_ponto_turistico)
     grafo.add_node("coletar_cidade", no_coletar_cidade)
     grafo.add_node("coletar_terminal_rodoviaria", no_coletar_terminal_rodoviaria)
+    grafo.add_node("coletar_lugar_generico", no_coletar_lugar_generico)
     grafo.add_node("categoria_nao_implementada", no_categoria_nao_implementada)
     grafo.add_node("gerar", no_gerar)
     grafo.add_node("humanizar", no_humanizar)
@@ -440,6 +463,7 @@ def construir_grafo():
         "coletar_ponto_turistico": "coletar_ponto_turistico",
         "coletar_cidade": "coletar_cidade",
         "coletar_terminal_rodoviaria": "coletar_terminal_rodoviaria",
+        "coletar_lugar_generico": "coletar_lugar_generico",
         "categoria_nao_implementada": "categoria_nao_implementada",
     })
 
@@ -449,6 +473,7 @@ def construir_grafo():
     grafo.add_edge("coletar_ponto_turistico", "gerar")
     grafo.add_edge("coletar_cidade", "gerar")
     grafo.add_edge("coletar_terminal_rodoviaria", "gerar")
+    grafo.add_edge("coletar_lugar_generico", "gerar")
     # Na prática a exceção sobe antes de chegar no END; a aresta só existe
     # pra o grafo ficar bem-formado (todo nó precisa levar a algum lugar).
     grafo.add_edge("categoria_nao_implementada", END)

@@ -50,12 +50,13 @@ Cada passo alimenta o próximo:
 O resultado aparece na própria interface, com a categoria e o tom usados em
 cada item, e pode ser copiado, baixado em `.json` ou exportado em `.csv`.
 
-> **Cobertura atual:** as categorias **empresa**, **cidade** e **ponto turístico**
-> têm coleta de dados e prompts de geração prontos (nos 3 tons: informativo,
-> vendas e promocional). **Terminal rodoviário** tem só a coleta pronta — a
-> geração de texto ainda não tem prompt. As demais (estado, país, lugar
-> genérico, evento) ainda não têm nada implementado — aparecem como erro no
-> resultado. Detalhes por categoria em
+> **Cobertura atual:** as categorias **empresa**, **cidade**, **ponto turístico**
+> e **terminal rodoviário** têm coleta de dados real e prompts de geração
+> prontos (nos 3 tons: informativo, vendas e promocional). **Lugar genérico**
+> também tem prompt pronto, mas ainda sem coletor — todo texto sai do
+> conhecimento geral do modelo, sinalizado com um aviso de "não verificado".
+> As demais (estado, país, evento) ainda não têm nada implementado —
+> aparecem como erro no resultado. Detalhes por categoria em
 > [`formatos/descricao/estrategias/`](formatos/descricao/estrategias/README.md).
 
 ## Como executar localmente

@@ -87,8 +87,20 @@ def gerar_texto_bruto(
         )
 
     fontes_texto = montar_fontes_texto(fontes)
-    if not fontes_texto:
-        raise ValueError(f"Nenhuma fonte com conteúdo coletado para '{entidade}'.")
+    sem_fontes = not fontes_texto
+    if sem_fontes:
+        # Antes, isso travava a geração inteira (ValueError). Agora deixa o
+        # modelo escrever com o que ele já sabe sobre {entidade}, em vez de
+        # falhar por causa de uma coleta que não achou nada (site fora do
+        # ar, geocodificação errada, nome sem página em lugar nenhum) — o
+        # texto ainda sai, só que sem grounding nenhum, e isso é sinalizado
+        # de volta pro chamador (ver no_gerar em grafo_descricao.py) pra
+        # quem for revisar saber que esse item não foi verificado contra
+        # fonte real nenhuma.
+        fontes_texto = (
+            f"(nenhuma fonte real foi coletada sobre {entidade} — as buscas "
+            f"não encontraram conteúdo aproveitável)"
+        )
 
     # Só a categoria "empresa" tem {instrucao_tipo_empresa} no template — nas
     # demais, o .format() simplesmente ignora esse kwarg (não é KeyError
@@ -138,6 +150,24 @@ def gerar_texto_bruto(
             "\n\nInclua de forma natural, sem forçar, as seguintes palavras-chave: "
             + ", ".join(palavras_chave_efetivas)
             + "."
+        )
+
+    if sem_fontes:
+        # As instruções do template inteiro pressupõem que existem fontes
+        # coletadas pra se basear ("não invente dados", "priorize
+        # informações verificáveis", etc.) — sem isso, precisa de uma
+        # instrução que suspenda essa exigência explicitamente, senão o
+        # modelo fica preso entre "escreva o texto" e "não invente nada",
+        # o que é impossível de cumprir junto sem nenhuma fonte.
+        prompt += (
+            f"\n\nATENÇÃO: não foi possível coletar nenhuma fonte real sobre "
+            f"{entidade}. As instruções acima que pedem pra basear tudo nas "
+            f"fontes coletadas NÃO se aplicam aqui, porque não há fontes "
+            f"nenhuma. Em vez disso, escreva com base no que você já sabe "
+            f"sobre esse assunto — evite datas, números e detalhes muito "
+            f"específicos que você não tenha certeza absoluta de estarem "
+            f"corretos, e não mencione em nenhum momento que faltam fontes "
+            f"ou que a informação é incerta."
         )
 
     if instrucao_extra:

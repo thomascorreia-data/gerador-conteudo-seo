@@ -1,8 +1,45 @@
-from grafo_descricao import _checar_regras
+from grafo_descricao import _checar_regras, _rotear_por_categoria, no_coletar_lugar_generico
 
 
 def _fontes(texto: str) -> dict:
     return {"Google_AIOverview": {"conteudo": texto, "erro": None}}
+
+
+# --- roteamento por categoria -----------------------------------------------
+
+def test_roteamento_reconhece_todas_as_categorias_implementadas():
+    esperado = {
+        "empresa": "coletar_empresa",
+        "ponto_turistico": "coletar_ponto_turistico",
+        "cidade": "coletar_cidade",
+        "terminal_rodoviaria": "coletar_terminal_rodoviaria",
+        "lugar_generico": "coletar_lugar_generico",
+    }
+    for categoria, no_esperado in esperado.items():
+        assert _rotear_por_categoria({"categoria": categoria}) == no_esperado
+
+
+def test_roteamento_categoria_desconhecida_cai_em_nao_implementada():
+    assert _rotear_por_categoria({"categoria": "evento"}) == "categoria_nao_implementada"
+
+
+def test_coletar_lugar_generico_chama_o_coletor_com_a_entidade(monkeypatch):
+    # no_coletar_lugar_generico só repassa o resultado do coletor de
+    # verdade (base_lugares_genericos.py, só Wikipédia) — sem chamar rede
+    # de verdade aqui, só confere que a entidade certa é passada e o
+    # "fontes" do coletor é repassado tal e qual.
+    chamadas = []
+
+    def _fake_coletar(nome_lugar):
+        chamadas.append(nome_lugar)
+        return {"lugar": nome_lugar, "fontes": {"Wikipedia": {"url": "u", "conteudo": "c", "erro": None}}}
+
+    monkeypatch.setattr("grafo_descricao.coletar_lugar_generico", _fake_coletar)
+
+    resultado = no_coletar_lugar_generico({"entidade": "Shopping Eldorado"})
+
+    assert chamadas == ["Shopping Eldorado"]
+    assert resultado == {"fontes": {"Wikipedia": {"url": "u", "conteudo": "c", "erro": None}}}
 
 
 def _state(texto_humanizado: str, **extra) -> dict:

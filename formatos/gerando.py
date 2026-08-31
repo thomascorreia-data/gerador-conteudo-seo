@@ -70,6 +70,12 @@ def gerar_conteudo(itens: list) -> list:
                 item_resultado["conteudo_gerado"] = resultado["texto_humanizado"]
             if resultado.get("erro"):
                 item_resultado["erro"] = resultado["erro"]
+            if resultado.get("sem_fontes"):
+                item_resultado["aviso"] = (
+                    "Nenhuma fonte real foi coletada — texto gerado do "
+                    "conhecimento geral do modelo, sem verificação contra "
+                    "dado nenhum. Vale conferir manualmente antes de publicar."
+                )
         except Exception as erro:
             item_resultado["erro"] = str(erro)
 
