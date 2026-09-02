@@ -27,7 +27,8 @@ _DIR_TESTS = os.path.dirname(os.path.abspath(__file__))
 _DIR_RAIZ = os.path.dirname(_DIR_TESTS)
 _DIR_FORMATOS = os.path.join(_DIR_RAIZ, "formatos")
 _DIR_DESCRICAO = os.path.join(_DIR_FORMATOS, "descricao")
+_DIR_FAQ = os.path.join(_DIR_FORMATOS, "faq")
 
-for _dir in (_DIR_RAIZ, _DIR_FORMATOS, _DIR_DESCRICAO):
+for _dir in (_DIR_RAIZ, _DIR_FORMATOS, _DIR_DESCRICAO, _DIR_FAQ):
     if _dir not in sys.path:
         sys.path.insert(0, _dir)
