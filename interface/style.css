@@ -37,7 +37,7 @@
   .label{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--brass);display:block;margin-bottom:8px;}
   .hint{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);margin:4px 0 14px;line-height:1.5;}
 
-  textarea, select, input[type=text], input[type=number]{
+  textarea, select, input[type=text], input[type=number], input[type=url]{
     width:100%;
     background:var(--bg);
     border:1px solid var(--line);

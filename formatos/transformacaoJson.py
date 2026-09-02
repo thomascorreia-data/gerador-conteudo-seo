@@ -38,7 +38,9 @@ Saída de normalizar_lote(): uma tupla (resultado, avisos)
        "tema": "...",
        "tom": "Informativo",
        "media_palavras": 300,
-       "palavras_chave": ["...", "..."]
+       "palavras_chave": ["...", "..."],
+       "link_conteudo": None,       # só preenchido pelo usuário em FAQ
+       "quantidade_perguntas": None # idem
      },
      ...
   ]
@@ -75,6 +77,26 @@ CAMPOS_HERDAVEIS = {
         "palavra_chave",
         "keywords",
         "keyword",
+    ],
+    # Específicos de FAQ: em qualquer outro formato (Descrição, Artigo, Post)
+    # ficam None, já que ninguém preenche esses campos pra eles — o próprio
+    # usuário passa a URL, não tem geocodificação/coleta nenhuma decidindo
+    # isso por código.
+    "link_conteudo": [
+        "link do conteudo",
+        "link_conteudo",
+        "site",
+        "link",
+        "url",
+        "content_url",
+    ],
+    "quantidade_perguntas": [
+        "quantidade de perguntas",
+        "quantidade_perguntas",
+        "numero de perguntas",
+        "num_perguntas",
+        "qtd_perguntas",
+        "question_count",
     ],
 }
 

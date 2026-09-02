@@ -94,3 +94,23 @@ def test_palavras_chave_sem_valor_fica_none():
     payload = {"Formato": "Post", "Temas": ["A"]}
     resultado, _ = normalizar_lote(payload)
     assert resultado[0]["palavras_chave"] is None
+
+
+def test_faq_preenche_link_e_quantidade_de_perguntas():
+    payload = {
+        "Requisitor": "Thomas",
+        "Formato": "FAQ",
+        "Temas": [
+            {"tema": "Como cancelar", "Link do Conteudo": "https://buser.com.br/faq/cancelamento", "Quantidade de Perguntas": 5},
+        ],
+    }
+    resultado, _ = normalizar_lote(payload)
+    assert resultado[0]["link_conteudo"] == "https://buser.com.br/faq/cancelamento"
+    assert resultado[0]["quantidade_perguntas"] == 5
+
+
+def test_link_e_quantidade_de_perguntas_ficam_none_fora_de_faq():
+    payload = {"Requisitor": "Thomas", "Formato": "Descrição", "Temas": ["Salvador"]}
+    resultado, _ = normalizar_lote(payload)
+    assert resultado[0]["link_conteudo"] is None
+    assert resultado[0]["quantidade_perguntas"] is None

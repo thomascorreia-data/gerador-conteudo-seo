@@ -59,6 +59,16 @@
           <label class="label" style="color:var(--muted);">Palavras-chave (para pesquisa/SEO)</label>
           <input type="text" id="palavrasChave" placeholder="ex: buser; ônibus; viagem barata">
         </div>
+        <div id="envelopeFaqBlock" style="display:none;">
+          <div class="row">
+            <label class="label" style="color:var(--muted);">Link do conteúdo (a página que vai virar FAQ)</label>
+            <input type="url" id="linkConteudo" placeholder="ex: https://buser.com.br/faq/cancelamento">
+          </div>
+          <div class="row">
+            <label class="label" style="color:var(--muted);">Quantidade de perguntas</label>
+            <input type="number" id="quantidadePerguntas" min="1" step="1" placeholder="ex: 5">
+          </div>
+        </div>
       </div>
 
       <div class="panel">
@@ -183,6 +193,10 @@ function addThemeCard(prefill){
       <input type="number" class="t-media" placeholder="Média de palavras (padrão: herdar)" min="10" step="10">
       <input type="text" class="t-palavraschave" placeholder="Palavras-chave (padrão: herdar)">
     </div>
+    <div class="two-col row">
+      <input type="url" class="t-link" placeholder="Link do conteúdo, só p/ FAQ — ex: https://buser.com.br/faq/cancelamento (padrão: herdar)">
+      <input type="number" class="t-qtdperguntas" placeholder="Qtd. de perguntas, só p/ FAQ — ex: 5 (padrão: herdar)" min="1" step="1">
+    </div>
   `;
   div.querySelector('[data-remove]').onclick = () => { div.remove(); renumerarThemeCards(); };
   div.querySelector('[data-fill]').onclick = () => fillCardFromEnvelope(div);
@@ -202,7 +216,54 @@ function fillCardFromEnvelope(card){
   card.querySelector('.t-tom').value = getEnvelopeValue('tom', 'tomOutro');
   card.querySelector('.t-media').value = document.getElementById('mediaPalavras').value;
   card.querySelector('.t-palavraschave').value = document.getElementById('palavrasChave').value.trim();
+  card.querySelector('.t-link').value = document.getElementById('linkConteudo').value.trim();
+  card.querySelector('.t-qtdperguntas').value = document.getElementById('quantidadePerguntas').value;
 }
+
+// ---- Formato FAQ tem campos próprios (link do conteúdo, quantidade de
+// perguntas) que não fazem sentido pros outros formatos — mostra o bloco
+// no envelope só quando "FAQ" está selecionado, pra não confundir quem tá
+// gerando Descrição/Artigo/Post.
+function atualizarVisibilidadeFaq(){
+  const ehFaq = getEnvelopeValue('formato', 'formatoOutro') === 'FAQ';
+  document.getElementById('envelopeFaqBlock').style.display = ehFaq ? 'block' : 'none';
+}
+
+// ---- Trocar de formato zera o resultado gerado (JSON e/ou conteúdo na
+// tela) e os campos exclusivos de FAQ. Sem isso, dois problemas reais:
+// 1) link do conteúdo/quantidade de perguntas ficavam ocultos ao sair de
+//    FAQ, mas o VALOR continuava no input — e vazava pro JSON de outro
+//    formato (ex: uma Descrição saindo com "link_conteudo" preenchido).
+// 2) gerar conteúdo pra um formato sem gerador (ex: FAQ) abre um modal de
+//    aviso em tela cheia; se o usuário trocasse o formato sem fechar esse
+//    modal antes, ele ficava por cima de tudo bloqueando a interface
+//    inteira — parecia que "não gerava mais nada".
+function reiniciarSaida(){
+  ultimoResultadoFinal = null;
+  ultimoConteudoGerado = null;
+  esconderAvisoModal();
+
+  document.getElementById('errorBox').innerHTML = '';
+  document.getElementById('rawJson').style.display = 'none';
+  document.getElementById('rawJson').textContent = '';
+  document.getElementById('conteudoGeradoList').style.display = 'none';
+  document.getElementById('conteudoGeradoList').innerHTML = '';
+  document.getElementById('gerarConteudoBox').style.display = 'none';
+  document.getElementById('downloadCsvBtn').style.display = 'none';
+  document.getElementById('emptyState').style.display = 'block';
+  document.getElementById('outputTag').textContent = 'JSON DE SAÍDA';
+
+  document.getElementById('linkConteudo').value = '';
+  document.getElementById('quantidadePerguntas').value = '';
+  document.querySelectorAll('.t-link, .t-qtdperguntas').forEach(campo => campo.value = '');
+}
+
+function aoMudarFormato(){
+  atualizarVisibilidadeFaq();
+  reiniciarSaida();
+}
+document.getElementById('formato').addEventListener('change', aoMudarFormato);
+atualizarVisibilidadeFaq();
 
 document.getElementById('addThemeBtn').onclick = () => addThemeCard();
 
@@ -219,6 +280,8 @@ function montarPayloadEnvelope(){
   const tomEnvelope = getEnvelopeValue('tom', 'tomOutro');
   const mediaEnvelope = parseInt(document.getElementById('mediaPalavras').value, 10) || 300;
   const palavrasChaveEnvelope = document.getElementById('palavrasChave').value.trim();
+  const linkConteudoEnvelope = document.getElementById('linkConteudo').value.trim();
+  const quantidadePerguntasEnvelope = parseInt(document.getElementById('quantidadePerguntas').value, 10) || undefined;
 
   if(!requisitor){ errorBox.innerHTML = '<div class="error-box">Preencha o Requisitor.</div>'; return null; }
   if(!formatoEnvelope){ errorBox.innerHTML = '<div class="error-box">Preencha o Formato.</div>'; return null; }
@@ -247,6 +310,8 @@ function montarPayloadEnvelope(){
       const tomItem = card.querySelector('.t-tom').value.trim();
       const mediaItem = card.querySelector('.t-media').value.trim();
       const palavrasChaveItem = card.querySelector('.t-palavraschave').value.trim();
+      const linkItem = card.querySelector('.t-link').value.trim();
+      const qtdPerguntasItem = card.querySelector('.t-qtdperguntas').value.trim();
 
       // só inclui o campo se o usuário digitou algo DIFERENTE do padrão do envelope
       if(formatoItem && formatoItem !== formatoEnvelope) obj["Formato"] = formatoItem;
@@ -254,6 +319,8 @@ function montarPayloadEnvelope(){
       if(tomItem && tomItem !== tomEnvelope) obj["Tom"] = tomItem;
       if(mediaItem && parseInt(mediaItem,10) !== mediaEnvelope) obj["Média de Palavras Por Conteúdo"] = parseInt(mediaItem,10);
       if(palavrasChaveItem && palavrasChaveItem !== palavrasChaveEnvelope) obj["Palavras-chave"] = palavrasChaveItem;
+      if(linkItem && linkItem !== linkConteudoEnvelope) obj["Link do Conteúdo"] = linkItem;
+      if(qtdPerguntasItem && parseInt(qtdPerguntasItem,10) !== quantidadePerguntasEnvelope) obj["Quantidade de Perguntas"] = parseInt(qtdPerguntasItem,10);
 
       temas.push(obj);
     }
@@ -267,6 +334,8 @@ function montarPayloadEnvelope(){
     "Média de Palavras Por Conteúdo": mediaEnvelope,
     "Tom": tomEnvelope || "Informativo",
     "Palavras-chave": palavrasChaveEnvelope || undefined,
+    "Link do Conteúdo": linkConteudoEnvelope || undefined,
+    "Quantidade de Perguntas": quantidadePerguntasEnvelope,
     "Temas": temas
   };
 }
