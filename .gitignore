@@ -1,5 +1,8 @@
 .env
 
+# Ambiente virtual Python
+venv/
+
 # Rascunhos de teste (arquivos que eu crio pra debugar, não fazem parte do projeto)
 scratch_*
 scratch/
