@@ -1451,5 +1451,58 @@
       "palavra": "viagem",
       "instrucao": "Guirro Transportes faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
     }
+  },
+  "catedral": {
+    "empresa": "Catedral",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": "A Catedral Turismo (ou Viação Catedral) é uma empresa brasileira de transporte rodoviário de passageiros com forte atuação em linhas interestaduais . O que você precisa saber sobre a empresa: Origem e Atuação: Com raízes no Distrito Federal (Brasília), a empresa opera linhas de ônibus ligando diversas regiões do país, com rotas de longa distância que conectam o Nordeste, Sudeste e o Centro-Oeste (como rotas para São Paulo, Belo Horizonte, Salvador e Brasília). Parcerias: A empresa realiza expansões e parcerias estratégicas no setor de transporte rodoviário, incluindo a atuação conjunta com plataformas de mobilidade como a . Regulamentação: Por operar no setor interestadual, está sujeita às fiscalizações e deliberações da ANTT (Agência Nacional de Transportes Terrestres), órgão que regula o transporte terrestre no Brasil. Você gostaria de saber sobre horários de rotas específicas, como comprar passagens ou consultar a situação de alguma linha da Viação Catedral?",
+        "referencias": [],
+        "erro": null
+      },
+      "Google_TopSites": {
+        "conteudo": "Catedral Turismo - Evolução da empresa: Comments ; 73 HOURS OF TRAVEL, BIGGEST OPERATION OF CATHEDRAL TOURISM (SÃO PAULO X NATA) · Auto-dubbed. 64K views ; RENOVAÇÕES DE FROTAS: Eucatur e ... CATEDRAL TRANSPORTES E SERVICOS LTDA - ME: O CNPJ da empresa CATEDRAL TRANSPORTES E SERVICOS LTDA - ME é 48.623.512/0001-30. Com sede em LUZ, MG, possui 3 anos, 9 meses e 15 dias e foi fundada em 16/11/ ... A PIOR EMPRESA DE VIAGEM - Viação Catedral: A PIOR EMPRESA DE VIAGEM · Fretamentos · Ônibus · Mau atendimento do prestador de serviço. Essa reclamação foi publicada há mais de 1 ano. Ver todas Reclamações. Reel by VIAÇÃO CATEDRAL-OSASCO ...: Com rotas incríveis, paisagens deslumbrantes e paradas estratégicas, nossa empresa oferece uma experiência única de viagem. ... Catedral turismo # ... Avaliações da empresa Catedral Turismo sobre Salário e ...: Empresa grande em escala de ônibus, e funcionários. Porém, não tem nenhum tipo de reconhecimento pelo trabalho do funcionário! Não tem o mínimo de compaixão ... Catedral em Brasília, DF - 37.111.549/0001-63: É uma empresa do tipo LTDA. Sua atividade principal é de Transporte rodoviário coletivo de passageiros, com itinerário fixo, interestadual, de acordo com o ...",
+        "sites": [
+          {
+            "titulo": "Catedral Turismo - Evolução da empresa",
+            "link": "https://www.youtube.com/watch?v=hELSHypBkHs",
+            "snippet": "Comments ; 73 HOURS OF TRAVEL, BIGGEST OPERATION OF CATHEDRAL TOURISM (SÃO PAULO X NATA) · Auto-dubbed. 64K views ; RENOVAÇÕES DE FROTAS: Eucatur e ..."
+          },
+          {
+            "titulo": "CATEDRAL TRANSPORTES E SERVICOS LTDA - ME",
+            "link": "/goto?url=CAESpQEB6zswFbuUjYIj0tpRJLXm4vuiY0fMdEvHx_UQBN6lNkIwlq8h4D2ONUvHgTIF26ubGB2Af7Ug7OCU22NFZNSZcauZ8RyVEyvYp0mXFdY1c8p-L7-gJpvs9fmzsj_epGPQHwC_Hk446xDL8HRz-xjLv_J_MtB2Bg4YSWgm-0Ns5z_aEfoKUl5k3t2qnMH_YlH6ofg4F0NRO1MGDXjym0jWzfaoC5w",
+            "snippet": "O CNPJ da empresa CATEDRAL TRANSPORTES E SERVICOS LTDA - ME é 48.623.512/0001-30. Com sede em LUZ, MG, possui 3 anos, 9 meses e 15 dias e foi fundada em 16/11/ ..."
+          },
+          {
+            "titulo": "A PIOR EMPRESA DE VIAGEM - Viação Catedral",
+            "link": "/goto?url=CAESkgEB6zswFRgz6gV98WCnXJ5qlM8L7eIZJjcBlnnraM7lNVO8C_JeGsC8__PdeK412nyroodm2R7IuODG--Kx1OGTwZDeIrqKMmQpeVu5oulWj9l5rBKapk6kzYn4QIbpsLpFXBoeuaP0IRss7m7TN8qIipXhytLTTILKAaFrdgGPj5KUCCEuv7cL6jAw3ZXWNNIiNA",
+            "snippet": "A PIOR EMPRESA DE VIAGEM · Fretamentos · Ônibus · Mau atendimento do prestador de serviço. Essa reclamação foi publicada há mais de 1 ano. Ver todas Reclamações."
+          },
+          {
+            "titulo": "Reel by VIAÇÃO CATEDRAL-OSASCO ...",
+            "link": "https://www.instagram.com/reel/Cs6G9KhOGrd/",
+            "snippet": "Com rotas incríveis, paisagens deslumbrantes e paradas estratégicas, nossa empresa oferece uma experiência única de viagem. ... Catedral turismo # ..."
+          },
+          {
+            "titulo": "Avaliações da empresa Catedral Turismo sobre Salário e ...",
+            "link": "/goto?url=CAESfQHrOzAVdhyO2qKssWh8d-5HTPOE1hu5SlMModN-MJPlWOlnVVM7TMcJoPsHoQ76FjPpaZildjXTpdSa6nSFiaY-yIGETI8vsrp2ADaDID4v34uI526_l7q6MYsDE1nflGBlYZv-F6QrS3xihNYgoePR97T7v6MmkOFp6R_Z",
+            "snippet": "Empresa grande em escala de ônibus, e funcionários. Porém, não tem nenhum tipo de reconhecimento pelo trabalho do funcionário! Não tem o mínimo de compaixão ..."
+          },
+          {
+            "titulo": "Catedral em Brasília, DF - 37.111.549/0001-63",
+            "link": "/goto?url=CAESngEB6zswFVIuylxo-AhjuNLKNdf52G7TLBWHlTyEAWu-EVTWUkZPFbAXJRxdIHWUrMqOYzor9xcfvwIYd7bXX0XPrJKI9GSOwGdvGQ1YbLjQUcoDzdKWLSXRbroP_BypdXge8WPMIsEMze1gZ0ixNIuSeczrYpfsqiFgQ5laiXSYe26rdizKj7kfqMK0m1I0kUByRtGtEDShfHTNJ_UN6g",
+            "snippet": "É uma empresa do tipo LTDA. Sua atividade principal é de Transporte rodoviário coletivo de passageiros, com itinerário fixo, interestadual, de acordo com o ..."
+          }
+        ],
+        "site_oficial": null,
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "Catedral faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
   }
 }
