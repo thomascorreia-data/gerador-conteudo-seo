@@ -437,5 +437,1019 @@
       "palavra": "viagem",
       "instrucao": "3 Estrelas faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
     }
+  },
+  "aliancaturbh": {
+    "empresa": "Aliança Tur BH",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": "A Aliança Férias Turismo (frequentemente chamada de Aliança Turismo) é uma agência de viagens e turismo com sede no centro de Belo Horizonte (MG), especializada em pacotes de viagens nacionais e internacionais, excursões e atendimento voltado ao turismo de lazer. Detalhes Principais Razão Social: Aliança Férias Turismo Ltda. Localização: Avenida Augusto de Lima, 479, Sala 506 – Centro, Belo Horizonte - MG. Atividade: Agência de viagens, oferta de pacotes turísticos, excursões rodoviárias e aéreas para destinos nacionais (como cidades históricas de Minas Gerais, nordeste e sul do país) e roteiros internacionais. Se você precisar de contatos específicos, avaliações de atendimento ou destinos comercializados por ela, é só me avisar!",
+        "referencias": [],
+        "erro": null
+      },
+      "Google_TopSites": {
+        "conteudo": "ALIANCA FERIAS TURISMO LTDA: Consulte os dados da empresa Alianca Turismo, CNPJ 42.034.569/0001-18, telefone (31) 3271-2820, e-mail marcarcontabilidade508@gmail.com, situada em Belo ... Ba | Aliança na estrada: nossa frota completa —ônibus, micro- ...: Aliança na estrada: nossa frota completa —ônibus, micro-ônibus e vans — está sempre pronta para atender com excelência, unindo conforto, ... Sua próxima viagem começa com a escolha certa! Garanta ...: Isso mesmo! Oferecemos transporte com todo o conforto, segurança e qualidade que você merece. Nossa frota conta com: ... Ônibus convencionais de ... Alianca Turismo em Inhapim, MG - 23.297.357/0001-89: O endereço de sua sede está localizada em Inhapim - MG. Sua atividade principal é de Transporte rodoviário coletivo de passageiros, sob regime de fretamento, ... Aliança Turismo Rua Galeão Carvalhal 51 - Loja 04 ☎ (13) ...: Aliança Turismo Rua Galeão Carvalhal 51 - Loja 04 ☎ (13) 3289.1277 / 30260902. Nathália Alves y Eliana Assis. Aliança Turismo e Transporte 2808 em Belo Horizonte por ...: Aliança Turismo e Transporte 2808 na cidade de Belo Horizonte, Minas Gerais, Brasil, por Adão Raimundo Marcelino. Número da foto: #7734178. Mais do que uma viagem, um compromisso com o seu destino ...: ... Aliança. Investimos no que há de melhor para que cada quilômetro ... EMPRESAS, TURISMO SOLICITE SEU ORÇAMENTO! (27) 99273-3774 JANSEN ... Aliança Transportes - Fretamento e Turismo | Camaçari - Ba: Conta pra gente! ⏱️ Enquanto você escolhe, nós garantimos conforto, segurança e pontualidade para sua empresa ou evento. Fala com a gente ...",
+        "sites": [
+          {
+            "titulo": "ALIANCA FERIAS TURISMO LTDA",
+            "link": "https://cnpja.com/office/42034569000118",
+            "snippet": "Consulte os dados da empresa Alianca Turismo, CNPJ 42.034.569/0001-18, telefone (31) 3271-2820, e-mail marcarcontabilidade508@gmail.com, situada em Belo ..."
+          },
+          {
+            "titulo": "Ba | Aliança na estrada: nossa frota completa —ônibus, micro- ...",
+            "link": "https://www.instagram.com/reel/DNQnGUZuRPq/",
+            "snippet": "Aliança na estrada: nossa frota completa —ônibus, micro-ônibus e vans — está sempre pronta para atender com excelência, unindo conforto, ..."
+          },
+          {
+            "titulo": "Sua próxima viagem começa com a escolha certa! Garanta ...",
+            "link": "https://www.instagram.com/p/DWmDyrlEUuU/",
+            "snippet": "Isso mesmo! Oferecemos transporte com todo o conforto, segurança e qualidade que você merece. Nossa frota conta com: ... Ônibus convencionais de ..."
+          },
+          {
+            "titulo": "Alianca Turismo em Inhapim, MG - 23.297.357/0001-89",
+            "link": "https://www.econodata.com.br/consulta-empresa/23297357000189-douglas-francisco-barbosa",
+            "snippet": "O endereço de sua sede está localizada em Inhapim - MG. Sua atividade principal é de Transporte rodoviário coletivo de passageiros, sob regime de fretamento, ..."
+          },
+          {
+            "titulo": "Aliança Turismo Rua Galeão Carvalhal 51 - Loja 04 ☎ (13) ...",
+            "link": "https://www.facebook.com/aliancatour/videos/alian%C3%A7a-turismorua-gale%C3%A3o-carvalhal-51-loja-04-13-32891277-30260902/1490499077641657/?locale\\u003des_LA",
+            "snippet": "Aliança Turismo Rua Galeão Carvalhal 51 - Loja 04 ☎ (13) 3289.1277 / 30260902. Nathália Alves y Eliana Assis."
+          },
+          {
+            "titulo": "Aliança Turismo e Transporte 2808 em Belo Horizonte por ...",
+            "link": "https://onibusbrasil.com/adaomarcelino/7734178",
+            "snippet": "Aliança Turismo e Transporte 2808 na cidade de Belo Horizonte, Minas Gerais, Brasil, por Adão Raimundo Marcelino. Número da foto: #7734178."
+          },
+          {
+            "titulo": "Mais do que uma viagem, um compromisso com o seu destino ...",
+            "link": "https://www.instagram.com/reel/DWRerVPBM3W/",
+            "snippet": "... Aliança. Investimos no que há de melhor para que cada quilômetro ... EMPRESAS, TURISMO SOLICITE SEU ORÇAMENTO! (27) 99273-3774 JANSEN ..."
+          },
+          {
+            "titulo": "Aliança Transportes - Fretamento e Turismo | Camaçari - Ba",
+            "link": "https://www.instagram.com/reel/DM7vKifMc9H/",
+            "snippet": "Conta pra gente! ⏱️ Enquanto você escolhe, nós garantimos conforto, segurança e pontualidade para sua empresa ou evento. Fala com a gente ..."
+          }
+        ],
+        "site_oficial": null,
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "Aliança Tur BH faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
+  },
+  "amatur": {
+    "empresa": "Amatur",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": "A Amatur Turismo é uma empresa brasileira de transporte rodoviário de passageiros e fretamento, fundada em 1990 em Boa Vista, Roraima, por Remídio Monai. Principais detalhes sobre a empresa: Área de atuação: É amplamente reconhecida como uma das principais viações da Região Norte do Brasil, conectando mais de 20 cidades em estados como Roraima, Amazonas, Rondônia e Acre (com rotas tradicionais entre capitais como Boa Vista, Manaus, Porto Velho e Rio Branco). Serviços: Oferece transporte interestadual e intermunicipal de passageiros, além de serviços de fretamento e transporte de cargas/encomendas em sua área de cobertura. Conta com opções de ônibus convencionais, semileito e leito. Importância regional: Desempenha um papel fundamental na integração terrestre de cidades amazônicas por rodovias desafiadoras na região (como trechos da BR-174 e BR-319), sendo frequentemente premiada ou destacada pela qualidade de seus serviços no Norte do país. Você pode conferir mais detalhes e rotas diretamente no site oficial da Amatur Turismo . Gostaria de saber informações específicas sobre linhas, horários de viagem ou compra de passagens da Amatur?",
+        "referencias": [],
+        "erro": null
+      },
+      "Google_TopSites": {
+        "conteudo": "Empresa roraimense é considerada a melhor da região ...: A Amatur Turismo, empresa roraimense de transporte rodoviário de passageiros é considerada a melhor da região Norte. Nossa empresa completa hoje 32 anos, e é com muito ...: Viajar entre Manaus e Porto Velho é mais especial qual é de Amatur Turismo! Conheça nosso ônibus Leito Vip 319, um veículo preparado e equipado ... 180322 - LO Nº 560-13-04 - Amatur Amazonia Turismo Ltda: IPAAM, no uso das atribuições que lhe confere a Lei nº 3.785 de 24 de Julho de 2012, expede a presente Licença que autoriza a: INTERESSADO: Amatur Amazônia ... Amatur Turismo passagens de ônibus e horários - CheckMyBus: A melhor empresa de ónibus interestadual e intermunicipal da região norte. Ónibus novos e confortáveis, além do excelente atendimento. E o que é melhor: 100% ... Venha conhecer o leito da Amatur e aprovar o diferencial que ...: O atendimento pelo whatsapp dessa empresa e simplesmente ridículo, uma gigantescas falta de edução e tolerância. Hoje iria viajar pela ... Amatur Turismo: Hoje nós comemoramos mais um ano de história, dedicação e muitos caminhos trilhados. 29 anos conectando pessoas, expandindo horizontes, ... Agência Nacional de Transportes Terrestres - ANTT - ANTTlegis: Art. 1º Aplicar à empresa AMATUR - Amazônia Turismo Ltda., CNPJ nº 34.805.903/0001-61, a Pena de Declaração de Inidoneidade, e convertê-la em multa no valor de ... Amatur tem novas rotas de viagens: O empresário e deputado federal Remídio Monai, fundador da Amatur Turismo , será um dos entrevistados do programa 'Quem é quem' apresentado ...",
+        "sites": [
+          {
+            "titulo": "Empresa roraimense é considerada a melhor da região ...",
+            "link": "https://www.folhabv.com.br/cotidiano/empresa-roraimense-e-considerada-a-melhor-da-regiao-norte/",
+            "snippet": "A Amatur Turismo, empresa roraimense de transporte rodoviário de passageiros é considerada a melhor da região Norte."
+          },
+          {
+            "titulo": "Nossa empresa completa hoje 32 anos, e é com muito ...",
+            "link": "https://www.instagram.com/reel/Cli0po8D7r6/",
+            "snippet": "Viajar entre Manaus e Porto Velho é mais especial qual é de Amatur Turismo! Conheça nosso ônibus Leito Vip 319, um veículo preparado e equipado ..."
+          },
+          {
+            "titulo": "180322 - LO Nº 560-13-04 - Amatur Amazonia Turismo Ltda",
+            "link": "https://www.ipaam.am.gov.br/wp-content/uploads/2022/04/180322-LO-N%C2%BA-560-13-04-Amatur-Amazonia-Turismo-Ltda.pdf",
+            "snippet": "IPAAM, no uso das atribuições que lhe confere a Lei nº 3.785 de 24 de Julho de 2012, expede a presente Licença que autoriza a: INTERESSADO: Amatur Amazônia ..."
+          },
+          {
+            "titulo": "Amatur Turismo passagens de ônibus e horários - CheckMyBus",
+            "link": "https://www.checkmybus.com.br/empresas-de-onibus/amatur-turismo",
+            "snippet": "A melhor empresa de ónibus interestadual e intermunicipal da região norte. Ónibus novos e confortáveis, além do excelente atendimento. E o que é melhor: 100% ..."
+          },
+          {
+            "titulo": "Venha conhecer o leito da Amatur e aprovar o diferencial que ...",
+            "link": "https://www.instagram.com/reel/CONkLuQAKQq/",
+            "snippet": "O atendimento pelo whatsapp dessa empresa e simplesmente ridículo, uma gigantescas falta de edução e tolerância. Hoje iria viajar pela ..."
+          },
+          {
+            "titulo": "Amatur Turismo",
+            "link": "https://www.facebook.com/amaturturismo/photos/hoje-n%C3%B3s-comemoramos-mais-um-ano-de-hist%C3%B3ria-dedica%C3%A7%C3%A3o-e-muitos-caminhos-trilhad/2644982258929416/",
+            "snippet": "Hoje nós comemoramos mais um ano de história, dedicação e muitos caminhos trilhados. 29 anos conectando pessoas, expandindo horizontes, ..."
+          },
+          {
+            "titulo": "Agência Nacional de Transportes Terrestres - ANTT - ANTTlegis",
+            "link": "https://anttlegis.antt.gov.br/action/UrlPublicasAction.php?acao\\u003dabrirAtoPublico\\u0026num_ato\\u003d00003597\\u0026sgl_tipo\\u003dRES\\u0026sgl_orgao\\u003dDG/ANTT/MT\\u0026vlr_ano\\u003d2010\\u0026seq_ato\\u003d000\\u0026cod_modulo\\u003d420\\u0026cod_menu\\u003d7146",
+            "snippet": "Art. 1º Aplicar à empresa AMATUR - Amazônia Turismo Ltda., CNPJ nº 34.805.903/0001-61, a Pena de Declaração de Inidoneidade, e convertê-la em multa no valor de ..."
+          },
+          {
+            "titulo": "Amatur tem novas rotas de viagens",
+            "link": "https://www.folhabv.com.br/geral/amatur-tem-novas-rotas-de-viagens/",
+            "snippet": "O empresário e deputado federal Remídio Monai, fundador da Amatur Turismo , será um dos entrevistados do programa 'Quem é quem' apresentado ..."
+          }
+        ],
+        "site_oficial": null,
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "Amatur faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
+  },
+  "bhviagens": {
+    "empresa": "BH Viagens",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": "A BH Viagens (registrada formalmente como BH Viagens e Turismo Ltda.) é uma empresa de transporte rodoviário e fretamento de passageiros com sede em Belo Horizonte, Minas Gerais . Principais Atividades Fretamento e Excursões: Realiza viagens de fretamento, turismo e excursões rodoviárias. Rotas Estaduais e Interestaduais: Opera trajetos conectando Minas Gerais a outros estados brasileiros, como São Paulo, Paraná, Santa Catarina, Goiás, Distrito Federal e Bahia. Parcerias de Venda: Oferece passagens de ônibus por meio de plataformas de mobilidade e agendamento coletivo, como a . Se você precisa de informações específicas sobre a BH Viagens — como rotas, compra de passagens, horários ou contato — por favor, me avise para eu detalhar melhor.",
+        "referencias": [],
+        "erro": null
+      },
+      "Google_TopSites": {
+        "conteudo": "Bh Tour Agência de Viagens e Turismo Ltda - Processos: O Jusbrasil encontrou 5 processos que mencionam o nome BH Tour Agencia de Viagens e Turismo LTDA. A maioria é do TJMG, seguido por tjmg. As 10 melhores empresas de Transporte Executivo para ...: Procurando por empresas de Transporte Executivo para Viagens? Na B2Bfy você encontra mais de 100 empresas com os melhores orçamentos do mercado para sua empresa ... BH Travel | Agência de Viagens (@bhtraveltour): ✈️ Viagens a lazer e corporativas ✨ Curadoria, planejamento e suporte Cuidamos da sua viagem do início ao retorno ↓ Planeje com a BH Travel · O segundo ... Agência de Viagens GIRO RÁPIDO TURISMO BH não ...: Prometem ônibus de viagens de boa qualidade (com empresas reais), os pacotes com hospedagem são referenciados a pousadas reais, enviam fotos/videos, etc. Na ... Estamos chegando, Belo Horizonte! ✈️ Nossa agência de ...: Seja para férias, lua de mel, viagem em família, negócios ou aquela viagem dos sonhos, a M7 está pronta para transformar seus planos em ... Livre Viagens e Turismo LTDA - 26379812000183 Belo ...: Esta atividade compreende: - os serviços de informação e assistência a visitantes e organizações para a contratação de acomodação, de entretenimento e de locais ... BWT completa 10 anos com mais de 200 mil viagens ...: Empresa fundada em Curitiba e hoje com escritórios em mais cinco cidades pelo Brasil, a BWT Operadora completa este mês o seu aniversário de dez ... Belo Horizonte, chegou a sua vez! Estão abertas ...: Belo Horizonte, chegou a sua vez! Estão abertas as inscrições para o ABROAD MIX! ✨ No dia 19 de outubro, profissionais de viagens e eventos ... 53 vagas de analista viagens corporativas – Belo Horizonte, MG: Somos a maior Travel Tech B2B da América Latina e, por dois anos consecutivos, estamos entre um dos melhores lugares para se trabalhar no Brasil, segundo o…",
+        "sites": [
+          {
+            "titulo": "Bh Tour Agência de Viagens e Turismo Ltda - Processos",
+            "link": "https://www.jusbrasil.com.br/processos/nome/62191354/bh-tour-agencia-de-viagens-e-turismo-ltda",
+            "snippet": "O Jusbrasil encontrou 5 processos que mencionam o nome BH Tour Agencia de Viagens e Turismo LTDA. A maioria é do TJMG, seguido por tjmg."
+          },
+          {
+            "titulo": "As 10 melhores empresas de Transporte Executivo para ...",
+            "link": "https://b2bfy.com.br/10-melhores-empresas-transporte-executivo-viagens-em-belo-horizonte",
+            "snippet": "Procurando por empresas de Transporte Executivo para Viagens? Na B2Bfy você encontra mais de 100 empresas com os melhores orçamentos do mercado para sua empresa ..."
+          },
+          {
+            "titulo": "BH Travel | Agência de Viagens (@bhtraveltour)",
+            "link": "https://www.instagram.com/bhtraveltour/reels/?__d=1",
+            "snippet": "✈️ Viagens a lazer e corporativas ✨ Curadoria, planejamento e suporte Cuidamos da sua viagem do início ao retorno ↓ Planeje com a BH Travel · O segundo ..."
+          },
+          {
+            "titulo": "Agência de Viagens GIRO RÁPIDO TURISMO BH não ...",
+            "link": "https://www.reclameaqui.com.br/ismael-ferreira-benevenuto/agencia-de-viagens-giro-rapido-turismo-bh-nao-presta-servico-e-bloqueia-contato-apos-pagamento_0dBKwmyN8sDowvgz/",
+            "snippet": "Prometem ônibus de viagens de boa qualidade (com empresas reais), os pacotes com hospedagem são referenciados a pousadas reais, enviam fotos/videos, etc. Na ..."
+          },
+          {
+            "titulo": "Estamos chegando, Belo Horizonte! ✈️ Nossa agência de ...",
+            "link": "https://www.instagram.com/p/DXAZWFdD_jQ/",
+            "snippet": "Seja para férias, lua de mel, viagem em família, negócios ou aquela viagem dos sonhos, a M7 está pronta para transformar seus planos em ..."
+          },
+          {
+            "titulo": "Livre Viagens e Turismo LTDA - 26379812000183 Belo ...",
+            "link": "https://cnpj.biz/26379812000183",
+            "snippet": "Esta atividade compreende: - os serviços de informação e assistência a visitantes e organizações para a contratação de acomodação, de entretenimento e de locais ..."
+          },
+          {
+            "titulo": "BWT completa 10 anos com mais de 200 mil viagens ...",
+            "link": "https://www.panrotas.com.br/mercado/operadoras/2021/11/bwt-completa-10-anos-com-mais-de-200-mil-viagens-realizadas_185588.html",
+            "snippet": "Empresa fundada em Curitiba e hoje com escritórios em mais cinco cidades pelo Brasil, a BWT Operadora completa este mês o seu aniversário de dez ..."
+          },
+          {
+            "titulo": "Belo Horizonte, chegou a sua vez! Estão abertas ...",
+            "link": "https://www.instagram.com/reel/DcRP_fKB2QK/",
+            "snippet": "Belo Horizonte, chegou a sua vez! Estão abertas as inscrições para o ABROAD MIX! ✨ No dia 19 de outubro, profissionais de viagens e eventos ..."
+          },
+          {
+            "titulo": "53 vagas de analista viagens corporativas – Belo Horizonte, MG",
+            "link": "https://www.glassdoor.com.br/Vaga/belo-horizonte-analista-viagens-corporativas-vagas-SRCH_IL.0,14_IC2514646_KO15,44.htm",
+            "snippet": "Somos a maior Travel Tech B2B da América Latina e, por dois anos consecutivos, estamos entre um dos melhores lugares para se trabalhar no Brasil, segundo o…"
+          }
+        ],
+        "site_oficial": null,
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "BH Viagens faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
+  },
+  "bristar": {
+    "empresa": "Bristar",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": "O termo Bristar pode se referir a diferentes empresas no Brasil, sendo as mais conhecidas uma empresa de corte e gravação a laser no interior paulista e uma empresa de transporte rodoviário. Principais Empresas com o Nome Bristar Bristar Laser: Bristar Transporte e Turismo: Gostaria de saber mais detalhes sobre qual das duas empresas (a Bristar Laser de troféus ou a Bristar de Transportes) você quer entender melhor ou contatar?",
+        "referencias": [],
+        "erro": null
+      },
+      "Google_TopSites": {
+        "conteudo": "Bristar Laser (@bristarlaser) - Videos: Empresa de corte e gravação a laser, localizada em Valinhos-Sp. Atuando no ramo de logos, troféus, decorações e personalizados. Empresa: Bristar Transporte e Turismo Ltda 🛂#Carro ...: Empresa: Brisa, a serviço da @viajeguanabaraoficial. Carro: 11877. Carroceria: Marcopolo Paradiso New G7 1800DD Bristar 5412 em Limeira por Sérgio de Sousa Elias: Ao todo, existem 8 fotografias de ônibus com a numeração \"5412\" catalogados com a identidade visual da companhia ou proprietário Bristar, ... Bate e volta baratinho para Jundiaí de Buser (Vai de Scatur e ...: ... Bristar. Confiram! Trecho 1 Data da viagem: 07/11/2025 Empresa: Scatur operando para a Buser Linha: N/A Trecho: São Paulo (Metrô Palmeiras ... Transforme ideias em troféus que fazem história! Na Bristar ...: Produzimos troféus em MDF e acrílico com acabamento de qualidade, totalmente personalizados para campeonatos, empresas, escolas e eventos. Bristar Laser: Na Bristar Laser, transformamos sua ideia em peças exclusivas para eventos, campeonatos, empresas e premiações. 📲 Solicite seu orçamento e leve ... Bristar 2415 em São Paulo por Teotonio Mariano: A imagem exibe a foto do ônibus número 2415 que se encontra na identidade visual da empresa Bristar, de Penápolis, São Paulo, Brasil. Gravação a laser direto no troféu. Sucesso!: Transforme ideias em troféus que fazem história! Na Bristar Laser, cada detalhe é pensado para entregar peças únicas, com acabamento ...",
+        "sites": [
+          {
+            "titulo": "Bristar Laser (@bristarlaser) - Videos",
+            "link": "https://www.facebook.com/bristarlaser/videos/",
+            "snippet": "Empresa de corte e gravação a laser, localizada em Valinhos-Sp. Atuando no ramo de logos, troféus, decorações e personalizados."
+          },
+          {
+            "titulo": "Empresa: Bristar Transporte e Turismo Ltda 🛂#Carro ...",
+            "link": "https://www.instagram.com/reel/DPUuf2fDONU/",
+            "snippet": "Empresa: Brisa, a serviço da @viajeguanabaraoficial. Carro: 11877. Carroceria: Marcopolo Paradiso New G7 1800DD"
+          },
+          {
+            "titulo": "Bristar 5412 em Limeira por Sérgio de Sousa Elias",
+            "link": "https://onibusbrasil.com/sergioonibus/13073023?context\\u003dcompany",
+            "snippet": "Ao todo, existem 8 fotografias de ônibus com a numeração \"5412\" catalogados com a identidade visual da companhia ou proprietário Bristar, ..."
+          },
+          {
+            "titulo": "Bate e volta baratinho para Jundiaí de Buser (Vai de Scatur e ...",
+            "link": "https://www.youtube.com/watch?v=fapkGzg6hYs",
+            "snippet": "... Bristar. Confiram! Trecho 1 Data da viagem: 07/11/2025 Empresa: Scatur operando para a Buser Linha: N/A Trecho: São Paulo (Metrô Palmeiras ..."
+          },
+          {
+            "titulo": "Transforme ideias em troféus que fazem história! Na Bristar ...",
+            "link": "https://www.instagram.com/p/DcLeDk2RQKi/",
+            "snippet": "Produzimos troféus em MDF e acrílico com acabamento de qualidade, totalmente personalizados para campeonatos, empresas, escolas e eventos."
+          },
+          {
+            "titulo": "Bristar Laser",
+            "link": "https://www.facebook.com/bristarlaser/posts/-cada-conquista-merece-um-trof%C3%A9u-%C3%A0-alturaquando-dedica%C3%A7%C3%A3o-esfor%C3%A7o-e-supera%C3%A7%C3%A3o-se/1705141678283194/",
+            "snippet": "Na Bristar Laser, transformamos sua ideia em peças exclusivas para eventos, campeonatos, empresas e premiações. 📲 Solicite seu orçamento e leve ..."
+          },
+          {
+            "titulo": "Bristar 2415 em São Paulo por Teotonio Mariano",
+            "link": "https://onibusbrasil.com/teonainternet/10606751",
+            "snippet": "A imagem exibe a foto do ônibus número 2415 que se encontra na identidade visual da empresa Bristar, de Penápolis, São Paulo, Brasil."
+          },
+          {
+            "titulo": "Gravação a laser direto no troféu. Sucesso!",
+            "link": "https://www.instagram.com/reel/DcjKYFaR_gc/",
+            "snippet": "Transforme ideias em troféus que fazem história! Na Bristar Laser, cada detalhe é pensado para entregar peças únicas, com acabamento ..."
+          }
+        ],
+        "site_oficial": null,
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "Bristar faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
+  },
+  "cabraltransporte": {
+    "empresa": "Cabral Transporte",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": "A Cabral Transporte e Turismo é uma empresa brasileira de transporte rodoviário de passageiros com foco em rotas interestaduais e intermunicipais. Visão Geral da Empresa Nome oficial: Cabral Transporte e Turismo Ltda. Fundação: Outubro de 1997 (com mais de 28 anos de atuação). Sede principal: Araguaína, no estado do Tocantins (TO), com atuação também em estados vizinhos como Pará e Goiás. Atividade principal: Transporte rodoviário coletivo de passageiros com itinerário fixo e viagens de turismo ou fretamento. Serviços e Operação Rotas de Ônibus: Realiza viagens ligando cidades da região norte e centro-oeste do Brasil, atendendo destinos como Araguaína (TO) e Goiânia (GO) . Canais de Venda: É possível adquirir passagens diretamente pelo Site Oficial da Cabral Transporte ou por plataformas parceiras de venda de passagens rodoviárias. Se você precisar de informações específicas, me diga: Qual trecho ou rota você quer consultar? Procura o contato de uma filial específica da empresa?",
+        "referencias": [],
+        "erro": null
+      },
+      "Google_TopSites": {
+        "conteudo": "Cabral Transportes LTDA - 55102399000103: A empresa Cabral Transportes de CNPJ 55.102.399/0001-03, fundada em 13/05/2024 e com razão social Cabral Transportes LTDA, está localizada na cidade Conceição ... Cabral Transportes & Servicos em Araci, BA - 45.970.238/ ...: A empresa com a razão social Cabral Transportes e Servicos LTDA, tem o nome fantasia Cabral Transportes & Servicos, opera com o CNPJ 45.970.238/0001-88 ... Cabral Transporte - Buser: Compre passagens da Cabral Transporte online pela Buser. Rotas para Goiânia, Araguaína e mais destinos. Preços a partir do mais barato. Transporte Viação Cabral em Natal, RN: Quais serviços a empresa Transporte Viação Cabral oferece? A empresa Transporte Viação Cabral atua com: Passagem Terrestre. (84) 3205-4272. Cabral Transportes | Salvador BA: Cabral Transportes, Salvador. 31 likes · 2 were here. Atua no ramo de transporte escolar, turismo e eventos. Cabral recebeu R$ 122,8 milhões de empresas de ônibus: Segundo MPF, ex-governador do Rio era 'líder da organização' e comandava o esquema criminoso no sistema de transporte público do estado. Cabral Transporte 03364905000139 Imperatriz: Sua atividade principal, conforme a Receita Federal, é 49.30-2-02 - Transporte rodoviário de carga, exceto produtos perigosos e mudanças, ... Agilidade, cuidado e compromisso em cada entrega. ...: ... Cabral e Sousa e fortaleça o seu negócio todos os dias ... Na sua empresa, qual desses desafios mais impacta a operação?",
+        "sites": [
+          {
+            "titulo": "Cabral Transportes LTDA - 55102399000103",
+            "link": "https://cnpj.biz/55102399000103",
+            "snippet": "A empresa Cabral Transportes de CNPJ 55.102.399/0001-03, fundada em 13/05/2024 e com razão social Cabral Transportes LTDA, está localizada na cidade Conceição ..."
+          },
+          {
+            "titulo": "Cabral Transportes & Servicos em Araci, BA - 45.970.238/ ...",
+            "link": "https://www.econodata.com.br/consulta-empresa/45970238000188-cabral-transportes-e-servicos-ltda",
+            "snippet": "A empresa com a razão social Cabral Transportes e Servicos LTDA, tem o nome fantasia Cabral Transportes & Servicos, opera com o CNPJ 45.970.238/0001-88 ..."
+          },
+          {
+            "titulo": "Cabral Transporte - Buser",
+            "link": "https://cabral-transporte.buser.com.br/",
+            "snippet": "Compre passagens da Cabral Transporte online pela Buser. Rotas para Goiânia, Araguaína e mais destinos. Preços a partir do mais barato."
+          },
+          {
+            "titulo": "Transporte Viação Cabral em Natal, RN",
+            "link": "https://telepesquisa.com/rn/empresas/d/transporte-viacao-cabral",
+            "snippet": "Quais serviços a empresa Transporte Viação Cabral oferece? A empresa Transporte Viação Cabral atua com: Passagem Terrestre. (84) 3205-4272."
+          },
+          {
+            "titulo": "Cabral Transportes | Salvador BA",
+            "link": "https://www.facebook.com/cabraltransportes/",
+            "snippet": "Cabral Transportes, Salvador. 31 likes · 2 were here. Atua no ramo de transporte escolar, turismo e eventos."
+          },
+          {
+            "titulo": "Cabral recebeu R$ 122,8 milhões de empresas de ônibus",
+            "link": "https://veja.abril.com.br/politica/cabral-recebeu-r-1228-milhoes-de-empresas-de-onibus/",
+            "snippet": "Segundo MPF, ex-governador do Rio era 'líder da organização' e comandava o esquema criminoso no sistema de transporte público do estado."
+          },
+          {
+            "titulo": "Cabral Transporte 03364905000139 Imperatriz",
+            "link": "https://cnpj.biz/03364905000139",
+            "snippet": "Sua atividade principal, conforme a Receita Federal, é 49.30-2-02 - Transporte rodoviário de carga, exceto produtos perigosos e mudanças, ..."
+          },
+          {
+            "titulo": "Agilidade, cuidado e compromisso em cada entrega. ...",
+            "link": "https://www.instagram.com/reel/Db3STt4B5lb/",
+            "snippet": "... Cabral e Sousa e fortaleça o seu negócio todos os dias ... Na sua empresa, qual desses desafios mais impacta a operação?"
+          }
+        ],
+        "site_oficial": {
+          "titulo": "Cabral Transporte - Buser",
+          "link": "https://cabral-transporte.buser.com.br/",
+          "snippet": "Compre passagens da Cabral Transporte online pela Buser. Rotas para Goiânia, Araguaína e mais destinos. Preços a partir do mais barato."
+        },
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "Cabral Transporte faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
+  },
+  "catarina": {
+    "empresa": "Catarina",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": "A Viação Catarina é uma empresa brasileira de transporte rodoviário de passageiros com sede em Brasília (DF), que opera rotas ligando o Distrito Federal a cidades das regiões Centro-Oeste e Sudeste. Principais Destinos Brasília (DF) Belo Horizonte (MG) Cristalina (GO) Paracatu (MG) Luziânia (GO) Patos de Minas (MG) (Nota: Ela pode ser confundida com a tradicional Auto Viação Catarinense, fundada em 1928 em Santa Catarina e pertencente ao Grupo JCA, que atua fortemente nos estados do Sul e Sudeste). Você gostaria de saber os horários de saída, os preços das passagens ou os pontos de venda da Viação Catarina para alguma rota específica?",
+        "referencias": [],
+        "erro": null
+      },
+      "Google_TopSites": {
+        "conteudo": "Viação Catarina | Passagens de Ônibus — Compre Online: A compra da sua passagem na Viação Catarina é feita de maneira segura e tranquila. Além disso, ao escolher a Catarina você encontra com facilidade o seu próximo ... Catarinense: Nossa experiência digital é feita para facilitar suas viagens. Aqui, você encontra todas as informações sobre passagem de ônibus: preço, pontos de embarque, ... Viação Catarina (@viacaocatarina): Conectando destinos e histórias. Tradição, segurança e excelência no transporte rodoviário de passageiros. Compre pelo WhatsApp: (31) 4003-4424. The history of Viação Catarinense: ... Catarina, a seus pais na Alemanha, em 1933. 1928 – No dia 13 de abril, é criada a então “Empreza Auto Viação Catarinense”, a primeira empresa ... Viação Catarina: Saiba se a empresa Viação Catarina é confiável, segundo os consumidores. Se tiver problemas, reclame, resolva, avalie. Reclame Aqui. Auto Viação Catarinense – Wikipédia, a enciclopédia livre: Auto Viação Catarinense Ltda. é uma empresa brasileira de transporte rodoviário de passageiros e cargas que atua nas regiões Sul e Sudeste, ... CATARINA: viagens de ônibus e horários | Comprar online: A Catarina atua com foco em conectar o interior e as capitais, priorizando sempre a comodidade durante os trajetos. Seja para compromissos profissionais, ... Termos de Uso | Viação Catarina - ClickBus: Conheça os Termos de uso da Viação Catarina! ✓ Veja todos os horários de ônibus ✓ Parcele em até 12x no cartão de crédito. Viação – Catarina: A Viação Catarina é uma empresa de transporte rodoviário de passageiros com sede em Brasília (DF), atuando fortemente nas regiões ...",
+        "sites": [
+          {
+            "titulo": "Viação Catarina | Passagens de Ônibus — Compre Online",
+            "link": "https://www.viacaocatarina.com.br/",
+            "snippet": "A compra da sua passagem na Viação Catarina é feita de maneira segura e tranquila. Além disso, ao escolher a Catarina você encontra com facilidade o seu próximo ..."
+          },
+          {
+            "titulo": "Catarinense",
+            "link": "https://www.catarinense.com.br/",
+            "snippet": "Nossa experiência digital é feita para facilitar suas viagens. Aqui, você encontra todas as informações sobre passagem de ônibus: preço, pontos de embarque, ..."
+          },
+          {
+            "titulo": "Viação Catarina (@viacaocatarina)",
+            "link": "https://www.instagram.com/viacaocatarina/",
+            "snippet": "Conectando destinos e histórias. Tradição, segurança e excelência no transporte rodoviário de passageiros. Compre pelo WhatsApp: (31) 4003-4424."
+          },
+          {
+            "titulo": "The history of Viação Catarinense",
+            "link": "https://www.youtube.com/watch?v=jdHYc1-Soww",
+            "snippet": "... Catarina, a seus pais na Alemanha, em 1933. 1928 – No dia 13 de abril, é criada a então “Empreza Auto Viação Catarinense”, a primeira empresa ..."
+          },
+          {
+            "titulo": "Viação Catarina",
+            "link": "https://www.reclameaqui.com.br/empresa/viacao-catarina/",
+            "snippet": "Saiba se a empresa Viação Catarina é confiável, segundo os consumidores. Se tiver problemas, reclame, resolva, avalie. Reclame Aqui."
+          },
+          {
+            "titulo": "Auto Viação Catarinense – Wikipédia, a enciclopédia livre",
+            "link": "https://pt.wikipedia.org/wiki/Auto_Via%C3%A7%C3%A3o_Catarinense",
+            "snippet": "Auto Viação Catarinense Ltda. é uma empresa brasileira de transporte rodoviário de passageiros e cargas que atua nas regiões Sul e Sudeste, ...",
+            "paragrafos": [
+              "Auto Viação Catarinense Ltda. é uma empresa brasileira de transporte rodoviário de passageiros e cargas que atua nas regiões Sul e Sudeste, bem como no Paraguai. Fundada em 13 de abril de 1928 no município de Blumenau, em Santa Catarina, a Catarinense é uma das empresas mais antigas do ramo ainda em atividade no país. Após sua venda ao Grupo JCA, em 1995, sua sede administrativa foi transferida para Florianópolis.",
+              "Foi a primeira empresa de transporte rodoviário de passageiros a adquirir concessão pública no Brasil, com uma linha entre Blumenau e Florianópolis, a mais antiga do Brasil ainda em atividade. Conta com 1 300 empregados e uma frota com aproximadamente 300 veículos, atuando em 150 linhas intermunicipais, interestaduais e internacionais.",
+              "O Grupo JCA também é proprietário da Auto Viação 1001, Expresso do Sul, Rápido Ribeirão Preto, Rápido Macaense, Viação Cometa e Barcas SA (empresa de transporte hidroviário responsável pela travessia de passageiros na baía de Guanabara )."
+            ],
+            "erro": null
+          },
+          {
+            "titulo": "CATARINA: viagens de ônibus e horários | Comprar online",
+            "link": "https://www.omio.com.br/empresas/autocarros/catarina-534ee",
+            "snippet": "A Catarina atua com foco em conectar o interior e as capitais, priorizando sempre a comodidade durante os trajetos. Seja para compromissos profissionais, ..."
+          },
+          {
+            "titulo": "Termos de Uso | Viação Catarina - ClickBus",
+            "link": "https://viacaocatarina.clickbus.com.br/institucional/termos-de-uso",
+            "snippet": "Conheça os Termos de uso da Viação Catarina! ✓ Veja todos os horários de ônibus ✓ Parcele em até 12x no cartão de crédito."
+          },
+          {
+            "titulo": "Viação – Catarina",
+            "link": "https://www.buszap.com.br/viacao-catarina/",
+            "snippet": "A Viação Catarina é uma empresa de transporte rodoviário de passageiros com sede em Brasília (DF), atuando fortemente nas regiões ..."
+          }
+        ],
+        "site_oficial": {
+          "titulo": "Viação Catarina | Passagens de Ônibus — Compre Online",
+          "link": "https://www.viacaocatarina.com.br/",
+          "snippet": "A compra da sua passagem na Viação Catarina é feita de maneira segura e tranquila. Além disso, ao escolher a Catarina você encontra com facilidade o seu próximo ..."
+        },
+        "wikipedia": {
+          "titulo": "Auto Viação Catarinense – Wikipédia, a enciclopédia livre",
+          "link": "https://pt.wikipedia.org/wiki/Auto_Via%C3%A7%C3%A3o_Catarinense",
+          "snippet": "Auto Viação Catarinense Ltda. é uma empresa brasileira de transporte rodoviário de passageiros e cargas que atua nas regiões Sul e Sudeste, ...",
+          "paragrafos": [
+            "Auto Viação Catarinense Ltda. é uma empresa brasileira de transporte rodoviário de passageiros e cargas que atua nas regiões Sul e Sudeste, bem como no Paraguai. Fundada em 13 de abril de 1928 no município de Blumenau, em Santa Catarina, a Catarinense é uma das empresas mais antigas do ramo ainda em atividade no país. Após sua venda ao Grupo JCA, em 1995, sua sede administrativa foi transferida para Florianópolis.",
+            "Foi a primeira empresa de transporte rodoviário de passageiros a adquirir concessão pública no Brasil, com uma linha entre Blumenau e Florianópolis, a mais antiga do Brasil ainda em atividade. Conta com 1 300 empregados e uma frota com aproximadamente 300 veículos, atuando em 150 linhas intermunicipais, interestaduais e internacionais.",
+            "O Grupo JCA também é proprietário da Auto Viação 1001, Expresso do Sul, Rápido Ribeirão Preto, Rápido Macaense, Viação Cometa e Barcas SA (empresa de transporte hidroviário responsável pela travessia de passageiros na baía de Guanabara )."
+          ],
+          "erro": null
+        },
+        "erro": null
+      },
+      "Wikipedia": {
+        "conteudo": "Auto Viação Catarinense Ltda. é uma empresa brasileira de transporte rodoviário de passageiros e cargas que atua nas regiões Sul e Sudeste, bem como no Paraguai. Fundada em 13 de abril de 1928 no município de Blumenau, em Santa Catarina, a Catarinense é uma das empresas mais antigas do ramo ainda em atividade no país. Após sua venda ao Grupo JCA, em 1995, sua sede administrativa foi transferida para Florianópolis. Foi a primeira empresa de transporte rodoviário de passageiros a adquirir concessão pública no Brasil, com uma linha entre Blumenau e Florianópolis, a mais antiga do Brasil ainda em atividade. Conta com 1 300 empregados e uma frota com aproximadamente 300 veículos, atuando em 150 linhas intermunicipais, interestaduais e internacionais. O Grupo JCA também é proprietário da Auto Viação 1001, Expresso do Sul, Rápido Ribeirão Preto, Rápido Macaense, Viação Cometa e Barcas SA (empresa de transporte hidroviário responsável pela travessia de passageiros na baía de Guanabara ).",
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "ambiguo",
+      "palavra": "viagem",
+      "instrucao": "Não foi possível identificar com clareza, nas fontes coletadas, se Catarina opera linha regular ou só fretamento/turismo. Use \"viagem\" em vez de \"passagem\" em todas as menções — é o termo mais seguro nesse caso, evita afirmar algo que pode não ser verdade."
+    }
+  },
+  "cisnebranco": {
+    "empresa": "Cisne Branco",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": "A Cisne Branco (Cisne Branco Transportes e Turismo Ltda.) foi uma empresa de transporte rodoviário de passageiros com sede em São Luís, no Maranhão. Histórico e Atuação Fundação: A empresa foi criada em 2 de setembro de 1981. Serviços: Era especializada no transporte intermunicipal e semiurbano de passageiros, ligando a capital São Luís a cidades do interior do Maranhão, como Barreirinhas (porta de entrada para os Lençóis Maranhenses), Rosário e Icatu. Encerramento: A empresa encerrou as suas atividades de operação nas linhas regulares no início de 2026, sendo substituída de forma emergencial por cooperativas e pelo transporte estadual gratuito na região. (Nota: Se você estiver pensando no Cisne Branco e não em uma viação rodoviária, o nome também pertence ao famoso Navio-Veleiro Cisne Branco, que é um navio de representação e relações públicas da Marinha do Brasil.) Gostaria de saber mais detalhes sobre o encerramento das linhas de ônibus no Maranhão ou sobre o navio-veleiro da Marinha do Brasil?",
+        "referencias": [],
+        "erro": null
+      },
+      "Google_TopSites": {
+        "conteudo": "Cisne Branco: Cisne Branco Transportes e Turismo Ltda. SAC. E-mail: sac@cisnebrancoturismo.com.br. Será que a Cisne Branco vai falir: #vamosdeencerramento Dessa vez a empresa Cisne Branco encerrou por completo e oficialmente suas operações na grande ilha , as linhas que a mesma ... CISNE BRANCO TRANSPORTES E TURISMO LTDA: O CNPJ da empresa CISNE BRANCO TRANSPORTES E TURISMO LTDA CISNE BRANCO TRANSPORTES E TURISMO LTDA é 06.767.974/0001-81. Com sede em SAO LUIS, MA, possui 45 anos ... Viação Cisne Branco - Passagens de ônibus - BlaBlaCar: Com mais de 35 anos de experiência no mercado de transporte rodoviário de passageiros, o Grupo Cisne Branco Transporte e Turismo presta serviços na maior parte ... Viação Cisne Branco - Passagens de Ônibus: A companhia que oferece serviço de transporte de passageiros para linhas de longa e média distância é administrada pelo mesmo núcleo operacional da viação ... Cooperativa assume trecho Icatu-Rosário após saída da ...: As linhas eram operadas pela Cisne Branco Transporte e Turismo Ltda., que encerrou as atividades no início de janeiro deste ano. Diante da ... Cisne Branco Turismo: Viação Cisne Branco deixa passageiros para trás em parada, colocando vidas em risco e demonstrando descaso com o consumidor.. Ler reclamação completa. Muito ... Comprar passagem de ônibus da Cisne Branco: Além do transporte rodoviário, a Cisne Branco também atua com o fretamento de ônibus para turismo, excursões e eventos. Viaje com tranquilidade e conforto com a ...",
+        "sites": [
+          {
+            "titulo": "Cisne Branco",
+            "link": "https://cisnebrancoturismo.com.br/",
+            "snippet": "Cisne Branco Transportes e Turismo Ltda. SAC. E-mail: sac@cisnebrancoturismo.com.br."
+          },
+          {
+            "titulo": "Será que a Cisne Branco vai falir",
+            "link": "https://www.instagram.com/p/DVXdhsqDOwH/",
+            "snippet": "#vamosdeencerramento Dessa vez a empresa Cisne Branco encerrou por completo e oficialmente suas operações na grande ilha , as linhas que a mesma ..."
+          },
+          {
+            "titulo": "CISNE BRANCO TRANSPORTES E TURISMO LTDA",
+            "link": "https://empresas.serasaexperian.com.br/consulta-gratis/CISNE-BRANCO-TRANSPORTES-E-TURISMO-LTDA-06767974000181",
+            "snippet": "O CNPJ da empresa CISNE BRANCO TRANSPORTES E TURISMO LTDA CISNE BRANCO TRANSPORTES E TURISMO LTDA é 06.767.974/0001-81. Com sede em SAO LUIS, MA, possui 45 anos ..."
+          },
+          {
+            "titulo": "Viação Cisne Branco - Passagens de ônibus - BlaBlaCar",
+            "link": "https://www.blablacar.com.br/bus/companies/cisne-branco",
+            "snippet": "Com mais de 35 anos de experiência no mercado de transporte rodoviário de passageiros, o Grupo Cisne Branco Transporte e Turismo presta serviços na maior parte ..."
+          },
+          {
+            "titulo": "Viação Cisne Branco - Passagens de Ônibus",
+            "link": "https://queropassagem.com.br/auto-viacao-cisne-branco",
+            "snippet": "A companhia que oferece serviço de transporte de passageiros para linhas de longa e média distância é administrada pelo mesmo núcleo operacional da viação ..."
+          },
+          {
+            "titulo": "Cooperativa assume trecho Icatu-Rosário após saída da ...",
+            "link": "https://oimparcial.com.br/noticias/2026/02/cooperativa-assume-trecho-icatu-rosario-apos-saida-da-cisne-branco/",
+            "snippet": "As linhas eram operadas pela Cisne Branco Transporte e Turismo Ltda., que encerrou as atividades no início de janeiro deste ano. Diante da ..."
+          },
+          {
+            "titulo": "Cisne Branco Turismo",
+            "link": "https://www.reclameaqui.com.br/empresa/cisne-branco-turismo/",
+            "snippet": "Viação Cisne Branco deixa passageiros para trás em parada, colocando vidas em risco e demonstrando descaso com o consumidor.. Ler reclamação completa. Muito ..."
+          },
+          {
+            "titulo": "Comprar passagem de ônibus da Cisne Branco",
+            "link": "https://rodon.com.br/viacao/cisne-branco",
+            "snippet": "Além do transporte rodoviário, a Cisne Branco também atua com o fretamento de ônibus para turismo, excursões e eventos. Viaje com tranquilidade e conforto com a ..."
+          }
+        ],
+        "site_oficial": {
+          "titulo": "Cisne Branco",
+          "link": "https://cisnebrancoturismo.com.br/",
+          "snippet": "Cisne Branco Transportes e Turismo Ltda. SAC. E-mail: sac@cisnebrancoturismo.com.br."
+        },
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "hibrida",
+      "palavra": "passagem",
+      "instrucao": "Cisne Branco opera linha regular de ônibus e também faz fretamento/turismo (classificação automática, baseada nas fontes coletadas). Use \"passagem\" em todas as menções, e pode citar as duas atividades no texto (ex: \"opera linhas regulares e também realiza fretamento para excursões\")."
+    }
+  },
+  "expressocentral": {
+    "empresa": "Expresso Central",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": "A Expresso Central (registrada formalmente como Expresso Central Transporte Ltda.) é uma empresa de transporte rodoviário que teve sua habilitação para operar linhas regulares interestaduais de passageiros inabilitada pela Agência Nacional de Transportes Terrestres (ANTT). Detalhes Principais Situação Regulatória: A Decisão SUPAS nº 1.274 da ANTT inabilitou a empresa e indeferiu pedidos de emissão de Termo de Autorização de Regularidade (TAR) para o transporte interestadual. Contexto no Setor: A empresa passou por negativas em solicitações de operação junto ao órgão regulador federal, conforme registros de acompanhamento do setor de transporte rodoviário. Outras Denominações: Há também registros de empresas com nomes semelhantes, como a Expresso Central do Brasil Transportes e Turismo Ltda., sediada em Osasco (SP), ou referências a serviços de \"Expresso Central\" em linhas de trem e rotas municipais de ônibus em outras regiões do país. Você gostaria de saber mais detalhes sobre as decisões da ANTT or the situação cadastral de alguma filial específica? Explore os desdobramentos sobre os pedidos negados no Diário do Transporte . Consulte os detalhes da inabilitação no portal Ônibus & Transporte .",
+        "referencias": [],
+        "erro": null
+      },
+      "Google_TopSites": {
+        "conteudo": "EXPRESSO CENTRAL em Goiânia - Auto-Giro - Beto Brasil: EXPRESSO CENTRAL é uma empresa catalogada no Auto Giro. Locação e mobilidade em Goiânia, Goiás. Atividade: Transporte rodoviário coletivo de passageiros, ... EXPRESSO CENTRAL DO BRASIL TRANSPORTES E ...: 4929-9/02, Secundária. Transporte rodoviário coletivo de passageiros, sob regime de fretamento, intermunicipal, interestadual e internacional ; 4923-0/02 Expresso Central (@expressocentral2400): Expresso Central · Buscamos e entregamos no endereço · Agende já a sua viagem. Expresso Central tem negada autorização para linhas ...: Expresso Central tem negada autorização para linhas regulares interestaduais pela ANTT Empresa pode recorrer ou fazer outra requisição Expresso Central - Empresa de Ônibus: A Expresso Central é uma empresa de ônibus localizada em Palmas, Tocantins, Brasil. Encontre fotos dos ônibus, endereço e telefone de contato. Viação Sorriso apresenta ônibus do Expresso Central: O itinerário do Expresso Central, como será chamado a nova rota, vai passar pelas Ruas Raimundo Leonardi, Santos Dumont, Guarani, Almirante ... De onde vieram? EP 03 - CT Expresso (Central ...: No vídeo de hoje, apresentamos o Apache Vip II da CT Expresso de Luziânia (carro 8923) que chegou na empresa este ano logo após o fim da ... CENTRAL EXPRESSO CAFE & LAZER LTDA - ME: O CNPJ da empresa CENTRAL EXPRESSO CAFE & LAZER LTDA - ME é 42.532.373/0001-53. Com sede em BURITIS, RO, possui 5 anos, 1 mês e 20 dias e foi fundada em 30/06/ ... Rbb Expresso Central Logistica LTDA - 36877681000118: A empresa Rbb Expresso Central de CNPJ 36.877.681/0001-18, fundada em 06/04/2020 e com razão social Rbb Expresso Central Logistica LTDA, está localizada na ...",
+        "sites": [
+          {
+            "titulo": "EXPRESSO CENTRAL em Goiânia - Auto-Giro - Beto Brasil",
+            "link": "https://autogiro.betobrasil.com/locacao-e-mobilidade/expresso-central/",
+            "snippet": "EXPRESSO CENTRAL é uma empresa catalogada no Auto Giro. Locação e mobilidade em Goiânia, Goiás. Atividade: Transporte rodoviário coletivo de passageiros, ..."
+          },
+          {
+            "titulo": "EXPRESSO CENTRAL DO BRASIL TRANSPORTES E ...",
+            "link": "https://cnpja.com/office/54337355000108",
+            "snippet": "4929-9/02, Secundária. Transporte rodoviário coletivo de passageiros, sob regime de fretamento, intermunicipal, interestadual e internacional ; 4923-0/02"
+          },
+          {
+            "titulo": "Expresso Central (@expressocentral2400)",
+            "link": "https://www.facebook.com/expressocentral2400/?locale\\u003dpt_BR",
+            "snippet": "Expresso Central · Buscamos e entregamos no endereço · Agende já a sua viagem."
+          },
+          {
+            "titulo": "Expresso Central tem negada autorização para linhas ...",
+            "link": "https://www.instagram.com/p/DZe2cHqDJK9/",
+            "snippet": "Expresso Central tem negada autorização para linhas regulares interestaduais pela ANTT Empresa pode recorrer ou fazer outra requisição"
+          },
+          {
+            "titulo": "Expresso Central - Empresa de Ônibus",
+            "link": "https://onibusbrasil.com/empresa/expresso-central-to",
+            "snippet": "A Expresso Central é uma empresa de ônibus localizada em Palmas, Tocantins, Brasil. Encontre fotos dos ônibus, endereço e telefone de contato."
+          },
+          {
+            "titulo": "Viação Sorriso apresenta ônibus do Expresso Central",
+            "link": "https://www.toledo.pr.gov.br/old/noticia/viacao-sorriso-apresenta-onibus-do-expresso-central",
+            "snippet": "O itinerário do Expresso Central, como será chamado a nova rota, vai passar pelas Ruas Raimundo Leonardi, Santos Dumont, Guarani, Almirante ..."
+          },
+          {
+            "titulo": "De onde vieram? EP 03 - CT Expresso (Central ...",
+            "link": "https://www.youtube.com/watch?v=OfDt8AODazI",
+            "snippet": "No vídeo de hoje, apresentamos o Apache Vip II da CT Expresso de Luziânia (carro 8923) que chegou na empresa este ano logo após o fim da ..."
+          },
+          {
+            "titulo": "CENTRAL EXPRESSO CAFE & LAZER LTDA - ME",
+            "link": "https://empresas.serasaexperian.com.br/consulta-gratis/CENTRAL-EXPRESSO-CAFE-\\u0026-LAZER-LTDA-42532373000153",
+            "snippet": "O CNPJ da empresa CENTRAL EXPRESSO CAFE & LAZER LTDA - ME é 42.532.373/0001-53. Com sede em BURITIS, RO, possui 5 anos, 1 mês e 20 dias e foi fundada em 30/06/ ..."
+          },
+          {
+            "titulo": "Rbb Expresso Central Logistica LTDA - 36877681000118",
+            "link": "https://cnpj.biz/36877681000118",
+            "snippet": "A empresa Rbb Expresso Central de CNPJ 36.877.681/0001-18, fundada em 06/04/2020 e com razão social Rbb Expresso Central Logistica LTDA, está localizada na ..."
+          }
+        ],
+        "site_oficial": null,
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "hibrida",
+      "palavra": "passagem",
+      "instrucao": "Expresso Central opera linha regular de ônibus e também faz fretamento/turismo (classificação automática, baseada nas fontes coletadas). Use \"passagem\" em todas as menções, e pode citar as duas atividades no texto (ex: \"opera linhas regulares e também realiza fretamento para excursões\")."
+    }
+  },
+  "goldturismo": {
+    "empresa": "Gold Turismo",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": "A Gold Turismo e Fretamento é uma empresa brasileira de transporte rodoviário de passageiros localizada em Itu, no estado de São Paulo. O que ela faz Serviços: Oferece locação de ônibus, micro-ônibus, vans e carros executivos para fretamento contínuo (empresas e faculdades), além de viagens de turismo, excursões e traslados. Atuação: Fundada por volta de 2009, opera no mercado de transporte de passageiros com foco em segurança, monitoramento de frota, pontualidade e conforto. Visite o site oficial da Gold Turismo e Fretamento para mais detalhes. Leia mais sobre o perfil corporativo da Gold Turismo Itu no Clube do Ônibus. Veja discussões de atendimento no Reclame Aqui sobre a Gold Turismo . Se você precisar de informações de contato, orçamento de fretamento ou detalhes sobre outra empresa com nome parecido, me avise!",
+        "referencias": [],
+        "erro": null
+      },
+      "Google_TopSites": {
+        "conteudo": "GOLD TURISMO E FRETAMENTO ITU - SP: A GOLD TURISMO E FRETAMENTO, ao longo dos mais de 10 anos oferece um serviço de Transporte de Pessoas diferenciado. GOLD TURISMO E FRETAMENTO em Itu - Granada Transporte: GOLD TURISMO E FRETAMENTO ; Falar com: Gold Turismo e fretamento ; Endereço Rua Orestes Faustino Bonini, 25 - Bairro: Portal do Éden – Itu - SP - CEP: 13308-502 ... Empresa GOLD TURISMO E FRETAMENTO: 27 likes, 0 comments - poltrona01 on February 9, 2025: \"Empresa GOLD TURISMO E FRETAMENTO - @goldturismoefretamento CAMPANHA SOLIDÁRIA DOS ... Comil Ônibus S.A.: Cada trajeto merece uma experiência com conforto e qualidade. O Gold Turismo e Fretamento amplia sua frota com o Comil Campione 330. Reclamação sobre plano Gold Turismo com atendimento ...: A Gold Turismo mantém seu compromisso com a transparência, com o atendimento aos associados e com o cumprimento das condições contratualmente estabelecidas. Gold Turismo Ltda - Processos: O nome Gold Turismo Ltda aparece em 77 processos. Com 43 desses processos no estado de Estado de Santa Catarina, além de 23 processos no estado de Estado do ... Gold Turismo e Fretamento 17000 em Itu por Gabriel ...: Ao todo, existem 96 fotografias de ônibus com a numeração \"17000\" catalogados com a identidade visual da companhia ou proprietário Gold Turismo ...",
+        "sites": [
+          {
+            "titulo": "GOLD TURISMO E FRETAMENTO ITU - SP",
+            "link": "https://www.youtube.com/watch?v\\u003dMoavcRfhJYw",
+            "snippet": "A GOLD TURISMO E FRETAMENTO, ao longo dos mais de 10 anos oferece um serviço de Transporte de Pessoas diferenciado."
+          },
+          {
+            "titulo": "GOLD TURISMO E FRETAMENTO em Itu - Granada Transporte",
+            "link": "https://granadatransporte.com.br/sobre/gold-turismo-e-fretamento-itu-sp-33031098",
+            "snippet": "GOLD TURISMO E FRETAMENTO ; Falar com: Gold Turismo e fretamento ; Endereço Rua Orestes Faustino Bonini, 25 - Bairro: Portal do Éden – Itu - SP - CEP: 13308-502 ..."
+          },
+          {
+            "titulo": "Empresa GOLD TURISMO E FRETAMENTO",
+            "link": "https://www.instagram.com/p/DF3tTzQJyBp/",
+            "snippet": "27 likes, 0 comments - poltrona01 on February 9, 2025: \"Empresa GOLD TURISMO E FRETAMENTO - @goldturismoefretamento CAMPANHA SOLIDÁRIA DOS ..."
+          },
+          {
+            "titulo": "Comil Ônibus S.A.",
+            "link": "https://www.facebook.com/comilonibusoficial/posts/cada-trajeto-merece-uma-experi%C3%AAncia-com-conforto-e-qualidadeo-gold-turismo-e-fre/1391422066463605/",
+            "snippet": "Cada trajeto merece uma experiência com conforto e qualidade. O Gold Turismo e Fretamento amplia sua frota com o Comil Campione 330."
+          },
+          {
+            "titulo": "Reclamação sobre plano Gold Turismo com atendimento ...",
+            "link": "https://www.reclameaqui.com.br/gold-turismo/reclamacao-sobre-plano-gold-turismo-com-atendimento-demorado-e-limitacoes-nao-informadas_5uMdvP3hnPVejNi1/",
+            "snippet": "A Gold Turismo mantém seu compromisso com a transparência, com o atendimento aos associados e com o cumprimento das condições contratualmente estabelecidas."
+          },
+          {
+            "titulo": "Gold Turismo Ltda - Processos",
+            "link": "https://www.escavador.com/nomes/gold-turismo-ltda-9d0222fb06",
+            "snippet": "O nome Gold Turismo Ltda aparece em 77 processos. Com 43 desses processos no estado de Estado de Santa Catarina, além de 23 processos no estado de Estado do ..."
+          },
+          {
+            "titulo": "Gold Turismo e Fretamento 17000 em Itu por Gabriel ...",
+            "link": "https://onibusbrasil.com/gabriel3174/12230992",
+            "snippet": "Ao todo, existem 96 fotografias de ônibus com a numeração \"17000\" catalogados com a identidade visual da companhia ou proprietário Gold Turismo ..."
+          }
+        ],
+        "site_oficial": null,
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "Gold Turismo faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
+  },
+  "realsul": {
+    "empresa": "Real Sul",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": "A Real Sul (frequentemente associada à Real Sul Turismo) é uma empresa de transporte rodoviário de passageiros e turismo que realiza viagens de ônibus conectando regiões como o Distrito Federal e o Centro-Oeste a estados do Nordeste (como Piauí, Maranhão e Bahia) e Minas Gerais . Principais Características Atuação: Focada em linhas interestaduais e de turismo, muito procurada por passageiros que viajam entre Brasília e cidades nordestinas. Canais de Venda: As passagens podem ser encontradas em seu site oficial ou por meio de plataformas parceiras de venda de passagens rodoviárias. Observação histórica: Houve também registros de outras empresas com nomes similares no setor de transporte de cargas ou rotas regionais extintas (como a antiga Real Sul Transportes Ltda. no Rio Grande do Sul), mas a marca mais ativa e conhecida atualmente nas estradas com esse nome opera no segmento de turismo e linhas de longa distância no país. Se você precisar de informações específicas, me diga: Qual rota ou destino você gostaria de consultar? Procura os contatos ou o site oficial da empresa?",
+        "referencias": [],
+        "erro": null
+      },
+      "Google_TopSites": {
+        "conteudo": "REAL SUL Transportes e Turismo: A Real Sul Transportes e Turismo é uma empresa de ônibus fundada em 1990, com sede em Brasília. Percorre cidades da Bahia, Tocantins, ... O diferenciado da real sul#brasil🇧🇷 #turismobrasil ...: Iniciando Mais Uma Postagem Da Empresa @realsulturismo , Com Seu Vissta Buss DD Em Brasília-Distrito Federal!!! Empresa: Real Sul Turismo REAL SUL TRANSPORTES LTDA - 00380198000186: O CNPJ da empresa REAL SUL TRANSPORTES LTDA é 00.380.198/0001-86. Com sede em ELDORADO DO SUL, RS, possui 31 anos, 7 meses e 11 dias e foi fundada em 05/01/1995 ... Real Sul em Formosa, GO - 26.484.154/0006-02: A empresa com a razão social Realsul Transportes e Turismo Ltda, tem o nome fantasia Real Sul, opera com o CNPJ 26.484.154/0006-02 (26484154000602) e foi ... 2025231 . Busscar Panorâmico NB1 DD. Scania K410C. Linha: ...: 157 likes, 5 comments - therebuss on December 28, 2024: \"REAL SUL TURISMO - 2025231 . Busscar Panorâmico NB1 DD. Scania K410C. VIAÇÃO REAL SUL - SÃO FRANCISCO.MG X BRASILIA.DF: ORIGEM: SÃO FRANCISCO.MG DESTINO: BRASILIA.DF VIA: DIRETO EMPRESA: REAL SUL VIAGEM 2138 - BUS ETS2 CRÉDITOS: ÔNIBUS: G81600LD BY MODSHOP ... Lista de reclamações: Real Sul Turismo: Quer saber os principais motivos de reclamações recebidas pela empresa Real Sul Turismo? Veja a lista completa no Reclame AQUI! Real Sul Turismo 2020200 em Parnaíba por Vitor Alves: Empresa de Transporte Coletivo Trans Acreana 802 na cidade de Capixaba, Acre, Brasil, →. ♥ 10. 10 gostaram ...",
+        "sites": [
+          {
+            "titulo": "REAL SUL Transportes e Turismo",
+            "link": "https://www.youtube.com/watch?v=aEuhKeh0w7A",
+            "snippet": "A Real Sul Transportes e Turismo é uma empresa de ônibus fundada em 1990, com sede em Brasília. Percorre cidades da Bahia, Tocantins, ..."
+          },
+          {
+            "titulo": "O diferenciado da real sul#brasil🇧🇷 #turismobrasil ...",
+            "link": "https://www.instagram.com/reel/DQm_wUJEqVk/",
+            "snippet": "Iniciando Mais Uma Postagem Da Empresa @realsulturismo , Com Seu Vissta Buss DD Em Brasília-Distrito Federal!!! Empresa: Real Sul Turismo"
+          },
+          {
+            "titulo": "REAL SUL TRANSPORTES LTDA - 00380198000186",
+            "link": "https://empresas.serasaexperian.com.br/consulta-gratis/REAL-SUL-TRANSPORTES-LTDA-00380198000186",
+            "snippet": "O CNPJ da empresa REAL SUL TRANSPORTES LTDA é 00.380.198/0001-86. Com sede em ELDORADO DO SUL, RS, possui 31 anos, 7 meses e 11 dias e foi fundada em 05/01/1995 ..."
+          },
+          {
+            "titulo": "Real Sul em Formosa, GO - 26.484.154/0006-02",
+            "link": "https://www.econodata.com.br/consulta-empresa/26484154000602-realsul-transportes-e-turismo-ltda",
+            "snippet": "A empresa com a razão social Realsul Transportes e Turismo Ltda, tem o nome fantasia Real Sul, opera com o CNPJ 26.484.154/0006-02 (26484154000602) e foi ..."
+          },
+          {
+            "titulo": "2025231 . Busscar Panorâmico NB1 DD. Scania K410C. Linha: ...",
+            "link": "https://www.instagram.com/reel/DEJRzeNRGnW/",
+            "snippet": "157 likes, 5 comments - therebuss on December 28, 2024: \"REAL SUL TURISMO - 2025231 . Busscar Panorâmico NB1 DD. Scania K410C."
+          },
+          {
+            "titulo": "VIAÇÃO REAL SUL - SÃO FRANCISCO.MG X BRASILIA.DF",
+            "link": "https://www.youtube.com/watch?v=KfOJQOT3zXE",
+            "snippet": "ORIGEM: SÃO FRANCISCO.MG DESTINO: BRASILIA.DF VIA: DIRETO EMPRESA: REAL SUL VIAGEM 2138 - BUS ETS2 CRÉDITOS: ÔNIBUS: G81600LD BY MODSHOP ..."
+          },
+          {
+            "titulo": "Lista de reclamações: Real Sul Turismo",
+            "link": "https://www.reclameaqui.com.br/empresa/real-sul-turismo/lista-reclamacoes/?status\\u003dANSWERED",
+            "snippet": "Quer saber os principais motivos de reclamações recebidas pela empresa Real Sul Turismo? Veja a lista completa no Reclame AQUI!"
+          },
+          {
+            "titulo": "Real Sul Turismo 2020200 em Parnaíba por Vitor Alves",
+            "link": "https://onibusbrasil.com/Vitoralves/10865200",
+            "snippet": "Empresa de Transporte Coletivo Trans Acreana 802 na cidade de Capixaba, Acre, Brasil, →. ♥ 10. 10 gostaram ..."
+          }
+        ],
+        "site_oficial": null,
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "Real Sul faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
+  },
+  "redencao": {
+    "empresa": "Redencao",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": "A Redenção Turismo (cujo nome oficial é Expresso Redenção Transportes e Turismo Ltda.) é uma tradicional empresa brasileira de transporte rodoviário de passageiros , com forte atuação no estado de São Paulo, especialmente na região do Vale do Paraíba e Grande São Paulo. História Fundação: Iniciou suas atividades em 1969 fazendo o transporte intermunicipal entre Taubaté, Redenção da Serra e Natividade da Serra. Evolução: Foi formalizada como Expresso Redenção em 1971 e expandiu sua atuação para o mercado de fretamento corporativo e turismo. Gestão Familiar: A empresa é administrada de geração em geração com foco em um atendimento próximo aos clientes e parceiros. Estrutura Sede e Filiais: A matriz fica em Taubaté (SP), contando com filiais estratégicas em cidades como São Paulo, São José dos Campos e Sorocaba. Frota: Possui dezenas de veículos modernos voltados para o conforto e a segurança, vistoriados por órgãos regulamentadores como ANTT, ARTESP e EMTU. Operações Fretamento Empresarial e Industrial: Principal foco atual da empresa, respondendo pela maior parte de suas operações diárias no transporte de funcionários de grandes indústrias. Turismo e Fretamento Eventual: Viagens e excursões para lazer ou trabalho em todo o território nacional. Linhas Intermunicipais e Suburbanas: O serviço tradicional que deu origem à marca, ligando municípios do interior paulista. Gostaria de saber mais detalhes sobre os horários de linhas, orçamentos de fretamento ou contatos da Redenção Turismo?",
+        "referencias": [],
+        "erro": null
+      },
+      "Google_TopSites": {
+        "conteudo": "Redenção Turismo - Transporte Contínuo e Eventual: Especialista em transportes. Para fretamento contínuo, empresarial ou eventual, conte com a tradição e experiência da Redenção Turismo. Redenção Online: A Redenção Transporte e Turismo LTDA é uma das mais tradicionais empresas de transporte coletivo de passageiros em operação no Brasil. Redenção Turismo (@redencaoturismo): Quando uma empresa escolhe a Redenção, ela procura muito mais do que um fornecedor de transporte. Procura alguém que entenda sua operação, cumpra horários, ... Conheça Nossa História no Transporte e Turismo: Expresso Redenção é uma empresa tradicional com mais de 50 anos de atuação em transporte e turismo na região do Vale do Paraíba e São Paulo. Saiba mais. expresso redenção: Razão Social: EXPRESSO REDENÇÃO TRANSPORTES E TURISMO LTDA. ; Nome Fantasia: EXPRESSO REDENÇÃO ; CNPJ: 72.302.409/0001-73 ... Redenção Turismo | Taubaté SP: Redenção Turismo. A Redenção Turismo é uma empresa de ônibus especializada no transporte profissional de passageiros. Redenção Turismo: Saiba se a empresa Redenção Turismo é confiável, segundo os consumidores. Se tiver problemas, reclame, resolva, avalie. Reclame Aqui. Comprar passagem de ônibus da Redenção Turismo: Fundada em 1969, a Redenção Turismo iniciou sua trajetória no transporte de passageiros no estado de São Paulo, ligando as cidades de Redenção da Serra, ...",
+        "sites": [
+          {
+            "titulo": "Redenção Turismo - Transporte Contínuo e Eventual",
+            "link": "http://redencaoturismo.com.br/",
+            "snippet": "Especialista em transportes. Para fretamento contínuo, empresarial ou eventual, conte com a tradição e experiência da Redenção Turismo."
+          },
+          {
+            "titulo": "Redenção Online",
+            "link": "http://www.redencaoonline.com.br/",
+            "snippet": "A Redenção Transporte e Turismo LTDA é uma das mais tradicionais empresas de transporte coletivo de passageiros em operação no Brasil."
+          },
+          {
+            "titulo": "Redenção Turismo (@redencaoturismo)",
+            "link": "https://www.instagram.com/redencaoturismo/",
+            "snippet": "Quando uma empresa escolhe a Redenção, ela procura muito mais do que um fornecedor de transporte. Procura alguém que entenda sua operação, cumpra horários, ..."
+          },
+          {
+            "titulo": "Conheça Nossa História no Transporte e Turismo",
+            "link": "http://redencaoturismo.com.br/quem-somos/",
+            "snippet": "Expresso Redenção é uma empresa tradicional com mais de 50 anos de atuação em transporte e turismo na região do Vale do Paraíba e São Paulo. Saiba mais."
+          },
+          {
+            "titulo": "expresso redenção",
+            "link": "http://www.emtu.sp.gov.br/Sistemas/empresa/resultado.htm?chelemento\\u003d2843\\u0026pg\\u003dbuscaregiao.htm",
+            "snippet": "Razão Social: EXPRESSO REDENÇÃO TRANSPORTES E TURISMO LTDA. ; Nome Fantasia: EXPRESSO REDENÇÃO ; CNPJ: 72.302.409/0001-73 ..."
+          },
+          {
+            "titulo": "Redenção Turismo | Taubaté SP",
+            "link": "https://www.facebook.com/redencao.turismo/?locale\\u003dpt_BR",
+            "snippet": "Redenção Turismo. A Redenção Turismo é uma empresa de ônibus especializada no transporte profissional de passageiros."
+          },
+          {
+            "titulo": "Redenção Turismo",
+            "link": "https://www.reclameaqui.com.br/empresa/redencao-turismo/",
+            "snippet": "Saiba se a empresa Redenção Turismo é confiável, segundo os consumidores. Se tiver problemas, reclame, resolva, avalie. Reclame Aqui."
+          },
+          {
+            "titulo": "Comprar passagem de ônibus da Redenção Turismo",
+            "link": "https://rodon.com.br/viacao/redencao-turismo",
+            "snippet": "Fundada em 1969, a Redenção Turismo iniciou sua trajetória no transporte de passageiros no estado de São Paulo, ligando as cidades de Redenção da Serra, ..."
+          }
+        ],
+        "site_oficial": {
+          "titulo": "Redenção Turismo - Transporte Contínuo e Eventual",
+          "link": "http://redencaoturismo.com.br/",
+          "snippet": "Especialista em transportes. Para fretamento contínuo, empresarial ou eventual, conte com a tradição e experiência da Redenção Turismo."
+        },
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "Redencao faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
+  },
+  "rionovo": {
+    "empresa": "Rio Novo",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": "A Rio Novo refere-se primariamente à Rio Novo Transportes e Turismo Ltda, uma empresa de transporte rodoviário de passageiros que atua em linhas intermunicipais e interestaduais , com forte presença no estado de Mato Grosso (em rotas como Cuiabá e Lucas do Rio Verde) e conexões para outras regiões (como Goiás). Atuação e Serviços Transporte Coletivo: Executa viagens terrestres de passageiros, fretamentos para empresas, escolas e eventos. Programa de Fidelidade: Oferece vantagens e benefícios para passageiros frequentes em suas linhas. Canais de Contato: Possui atendimento ao cliente via SAC e plataformas digitais para venda de passagens. (Nota: O nome \"Rio Novo\" também aparece associado a outras razões sociais em diferentes setores, como prestadoras de serviços urbanos ou empresas em municípios homônimos). Se você busca por , horários de viagem ou informações de outra filial específica da Rio Novo, por favor me avise para detalhar a resposta.",
+        "referencias": [],
+        "erro": null
+      },
+      "Google_TopSites": {
+        "conteudo": "Empresa Rio Novo alerta para golpe envolvendo falsas ...: A empresa Rio Novo emitiu, nesta segunda-feira (11), um alerta à população para que não realize depósitos ou transferências via Pix com a ... Rio Novo Mineracao LTDA - 12958248000149 Santarém: Sua atividade principal, conforme a Receita Federal, é 09.90-4-03 - Atividades de apoio à extração de minerais não-metálicos. Sua situação cadastral até o ... para recolher o lixo da nossa cidade pelos próximos 5 anos. ...: ... novo contrato de limpeza urbana de Ubá. Dessa vez, a empresa selecionada foi a União Recicláveis ​​Rio Novo Ltda, que foi contratada por R ... Empresa Rio Novo perde recurso na Justiça para ...: A autora do processo alega que a proposta da vencedora está eivada de irregularidades, além de possuir valores subdimensionados que não refletem ... ata de assembleia extraordinaria: ATA DE ASSEMBLEIA EXTRAORDINARIA. ACORDO COLETIVO DE TRABALHO - RIO NOVO TRANSPORTES E TURISMO. Aos 19 dias do mês de setembro de 2024, o Sindicato dos ... Salários: Rio Novo Soluções Urbanas Ltda, Recursos ...: Ver os salários da empresa Rio Novo Soluções Urbanas Ltda, coletados diretamente de funcionários e vagas de emprego no Indeed. Céu azul, sol brilhando e o asfalto livre à nossa frente: #rionovoturismo · View all 3 comments · pollyanna.aragao. Vem com a Rio Novo Turismo !! ... empresa e sobre os novos serviços que chegam ... Rio Novo Turismo 4100 em Juiz de Fora por Nathan 630: A imagem exibe a foto do ônibus número 4100 que se encontra na identidade visual da empresa Rio Novo Turismo, de Rio Novo, Minas Gerais, Brasil.",
+        "sites": [
+          {
+            "titulo": "Empresa Rio Novo alerta para golpe envolvendo falsas ...",
+            "link": "https://www.spzonline.com.br/noticia/empresa-rio-novo-alerta-para-golpe-envolvendo-falsas-arrecadacoes-para-vitimas-de-acidente-na-br-163",
+            "snippet": "A empresa Rio Novo emitiu, nesta segunda-feira (11), um alerta à população para que não realize depósitos ou transferências via Pix com a ..."
+          },
+          {
+            "titulo": "Rio Novo Mineracao LTDA - 12958248000149 Santarém",
+            "link": "https://cnpj.biz/12958248000149",
+            "snippet": "Sua atividade principal, conforme a Receita Federal, é 09.90-4-03 - Atividades de apoio à extração de minerais não-metálicos. Sua situação cadastral até o ..."
+          },
+          {
+            "titulo": "para recolher o lixo da nossa cidade pelos próximos 5 anos. ...",
+            "link": "https://www.instagram.com/reel/DZFjFswuaT7/",
+            "snippet": "... novo contrato de limpeza urbana de Ubá. Dessa vez, a empresa selecionada foi a União Recicláveis ​​Rio Novo Ltda, que foi contratada por R ..."
+          },
+          {
+            "titulo": "Empresa Rio Novo perde recurso na Justiça para ...",
+            "link": "https://araguaianoticia.com.br/noticia/38628/empresa-rio-novo-perde-recurso-na-justica-para-suspender-licitacao-de-transporte-de-passageiros-no-araguaia",
+            "snippet": "A autora do processo alega que a proposta da vencedora está eivada de irregularidades, além de possuir valores subdimensionados que não refletem ..."
+          },
+          {
+            "titulo": "ata de assembleia extraordinaria",
+            "link": "https://www3.mte.gov.br/sistemas/mediador/imagemAnexo/MR061989_20242025_03_20T09_33_15.pdf",
+            "snippet": "ATA DE ASSEMBLEIA EXTRAORDINARIA. ACORDO COLETIVO DE TRABALHO - RIO NOVO TRANSPORTES E TURISMO. Aos 19 dias do mês de setembro de 2024, o Sindicato dos ..."
+          },
+          {
+            "titulo": "Salários: Rio Novo Soluções Urbanas Ltda, Recursos ...",
+            "link": "https://br.indeed.com/cmp/Rio-Novo-Solu%C3%A7%C3%B5es-Urbanas-Ltda/salaries?job_category\\u003dhr\\u0026location\\u003dBR%2FSP%2FS%C3%A3o+Paulo",
+            "snippet": "Ver os salários da empresa Rio Novo Soluções Urbanas Ltda, coletados diretamente de funcionários e vagas de emprego no Indeed."
+          },
+          {
+            "titulo": "Céu azul, sol brilhando e o asfalto livre à nossa frente",
+            "link": "https://www.instagram.com/reel/DcRss9HJ-_H/",
+            "snippet": "#rionovoturismo · View all 3 comments · pollyanna.aragao. Vem com a Rio Novo Turismo !! ... empresa e sobre os novos serviços que chegam ..."
+          },
+          {
+            "titulo": "Rio Novo Turismo 4100 em Juiz de Fora por Nathan 630",
+            "link": "https://onibusbrasil.com/630NFOTOS/13684962",
+            "snippet": "A imagem exibe a foto do ônibus número 4100 que se encontra na identidade visual da empresa Rio Novo Turismo, de Rio Novo, Minas Gerais, Brasil."
+          }
+        ],
+        "site_oficial": null,
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "Rio Novo faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
+  },
+  "santamaria": {
+    "empresa": "Santa Maria",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": "Existem várias empresas com o nome Santa Maria no Brasil, sendo as mais conhecidas: Transportes Santa Maria: Uma empresa de ônibus rodoviária com mais de 50 anos de atuação ligando São Paulo a estados como Rio de Janeiro, Paraná e Minas Gerais, adquirida recentemente pela plataforma Buser para operar linhas regulares. Grupo Santa Maria: Uma tradicional empresa do Paraná fundada em 1962, atuante nos mercados de papel, reflorestamento, agricultura e energia. Temperados / Alimentos Santa Maria: Marca tradicional de condimentos, especiarias e alimentos presente no mercado desde a década de 1960. Luz e Força Santa Maria: Empresa concessionária de energia elétrica localizada no estado do Espírito Santo. Para que eu possa trazer a informação exata, você poderia especificar qual ramo ou cidade da empresa Santa Maria você está procurando?",
+        "referencias": [],
+        "erro": null
+      },
+      "Google_TopSites": {
+        "conteudo": "Carreiras e Empregos — GRUPO SANTA MARIA - Empresas: Descubra o que funciona bem na empresa GRUPO SANTA MARIA por meio das pessoas mais entendidas do assunto. Obtenha informações privilegiadas sobre vagas, ... SANTA MARIA EMPREENDIMENTOS E ADMINISTRACAO ...: A sua situação cadastral é ATIVA e sua principal atividade econômica é Gestão e administração da propriedade imobiliária. Score. Consultar score da empresa. Vem aí !!!! Empresa Santa Maria João pessoa ...: O modelo escolhido foi um New Torino produzido pela Marcopolo-Ana Rech em Caxias do Sul-RS sob chassi Mercedes-Benz OF-1721 BlueTec 5, já com o ... Empresa de Santa Maria vende usina solar de R$ 4,5 ...: Uma empresa de Santa Maria fechou um negócio de R$ 4,5 milhões e vai instalar uma usina de geração de energia solar com 2,6 mil mil painéis ... Assaí - Desde 1960, a empresa Santa Maria é ... - Facebook: Desde 1960, a empresa Santa Maria é extremamente comprometida com a qualidade e o bom desempenho de seus produtos. Você encontra essa marca ... Entregas Santa Maria 21597302000169 Manaus: os serviços de entrega de mercadorias do comércio varejista e de serviços de alimentação no endereço do cliente - os serviços de entrega de encomendas por ... Avaliações da empresa Santa Maria (Brazil) em São Luís MA: O Glassdoor tem 5 avaliações da empresa Santa Maria (Brazil) enviadas de maneira sigilosa por funcionários dela. Leia avaliações e classificações de ... na Santa Maria, cada viagem começa muito antes da partida ...: É por isso que estamos muito felizes com o anúncio da compra de duas empresas de transporte rodoviário: a Expresso JK e a Santa Maria. Dois ...",
+        "sites": [
+          {
+            "titulo": "Carreiras e Empregos — GRUPO SANTA MARIA - Empresas",
+            "link": "https://br.indeed.com/cmp/Grupo-Santa-Maria",
+            "snippet": "Descubra o que funciona bem na empresa GRUPO SANTA MARIA por meio das pessoas mais entendidas do assunto. Obtenha informações privilegiadas sobre vagas, ..."
+          },
+          {
+            "titulo": "SANTA MARIA EMPREENDIMENTOS E ADMINISTRACAO ...",
+            "link": "https://empresas.serasaexperian.com.br/consulta-gratis/SANTA-MARIA-EMPREENDIMENTOS-E-ADMINISTRACAO-LTDA-10950156000197",
+            "snippet": "A sua situação cadastral é ATIVA e sua principal atividade econômica é Gestão e administração da propriedade imobiliária. Score. Consultar score da empresa."
+          },
+          {
+            "titulo": "Vem aí !!!! Empresa Santa Maria João pessoa ...",
+            "link": "https://www.instagram.com/p/DP11uxOiTkL/",
+            "snippet": "O modelo escolhido foi um New Torino produzido pela Marcopolo-Ana Rech em Caxias do Sul-RS sob chassi Mercedes-Benz OF-1721 BlueTec 5, já com o ..."
+          },
+          {
+            "titulo": "Empresa de Santa Maria vende usina solar de R$ 4,5 ...",
+            "link": "https://diariosm.com.br/colunistas/colunistas_do_site/deni_zolin/empresa-de-santa-maria-vende-usina-solar-de-r-4-5-milhoes.436489",
+            "snippet": "Uma empresa de Santa Maria fechou um negócio de R$ 4,5 milhões e vai instalar uma usina de geração de energia solar com 2,6 mil mil painéis ..."
+          },
+          {
+            "titulo": "Assaí - Desde 1960, a empresa Santa Maria é ... - Facebook",
+            "link": "https://www.facebook.com/assaiatacadistaoficial/photos/desde-1960-a-empresa-santa-maria-%C3%A9-extremamente-comprometida-com-a-qualidade-e-o/633075963481803/",
+            "snippet": "Desde 1960, a empresa Santa Maria é extremamente comprometida com a qualidade e o bom desempenho de seus produtos. Você encontra essa marca ..."
+          },
+          {
+            "titulo": "Entregas Santa Maria 21597302000169 Manaus",
+            "link": "https://cnpj.biz/21597302000169",
+            "snippet": "os serviços de entrega de mercadorias do comércio varejista e de serviços de alimentação no endereço do cliente - os serviços de entrega de encomendas por ..."
+          },
+          {
+            "titulo": "Avaliações da empresa Santa Maria (Brazil) em São Luís MA",
+            "link": "https://www.glassdoor.com.br/Avalia%C3%A7%C3%B5es/Santa-Maria-Brazil-S%C3%A3o-Lu%C3%ADs-MA-Avalia%C3%A7%C3%B5es-EI_IE7854217.0,18_IL.19,30_IC2436161.htm",
+            "snippet": "O Glassdoor tem 5 avaliações da empresa Santa Maria (Brazil) enviadas de maneira sigilosa por funcionários dela. Leia avaliações e classificações de ..."
+          },
+          {
+            "titulo": "na Santa Maria, cada viagem começa muito antes da partida ...",
+            "link": "https://www.instagram.com/reel/DL4pVsqKbhI/",
+            "snippet": "É por isso que estamos muito felizes com o anúncio da compra de duas empresas de transporte rodoviário: a Expresso JK e a Santa Maria. Dois ..."
+          }
+        ],
+        "site_oficial": null,
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "linha_regular",
+      "palavra": "passagem",
+      "instrucao": "Santa Maria opera linha regular de ônibus (classificação automática, baseada nas fontes coletadas). Use \"passagem\" em todas as menções."
+    }
+  },
+  "esturismo": {
+    "empresa": "ES Turismo",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": "A ES Turismo é uma empresa de transporte rodoviário que opera viagens de passageiros, muito conhecida por realizar rotas interestaduais em parceria com plataformas de fretamento coletivo como a . O que você precisa saber sobre a empresa: Atuação: Realiza o transporte rodoviário de passageiros, conectando estados e cidades como São Paulo, Rio de Janeiro e Vitória (Espírito Santo). Modelo de serviço: Presta serviços de fretamento e viagens de longa distância frequentemente agendadas por meio de aplicativos de mobilidade e mobilidade colaborativa. Reconhecimento: A marca aparece frequentemente em rotas ligando o Sudeste (como o trecho entre o Rio de Janeiro e o Espírito Santo) e participa de circuitos e exposições do setor rodoviário. Se você precisar de algo mais específico, me diga: Pretende comprar passagens ou consultar rotas da empresa? Precisa de avaliações ou informações sobre uma viagem específica?",
+        "referencias": [],
+        "erro": null
+      },
+      "Google_TopSites": {
+        "conteudo": "ES viagens e turismo: Saiba se a empresa ES viagens e turismo é confiável, segundo os consumidores. Se tiver problemas, reclame, resolva, avalie. Reclame Aqui. Com um carrão top, a ES Turismo é mais uma das ...: Com um carrão top, a ES Turismo é mais uma das empresas que estreiam na Rio Bus Expo nesse ano! Seu DD com um design arrojado vem trazendo ... Passagens ES Turismo — Compre Online | Buser: Compre passagens da ES Turismo online pela Buser. Rotas para São Paulo, Rio de Janeiro, Vila Velha e mais destinos. Preços a partir do mais barato. E. S. TURISMO LTDA - ME - 13766799000173 | Consulte ...: A sua situação cadastral é ATIVA e sua principal atividade econômica é Transporte rodoviário coletivo de passageiros, sob regime de fretamento, intermunicipal, ... BUSER / ES TURISMO # VITÓRIA (Praça do Papa) x RIO DE ...: ... t available. BUSER / ES TURISMO # VITÓRIA (Praça do Papa) x RIO DE JANEIRO (Urca) #viagem. @malanaestrada150 likes3.2K views1 year ago more. ES Transporte & Turismo: Transporte Executivo SP: A ES Transporte & Turismo Ltda nasceu de uma sólida experiência como prestadora de serviços para empresas do setor executivo. Atuamos com vans, ônibus e carros ... ES Turismo Rio - Empresa de Ônibus: A ES Turismo Rio é uma empresa de ônibus localizada em Rio de Janeiro, Rio de Janeiro, Brasil. Encontre fotos dos ônibus, endereço e telefone de contato. SETUR - Secretaria de Estado do Turismo: CEP: 29017-010 - Vitória / ES Tel.: (27) 3636-8026. E-mail: gabinete@turismo.es.gov.br. SETUR Secretaria de Estado do Turismo. 2025 – 2026 | Desenvolvido pelo ... ES Turismo em Serra, ES - 39.692.851/0001-88: É uma empresa do tipo ME. Sua atividade principal é de Transporte rodoviário coletivo de passageiros, sob regime de fretamento, intermunicipal, interestadual e ...",
+        "sites": [
+          {
+            "titulo": "ES viagens e turismo",
+            "link": "https://www.reclameaqui.com.br/empresa/es-viagens-e-turismo/",
+            "snippet": "Saiba se a empresa ES viagens e turismo é confiável, segundo os consumidores. Se tiver problemas, reclame, resolva, avalie. Reclame Aqui."
+          },
+          {
+            "titulo": "Com um carrão top, a ES Turismo é mais uma das ...",
+            "link": "https://www.instagram.com/p/DN8hSvxDmou/",
+            "snippet": "Com um carrão top, a ES Turismo é mais uma das empresas que estreiam na Rio Bus Expo nesse ano! Seu DD com um design arrojado vem trazendo ..."
+          },
+          {
+            "titulo": "Passagens ES Turismo — Compre Online | Buser",
+            "link": "https://es-turismo.buser.com.br/",
+            "snippet": "Compre passagens da ES Turismo online pela Buser. Rotas para São Paulo, Rio de Janeiro, Vila Velha e mais destinos. Preços a partir do mais barato."
+          },
+          {
+            "titulo": "E. S. TURISMO LTDA - ME - 13766799000173 | Consulte ...",
+            "link": "https://empresas.serasaexperian.com.br/consulta-gratis/E-S-TURISMO-LTDA-ME-13766799000173",
+            "snippet": "A sua situação cadastral é ATIVA e sua principal atividade econômica é Transporte rodoviário coletivo de passageiros, sob regime de fretamento, intermunicipal, ..."
+          },
+          {
+            "titulo": "BUSER / ES TURISMO # VITÓRIA (Praça do Papa) x RIO DE ...",
+            "link": "https://www.youtube.com/watch?v=S31J9I3XgDw",
+            "snippet": "... t available. BUSER / ES TURISMO # VITÓRIA (Praça do Papa) x RIO DE JANEIRO (Urca) #viagem. @malanaestrada150 likes3.2K views1 year ago more."
+          },
+          {
+            "titulo": "ES Transporte & Turismo: Transporte Executivo SP",
+            "link": "https://estransportadora.com.br/",
+            "snippet": "A ES Transporte & Turismo Ltda nasceu de uma sólida experiência como prestadora de serviços para empresas do setor executivo. Atuamos com vans, ônibus e carros ..."
+          },
+          {
+            "titulo": "ES Turismo Rio - Empresa de Ônibus",
+            "link": "https://onibusbrasil.com/empresa/es-turismo-rio-de-janeiro-rj",
+            "snippet": "A ES Turismo Rio é uma empresa de ônibus localizada em Rio de Janeiro, Rio de Janeiro, Brasil. Encontre fotos dos ônibus, endereço e telefone de contato."
+          },
+          {
+            "titulo": "SETUR - Secretaria de Estado do Turismo",
+            "link": "https://setur.es.gov.br/",
+            "snippet": "CEP: 29017-010 - Vitória / ES Tel.: (27) 3636-8026. E-mail: gabinete@turismo.es.gov.br. SETUR Secretaria de Estado do Turismo. 2025 – 2026 | Desenvolvido pelo ..."
+          },
+          {
+            "titulo": "ES Turismo em Serra, ES - 39.692.851/0001-88",
+            "link": "https://www.econodata.com.br/consulta-empresa/39692851000188-es-turismo-ltda",
+            "snippet": "É uma empresa do tipo ME. Sua atividade principal é de Transporte rodoviário coletivo de passageiros, sob regime de fretamento, intermunicipal, interestadual e ..."
+          }
+        ],
+        "site_oficial": {
+          "titulo": "Passagens ES Turismo — Compre Online | Buser",
+          "link": "https://es-turismo.buser.com.br/",
+          "snippet": "Compre passagens da ES Turismo online pela Buser. Rotas para São Paulo, Rio de Janeiro, Vila Velha e mais destinos. Preços a partir do mais barato."
+        },
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "ES Turismo faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
+  },
+  "guirrotransportes": {
+    "empresa": "Guirro Transportes",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": null,
+        "referencias": [],
+        "erro": "Google não retornou AI Overview para 'Guirro Transportes'."
+      },
+      "Google_TopSites": {
+        "conteudo": "GUIRRO Transportes - Aluguel de Vans, Ônibus e Transfers.: Serviços de Receptivo, Transfers, Viagens, Locações, Fretamentos, Feiras e. Congressos, os quais podem ser realizados com Ônibus, Micro Ônibus, VANS ou ... Guirro Transportes: A Guirro Transportes conseguiu me proporcionar uma das piores experiências de viagem que já tive.No dia 18/05/2026, embarquei em um ... GUIRRO TRANSPORTES (@guirrotransportes): Empresa especializada em transporte de passageiros. TURISMO | FRETAMENTO. GUIRRO TRANSPORTES LTDA - ME - 15687446000103: O CNPJ da empresa GUIRRO TRANSPORTES LTDA - ME GUIRRO TUR é 15.687.446/0001-03. Com sede em SAO PAULO, SP, possui 14 anos, 2 meses e 17 dias e foi fundada em 29 ... Guirro Transportes Ltda - Processos: O Jusbrasil encontrou 74 processos que mencionam o nome Guirro Transportes LTDA. A maioria é do TJSP, seguido por TRT2. Desses processos encontrados ... Codema Scania on Instagram: \"A Guirro Transportes começou ...: 132 likes, 28 comments - codemaoficial on October 17, 2024: \"A Guirro Transportes começou sua trajetória em 1985 no transporte escolar e, ... guirro tur: Razão Social: GUIRRO TRANSPORTES LTDA ME. Nome Fantasia: GUIRRO TUR. CNPJ: 15.687.446/0001-03. Frota, Sistema, Região da Autorização, Situação Cadastral. Guirro Transportes Ltda - Processos: Guirro Transportes Ltda, Agência Reguladora de Serviços Públicos Delegados de Transporte do Estado de São Paulo Artesp, Diretor Geral da Artesp - Agência ... GUIRRO TUR - Por Dentro da Empresa: Transporte rodoviário coletivo de passageiros, sob regime de fretamento, municipal - Transporte rodoviário coletivo de passageiros, sob regime de fretamento ... Passagens Guirro Transportes — Compre Online | Buser: Compre passagens da Guirro Transportes online pela Buser. Rotas para Vinhedo, São Paulo, Itupeva e mais destinos. Preços a partir do mais barato.",
+        "sites": [
+          {
+            "titulo": "GUIRRO Transportes - Aluguel de Vans, Ônibus e Transfers.",
+            "link": "https://guirro.com.br/",
+            "snippet": "Serviços de Receptivo, Transfers, Viagens, Locações, Fretamentos, Feiras e. Congressos, os quais podem ser realizados com Ônibus, Micro Ônibus, VANS ou ..."
+          },
+          {
+            "titulo": "Guirro Transportes",
+            "link": "https://www.reclameaqui.com.br/empresa/guirro-transportes/",
+            "snippet": "A Guirro Transportes conseguiu me proporcionar uma das piores experiências de viagem que já tive.No dia 18/05/2026, embarquei em um ..."
+          },
+          {
+            "titulo": "GUIRRO TRANSPORTES (@guirrotransportes)",
+            "link": "https://www.instagram.com/guirrotransportes/",
+            "snippet": "Empresa especializada em transporte de passageiros. TURISMO | FRETAMENTO."
+          },
+          {
+            "titulo": "GUIRRO TRANSPORTES LTDA - ME - 15687446000103",
+            "link": "https://empresas.serasaexperian.com.br/consulta-gratis/GUIRRO-TRANSPORTES-LTDA-15687446000103",
+            "snippet": "O CNPJ da empresa GUIRRO TRANSPORTES LTDA - ME GUIRRO TUR é 15.687.446/0001-03. Com sede em SAO PAULO, SP, possui 14 anos, 2 meses e 17 dias e foi fundada em 29 ..."
+          },
+          {
+            "titulo": "Guirro Transportes Ltda - Processos",
+            "link": "https://www.jusbrasil.com.br/processos/nome/160383507/guirro-transportes-ltda",
+            "snippet": "O Jusbrasil encontrou 74 processos que mencionam o nome Guirro Transportes LTDA. A maioria é do TJSP, seguido por TRT2. Desses processos encontrados ..."
+          },
+          {
+            "titulo": "Codema Scania on Instagram: \"A Guirro Transportes começou ...",
+            "link": "https://www.instagram.com/reel/DBOr6pEJbqE/",
+            "snippet": "132 likes, 28 comments - codemaoficial on October 17, 2024: \"A Guirro Transportes começou sua trajetória em 1985 no transporte escolar e, ..."
+          },
+          {
+            "titulo": "guirro tur",
+            "link": "http://www.emtu.sp.gov.br/Sistemas/empresa/resultado.htm?chelemento\\u003d11533\\u0026pg\\u003dbuscaregiao.htm",
+            "snippet": "Razão Social: GUIRRO TRANSPORTES LTDA ME. Nome Fantasia: GUIRRO TUR. CNPJ: 15.687.446/0001-03. Frota, Sistema, Região da Autorização, Situação Cadastral."
+          },
+          {
+            "titulo": "Guirro Transportes Ltda - Processos",
+            "link": "https://www.escavador.com/nomes/guirro-transportes-ltda-80940b0bbb",
+            "snippet": "Guirro Transportes Ltda, Agência Reguladora de Serviços Públicos Delegados de Transporte do Estado de São Paulo Artesp, Diretor Geral da Artesp - Agência ..."
+          },
+          {
+            "titulo": "GUIRRO TUR - Por Dentro da Empresa",
+            "link": "https://www.infojobs.com.br/empresa-guirro-tur__754286.aspx",
+            "snippet": "Transporte rodoviário coletivo de passageiros, sob regime de fretamento, municipal - Transporte rodoviário coletivo de passageiros, sob regime de fretamento ..."
+          },
+          {
+            "titulo": "Passagens Guirro Transportes — Compre Online | Buser",
+            "link": "https://guirro-transportes.buser.com.br/",
+            "snippet": "Compre passagens da Guirro Transportes online pela Buser. Rotas para Vinhedo, São Paulo, Itupeva e mais destinos. Preços a partir do mais barato."
+          }
+        ],
+        "site_oficial": {
+          "titulo": "GUIRRO Transportes - Aluguel de Vans, Ônibus e Transfers.",
+          "link": "https://guirro.com.br/",
+          "snippet": "Serviços de Receptivo, Transfers, Viagens, Locações, Fretamentos, Feiras e. Congressos, os quais podem ser realizados com Ônibus, Micro Ônibus, VANS ou ..."
+        },
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "Guirro Transportes faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
   }
 }
