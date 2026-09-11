@@ -9,3 +9,4 @@ python-dotenv
 uvicorn==0.52.1
 langchain-openai
 langgraph
+openpyxl
