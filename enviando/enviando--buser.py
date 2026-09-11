@@ -16,11 +16,13 @@ Uso:
 """
 
 import argparse
+import json
 import os
 import re
 import sys
 import time
 import unicodedata
+from collections import defaultdict
 
 import requests
 from dotenv import load_dotenv
@@ -35,9 +37,17 @@ XLSX_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "empresas_d
 API_KEY = os.getenv("BUSER_API_KEY")
 
 
+PREFIXO_TEMA_EMPRESA = re.compile(r"^\s*empresa\s+", re.IGNORECASE)
+
+
 def slugify(nome: str) -> str:
     """Mesma receita usada em formatos/transformacaoJson.py: sem acento,
     minúsculo, qualquer sequência de não-alfanumérico vira um único '-'."""
+    # Remove o prefixo "Empresa " (usado só como pista de categoria na hora
+    # de digitar o tema, ex: "Empresa Esmeraldas Turismo") antes de slugificar
+    # — senão o slug sai como "empresa-esmeraldas-turismo" em vez do slug
+    # real da empresa em produção ("esmeraldas-turismo").
+    nome = PREFIXO_TEMA_EMPRESA.sub("", nome)
     texto = unicodedata.normalize("NFKD", nome)
     texto = "".join(c for c in texto if not unicodedata.combining(c))
     texto = texto.lower().strip()
@@ -64,6 +74,35 @@ def carregar_empresas(caminho: str) -> list:
     return empresas
 
 
+def carregar_empresas_de_json(caminho: str) -> list:
+    """Lê o JSON exportado pela interface (baixar .json): uma lista achatada
+    de itens, um por (tema, tom) — ex: "Empresa X" aparece 2x, um item com
+    tom="Vendas" e outro com tom="Informativo". Agrupa por "tema" pra montar
+    uma empresa só com os dois textos, do mesmo jeito que carregar_empresas()
+    faz a partir das duas colunas do xlsx."""
+    with open(caminho, encoding="utf-8") as arquivo:
+        itens = json.load(arquivo)
+
+    por_tema = defaultdict(dict)
+    for item in itens:
+        tema = item.get("tema")
+        tom = (item.get("tom") or "").strip().lower()
+        texto = (item.get("conteudo_gerado") or "").strip()
+        if not tema or not texto:
+            continue
+        por_tema[tema][tom] = texto
+
+    empresas = []
+    for tema, textos in por_tema.items():
+        empresas.append({
+            "nome": tema,
+            "company_slug": slugify(tema),
+            "summary_text": textos.get("vendas", ""),
+            "about_text": textos.get("informativo", ""),
+        })
+    return empresas
+
+
 def _headers():
     return {"X-API-KEY": API_KEY, "Content-Type": "application/json"}
 
@@ -81,8 +120,12 @@ def enviar(empresa: dict, dry_run: bool) -> None:
 
     if dry_run:
         print(f"[DRY-RUN] {empresa['nome']!r} -> slug={slug!r}")
-        print(f"          summary_text: {payload['summary_text'][:80]}...")
-        print(f"          about_text:   {payload['about_text'][:80]}...")
+        # json.dumps (não um print cru) de propósito: é a mesma serialização
+        # que requests.post(json=payload) faz por baixo — se o "\n\n" for
+        # pra sobreviver na requisição real, tem que aparecer aqui como
+        # "\n\n" literal dentro da string (é assim que JSON representa
+        # quebra de linha; ao ser lido de volta, volta a virar quebra real).
+        print(json.dumps(payload, ensure_ascii=False, indent=2))
         return
 
     resposta = requests.post(ENDPOINT, headers=_headers(), json=payload, timeout=30)
@@ -108,12 +151,16 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--dry-run", action="store_true", help="só mostra o que seria enviado, não chama a API")
     parser.add_argument("--limite", type=int, default=None, help="processa só as N primeiras empresas (pra teste)")
+    parser.add_argument("--json", metavar="CAMINHO", help="lê de um .json exportado pela interface em vez do xlsx padrão")
     args = parser.parse_args()
 
     if not args.dry_run and not API_KEY:
         sys.exit("BUSER_API_KEY não configurada no .env")
 
-    empresas = carregar_empresas(XLSX_PATH)
+    if args.json:
+        empresas = carregar_empresas_de_json(args.json)
+    else:
+        empresas = carregar_empresas(XLSX_PATH)
     if args.limite:
         empresas = empresas[: args.limite]
 

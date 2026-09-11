@@ -1504,5 +1504,77 @@
       "palavra": "viagem",
       "instrucao": "Catedral faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
     }
+  },
+  "esmeraldasturismo": {
+    "empresa": "Esmeraldas Turismo",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": "A Esmeraldas Turismo (registrada como Esmeraldas Turismo Ltda.) é uma empresa brasileira com sede em Contagem, Minas Gerais, ativa desde fevereiro de 1984, que atua no setor de intermediação e agenciamento de serviços e negócios . Além disso, o termo também pode se referir à Viação Esmeraldas, uma empresa de transporte e turismo da região de Belo Horizonte especializada em fretamento de ônibus, micro-ônibus e vans para viagens especiais, ou a iniciativas ligadas ao setor público de turismo no município de Esmeraldas (Minas Gerais). Se você busca informações sobre uma dessas empresas específicas ou de outra região, me diga: Qual é a cidade ou estado da empresa? Você procura os contatos, o CNPJ ou os serviços prestados?",
+        "referencias": [],
+        "erro": null
+      },
+      "Google_TopSites": {
+        "conteudo": "Prefeitura Municipal de Esmeraldas - MG - Turismo: Descubra Esmeraldas. Natureza, cultura, história, gastronomia e tradições que encantam moradores e visitantes. Explore nossos atrativos turísticos e conheça os ... Turismo - VIAÃ‡ÃƒO ESMERALDAS LTDA: Atuando no ramo de especiais, viagens e turismo, oferecemos a nossos clientes um serviço diferenciado. Contando com veículos cadastrados no DER/MG e ANTT, todos ... Esmeralda Turismo: Saiba se a empresa Esmeralda Turismo é confiável, segundo os consumidores. Se tiver problemas, reclame, resolva, avalie. Reclame Aqui. ESMERALDA TURISMO LTDA - ME - 62455619000148: Com sede em SANTA CRUZ DO SUL, RS, possui 0 anos, 11 meses e 16 dias e foi fundada em 28/08/2025. A sua situação cadastral é ATIVA e sua principal atividade ... Viação Esmeraldas Ltda (@viacaoesmeraldasltda): Fretamentos e Turismo Deus é fiel! (31) 3522-6623. Rua Elizeu Alves Vieira, 154 , Centro, Esmeraldas · feliz dia dos motoristas!! #motoristas #esmeraldas # ... Esmeraldas Turismo Ltda-me - Processos: O Jusbrasil encontrou 6 processos que mencionam o nome Esmeraldas Turismo LTDA - ME. A maioria é do TJMG, seguido por tjmg. Desses processos encontrados ... 1ª Conferência Municipal de Turismo e Cultura de Esmeraldas ...: ... Turismo e Cultura de Esmeraldas ... Isso, vai ser um grande dia pra Esmeralda Esmeraldas, primeira conferência de cultura e turismo da cidade. ESMERALDAS TURISMO LTDA - ME - 19467729000109: O CNPJ da empresa ESMERALDAS TURISMO LTDA - ME é 19.467.729/0001-09. Com sede em CONTAGEM, MG, possui 42 anos, 5 meses e 1 dia e foi fundada em 01/02/1984. Amaral Turismo em Esmeraldas, MG - 22.968.736/0001-90: É uma empresa do tipo ME. Sua atividade principal é de Transporte rodoviário coletivo de passageiros, sob regime de fretamento, intermunicipal, interestadual e ...",
+        "sites": [
+          {
+            "titulo": "Prefeitura Municipal de Esmeraldas - MG - Turismo",
+            "link": "https://www.esmeraldas.mg.gov.br/portal/turismo",
+            "snippet": "Descubra Esmeraldas. Natureza, cultura, história, gastronomia e tradições que encantam moradores e visitantes. Explore nossos atrativos turísticos e conheça os ..."
+          },
+          {
+            "titulo": "Turismo - VIAÃ‡ÃƒO ESMERALDAS LTDA",
+            "link": "http://www.viacaoesmeraldas.com.br/turismo",
+            "snippet": "Atuando no ramo de especiais, viagens e turismo, oferecemos a nossos clientes um serviço diferenciado. Contando com veículos cadastrados no DER/MG e ANTT, todos ..."
+          },
+          {
+            "titulo": "Esmeralda Turismo",
+            "link": "https://www.reclameaqui.com.br/empresa/esmeralda-turismo/",
+            "snippet": "Saiba se a empresa Esmeralda Turismo é confiável, segundo os consumidores. Se tiver problemas, reclame, resolva, avalie. Reclame Aqui."
+          },
+          {
+            "titulo": "ESMERALDA TURISMO LTDA - ME - 62455619000148",
+            "link": "https://empresas.serasaexperian.com.br/consulta-gratis/ESMERALDA-TURISMO-LTDA-ME-62455619000148",
+            "snippet": "Com sede em SANTA CRUZ DO SUL, RS, possui 0 anos, 11 meses e 16 dias e foi fundada em 28/08/2025. A sua situação cadastral é ATIVA e sua principal atividade ..."
+          },
+          {
+            "titulo": "Viação Esmeraldas Ltda (@viacaoesmeraldasltda)",
+            "link": "https://www.instagram.com/viacaoesmeraldasltda/",
+            "snippet": "Fretamentos e Turismo Deus é fiel! (31) 3522-6623. Rua Elizeu Alves Vieira, 154 , Centro, Esmeraldas · feliz dia dos motoristas!! #motoristas #esmeraldas # ..."
+          },
+          {
+            "titulo": "Esmeraldas Turismo Ltda-me - Processos",
+            "link": "https://www.jusbrasil.com.br/processos/nome/92610039/esmeraldas-turismo-ltda-me",
+            "snippet": "O Jusbrasil encontrou 6 processos que mencionam o nome Esmeraldas Turismo LTDA - ME. A maioria é do TJMG, seguido por tjmg. Desses processos encontrados ..."
+          },
+          {
+            "titulo": "1ª Conferência Municipal de Turismo e Cultura de Esmeraldas ...",
+            "link": "https://www.instagram.com/reel/DRer-jCEbqz/",
+            "snippet": "... Turismo e Cultura de Esmeraldas ... Isso, vai ser um grande dia pra Esmeralda Esmeraldas, primeira conferência de cultura e turismo da cidade."
+          },
+          {
+            "titulo": "ESMERALDAS TURISMO LTDA - ME - 19467729000109",
+            "link": "https://empresas.serasaexperian.com.br/consulta-gratis/ESMERALDAS-TURISMO-LTDA-ME-19467729000109",
+            "snippet": "O CNPJ da empresa ESMERALDAS TURISMO LTDA - ME é 19.467.729/0001-09. Com sede em CONTAGEM, MG, possui 42 anos, 5 meses e 1 dia e foi fundada em 01/02/1984."
+          },
+          {
+            "titulo": "Amaral Turismo em Esmeraldas, MG - 22.968.736/0001-90",
+            "link": "https://www.econodata.com.br/consulta-empresa/22968736000190-amaral-viagens-e-turismo-ltda",
+            "snippet": "É uma empresa do tipo ME. Sua atividade principal é de Transporte rodoviário coletivo de passageiros, sob regime de fretamento, intermunicipal, interestadual e ..."
+          }
+        ],
+        "site_oficial": {
+          "titulo": "Prefeitura Municipal de Esmeraldas - MG - Turismo",
+          "link": "https://www.esmeraldas.mg.gov.br/portal/turismo",
+          "snippet": "Descubra Esmeraldas. Natureza, cultura, história, gastronomia e tradições que encantam moradores e visitantes. Explore nossos atrativos turísticos e conheça os ..."
+        },
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "Esmeraldas Turismo faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
   }
 }
