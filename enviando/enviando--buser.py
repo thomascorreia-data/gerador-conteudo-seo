@@ -107,14 +107,21 @@ def _headers():
     return {"X-API-KEY": API_KEY, "Content-Type": "application/json"}
 
 
+def quebras_para_html(texto: str) -> str:
+    """O campo espera HTML, não texto puro — troca cada quebra de linha por
+    <br>, então "par.1\\n\\npar.2" (parágrafos separados por linha em branco)
+    vira "par.1<br><br>par.2"."""
+    return texto.replace("\n", "<br>")
+
+
 def enviar(empresa: dict, dry_run: bool) -> None:
     slug = empresa["company_slug"]
     payload = {
         "company_slug": slug,
-        "summary_text": empresa["summary_text"],
+        "summary_text": quebras_para_html(empresa["summary_text"]),
         "contact_text": " ",
         "contact_email": " ",
-        "about_text": empresa["about_text"],
+        "about_text": quebras_para_html(empresa["about_text"]),
         "faqs": [],
     }
 

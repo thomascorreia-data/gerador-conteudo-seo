@@ -591,13 +591,30 @@ document.getElementById('copyBtn').onclick = () => {
   });
 };
 
+// O campo "about_text"/"summary_text" da API de páginas de empresa espera
+// HTML, não texto puro — troca cada quebra de linha por <br> (então dois
+// parágrafos separados por linha em branco viram "par.1<br><br>par.2").
+// Só é aplicado na hora de exportar (JSON/CSV): a tela continua mostrando
+// o texto original com white-space:pre-wrap, que já renderiza \n\n como
+// parágrafo visualmente, sem precisar do <br>.
+function quebrasParaHtml(texto){
+  return String(texto ?? '').replace(/\n/g, '<br>');
+}
+
+function comHtmlNaDescricao(resultados){
+  return resultados.map(item => item.conteudo_gerado
+    ? {...item, conteudo_gerado: quebrasParaHtml(item.conteudo_gerado)}
+    : item
+  );
+}
+
 document.getElementById('downloadBtn').onclick = () => {
   // Baixa o JSON que está visível no momento: o normalizado (antes de
   // gerar conteúdo) ou o das descrições geradas (depois).
   if(mostrandoConteudoGerado()){
     if(!ultimoConteudoGerado || ultimoConteudoGerado.length === 0) return;
     baixarArquivo(
-      JSON.stringify(ultimoConteudoGerado, null, 4),
+      JSON.stringify(comHtmlNaDescricao(ultimoConteudoGerado), null, 4),
       'descricoes-geradas.json',
       'application/json'
     );
@@ -657,7 +674,7 @@ function montarCsvDescricoes(resultados){
 
 document.getElementById('downloadCsvBtn').onclick = () => {
   if(!ultimoConteudoGerado || ultimoConteudoGerado.length === 0) return;
-  const csv = montarCsvDescricoes(ultimoConteudoGerado);
+  const csv = montarCsvDescricoes(comHtmlNaDescricao(ultimoConteudoGerado));
   // BOM (﻿) na frente pro Excel abrir os acentos certinho no Windows.
   const blob = new Blob(['﻿' + csv], {type: 'text/csv;charset=utf-8;'});
   const url = URL.createObjectURL(blob);
