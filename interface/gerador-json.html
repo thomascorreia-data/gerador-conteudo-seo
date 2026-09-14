@@ -61,10 +61,6 @@
         </div>
         <div id="envelopeFaqBlock" style="display:none;">
           <div class="row">
-            <label class="label" style="color:var(--muted);">Link do conteúdo (a página que vai virar FAQ)</label>
-            <input type="url" id="linkConteudo" placeholder="ex: https://buser.com.br/faq/cancelamento">
-          </div>
-          <div class="row">
             <label class="label" style="color:var(--muted);">Quantidade de perguntas</label>
             <input type="number" id="quantidadePerguntas" min="1" step="1" placeholder="ex: 5">
           </div>
@@ -81,7 +77,10 @@
 
         <div id="modeSimBlock">
           <div class="row">
-            <label class="label" style="color:var(--muted);">Temas (um por linha)</label>
+            <!-- No FAQ, o "tema" é o link da página que vai virar FAQ (ver
+                 atualizarVisibilidadeFaq) — não tem um campo de link
+                 separado, cada linha aqui já É um link. -->
+            <label class="label" style="color:var(--muted);" id="temasSimplesLabel">Temas (um por linha)</label>
             <textarea id="temasSimples" rows="8" placeholder="Pq a Buser é uma ótima opção para viajar de ônibus
 Como a Buser está revolucionando o transporte rodoviário
 Vantagens de usar a Buser para suas viagens"></textarea>
@@ -154,12 +153,22 @@ function setMode(m){
   document.getElementById('modeNao').classList.toggle('active', m==='nao');
   document.getElementById('modeSimBlock').style.display = m==='sim' ? 'block' : 'none';
   document.getElementById('modeNaoBlock').style.display = m==='nao' ? 'block' : 'none';
-  document.getElementById('modeHint').textContent = m==='sim'
-    ? 'Todos os temas usarão o formato, autor, tom e tamanho definidos acima. Você só precisa listar os temas.'
-    : 'Cada tema começa com os valores padrão acima, mas você pode alterar formato, autor, tom ou tamanho individualmente.';
+  atualizarModeHint();
   if(m==='nao' && document.getElementById('themeCards').children.length === 0){
     addThemeCard(); // começa com pelo menos um
   }
+}
+
+// No FAQ, "tema" é o link — o aviso abaixo dos botões de modo troca
+// "temas" por "links" nesse caso, pra não falar de "tema" bem embaixo de
+// um campo que já pede o link diretamente.
+function atualizarModeHint(){
+  const ehFaq = getEnvelopeValue('formato', 'formatoOutro') === 'FAQ';
+  const palavra = ehFaq ? 'link' : 'tema';
+  const palavraPlural = ehFaq ? 'links' : 'temas';
+  document.getElementById('modeHint').textContent = mode==='sim'
+    ? `Todos os ${palavraPlural} usarão o formato, autor, tom e tamanho definidos acima. Você só precisa listar os ${palavraPlural}.`
+    : `Cada ${palavra} começa com os valores padrão acima, mas você pode alterar formato, autor, tom ou tamanho individualmente.`;
 }
 
 // ---- cartões de tema individuais (modo "Não") ----
@@ -182,7 +191,7 @@ function addThemeCard(prefill){
       </div>
     </div>
     <div class="row">
-      <textarea class="t-tema" rows="2" placeholder="Descreva o tema deste conteúdo específico"></textarea>
+      <textarea class="t-tema" rows="2"></textarea>
     </div>
     <div class="three-col row">
       <input type="text" class="t-formato" placeholder="Formato (padrão: herdar)">
@@ -193,15 +202,29 @@ function addThemeCard(prefill){
       <input type="number" class="t-media" placeholder="Média de palavras (padrão: herdar)" min="10" step="10">
       <input type="text" class="t-palavraschave" placeholder="Palavras-chave (padrão: herdar)">
     </div>
-    <div class="two-col row">
-      <input type="url" class="t-link" placeholder="Link do conteúdo, só p/ FAQ — ex: https://buser.com.br/faq/cancelamento (padrão: herdar)">
+    <div class="row">
       <input type="number" class="t-qtdperguntas" placeholder="Qtd. de perguntas, só p/ FAQ — ex: 5 (padrão: herdar)" min="1" step="1">
     </div>
   `;
   div.querySelector('[data-remove]').onclick = () => { div.remove(); renumerarThemeCards(); };
   div.querySelector('[data-fill]').onclick = () => fillCardFromEnvelope(div);
+  // O placeholder do "tema" depende do formato efetivo do card (o dele
+  // próprio, se tiver sido preenchido, senão o do envelope) — atualiza na
+  // criação e sempre que o formato DESTE card mudar (a mudança do formato
+  // do ENVELOPE é tratada à parte, em atualizarVisibilidadeFaq).
+  div.querySelector('.t-formato').addEventListener('input', () => atualizarPlaceholderCard(div));
+  atualizarPlaceholderCard(div);
   document.getElementById('themeCards').appendChild(div);
   renumerarThemeCards();
+}
+
+function atualizarPlaceholderCard(card){
+  const formatoProprio = card.querySelector('.t-formato').value.trim();
+  const formatoEfetivo = formatoProprio || getEnvelopeValue('formato', 'formatoOutro');
+  const ehFaq = formatoEfetivo === 'FAQ';
+  card.querySelector('.t-tema').placeholder = ehFaq
+    ? 'ex: https://buser.com.br/faq/cancelamento'
+    : 'Descreva o tema deste conteúdo específico';
 }
 
 function renumerarThemeCards(){
@@ -216,7 +239,6 @@ function fillCardFromEnvelope(card){
   card.querySelector('.t-tom').value = getEnvelopeValue('tom', 'tomOutro');
   card.querySelector('.t-media').value = document.getElementById('mediaPalavras').value;
   card.querySelector('.t-palavraschave').value = document.getElementById('palavrasChave').value.trim();
-  card.querySelector('.t-link').value = document.getElementById('linkConteudo').value.trim();
   card.querySelector('.t-qtdperguntas').value = document.getElementById('quantidadePerguntas').value;
 }
 
@@ -227,13 +249,33 @@ function fillCardFromEnvelope(card){
 function atualizarVisibilidadeFaq(){
   const ehFaq = getEnvelopeValue('formato', 'formatoOutro') === 'FAQ';
   document.getElementById('envelopeFaqBlock').style.display = ehFaq ? 'block' : 'none';
+
+  // No FAQ, o "tema" É o link da página que vai virar FAQ (não tem um
+  // campo de link separado) — o rótulo/placeholder muda só pra deixar
+  // isso óbvio, o valor digitado continua indo pro mesmo campo de sempre.
+  const label = document.getElementById('temasSimplesLabel');
+  const textarea = document.getElementById('temasSimples');
+  if(ehFaq){
+    label.textContent = 'Links dos conteúdos (um por linha)';
+    textarea.placeholder = 'https://buser.com.br/faq/cancelamento\nhttps://buser.com.br/faq/remarcacao\nhttps://buser.com.br/faq/bagagem';
+  } else {
+    label.textContent = 'Temas (um por linha)';
+    textarea.placeholder = 'Pq a Buser é uma ótima opção para viajar de ônibus\nComo a Buser está revolucionando o transporte rodoviário\nVantagens de usar a Buser para suas viagens';
+  }
+
+  // Modo "Não, variam por tema": cada card só muda de placeholder aqui se
+  // ELE MESMO não tiver um formato próprio digitado (senão o do envelope
+  // não deveria sobrepor a escolha individual do card).
+  Array.from(document.getElementById('themeCards').children).forEach(atualizarPlaceholderCard);
+
+  atualizarModeHint();
 }
 
 // ---- Trocar de formato zera o resultado gerado (JSON e/ou conteúdo na
 // tela) e os campos exclusivos de FAQ. Sem isso, dois problemas reais:
-// 1) link do conteúdo/quantidade de perguntas ficavam ocultos ao sair de
-//    FAQ, mas o VALOR continuava no input — e vazava pro JSON de outro
-//    formato (ex: uma Descrição saindo com "link_conteudo" preenchido).
+// 1) quantidade de perguntas ficava oculta ao sair de FAQ, mas o VALOR
+//    continuava no input — e vazava pro JSON de outro formato (ex: uma
+//    Descrição saindo com "quantidade_perguntas" preenchida).
 // 2) gerar conteúdo pra um formato sem gerador (ex: FAQ) abre um modal de
 //    aviso em tela cheia; se o usuário trocasse o formato sem fechar esse
 //    modal antes, ele ficava por cima de tudo bloqueando a interface
@@ -253,9 +295,8 @@ function reiniciarSaida(){
   document.getElementById('emptyState').style.display = 'block';
   document.getElementById('outputTag').textContent = 'JSON DE SAÍDA';
 
-  document.getElementById('linkConteudo').value = '';
   document.getElementById('quantidadePerguntas').value = '';
-  document.querySelectorAll('.t-link, .t-qtdperguntas').forEach(campo => campo.value = '');
+  document.querySelectorAll('.t-qtdperguntas').forEach(campo => campo.value = '');
 }
 
 function aoMudarFormato(){
@@ -280,7 +321,6 @@ function montarPayloadEnvelope(){
   const tomEnvelope = getEnvelopeValue('tom', 'tomOutro');
   const mediaEnvelope = parseInt(document.getElementById('mediaPalavras').value, 10) || 300;
   const palavrasChaveEnvelope = document.getElementById('palavrasChave').value.trim();
-  const linkConteudoEnvelope = document.getElementById('linkConteudo').value.trim();
   const quantidadePerguntasEnvelope = parseInt(document.getElementById('quantidadePerguntas').value, 10) || undefined;
 
   if(!requisitor){ errorBox.innerHTML = '<div class="error-box">Preencha o Requisitor.</div>'; return null; }
@@ -310,7 +350,6 @@ function montarPayloadEnvelope(){
       const tomItem = card.querySelector('.t-tom').value.trim();
       const mediaItem = card.querySelector('.t-media').value.trim();
       const palavrasChaveItem = card.querySelector('.t-palavraschave').value.trim();
-      const linkItem = card.querySelector('.t-link').value.trim();
       const qtdPerguntasItem = card.querySelector('.t-qtdperguntas').value.trim();
 
       // só inclui o campo se o usuário digitou algo DIFERENTE do padrão do envelope
@@ -319,7 +358,6 @@ function montarPayloadEnvelope(){
       if(tomItem && tomItem !== tomEnvelope) obj["Tom"] = tomItem;
       if(mediaItem && parseInt(mediaItem,10) !== mediaEnvelope) obj["Média de Palavras Por Conteúdo"] = parseInt(mediaItem,10);
       if(palavrasChaveItem && palavrasChaveItem !== palavrasChaveEnvelope) obj["Palavras-chave"] = palavrasChaveItem;
-      if(linkItem && linkItem !== linkConteudoEnvelope) obj["Link do Conteúdo"] = linkItem;
       if(qtdPerguntasItem && parseInt(qtdPerguntasItem,10) !== quantidadePerguntasEnvelope) obj["Quantidade de Perguntas"] = parseInt(qtdPerguntasItem,10);
 
       temas.push(obj);
@@ -334,7 +372,6 @@ function montarPayloadEnvelope(){
     "Média de Palavras Por Conteúdo": mediaEnvelope,
     "Tom": tomEnvelope || "Informativo",
     "Palavras-chave": palavrasChaveEnvelope || undefined,
-    "Link do Conteúdo": linkConteudoEnvelope || undefined,
     "Quantidade de Perguntas": quantidadePerguntasEnvelope,
     "Temas": temas
   };

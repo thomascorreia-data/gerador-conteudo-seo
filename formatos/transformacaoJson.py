@@ -39,8 +39,7 @@ Saída de normalizar_lote(): uma tupla (resultado, avisos)
        "tom": "Informativo",
        "media_palavras": 300,
        "palavras_chave": ["...", "..."],
-       "link_conteudo": None,       # só preenchido pelo usuário em FAQ
-       "quantidade_perguntas": None # idem
+       "quantidade_perguntas": None  # só preenchido pelo usuário em FAQ
      },
      ...
   ]
@@ -78,18 +77,10 @@ CAMPOS_HERDAVEIS = {
         "keywords",
         "keyword",
     ],
-    # Específicos de FAQ: em qualquer outro formato (Descrição, Artigo, Post)
-    # ficam None, já que ninguém preenche esses campos pra eles — o próprio
-    # usuário passa a URL, não tem geocodificação/coleta nenhuma decidindo
-    # isso por código.
-    "link_conteudo": [
-        "link do conteudo",
-        "link_conteudo",
-        "site",
-        "link",
-        "url",
-        "content_url",
-    ],
+    # Específico de FAQ: em qualquer outro formato (Descrição, Artigo, Post)
+    # fica None, já que ninguém preenche esse campo pra eles. O link em si
+    # NÃO tem chave própria na saída — pra FAQ, o link É o "tema" (ver
+    # comentário mais abaixo, perto de onde "tema" é atribuído).
     "quantidade_perguntas": [
         "quantidade de perguntas",
         "quantidade_perguntas",
@@ -189,6 +180,10 @@ def normalizar_lote(payload):
                 valor = _buscar_campo(payload, nomes)
             conteudo[chave_final] = valor
 
+        # No FAQ, o "tema" É o link da página que vai virar FAQ — não existe
+        # um campo "link_conteudo" separado (repetir um único link pra todo
+        # o lote nunca bateria com cada página sendo diferente; e cada card
+        # já digita o link direto no campo de tema, ver interface).
         conteudo["tema"] = tema_texto
         conteudo["palavras_chave"] = _dividir_palavras_chave(conteudo.get("palavras_chave"))
         resultado.append(conteudo)
