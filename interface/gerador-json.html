@@ -42,7 +42,11 @@
         </div>
         <div class="two-col row">
           <div>
-            <label class="label" style="color:var(--muted);">Tom</label>
+            <!-- No FAQ, este campo troca de "Tom" (voz) pra "Foco" (assunto)
+                 — ver atualizarVisibilidadeFaq. Boa parte do conteúdo de FAQ
+                 é factual (ex: "posso levar pet?" não muda com tom de venda),
+                 então filtrar por ASSUNTO rende mais controle útil que voz. -->
+            <label class="label" style="color:var(--muted);" id="tomLabel">Tom</label>
             <select id="tom">
               <option>Informativo</option>
               <option>Vendas</option>
@@ -225,6 +229,11 @@ function atualizarPlaceholderCard(card){
   card.querySelector('.t-tema').placeholder = ehFaq
     ? 'ex: https://buser.com.br/faq/cancelamento'
     : 'Descreva o tema deste conteúdo específico';
+  // .t-tom é texto livre (não um <select> como o do envelope) — só o
+  // placeholder muda pra sugerir os valores válidos de foco no FAQ.
+  card.querySelector('.t-tom').placeholder = ehFaq
+    ? 'Foco (padrão: herdar) — geral, compra ou regras'
+    : 'Tom (padrão: herdar)';
 }
 
 function renumerarThemeCards(){
@@ -241,6 +250,16 @@ function fillCardFromEnvelope(card){
   card.querySelector('.t-palavraschave').value = document.getElementById('palavrasChave').value.trim();
   card.querySelector('.t-qtdperguntas').value = document.getElementById('quantidadePerguntas').value;
 }
+
+// Opções do seletor "Tom"/"Foco": no FAQ o campo controla ASSUNTO, não voz
+// (ver comentário em interacao_ia_faq.py) — troca o conjunto de opções
+// inteiro, não só o rótulo.
+const OPCOES_TOM_PADRAO = ['Informativo', 'Vendas', 'Promocional'];
+const OPCOES_TOM_FAQ = [
+  { value: 'geral', label: 'Geral (mistura tudo)' },
+  { value: 'compra', label: 'Foco em compra e reserva' },
+  { value: 'regras', label: 'Foco em regras e embarque' },
+];
 
 // ---- Formato FAQ tem campos próprios (link do conteúdo, quantidade de
 // perguntas) que não fazem sentido pros outros formatos — mostra o bloco
@@ -261,6 +280,22 @@ function atualizarVisibilidadeFaq(){
   } else {
     label.textContent = 'Temas (um por linha)';
     textarea.placeholder = 'Pq a Buser é uma ótima opção para viajar de ônibus\nComo a Buser está revolucionando o transporte rodoviário\nVantagens de usar a Buser para suas viagens';
+  }
+
+  // "Tom" (voz) só faz sentido pra Descrição/Artigo/Post — no FAQ vira
+  // "Foco" (assunto), com opções totalmente diferentes.
+  const labelTom = document.getElementById('tomLabel');
+  const selectTom = document.getElementById('tom');
+  if(ehFaq){
+    labelTom.textContent = 'Foco';
+    selectTom.innerHTML = OPCOES_TOM_FAQ
+      .map(o => `<option value="${o.value}">${o.label}</option>`)
+      .join('');
+  } else {
+    labelTom.textContent = 'Tom';
+    selectTom.innerHTML = OPCOES_TOM_PADRAO
+      .map(t => `<option>${t}</option>`)
+      .join('');
   }
 
   // Modo "Não, variam por tema": cada card só muda de placeholder aqui se
