@@ -197,5 +197,5 @@ def coletar_faq(link: str) -> dict:
 if __name__ == "__main__":
     import sys
 
-    resultado = coletar_faq(sys.argv[1] if len(sys.argv) > 1 else "https://buser.com.br/faq")
+    resultado = coletar_faq(sys.argv[1] if len(sys.argv) > 1 else "https://expressojk.buser.com.br/")
     print(json.dumps(resultado, ensure_ascii=False, indent=2))
