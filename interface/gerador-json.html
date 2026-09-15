@@ -198,9 +198,15 @@ function addThemeCard(prefill){
       <textarea class="t-tema" rows="2"></textarea>
     </div>
     <div class="three-col row">
-      <input type="text" class="t-formato" placeholder="Formato (padrão: herdar)">
+      <select class="t-formato">
+        <option value="">Formato (padrão: herdar)</option>
+        <option>Descrição</option>
+        <option>Artigo</option>
+        <option>Post</option>
+        <option>FAQ</option>
+      </select>
       <input type="text" class="t-autor" placeholder="Autor (padrão: herdar)">
-      <input type="text" class="t-tom" placeholder="Tom (padrão: herdar)">
+      <select class="t-tom"></select>
     </div>
     <div class="two-col row">
       <input type="number" class="t-media" placeholder="Média de palavras (padrão: herdar)" min="10" step="10">
@@ -216,7 +222,9 @@ function addThemeCard(prefill){
   // próprio, se tiver sido preenchido, senão o do envelope) — atualiza na
   // criação e sempre que o formato DESTE card mudar (a mudança do formato
   // do ENVELOPE é tratada à parte, em atualizarVisibilidadeFaq).
-  div.querySelector('.t-formato').addEventListener('input', () => atualizarPlaceholderCard(div));
+  // "change" (não "input"): os dois agora são <select>, que não disparam
+  // "input" em todos os navegadores do mesmo jeito que um <input> de texto.
+  div.querySelector('.t-formato').addEventListener('change', () => atualizarPlaceholderCard(div));
   atualizarPlaceholderCard(div);
   document.getElementById('themeCards').appendChild(div);
   renumerarThemeCards();
@@ -229,11 +237,19 @@ function atualizarPlaceholderCard(card){
   card.querySelector('.t-tema').placeholder = ehFaq
     ? 'ex: https://buser.com.br/faq/cancelamento'
     : 'Descreva o tema deste conteúdo específico';
-  // .t-tom é texto livre (não um <select> como o do envelope) — só o
-  // placeholder muda pra sugerir os valores válidos de foco no FAQ.
-  card.querySelector('.t-tom').placeholder = ehFaq
-    ? 'Foco (padrão: herdar) — geral, compra ou regras'
-    : 'Tom (padrão: herdar)';
+
+  // .t-tom precisa das MESMAS opções do seletor do envelope (ver
+  // atualizarVisibilidadeFaq) — reconstrói toda vez que o formato efetivo
+  // deste card mudar, preservando o valor selecionado se ele continuar
+  // válido no novo conjunto (senão volta pro "herdar").
+  const selectTom = card.querySelector('.t-tom');
+  const valorAnterior = selectTom.value;
+  const opcoes = ehFaq ? OPCOES_TOM_FAQ : OPCOES_TOM_PADRAO.map(t => ({ value: t, label: t }));
+  const textoHerdar = ehFaq ? 'Foco (padrão: herdar)' : 'Tom (padrão: herdar)';
+  selectTom.innerHTML = [`<option value="">${textoHerdar}</option>`]
+    .concat(opcoes.map(o => `<option value="${o.value}">${o.label}</option>`))
+    .join('');
+  if(opcoes.some(o => o.value === valorAnterior)) selectTom.value = valorAnterior;
 }
 
 function renumerarThemeCards(){
@@ -245,6 +261,10 @@ function renumerarThemeCards(){
 function fillCardFromEnvelope(card){
   card.querySelector('.t-formato').value = getEnvelopeValue('formato', 'formatoOutro');
   card.querySelector('.t-autor').value = document.getElementById('autor').value.trim();
+  // Precisa reconstruir as opções do .t-tom (depende do formato que acabou
+  // de ser setado acima) ANTES de tentar atribuir o valor — senão a opção
+  // certa ainda não existe nesse <select> e a atribuição não faz nada.
+  atualizarPlaceholderCard(card);
   card.querySelector('.t-tom').value = getEnvelopeValue('tom', 'tomOutro');
   card.querySelector('.t-media').value = document.getElementById('mediaPalavras').value;
   card.querySelector('.t-palavraschave').value = document.getElementById('palavrasChave').value.trim();
