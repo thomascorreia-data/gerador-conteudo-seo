@@ -35,6 +35,17 @@ Dado o tema abaixo, identifique a categoria mais adequada entre:
 - empresa (nome de operadora/empresa de transporte)
 - terminal_rodoviaria (terminal ou rodoviária)
 
+ATENÇÃO — armadilha comum: muitas empresas de ônibus/fretamento levam o nome
+de uma cidade real (às vezes até uma cidade turística conhecida) seguido de
+uma palavra que indica que é uma EMPRESA, não o lugar em si. Palavras como
+"Turismo", "Tur", "Viação", "Expresso", "Transportes", "Viagens" ou
+"Fretamento" no final do tema são um sinal FORTE de categoria "empresa" —
+isso vale mesmo que a primeira palavra pareça (ou seja de fato) o nome de
+uma cidade, ponto turístico ou região real. Nesse caso, classifique como
+"empresa", não como "cidade" nem "ponto_turistico".
+Exemplo: "Penedo Turismo" é uma empresa de fretamento (mesmo "Penedo" sendo
+uma cidade turística real em Alagoas) — categoria certa: "empresa".
+
 Tema: "{tema}"
 
 Responda APENAS com um JSON no seguinte formato, sem nenhum texto adicional, sem markdown, sem crases:

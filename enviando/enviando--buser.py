@@ -4,7 +4,7 @@ empresa da Buser (produção): cria (POST) ou atualiza (PATCH, se já existir)
 a company-page de cada empresa.
 
 Mapeamento planilha -> API:
-    Nome da Empresa       -> company_slug (sem acento, minúsculo, espaço -> "-")
+    Slug                  -> company_slug (vem pronto da planilha, não é mais adivinhado do nome)
     Descrição Vendas      -> summary_text
     Descrição Informativo -> about_text
 
@@ -56,18 +56,22 @@ def slugify(nome: str) -> str:
 
 
 def carregar_empresas(caminho: str) -> list:
+    """Lê o xlsx com 4 colunas: Slug, Nome da Empresa, Descrição Informativo,
+    Descrição Vendas. O slug agora vem pronto na planilha — não é mais
+    adivinhado a partir do nome (slugify só fica pro caminho de JSON, que
+    não tem essa coluna)."""
     wb = load_workbook(caminho, data_only=True)
     ws = wb.active
     linhas = list(ws.iter_rows(values_only=True))
     _cabecalho, *dados = linhas
 
     empresas = []
-    for nome, informativo, vendas in dados:
-        if not nome:
+    for slug, nome, informativo, vendas in dados:
+        if not nome or not slug:
             continue
         empresas.append({
             "nome": nome,
-            "company_slug": slugify(nome),
+            "company_slug": str(slug).strip(),
             "summary_text": (vendas or "").strip(),
             "about_text": (informativo or "").strip(),
         })

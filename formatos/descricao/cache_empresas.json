@@ -1576,5 +1576,1454 @@
       "palavra": "viagem",
       "instrucao": "Esmeraldas Turismo faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
     }
+  },
+  "expressosaoluiz": {
+    "empresa": "Expresso São Luiz",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": null,
+        "referencias": [],
+        "erro": "Erro ao consultar o AI Overview (tentativa 1): HTTPSConnectionPool(host='serpapi.com', port=443): Read timed out. (read timeout=15)"
+      },
+      "Google_TopSites": {
+        "conteudo": "Expresso São Luiz | Site oficial: Você pode comprar passagem de ônibus na Expresso São Luiz para as regiões de Mato Grosso, Goiás, Distrito Federal, Bahia, Sergipe, Alagoas, Pernambuco, ... Expresso São Luiz (@expressosaoluiz): ❤️ +70 anos dedicados à você! viagens | fretamento encomendas e cargas acesse nossos links abaixo. Expresso São Luiz: A Expresso São Luiz é uma empresa sediada em Goiânia - GO, com mais de 70 anos de tradição, que atua no mercado de viação, abrangendo transporte de ... Viação Expresso São Luiz - Passagens de Ônibus: A história da empresa de transporte rodoviário Expresso São Luiz teve início em 1950, após muito trabalho e dedicação de seu fundador, Abadio Pereira Cardoso. Expresso São Luiz – Wikipédia, a enciclopédia livre: A Expresso São Luiz é uma empresa de transportes brasileira fundada em 1950 e sediada em Goiânia, no estado de Goiás. Expresso Sao Luiz Ltda: A Expresso São Luiz é uma empresa sediada em Goiânia - GO, com mais de 70 anos de tradição, que atua no mercado de transporte de passageiros em vários estados ... Expresso São Luiz | Quem Somos: A Expresso São Luiz é uma empresa sediada em Goiânia - GO, com mais de 70 anos de tradição, que atua no mercado de viação, abrangendo transporte de ... Dúvidas Frequentes: Expresso São Luiz - Todos os direitos reservados. 01.543.354/0001-45. Endereço: Rua dos Ferroviários, 88, Esplanada dos Anicuns, Goiânia-GO. Sobre Nós.",
+        "sites": [
+          {
+            "titulo": "Expresso São Luiz | Site oficial",
+            "link": "https://expressosaoluiz.com.br/",
+            "snippet": "Você pode comprar passagem de ônibus na Expresso São Luiz para as regiões de Mato Grosso, Goiás, Distrito Federal, Bahia, Sergipe, Alagoas, Pernambuco, ..."
+          },
+          {
+            "titulo": "Expresso São Luiz (@expressosaoluiz)",
+            "link": "https://www.instagram.com/expressosaoluiz/",
+            "snippet": "❤️ +70 anos dedicados à você! viagens | fretamento encomendas e cargas acesse nossos links abaixo."
+          },
+          {
+            "titulo": "Expresso São Luiz",
+            "link": "https://br.linkedin.com/company/expressosaoluiz",
+            "snippet": "A Expresso São Luiz é uma empresa sediada em Goiânia - GO, com mais de 70 anos de tradição, que atua no mercado de viação, abrangendo transporte de ..."
+          },
+          {
+            "titulo": "Viação Expresso São Luiz - Passagens de Ônibus",
+            "link": "https://queropassagem.com.br/auto-viacao-expresso-sao-luiz",
+            "snippet": "A história da empresa de transporte rodoviário Expresso São Luiz teve início em 1950, após muito trabalho e dedicação de seu fundador, Abadio Pereira Cardoso."
+          },
+          {
+            "titulo": "Expresso São Luiz – Wikipédia, a enciclopédia livre",
+            "link": "https://pt.wikipedia.org/wiki/Expresso_S%C3%A3o_Luiz",
+            "snippet": "A Expresso São Luiz é uma empresa de transportes brasileira fundada em 1950 e sediada em Goiânia, no estado de Goiás.",
+            "paragrafos": [
+              "A Expresso São Luiz é uma empresa de transportes brasileira fundada em 1950 e sediada em Goiânia, no estado de Goiás.",
+              "A viação, fundada pelo então motorista Abadio Pereira Cardoso, começou de forma modesta, mas com o passar dos anos a empresa foi oferecendo cada vez mais destinos e itinerários em seu catálogo de viagens. Hoje atua principalmente na região Centro-Oeste do Brasil, mas também opera várias linhas rumo ao região Nordeste do Brasil."
+            ],
+            "erro": null
+          },
+          {
+            "titulo": "Expresso Sao Luiz Ltda",
+            "link": "https://www.reclameaqui.com.br/empresa/expresso-sao-luiz-ltda/",
+            "snippet": "A Expresso São Luiz é uma empresa sediada em Goiânia - GO, com mais de 70 anos de tradição, que atua no mercado de transporte de passageiros em vários estados ..."
+          },
+          {
+            "titulo": "Expresso São Luiz | Quem Somos",
+            "link": "https://expressosaoluiz.com.br/quem-somos/",
+            "snippet": "A Expresso São Luiz é uma empresa sediada em Goiânia - GO, com mais de 70 anos de tradição, que atua no mercado de viação, abrangendo transporte de ..."
+          },
+          {
+            "titulo": "Dúvidas Frequentes",
+            "link": "https://expressosaoluiz.com.br/perguntas-frequentes/",
+            "snippet": "Expresso São Luiz - Todos os direitos reservados. 01.543.354/0001-45. Endereço: Rua dos Ferroviários, 88, Esplanada dos Anicuns, Goiânia-GO. Sobre Nós."
+          }
+        ],
+        "site_oficial": {
+          "titulo": "Expresso São Luiz | Site oficial",
+          "link": "https://expressosaoluiz.com.br/",
+          "snippet": "Você pode comprar passagem de ônibus na Expresso São Luiz para as regiões de Mato Grosso, Goiás, Distrito Federal, Bahia, Sergipe, Alagoas, Pernambuco, ..."
+        },
+        "wikipedia": {
+          "titulo": "Expresso São Luiz – Wikipédia, a enciclopédia livre",
+          "link": "https://pt.wikipedia.org/wiki/Expresso_S%C3%A3o_Luiz",
+          "snippet": "A Expresso São Luiz é uma empresa de transportes brasileira fundada em 1950 e sediada em Goiânia, no estado de Goiás.",
+          "paragrafos": [
+            "A Expresso São Luiz é uma empresa de transportes brasileira fundada em 1950 e sediada em Goiânia, no estado de Goiás.",
+            "A viação, fundada pelo então motorista Abadio Pereira Cardoso, começou de forma modesta, mas com o passar dos anos a empresa foi oferecendo cada vez mais destinos e itinerários em seu catálogo de viagens. Hoje atua principalmente na região Centro-Oeste do Brasil, mas também opera várias linhas rumo ao região Nordeste do Brasil."
+          ],
+          "erro": null
+        },
+        "erro": null
+      },
+      "Wikipedia": {
+        "conteudo": "A Expresso São Luiz é uma empresa de transportes brasileira fundada em 1950 e sediada em Goiânia, no estado de Goiás. A viação, fundada pelo então motorista Abadio Pereira Cardoso, começou de forma modesta, mas com o passar dos anos a empresa foi oferecendo cada vez mais destinos e itinerários em seu catálogo de viagens. Hoje atua principalmente na região Centro-Oeste do Brasil, mas também opera várias linhas rumo ao região Nordeste do Brasil.",
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "Expresso São Luiz faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
+  },
+  "cruzeirodosultransportes": {
+    "empresa": "Cruzeiro do Sul Transportes",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": null,
+        "referencias": [],
+        "erro": "Erro ao consultar o AI Overview (tentativa 1): HTTPSConnectionPool(host='serpapi.com', port=443): Read timed out. (read timeout=15)"
+      },
+      "Google_TopSites": {
+        "conteudo": "Cruzeiro do Sul Transportes: Cruzeiro do Sul. Cruzeiro do Sul Transportes | Campo Grande MS: Empresa do transporte rodoviário de passageiros e cargas. Empresa de carga e frete · $$. Cruzeiro do Sul Transportes (@cruzeirodosultransportes): 100% Centro-Oeste - SP - PR - SC Pontualidade, Segurança e Agilidade! Viaje por MS! - Parcelamos em 5x* 🛣️Na estrada, desde 1977! Cruzeiro do Sul Transportes: A Cruzeiro do Sul Transportes é uma empresa tradicional do Mato Grosso do Sul, que nasceu da Viação. Com 48 anos de trajetória, ampliamos nosso propósito e ... Viação Cruzeiro do Sul: A Viação Cruzeiro do Sul, ou apenas Cruzeiro do Sul, é uma empresa brasileira de transporte rodoviário e urbano de passageiros, cargas e fretamento, fundada ... Cruzeiro do Sul - Transportadora: A Cruzeiro do Sul Transporte e Logística, desde a sua fundação, teve como foco principal prestar serviço de logística e distribuição de cargas a outras empresas ... Cruzeiro Do Sul - Transporte E Logística: Nossa Empresa atua na regiãi Sul do Estado do Rio Grande do Sul com o transporte rodoviário de cargas. Está no Reclame AQUI há 9 anos. Contatos ... Transcruzeiro Transportadora: A Cruzeiro do Sul Transporte e Logística, desde a sua fundação, teve como foco principal prestar serviço de logística e distribuição de cargas a outras ...",
+        "sites": [
+          {
+            "titulo": "Cruzeiro do Sul Transportes",
+            "link": "https://cruzeirodosultransportes.com.br/",
+            "snippet": "Cruzeiro do Sul."
+          },
+          {
+            "titulo": "Cruzeiro do Sul Transportes | Campo Grande MS",
+            "link": "https://www.facebook.com/cruzeirodosultransportes/?locale=pt_BR",
+            "snippet": "Empresa do transporte rodoviário de passageiros e cargas. Empresa de carga e frete · $$."
+          },
+          {
+            "titulo": "Cruzeiro do Sul Transportes (@cruzeirodosultransportes)",
+            "link": "https://www.instagram.com/cruzeirodosultransportes/",
+            "snippet": "100% Centro-Oeste - SP - PR - SC Pontualidade, Segurança e Agilidade! Viaje por MS! - Parcelamos em 5x* 🛣️Na estrada, desde 1977!"
+          },
+          {
+            "titulo": "Cruzeiro do Sul Transportes",
+            "link": "https://br.linkedin.com/company/cruzeirodosultransportes",
+            "snippet": "A Cruzeiro do Sul Transportes é uma empresa tradicional do Mato Grosso do Sul, que nasceu da Viação. Com 48 anos de trajetória, ampliamos nosso propósito e ..."
+          },
+          {
+            "titulo": "Viação Cruzeiro do Sul",
+            "link": "https://pt.wikipedia.org/wiki/Via%C3%A7%C3%A3o_Cruzeiro_do_Sul",
+            "snippet": "A Viação Cruzeiro do Sul, ou apenas Cruzeiro do Sul, é uma empresa brasileira de transporte rodoviário e urbano de passageiros, cargas e fretamento, fundada ...",
+            "paragrafos": [
+              "A Viação Cruzeiro do Sul, ou apenas Cruzeiro do Sul, é uma empresa brasileira de transporte rodoviário e urbano de passageiros, cargas e fretamento, fundada em junho de 1977 pelo empresário Oswaldo Possari no município de Campo Grande, Mato Grosso do Sul, onde mantém sua sede atual. Está presente em mais de 10 cidades do referido estado e em cada viagem que transporta passageiros ou cargas, preza pela excelência na prestação de serviço."
+            ],
+            "erro": null
+          },
+          {
+            "titulo": "Cruzeiro do Sul - Transportadora",
+            "link": "https://transcruzeiro.plugz.one/",
+            "snippet": "A Cruzeiro do Sul Transporte e Logística, desde a sua fundação, teve como foco principal prestar serviço de logística e distribuição de cargas a outras empresas ..."
+          },
+          {
+            "titulo": "Cruzeiro Do Sul - Transporte E Logística",
+            "link": "https://www.reclameaqui.com.br/empresa/cruzeiro-do-sul-transporte-e-logistica/",
+            "snippet": "Nossa Empresa atua na regiãi Sul do Estado do Rio Grande do Sul com o transporte rodoviário de cargas. Está no Reclame AQUI há 9 anos. Contatos ..."
+          },
+          {
+            "titulo": "Transcruzeiro Transportadora",
+            "link": "http://www.transcruzeiro.com.br/",
+            "snippet": "A Cruzeiro do Sul Transporte e Logística, desde a sua fundação, teve como foco principal prestar serviço de logística e distribuição de cargas a outras ..."
+          }
+        ],
+        "site_oficial": {
+          "titulo": "Cruzeiro do Sul Transportes",
+          "link": "https://cruzeirodosultransportes.com.br/",
+          "snippet": "Cruzeiro do Sul."
+        },
+        "wikipedia": {
+          "titulo": "Viação Cruzeiro do Sul",
+          "link": "https://pt.wikipedia.org/wiki/Via%C3%A7%C3%A3o_Cruzeiro_do_Sul",
+          "snippet": "A Viação Cruzeiro do Sul, ou apenas Cruzeiro do Sul, é uma empresa brasileira de transporte rodoviário e urbano de passageiros, cargas e fretamento, fundada ...",
+          "paragrafos": [
+            "A Viação Cruzeiro do Sul, ou apenas Cruzeiro do Sul, é uma empresa brasileira de transporte rodoviário e urbano de passageiros, cargas e fretamento, fundada em junho de 1977 pelo empresário Oswaldo Possari no município de Campo Grande, Mato Grosso do Sul, onde mantém sua sede atual. Está presente em mais de 10 cidades do referido estado e em cada viagem que transporta passageiros ou cargas, preza pela excelência na prestação de serviço."
+          ],
+          "erro": null
+        },
+        "erro": null
+      },
+      "Wikipedia": {
+        "conteudo": "A Viação Cruzeiro do Sul, ou apenas Cruzeiro do Sul, é uma empresa brasileira de transporte rodoviário e urbano de passageiros, cargas e fretamento, fundada em junho de 1977 pelo empresário Oswaldo Possari no município de Campo Grande, Mato Grosso do Sul, onde mantém sua sede atual. Está presente em mais de 10 cidades do referido estado e em cada viagem que transporta passageiros ou cargas, preza pela excelência na prestação de serviço.",
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "Cruzeiro do Sul Transportes faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
+  },
+  "gadottiturismo": {
+    "empresa": "Gadotti Turismo",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": null,
+        "referencias": [],
+        "erro": "Erro ao consultar o AI Overview (tentativa 1): HTTPSConnectionPool(host='serpapi.com', port=443): Read timed out. (read timeout=15)"
+      },
+      "Google_TopSites": {
+        "conteudo": "Gadotti Turismo: Gadotti é a melhor Agência de Viagens de Blumenau, 0800 702 0489 E-mail: turismo@gadotti.com.br Plantão Gadotti | Agência de Viagens (@gadottiturismooficial): Na Gadotti Turismo, você encontra pacotes rodoviários planejados para proporcionar conforto, segurança, organização e tranquilidade em todos os momentos. Viação Gadotti: Passagens de Ônibus: Compre passagens de ônibus acessíveis e viaje com conforto. Oferecemos Wi-Fi a bordo e motoristas treinados. Reserve já! Gadotti Turismo: A Viação Gadotti é uma companhia de ônibus de viagem com a melhor frota de Santa Catarina, veículos modernos e com toda tecnologia necessária para tornar a sua ... Pacotes: Pacotes · SANTUÁRIO DE NOSSA SENHORA APARECIDA - BATE VOLTA · FESTA DAS FLORES EM HOLAMBRA · CARAMBEÍ (ROTA HOLANDESA) + VILA VELHA COM BURACO DO PADRE · BH ... Gadotti Turismo | Blumenau SC: Reservas: ☎ (47) 3323-5607 (Agência Blumenau) (47) 99746-6313 (WhatsApp) Localização: Rua Dr. Pedro Zimmermann, 2371 – Itoupava Central, Blumenau/SC ... Contato: Agência Blumenau - Matriz. (47) 3323-5607 / (47) 99700-0766. R. Dr. Pedro Zimmermann, 2371, Itoupava Central, Blumenau, SC, 89066-001 turismo@gadotti.com.br ... Gadotti Agência de Viagens - Pacotes Aéreos, Rodoviários e ...: Gadotti Agência de Viagens: pacotes aéreos, rodoviários e cruzeiros nacionais e internacionais com preços imperdíveis. (47) 3323-5607 turismo@gadotti.com.br ...",
+        "sites": [
+          {
+            "titulo": "Gadotti Turismo",
+            "link": "https://www.gadottiturismo.com.br/",
+            "snippet": "Gadotti é a melhor Agência de Viagens de Blumenau, 0800 702 0489 E-mail: turismo@gadotti.com.br Plantão"
+          },
+          {
+            "titulo": "Gadotti | Agência de Viagens (@gadottiturismooficial)",
+            "link": "https://www.instagram.com/gadottiturismooficial/",
+            "snippet": "Na Gadotti Turismo, você encontra pacotes rodoviários planejados para proporcionar conforto, segurança, organização e tranquilidade em todos os momentos."
+          },
+          {
+            "titulo": "Viação Gadotti: Passagens de Ônibus",
+            "link": "https://www.gadotti.com.br/",
+            "snippet": "Compre passagens de ônibus acessíveis e viaje com conforto. Oferecemos Wi-Fi a bordo e motoristas treinados. Reserve já!"
+          },
+          {
+            "titulo": "Gadotti Turismo",
+            "link": "https://www.reclameaqui.com.br/empresa/gadotti-turismo/",
+            "snippet": "A Viação Gadotti é uma companhia de ônibus de viagem com a melhor frota de Santa Catarina, veículos modernos e com toda tecnologia necessária para tornar a sua ..."
+          },
+          {
+            "titulo": "Pacotes",
+            "link": "https://www.gadottiturismo.com.br/pacotes",
+            "snippet": "Pacotes · SANTUÁRIO DE NOSSA SENHORA APARECIDA - BATE VOLTA · FESTA DAS FLORES EM HOLAMBRA · CARAMBEÍ (ROTA HOLANDESA) + VILA VELHA COM BURACO DO PADRE · BH ..."
+          },
+          {
+            "titulo": "Gadotti Turismo | Blumenau SC",
+            "link": "https://www.facebook.com/GadottiTurismo/?locale=pt_BR",
+            "snippet": "Reservas: ☎ (47) 3323-5607 (Agência Blumenau) (47) 99746-6313 (WhatsApp) Localização: Rua Dr. Pedro Zimmermann, 2371 – Itoupava Central, Blumenau/SC ..."
+          },
+          {
+            "titulo": "Contato",
+            "link": "https://www.gadottiturismo.com.br/contato",
+            "snippet": "Agência Blumenau - Matriz. (47) 3323-5607 / (47) 99700-0766. R. Dr. Pedro Zimmermann, 2371, Itoupava Central, Blumenau, SC, 89066-001 turismo@gadotti.com.br ..."
+          },
+          {
+            "titulo": "Gadotti Agência de Viagens - Pacotes Aéreos, Rodoviários e ...",
+            "link": "https://gadottiviagens.com.br/",
+            "snippet": "Gadotti Agência de Viagens: pacotes aéreos, rodoviários e cruzeiros nacionais e internacionais com preços imperdíveis. (47) 3323-5607 turismo@gadotti.com.br ..."
+          }
+        ],
+        "site_oficial": {
+          "titulo": "Gadotti Turismo",
+          "link": "https://www.gadottiturismo.com.br/",
+          "snippet": "Gadotti é a melhor Agência de Viagens de Blumenau, 0800 702 0489 E-mail: turismo@gadotti.com.br Plantão"
+        },
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "Gadotti Turismo faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
+  },
+  "artetransportes": {
+    "empresa": "Arte Transportes",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": null,
+        "referencias": [],
+        "erro": "Erro ao consultar o AI Overview (tentativa 1): HTTPSConnectionPool(host='serpapi.com', port=443): Read timed out. (read timeout=15)"
+      },
+      "Google_TopSites": {
+        "conteudo": "Arte Transportes | Passagem para são paulo: Passagem de ônibus para sua viagem à Salvador, São Paulo, Montes Claros - MG. Sua passagem para Salvador está na Arte Transportes. Arte Transportes Oficial (@artetransportesoficial): Empresa de viagens Telefones para contato: * Tim: 38)91151515 * Fixo: 38) 38311668. Agradecemos pela preferência! AMOR PELO QUE FAZ. Viação Arte Transportes - Passagens de Ônibus: A Viação Arte Transportes oferece rotas em diversas regiões do Brasil, conectando cidades importantes no Sudeste e Nordeste, incluindo linhas de ônibus que ... ARTE TRANSPORTES E TURISMO: Saiba se a empresa ARTE TRANSPORTES E TURISMO é confiável, segundo os consumidores. Se tiver problemas, reclame, resolva, avalie. Reclame Aqui. Arte Transportes – Apps no Google Play: A Arte Transportes, é uma empresa situada em Porteirinha - MG, e atuante nos Estados de São Paulo, Bahia e Minas Gerais. Atuando nas principais rodoviárias ... Institucional: Estamos há muitos anos no mercado rodoviário de passageiros e temos orgulho em transportar você! A Arte Transportes, é uma empresa situada em Porteirinha - MG, ... Arte Transportes - Passagens de ônibus - BlaBlaCar: Sediada em Porteirinha, no Norte de Minas, a Arte Transportes atua no transporte rodoviário de longa distância entre Minas Gerais, São Paulo e Bahia. CNPJ: ... Viação Arte Transportes - App Store: A Arte Transportes, é uma empresa situada em Porteirinha - MG, e atuante nos Estados de São Paulo, Bahia e Minas Gerais. Atuando nas principais rodoviárias ...",
+        "sites": [
+          {
+            "titulo": "Arte Transportes | Passagem para são paulo",
+            "link": "https://www.viacaoartetransportes.com.br/",
+            "snippet": "Passagem de ônibus para sua viagem à Salvador, São Paulo, Montes Claros - MG. Sua passagem para Salvador está na Arte Transportes."
+          },
+          {
+            "titulo": "Arte Transportes Oficial (@artetransportesoficial)",
+            "link": "https://www.instagram.com/artetransportesoficial/",
+            "snippet": "Empresa de viagens Telefones para contato: * Tim: 38)91151515 * Fixo: 38) 38311668. Agradecemos pela preferência! AMOR PELO QUE FAZ."
+          },
+          {
+            "titulo": "Viação Arte Transportes - Passagens de Ônibus",
+            "link": "https://queropassagem.com.br/auto-viacao-arte-transportes",
+            "snippet": "A Viação Arte Transportes oferece rotas em diversas regiões do Brasil, conectando cidades importantes no Sudeste e Nordeste, incluindo linhas de ônibus que ..."
+          },
+          {
+            "titulo": "ARTE TRANSPORTES E TURISMO",
+            "link": "https://www.reclameaqui.com.br/empresa/arte-transportes-e-turismo/",
+            "snippet": "Saiba se a empresa ARTE TRANSPORTES E TURISMO é confiável, segundo os consumidores. Se tiver problemas, reclame, resolva, avalie. Reclame Aqui."
+          },
+          {
+            "titulo": "Arte Transportes – Apps no Google Play",
+            "link": "https://play.google.com/store/apps/details?id=br.com.artetransportes.app&hl=pt_BR",
+            "snippet": "A Arte Transportes, é uma empresa situada em Porteirinha - MG, e atuante nos Estados de São Paulo, Bahia e Minas Gerais. Atuando nas principais rodoviárias ..."
+          },
+          {
+            "titulo": "Institucional",
+            "link": "https://www.viacaoartetransportes.com.br/institucional",
+            "snippet": "Estamos há muitos anos no mercado rodoviário de passageiros e temos orgulho em transportar você! A Arte Transportes, é uma empresa situada em Porteirinha - MG, ..."
+          },
+          {
+            "titulo": "Arte Transportes - Passagens de ônibus - BlaBlaCar",
+            "link": "https://www.blablacar.com.br/bus/companies/arte",
+            "snippet": "Sediada em Porteirinha, no Norte de Minas, a Arte Transportes atua no transporte rodoviário de longa distância entre Minas Gerais, São Paulo e Bahia. CNPJ: ..."
+          },
+          {
+            "titulo": "Viação Arte Transportes - App Store",
+            "link": "https://apps.apple.com/br/app/via%C3%A7%C3%A3o-arte-transportes/id6618451235",
+            "snippet": "A Arte Transportes, é uma empresa situada em Porteirinha - MG, e atuante nos Estados de São Paulo, Bahia e Minas Gerais. Atuando nas principais rodoviárias ..."
+          }
+        ],
+        "site_oficial": {
+          "titulo": "Arte Transportes | Passagem para são paulo",
+          "link": "https://www.viacaoartetransportes.com.br/",
+          "snippet": "Passagem de ônibus para sua viagem à Salvador, São Paulo, Montes Claros - MG. Sua passagem para Salvador está na Arte Transportes."
+        },
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "Arte Transportes faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
+  },
+  "viacaosete": {
+    "empresa": "Viação Sete",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": "A Viação Sete é uma empresa brasileira de transporte rodoviário de passageiros e encomendas. Fundada em maio de 2012 e com sede em Timon, no Maranhão, ela atua principalmente nas regiões Nordeste e Centro-Oeste do país. Principais Atividades e Serviços Transporte de Passageiros: Faz viagens intermunicipais e interestaduais. Atende mais de 50 localidades espalhadas pelos estados do Piauí, Maranhão, Bahia, Goiás e pelo Distrito Federal. Transporte de Encomendas: Oferece serviços de envio rápido de cargas e volumes entre as cidades da sua área de cobertura. Fretamento: Realiza viagens fretadas para turismo, eventos corporativos, escolares, religiosos e shows em todo o Brasil. Você pode conferir rotas, horários e comprar passagens diretamente pelo site oficial da Viação Sete . Para ajudar melhor, você gostaria de saber sobre: Rotas e destinos específicos operados pela empresa? Canais de atendimento ou como comprar passagens?",
+        "referencias": [],
+        "erro": null
+      },
+      "Google_TopSites": {
+        "conteudo": "Viação Sete: Passagens de Ônibus: Desde 2012, a Viação Sete tem como missão conectar pessoas com conforto, segurança e atenção. ... Descubra destinos incríveis com a tranquilidade de quem escolhe ... Fale Conosco: Dúvidas, sugestões ou reclamações? Envie sua mensagem pelo formulário. Valorizamos muito a sua opinião! Viação Sete (@viacaosete): Desde 2012, levando você com conforto, segurança e atenção. . Clique no link e compre sua passagem ⤵️ · Mais que uma empresa… um lugar que representa sonhos ... VIACAO SETE: O que dizem sobre VIACAO SETE · Reclamações · IRRESPONSABILIDADE COM HORÁRIO · Ônibus com atraso de mais de 2 horas e falta de informação dos funcionários. Viação Sete: Passagem de Ônibus Online, Preços e ...: Segurança: A empresa Sete conta uma equipe treinada e qualificada, além de uma frota moderna e bem conservada para garantir uma viagem segura e tranquila. Viação Sete | UMA EXPERIÊNCIA ULTRA CONFORTÁVEL ...: Muito mais que uma simples viagem, somos uma empresa de ônibus que te permite viajar com conforto, segurança, atenção, pontualidade e ... Compre Passagem de Ônibus da Viação Sete | Embarca.ai: A Viação Sete é uma empresa que tem se consolidado como referência no transporte intermunicipal de passageiros no Maranhão e Piauí. Desde sua fundação, a ... VIACAO SETE LTDA - EPP - 15474486000177 | Consulte ...: A sua situação cadastral é ATIVA e sua principal atividade econômica é Transporte rodoviário coletivo de passageiros, com itinerário fixo, interestadual. Score.",
+        "sites": [
+          {
+            "titulo": "Viação Sete: Passagens de Ônibus",
+            "link": "https://www.viacaosete.com.br/",
+            "snippet": "Desde 2012, a Viação Sete tem como missão conectar pessoas com conforto, segurança e atenção. ... Descubra destinos incríveis com a tranquilidade de quem escolhe ..."
+          },
+          {
+            "titulo": "Fale Conosco",
+            "link": "https://www.viacaosete.com.br/contato",
+            "snippet": "Dúvidas, sugestões ou reclamações? Envie sua mensagem pelo formulário. Valorizamos muito a sua opinião!"
+          },
+          {
+            "titulo": "Viação Sete (@viacaosete)",
+            "link": "https://www.instagram.com/viacaosete/",
+            "snippet": "Desde 2012, levando você com conforto, segurança e atenção. . Clique no link e compre sua passagem ⤵️ · Mais que uma empresa… um lugar que representa sonhos ..."
+          },
+          {
+            "titulo": "VIACAO SETE",
+            "link": "https://www.reclameaqui.com.br/empresa/viacao-sete/",
+            "snippet": "O que dizem sobre VIACAO SETE · Reclamações · IRRESPONSABILIDADE COM HORÁRIO · Ônibus com atraso de mais de 2 horas e falta de informação dos funcionários."
+          },
+          {
+            "titulo": "Viação Sete: Passagem de Ônibus Online, Preços e ...",
+            "link": "https://www.buson.com.br/viacao/viacao-sete",
+            "snippet": "Segurança: A empresa Sete conta uma equipe treinada e qualificada, além de uma frota moderna e bem conservada para garantir uma viagem segura e tranquila."
+          },
+          {
+            "titulo": "Viação Sete | UMA EXPERIÊNCIA ULTRA CONFORTÁVEL ...",
+            "link": "https://www.instagram.com/reel/DJsLENiSwwZ/",
+            "snippet": "Muito mais que uma simples viagem, somos uma empresa de ônibus que te permite viajar com conforto, segurança, atenção, pontualidade e ..."
+          },
+          {
+            "titulo": "Compre Passagem de Ônibus da Viação Sete | Embarca.ai",
+            "link": "https://viacaosetepassagem.embarca.ai/",
+            "snippet": "A Viação Sete é uma empresa que tem se consolidado como referência no transporte intermunicipal de passageiros no Maranhão e Piauí. Desde sua fundação, a ..."
+          },
+          {
+            "titulo": "VIACAO SETE LTDA - EPP - 15474486000177 | Consulte ...",
+            "link": "https://empresas.serasaexperian.com.br/consulta-gratis/VIACAO-SETE-LTDA-15474486000177",
+            "snippet": "A sua situação cadastral é ATIVA e sua principal atividade econômica é Transporte rodoviário coletivo de passageiros, com itinerário fixo, interestadual. Score."
+          }
+        ],
+        "site_oficial": {
+          "titulo": "Viação Sete: Passagens de Ônibus",
+          "link": "https://www.viacaosete.com.br/",
+          "snippet": "Desde 2012, a Viação Sete tem como missão conectar pessoas com conforto, segurança e atenção. ... Descubra destinos incríveis com a tranquilidade de quem escolhe ..."
+        },
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "Viação Sete faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
+  },
+  "viacaosudeste": {
+    "empresa": "Viação Sudeste",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": "A Viação Sudeste é uma empresa de transporte rodoviário de passageiros com sede em Cachoeiro de Itapemirim, no Espírito Santo. História Fundação: A empresa nasceu em 1992. Início: Ela fazia parte do Grupo Itapemirim. Mudança: Em 1999, passou a integrar o Grupo Flecha Branca. Atuação Região: Atua no transporte de passageiros no estado do Espírito Santo. Cidades: Liga municípios do Sul capixaba, como Cachoeiro de Itapemirim, Marataízes, Piúma, Guarapari e a capital Vitória. Frota: Conta com uma frota de aproximadamente 85 ônibus. Se você quiser, posso te ajudar com: Os destinos e horários de viagens Os contatos e endereços das agências da empresa",
+        "referencias": [],
+        "erro": null
+      },
+      "Google_TopSites": {
+        "conteudo": "Viação Sudeste - Escolha o melhor destino: A Viação Sudeste nasceu em 1992 como integrante do Grupo Itapemirim, interligando algumas cidades do Sul do Espírito Santo entre si e à capital Vitória. A ... Contato: A Viação Sudeste preocupada com a satisfação das necessidades de todos os seu clientes e usuários disponibiliza um serviço de atendimento para manter um ... Viação Sudeste (@viajedesudeste) · Cachoeiro de ...: Empresa de transporte Rodoviário Aproximando você das belezas do Litoral Sul Capixaba O melhor destino! Baixe o App. Trabalhe Conosco: Se você tem interesse em trabalhar conosco, siga as instruções e apresente-nos seu currículo. Se preferir, envie seu currículo por e-mail: ... Via Sudeste – Diariamente transportando sonhos!: A Via Sudeste atua na rede de transporte nos lotes Estruturais e de Articulação Regional, que cobre bairros predominantemente da região sudeste, e também alguns ... VIACAO SUDESTE: Saiba se a empresa VIACAO SUDESTE é confiável, segundo os consumidores. Se tiver problemas, reclame, resolva, avalie. Reclame Aqui. Horários - Viação Sudeste - Escolha o melhor destino: Consórcio de Mobilidade Urbana | Cachoeiro de Itapemirim-ES. VIACAO SUDESTE LTDA - Consulta CNPJ: O CNPJ da empresa VIACAO SUDESTE LTDA é 39.362.389/0026-09. Com sede em RIO DE JANEIRO, RJ, possui 33 anos, 5 meses e 27 dias e foi fundada em 03/02/1993. A sua ... Viação Sudeste - Passagens de Ônibus: Sediada na cidade de Cachoeiro do Itapemirim no Espírito Santo, a Viação Sudeste é uma companhia no ramo rodoviário e dispõe de um time de contribuintes eficaz ...",
+        "sites": [
+          {
+            "titulo": "Viação Sudeste - Escolha o melhor destino",
+            "link": "https://www.viacaosudeste.com.br/",
+            "snippet": "A Viação Sudeste nasceu em 1992 como integrante do Grupo Itapemirim, interligando algumas cidades do Sul do Espírito Santo entre si e à capital Vitória. A ..."
+          },
+          {
+            "titulo": "Contato",
+            "link": "https://www.viacaosudeste.com.br/contato",
+            "snippet": "A Viação Sudeste preocupada com a satisfação das necessidades de todos os seu clientes e usuários disponibiliza um serviço de atendimento para manter um ..."
+          },
+          {
+            "titulo": "Viação Sudeste (@viajedesudeste) · Cachoeiro de ...",
+            "link": "https://www.instagram.com/viajedesudeste/",
+            "snippet": "Empresa de transporte Rodoviário Aproximando você das belezas do Litoral Sul Capixaba O melhor destino! Baixe o App."
+          },
+          {
+            "titulo": "Trabalhe Conosco",
+            "link": "https://www.viacaosudeste.com.br/trabalhe-conosco",
+            "snippet": "Se você tem interesse em trabalhar conosco, siga as instruções e apresente-nos seu currículo. Se preferir, envie seu currículo por e-mail: ..."
+          },
+          {
+            "titulo": "Via Sudeste – Diariamente transportando sonhos!",
+            "link": "https://viasudeste.com/",
+            "snippet": "A Via Sudeste atua na rede de transporte nos lotes Estruturais e de Articulação Regional, que cobre bairros predominantemente da região sudeste, e também alguns ..."
+          },
+          {
+            "titulo": "VIACAO SUDESTE",
+            "link": "https://www.reclameaqui.com.br/empresa/viacao-sudeste/",
+            "snippet": "Saiba se a empresa VIACAO SUDESTE é confiável, segundo os consumidores. Se tiver problemas, reclame, resolva, avalie. Reclame Aqui."
+          },
+          {
+            "titulo": "Horários - Viação Sudeste - Escolha o melhor destino",
+            "link": "https://horarios.viacaosudeste.com.br/",
+            "snippet": "Consórcio de Mobilidade Urbana | Cachoeiro de Itapemirim-ES."
+          },
+          {
+            "titulo": "VIACAO SUDESTE LTDA - Consulta CNPJ",
+            "link": "https://empresas.serasaexperian.com.br/consulta-gratis/VIACAO-SUDESTE-LTDA-EM-RECUPERACAO-JUDICIAL-39362389002609",
+            "snippet": "O CNPJ da empresa VIACAO SUDESTE LTDA é 39.362.389/0026-09. Com sede em RIO DE JANEIRO, RJ, possui 33 anos, 5 meses e 27 dias e foi fundada em 03/02/1993. A sua ..."
+          },
+          {
+            "titulo": "Viação Sudeste - Passagens de Ônibus",
+            "link": "https://queropassagem.com.br/auto-viacao-sudeste",
+            "snippet": "Sediada na cidade de Cachoeiro do Itapemirim no Espírito Santo, a Viação Sudeste é uma companhia no ramo rodoviário e dispõe de um time de contribuintes eficaz ..."
+          }
+        ],
+        "site_oficial": {
+          "titulo": "Viação Sudeste - Escolha o melhor destino",
+          "link": "https://www.viacaosudeste.com.br/",
+          "snippet": "A Viação Sudeste nasceu em 1992 como integrante do Grupo Itapemirim, interligando algumas cidades do Sul do Espírito Santo entre si e à capital Vitória. A ..."
+        },
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "ambiguo",
+      "palavra": "viagem",
+      "instrucao": "Não foi possível identificar com clareza, nas fontes coletadas, se Viação Sudeste opera linha regular ou só fretamento/turismo. Use \"viagem\" em vez de \"passagem\" em todas as menções — é o termo mais seguro nesse caso, evita afirmar algo que pode não ser verdade."
+    }
+  },
+  "viacaoxavante": {
+    "empresa": "Viação Xavante",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": "A Viação Xavante é uma tradicional empresa brasileira de transporte rodoviário de passageiros, fundada em 1969 em Barra do Garças, no estado de Mato Grosso. Atuação e Cobertura História: Começou operando linhas regionais em Mato Grosso e expandiu-se nas décadas seguintes ligando capitais e municípios da região. Regiões atendidas: Opera dezenas de linhas interestaduais e intermunicipais conectando mais de 100 cidades em estados das regiões Centro-Oeste, Norte, Nordeste e no Distrito Federal (como Mato Grosso, Goiás, Pará, Tocantins e Maranhão). Serviços e Frota Tipos de ônibus: Oferece categorias como Convencional, e Leito, equipadas com itens como ar-condicionado, poltronas reclináveis e sanitário. Outras atividades: Além do transporte de passageiros, atua com serviços de encomendas e cargas. Se você precisar planejar uma viagem, quer saber os horários de rotas específicas ou os canais de venda de passagens da Viação Xavante?",
+        "referencias": [],
+        "erro": null
+      },
+      "Google_TopSites": {
+        "conteudo": "Passagem de ônibus | Viação Xavante - Site Oficial: Adquira passagens de ônibus com a Viação Xavante. Conforto, segurança e pontualidade em viagens para diversos destinos. Viaje com quem entende! Viação Xavante: Em 1969, nascia o primeiro negócio de transporte de passageiros rodoviários em Barra do Garças (MT) e Região do Araguaia. Eram pequenos ônibus realizando ... Viação Xavante: Passagem de Ônibus Online, Preços e ...: Conhecida pela qualidade de seus ônibus, a Viação Xavante investe constantemente em infraestrutura para garantir o conforto e a segurança de seus passageiros em ... Viação Xavante (@viacaoxavante): Há + de 50 anos conectando você há + de 100 destinos! GO | MT | TO | PA | DF Transporte de Passageiros Aluguel de ônibus. Clique para saber +. Viação Xavante: Somos uma empresa de transporte rodoviário com mais de 53 anos de mercado, estamos presentes em 6 estados e em mais de 100 cidades! CNPJ: 03.143.492/0001-62. Viação Xavante: referência no transporte rodoviário do Brasil: A Viação Xavante, uma das mais tradicionais empresas de transporte rodoviário do Centro-Oeste, destaca-se pela sua extensa rede de linhas e a ... Viação Xavante - Passagens de Ônibus: O veículo convencional da Viação Xavante é ideal para trajetos mais curtos, com poltronas levemente reclináveis, ar-condicionado, água mineral, televisor e ... Viação Xavante – Apps no Google Play: Há mais de 50 anos conectando você a mais de 100 destinos! Na Viação Xavante, sabemos que viajar proporciona momentos capazes de transformar a vida. Viação Xavante (@viacaoxavanteoficial) - Mentions: A Viação Xavante possui a mais nova e moderna frota de ônibus do Centro Oeste. Cargo & Freight Company · $$.",
+        "sites": [
+          {
+            "titulo": "Passagem de ônibus | Viação Xavante - Site Oficial",
+            "link": "https://www.viacaoxavante.com.br/",
+            "snippet": "Adquira passagens de ônibus com a Viação Xavante. Conforto, segurança e pontualidade em viagens para diversos destinos. Viaje com quem entende!"
+          },
+          {
+            "titulo": "Viação Xavante",
+            "link": "https://br.linkedin.com/company/viacaoxavante",
+            "snippet": "Em 1969, nascia o primeiro negócio de transporte de passageiros rodoviários em Barra do Garças (MT) e Região do Araguaia. Eram pequenos ônibus realizando ..."
+          },
+          {
+            "titulo": "Viação Xavante: Passagem de Ônibus Online, Preços e ...",
+            "link": "https://www.buson.com.br/viacao/xavante",
+            "snippet": "Conhecida pela qualidade de seus ônibus, a Viação Xavante investe constantemente em infraestrutura para garantir o conforto e a segurança de seus passageiros em ..."
+          },
+          {
+            "titulo": "Viação Xavante (@viacaoxavante)",
+            "link": "https://www.instagram.com/viacaoxavante/",
+            "snippet": "Há + de 50 anos conectando você há + de 100 destinos! GO | MT | TO | PA | DF Transporte de Passageiros Aluguel de ônibus. Clique para saber +."
+          },
+          {
+            "titulo": "Viação Xavante",
+            "link": "https://www.reclameaqui.com.br/empresa/viacao-xavante/",
+            "snippet": "Somos uma empresa de transporte rodoviário com mais de 53 anos de mercado, estamos presentes em 6 estados e em mais de 100 cidades! CNPJ: 03.143.492/0001-62."
+          },
+          {
+            "titulo": "Viação Xavante: referência no transporte rodoviário do Brasil",
+            "link": "https://onibusetransporte.com/2024/09/18/viacao-xavante-referencia-no-transporte-rodoviario-do-brasil-conheca-suas-linhas-interestaduais/",
+            "snippet": "A Viação Xavante, uma das mais tradicionais empresas de transporte rodoviário do Centro-Oeste, destaca-se pela sua extensa rede de linhas e a ..."
+          },
+          {
+            "titulo": "Viação Xavante - Passagens de Ônibus",
+            "link": "https://queropassagem.com.br/auto-viacao-xavante",
+            "snippet": "O veículo convencional da Viação Xavante é ideal para trajetos mais curtos, com poltronas levemente reclináveis, ar-condicionado, água mineral, televisor e ..."
+          },
+          {
+            "titulo": "Viação Xavante – Apps no Google Play",
+            "link": "https://play.google.com/store/apps/details?id=com.arca.whitelabel.xavante&hl=pt_BR",
+            "snippet": "Há mais de 50 anos conectando você a mais de 100 destinos! Na Viação Xavante, sabemos que viajar proporciona momentos capazes de transformar a vida."
+          },
+          {
+            "titulo": "Viação Xavante (@viacaoxavanteoficial) - Mentions",
+            "link": "https://www.facebook.com/viacaoxavanteoficial/mentions/",
+            "snippet": "A Viação Xavante possui a mais nova e moderna frota de ônibus do Centro Oeste. Cargo & Freight Company · $$."
+          }
+        ],
+        "site_oficial": {
+          "titulo": "Passagem de ônibus | Viação Xavante - Site Oficial",
+          "link": "https://www.viacaoxavante.com.br/",
+          "snippet": "Adquira passagens de ônibus com a Viação Xavante. Conforto, segurança e pontualidade em viagens para diversos destinos. Viaje com quem entende!"
+        },
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "Viação Xavante faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
+  },
+  "expressofloriano": {
+    "empresa": "Expresso Floriano",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": "A Expresso Floriano é uma empresa brasileira de transporte rodoviário de passageiros com sede em Teresina, no Piauí, especializada em linhas de ônibus intermunicipais e interestaduais. Principais Características Localização: Fundada em 2001, a empresa opera a partir da capital Teresina, atendendo principalmente o interior e a região sul do Piauí. Destinos comuns: Realiza viagens para cidades como Floriano, Bom Jesus, Canto do Buriti, Redenção da Gurguéia e Barreiras do Piauí. Frota e serviços: Disponibiliza ônibus equipados para viagens de média e longa distância, incluindo opções de classes como semileito e leito, além de canais digitais para consulta de horários e compra de passagens. Se você precisar de mais informações, posso ajudar com: Os horários detalhados das viagens Como comprar passagens online Os telefones de contato da empresa Diga-me o que você gostaria de saber.",
+        "referencias": [],
+        "erro": null
+      },
+      "Google_TopSites": {
+        "conteudo": "Expresso Floriano: Home: A Expresso Floriano tem sede em Teresina/PI e realiza viagens em linhas intermunicipais e interestaduais para a região metropolitana do Estado. Expresso Floriano (@expressofloriano) · Teresina, PI: Viagens de Teresina para todo o Sul do Piauí com conforto e segurança. Reserve sua passagem pelo WhatsApp e viaje com quem é o seu destino certo. Follow. Viação Expresso Floriano - Passagens de Ônibus: A empresa de ônibus é concessionária de linhas intermunicipais e interestaduais para o interior e a região metropolitana do Estado. Com uma frota renovada e ... Expresso Floriano - Passagens de ônibus - BlaBlaCar: Fundada há 19 anos e com sede em Teresina, no Piauí, a Expresso Floriano rapidamente se estabeleceu como uma referência em transporte rodoviário, ... Passagem de ônibus da Viação Expresso Floriano: A Expresso Floriano, com sede em Teresina, Piauí, é uma empresa de ônibus que opera linhas intermunicipais e interestaduais para o interior e a região ... Horários: Confira as informações de horários de viagem do Expresso Floriano. Teresina – Floriano: diariamente às 8h15 e 13h45; Floriano – Teresina: diariamente às ... Encontre passagens de ônibus da Viação Expresso Floriano: Compre Passagens de ônibus da Viação Expresso Floriano no maior site de vendas de passagens de ônibus do Brasil. Pagamento facilitado. Acesse e garanta já! A Expresso Floriano, com sede em Teresina: A Expresso Floriano, com sede em Teresina - PI, reforçou sua frota com dois belíssimos Campione Invictus DD! Acoplados sobre chassi ...",
+        "sites": [
+          {
+            "titulo": "Expresso Floriano: Home",
+            "link": "https://expressofloriano.com.br/",
+            "snippet": "A Expresso Floriano tem sede em Teresina/PI e realiza viagens em linhas intermunicipais e interestaduais para a região metropolitana do Estado."
+          },
+          {
+            "titulo": "Expresso Floriano (@expressofloriano) · Teresina, PI",
+            "link": "https://www.instagram.com/expressofloriano/",
+            "snippet": "Viagens de Teresina para todo o Sul do Piauí com conforto e segurança. Reserve sua passagem pelo WhatsApp e viaje com quem é o seu destino certo. Follow."
+          },
+          {
+            "titulo": "Viação Expresso Floriano - Passagens de Ônibus",
+            "link": "https://queropassagem.com.br/auto-viacao-expresso-floriano",
+            "snippet": "A empresa de ônibus é concessionária de linhas intermunicipais e interestaduais para o interior e a região metropolitana do Estado. Com uma frota renovada e ..."
+          },
+          {
+            "titulo": "Expresso Floriano - Passagens de ônibus - BlaBlaCar",
+            "link": "https://www.blablacar.com.br/bus/companies/expresso-floriano",
+            "snippet": "Fundada há 19 anos e com sede em Teresina, no Piauí, a Expresso Floriano rapidamente se estabeleceu como uma referência em transporte rodoviário, ..."
+          },
+          {
+            "titulo": "Passagem de ônibus da Viação Expresso Floriano",
+            "link": "https://mobifacil.com.br/auto-viacao/viacao-expresso-floriano.html",
+            "snippet": "A Expresso Floriano, com sede em Teresina, Piauí, é uma empresa de ônibus que opera linhas intermunicipais e interestaduais para o interior e a região ..."
+          },
+          {
+            "titulo": "Horários",
+            "link": "https://expressofloriano.com.br/horarios",
+            "snippet": "Confira as informações de horários de viagem do Expresso Floriano. Teresina – Floriano: diariamente às 8h15 e 13h45; Floriano – Teresina: diariamente às ..."
+          },
+          {
+            "titulo": "Encontre passagens de ônibus da Viação Expresso Floriano",
+            "link": "https://www.clickbus.com.br/viacao/expresso-floriano",
+            "snippet": "Compre Passagens de ônibus da Viação Expresso Floriano no maior site de vendas de passagens de ônibus do Brasil. Pagamento facilitado. Acesse e garanta já!"
+          },
+          {
+            "titulo": "A Expresso Floriano, com sede em Teresina",
+            "link": "https://www.facebook.com/comilonibusoficial/posts/a-expresso-floriano-com-sede-em-teresina-pi-refor%C3%A7ou-sua-frota-com-dois-bel%C3%ADssim/742247161381102/",
+            "snippet": "A Expresso Floriano, com sede em Teresina - PI, reforçou sua frota com dois belíssimos Campione Invictus DD! Acoplados sobre chassi ..."
+          }
+        ],
+        "site_oficial": {
+          "titulo": "Expresso Floriano: Home",
+          "link": "https://expressofloriano.com.br/",
+          "snippet": "A Expresso Floriano tem sede em Teresina/PI e realiza viagens em linhas intermunicipais e interestaduais para a região metropolitana do Estado."
+        },
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "ambiguo",
+      "palavra": "viagem",
+      "instrucao": "Não foi possível identificar com clareza, nas fontes coletadas, se Expresso Floriano opera linha regular ou só fretamento/turismo. Use \"viagem\" em vez de \"passagem\" em todas as menções — é o termo mais seguro nesse caso, evita afirmar algo que pode não ser verdade."
+    }
+  },
+  "primarturismo": {
+    "empresa": "Primar Turismo",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": "A Primar Turismo é uma empresa brasileira de transporte rodoviário de passageiros, fretamento e turismo com sede em Botucatu, no interior de São Paulo. O que a empresa faz Linhas Rodoviárias: Conecta cidades do interior paulista a destinos no litoral do Rio de Janeiro (como Paraty e Angra dos Reis). Serviços: Realiza viagens interestaduais, excursões, passeios e serviços de fretamento. Frota: Conta com ônibus modernos, incluindo modelos semi-leito, executivo e Double Decker (dois andares), equipados com ar-condicionado, Wi-Fi, poltronas reclináveis com descanso para pernas e tomadas USB individuais. Histórico Fundada em 2005 por Marcelo Nunes, a empresa começou com foco no turismo rodoviário e expandiu sua atuação ao longo dos anos, integrando novas linhas autorizadas pela ANTT (Agência Nacional de Transportes Terrestres) para oferecer viagens regulares de ônibus. Você pode conferir mais detalhes e rotas diretamente no site oficial da Primar Turismo. Primar Turismo +1 Se você quiser, me diga: Qual é a rota ou destino que você planeja fazer? Você precisa de informações sobre preços ou horários? Posso te ajudar a encontrar os detalhes da sua viagem.",
+        "referencias": [],
+        "erro": null
+      },
+      "Google_TopSites": {
+        "conteudo": "Viação Primar Turismo | Viaje para os melhores destinos: Fundada em Juazeiro (BA), a empresa nasceu com o propósito de conectar pessoas e histórias, sempre priorizando conforto, segurança e qualidade no atendimento. Primar Turismo: Mais informações sobre Primar Turismo. Conheça mais. Empresa de transporte rodoviário, encomendas e fretamentos. CNPJ: 96.170.253/0001- ... atendimento@primarturismo.com.br Telefone: © 2025 - Viação Primar Turismo. Desenvolvido por DeÔnibus. Todos os direitos reservados. Estamos te direcionando para o portal Brasil by Bus, um site da ... Primar Turismo (@primarturismooficial): ✨ Sua viagem começa com a Primar Turismo! 🏝️ Roteiros confortáveis, preços justos e a tranquilidade de viajar com uma empresa que conecta o interior ... Primar Turismo: Passagens de Ônibus na BlaBlaCar em até 12x: Porque a empresa de ônibus, fundada em 2005, nasceu justamente para proporcionar a melhor experiência de turismo aos seus clientes. Com ampla bagagem no setor ... Nossa história: Atualmente, a Primar Turismo é sinônimo de qualidade, conforto e segurança, transportando milhares de passageiros todos os anos e oferecendo uma experiência ... Viação Primar Turismo - Passagens de Ônibus: Situada na cidade de Botucatu em São Paulo, a Primar Turismo é uma empresa voltada ao ramo de transporte rodoviário de passageiros. A Primar Turismo deu ... Primar Turismo (@primarturismo) - Mentions: ALERTA DE 0KM A Primar Turismo, empresa com sede em Botucatu, interior de São Paulo, e que atua no segmento de viagens rodoviárias interestaduais, ...",
+        "sites": [
+          {
+            "titulo": "Viação Primar Turismo | Viaje para os melhores destinos",
+            "link": "https://primarturismo.com.br/",
+            "snippet": "Fundada em Juazeiro (BA), a empresa nasceu com o propósito de conectar pessoas e histórias, sempre priorizando conforto, segurança e qualidade no atendimento."
+          },
+          {
+            "titulo": "Primar Turismo",
+            "link": "https://www.reclameaqui.com.br/empresa/primar-turismo/",
+            "snippet": "Mais informações sobre Primar Turismo. Conheça mais. Empresa de transporte rodoviário, encomendas e fretamentos. CNPJ: 96.170.253/0001- ..."
+          },
+          {
+            "titulo": "atendimento@primarturismo.com.br Telefone",
+            "link": "https://primarturismo.com.br/campanha",
+            "snippet": "© 2025 - Viação Primar Turismo. Desenvolvido por DeÔnibus. Todos os direitos reservados. Estamos te direcionando para o portal Brasil by Bus, um site da ..."
+          },
+          {
+            "titulo": "Primar Turismo (@primarturismooficial)",
+            "link": "https://www.instagram.com/primarturismooficial/",
+            "snippet": "✨ Sua viagem começa com a Primar Turismo! 🏝️ Roteiros confortáveis, preços justos e a tranquilidade de viajar com uma empresa que conecta o interior ..."
+          },
+          {
+            "titulo": "Primar Turismo: Passagens de Ônibus na BlaBlaCar em até 12x",
+            "link": "https://www.blablacar.com.br/bus/companies/primar-turismo",
+            "snippet": "Porque a empresa de ônibus, fundada em 2005, nasceu justamente para proporcionar a melhor experiência de turismo aos seus clientes. Com ampla bagagem no setor ..."
+          },
+          {
+            "titulo": "Nossa história",
+            "link": "https://primarturismo.com.br/empresa/nossa-historia",
+            "snippet": "Atualmente, a Primar Turismo é sinônimo de qualidade, conforto e segurança, transportando milhares de passageiros todos os anos e oferecendo uma experiência ..."
+          },
+          {
+            "titulo": "Viação Primar Turismo - Passagens de Ônibus",
+            "link": "https://queropassagem.com.br/auto-viacao-primar-turismo",
+            "snippet": "Situada na cidade de Botucatu em São Paulo, a Primar Turismo é uma empresa voltada ao ramo de transporte rodoviário de passageiros. A Primar Turismo deu ..."
+          },
+          {
+            "titulo": "Primar Turismo (@primarturismo) - Mentions",
+            "link": "https://www.facebook.com/primarturismo/mentions/",
+            "snippet": "ALERTA DE 0KM A Primar Turismo, empresa com sede em Botucatu, interior de São Paulo, e que atua no segmento de viagens rodoviárias interestaduais, ..."
+          }
+        ],
+        "site_oficial": {
+          "titulo": "Viação Primar Turismo | Viaje para os melhores destinos",
+          "link": "https://primarturismo.com.br/",
+          "snippet": "Fundada em Juazeiro (BA), a empresa nasceu com o propósito de conectar pessoas e histórias, sempre priorizando conforto, segurança e qualidade no atendimento."
+        },
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "Primar Turismo faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
+  },
+  "viacaoparaibuna": {
+    "empresa": "Viação Paraibuna",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": null,
+        "referencias": [],
+        "erro": "Erro ao consultar o AI Overview (tentativa 1): HTTPSConnectionPool(host='serpapi.com', port=443): Read timed out. (read timeout=15)"
+      },
+      "Google_TopSites": {
+        "conteudo": "Paraibuna Transportes | Sua viagem com segurança e conforto: A empresa. Serviços. Encomendas · Fretamento · Passagem · Turismo · Vale-transporte ... * O Ar condicionado neste serviço não é obrigatório, sendo fornecido como ... Contato: Image · A empresa. Serviços. Encomendas · Fretamento · Passagem · Turismo · Vale-transporte · Promoções · Agências · Carreira · Dúvidas Frequentes · Contato. A empresa: Desde a criação da Paraibuna Transportes a nossa maior preocupação foi de ser uma empresa calcada no profissionalismo e na qualidade na prestação de Serviço ... Agências: Agência Paraibuna Transportes (Praça da Estação) ... Segunda a quinta de 8:10h às 10h30, 11:30h às 14h e de 15h às 18h00; Sexta de 8:10h às 10h30, 11h30 às 14h e ... Grupo Paraibuna (@grupoparaibuna) · Juiz de Fora, MG: Segurança, compromisso, qualidade e transparência. Referência em Transporte | Encomendas | Passagens. (32) 2101-3314. Encontre passagens de ônibus da Viação Paraibuna: Além da venda de passagens de ônibus rodoviárias, a companhia ainda presta serviços de fretamento, turismo e transporte de cargas. Viaje pelos principais ... Paraibuna Transportes: Somos uma empresa de transporte rodoviário, com mais de 30 anos de mercado. Atendemos diversas regiões do Estado de Minas Gerais, e linhas no Rio de janeiro à ... Viação Paraibuna - Passagens de ônibus - BlaBlaCar: Portanto, se você quer ter bom atendimento, além de uma viagem de ônibus segura, confortável e ágil, a Paraibuna Transportes é a escolha ideal para ir ao seu ...",
+        "sites": [
+          {
+            "titulo": "Paraibuna Transportes | Sua viagem com segurança e conforto",
+            "link": "https://paraibunatransportes.com.br/",
+            "snippet": "A empresa. Serviços. Encomendas · Fretamento · Passagem · Turismo · Vale-transporte ... * O Ar condicionado neste serviço não é obrigatório, sendo fornecido como ..."
+          },
+          {
+            "titulo": "Contato",
+            "link": "https://paraibunatransportes.com.br/contato/",
+            "snippet": "Image · A empresa. Serviços. Encomendas · Fretamento · Passagem · Turismo · Vale-transporte · Promoções · Agências · Carreira · Dúvidas Frequentes · Contato."
+          },
+          {
+            "titulo": "A empresa",
+            "link": "https://paraibunatransportes.com.br/empresa/",
+            "snippet": "Desde a criação da Paraibuna Transportes a nossa maior preocupação foi de ser uma empresa calcada no profissionalismo e na qualidade na prestação de Serviço ..."
+          },
+          {
+            "titulo": "Agências",
+            "link": "https://paraibunatransportes.com.br/agencia/",
+            "snippet": "Agência Paraibuna Transportes (Praça da Estação) ... Segunda a quinta de 8:10h às 10h30, 11:30h às 14h e de 15h às 18h00; Sexta de 8:10h às 10h30, 11h30 às 14h e ..."
+          },
+          {
+            "titulo": "Grupo Paraibuna (@grupoparaibuna) · Juiz de Fora, MG",
+            "link": "https://www.instagram.com/grupoparaibuna/",
+            "snippet": "Segurança, compromisso, qualidade e transparência. Referência em Transporte | Encomendas | Passagens. (32) 2101-3314."
+          },
+          {
+            "titulo": "Encontre passagens de ônibus da Viação Paraibuna",
+            "link": "https://www.clickbus.com.br/viacao/paraibuna",
+            "snippet": "Além da venda de passagens de ônibus rodoviárias, a companhia ainda presta serviços de fretamento, turismo e transporte de cargas. Viaje pelos principais ..."
+          },
+          {
+            "titulo": "Paraibuna Transportes",
+            "link": "https://www.reclameaqui.com.br/empresa/paraibuna-transportes/",
+            "snippet": "Somos uma empresa de transporte rodoviário, com mais de 30 anos de mercado. Atendemos diversas regiões do Estado de Minas Gerais, e linhas no Rio de janeiro à ..."
+          },
+          {
+            "titulo": "Viação Paraibuna - Passagens de ônibus - BlaBlaCar",
+            "link": "https://www.blablacar.com.br/bus/companies/paraibuna",
+            "snippet": "Portanto, se você quer ter bom atendimento, além de uma viagem de ônibus segura, confortável e ágil, a Paraibuna Transportes é a escolha ideal para ir ao seu ..."
+          }
+        ],
+        "site_oficial": null,
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "Viação Paraibuna faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
+  },
+  "expressoauge": {
+    "empresa": "EXPRESSO AUGE",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": "A Expresso Auge (cujo nome empresarial oficial é Auge Transporte Rodoviário e Turismo Ltda.) é uma empresa brasileira de transporte rodoviário de passageiros especializada em linhas interestaduais e turismo. Principais Características Atuação: Conecta cidades de diferentes regiões do país, com forte presença em rotas de longa distância ligando estados das regiões Sudeste e Nordeste (como São Paulo, Minas Gerais, Bahia e Sergipe). Serviços: Oferece opções de transporte em categorias como ônibus convencional, semi-leito e leito. Canais de Venda: As passagens podem ser adquiridas por meio de plataformas de venda de passagens e bilheterias online (como e parceiros), além de canais próprios de atendimento e agências. Se você precisar de informações específicas, quer saber: Alguma rota ou trecho em particular? Informações sobre passagens, horários ou reclamações da empresa?",
+        "referencias": [],
+        "erro": null
+      },
+      "Google_TopSites": {
+        "conteudo": "Viação Expresso Auge - Passagens de Ônibus: A Viação Expresso Auge oferece rotas principais ligando as regiões de São Paulo, Minas Gerais e Rio de Janeiro, abrangendo destinos como Belo Horizonte, Rio de ... Vagas - Expresso Auge: AUGE TRANSPORTE RODOVIÁRIO E TURISMO LTDA – CNPJ: 05.108.552/0009-99 Avenida Paulista 1471 – Bairro: Bela Vista, São Paulo – SP – CEP: 01311-927. VENDA DE PASSAGENS (@expressoaugeviagens): Chegou a hora de viajar com ainda mais conforto, tecnologia e qualidade. · ✨ A NOVA FROTA JÁ ESTÁ NA ÁREA! · ✨ A Expresso Auge está de cara nova! Comprar passagem de ônibus da Expresso Auge: A Expresso Auge, com sede em Feira de Santana, na Bahia, é uma empresa de transporte que atua no setor de turismo e transporte interestadual de passageiros. Expresso Auge: Está planejando sua viagem de São Paulo para Belo Horizonte? A Expresso Auge oferece conforto, segurança e saídas frequentes para você viajar tranquilo. WAYBUS: Passagem de Ônibus Online, Preços e Promoções: Atendimento ao Cliente: A Viação Expresso Auge oferece suporte aos passageiros antes, durante e depois da viagem. Conheça os Ônibus da Viação Expresso Auge. Lista de reclamações: Auge: Todas as reclamações na categoria Ônibus Urbanos para Auge. Exibindo 5 de 23 reclamações (todas as reclamações ativas da empresa Auge). Pesquise reclamações ... Passagens EXPRESSO AUGE — Compre Online | Buser: Passagens de ônibus da EXPRESSO AUGE. Compre passagens da EXPRESSO AUGE online pela Buser. Rotas para Guarulhos, Belo Horizonte, Osasco e +118 destinos. AUGE TRANSPORTE RODOVIARIO E TURISMO LTDA: A sua situação cadastral é ATIVA e sua principal atividade econômica é Transporte rodoviário coletivo de passageiros, com itinerário fixo, interestadual. Score.",
+        "sites": [
+          {
+            "titulo": "Viação Expresso Auge - Passagens de Ônibus",
+            "link": "https://queropassagem.com.br/auto-viacao-expresso-auge",
+            "snippet": "A Viação Expresso Auge oferece rotas principais ligando as regiões de São Paulo, Minas Gerais e Rio de Janeiro, abrangendo destinos como Belo Horizonte, Rio de ..."
+          },
+          {
+            "titulo": "Vagas - Expresso Auge",
+            "link": "https://www.augetransporte.com.br/vagas",
+            "snippet": "AUGE TRANSPORTE RODOVIÁRIO E TURISMO LTDA – CNPJ: 05.108.552/0009-99 Avenida Paulista 1471 – Bairro: Bela Vista, São Paulo – SP – CEP: 01311-927."
+          },
+          {
+            "titulo": "VENDA DE PASSAGENS (@expressoaugeviagens)",
+            "link": "https://www.instagram.com/expressoaugeviagens/",
+            "snippet": "Chegou a hora de viajar com ainda mais conforto, tecnologia e qualidade. · ✨ A NOVA FROTA JÁ ESTÁ NA ÁREA! · ✨ A Expresso Auge está de cara nova!"
+          },
+          {
+            "titulo": "Comprar passagem de ônibus da Expresso Auge",
+            "link": "https://rodon.com.br/viacao/expresso-auge",
+            "snippet": "A Expresso Auge, com sede em Feira de Santana, na Bahia, é uma empresa de transporte que atua no setor de turismo e transporte interestadual de passageiros."
+          },
+          {
+            "titulo": "Expresso Auge",
+            "link": "https://www.facebook.com/p/Expresso-Auge-61583086984127/",
+            "snippet": "Está planejando sua viagem de São Paulo para Belo Horizonte? A Expresso Auge oferece conforto, segurança e saídas frequentes para você viajar tranquilo."
+          },
+          {
+            "titulo": "WAYBUS: Passagem de Ônibus Online, Preços e Promoções",
+            "link": "https://www.buson.com.br/viacao/expresso-auge",
+            "snippet": "Atendimento ao Cliente: A Viação Expresso Auge oferece suporte aos passageiros antes, durante e depois da viagem. Conheça os Ônibus da Viação Expresso Auge."
+          },
+          {
+            "titulo": "Lista de reclamações: Auge",
+            "link": "https://www.reclameaqui.com.br/empresa/auge/lista-reclamacoes/?categoria=0000000000000015",
+            "snippet": "Todas as reclamações na categoria Ônibus Urbanos para Auge. Exibindo 5 de 23 reclamações (todas as reclamações ativas da empresa Auge). Pesquise reclamações ..."
+          },
+          {
+            "titulo": "Passagens EXPRESSO AUGE — Compre Online | Buser",
+            "link": "https://expresso-auge.buser.com.br/",
+            "snippet": "Passagens de ônibus da EXPRESSO AUGE. Compre passagens da EXPRESSO AUGE online pela Buser. Rotas para Guarulhos, Belo Horizonte, Osasco e +118 destinos."
+          },
+          {
+            "titulo": "AUGE TRANSPORTE RODOVIARIO E TURISMO LTDA",
+            "link": "https://empresas.serasaexperian.com.br/consulta-gratis/AUGE-TRANSPORTE-RODOVIARIO-E-TURISMO-LTDA-05108552000484",
+            "snippet": "A sua situação cadastral é ATIVA e sua principal atividade econômica é Transporte rodoviário coletivo de passageiros, com itinerário fixo, interestadual. Score."
+          }
+        ],
+        "site_oficial": {
+          "titulo": "Passagens EXPRESSO AUGE — Compre Online | Buser",
+          "link": "https://expresso-auge.buser.com.br/",
+          "snippet": "Passagens de ônibus da EXPRESSO AUGE. Compre passagens da EXPRESSO AUGE online pela Buser. Rotas para Guarulhos, Belo Horizonte, Osasco e +118 destinos."
+        },
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "EXPRESSO AUGE faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
+  },
+  "liderancaturismo": {
+    "empresa": "Liderança Turismo",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": "A Liderança Turismo (ou Viação Liderança) é uma empresa brasileira de transporte rodoviário de passageiros. Informações Principais Fundação: 1988 Sede: Pires do Rio, Goiás (GO) Área de atuação: Estados de Goiás, Tocantins, Pará, Maranhão e o Distrito Federal Serviços: Transporte rodoviário interestadual, urbano e de fretamento, operando com ônibus convencionais, executivos e leito que oferecem itens como Wi-Fi e ar-condicionado. Site oficial: Passagens Rodoviárias | Liderança Você pode acompanhar atualizações e rotas pelo perfil oficial no Instagram da Liderança Turismo . Se você precisar, me diga: Qual é o trecho ou destino de viagem que você procura? Você quer saber sobre horários ou compra de passagens? Posso te ajudar a encontrar os detalhes da sua rota.",
+        "referencias": [],
+        "erro": null
+      },
+      "Google_TopSites": {
+        "conteudo": "EMPRESA LIDERANÇA (@liderancaturoficial): #vadelideranca Só quem é líder te leva mais longe; Viagens para Goiás, Tocantins, Pará e Maranhão; ⬇️ Acesse nosso site ⬇️. Passagens Rodoviárias | Liderança | Goiânia: Compre passagens de ônibus com a Liderança. Consulte rotas para Goiânia, Palmas, Belém e Parauapebas. Liderança Turismo - Passagens de ônibus - BlaBlaCar: O Grupo Liderança Turismo atua nos estados de Goiás, Maranhão, Pará e Tocantins. Liderança Turismo: Informações, Telefone e Contato. CNPJ. Lista de reclamações: Liderança Turismo e Fretamento: Todas as reclamações para Liderança Turismo e Fretamento. Exibindo 5 de 242 reclamações (todas as reclamações ativas da empresa Liderança Turismo e Fretamento). Liderança Turismo: Site: http://liderancatur.com.br. Link externo para Liderança Turismo ; Setor: Transporte rodoviário de passageiros ; Tamanho da empresa: 201-500 funcionários. Liderança é eficiência, conforto e bem estar: Nossa história começou em 1988 com um sonho: oferecer um transporte de passageiros com excelência e qualidade. Conheça nossa jornada e o compromisso que ... Viação Liderança Turismo - Passagens de Ônibus: Com sua implantação desde 1988, a viação inova e surpreende o setor de viagens e transporte de passageiros em Goiás, Distrito Federal e parte do Triângulo ... Liderança Turismo | Goiânia GO: A Liderança é uma empresa de transporte de passageiros que atualmente atende os Estados GO, PA,TO,MA. Travel & Transportation · +55 62 98565-4000.",
+        "sites": [
+          {
+            "titulo": "EMPRESA LIDERANÇA (@liderancaturoficial)",
+            "link": "https://www.instagram.com/liderancaturoficial/",
+            "snippet": "#vadelideranca Só quem é líder te leva mais longe; Viagens para Goiás, Tocantins, Pará e Maranhão; ⬇️ Acesse nosso site ⬇️."
+          },
+          {
+            "titulo": "Passagens Rodoviárias | Liderança | Goiânia",
+            "link": "https://www.liderancatur.com.br/",
+            "snippet": "Compre passagens de ônibus com a Liderança. Consulte rotas para Goiânia, Palmas, Belém e Parauapebas."
+          },
+          {
+            "titulo": "Liderança Turismo - Passagens de ônibus - BlaBlaCar",
+            "link": "https://www.blablacar.com.br/bus/companies/lideranca",
+            "snippet": "O Grupo Liderança Turismo atua nos estados de Goiás, Maranhão, Pará e Tocantins. Liderança Turismo: Informações, Telefone e Contato. CNPJ."
+          },
+          {
+            "titulo": "Lista de reclamações: Liderança Turismo e Fretamento",
+            "link": "https://www.reclameaqui.com.br/empresa/lideranca-turismo-e-fretamento/lista-reclamacoes/",
+            "snippet": "Todas as reclamações para Liderança Turismo e Fretamento. Exibindo 5 de 242 reclamações (todas as reclamações ativas da empresa Liderança Turismo e Fretamento)."
+          },
+          {
+            "titulo": "Liderança Turismo",
+            "link": "https://br.linkedin.com/company/lideranca-turismo",
+            "snippet": "Site: http://liderancatur.com.br. Link externo para Liderança Turismo ; Setor: Transporte rodoviário de passageiros ; Tamanho da empresa: 201-500 funcionários."
+          },
+          {
+            "titulo": "Liderança é eficiência, conforto e bem estar",
+            "link": "https://www.liderancatur.com.br/sobre-nos",
+            "snippet": "Nossa história começou em 1988 com um sonho: oferecer um transporte de passageiros com excelência e qualidade. Conheça nossa jornada e o compromisso que ..."
+          },
+          {
+            "titulo": "Viação Liderança Turismo - Passagens de Ônibus",
+            "link": "https://queropassagem.com.br/auto-viacao-lideranca-turismo",
+            "snippet": "Com sua implantação desde 1988, a viação inova e surpreende o setor de viagens e transporte de passageiros em Goiás, Distrito Federal e parte do Triângulo ..."
+          },
+          {
+            "titulo": "Liderança Turismo | Goiânia GO",
+            "link": "https://www.facebook.com/p/Lideran%C3%A7a-Turismo-100093268628640/",
+            "snippet": "A Liderança é uma empresa de transporte de passageiros que atualmente atende os Estados GO, PA,TO,MA. Travel & Transportation · +55 62 98565-4000."
+          }
+        ],
+        "site_oficial": {
+          "titulo": "Passagens Rodoviárias | Liderança | Goiânia",
+          "link": "https://www.liderancatur.com.br/",
+          "snippet": "Compre passagens de ônibus com a Liderança. Consulte rotas para Goiânia, Palmas, Belém e Parauapebas."
+        },
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "Liderança Turismo faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
+  },
+  "turissul": {
+    "empresa": "Turissul",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": "A Turissul (também conhecida como Catarinense Turismo) é uma empresa de turismo e transporte rodoviário fundada em 2000, com sede em Tubarão, Santa Catarina. Principais Atividades Viagens e Turismo: Operação de viagens de compras (com roteiros tradicionais para São Paulo, por exemplo), turismo em geral, turismo religioso e eventos. Serviços Rodoviários: Venda de passagens de ônibus e serviços de traslados e receptivo. Frota e Estrutura: Utilização de veículos como ônibus leito e semi-leito voltados para o conforto e segurança dos passageiros em rotas interestaduais. Você pode conferir mais detalhes e rotas diretamente no site oficial da Turissul Turismo . Se você quiser, me diga: Qual destino ou rota da Turissul você está procurando? Precisa de ajuda com contato ou horários?",
+        "referencias": [],
+        "erro": null
+      },
+      "Google_TopSites": {
+        "conteudo": "Turissul Turismo | Tubarão | Viagens: Viagens de turismo, turismo religioso, pacotes turísticos, compras e feiras, eventos, transfers, receptivo, entre outros. Turissul. Turissul Turismo: Empresa cancelou a viagem e não reembolsou o valor pago pela passagem. Fiz uma compra mas a empresa cancelou minha vinagem não sei pelo qual Motivo, mas já ... Turissul Fretamento e Turismo: Desde o ano de 2002 no mercado, a Turissul, nasceu com o objetivo de criar soluções em transportes de pessoas. Com grande determinação, seus idealizadores não ... Contato: Estamos disponíveis de segunda a sexta das 9h as 12:00h e 13:30 as 18:00h. Nosso telefone fixo e Whatsapp é. (48) 3626-0327 · email-icon.png. E-mail. Turissul (@turissul) • Instagram photos and videos: Viagens Rodoviárias ⤵️ Reserve no link abaixo ... Pai é aquele que guia com o exemplo, protege com o coração e transforma pequenos momentos em grandes ... Viação Turissul Turismo - Passagens de Ônibus: Viação Turissul Turismo - Compre passagens de ônibus online com rapidez e segurança. Compare preços e horários em poucos cliques na Quero Passagem. Passagens Turissul — Compre Online | Buser: Passagens de ônibus da Turissul. Compre passagens da Turissul online pela Buser. Rotas para São Paulo, Arraial do Cabo, Campinas e +12 destinos. TURISSUL TURISMO E EVENTOS LTDA - ME: O CNPJ da empresa TURISSUL TURISMO E EVENTOS LTDA - ME é 10.292.243/0001-02. Com sede em GRAVATAI, RS, possui 18 anos, 0 meses e 15 dias e foi fundada em 25/08/ ... Turissul Passagens: PASSAGENS DE ÔNIBUS. OS MELHORES TRECHOS,. OS MENORES PREÇOS,. E A COMODIDADE QUE. VOCÊ MERECE! Compra 100% Segura! banner-inicio. Logo Empresa Turissul.",
+        "sites": [
+          {
+            "titulo": "Turissul Turismo | Tubarão | Viagens",
+            "link": "https://www.turissul.com.br/",
+            "snippet": "Viagens de turismo, turismo religioso, pacotes turísticos, compras e feiras, eventos, transfers, receptivo, entre outros. Turissul."
+          },
+          {
+            "titulo": "Turissul Turismo",
+            "link": "https://www.reclameaqui.com.br/empresa/turissul-turismo/",
+            "snippet": "Empresa cancelou a viagem e não reembolsou o valor pago pela passagem. Fiz uma compra mas a empresa cancelou minha vinagem não sei pelo qual Motivo, mas já ..."
+          },
+          {
+            "titulo": "Turissul Fretamento e Turismo",
+            "link": "https://turissul.net/",
+            "snippet": "Desde o ano de 2002 no mercado, a Turissul, nasceu com o objetivo de criar soluções em transportes de pessoas. Com grande determinação, seus idealizadores não ..."
+          },
+          {
+            "titulo": "Contato",
+            "link": "https://www.turissul.com.br/contato",
+            "snippet": "Estamos disponíveis de segunda a sexta das 9h as 12:00h e 13:30 as 18:00h. Nosso telefone fixo e Whatsapp é. (48) 3626-0327 · email-icon.png. E-mail."
+          },
+          {
+            "titulo": "Turissul (@turissul) • Instagram photos and videos",
+            "link": "https://www.instagram.com/turissul/",
+            "snippet": "Viagens Rodoviárias ⤵️ Reserve no link abaixo ... Pai é aquele que guia com o exemplo, protege com o coração e transforma pequenos momentos em grandes ..."
+          },
+          {
+            "titulo": "Viação Turissul Turismo - Passagens de Ônibus",
+            "link": "https://queropassagem.com.br/auto-viacao-turissul-turismo",
+            "snippet": "Viação Turissul Turismo - Compre passagens de ônibus online com rapidez e segurança. Compare preços e horários em poucos cliques na Quero Passagem."
+          },
+          {
+            "titulo": "Passagens Turissul — Compre Online | Buser",
+            "link": "https://turissul.buser.com.br/",
+            "snippet": "Passagens de ônibus da Turissul. Compre passagens da Turissul online pela Buser. Rotas para São Paulo, Arraial do Cabo, Campinas e +12 destinos."
+          },
+          {
+            "titulo": "TURISSUL TURISMO E EVENTOS LTDA - ME",
+            "link": "https://empresas.serasaexperian.com.br/consulta-gratis/TURISSUL-TURISMO-E-EVENTOS-LTDA-ME-10292243000102",
+            "snippet": "O CNPJ da empresa TURISSUL TURISMO E EVENTOS LTDA - ME é 10.292.243/0001-02. Com sede em GRAVATAI, RS, possui 18 anos, 0 meses e 15 dias e foi fundada em 25/08/ ..."
+          },
+          {
+            "titulo": "Turissul Passagens",
+            "link": "https://turissulpassagens.com.br/",
+            "snippet": "PASSAGENS DE ÔNIBUS. OS MELHORES TRECHOS,. OS MENORES PREÇOS,. E A COMODIDADE QUE. VOCÊ MERECE! Compra 100% Segura! banner-inicio. Logo Empresa Turissul."
+          }
+        ],
+        "site_oficial": {
+          "titulo": "Turissul Turismo | Tubarão | Viagens",
+          "link": "https://www.turissul.com.br/",
+          "snippet": "Viagens de turismo, turismo religioso, pacotes turísticos, compras e feiras, eventos, transfers, receptivo, entre outros. Turissul."
+        },
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "Turissul faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
+  },
+  "viacaoarca": {
+    "empresa": "Viação Arca",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": null,
+        "referencias": [],
+        "erro": "Erro ao consultar o AI Overview (tentativa 1): HTTPSConnectionPool(host='serpapi.com', port=443): Read timed out. (read timeout=15)"
+      },
+      "Google_TopSites": {
+        "conteudo": "Viação Arca Ltda.: Aproveite essa oportunidade: Faça seu cadastro no programa Eu+ fidelidade e ganhe descontos nas passagens da Viação Arca Ltda. Realizar Cadastro. Viação Arca Turismo - Passagens de Ônibus: A Viação Arca Turismo opera diversas rotas conectando importantes cidades e regiões. Para consultar os trechos disponíveis, horários e disponibilidade de ... Viação Arca (@viacaoarca) · São Paulo, SP: Viaje Arca! Rodoviário - Fretamento - Turismo. Viação Arca — levando você a momentos que importam. Viaje bem, viaje ARCA! 📲 Canal de vendas: (11) 91016-8535 🌐 ... Lista de reclamações: Arca Turismo: Todas as reclamações para Arca Turismo. Exibindo 5 de 185 reclamações (todas as reclamações ativas da empresa Arca Turismo). Pesquise reclamações desta empresa. Viação Arca – Apps no Google Play: A Viação Arca é uma empresa de ônibus de passageiros sediada na Grande São Paulo. Fundada no coração do turismo, a empresa nasceu com o propósito de oferecer ... Viação Arca Ltda: Compre aqui a sua passagem Viação Arca Ltda. Arca Transportes: Arca Transportes ; Telefone: (11) 4178-5880 ; E-Mail: arca@arcaturismo.com.br ; Enderço: Rua Frederico Rene De Jaegher, 2.041 ; Cidade: São Paulo/SP ; CEP: 04826-010 ... Viação Arca obtém autorizações da ANTT para operar ...: A Viação Arca tem sede na capital paulista, e foi foi fundada em 22 de outubro de 1996 tendo como razão social o nome Andreatur Transportes e ...",
+        "sites": [
+          {
+            "titulo": "Viação Arca Ltda.",
+            "link": "https://www.viacaoarca.com.br/",
+            "snippet": "Aproveite essa oportunidade: Faça seu cadastro no programa Eu+ fidelidade e ganhe descontos nas passagens da Viação Arca Ltda. Realizar Cadastro."
+          },
+          {
+            "titulo": "Viação Arca Turismo - Passagens de Ônibus",
+            "link": "https://queropassagem.com.br/auto-viacao-arca-turismo",
+            "snippet": "A Viação Arca Turismo opera diversas rotas conectando importantes cidades e regiões. Para consultar os trechos disponíveis, horários e disponibilidade de ..."
+          },
+          {
+            "titulo": "Viação Arca (@viacaoarca) · São Paulo, SP",
+            "link": "https://www.instagram.com/viacaoarca/",
+            "snippet": "Viaje Arca! Rodoviário - Fretamento - Turismo. Viação Arca — levando você a momentos que importam. Viaje bem, viaje ARCA! 📲 Canal de vendas: (11) 91016-8535 🌐 ..."
+          },
+          {
+            "titulo": "Lista de reclamações: Arca Turismo",
+            "link": "https://www.reclameaqui.com.br/empresa/arca-turismo/lista-reclamacoes/",
+            "snippet": "Todas as reclamações para Arca Turismo. Exibindo 5 de 185 reclamações (todas as reclamações ativas da empresa Arca Turismo). Pesquise reclamações desta empresa."
+          },
+          {
+            "titulo": "Viação Arca – Apps no Google Play",
+            "link": "https://play.google.com/store/apps/details?id=br.com.viacaoarca.app&hl=pt_BR",
+            "snippet": "A Viação Arca é uma empresa de ônibus de passageiros sediada na Grande São Paulo. Fundada no coração do turismo, a empresa nasceu com o propósito de oferecer ..."
+          },
+          {
+            "titulo": "Viação Arca Ltda",
+            "link": "https://www.viacaoarca.com.br/?page_id=99",
+            "snippet": "Compre aqui a sua passagem Viação Arca Ltda."
+          },
+          {
+            "titulo": "Arca Transportes",
+            "link": "https://fresp.org.br/empresas_associadas/arca-transportes/",
+            "snippet": "Arca Transportes ; Telefone: (11) 4178-5880 ; E-Mail: arca@arcaturismo.com.br ; Enderço: Rua Frederico Rene De Jaegher, 2.041 ; Cidade: São Paulo/SP ; CEP: 04826-010 ..."
+          },
+          {
+            "titulo": "Viação Arca obtém autorizações da ANTT para operar ...",
+            "link": "https://diariodotransporte.com.br/2025/12/24/viacao-arca-obtem-autorizacoes-da-antt-para-operar-linhas-ligando-as-capitais-de-minas-gerais-parana-e-sao-paulo/",
+            "snippet": "A Viação Arca tem sede na capital paulista, e foi foi fundada em 22 de outubro de 1996 tendo como razão social o nome Andreatur Transportes e ..."
+          }
+        ],
+        "site_oficial": {
+          "titulo": "Viação Arca Ltda.",
+          "link": "https://www.viacaoarca.com.br/",
+          "snippet": "Aproveite essa oportunidade: Faça seu cadastro no programa Eu+ fidelidade e ganhe descontos nas passagens da Viação Arca Ltda. Realizar Cadastro."
+        },
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "Viação Arca faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
+  },
+  "jamjoyviacao": {
+    "empresa": "Jamjoy Viação",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": null,
+        "referencias": [],
+        "erro": "Erro ao consultar o AI Overview (tentativa 1): HTTPSConnectionPool(host='serpapi.com', port=443): Read timed out. (read timeout=15)"
+      },
+      "Google_TopSites": {
+        "conteudo": "JamJoy: Passagens de Ônibus com Conforto e Segurança: Compre passagens de ônibus online com a JamJoy. Viaje com conforto, segurança e tecnologia para os principais destinos do Brasil. (@jamjoyoficial) • Instagram photos and videos: Conectando destinos e sonhos pelo Brasil Encomendas e cargas rápidas Mais de 50 destinos em 5 estados 🎟️ Compre sua passagem. Viação Jamjoy - Passagens de Ônibus: Foi a primeira empresa na região norte do Estado do Tocantins na questão do transporte de passageiros, conhecida como Bico do Papagaio. Hoje em dia, ela abrange ... Viação Jamjoy: Passagens de Ônibus na BlaBlaCar em até 12x: Consulte todos os horários e viaje de ônibus com Viação Jamjoy. Compre sua passagem on-line pelo menor preço e pague em até 12x com a Blablacar. Fale Conosco | Atendimento e Suporte ao Passageiro: Entre em contato com a JamJoy. Tire dúvidas sobre passagens, horários, rotas e serviços de transporte rodoviário. JamJoy Viação LTDA (@JamJoy.viacao) - Mentions: Com uma operação rodoviária diária, a JamJoy vem se destacando no mercado de transportes rodoviários por sua frota sempre nova, atendimento de qualidade e ... Nossa História | Tradição e Inovação no Transporte ...: Conheça a trajetória da JamJoy, referência em transporte rodoviário. Décadas de compromisso com segurança, conforto e qualidade. JamJoy: Empresa que mas atrasa tem um horário previsto para saída e chegada e não consegue chegar no horário , chegada atrasando mas que 2 horas . Falta de co... Não ...",
+        "sites": [
+          {
+            "titulo": "JamJoy: Passagens de Ônibus com Conforto e Segurança",
+            "link": "https://www.jamjoy.com.br/",
+            "snippet": "Compre passagens de ônibus online com a JamJoy. Viaje com conforto, segurança e tecnologia para os principais destinos do Brasil."
+          },
+          {
+            "titulo": "(@jamjoyoficial) • Instagram photos and videos",
+            "link": "https://www.instagram.com/jamjoyoficial/",
+            "snippet": "Conectando destinos e sonhos pelo Brasil Encomendas e cargas rápidas Mais de 50 destinos em 5 estados 🎟️ Compre sua passagem."
+          },
+          {
+            "titulo": "Viação Jamjoy - Passagens de Ônibus",
+            "link": "https://queropassagem.com.br/auto-viacao-jamjoy",
+            "snippet": "Foi a primeira empresa na região norte do Estado do Tocantins na questão do transporte de passageiros, conhecida como Bico do Papagaio. Hoje em dia, ela abrange ..."
+          },
+          {
+            "titulo": "Viação Jamjoy: Passagens de Ônibus na BlaBlaCar em até 12x",
+            "link": "https://www.blablacar.com.br/bus/companies/jamjoy",
+            "snippet": "Consulte todos os horários e viaje de ônibus com Viação Jamjoy. Compre sua passagem on-line pelo menor preço e pague em até 12x com a Blablacar."
+          },
+          {
+            "titulo": "Fale Conosco | Atendimento e Suporte ao Passageiro",
+            "link": "https://www.jamjoy.com.br/fale-conosco",
+            "snippet": "Entre em contato com a JamJoy. Tire dúvidas sobre passagens, horários, rotas e serviços de transporte rodoviário."
+          },
+          {
+            "titulo": "JamJoy Viação LTDA (@JamJoy.viacao) - Mentions",
+            "link": "https://www.facebook.com/JamJoy.viacao/mentions/",
+            "snippet": "Com uma operação rodoviária diária, a JamJoy vem se destacando no mercado de transportes rodoviários por sua frota sempre nova, atendimento de qualidade e ..."
+          },
+          {
+            "titulo": "Nossa História | Tradição e Inovação no Transporte ...",
+            "link": "https://www.jamjoy.com.br/nossa-historia",
+            "snippet": "Conheça a trajetória da JamJoy, referência em transporte rodoviário. Décadas de compromisso com segurança, conforto e qualidade."
+          },
+          {
+            "titulo": "JamJoy",
+            "link": "https://www.reclameaqui.com.br/empresa/jamjoy/",
+            "snippet": "Empresa que mas atrasa tem um horário previsto para saída e chegada e não consegue chegar no horário , chegada atrasando mas que 2 horas . Falta de co... Não ..."
+          }
+        ],
+        "site_oficial": {
+          "titulo": "JamJoy: Passagens de Ônibus com Conforto e Segurança",
+          "link": "https://www.jamjoy.com.br/",
+          "snippet": "Compre passagens de ônibus online com a JamJoy. Viaje com conforto, segurança e tecnologia para os principais destinos do Brasil."
+        },
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "ambiguo",
+      "palavra": "viagem",
+      "instrucao": "Não foi possível identificar com clareza, nas fontes coletadas, se Jamjoy Viação opera linha regular ou só fretamento/turismo. Use \"viagem\" em vez de \"passagem\" em todas as menções — é o termo mais seguro nesse caso, evita afirmar algo que pode não ser verdade."
+    }
+  },
+  "jblturismo": {
+    "empresa": "JBL Turismo",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": null,
+        "referencias": [],
+        "erro": "Erro ao consultar o AI Overview (tentativa 1): HTTPSConnectionPool(host='serpapi.com', port=443): Read timed out. (read timeout=15)"
+      },
+      "Google_TopSites": {
+        "conteudo": "JBL Internacional | Site oficial: Site oficial da Viação JBL Internacional. Compre sua passagem de ônibus com praticidade para viajar bem! Encontre seu destino com facilidade e embarque para ... Conheça a história da JBL Turismo: A JBL Internacional é uma empresa brasileira de transporte rodoviário de passageiros reconhecida por sua atuação no mercado nacional e internacional, ... Encontre passagens de ônibus da Viação JBL Turismo: A empresa JBL Turismo foi inaugurada em 31/08/2007 e está localizada na rua Marques de Olinda, 380 - Sala A Canoas, RS. Além de atuar em cidades do ... JBL Turismo - O que saber antes de ir (ATUALIZADO ...: Costumava viajar com a JBL quando a empresa era do Senhor Lisot. Por mais que os ônibus as vezes eram antigos, o preço costumava compensar, ... JBL INTERNACIONAL: Saiba se a empresa JBL INTERNACIONAL é confiável, segundo os consumidores. Se tiver problemas, reclame, resolva, avalie. Reclame Aqui. Viação JBL Turismo - Passagens de Ônibus: Referência no serviço rodoviário de viagens pelo sul e sudeste do Brasil, a JBL Turismo também oferece linhas internacionais entre países como a Argentina, ... JBL INTERNACIONAL (@jblinternacional): Tu mejor experiencia de viaje internacional. Una empresa del Grupo Garcia Brasil Sul #ViajáConJBL · Subite, acomodate y dejá que el viaje siga su curso. · Dicen ... JBL Turismo: Passagens de Ônibus na BlaBlaCar em até 12x: Fundada em 2008 em Canoas (RS), a JBL Turismo (JBL Internacional) opera no Sul do Brasil e em linhas internacionais para Argentina, Chile e Uruguai. CNPJ: ...",
+        "sites": [
+          {
+            "titulo": "JBL Internacional | Site oficial",
+            "link": "http://www.jblinternacional.com/",
+            "snippet": "Site oficial da Viação JBL Internacional. Compre sua passagem de ônibus com praticidade para viajar bem! Encontre seu destino com facilidade e embarque para ..."
+          },
+          {
+            "titulo": "Conheça a história da JBL Turismo",
+            "link": "https://www.jblinternacional.com/sobre-nos",
+            "snippet": "A JBL Internacional é uma empresa brasileira de transporte rodoviário de passageiros reconhecida por sua atuação no mercado nacional e internacional, ..."
+          },
+          {
+            "titulo": "Encontre passagens de ônibus da Viação JBL Turismo",
+            "link": "https://www.clickbus.com.br/viacao/jbl-turismo",
+            "snippet": "A empresa JBL Turismo foi inaugurada em 31/08/2007 e está localizada na rua Marques de Olinda, 380 - Sala A Canoas, RS. Além de atuar em cidades do ..."
+          },
+          {
+            "titulo": "JBL Turismo - O que saber antes de ir (ATUALIZADO ...",
+            "link": "https://www.tripadvisor.com.br/Attraction_Review-g2333439-d12296310-Reviews-JBL_Turismo-Canoas_State_of_Rio_Grande_do_Sul.html",
+            "snippet": "Costumava viajar com a JBL quando a empresa era do Senhor Lisot. Por mais que os ônibus as vezes eram antigos, o preço costumava compensar, ..."
+          },
+          {
+            "titulo": "JBL INTERNACIONAL",
+            "link": "https://www.reclameaqui.com.br/empresa/jbl-turismo/",
+            "snippet": "Saiba se a empresa JBL INTERNACIONAL é confiável, segundo os consumidores. Se tiver problemas, reclame, resolva, avalie. Reclame Aqui."
+          },
+          {
+            "titulo": "Viação JBL Turismo - Passagens de Ônibus",
+            "link": "https://queropassagem.com.br/auto-viacao-jbl-turismo",
+            "snippet": "Referência no serviço rodoviário de viagens pelo sul e sudeste do Brasil, a JBL Turismo também oferece linhas internacionais entre países como a Argentina, ..."
+          },
+          {
+            "titulo": "JBL INTERNACIONAL (@jblinternacional)",
+            "link": "https://www.instagram.com/jblinternacional/",
+            "snippet": "Tu mejor experiencia de viaje internacional. Una empresa del Grupo Garcia Brasil Sul #ViajáConJBL · Subite, acomodate y dejá que el viaje siga su curso. · Dicen ..."
+          },
+          {
+            "titulo": "JBL Turismo: Passagens de Ônibus na BlaBlaCar em até 12x",
+            "link": "https://www.blablacar.com.br/bus/companies/jbl-turismo",
+            "snippet": "Fundada em 2008 em Canoas (RS), a JBL Turismo (JBL Internacional) opera no Sul do Brasil e em linhas internacionais para Argentina, Chile e Uruguai. CNPJ: ..."
+          }
+        ],
+        "site_oficial": null,
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "JBL Turismo faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
+  },
+  "expressonordeste": {
+    "empresa": "Expresso Nordeste",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": null,
+        "referencias": [],
+        "erro": "SerpApi não retornou o AI Overview (status: Success)."
+      },
+      "Google_TopSites": {
+        "conteudo": "Expresso Nordeste: Passagens de Ônibus e Promoções: Turismo, encomendas, fretamento e venda de veículos: soluções completas com a estrutura de quem roda o Brasil desde 1963. Ônibus da Expresso Nordeste em ... Nordeste Encomendas: Envio entre 8 Estados: Envie encomendas com a malha diária da Expresso Nordeste: agências no Paraná, São Paulo, Santa Catarina e mais 5 estados, com prazos curtos e rastreio pelo ... Expresso Nordeste - Oficial (@expressonordeste): Atendimento para: • Informações • Dúvidas • Roteiros e itinerários • Marcações de passagens Salve esse contato e fale conosco sempre que precisar. **WhatsApp: ( ... Dúvidas Frequentes: Tudo o que você precisa saber antes de viajar: passagens, cancelamento, gratuidades e descontos previstos em lei, bagagem, embarque e muito mais. EXPRESSO NORDESTE: A NORDESTE, com mais de 60 anos de experiência no transporte de passageiros e encomendas, prioriza a excelência de seus serviços e a satisfação de seus clientes ... Expresso Nordeste (@expressonordesteoficial): Para agradecer por escolher a Expresso Nordeste e fazer parte da nossa história, preparamos uma condição especial: **15% de desconto nas suas passagens!** Viação Expresso Nordeste - Passagem de Ônibus: Hoje, a matriz está instalada em São Paulo-SP e atua nos estados de São Paulo, Paraná, Santa Catarina e Rio Grande do Sul, através do transporte rodoviário de ...",
+        "sites": [
+          {
+            "titulo": "Expresso Nordeste: Passagens de Ônibus e Promoções",
+            "link": "https://expressonordeste.com.br/",
+            "snippet": "Turismo, encomendas, fretamento e venda de veículos: soluções completas com a estrutura de quem roda o Brasil desde 1963. Ônibus da Expresso Nordeste em ..."
+          },
+          {
+            "titulo": "Nordeste Encomendas: Envio entre 8 Estados",
+            "link": "https://www.expnordeste.com.br/encomendas",
+            "snippet": "Envie encomendas com a malha diária da Expresso Nordeste: agências no Paraná, São Paulo, Santa Catarina e mais 5 estados, com prazos curtos e rastreio pelo ..."
+          },
+          {
+            "titulo": "Expresso Nordeste - Oficial (@expressonordeste)",
+            "link": "https://www.instagram.com/expressonordeste/",
+            "snippet": "Atendimento para: • Informações • Dúvidas • Roteiros e itinerários • Marcações de passagens Salve esse contato e fale conosco sempre que precisar. **WhatsApp: ( ..."
+          },
+          {
+            "titulo": "Dúvidas Frequentes",
+            "link": "https://www.expnordeste.com.br/duvida",
+            "snippet": "Tudo o que você precisa saber antes de viajar: passagens, cancelamento, gratuidades e descontos previstos em lei, bagagem, embarque e muito mais."
+          },
+          {
+            "titulo": "EXPRESSO NORDESTE",
+            "link": "https://www.reclameaqui.com.br/empresa/expresso-nordeste/",
+            "snippet": "A NORDESTE, com mais de 60 anos de experiência no transporte de passageiros e encomendas, prioriza a excelência de seus serviços e a satisfação de seus clientes ..."
+          },
+          {
+            "titulo": "Expresso Nordeste (@expressonordesteoficial)",
+            "link": "https://www.facebook.com/expressonordesteoficial/?locale=pt_BR",
+            "snippet": "Para agradecer por escolher a Expresso Nordeste e fazer parte da nossa história, preparamos uma condição especial: **15% de desconto nas suas passagens!**"
+          },
+          {
+            "titulo": "Viação Expresso Nordeste - Passagem de Ônibus",
+            "link": "https://www.clickbus.com.br/viacao/expresso-nordeste",
+            "snippet": "Hoje, a matriz está instalada em São Paulo-SP e atua nos estados de São Paulo, Paraná, Santa Catarina e Rio Grande do Sul, através do transporte rodoviário de ..."
+          }
+        ],
+        "site_oficial": {
+          "titulo": "Expresso Nordeste: Passagens de Ônibus e Promoções",
+          "link": "https://expressonordeste.com.br/",
+          "snippet": "Turismo, encomendas, fretamento e venda de veículos: soluções completas com a estrutura de quem roda o Brasil desde 1963. Ônibus da Expresso Nordeste em ..."
+        },
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "Expresso Nordeste faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
+  },
+  "viacaosertaneja": {
+    "empresa": "Viação Sertaneja",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": null,
+        "referencias": [],
+        "erro": "SerpApi não retornou o AI Overview (status: Success)."
+      },
+      "Google_TopSites": {
+        "conteudo": "Viação Sertaneja – Transporte de passageiros, cargas e ...: Com mais de 400 colaboradores, a empresa mantém seu compromisso com tradição, segurança e qualidade, atuando no transporte de passageiros, cargas e turismo ... FAQ – Transporte de Passageiros: Entrega rápida, eficiente, transporte seguro e expresso, são os predicados de excelência da Viação Sertaneja LTDA. Não deixe de consultar nossa tabela de preços ... Viação Sertaneja S/A (@viacaosertanejaoficial): Empresa de transporte coletivo de pessoas e cargas. “Uma Senhora Companhia” Constituída em 20/09/1955. Nossa História: Hoje sua frota é composta por 163 veículos, entre ônibus rodoviários, coletivos urbanos, caminhões baús para transporte de cargas e carros de apoio. Possui ... Encontre passagens de ônibus da Viação Sertaneja: A Viação Sertaneja surgiu em 1953, em Minas Gerais. Hoje, possui experiência e tradição no transporte de passageiros rodoviários, coletivos urbanos e ... Viação Sertaneja: Transporte rodoviário para Pompéu, Abaeté, Paineiras, Papagaios, Três Marias, Morada Nova de Minas, Paracatu, Unaí, Quartel Geral, Guarda – Mor, Vazante, ... Viação Sertaneja: Saiba se a empresa Viação Sertaneja é confiável, segundo os consumidores. Se tiver problemas, reclame, resolva, avalie. Reclame Aqui. Fale conosco: Estamos prontos para atendê-lo e esclarecer suas dúvidas. · Sede Administrativa · (31) 3201-4919 · Funcionamento. Segunda a Sexta8h as 18h. Nossas unidades ...",
+        "sites": [
+          {
+            "titulo": "Viação Sertaneja – Transporte de passageiros, cargas e ...",
+            "link": "https://viacaosertaneja.com.br/",
+            "snippet": "Com mais de 400 colaboradores, a empresa mantém seu compromisso com tradição, segurança e qualidade, atuando no transporte de passageiros, cargas e turismo ..."
+          },
+          {
+            "titulo": "FAQ – Transporte de Passageiros",
+            "link": "https://viacaosertaneja.com.br/duvidas-frequentes-transporte/",
+            "snippet": "Entrega rápida, eficiente, transporte seguro e expresso, são os predicados de excelência da Viação Sertaneja LTDA. Não deixe de consultar nossa tabela de preços ..."
+          },
+          {
+            "titulo": "Viação Sertaneja S/A (@viacaosertanejaoficial)",
+            "link": "https://www.instagram.com/viacaosertanejaoficial/",
+            "snippet": "Empresa de transporte coletivo de pessoas e cargas. “Uma Senhora Companhia” Constituída em 20/09/1955."
+          },
+          {
+            "titulo": "Nossa História",
+            "link": "https://viacaosertaneja.com.br/nossa-historia/",
+            "snippet": "Hoje sua frota é composta por 163 veículos, entre ônibus rodoviários, coletivos urbanos, caminhões baús para transporte de cargas e carros de apoio. Possui ..."
+          },
+          {
+            "titulo": "Encontre passagens de ônibus da Viação Sertaneja",
+            "link": "https://www.clickbus.com.br/viacao/sertaneja",
+            "snippet": "A Viação Sertaneja surgiu em 1953, em Minas Gerais. Hoje, possui experiência e tradição no transporte de passageiros rodoviários, coletivos urbanos e ..."
+          },
+          {
+            "titulo": "Viação Sertaneja",
+            "link": "https://portalbelohorizonte.com.br/trade/equipamentos-e-servicos/viacao-sertaneja",
+            "snippet": "Transporte rodoviário para Pompéu, Abaeté, Paineiras, Papagaios, Três Marias, Morada Nova de Minas, Paracatu, Unaí, Quartel Geral, Guarda – Mor, Vazante, ..."
+          },
+          {
+            "titulo": "Viação Sertaneja",
+            "link": "https://www.reclameaqui.com.br/empresa/viacao-sertaneja/",
+            "snippet": "Saiba se a empresa Viação Sertaneja é confiável, segundo os consumidores. Se tiver problemas, reclame, resolva, avalie. Reclame Aqui."
+          },
+          {
+            "titulo": "Fale conosco",
+            "link": "https://viacaosertaneja.com.br/fale-conosco/",
+            "snippet": "Estamos prontos para atendê-lo e esclarecer suas dúvidas. · Sede Administrativa · (31) 3201-4919 · Funcionamento. Segunda a Sexta8h as 18h. Nossas unidades ..."
+          }
+        ],
+        "site_oficial": {
+          "titulo": "Viação Sertaneja – Transporte de passageiros, cargas e ...",
+          "link": "https://viacaosertaneja.com.br/",
+          "snippet": "Com mais de 400 colaboradores, a empresa mantém seu compromisso com tradição, segurança e qualidade, atuando no transporte de passageiros, cargas e turismo ..."
+        },
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "Viação Sertaneja faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
+  },
+  "penedoturismo": {
+    "empresa": "Penedo Turismo",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": null,
+        "referencias": [],
+        "erro": "Erro ao consultar o AI Overview (tentativa 1): HTTPSConnectionPool(host='serpapi.com', port=443): Read timed out. (read timeout=15)"
+      },
+      "Google_TopSites": {
+        "conteudo": "Secretaria de Turismo - Prefeitura de Teresópolis: A Secretaria Municipal de Turismo de Teresópolis (SECTUR) é responsável pelas políticas públicas de turismo, tendo como meta a formalização e a geração de ... GRAN TURISMO 7 - MONTEI UM SILVIA S15 PRA DRIFT ...: 9º Episódio de Gran Turismo 7, game lançado dia 04/03/2022 para Ps4 e Ps5, estou jogando no Ps5 no modo que prioriza o Ray Tracing. Gran Turismo 2 - 1 Disc per Day - PlayStation #13: Gran Turismo 2 - 1 Disc per Day - PlayStation #13 · Comments. Camera Settings in Gran Turismo 7: Complete Guide: Sofrendo com a câmera estática no Gran Turismo 7? Veja como configurar corretamente e entenda cada ajuste. ✓ Curta, comente e compartilhe! Quem são os fundadores do PassHub e por que ...: Mais do que reunir ferramentas, o PassHub busca transformar a maneira como os profissionais do Turismo trabalham, conectando diferentes ... Gran Turismo 7: Finalizando o Cardápio nº 41 Vision ...: Gran Turismo 7 é o oitavo título da linha principal da série Gran Turismo. ... Gran Turismo 7: Finalizando o Cardápio nº 41 Vision Gran Turismo. GRAN TURISMO 7 - DICAS PARA JOGADORES ...: Dicas para jogadores iniciantes no Gran Turismo 7, aprenda como configurar as assistências, controle e camera, veja como melhorar seus ... 8 MOTIVOS para fazer o CURSO GESTÃO DE TURISMO: Fala pessoaaal! No vídeo de hoje listo 8 motivos para fazer o curso de Gestão de Turismo. Ao longo dessa graduação venho gravando conteúdos ...",
+        "sites": [
+          {
+            "titulo": "Secretaria de Turismo - Prefeitura de Teresópolis",
+            "link": "http://teresopolis.rj.gov.br/secretarias/turismo_1",
+            "snippet": "A Secretaria Municipal de Turismo de Teresópolis (SECTUR) é responsável pelas políticas públicas de turismo, tendo como meta a formalização e a geração de ..."
+          },
+          {
+            "titulo": "GRAN TURISMO 7 - MONTEI UM SILVIA S15 PRA DRIFT ...",
+            "link": "https://www.youtube.com/watch?v=H7oPyCJrTdI",
+            "snippet": "9º Episódio de Gran Turismo 7, game lançado dia 04/03/2022 para Ps4 e Ps5, estou jogando no Ps5 no modo que prioriza o Ray Tracing."
+          },
+          {
+            "titulo": "Gran Turismo 2 - 1 Disc per Day - PlayStation #13",
+            "link": "https://www.youtube.com/watch?v=cnNMmReL4Ck",
+            "snippet": "Gran Turismo 2 - 1 Disc per Day - PlayStation #13 · Comments."
+          },
+          {
+            "titulo": "Camera Settings in Gran Turismo 7: Complete Guide",
+            "link": "https://www.youtube.com/watch?v=dW1fKozdwh8&vl=pt",
+            "snippet": "Sofrendo com a câmera estática no Gran Turismo 7? Veja como configurar corretamente e entenda cada ajuste. ✓ Curta, comente e compartilhe!"
+          },
+          {
+            "titulo": "Quem são os fundadores do PassHub e por que ...",
+            "link": "https://www.panrotas.com.br/mercado/tecnologia/2026/08/quem-sao-os-fundadores-do-passhub-e-por-que-apostaram-no-turismo_231552.html",
+            "snippet": "Mais do que reunir ferramentas, o PassHub busca transformar a maneira como os profissionais do Turismo trabalham, conectando diferentes ..."
+          },
+          {
+            "titulo": "Gran Turismo 7: Finalizando o Cardápio nº 41 Vision ...",
+            "link": "https://www.youtube.com/watch?v=U4FhadoZzEc",
+            "snippet": "Gran Turismo 7 é o oitavo título da linha principal da série Gran Turismo. ... Gran Turismo 7: Finalizando o Cardápio nº 41 Vision Gran Turismo."
+          },
+          {
+            "titulo": "GRAN TURISMO 7 - DICAS PARA JOGADORES ...",
+            "link": "https://www.youtube.com/watch?v=oZABZUzydIQ",
+            "snippet": "Dicas para jogadores iniciantes no Gran Turismo 7, aprenda como configurar as assistências, controle e camera, veja como melhorar seus ..."
+          },
+          {
+            "titulo": "8 MOTIVOS para fazer o CURSO GESTÃO DE TURISMO",
+            "link": "https://www.youtube.com/watch?v=8IRQfi_nDmY",
+            "snippet": "Fala pessoaaal! No vídeo de hoje listo 8 motivos para fazer o curso de Gestão de Turismo. Ao longo dessa graduação venho gravando conteúdos ..."
+          }
+        ],
+        "site_oficial": null,
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "Penedo Turismo faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
+  },
+  "gadotti": {
+    "empresa": "Gadotti",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": null,
+        "referencias": [],
+        "erro": "Erro ao consultar o AI Overview (tentativa 1): HTTPSConnectionPool(host='serpapi.com', port=443): Read timed out. (read timeout=15)"
+      },
+      "Google_TopSites": {
+        "conteudo": "Viação Gadotti: Passagens de Ônibus: Compre passagens de ônibus acessíveis e viaje com conforto. Oferecemos Wi-Fi a bordo e motoristas treinados. Reserve já! Gadotti | Agência de Viagens (@gadottiturismooficial): Na Gadotti Turismo, você encontra pacotes rodoviários planejados para proporcionar conforto, segurança, organização e tranquilidade em todos os momentos. Gadotti Turismo: A Viação Gadotti é uma companhia de ônibus de viagem com a melhor frota de Santa Catarina, veículos modernos e com toda tecnologia necessária para tornar a sua ... GADOTTI: viagens de ônibus e horários | Comprar online - Omio: A Gadotti é uma empresa rodoviária tradicional que construiu sua história com foco na qualidade do atendimento e na segurança viária. Com sede no sul do Brasil, ... A Gadotti: A segurança é um dos pontos fortes da Gadotti, por isso nossa manutenção preventiva é executada dentro da garagem da empresa, por profissionais treinados. Para ... Gadotti Agência de Viagens - Pacotes Aéreos, Rodoviários e ...: Gadotti Agência de Viagens: pacotes aéreos, rodoviários e cruzeiros nacionais e internacionais com preços imperdíveis. Viaje com quem entende de viagem! Viação Gadotti - Passagens de Ônibus: A companhia de ônibus atende mais de 50 rotas entre os estados de São Paulo e Santa Catarina, com destaque para viagens da capital paulista até Balneário ... Viação Gadotti | Blumenau SC: A melhor frota de Santa Catarina. Veículos modernos e com toda tecnologia necessária para tornar a sua viagem mais segura. Viagem e transporte.",
+        "sites": [
+          {
+            "titulo": "Viação Gadotti: Passagens de Ônibus",
+            "link": "https://www.gadotti.com.br/",
+            "snippet": "Compre passagens de ônibus acessíveis e viaje com conforto. Oferecemos Wi-Fi a bordo e motoristas treinados. Reserve já!"
+          },
+          {
+            "titulo": "Gadotti | Agência de Viagens (@gadottiturismooficial)",
+            "link": "https://www.instagram.com/gadottiturismooficial/",
+            "snippet": "Na Gadotti Turismo, você encontra pacotes rodoviários planejados para proporcionar conforto, segurança, organização e tranquilidade em todos os momentos."
+          },
+          {
+            "titulo": "Gadotti Turismo",
+            "link": "https://www.reclameaqui.com.br/empresa/gadotti-turismo/",
+            "snippet": "A Viação Gadotti é uma companhia de ônibus de viagem com a melhor frota de Santa Catarina, veículos modernos e com toda tecnologia necessária para tornar a sua ..."
+          },
+          {
+            "titulo": "GADOTTI: viagens de ônibus e horários | Comprar online - Omio",
+            "link": "https://www.omio.com.br/empresas/autocarros/gadotti-a66vq",
+            "snippet": "A Gadotti é uma empresa rodoviária tradicional que construiu sua história com foco na qualidade do atendimento e na segurança viária. Com sede no sul do Brasil, ..."
+          },
+          {
+            "titulo": "A Gadotti",
+            "link": "https://www.gadottiturismo.com.br/a_gadotti",
+            "snippet": "A segurança é um dos pontos fortes da Gadotti, por isso nossa manutenção preventiva é executada dentro da garagem da empresa, por profissionais treinados. Para ..."
+          },
+          {
+            "titulo": "Gadotti Agência de Viagens - Pacotes Aéreos, Rodoviários e ...",
+            "link": "https://gadottiviagens.com.br/",
+            "snippet": "Gadotti Agência de Viagens: pacotes aéreos, rodoviários e cruzeiros nacionais e internacionais com preços imperdíveis. Viaje com quem entende de viagem!"
+          },
+          {
+            "titulo": "Viação Gadotti - Passagens de Ônibus",
+            "link": "https://queropassagem.com.br/auto-viacao-gadotti",
+            "snippet": "A companhia de ônibus atende mais de 50 rotas entre os estados de São Paulo e Santa Catarina, com destaque para viagens da capital paulista até Balneário ..."
+          },
+          {
+            "titulo": "Viação Gadotti | Blumenau SC",
+            "link": "https://www.facebook.com/gadottioficial/?locale=pt_BR",
+            "snippet": "A melhor frota de Santa Catarina. Veículos modernos e com toda tecnologia necessária para tornar a sua viagem mais segura. Viagem e transporte."
+          }
+        ],
+        "site_oficial": {
+          "titulo": "Viação Gadotti: Passagens de Ônibus",
+          "link": "https://www.gadotti.com.br/",
+          "snippet": "Compre passagens de ônibus acessíveis e viaje com conforto. Oferecemos Wi-Fi a bordo e motoristas treinados. Reserve já!"
+        },
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "Gadotti faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
+  },
+  "luxor": {
+    "empresa": "Luxor",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": null,
+        "referencias": [],
+        "erro": "Erro ao consultar o AI Overview (tentativa 1): HTTPSConnectionPool(host='serpapi.com', port=443): Read timed out. (read timeout=15)"
+      },
+      "Google_TopSites": {
+        "conteudo": "Grupo LuxorWay – Recursos Humanos e Pesquisa Cadastral: Serviço de recrutamento especializado em cargos de alta gestão, buscando profissionais com perfil e habilidades específicas para atender as necessidades da ... Grupo Luxor Way (@grupoluxorway): O Grupo Luxor Way apoia empresas por meio de treinamentos, palestras e iniciativas voltadas ao desenvolvimento de equipes e lideranças. #CapitalHumano ... Grupo Luxor Way: O Grupo Luxor Way nasceu há uma década com o objetivo de atender às necessidades no âmbito dos Recursos Humanos. Nossa proposta é baseada no desenvolvimento ... Trabalhar na empresa LUXOR WAY RECURSOS HUMANOS: Trabalhei terceirizada para o Supermercado Mundial e gostei muito da empresa. Pagamento certinho e em dia e tem refeições no local. Ótimo ambiente de trabalho. Luxor Agro — Creating the farms of the future: Em parceria com a natureza, transformamos pastagens degradadas em fazendas produtivas e diversificadas, resilientes às mudanças climáticas. In partnership with ... Grupo Luxor Way | Rio de Janeiro RJ: O Grupo Luxor Way atua no recrutamento de profissionais PCD, conectando talentos às oportunidades de acordo com as necessidades de cada empresa e as ... EMPRESA: A Luxor Way Recursos Humanos foi criada com a finalidade de oferecer ao mercado corporativo, serviços técnicos em Recrutamento & Seleção de Pessoal, ... Luxor Way Recursos Humanos - Rio de Janeiro: Quer trabalhar no(a) Luxor Way Recursos Humanos? O que ela faz? Como faço para trabalhar lá? Veja mais vagas disponíveis e envie seu Currículo! LUXOR VIAGENS E TURISMO LTDA - EPP: O CNPJ da empresa LUXOR VIAGENS E TURISMO LTDA - EPP LUXOR TRAVEL - LIFESTYLE & CONCIERGE MANAGEMENT é 21.849.368/0001-07. Com sede em NATAL, RN, possui 11 anos ...",
+        "sites": [
+          {
+            "titulo": "Grupo LuxorWay – Recursos Humanos e Pesquisa Cadastral",
+            "link": "https://grupoluxorway.com.br/",
+            "snippet": "Serviço de recrutamento especializado em cargos de alta gestão, buscando profissionais com perfil e habilidades específicas para atender as necessidades da ..."
+          },
+          {
+            "titulo": "Grupo Luxor Way (@grupoluxorway)",
+            "link": "https://www.instagram.com/grupoluxorway/",
+            "snippet": "O Grupo Luxor Way apoia empresas por meio de treinamentos, palestras e iniciativas voltadas ao desenvolvimento de equipes e lideranças. #CapitalHumano ..."
+          },
+          {
+            "titulo": "Grupo Luxor Way",
+            "link": "https://br.linkedin.com/company/grupo-luxor-way",
+            "snippet": "O Grupo Luxor Way nasceu há uma década com o objetivo de atender às necessidades no âmbito dos Recursos Humanos. Nossa proposta é baseada no desenvolvimento ..."
+          },
+          {
+            "titulo": "Trabalhar na empresa LUXOR WAY RECURSOS HUMANOS",
+            "link": "https://br.indeed.com/cmp/Luxor-Way-Recursos-Humanos/reviews",
+            "snippet": "Trabalhei terceirizada para o Supermercado Mundial e gostei muito da empresa. Pagamento certinho e em dia e tem refeições no local. Ótimo ambiente de trabalho."
+          },
+          {
+            "titulo": "Luxor Agro — Creating the farms of the future",
+            "link": "https://luxoragro.com.br/",
+            "snippet": "Em parceria com a natureza, transformamos pastagens degradadas em fazendas produtivas e diversificadas, resilientes às mudanças climáticas. In partnership with ..."
+          },
+          {
+            "titulo": "Grupo Luxor Way | Rio de Janeiro RJ",
+            "link": "https://www.facebook.com/grupoluxorway/?locale=pt_BR",
+            "snippet": "O Grupo Luxor Way atua no recrutamento de profissionais PCD, conectando talentos às oportunidades de acordo com as necessidades de cada empresa e as ..."
+          },
+          {
+            "titulo": "EMPRESA",
+            "link": "http://luxorwayrh.com.br/quemsomos.php",
+            "snippet": "A Luxor Way Recursos Humanos foi criada com a finalidade de oferecer ao mercado corporativo, serviços técnicos em Recrutamento & Seleção de Pessoal, ..."
+          },
+          {
+            "titulo": "Luxor Way Recursos Humanos - Rio de Janeiro",
+            "link": "https://www.empregos.com.br/empresa/luxor-way-recursos-humanos/e-115029",
+            "snippet": "Quer trabalhar no(a) Luxor Way Recursos Humanos? O que ela faz? Como faço para trabalhar lá? Veja mais vagas disponíveis e envie seu Currículo!"
+          },
+          {
+            "titulo": "LUXOR VIAGENS E TURISMO LTDA - EPP",
+            "link": "https://empresas.serasaexperian.com.br/consulta-gratis/LUXOR-VIAGENS-E-TURISMO-LTDA-EPP-21849368000107",
+            "snippet": "O CNPJ da empresa LUXOR VIAGENS E TURISMO LTDA - EPP LUXOR TRAVEL - LIFESTYLE & CONCIERGE MANAGEMENT é 21.849.368/0001-07. Com sede em NATAL, RN, possui 11 anos ..."
+          }
+        ],
+        "site_oficial": {
+          "titulo": "Grupo LuxorWay – Recursos Humanos e Pesquisa Cadastral",
+          "link": "https://grupoluxorway.com.br/",
+          "snippet": "Serviço de recrutamento especializado em cargos de alta gestão, buscando profissionais com perfil e habilidades específicas para atender as necessidades da ..."
+        },
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "Luxor faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
   }
 }
