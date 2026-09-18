@@ -4,7 +4,7 @@ Liga a API e já abre a interface no navegador — um comando só.
 Uso:
     python start.py
 
-Isso substitui rodar "uvicorn api.app:app --reload --port 8000" manualmente
+Isso substitui rodar "uvicorn api.app:app --reload --port 8001" manualmente
 e depois abrir o navegador na mão. Pra encerrar tudo, é só apertar Ctrl+C
 nesta janela do terminal (isso derruba a API também).
 
