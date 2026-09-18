@@ -268,7 +268,7 @@ def no_gerar(state: DescricaoState) -> dict:
 
 def no_humanizar(state: DescricaoState) -> dict:
     instrucao_tipo_empresa = (state.get("classificacao_tipo") or {}).get("instrucao", "")
-    texto = humanizar_texto(state["texto_gerado"], instrucao_tipo_empresa)
+    texto = humanizar_texto(state["texto_gerado"], instrucao_tipo_empresa, categoria=state.get("categoria"))
     return {"texto_humanizado": texto}
 
 

@@ -210,17 +210,36 @@ def gerar_descricao(
     # informada) e podia desfazer a escolha de "passagem"/"viagem" que a
     # geração acima já acertou.
     instrucao_tipo_empresa = (classificacao_tipo or {}).get("instrucao", "")
-    return humanizar_texto(texto_gerado, instrucao_tipo_empresa)
+    return humanizar_texto(texto_gerado, instrucao_tipo_empresa, categoria=categoria)
 
 
-def humanizar_texto(texto_gerado: str, instrucao_tipo_empresa: str = "") -> str:
+def _resolver_humanizador(categoria: str = None) -> dict:
+    """Escolhe qual bloco "humanizador" usar: o específico da categoria, se
+    ela tiver um preenchido (com "template" de verdade, não só a chave
+    vazia), senão cai pro humanizador geral (fora das categorias, raiz do
+    JSON) — que é o comportamento de sempre, mantido como padrão pra
+    qualquer categoria que não precisar de um tratamento próprio."""
+    dados_categoria = PROMPTS_POR_CATEGORIA.get(categoria) or {}
+    humanizador_especifico = dados_categoria.get("humanizador")
+    if humanizador_especifico and humanizador_especifico.get("template"):
+        return humanizador_especifico
+    return PROMPTS_POR_CATEGORIA.get("humanizador") or {}
+
+
+def humanizar_texto(texto_gerado: str, instrucao_tipo_empresa: str = "", categoria: str = None) -> str:
     """
     Etapa final de revisão: reescreve o texto gerado pra soar mais natural
     e menos "de IA", preservando fatos e diferenciais da Buser já citados.
-    Roda pra qualquer categoria/tom, sempre — o prompt vem do bloco
-    "humanizador" (fora das categorias) em prompts_descricao.json.
+
+    Roda pra qualquer categoria/tom, sempre — usa o humanizador PRÓPRIO da
+    categoria (bloco "humanizador" dentro dela, em prompts_descricao.json)
+    quando ele existir e tiver conteúdo; senão cai pro humanizador GERAL
+    (bloco "humanizador" na raiz do JSON, fora das categorias) — ver
+    _resolver_humanizador(). Isso permite dar um tratamento específico só
+    pra uma categoria (ex: negrito em termos-chave só em "empresa") sem
+    duplicar o prompt inteiro nem afetar as demais.
     """
-    dados_humanizador = PROMPTS_POR_CATEGORIA.get("humanizador")
+    dados_humanizador = _resolver_humanizador(categoria)
     if not dados_humanizador or not dados_humanizador.get("template"):
         return texto_gerado
 
