@@ -23,9 +23,21 @@ def _restaura_prompts_apos_teste():
 
 
 def test_categoria_sem_humanizador_proprio_usa_o_geral():
+    # "cidade" (e as demais, exceto "empresa") continuam sem humanizador
+    # próprio preenchido — "empresa" tem o dela real agora, testada à parte
+    # em test_empresa_tem_humanizador_proprio_com_regra_de_negrito.
     geral = PROMPTS_POR_CATEGORIA["humanizador"]
-    assert _resolver_humanizador("empresa") is geral
     assert _resolver_humanizador("cidade") is geral
+    assert _resolver_humanizador("ponto_turistico") is geral
+    assert _resolver_humanizador("terminal_rodoviaria") is geral
+
+
+def test_empresa_tem_humanizador_proprio_com_regra_de_negrito():
+    geral = PROMPTS_POR_CATEGORIA["humanizador"]
+    resultado = _resolver_humanizador("empresa")
+    assert resultado is not geral
+    assert "negrito" in resultado["template"].lower()
+    assert "**expressão**" in resultado["template"]
 
 
 def test_categoria_com_humanizador_proprio_usa_o_dela():

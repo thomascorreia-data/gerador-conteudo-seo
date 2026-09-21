@@ -117,6 +117,82 @@ def _cidade_sede_bate_com_fontes(texto: str, fontes_texto: str) -> bool:
     return False
 
 
+# O prompt do humanizador de empresa (ver prompts_descricao.json) já pede
+# negrito em FRASE-CHAVE, não palavra solta — mas um prompt sozinho não
+# garante 100% (testado ao vivo nesta conversa: o modelo às vezes volta a
+# negritar o nome da empresa isolado, um ano, ou uma lista de cidades,
+# mesmo com o exemplo antes/depois no prompt). Essa checagem pega esses
+# casos e aciona retry, mesmo padrão das outras regras determinísticas
+# abaixo (barato, sem custo de IA).
+PADRAO_NEGRITO_MARKDOWN = re.compile(r"\*\*(.+?)\*\*")
+MAX_PALAVRAS_NEGRITO = 8
+
+
+def _checar_negrito_empresa(texto: str, entidade: str) -> list:
+    """Devolve no máximo 1 motivo por negrito ÚNICO (não 1 por ocorrência) —
+    um termo repetido 3x no texto (ex: "Eucatur" negritado toda vez que
+    aparece) geraria a mesma reclamação 3x, o que só deixa o feedback pro
+    modelo mais longo sem agregar nada novo."""
+    entidade_normalizada = unidecode(entidade or "").strip().lower()
+
+    negritos_brutos = [n.strip() for n in PADRAO_NEGRITO_MARKDOWN.findall(texto)]
+    ocorrencias = {}
+    ordem = []
+    for negrito in negritos_brutos:
+        chave = unidecode(negrito).lower()
+        if chave not in ocorrencias:
+            ordem.append((chave, negrito))
+        ocorrencias[chave] = ocorrencias.get(chave, 0) + 1
+
+    motivos = []
+    for chave, negrito in ordem:
+        # Palavra única (sem espaço) não é frase-chave — pega tanto nome
+        # solto ("Eucatur") quanto ano ("1955") quanto termo técnico
+        # isolado ("ar-condicionado", "BlueTec"). Frases têm espaço.
+        if " " not in negrito:
+            motivos.append(
+                f'negrito "**{negrito}**" é uma palavra só, não uma frase-chave — '
+                f'negrite uma expressão com contexto (ex: "linhas regulares '
+                f'interestaduais"), não um termo isolado'
+            )
+
+        # Limite de tamanho: sem isso, o modelo negrita a frase inteira
+        # (visto ao vivo: 14-16 palavras) — vira um bloco cinza, não um
+        # destaque. O prompt já pede "até ~8 palavras"; aqui é a garantia.
+        qtd_palavras = len(negrito.split())
+        if qtd_palavras > MAX_PALAVRAS_NEGRITO:
+            motivos.append(
+                f'negrito "**{negrito}**" tem {qtd_palavras} palavras, longo '
+                f'demais (máximo {MAX_PALAVRAS_NEGRITO}) — negrite só a parte '
+                f'mais importante da frase, não a frase inteira'
+            )
+
+        # 2+ vírgulas = 4+ itens numa enumeração "A, B, C e D" — isso sim é
+        # lista longa (cidades/rotas). 1 vírgula só ("A, B e C", 3 itens) é
+        # uma combinação curta de benefícios/comodidades — o próprio padrão
+        # bom pedido no prompt (ex: "ar-condicionado, Wi-Fi e sanitários"),
+        # não pode ser confundido com a lista longa que a regra quer evitar.
+        if negrito.count(",") >= 2:
+            motivos.append(
+                f'negrito "**{negrito}**" parece uma lista longa (2+ vírgulas) — '
+                f'não negrite listas extensas de cidades/rotas/itens'
+            )
+
+        if chave == entidade_normalizada:
+            motivos.append(
+                f'negrito "**{negrito}**" é só o nome da empresa sozinho — '
+                f'negrite uma frase que dê contexto, não o nome isolado'
+            )
+
+        if ocorrencias[chave] > 1:
+            motivos.append(
+                f'negrito "**{negrito}**" aparece {ocorrencias[chave]}x no texto — '
+                f'cada negrito deve destacar algo diferente, não repetir o mesmo termo'
+            )
+
+    return motivos
+
+
 class DescricaoState(TypedDict, total=False):
     # entrada
     tema: str
@@ -302,6 +378,7 @@ def _checar_regras(state: DescricaoState) -> list:
                 'não invente a sede, só cite se estiver explícita nas fontes '
                 '(cuidado pra não confundir uma cidade de rota com a sede)'
             )
+        motivos.extend(_checar_negrito_empresa(texto, state.get("entidade")))
 
     classificacao_tipo = state.get("classificacao_tipo")
     if classificacao_tipo and classificacao_tipo["palavra"] == "passagem":
