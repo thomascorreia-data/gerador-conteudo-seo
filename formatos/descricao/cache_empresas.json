@@ -6394,5 +6394,77 @@
       "palavra": "viagem",
       "instrucao": "Luxor Viagens e Turismo faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
     }
+  },
+  "guirrotransporte": {
+    "empresa": "Guirro Transporte",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": "A Guirro Transportes (também conhecida como Guirro Tur) é uma empresa brasileira de transporte de passageiros sediada em São Paulo, especializada em fretamento, turismo, locação de veículos e transfers. O que a empresa faz História: Iniciou as atividades em 1985 com transporte escolar e expandiu para os setores de turismo e fretamento. Serviços: Oferece aluguel de ônibus, micro-ônibus, vans e automóveis para viagens, feiras, congressos e traslados. Parcerias: Realiza viagens de fretamento colaborando com plataformas digitais de mobilidade, como a , e mantém parcerias de frota com marcas do setor rodoviário como a Scania. Atuação: Possui registros de autorização para transporte fretado na região de São Paulo. Você pode conferir mais detalhes operacionais diretamente no site oficial da Guirro Transportes ou verificar avaliações de atendimento no perfil da Guirro Transportes no Reclame Aqui . Explore a página oficial da empresa em Guirro Transportes. Veja opções de viagens na Buser. Confira a reputação no Reclame Aqui. Gostaria de saber sobre os canais de contato, orçamentos ou avaliações da Guirro Transportes?",
+        "referencias": [],
+        "erro": null
+      },
+      "Google_TopSites": {
+        "conteudo": "GUIRRO Transportes - Aluguel de Vans, Ônibus e Transfers.: Serviços de Receptivo, Transfers, Viagens, Locações, Fretamentos, Feiras e. Congressos, os quais podem ser realizados com Ônibus, Micro Ônibus, ... Guirro Transportes: Saiba se a empresa Guirro Transportes é confiável, segundo os consumidores. Se tiver problemas, reclame, resolva, avalie. Reclame Aqui. GUIRRO TRANSPORTES (@guirrotransportes): Empresa especializada em transporte de passageiros. TURISMO | FRETAMENTO. GUIRRO TRANSPORTES LTDA - ME - 15687446000103: A sua situação cadastral é ATIVA e sua principal atividade econômica é Transporte rodoviário coletivo de passageiros, sob regime de fretamento, municipal. Score. Passagens Guirro Transportes — Compre Online | Buser: A Guirro Transportes é especializada em fretamento e turismo, oferecendo locação de ônibus, vans e transfers para diversas ocasiões, como feiras e congressos. Codema Scania on Instagram: \"A Guirro Transportes começou ...: A nossa empresa nasceu em mil novecentos e oitenta e cinco com os nossos pais do transporte escolar. Nós viemos da linha do transporte ... Guirro Transportes Ltda - Processos: O Jusbrasil encontrou 74 processos que mencionam o nome Guirro Transportes LTDA. A maioria é do TJSP, seguido por TRT2. Desses processos encontrados ... guirro tur: Razão Social: GUIRRO TRANSPORTES LTDA ME. Nome Fantasia: GUIRRO TUR. CNPJ: 15.687.446/0001-03. Frota, Sistema, Região da Autorização, Situação Cadastral. Guirro Tur Guirro Transportes LTDA 15687446000103 São ...: A empresa Guirro Tur de CNPJ 15.687.446/0001-03, fundada em 29/05/2012 e com razão social Guirro Transportes LTDA, está localizada na cidade São Paulo do estado ...",
+        "sites": [
+          {
+            "titulo": "GUIRRO Transportes - Aluguel de Vans, Ônibus e Transfers.",
+            "link": "https://guirro.com.br/",
+            "snippet": "Serviços de Receptivo, Transfers, Viagens, Locações, Fretamentos, Feiras e. Congressos, os quais podem ser realizados com Ônibus, Micro Ônibus, ..."
+          },
+          {
+            "titulo": "Guirro Transportes",
+            "link": "https://www.reclameaqui.com.br/empresa/guirro-transportes/",
+            "snippet": "Saiba se a empresa Guirro Transportes é confiável, segundo os consumidores. Se tiver problemas, reclame, resolva, avalie. Reclame Aqui."
+          },
+          {
+            "titulo": "GUIRRO TRANSPORTES (@guirrotransportes)",
+            "link": "https://www.instagram.com/guirrotransportes/",
+            "snippet": "Empresa especializada em transporte de passageiros. TURISMO | FRETAMENTO."
+          },
+          {
+            "titulo": "GUIRRO TRANSPORTES LTDA - ME - 15687446000103",
+            "link": "https://empresas.serasaexperian.com.br/consulta-gratis/GUIRRO-TRANSPORTES-LTDA-15687446000103",
+            "snippet": "A sua situação cadastral é ATIVA e sua principal atividade econômica é Transporte rodoviário coletivo de passageiros, sob regime de fretamento, municipal. Score."
+          },
+          {
+            "titulo": "Passagens Guirro Transportes — Compre Online | Buser",
+            "link": "https://guirro-transportes.buser.com.br/",
+            "snippet": "A Guirro Transportes é especializada em fretamento e turismo, oferecendo locação de ônibus, vans e transfers para diversas ocasiões, como feiras e congressos."
+          },
+          {
+            "titulo": "Codema Scania on Instagram: \"A Guirro Transportes começou ...",
+            "link": "https://www.instagram.com/reel/DBOr6pEJbqE/",
+            "snippet": "A nossa empresa nasceu em mil novecentos e oitenta e cinco com os nossos pais do transporte escolar. Nós viemos da linha do transporte ..."
+          },
+          {
+            "titulo": "Guirro Transportes Ltda - Processos",
+            "link": "https://www.jusbrasil.com.br/processos/nome/160383507/guirro-transportes-ltda",
+            "snippet": "O Jusbrasil encontrou 74 processos que mencionam o nome Guirro Transportes LTDA. A maioria é do TJSP, seguido por TRT2. Desses processos encontrados ..."
+          },
+          {
+            "titulo": "guirro tur",
+            "link": "http://www.emtu.sp.gov.br/Sistemas/empresa/resultado.htm?chelemento=11533&pg=buscaregiao.htm",
+            "snippet": "Razão Social: GUIRRO TRANSPORTES LTDA ME. Nome Fantasia: GUIRRO TUR. CNPJ: 15.687.446/0001-03. Frota, Sistema, Região da Autorização, Situação Cadastral."
+          },
+          {
+            "titulo": "Guirro Tur Guirro Transportes LTDA 15687446000103 São ...",
+            "link": "https://cnpj.biz/15687446000103",
+            "snippet": "A empresa Guirro Tur de CNPJ 15.687.446/0001-03, fundada em 29/05/2012 e com razão social Guirro Transportes LTDA, está localizada na cidade São Paulo do estado ..."
+          }
+        ],
+        "site_oficial": {
+          "titulo": "GUIRRO Transportes - Aluguel de Vans, Ônibus e Transfers.",
+          "link": "https://guirro.com.br/",
+          "snippet": "Serviços de Receptivo, Transfers, Viagens, Locações, Fretamentos, Feiras e. Congressos, os quais podem ser realizados com Ônibus, Micro Ônibus, ..."
+        },
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "Guirro Transporte faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
   }
 }

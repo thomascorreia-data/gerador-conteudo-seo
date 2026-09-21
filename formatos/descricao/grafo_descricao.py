@@ -127,12 +127,29 @@ def _cidade_sede_bate_com_fontes(texto: str, fontes_texto: str) -> bool:
 PADRAO_NEGRITO_MARKDOWN = re.compile(r"\*\*(.+?)\*\*")
 MAX_PALAVRAS_NEGRITO = 8
 
+# Vazamento visto ao vivo: o prompt tinha "(7 palavras)" como anotação
+# didática DENTRO do exemplo, e o modelo copiou o padrão pro texto de
+# verdade (ex: "**linhas regulares** (5 palavras) que conectam..."), mesmo
+# com um aviso "não escreva isso" logo abaixo do exemplo — o aviso sozinho
+# não segurou. O prompt já foi corrigido (contagem só em prosa, fora do
+# trecho copiável), mas essa checagem fica como rede de segurança, caso
+# aconteça de novo por outro motivo.
+PADRAO_CONTAGEM_VAZADA = re.compile(r"\(\s*\d+\s*palavras?\s*\)", re.IGNORECASE)
+
 
 def _checar_negrito_empresa(texto: str, entidade: str) -> list:
     """Devolve no máximo 1 motivo por negrito ÚNICO (não 1 por ocorrência) —
     um termo repetido 3x no texto (ex: "Eucatur" negritado toda vez que
     aparece) geraria a mesma reclamação 3x, o que só deixa o feedback pro
     modelo mais longo sem agregar nada novo."""
+    if PADRAO_CONTAGEM_VAZADA.search(texto):
+        return [
+            'o texto tem uma anotação de contagem de palavras (ex: "(7 palavras)") '
+            'vazada pro meio do conteúdo — isso é só uma explicação do exemplo do '
+            'prompt, NUNCA deve aparecer no texto revisado de verdade; remova '
+            'qualquer parêntese desse tipo'
+        ]
+
     entidade_normalizada = unidecode(entidade or "").strip().lower()
 
     negritos_brutos = [n.strip() for n in PADRAO_NEGRITO_MARKDOWN.findall(texto)]
@@ -178,11 +195,11 @@ def _checar_negrito_empresa(texto: str, entidade: str) -> list:
                 f'não negrite listas extensas de cidades/rotas/itens'
             )
 
-        if chave == entidade_normalizada:
-            motivos.append(
-                f'negrito "**{negrito}**" é só o nome da empresa sozinho — '
-                f'negrite uma frase que dê contexto, não o nome isolado'
-            )
+        # Negritar só o nome da empresa (ex: "**Guirro Transporte**", abrindo
+        # o parágrafo) NÃO é mais bloqueado aqui — é um padrão válido às
+        # vezes (testado ao vivo: um texto bom demais foi reprovado 3x só
+        # por causa disso). A preferência por frase mais longa/descritiva
+        # fica só como orientação no prompt, não como regra dura no revisor.
 
         if ocorrencias[chave] > 1:
             motivos.append(

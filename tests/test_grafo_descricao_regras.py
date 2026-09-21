@@ -238,10 +238,13 @@ def test_cidade_nao_exige_contagem_de_paragrafos():
 
 # --- negrito (só empresa) ----------------------------------------------------
 
-def test_negrito_de_nome_da_empresa_sozinho_reprova():
-    texto = "A **Eucatur** atua em todo o Brasil."
-    motivos = _checar_regras(_state(texto, categoria="empresa", entidade="Eucatur"))
-    assert any("nome da empresa sozinho" in m for m in motivos)
+def test_negrito_de_nome_da_empresa_sozinho_nao_reprova_mais():
+    # Antes era bloqueado; agora é só preferência no prompt (ver Guirro
+    # Transporte, testado ao vivo: um texto bom foi reprovado 3x só por
+    # isso) — o revisor não trava mais nesse caso específico.
+    texto = "A **Guirro Transporte** atua em todo o Brasil."
+    motivos = _checar_regras(_state(texto, categoria="empresa", entidade="Guirro Transporte"))
+    assert not any("nome da empresa" in m for m in motivos)
 
 
 def test_negrito_de_ano_isolado_reprova():
@@ -306,6 +309,20 @@ def test_texto_sem_negrito_nenhum_nao_reprova_por_isso():
     texto = "A empresa opera linhas regulares interestaduais com segurança."
     motivos = _checar_regras(_state(texto, categoria="empresa", entidade="Eucatur"))
     assert not any("negrito" in m for m in motivos)
+
+
+def test_contagem_de_palavras_vazada_reprova():
+    # Bug visto ao vivo: o modelo copiou a anotação didática "(N palavras)"
+    # do exemplo do prompt pro texto de verdade.
+    texto = "A empresa opera **linhas regulares** (5 palavras) com segurança."
+    motivos = _checar_regras(_state(texto, categoria="empresa", entidade="Eucatur"))
+    assert any("contagem de palavras" in m for m in motivos)
+
+
+def test_contagem_de_palavras_sem_parenteses_nao_reprova():
+    texto = "A empresa opera **linhas regulares interestaduais** com segurança."
+    motivos = _checar_regras(_state(texto, categoria="empresa", entidade="Eucatur"))
+    assert not any("contagem de palavras" in m for m in motivos)
 
 
 def test_negrito_fora_da_categoria_empresa_nao_e_checado():
