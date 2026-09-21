@@ -111,18 +111,10 @@ def _headers():
     return {"X-API-KEY": API_KEY, "Content-Type": "application/json"}
 
 
-PADRAO_NEGRITO_MARKDOWN = re.compile(r"\*\*(.+?)\*\*")
-
-
 def quebras_para_html(texto: str) -> str:
-    """O campo espera HTML, não texto puro — duas conversões:
-    - Quebra de linha vira <br>, então "par.1\\n\\npar.2" (parágrafos
-      separados por linha em branco) vira "par.1<br><br>par.2".
-    - Negrito em markdown (o humanizador de empresa marca termos com
-      **termo**, ver prompts_descricao.json) vira <strong>termo</strong> —
-      sem isso, os asteriscos apareceriam literalmente na página publicada
-      em vez de negrito de verdade."""
-    texto = PADRAO_NEGRITO_MARKDOWN.sub(r"<strong>\1</strong>", texto)
+    """O campo espera HTML, não texto puro — troca cada quebra de linha por
+    <br>, então "par.1\\n\\npar.2" (parágrafos separados por linha em branco)
+    vira "par.1<br><br>par.2"."""
     return texto.replace("\n", "<br>")
 
 

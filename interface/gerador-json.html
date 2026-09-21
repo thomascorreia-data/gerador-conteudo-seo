@@ -684,18 +684,13 @@ document.getElementById('copyBtn').onclick = () => {
 };
 
 // O campo "about_text"/"summary_text" da API de páginas de empresa espera
-// HTML, não texto puro — duas conversões, só na hora de exportar (JSON/CSV):
-// a tela continua mostrando o texto original cru (com \n\n e **termo**),
-// que branco/negrito nenhum precisa de conversão pra já dar pra ler.
-// 1) quebra de linha vira <br> (dois parágrafos separados por linha em
-//    branco viram "par.1<br><br>par.2")
-// 2) negrito em markdown (o humanizador de empresa marca termos com
-//    **termo**, ver prompts_descricao.json) vira <strong>termo</strong> —
-//    sem isso, os asteriscos apareceriam literalmente na página publicada.
+// HTML, não texto puro — troca cada quebra de linha por <br> (então dois
+// parágrafos separados por linha em branco viram "par.1<br><br>par.2").
+// Só é aplicado na hora de exportar (JSON/CSV): a tela continua mostrando
+// o texto original com white-space:pre-wrap, que já renderiza \n\n como
+// parágrafo visualmente, sem precisar do <br>.
 function quebrasParaHtml(texto){
-  return String(texto ?? '')
-    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-    .replace(/\n/g, '<br>');
+  return String(texto ?? '').replace(/\n/g, '<br>');
 }
 
 function comHtmlNaDescricao(resultados){
