@@ -134,8 +134,6 @@ def enviar(empresa: dict, dry_run: bool) -> None:
     payload = {
         "company_slug": slug,
         "summary_text": quebras_para_html(empresa["summary_text"]),
-        "contact_text": " ",
-        "contact_email": " ",
         "about_text": quebras_para_html(empresa["about_text"]),
         "faqs": [],
     }
