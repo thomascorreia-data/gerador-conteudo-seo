@@ -6326,5 +6326,278 @@
       "palavra": "viagem",
       "instrucao": "Novos Rumos Turismo faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
     }
+  },
+  "galaxiaturismo": {
+    "empresa": "Galaxia Turismo",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": "A Galáxia Turismo é uma agência de viagens e empresa de fretamento rodoviário com sede em Contagem, Minas Gerais. O que ela faz Pacotes Rodoviários: Oferece viagens em grupo para destinos populares como Caldas Novas, Olímpia, Porto Seguro, Angra dos Reis, Paraty e Holambra. Frota Própria: Opera com ônibus modernos (como os modelos nomeados com temas espaciais) para traslados e passeios. Serviços Extras: Inclui reserva de hotéis, guias turísticos credenciados e seguros de viagem. Contato e Localização Endereço: Av. João Cezar de Oliveira, 1275 (Big Shopping, Loja 260, 2º piso), Eldorado, Contagem - MG. Telefone/WhatsApp: (31) 2180-2888 Site oficial: Galáxia Turismo Se quiser, posso te ajudar a encontrar pacotes específicos ou avaliações de clientes sobre algum destino operado por eles. Quer prosseguir?",
+        "referencias": [],
+        "erro": null
+      },
+      "Google_TopSites": {
+        "conteudo": "Galaxia Turismo: Reservas on-line · Reserva de hotéis · Reservas Rodoviárias e Hospedagem · Seguro Viagens · Destaques e promoções · Instagram: @galaxia.turismo/ · Nossa empresa. galaxia.turismo - Galáxia: Saídas semanais p/ Caldas Novas e destinos incríveis! Frota moderna + guia credenciado Reserve pelo WhatsApp · Quer curtir o Hot Park pagando MENOS e ... Galáxia Turismo | Contagem MG: Agência de turismo com 25 anos de mercado em Contagem/MG. Especialista em pacotes rodoviários para Caldas Novas, Olímpia, Porto Seguro, Angra dos Reis, ... Conheça nossa empresa: Galáxia Turismo é uma empresa especializada em fretamento de ônibus para viagens de lazer, corporativas, religiosas e eventos em geral. Com uma frota moderna e ... Galaxia Turismo: Galaxia Turismo é confiável? Selo RAV Não Verificado. Empresa não verificada. Essa empresa ainda não é verificada e não possui o selo de confiança do Reclame ... Tarifários Caldas Novas - Agentes de viagens: Tarifários para Agentes de Viagens · Caldas Novas · Diversos - Rodoviários · Nossa empresa · Últimos posts · Links principais · Endereço e contatos. Prencha o cadastro abaixo para ter ...: Seja um revendedor de nossos pacotes. Prencha o cadastro abaixo para ter acesso à área do agente. Lá você podera baixar nossas tabelas, tarifários, ... Galáxia Turismo on Reels: Nosso pacote inclui transporte com serviço de bordo, guia de turismo, brinde personalizado e um dia de pelos pontos turísticos da cidade. Entre ...",
+        "sites": [
+          {
+            "titulo": "Galaxia Turismo",
+            "link": "https://galaxiaturismo.com.br/",
+            "snippet": "Reservas on-line · Reserva de hotéis · Reservas Rodoviárias e Hospedagem · Seguro Viagens · Destaques e promoções · Instagram: @galaxia.turismo/ · Nossa empresa."
+          },
+          {
+            "titulo": "galaxia.turismo - Galáxia",
+            "link": "https://www.instagram.com/galaxia.turismo/",
+            "snippet": "Saídas semanais p/ Caldas Novas e destinos incríveis! Frota moderna + guia credenciado Reserve pelo WhatsApp · Quer curtir o Hot Park pagando MENOS e ..."
+          },
+          {
+            "titulo": "Galáxia Turismo | Contagem MG",
+            "link": "https://www.facebook.com/galaxiaviagenseturismo/?locale=pt_BR",
+            "snippet": "Agência de turismo com 25 anos de mercado em Contagem/MG. Especialista em pacotes rodoviários para Caldas Novas, Olímpia, Porto Seguro, Angra dos Reis, ..."
+          },
+          {
+            "titulo": "Conheça nossa empresa",
+            "link": "https://galaxiaturismo.com.br/institucional/?id=11&/conhe%C3%A7a-nossa-agencia",
+            "snippet": "Galáxia Turismo é uma empresa especializada em fretamento de ônibus para viagens de lazer, corporativas, religiosas e eventos em geral. Com uma frota moderna e ..."
+          },
+          {
+            "titulo": "Galaxia Turismo",
+            "link": "https://www.reclameaqui.com.br/empresa/galaxia-turismo/",
+            "snippet": "Galaxia Turismo é confiável? Selo RAV Não Verificado. Empresa não verificada. Essa empresa ainda não é verificada e não possui o selo de confiança do Reclame ..."
+          },
+          {
+            "titulo": "Tarifários Caldas Novas - Agentes de viagens",
+            "link": "http://galaxiaturismo.com.br/links/",
+            "snippet": "Tarifários para Agentes de Viagens · Caldas Novas · Diversos - Rodoviários · Nossa empresa · Últimos posts · Links principais · Endereço e contatos."
+          },
+          {
+            "titulo": "Prencha o cadastro abaixo para ter ...",
+            "link": "http://www.galaxiaturismo.com.br/agencias/agencias_cadastro.asp?",
+            "snippet": "Seja um revendedor de nossos pacotes. Prencha o cadastro abaixo para ter acesso à área do agente. Lá você podera baixar nossas tabelas, tarifários, ..."
+          },
+          {
+            "titulo": "Galáxia Turismo on Reels",
+            "link": "https://www.facebook.com/galaxiaviagenseturismo/videos/2321333135018037/",
+            "snippet": "Nosso pacote inclui transporte com serviço de bordo, guia de turismo, brinde personalizado e um dia de pelos pontos turísticos da cidade. Entre ..."
+          }
+        ],
+        "site_oficial": {
+          "titulo": "Galaxia Turismo",
+          "link": "https://galaxiaturismo.com.br/",
+          "snippet": "Reservas on-line · Reserva de hotéis · Reservas Rodoviárias e Hospedagem · Seguro Viagens · Destaques e promoções · Instagram: @galaxia.turismo/ · Nossa empresa."
+        },
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "Galaxia Turismo faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
+  },
+  "marlimazul": {
+    "empresa": "Marlim Azul",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": null,
+        "referencias": [],
+        "erro": "Erro ao consultar o AI Overview (tentativa 1): HTTPSConnectionPool(host='serpapi.com', port=443): Read timed out. (read timeout=15)"
+      },
+      "Google_TopSites": {
+        "conteudo": "Marlim Azul – Site: A Marlim Azul utiliza tecnologia de ponta para analisar o comportamento dos motoristas durante a condução. Nosso sistema monitora, via GPS, acelerômetro e ... Marlim Azul Turismo (@marlimazulturismo): ⚽ Na MARLIM AZUL, cada trajeto é pensado para unir conforto, organização, tecnologia e cuidado em cada detalhe — porque grandes momentos começam antes do ... MARLIM AZUL COMERCIO E TRANSPORTE DE ...: O CNPJ da empresa MARLIM AZUL COMERCIO E TRANSPORTE DE PETROLEO E DERIVADOS LTDA MARLIM AVIATION é 39.825.435/0023-16. Com sede em VITORIA, ES, possui 3 anos, 1 ... MARLIM AZUL TURISMO - Carreiras e Empregos: A Marlim Azul Turismo foi fundada em 09 de Fevereiro de 2000, com o objetivo de oferecer serviços de transporte rodoviário nas áreas de turismo e negócios ... MARLIM AZUL TURISMO RECEBE CERTIFICAÇÃO ...: Com 25 anos de história celebrados em fevereiro, a Marlim Azul se consolidou como uma das principais empresas de turismo do Espírito Santo e ... Avaliações da empresa Marlim Azul Comércio de Petróleo e ...: Plano de saúde unimed é excelente, sem carência e ótimo para família, ticket alimentação compatível com a cidade e mercado de trabalho. Contras. Segurança é assunto constante nos ônibus da Marlim Azul: No segmento de fretamento contínuo, atua no transporte de funcionários de empresas. Além do atendimento diferenciado, da valorização humana e do investimento em ... marlim azul turismo: Ônibus da empresa Marlim Azul causa colisão e se nega a cobrir os custos do reparo do veículo. Empresa completamente despreparada e que não honra com suas ...",
+        "sites": [
+          {
+            "titulo": "Marlim Azul – Site",
+            "link": "https://www.marlimazulturismo.com.br/",
+            "snippet": "A Marlim Azul utiliza tecnologia de ponta para analisar o comportamento dos motoristas durante a condução. Nosso sistema monitora, via GPS, acelerômetro e ..."
+          },
+          {
+            "titulo": "Marlim Azul Turismo (@marlimazulturismo)",
+            "link": "https://www.instagram.com/marlimazulturismo/",
+            "snippet": "⚽ Na MARLIM AZUL, cada trajeto é pensado para unir conforto, organização, tecnologia e cuidado em cada detalhe — porque grandes momentos começam antes do ..."
+          },
+          {
+            "titulo": "MARLIM AZUL COMERCIO E TRANSPORTE DE ...",
+            "link": "https://empresas.serasaexperian.com.br/consulta-gratis/MARLIM-AZUL-COMERCIO-E-TRANSPORTE-DE-PETROLEO-E-DERIVADOS-LTDA-39825435002316",
+            "snippet": "O CNPJ da empresa MARLIM AZUL COMERCIO E TRANSPORTE DE PETROLEO E DERIVADOS LTDA MARLIM AVIATION é 39.825.435/0023-16. Com sede em VITORIA, ES, possui 3 anos, 1 ..."
+          },
+          {
+            "titulo": "MARLIM AZUL TURISMO - Carreiras e Empregos",
+            "link": "https://br.indeed.com/cmp/Marlim-Azul-Turismo",
+            "snippet": "A Marlim Azul Turismo foi fundada em 09 de Fevereiro de 2000, com o objetivo de oferecer serviços de transporte rodoviário nas áreas de turismo e negócios ..."
+          },
+          {
+            "titulo": "MARLIM AZUL TURISMO RECEBE CERTIFICAÇÃO ...",
+            "link": "https://www.instagram.com/p/DN4IG3Ej73N/",
+            "snippet": "Com 25 anos de história celebrados em fevereiro, a Marlim Azul se consolidou como uma das principais empresas de turismo do Espírito Santo e ..."
+          },
+          {
+            "titulo": "Avaliações da empresa Marlim Azul Comércio de Petróleo e ...",
+            "link": "https://www.glassdoor.com.br/Avalia%C3%A7%C3%B5es/Marlim-Azul-Com%C3%A9rcio-de-Petr%C3%B3leo-e-Derivados-Avalia%C3%A7%C3%B5es-E2684475.htm",
+            "snippet": "Plano de saúde unimed é excelente, sem carência e ótimo para família, ticket alimentação compatível com a cidade e mercado de trabalho. Contras."
+          },
+          {
+            "titulo": "Segurança é assunto constante nos ônibus da Marlim Azul",
+            "link": "https://revistaautobus.com.br/seguranca-e-assunto-constante-nos-onibus-da-marlim-azul/",
+            "snippet": "No segmento de fretamento contínuo, atua no transporte de funcionários de empresas. Além do atendimento diferenciado, da valorização humana e do investimento em ..."
+          },
+          {
+            "titulo": "marlim azul turismo",
+            "link": "https://www.reclameaqui.com.br/empresa/marlim-azul-turismo/",
+            "snippet": "Ônibus da empresa Marlim Azul causa colisão e se nega a cobrir os custos do reparo do veículo. Empresa completamente despreparada e que não honra com suas ..."
+          }
+        ],
+        "site_oficial": {
+          "titulo": "Marlim Azul – Site",
+          "link": "https://www.marlimazulturismo.com.br/",
+          "snippet": "A Marlim Azul utiliza tecnologia de ponta para analisar o comportamento dos motoristas durante a condução. Nosso sistema monitora, via GPS, acelerômetro e ..."
+        },
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "Marlim Azul faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
+  },
+  "mfturismo": {
+    "empresa": "MF Turismo",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": "A MF Turismo (ou M.F. Tur) refere-se a empresas de transporte rodoviário e fretamento de passageiros que operam no Brasil, sendo a mais conhecida a M.F. Tur de Roseira/SP , com mais de 15 anos de atuação em viagens turísticas e fretamento empresarial. Principais Atividades Fretamento e Turismo: Transporte de passageiros para viagens municipais, intermunicipais ou interestaduais. Frota: Operação com ônibus de grande porte (como modelos Double Decker e semi-leito), micro-ônibus e vans, dependendo da unidade regional. Variedade de Empresas: O nome \"MF Turismo\" ou variações similares também pode aparecer associado a agências de transporte terrestre em outras localidades (como Canaã dos Carajás/PA) ou a serviços de venda de passagens online em parceiras rodoviárias. Se você busca uma unidade específica da MF Turismo em alguma cidade ou estado, me informe a localização para eu detalhar os contatos e serviços exatos.",
+        "referencias": [],
+        "erro": null
+      },
+      "Google_TopSites": {
+        "conteudo": "M.F TUR - ROSEIRA/SP: Somos uma empresa de fretamento empresarial e turístico, atuando há mais de 15 anos na área de transporte de passageiros com zelo, excelência e qualidade. MF TURISMO (@mfturismo.br) · Roseira, SP: 3.2K+ followers · 125 posts · | Fretamento e Turismo | Excelência Receptiva | Orçamentos e reservas, clique no link. Mf Viagens & Turismo: Saiba se a empresa Mf Viagens & Turismo é confiável, segundo os consumidores. Se tiver problemas, reclame, resolva, avalie. Reclame Aqui. Passagens MF Turismo — Compre Online | Buser: Passagens de ônibus da MF Turismo. Compre passagens da MF Turismo online pela Buser. Rotas para Votuporanga, Jales, São José do Rio Preto e +50 destinos. M F Turismo em Roseira, SP - 52.779.322/0001-84: É uma empresa do tipo ME. Sua atividade principal é de Transporte rodoviário coletivo de passageiros, sob regime de fretamento, intermunicipal, interestadual e ... MF Transporte e Turismo | MF é uma empresa prestadora de ...: Desenvolve e assessora projetos de transporte de passageiros. Trasnporte de Vans, Ônibus, carros de passeio. M F TURISMO E AGENCIA DE TRANSPORTE ...: O CNPJ da empresa M F TURISMO E AGENCIA DE TRANSPORTE TERRESTRE E AEREO LTDA - ME (M.F TUR/ AGENCIA DE TRANSPORTE E TURISMO) é 30.850.621/0001-25. Onibus double deck - M.F TUR - ROSEIRA/SP: Venham viajar com segurança, conforto e qualidade. Viajem conosco na M.F. Tur, sempre com o compromisso de atender aos clientes com excelência!",
+        "sites": [
+          {
+            "titulo": "M.F TUR - ROSEIRA/SP",
+            "link": "http://www.mftur.com.br/",
+            "snippet": "Somos uma empresa de fretamento empresarial e turístico, atuando há mais de 15 anos na área de transporte de passageiros com zelo, excelência e qualidade."
+          },
+          {
+            "titulo": "MF TURISMO (@mfturismo.br) · Roseira, SP",
+            "link": "https://www.instagram.com/mfturismo.br/",
+            "snippet": "3.2K+ followers · 125 posts · | Fretamento e Turismo | Excelência Receptiva | Orçamentos e reservas, clique no link."
+          },
+          {
+            "titulo": "Mf Viagens & Turismo",
+            "link": "https://www.reclameaqui.com.br/empresa/mf-viagens-e-turismo/",
+            "snippet": "Saiba se a empresa Mf Viagens & Turismo é confiável, segundo os consumidores. Se tiver problemas, reclame, resolva, avalie. Reclame Aqui."
+          },
+          {
+            "titulo": "Passagens MF Turismo — Compre Online | Buser",
+            "link": "https://mf-turismo.buser.com.br/",
+            "snippet": "Passagens de ônibus da MF Turismo. Compre passagens da MF Turismo online pela Buser. Rotas para Votuporanga, Jales, São José do Rio Preto e +50 destinos."
+          },
+          {
+            "titulo": "M F Turismo em Roseira, SP - 52.779.322/0001-84",
+            "link": "https://www.econodata.com.br/consulta-empresa/52779322000184-m-f-turismo-ltda",
+            "snippet": "É uma empresa do tipo ME. Sua atividade principal é de Transporte rodoviário coletivo de passageiros, sob regime de fretamento, intermunicipal, interestadual e ..."
+          },
+          {
+            "titulo": "MF Transporte e Turismo | MF é uma empresa prestadora de ...",
+            "link": "http://mftransporte.com.br/",
+            "snippet": "Desenvolve e assessora projetos de transporte de passageiros. Trasnporte de Vans, Ônibus, carros de passeio."
+          },
+          {
+            "titulo": "M F TURISMO E AGENCIA DE TRANSPORTE ...",
+            "link": "https://empresas.serasaexperian.com.br/consulta-gratis/M-F-TURISMO-E-AGENCIA-DE-TRANSPORTE-TERRESTRE-E-AEREO-LTDA-ME-30850621000125",
+            "snippet": "O CNPJ da empresa M F TURISMO E AGENCIA DE TRANSPORTE TERRESTRE E AEREO LTDA - ME (M.F TUR/ AGENCIA DE TRANSPORTE E TURISMO) é 30.850.621/0001-25."
+          },
+          {
+            "titulo": "Onibus double deck - M.F TUR - ROSEIRA/SP",
+            "link": "http://www.mftur.com.br/veiculo/1",
+            "snippet": "Venham viajar com segurança, conforto e qualidade. Viajem conosco na M.F. Tur, sempre com o compromisso de atender aos clientes com excelência!"
+          }
+        ],
+        "site_oficial": {
+          "titulo": "M.F TUR - ROSEIRA/SP",
+          "link": "http://www.mftur.com.br/",
+          "snippet": "Somos uma empresa de fretamento empresarial e turístico, atuando há mais de 15 anos na área de transporte de passageiros com zelo, excelência e qualidade."
+        },
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "MF Turismo faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
+  },
+  "bompani": {
+    "empresa": "Bompani",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": "A Bompani pode se referir a duas empresas diferentes dependendo do contexto: a tradicional fabricante italiana de eletrodomésticos ou a empresa brasileira de turismo em Santa Catarina. 1. Bompani (Itália) – Eletrodomésticos O que é: Uma tradicional marca italiana fundada em 1954 por Gastone Bompani na região de Modena (Emília-Romanha) . Atuação: É especializada na fabricação de eletrodomésticos para cozinha com design, fabricação e identidade italianas (Made in Italy ). Principais produtos: Fogões (free-standing), fornos, cooktops, geladeiras (incluindo linhas com visual retrô anos 50), lava-louças e coifas. 2. Bompani Turismo (Brasil) O que é: Uma agência de viagens e empresa de transporte rodoviário fundada em 2013 e sediada em Luiz Alves, Santa Catarina. Atuação: Focada no segmento de fretamento de ônibus , agenciamento de viagens de turismo regional e internacional, e excursões de compras. Você gostaria de saber mais detalhes sobre os produtos de cozinha da Bompani italiana ou sobre os serviços da Bompani Turismo em Santa Catarina?",
+        "referencias": [],
+        "erro": null
+      },
+      "Google_TopSites": {
+        "conteudo": "Bompani Turismo: Empresa localizada em Luiz Alves/SC, oferece o serviço de aluguel e fretamento de ônibus de turismo inclusive com o serviço de escolta. Bompani Turismo (@bompaniturismo): Bompani Turismo colecionando momentos com você! ☎️ (47) 3377-1556. Entre em contato conosco · URUGUAI NO CARNAVAL 🗓️ Dias 04 a 08 de Fevereiro de ... Bompani Turismo | Luiz Alves SC: A Bompani Turismo atua no ramo de fretamento de ônibus, agenciamento de viagens de turismo e viagens de compras. Centro de Informações Turísticas · $$. BOMPANI AGENCIA DE VIAGENS E TURISMO LTDA - EPP: A sua situação cadastral é ATIVA e sua principal atividade econômica é Transporte rodoviário coletivo de passageiros, com itinerário fixo, interestadual. Score. Bompani Turismo: colecionando momentos há uma década: A Bompani Turismo foi criada junto a IB Indústria e Comércio de Bebidas, empresa conhecida e conceituada em toda a região – além de sua tradição ... Sua próxima viagem merece a Bompani Turismo! Aqui ...: ... empresa de viagens, indico sempre a @bn.transportes . Parabéns à todos. Desde o CEO até o mais novo de tempo de empresa. Sucesso sempre ... Sobre a Empresa: A Bompani turismo foi criada junto a IB Indústria e Comércio de Bebidas, uma empresa conhecida e conceituada em toda a região, além da tradição de muitos ... Bompani Turismo em Luiz Alves, SC - 28.475.710/0001-97: A empresa com a razão social Bompani Agencia de Viagens e Turismo LTDA, tem o nome fantasia Bompani Turismo, opera com o CNPJ 28.475.710/0001-97 ... Bompani Turismo: Histórico. A Bompani Turismo foi criada junto a IB Indústria e Comércio de Bebidas, uma empresa conhecida e conceituada do segmento de bebidas fundada em 1964.",
+        "sites": [
+          {
+            "titulo": "Bompani Turismo",
+            "link": "https://bompaniturismo.com.br/",
+            "snippet": "Empresa localizada em Luiz Alves/SC, oferece o serviço de aluguel e fretamento de ônibus de turismo inclusive com o serviço de escolta."
+          },
+          {
+            "titulo": "Bompani Turismo (@bompaniturismo)",
+            "link": "https://www.instagram.com/bompaniturismo/",
+            "snippet": "Bompani Turismo colecionando momentos com você! ☎️ (47) 3377-1556. Entre em contato conosco · URUGUAI NO CARNAVAL 🗓️ Dias 04 a 08 de Fevereiro de ..."
+          },
+          {
+            "titulo": "Bompani Turismo | Luiz Alves SC",
+            "link": "https://www.facebook.com/bompaniturismo/?locale=pt_BR",
+            "snippet": "A Bompani Turismo atua no ramo de fretamento de ônibus, agenciamento de viagens de turismo e viagens de compras. Centro de Informações Turísticas · $$."
+          },
+          {
+            "titulo": "BOMPANI AGENCIA DE VIAGENS E TURISMO LTDA - EPP",
+            "link": "https://empresas.serasaexperian.com.br/consulta-gratis/BOMPANI-AGENCIA-DE-VIAGENS-E-TURISMO-LTDA-EPP-28475710000197",
+            "snippet": "A sua situação cadastral é ATIVA e sua principal atividade econômica é Transporte rodoviário coletivo de passageiros, com itinerário fixo, interestadual. Score."
+          },
+          {
+            "titulo": "Bompani Turismo: colecionando momentos há uma década",
+            "link": "https://jornaljc.com.br/jc-empresas/2023/bompani-turismo-colecionando-momentos-ha-uma-decada/",
+            "snippet": "A Bompani Turismo foi criada junto a IB Indústria e Comércio de Bebidas, empresa conhecida e conceituada em toda a região – além de sua tradição ..."
+          },
+          {
+            "titulo": "Sua próxima viagem merece a Bompani Turismo! Aqui ...",
+            "link": "https://www.instagram.com/reel/DF_SPv5xVb2/",
+            "snippet": "... empresa de viagens, indico sempre a @bn.transportes . Parabéns à todos. Desde o CEO até o mais novo de tempo de empresa. Sucesso sempre ..."
+          },
+          {
+            "titulo": "Sobre a Empresa",
+            "link": "https://bompaniturismo.com.br/sobre-a-empresa.php",
+            "snippet": "A Bompani turismo foi criada junto a IB Indústria e Comércio de Bebidas, uma empresa conhecida e conceituada em toda a região, além da tradição de muitos ..."
+          },
+          {
+            "titulo": "Bompani Turismo em Luiz Alves, SC - 28.475.710/0001-97",
+            "link": "https://www.econodata.com.br/consulta-empresa/28475710000197-bompani-agencia-de-viagens-e-turismo-ltda",
+            "snippet": "A empresa com a razão social Bompani Agencia de Viagens e Turismo LTDA, tem o nome fantasia Bompani Turismo, opera com o CNPJ 28.475.710/0001-97 ..."
+          },
+          {
+            "titulo": "Bompani Turismo",
+            "link": "https://mundoonibus.com.br/site/portfolio/bompani/",
+            "snippet": "Histórico. A Bompani Turismo foi criada junto a IB Indústria e Comércio de Bebidas, uma empresa conhecida e conceituada do segmento de bebidas fundada em 1964."
+          }
+        ],
+        "site_oficial": {
+          "titulo": "Bompani Turismo",
+          "link": "https://bompaniturismo.com.br/",
+          "snippet": "Empresa localizada em Luiz Alves/SC, oferece o serviço de aluguel e fretamento de ônibus de turismo inclusive com o serviço de escolta."
+        },
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "Bompani faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
   }
 }

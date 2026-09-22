@@ -55,6 +55,17 @@ def slugify(nome: str) -> str:
     return texto
 
 
+def limpar_slug(slug: str) -> str:
+    """Remove o segmento "empresa" do slug, onde quer que apareça (sufixo,
+    meio, etc.) — visto ao vivo: a planilha às vezes traz nomes genéricos
+    tipo "Nobre Empresa"/"Scatur Empresa" (usados como placeholder na hora
+    de identificar que o tema é uma empresa), e o slug resultante
+    ("nobre-empresa") não existe de verdade no banco da Buser (só
+    "nobre"). Junta hífens duplos que sobrarem depois de remover o segmento."""
+    segmentos = [s for s in slug.split("-") if s.lower() != "empresa"]
+    return "-".join(segmentos)
+
+
 def carregar_empresas(caminho: str) -> list:
     """Lê o xlsx com 4 colunas: Slug, Nome da Empresa, Descrição Informativo,
     Descrição Vendas. O slug agora vem pronto na planilha — não é mais
@@ -71,7 +82,7 @@ def carregar_empresas(caminho: str) -> list:
             continue
         empresas.append({
             "nome": nome,
-            "company_slug": str(slug).strip(),
+            "company_slug": limpar_slug(str(slug).strip()),
             "summary_text": (vendas or "").strip(),
             "about_text": (informativo or "").strip(),
         })
