@@ -6599,5 +6599,77 @@
       "palavra": "viagem",
       "instrucao": "Bompani faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
     }
+  },
+  "gimenes": {
+    "empresa": "Gimenes",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": null,
+        "referencias": [],
+        "erro": "Erro ao consultar o AI Overview (tentativa 1): HTTPSConnectionPool(host='serpapi.com', port=443): Read timed out. (read timeout=15)"
+      },
+      "Google_TopSites": {
+        "conteudo": "Gimenes&Gimenes: GIMENES & GIMENES é uma empresa especializada no ramo de auditoria, atuando desde 1986 no mercado de sindicância. Criada e dirigida por profissionais ... Gimenes Turismo: Excursão para São Paulo. BATE E VOLTA para compras e negócios, viajar com muito mais conforto e segurança, é com a Gimenes Turismo. F & M GIMENES CONSULTORIA EM SEGUROS LTDA - EPP: Razão Social. F & M GIMENES CONSULTORIA EM SEGUROS LTDA - EPP. Nome Fantasia. GIMENES & GIMENES ASSESSORIA EM SINISTROS. Data de fundação. 25/01/2011. Gimenes Turismo (@gimenesfranca): Empresa familiar a mais de 40 anos no mercado Viagens de compras ou negócios para São Paulo (bate e volta diário) Fretamento de ônibus. GIMENES AGENCIA DE VIAGENS E TURISMO: Gimenes Agencia de Viagens e Turismo LtdaFranca SP Não indico pra você que procura uma empresa séria que cumpra horários e regras determinadas ... Gimenes Consultoria Empresarial - Soluções Empresariais ...: Somos uma empresa especializada em soluções empresariais, com mais de 30 anos de experiência no mercado, ajudando empresas de diversos segmentos a alcançarem ... Jurídico: A Gimenes & Gimenes é gerida por profissionais capacitados, com certificação técnica em Gestão de Seguros e Previdência e Regulação/Liquidação de Sinistros de ... Gimenes & Gimenes Assessoria Em Sinistros: Empresa Gimenes & Gimenes Assessoria Em Sinistros atua no ramo de Atividades de cobranças e informações cadastrais, com início das atividades em 25/01/2011 ... Laboratório Gimenes | Análises clínicas em Joinville: O Laboratório Gimenes atua desde 1988 no mercado de Análises Clínicas, oferecendo serviços com qualidade, agilidade, segurança e excelência para pacientes, ...",
+        "sites": [
+          {
+            "titulo": "Gimenes&Gimenes",
+            "link": "https://br.linkedin.com/company/gimenes-gimenes",
+            "snippet": "GIMENES & GIMENES é uma empresa especializada no ramo de auditoria, atuando desde 1986 no mercado de sindicância. Criada e dirigida por profissionais ..."
+          },
+          {
+            "titulo": "Gimenes Turismo",
+            "link": "https://gimenesturismo.com/",
+            "snippet": "Excursão para São Paulo. BATE E VOLTA para compras e negócios, viajar com muito mais conforto e segurança, é com a Gimenes Turismo."
+          },
+          {
+            "titulo": "F & M GIMENES CONSULTORIA EM SEGUROS LTDA - EPP",
+            "link": "https://empresas.serasaexperian.com.br/consulta-gratis/F-M-GIMENES-CONSULTORIA-EM-SEGUROS-LTDA-13248733000191",
+            "snippet": "Razão Social. F & M GIMENES CONSULTORIA EM SEGUROS LTDA - EPP. Nome Fantasia. GIMENES & GIMENES ASSESSORIA EM SINISTROS. Data de fundação. 25/01/2011."
+          },
+          {
+            "titulo": "Gimenes Turismo (@gimenesfranca)",
+            "link": "https://www.instagram.com/gimenesfranca/",
+            "snippet": "Empresa familiar a mais de 40 anos no mercado Viagens de compras ou negócios para São Paulo (bate e volta diário) Fretamento de ônibus."
+          },
+          {
+            "titulo": "GIMENES AGENCIA DE VIAGENS E TURISMO",
+            "link": "https://www.reclameaqui.com.br/empresa/gimenes-agencia-de-viagens-e-turismo/",
+            "snippet": "Gimenes Agencia de Viagens e Turismo LtdaFranca SP Não indico pra você que procura uma empresa séria que cumpra horários e regras determinadas ..."
+          },
+          {
+            "titulo": "Gimenes Consultoria Empresarial - Soluções Empresariais ...",
+            "link": "https://gimenesconsultoria.com.br/",
+            "snippet": "Somos uma empresa especializada em soluções empresariais, com mais de 30 anos de experiência no mercado, ajudando empresas de diversos segmentos a alcançarem ..."
+          },
+          {
+            "titulo": "Jurídico",
+            "link": "https://gimenesgimenes.com.br/?page_id=12",
+            "snippet": "A Gimenes & Gimenes é gerida por profissionais capacitados, com certificação técnica em Gestão de Seguros e Previdência e Regulação/Liquidação de Sinistros de ..."
+          },
+          {
+            "titulo": "Gimenes & Gimenes Assessoria Em Sinistros",
+            "link": "https://b2bleads.com.br/empresa/gimenes-&-gimenes-assessoria-em-sinistros-13248733000191",
+            "snippet": "Empresa Gimenes & Gimenes Assessoria Em Sinistros atua no ramo de Atividades de cobranças e informações cadastrais, com início das atividades em 25/01/2011 ..."
+          },
+          {
+            "titulo": "Laboratório Gimenes | Análises clínicas em Joinville",
+            "link": "https://www.laboratoriogimenes.com.br/",
+            "snippet": "O Laboratório Gimenes atua desde 1988 no mercado de Análises Clínicas, oferecendo serviços com qualidade, agilidade, segurança e excelência para pacientes, ..."
+          }
+        ],
+        "site_oficial": {
+          "titulo": "Gimenes Turismo",
+          "link": "https://gimenesturismo.com/",
+          "snippet": "Excursão para São Paulo. BATE E VOLTA para compras e negócios, viajar com muito mais conforto e segurança, é com a Gimenes Turismo."
+        },
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "Gimenes faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
   }
 }
