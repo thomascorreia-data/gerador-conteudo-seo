@@ -1,10 +1,21 @@
 """
-Envia as descrições geradas (empresas_descricoes.xlsx) pra API de páginas de
-empresa da Buser (produção): cria (POST) ou atualiza (PATCH, se já existir)
-a company-page de cada empresa.
+Envia as descrições geradas pra API de páginas de empresa da Buser
+(produção): cria (POST) ou atualiza (PATCH, se já existir) a company-page
+de cada empresa.
+
+Fluxo por PASTA (sem precisar renomear nada na mão):
+    enviando/lotes/           <- solte aqui qualquer .xlsx novo (qualquer nome)
+    enviando/lotes_enviados/  <- pra onde um arquivo vai sozinho, DEPOIS de
+                                  processado, só se TODAS as empresas dele
+                                  deram certo (sem nenhum erro 400/500)
+
+Rodando o script, ele lê TODOS os .xlsx de enviando/lotes/, manda cada
+empresa (POST -> se já existir, cai pro PATCH) e só arquiva o arquivo que
+terminou 100% sem erro. Se sobrar erro (ex: slug errado), o arquivo FICA em
+lotes/ — corrija o slug direto nele e rode de novo, sem mover nada na mão.
 
 Mapeamento planilha -> API:
-    Slug                  -> company_slug (vem pronto da planilha, não é mais adivinhado do nome)
+    Slug                  -> company_slug (vem pronto da planilha)
     Descrição Vendas      -> summary_text
     Descrição Informativo -> about_text
 
@@ -12,7 +23,8 @@ Uso:
     ./venv/bin/python enviando--buser.py --dry-run          # só mostra o que seria enviado
     ./venv/bin/python enviando--buser.py --dry-run --limite 3
     ./venv/bin/python enviando--buser.py --limite 1          # envia só a 1a empresa, de verdade
-    ./venv/bin/python enviando--buser.py                     # envia todas, de verdade
+    ./venv/bin/python enviando--buser.py                     # envia tudo que estiver em lotes/, de verdade
+    ./venv/bin/python enviando--buser.py --json caminho.json # modo antigo, um arquivo só, sem mexer em lotes/
 """
 
 import argparse
@@ -32,7 +44,10 @@ load_dotenv()
 
 BASE_URL = "https://www.buser.com.br"
 ENDPOINT = f"{BASE_URL}/api/pages/integration/company-pages"
-XLSX_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "empresas_descricoes.xlsx")
+
+_DIR_ENVIANDO = os.path.dirname(os.path.abspath(__file__))
+PASTA_LOTES = os.path.join(_DIR_ENVIANDO, "lotes")
+PASTA_LOTES_ENVIADOS = os.path.join(_DIR_ENVIANDO, "lotes_enviados")
 
 API_KEY = os.getenv("BUSER_API_KEY")
 
@@ -64,6 +79,19 @@ def limpar_slug(slug: str) -> str:
     "nobre"). Junta hífens duplos que sobrarem depois de remover o segmento."""
     segmentos = [s for s in slug.split("-") if s.lower() != "empresa"]
     return "-".join(segmentos)
+
+
+def listar_lotes_pendentes() -> list:
+    """Lista os .xlsx em enviando/lotes/, em ordem alfabética (determinística
+    entre rodadas). Cria a pasta na hora se ainda não existir (primeira vez
+    rodando depois dessa mudança)."""
+    os.makedirs(PASTA_LOTES, exist_ok=True)
+    os.makedirs(PASTA_LOTES_ENVIADOS, exist_ok=True)
+    return sorted(
+        os.path.join(PASTA_LOTES, nome)
+        for nome in os.listdir(PASTA_LOTES)
+        if nome.lower().endswith(".xlsx") and not nome.startswith("~$")  # ~$ = lock file do Excel aberto
+    )
 
 
 def carregar_empresas(caminho: str) -> list:
@@ -129,7 +157,10 @@ def quebras_para_html(texto: str) -> str:
     return texto.replace("\n", "<br>")
 
 
-def enviar(empresa: dict, dry_run: bool) -> None:
+def enviar(empresa: dict, dry_run: bool) -> bool:
+    """Devolve True se deu certo (2xx) ou é dry-run, False se deu erro —
+    quem chama usa isso pra decidir se o ARQUIVO inteiro pode ser arquivado
+    em lotes_enviados/ (só quando NENHUMA empresa dele falhou)."""
     slug = empresa["company_slug"]
     payload = {
         "company_slug": slug,
@@ -146,7 +177,7 @@ def enviar(empresa: dict, dry_run: bool) -> None:
         # "\n\n" literal dentro da string (é assim que JSON representa
         # quebra de linha; ao ser lido de volta, volta a virar quebra real).
         print(json.dumps(payload, ensure_ascii=False, indent=2))
-        return
+        return True
 
     resposta = requests.post(ENDPOINT, headers=_headers(), json=payload, timeout=30)
 
@@ -165,13 +196,41 @@ def enviar(empresa: dict, dry_run: bool) -> None:
     print(f"{empresa['nome']} ({slug}) [{acao}]: {resposta.status_code}")
     if resposta.status_code >= 400:
         print(f"  -> {resposta.text[:300]}")
+        return False
+    return True
+
+
+def processar_arquivo(caminho: str, dry_run: bool, limite: int = None) -> bool:
+    """Envia todas as empresas de um arquivo. Devolve True (arquivo 100%
+    sem erro, pode arquivar) ou False (sobrou erro, arquivo fica onde está)."""
+    print(f"\n=== {os.path.basename(caminho)} ===")
+    empresas = carregar_empresas(caminho)
+    if limite:
+        empresas = empresas[:limite]
+
+    print(f"{len(empresas)} empresa(s) neste arquivo ({'dry-run' if dry_run else 'ENVIO REAL para ' + BASE_URL}).")
+
+    tudo_certo = True
+    for empresa in empresas:
+        deu_certo = enviar(empresa, dry_run=dry_run)
+        tudo_certo = tudo_certo and deu_certo
+        if not dry_run:
+            time.sleep(0.5)
+
+    return tudo_certo
+
+
+def arquivar(caminho: str) -> None:
+    destino = os.path.join(PASTA_LOTES_ENVIADOS, os.path.basename(caminho))
+    os.rename(caminho, destino)
+    print(f"  -> arquivo 100% sem erro, movido pra {os.path.relpath(destino, _DIR_ENVIANDO)}")
 
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--dry-run", action="store_true", help="só mostra o que seria enviado, não chama a API")
-    parser.add_argument("--limite", type=int, default=None, help="processa só as N primeiras empresas (pra teste)")
-    parser.add_argument("--json", metavar="CAMINHO", help="lê de um .json exportado pela interface em vez do xlsx padrão")
+    parser.add_argument("--limite", type=int, default=None, help="processa só as N primeiras empresas de CADA arquivo (pra teste)")
+    parser.add_argument("--json", metavar="CAMINHO", help="lê de um .json exportado pela interface, em vez da pasta enviando/lotes/")
     args = parser.parse_args()
 
     if not args.dry_run and not API_KEY:
@@ -179,16 +238,26 @@ def main():
 
     if args.json:
         empresas = carregar_empresas_de_json(args.json)
-    else:
-        empresas = carregar_empresas(XLSX_PATH)
-    if args.limite:
-        empresas = empresas[: args.limite]
+        if args.limite:
+            empresas = empresas[: args.limite]
+        print(f"{len(empresas)} empresa(s) a processar ({'dry-run' if args.dry_run else 'ENVIO REAL para ' + BASE_URL}).\n")
+        for empresa in empresas:
+            enviar(empresa, dry_run=args.dry_run)
+            if not args.dry_run:
+                time.sleep(0.5)
+        return
 
-    print(f"{len(empresas)} empresa(s) a processar ({'dry-run' if args.dry_run else 'ENVIO REAL para ' + BASE_URL}).\n")
-    for empresa in empresas:
-        enviar(empresa, dry_run=args.dry_run)
-        if not args.dry_run:
-            time.sleep(0.5)
+    arquivos = listar_lotes_pendentes()
+    if not arquivos:
+        print(f"Nenhum .xlsx encontrado em {os.path.relpath(PASTA_LOTES, _DIR_ENVIANDO)}/ — nada a fazer.")
+        return
+
+    print(f"{len(arquivos)} arquivo(s) pendente(s) em {os.path.relpath(PASTA_LOTES, _DIR_ENVIANDO)}/")
+
+    for caminho in arquivos:
+        tudo_certo = processar_arquivo(caminho, dry_run=args.dry_run, limite=args.limite)
+        if not args.dry_run and tudo_certo:
+            arquivar(caminho)
 
 
 if __name__ == "__main__":
