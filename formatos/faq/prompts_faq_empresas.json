@@ -1,43 +1,53 @@
 {
-  "descricao": "Config do FAQ específico de empresa: banco de perguntas prontas (universais, sobre a Buser — mesma resposta pra qualquer empresa) + templates de geração pra complementar com o que for específico daquela empresa (rota, operação, e só política de pet/bagagem/documento se vier de um FAQ real já coletado).",
+  "descricao": "Config do FAQ específico de empresa: banco de perguntas prontas (universais, sobre a Buser — mesma resposta pra qualquer empresa) + templates de geração pra complementar com o que for específico daquela empresa (rota, operação, e só política de pet/bagagem/documento se vier de um FAQ real já coletado). Cada pergunta (pronta ou gerada) tem um \"topico\" — usado só pra garantir que o mesmo ASSUNTO não apareça 2x no mesmo FAQ (ex: \"a Buser é segura?\" e \"a {entidade} é segura?\" são o mesmo tópico, 'seguranca', mesmo com texto diferente).",
   "perguntas_prontas": [
     {
+      "topico": "como_comprar",
       "pergunta": "Como faço pra viajar com a {entidade} pela Buser?",
       "resposta": "Basta acessar o site ou aplicativo da Buser, buscar seu destino e escolher a opção operada pela {entidade}. Todo o processo de reserva é feito online, sem precisar ir a um guichê físico."
     },
     {
+      "topico": "cancelamento",
       "pergunta": "Posso cancelar minha compra com a {entidade}?",
       "resposta": "Sim, a Buser oferece cancelamento grátis, direto pelo site ou aplicativo, dentro do prazo previsto para a tarifa escolhida."
     },
     {
+      "topico": "remarcacao",
       "pergunta": "É possível remarcar minha viagem com a {entidade}?",
       "resposta": "Sim, a remarcação é feita de forma prática pelo site ou app da Buser, sem precisar ligar ou ir até um guichê."
     },
     {
+      "topico": "pagamento",
       "pergunta": "Quais formas de pagamento a Buser aceita?",
       "resposta": "Você pode pagar com cartão de crédito, débito, Pix ou boleto, dependendo das opções disponíveis para a rota escolhida."
     },
     {
+      "topico": "atendimento",
       "pergunta": "Tenho atendimento se precisar de ajuda durante a viagem com a {entidade}?",
       "resposta": "Sim, a Buser oferece atendimento humano 24 horas para tirar dúvidas e ajudar em qualquer etapa da sua viagem."
     },
     {
+      "topico": "bilhete_digital",
       "pergunta": "Preciso imprimir o bilhete da {entidade}?",
       "resposta": "Não. O bilhete é digital e fica disponível no seu e-mail e na sua conta da Buser, podendo ser apresentado direto pelo celular no embarque."
     },
     {
+      "topico": "seguranca",
       "pergunta": "A compra pela Buser é segura?",
       "resposta": "Sim. A Buser utiliza um processo de pagamento seguro e protege os dados de quem compra em todas as etapas."
     },
     {
+      "topico": "conforto",
       "pergunta": "As poltronas da {entidade} são confortáveis?",
       "resposta": "Viajando com a {entidade} pela Buser você conta com poltronas confortáveis, pensadas pra tornar o trajeto mais agradável."
     },
     {
+      "topico": "vale_a_pena",
       "pergunta": "Vale a pena reservar com a {entidade} pela Buser?",
       "resposta": "Sim — além de contar com a {entidade}, você aproveita preço baixo, cancelamento grátis e um processo de reserva 100% digital, direto pela Buser."
     },
     {
+      "topico": "confirmacao",
       "pergunta": "Como recebo a confirmação da minha reserva com a {entidade}?",
       "resposta": "Assim que o pagamento é aprovado, você recebe a confirmação por e-mail e o bilhete já fica disponível na sua conta da Buser."
     }
@@ -45,11 +55,11 @@
   "geracao": {
     "sem_faq": {
       "descricao": "Não há FAQ real coletado — gera só o complemento específico da empresa (rota/operação), a partir da descrição/conteúdo genérico. Não inventa política de pet/bagagem/documento nem fala de fundação/biografia.",
-      "template": "Você é um redator de SEO especializado em criar FAQs para um site de transporte rodoviário.\n\nEste FAQ sobre {entidade} JÁ TEM perguntas prontas sobre a Buser (como comprar, cancelar, remarcar, formas de pagamento, etc.) — sua tarefa é complementar com exatamente {quantidade_perguntas} pergunta(s) e resposta(s) ORIGINAIS sobre {entidade} ESPECIFICAMENTE (não sobre a Buser em geral, isso já está coberto).\n\nIMPORTANTE:\n- Toda pergunta e resposta deve vir SÓ do conteúdo coletado abaixo — não invente informação que não esteja explícita ali\n- NÃO repita nenhuma das perguntas já prontas, nem pergunte algo muito parecido com elas. Perguntas já usadas:\n{perguntas_evitar}\n- NÃO pergunte sobre dado biográfico irrelevante pra quem vai viajar (ano de fundação, razão social, nome fantasia) — isso não ajuda ninguém a decidir a viagem, é conteúdo de outra seção do site\n- NÃO invente política de pet, bagagem ou documento exigido — só pergunte sobre isso se estiver EXPLÍCITO no conteúdo coletado abaixo; se não estiver, prefira perguntar sobre rota, tipo de operação (fretamento ou linha regular) ou frota\n- NÃO crie perguntas sobre preço específico — esse dado muda com frequência e fica desatualizado rápido\n- Não copie frases prontas do conteúdo, reescreva as respostas com suas próprias palavras\n- Gere exatamente {quantidade_perguntas} pares de pergunta e resposta, nem mais nem menos\n\nConteúdo coletado sobre {entidade}:\n{fontes_texto}\n\nResponda APENAS com um JSON, sem markdown, sem texto adicional, no seguinte formato:\n[\n  {{\"pergunta\": \"...\", \"resposta\": \"...\"}}\n]"
+      "template": "Você é um redator de SEO especializado em criar FAQs para um site de transporte rodoviário.\n\nEste FAQ sobre {entidade} JÁ TEM perguntas prontas sobre a Buser (como comprar, cancelar, remarcar, formas de pagamento, etc.) — sua tarefa é complementar com exatamente {quantidade_perguntas} pergunta(s) e resposta(s) ORIGINAIS sobre {entidade} ESPECIFICAMENTE (não sobre a Buser em geral, isso já está coberto).\n\nIMPORTANTE:\n- Toda pergunta e resposta deve vir SÓ do conteúdo coletado abaixo — não invente informação que não esteja explícita ali\n- NÃO repita nenhuma das perguntas já prontas, nem pergunte algo sobre o MESMO ASSUNTO delas, mesmo com palavras diferentes (ex: se já existe uma pergunta sobre segurança da compra, NÃO pergunte de novo se \"a {entidade} é confiável/segura\" — é o mesmo assunto, só reformulado). Perguntas e assuntos já usados:\n{perguntas_evitar}\n- NÃO pergunte sobre dado biográfico irrelevante pra quem vai viajar (ano de fundação, razão social, nome fantasia) — isso não ajuda ninguém a decidir a viagem, é conteúdo de outra seção do site\n- NÃO invente política de pet, bagagem ou documento exigido — só pergunte sobre isso se estiver EXPLÍCITO no conteúdo coletado abaixo; se não estiver, prefira perguntar sobre rota, tipo de operação (fretamento ou linha regular) ou frota\n- NÃO crie perguntas sobre preço específico — esse dado muda com frequência e fica desatualizado rápido\n- Não copie frases prontas do conteúdo, reescreva as respostas com suas próprias palavras\n- Gere exatamente {quantidade_perguntas} pares de pergunta e resposta, nem mais nem menos\n- Pra cada par, inclua também um \"topico\": uma ou duas palavras (snake_case, ex: \"rotas\", \"tipo_frota\") resumindo o ASSUNTO da pergunta — usado só pra evitar assunto repetido, não aparece pro leitor\n\nConteúdo coletado sobre {entidade}:\n{fontes_texto}\n\nResponda APENAS com um JSON, sem markdown, sem texto adicional, no seguinte formato:\n[\n  {{\"pergunta\": \"...\", \"resposta\": \"...\", \"topico\": \"...\"}}\n]"
     },
     "com_faq": {
       "descricao": "Há um FAQ real coletado (schema.org, já escrito por vocês) — pode usar como fonte confiável até pra política específica (pet, bagagem, documento), já que veio de conteúdo real da empresa, não de invenção.",
-      "template": "Você é um redator de SEO especializado em criar FAQs para um site de transporte rodoviário.\n\nEste FAQ sobre {entidade} JÁ TEM perguntas prontas sobre a Buser (como comprar, cancelar, remarcar, formas de pagamento, etc.) — sua tarefa é complementar com exatamente {quantidade_perguntas} pergunta(s) e resposta(s) ORIGINAIS sobre {entidade} ESPECIFICAMENTE (não sobre a Buser em geral, isso já está coberto).\n\nA página de {entidade} já tem um FAQ real, coletado abaixo — use-o como fonte confiável pra essas perguntas complementares (inclusive pra política de pet, bagagem ou documento, já que veio de conteúdo real da empresa, não de invenção). Pode reescrever/adaptar pares desse FAQ real, ou usar o conteúdo geral também coletado, mas sempre baseado no que está disponível.\n\nIMPORTANTE:\n- Toda pergunta e resposta deve vir SÓ do que está nas fontes abaixo — não invente informação que não esteja explícita ali\n- NÃO repita nenhuma das perguntas já prontas, nem pergunte algo muito parecido com elas. Perguntas já usadas:\n{perguntas_evitar}\n- NÃO pergunte sobre dado biográfico irrelevante pra quem vai viajar (ano de fundação, razão social, nome fantasia)\n- NÃO crie perguntas sobre preço específico — esse dado muda com frequência\n- Não copie frases prontas literalmente, reescreva com suas próprias palavras\n- Gere exatamente {quantidade_perguntas} pares de pergunta e resposta, nem mais nem menos\n\nFAQ real já existente sobre {entidade}:\n{faq_existente_texto}\n\nConteúdo geral coletado sobre {entidade} (contexto extra):\n{fontes_texto}\n\nResponda APENAS com um JSON, sem markdown, sem texto adicional, no seguinte formato:\n[\n  {{\"pergunta\": \"...\", \"resposta\": \"...\"}}\n]"
+      "template": "Você é um redator de SEO especializado em criar FAQs para um site de transporte rodoviário.\n\nEste FAQ sobre {entidade} JÁ TEM perguntas prontas sobre a Buser (como comprar, cancelar, remarcar, formas de pagamento, etc.) — sua tarefa é complementar com exatamente {quantidade_perguntas} pergunta(s) e resposta(s) ORIGINAIS sobre {entidade} ESPECIFICAMENTE (não sobre a Buser em geral, isso já está coberto).\n\nA página de {entidade} já tem um FAQ real, coletado abaixo — use-o como fonte confiável pra essas perguntas complementares (inclusive pra política de pet, bagagem ou documento, já que veio de conteúdo real da empresa, não de invenção). Pode reescrever/adaptar pares desse FAQ real, ou usar o conteúdo geral também coletado, mas sempre baseado no que está disponível.\n\nIMPORTANTE:\n- Toda pergunta e resposta deve vir SÓ do que está nas fontes abaixo — não invente informação que não esteja explícita ali\n- NÃO repita nenhuma das perguntas já prontas, nem pergunte algo sobre o MESMO ASSUNTO delas, mesmo com palavras diferentes (ex: se já existe uma pergunta sobre segurança da compra, NÃO pergunte de novo se \"a {entidade} é confiável/segura\" — é o mesmo assunto, só reformulado). Perguntas e assuntos já usados:\n{perguntas_evitar}\n- NÃO pergunte sobre dado biográfico irrelevante pra quem vai viajar (ano de fundação, razão social, nome fantasia)\n- NÃO crie perguntas sobre preço específico — esse dado muda com frequência\n- Não copie frases prontas literalmente, reescreva com suas próprias palavras\n- Gere exatamente {quantidade_perguntas} pares de pergunta e resposta, nem mais nem menos\n- Pra cada par, inclua também um \"topico\": uma ou duas palavras (snake_case, ex: \"bagagem\", \"documentos\") resumindo o ASSUNTO da pergunta — usado só pra evitar assunto repetido, não aparece pro leitor\n\nFAQ real já existente sobre {entidade}:\n{faq_existente_texto}\n\nConteúdo geral coletado sobre {entidade} (contexto extra):\n{fontes_texto}\n\nResponda APENAS com um JSON, sem markdown, sem texto adicional, no seguinte formato:\n[\n  {{\"pergunta\": \"...\", \"resposta\": \"...\", \"topico\": \"...\"}}\n]"
     }
   }
 }

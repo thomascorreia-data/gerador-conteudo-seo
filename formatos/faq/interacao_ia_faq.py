@@ -207,6 +207,48 @@ def _parsear_perguntas_respostas(texto_resposta: str) -> list:
     ]
 
 
+def humanizar_faq(perguntas: list, foco: str = "geral") -> list:
+    """
+    Etapa final de revisão: reescreve as RESPOSTAS do FAQ pra soar mais
+    natural e menos "de IA", preservando fatos — mesmo padrão de
+    humanizar_texto() em interacao_ia_descricao.py, adaptado pra uma LISTA
+    de pergunta/resposta em vez de um texto corrido só. `foco` não muda o
+    prompt (o humanizador não filtra assunto, só reescreve), é só mantido
+    na assinatura pra simetria com o resto do módulo.
+
+    Nunca quebra o pipeline: se a chamada falhar, ou a resposta não vier
+    num JSON válido, ou vier com uma quantidade de pares diferente da
+    original (juntou/perdeu algum), devolve a lista ORIGINAL em vez de
+    arriscar o revisor determinístico reprovar por uma contagem errada que
+    a própria humanização introduziu.
+    """
+    if not perguntas:
+        return perguntas
+
+    dados_humanizador = PROMPTS_FAQ.get("humanizador")
+    if not dados_humanizador or not dados_humanizador.get("template"):
+        return perguntas
+
+    texto_original = "\n\n".join(f"P: {p['pergunta']}\nR: {p['resposta']}" for p in perguntas)
+    prompt = dados_humanizador["template"].format(texto_original=texto_original)
+
+    # Mesmo cuidado de humanizar_texto(): "mantenha o tamanho aproximado" no
+    # prompt é só uma sugestão, o teto de tokens evita o modelo devolver
+    # respostas bem mais longas que as originais.
+    palavras_originais = len(texto_original.split())
+    max_tokens = int(palavras_originais * 1.8) + 40
+
+    try:
+        resposta = modelo.invoke(prompt, max_tokens=max_tokens)
+    except Exception:
+        return perguntas
+
+    humanizadas = _parsear_perguntas_respostas(resposta.content.strip())
+    if len(humanizadas) != len(perguntas):
+        return perguntas
+    return humanizadas
+
+
 def gerar_faq(
     link: str,
     entidade: str,

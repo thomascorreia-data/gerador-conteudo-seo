@@ -62,6 +62,14 @@ def test_sortear_mais_que_o_banco_devolve_so_o_banco_inteiro():
     assert len(escolhidas) == len(PERGUNTAS_PRONTAS)
 
 
+def test_sortear_respeita_excluir_topicos():
+    todos_topicos = {item["topico"] for item in PERGUNTAS_PRONTAS}
+    excluir = set(list(todos_topicos)[:3])
+    escolhidas = sortear_da_lista("Eucatur", len(PERGUNTAS_PRONTAS), excluir_topicos=excluir)
+    topicos_escolhidos = {item["topico"] for item in escolhidas}
+    assert topicos_escolhidos.isdisjoint(excluir)
+
+
 # --- montar_faq_empresa (geração stubada, sem chamar a API) -----------------
 
 def test_total_final_bate_com_o_pedido_mesmo_pedindo_mais_que_o_banco(monkeypatch):
@@ -90,3 +98,86 @@ def test_total_final_bate_com_pedido_dentro_do_banco(monkeypatch):
     assert len(resultado["perguntas"]) == 7
     assert resultado["quantidade_gerada"] == 2
     assert resultado["quantidade_do_banco"] == 5
+
+
+# --- deduplicação por ASSUNTO (não só texto literal) ------------------------
+# Caso real que motivou isso: o banco sorteou uma pergunta sobre segurança da
+# Buser, e a geração dinâmica devolveu OUTRA pergunta sobre segurança da
+# empresa — texto diferente, mesmo assunto. Não pode ter as duas juntas.
+
+def test_gerada_com_mesmo_assunto_do_banco_e_descartada_e_substituida(monkeypatch):
+    # random.sample determinístico -> pega sempre os N primeiros da lista,
+    # na ordem em que aparecem em PERGUNTAS_PRONTAS (o primeiro é "como_comprar").
+    monkeypatch.setattr("base_empresas_faq.random.sample", lambda seq, k: list(seq)[:k])
+
+    def _gerar_stub(entidade, fontes, quantidade_gerada, itens_ja_usados, palavras_chave=None):
+        return [
+            {"pergunta": "Pergunta colidindo", "resposta": "R", "topico": "como_comprar"},
+            {"pergunta": "Pergunta nova", "resposta": "R", "topico": "assunto_totalmente_novo"},
+        ]
+
+    monkeypatch.setattr("base_empresas_faq._gerar_dinamicas", _gerar_stub)
+
+    resultado = montar_faq_empresa("Eucatur", fontes={}, quantidade_perguntas=7)
+    perguntas_texto = [p["pergunta"] for p in resultado["perguntas"]]
+
+    assert "Pergunta colidindo" not in perguntas_texto
+    assert "Pergunta nova" in perguntas_texto
+    assert len(resultado["perguntas"]) == 7  # total continua batendo (repôs do banco)
+    assert resultado["quantidade_gerada"] == 1  # só 1 das 2 geradas foi aceita
+
+
+def test_duas_geradas_com_mesmo_assunto_entre_si_so_aceita_a_primeira(monkeypatch):
+    monkeypatch.setattr("base_empresas_faq.random.sample", lambda seq, k: list(seq)[:k])
+
+    def _gerar_stub(entidade, fontes, quantidade_gerada, itens_ja_usados, palavras_chave=None):
+        return [
+            {"pergunta": "Primeira sobre rotas", "resposta": "R", "topico": "rotas"},
+            {"pergunta": "Segunda também sobre rotas", "resposta": "R", "topico": "rotas"},
+        ]
+
+    monkeypatch.setattr("base_empresas_faq._gerar_dinamicas", _gerar_stub)
+
+    resultado = montar_faq_empresa("Eucatur", fontes={}, quantidade_perguntas=7)
+    perguntas_texto = [p["pergunta"] for p in resultado["perguntas"]]
+
+    assert "Primeira sobre rotas" in perguntas_texto
+    assert "Segunda também sobre rotas" not in perguntas_texto
+    assert len(resultado["perguntas"]) == 7
+
+
+def test_quando_banco_esgota_e_gerada_colide_aceita_repetido_em_vez_de_devolver_menos(monkeypatch):
+    # Pede o banco inteiro (10) + 2 geradas -> se a gerada colidir de
+    # assunto e não sobrar tópico novo no banco pra repor, tem que aceitar
+    # a colidida mesmo assim: nunca devolver menos perguntas que o pedido.
+    monkeypatch.setattr("base_empresas_faq.random.sample", lambda seq, k: list(seq)[:k])
+
+    topico_do_banco_inteiro = PERGUNTAS_PRONTAS[0]["topico"]
+
+    def _gerar_stub(entidade, fontes, quantidade_gerada, itens_ja_usados, palavras_chave=None):
+        return [
+            {"pergunta": "Pergunta colidindo", "resposta": "R", "topico": topico_do_banco_inteiro},
+            {"pergunta": "Pergunta nova", "resposta": "R", "topico": "assunto_totalmente_novo"},
+        ]
+
+    monkeypatch.setattr("base_empresas_faq._gerar_dinamicas", _gerar_stub)
+
+    resultado = montar_faq_empresa("Eucatur", fontes={}, quantidade_perguntas=12)
+    perguntas_texto = [p["pergunta"] for p in resultado["perguntas"]]
+
+    assert len(resultado["perguntas"]) == 12  # nunca devolve menos que o pedido
+    assert "Pergunta colidindo" in perguntas_texto  # aceita repetida como último recurso
+    assert "Pergunta nova" in perguntas_texto
+
+
+def test_gerada_sem_topico_nunca_e_descartada_por_assunto(monkeypatch):
+    # Se o modelo não incluir "topico" (não seguiu a instrução), o item é
+    # aceito do mesmo jeito — mais seguro que descartar um item bom só por
+    # um campo faltando.
+    def _gerar_stub(entidade, fontes, quantidade_gerada, itens_ja_usados, palavras_chave=None):
+        return [{"pergunta": f"gerada {i}", "resposta": "r"} for i in range(quantidade_gerada)]
+
+    monkeypatch.setattr("base_empresas_faq._gerar_dinamicas", _gerar_stub)
+
+    resultado = montar_faq_empresa("Eucatur", fontes={}, quantidade_perguntas=7)
+    assert resultado["quantidade_gerada"] == 2

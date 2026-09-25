@@ -63,16 +63,29 @@ def calcular_divisao(quantidade_perguntas: int) -> tuple:
     return quantidade_gerada, quantidade_perguntas - quantidade_gerada
 
 
-def sortear_da_lista(entidade: str, quantidade: int) -> list:
+def sortear_da_lista(entidade: str, quantidade: int, excluir_topicos: set = None) -> list:
     """Sorteia `quantidade` perguntas do banco pronto (sem repetir dentro do
-    mesmo sorteio), já substituindo {entidade} no texto. Se pedir mais do
-    que o banco tem, devolve o banco inteiro (não repete pergunta)."""
+    mesmo sorteio), já substituindo {entidade} no texto. Cada item devolvido
+    mantém o "topico" (usado só internamente, pra detectar assunto repetido
+    — não aparece pro leitor final).
+
+    `excluir_topicos`: usado quando o banco precisa complementar uma vaga
+    que a geração dinâmica não conseguiu preencher sem repetir assunto (ver
+    montar_faq_empresa) — só sorteia entre os tópicos que ainda não foram
+    usados nesta rodada.
+
+    Se pedir mais do que os candidatos disponíveis, devolve todos que
+    houver (nunca repete pergunta/tópico)."""
     if quantidade <= 0:
         return []
-    quantidade = min(quantidade, len(PERGUNTAS_PRONTAS))
-    escolhidas = random.sample(PERGUNTAS_PRONTAS, quantidade)
+    candidatos = PERGUNTAS_PRONTAS
+    if excluir_topicos:
+        candidatos = [item for item in PERGUNTAS_PRONTAS if item["topico"] not in excluir_topicos]
+    quantidade = min(quantidade, len(candidatos))
+    escolhidas = random.sample(candidatos, quantidade)
     return [
         {
+            "topico": item["topico"],
             "pergunta": item["pergunta"].format(entidade=entidade),
             "resposta": item["resposta"].format(entidade=entidade),
         }
@@ -112,6 +125,10 @@ def _formatar_faq_existente(faq: list) -> str:
 
 
 def _parsear_perguntas_respostas(texto_resposta: str) -> list:
+    """Cada item pode vir com "topico" (pedido no prompt de geração) — se o
+    modelo não incluir por algum motivo, o item ainda é aceito (só não entra
+    na checagem de assunto repetido em montar_faq_empresa, em vez de ser
+    descartado por um campo faltando)."""
     texto_limpo = texto_resposta.strip().replace("```json", "").replace("```", "").strip()
     try:
         dados = json.loads(texto_limpo)
@@ -119,22 +136,44 @@ def _parsear_perguntas_respostas(texto_resposta: str) -> list:
         return []
     if not isinstance(dados, list):
         return []
-    return [
-        {"pergunta": item["pergunta"].strip(), "resposta": item["resposta"].strip()}
-        for item in dados
-        if isinstance(item, dict) and item.get("pergunta") and item.get("resposta")
-    ]
+
+    resultado = []
+    for item in dados:
+        if not isinstance(item, dict) or not item.get("pergunta") or not item.get("resposta"):
+            continue
+        par = {"pergunta": item["pergunta"].strip(), "resposta": item["resposta"].strip()}
+        if item.get("topico"):
+            par["topico"] = str(item["topico"]).strip().lower()
+        resultado.append(par)
+    return resultado
+
+
+def _montar_texto_evitar(itens_ja_usados: list) -> str:
+    """Lista as perguntas já usadas (do banco) PRA MOSTRAR o assunto de cada
+    uma junto — ajuda o modelo a evitar não só a mesma pergunta, mas o mesmo
+    ASSUNTO reformulado com outras palavras (o caso real que motivou isso:
+    "a Buser é segura?" no banco + "a {entidade} é segura?" gerada — mesmo
+    assunto, "seguranca", só que com o nome trocado)."""
+    if not itens_ja_usados:
+        return "(nenhuma)"
+    linhas = []
+    for item in itens_ja_usados:
+        rotulo = f" [assunto: {item['topico']}]" if item.get("topico") else ""
+        linhas.append(f"- {item['pergunta']}{rotulo}")
+    return "\n".join(linhas)
 
 
 def _gerar_dinamicas(
     entidade: str,
     fontes: dict,
     quantidade_gerada: int,
-    perguntas_ja_usadas: list,
+    itens_ja_usados: list,
     palavras_chave: list = None,
 ) -> list:
     """Gera as perguntas complementares (a parte que NÃO vem do banco
-    pronto), grounded no que foi coletado de verdade sobre a empresa."""
+    pronto), grounded no que foi coletado de verdade sobre a empresa.
+    `itens_ja_usados` é a lista de perguntas do banco já sorteadas (cada uma
+    com "topico") — usada só pra montar o texto de "não repita isso"."""
     if quantidade_gerada <= 0:
         return []
 
@@ -148,7 +187,7 @@ def _gerar_dinamicas(
             f"(nenhum conteúdo genérico adicional foi coletado sobre {entidade})"
         )
 
-    perguntas_evitar_texto = "\n".join(f"- {p}" for p in perguntas_ja_usadas) or "(nenhuma)"
+    perguntas_evitar_texto = _montar_texto_evitar(itens_ja_usados)
 
     kwargs_formato = dict(
         entidade=entidade,
@@ -183,6 +222,14 @@ def montar_faq_empresa(
     empresa, misturando banco pronto + geração dinâmica na proporção certa
     (ver calcular_divisao) e embaralhando a ordem final, pra não ficar
     sempre "as do banco primeiro, a gerada por último".
+
+    Garantia de assunto único: cada pergunta (do banco ou gerada) carrega um
+    "topico" — se a geração devolver algo com o MESMO assunto de uma pergunta
+    do banco já sorteada (ou de outra gerada nesta mesma rodada), aquele item
+    é descartado e a vaga é preenchida com outra pergunta PRONTA de assunto
+    ainda não usado, em vez de arriscar gerar de novo e colidir de novo
+    (testado ao vivo: "a Buser é segura?" do banco + "a {entidade} é segura?"
+    gerada — mesmo assunto, reformulado).
     """
     quantidade_gerada, quantidade_lista = calcular_divisao(quantidade_perguntas)
 
@@ -195,17 +242,49 @@ def montar_faq_empresa(
         quantidade_gerada += excedente
 
     do_banco = sortear_da_lista(entidade, quantidade_lista)
-    perguntas_ja_usadas = [item["pergunta"] for item in do_banco]
+    topicos_usados = {item["topico"] for item in do_banco}
 
-    geradas = _gerar_dinamicas(entidade, fontes, quantidade_gerada, perguntas_ja_usadas, palavras_chave)
+    geradas_brutas = _gerar_dinamicas(entidade, fontes, quantidade_gerada, do_banco, palavras_chave)
 
-    todas = do_banco + geradas
+    geradas_aceitas = []
+    geradas_descartadas = []
+    for item in geradas_brutas:
+        topico = item.get("topico")
+        # Sem "topico" (modelo não incluiu) -> aceita sem checar, mais seguro
+        # que descartar um item bom só por um campo faltando.
+        if topico and topico in topicos_usados:
+            geradas_descartadas.append(item)
+            continue
+        geradas_aceitas.append(item)
+        if topico:
+            topicos_usados.add(topico)
+
+    faltando = quantidade_gerada - len(geradas_aceitas)
+    if faltando > 0:
+        # A geração colidiu de assunto e ficou curta — completa com pronta(s)
+        # de assunto ainda não usado, em vez de tentar gerar de novo (mesmo
+        # risco de colidir outra vez).
+        extras = sortear_da_lista(entidade, faltando, excluir_topicos=topicos_usados)
+        do_banco = do_banco + extras
+        faltando -= len(extras)
+
+    if faltando > 0:
+        # Banco também já esgotado (todo tópico disponível já foi usado) —
+        # não tem mais de onde tirar assunto novo. Nesse caso extremo,
+        # aceita a(s) gerada(s) descartada(s) mesmo repetindo assunto: é
+        # melhor que devolver menos perguntas do que foi pedido.
+        geradas_aceitas += geradas_descartadas[:faltando]
+
+    todas = do_banco + geradas_aceitas
     random.shuffle(todas)
 
+    # "topico" é só controle interno — não vai pro leitor final.
+    perguntas_finais = [{"pergunta": p["pergunta"], "resposta": p["resposta"]} for p in todas]
+
     return {
-        "perguntas": todas,
+        "perguntas": perguntas_finais,
         "quantidade_pedida": quantidade_perguntas,
-        "quantidade_gerada": quantidade_gerada,
+        "quantidade_gerada": len(geradas_aceitas),
         "quantidade_do_banco": len(do_banco),
     }
 
