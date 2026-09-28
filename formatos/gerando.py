@@ -49,6 +49,16 @@ FORMATOS_DESCRICAO = {"descrição", "descricao"}
 FORMATOS_FAQ = {"faq"}
 
 
+def _rotulo_dominio(link: str) -> str:
+    """Primeiro rótulo do domínio do link (ex: "eucatur.buser.com.br" ->
+    "eucatur") — usado tanto pro nome de exibição (_entidade_do_link)
+    quanto pro slug de produção (_slug_do_link)."""
+    dominio = urlparse(link or "").netloc.lower()
+    if dominio.startswith("www."):
+        dominio = dominio[4:]
+    return dominio.split(".")[0] if dominio else ""
+
+
 def _entidade_do_link(link: str) -> str:
     """Deriva um nome de exibição pra empresa a partir do link — no FAQ não
     existe campo de nome separado, o "tema" É o link (ver
@@ -58,12 +68,17 @@ def _entidade_do_link(link: str) -> str:
     compostos sem separador (ex: "expressojk" -> "Expressojk" em vez de
     "Expresso JK") — mesmo trade-off já aceito em slugify()/limpar_slug()
     no resto do projeto: corrige-se direto no texto gerado quando acontecer."""
-    dominio = urlparse(link or "").netloc.lower()
-    if dominio.startswith("www."):
-        dominio = dominio[4:]
-    rotulo = dominio.split(".")[0] if dominio else ""
-    rotulo = rotulo.replace("-", " ").replace("_", " ").strip()
+    rotulo = _rotulo_dominio(link).replace("-", " ").replace("_", " ").strip()
     return rotulo.title() if rotulo else "essa empresa"
+
+
+def _slug_do_link(link: str) -> str:
+    """Slug da empresa a partir do link, pro campo "company_slug" do JSON
+    exportado — mesmo rótulo de domínio de _entidade_do_link(), mas SEM
+    prettificar: a API de produção (ver enviando/enviando--buser.py) espera
+    o slug como já vem no domínio (minúsculo, com hífen), não com espaço
+    nem maiúscula."""
+    return _rotulo_dominio(link)
 
 
 def _formatar_faq_texto(perguntas: list) -> str:
@@ -73,12 +88,27 @@ def _formatar_faq_texto(perguntas: list) -> str:
     return "\n\n".join(f"P: {item['pergunta']}\nR: {item['resposta']}" for item in perguntas)
 
 
+def _faqs_para_producao(perguntas: list) -> list:
+    """Converte a lista interna de pergunta/resposta (chaves em português,
+    usadas em todo o pipeline de geração) pro formato que a API de
+    produção espera no campo "faqs" (ver enviando/enviando--buser.py):
+    chaves "question"/"answer", em inglês — só nesse ponto de saída, não
+    precisa mudar o pipeline interno inteiro por causa do formato de
+    exportação."""
+    return [{"question": p["pergunta"], "answer": p["resposta"]} for p in perguntas]
+
+
 def gerar_conteudo(itens: list) -> list:
     """
     Recebe a lista de itens normalizada (saída de normalizar_lote) e devolve
     a mesma lista, com "categoria_identificada" e "conteudo_gerado" (ou
     "erro") preenchidos em cada item. Categoria, coleta, geração, humanização
     e revisão rodam todas dentro do grafo — aqui só extraímos o resultado.
+
+    Item de FAQ ganha ainda "company_slug" e "faqs" (lista de
+    {"question", "answer"}) — o formato que a API de produção espera no
+    payload de company-pages (ver enviando/enviando--buser.py), pronto pra
+    exportar sem precisar de nenhuma transformação a mais na interface.
     """
     resultados = []
 
@@ -128,6 +158,8 @@ def gerar_conteudo(itens: list) -> list:
                 perguntas_finais = resultado.get("perguntas_humanizadas") or []
                 if perguntas_finais:
                     item_resultado["conteudo_gerado"] = _formatar_faq_texto(perguntas_finais)
+                    item_resultado["company_slug"] = _slug_do_link(link)
+                    item_resultado["faqs"] = _faqs_para_producao(perguntas_finais)
                 else:
                     item_resultado["erro"] = (
                         "O modelo não devolveu nenhuma pergunta/resposta em formato válido."
