@@ -1,4 +1,18 @@
-from grafo_descricao import _checar_regras, _rotear_por_categoria, no_coletar_lugar_generico, no_coletar_evento
+from grafo_descricao import _checar_regras, _rotear_por_categoria, no_coletar_lugar_generico, no_coletar_evento, no_revisor_ia
+
+
+class _FakeModelo:
+    """Substitui o ChatOpenAI inteiro (não dá pra sobrescrever só o método
+    ".invoke" de uma instância pydantic — ChatOpenAI bloqueia atribuir
+    atributo que não é um field declarado)."""
+
+    def __init__(self, resposta):
+        self._resposta = resposta
+        self.chamadas = []
+
+    def invoke(self, prompt, **kwargs):
+        self.chamadas.append(prompt)
+        return type("_Resposta", (), {"content": self._resposta})()
 
 
 def _fontes(texto: str) -> dict:
@@ -136,6 +150,18 @@ def test_linha_regular_com_passagem_no_plural_nao_reprova():
     assert not any('só apareceu "viagem"' in m for m in motivos)
 
 
+def test_linha_regular_promocional_sem_passagem_nao_reprova():
+    # Tom "promocional" não tem mais parágrafo de compra (proibido citar a
+    # Buser) — a exigência de "passagem" não faz sentido aqui, só nos
+    # outros tons (onde ainda existe contexto de compra).
+    texto = "A empresa oferece uma viagem segura e confortável."
+    motivos = _checar_regras(_state(
+        texto, categoria="empresa", tom="promocional",
+        classificacao_tipo={"tipo": "linha_regular", "palavra": "passagem"},
+    ))
+    assert not any('só apareceu "viagem"' in m for m in motivos)
+
+
 def test_hibrida_vendas_subtitulo_com_viagem_reprova():
     texto = "Reserve sua viagem com a empresa pela Buser.\n\nEla atua em todo o país.\n\nCompre sua passagem com facilidade."
     motivos = _checar_regras(_state(
@@ -220,17 +246,83 @@ def test_empresa_informativo_precisa_de_exatamente_4_paragrafos():
     assert not any("esperado sempre 4" in m for m in motivos)
 
 
-def test_empresa_promocional_tambem_precisa_de_exatamente_4_paragrafos():
+def test_empresa_promocional_aceita_3_a_4_paragrafos_igual_vendas():
+    # "promocional" virou um formato curto (mesmo padrão de "vendas": 3 a
+    # 4 parágrafos) — não exige mais sempre 4 como o informativo.
+    dois_paragrafos = "Um.\n\nDois."
+    motivos = _checar_regras(_state(dois_paragrafos, categoria="empresa", tom="promocional"))
+    assert any("parágrafos" in m for m in motivos)
+
     tres_paragrafos = "Um.\n\nDois.\n\nTrês."
     motivos = _checar_regras(_state(tres_paragrafos, categoria="empresa", tom="promocional"))
-    assert any("esperado sempre 4" in m for m in motivos)
+    assert not any("parágrafos" in m for m in motivos)
 
     quatro_paragrafos = "Um.\n\nDois.\n\nTrês.\n\nQuatro."
     motivos = _checar_regras(_state(quatro_paragrafos, categoria="empresa", tom="promocional"))
-    assert not any("esperado sempre 4" in m for m in motivos)
+    assert not any("parágrafos" in m for m in motivos)
+
+    cinco_paragrafos = "Um.\n\nDois.\n\nTrês.\n\nQuatro.\n\nCinco."
+    motivos = _checar_regras(_state(cinco_paragrafos, categoria="empresa", tom="promocional"))
+    assert any("parágrafos" in m for m in motivos)
+
+
+def test_empresa_promocional_reprova_se_citar_buser():
+    texto = "Um.\n\nDois.\n\nTrês.\n\nAo comprar sua passagem pela Buser, você viaja tranquilo."
+    motivos = _checar_regras(_state(texto, categoria="empresa", tom="promocional"))
+    assert any("não pode citar a Buser" in m for m in motivos)
+
+
+def test_empresa_promocional_sem_citar_buser_nao_reprova_por_isso():
+    texto = "Um.\n\nDois.\n\nTrês.\n\nUma empresa de tradição no setor."
+    motivos = _checar_regras(_state(texto, categoria="empresa", tom="promocional"))
+    assert not any("não pode citar a Buser" in m for m in motivos)
+
+
+def test_empresa_informativo_pode_citar_buser():
+    # A regra é só do tom "promocional" — informativo/vendas continuam
+    # citando a Buser normalmente (empresa parceira de verdade).
+    texto = "Um.\n\nDois.\n\nTrês.\n\nAo comprar sua passagem pela Buser, você viaja tranquilo."
+    motivos = _checar_regras(_state(texto, categoria="empresa", tom="informativo"))
+    assert not any("não pode citar a Buser" in m for m in motivos)
 
 
 def test_cidade_nao_exige_contagem_de_paragrafos():
     texto = "Só um parágrafo aqui."
     motivos = _checar_regras(_state(texto, categoria="cidade", tom="vendas"))
     assert not any("parágrafos" in m for m in motivos)
+
+
+# --- revisor_ia: empresa/promocional pula o julgamento de tom ---------------
+
+def test_revisor_ia_empresa_promocional_aprova_sem_chamar_modelo(monkeypatch):
+    fake = _FakeModelo("não deveria ser chamado")
+    monkeypatch.setattr("grafo_descricao.modelo", fake)
+
+    resultado = no_revisor_ia({
+        "categoria": "empresa", "tom": "promocional", "texto_humanizado": "qualquer texto",
+    })
+
+    assert resultado == {"revisao_ia": {"tom_ok": True, "motivos": []}}
+    assert fake.chamadas == []
+
+
+def test_revisor_ia_empresa_informativo_ainda_chama_modelo(monkeypatch):
+    # A exceção é só pra empresa/promocional — outras combinações
+    # continuam passando pelo julgamento de IA normalmente.
+    fake = _FakeModelo('{"tom_ok": true, "motivos": []}')
+    monkeypatch.setattr("grafo_descricao.modelo", fake)
+
+    no_revisor_ia({"categoria": "empresa", "tom": "informativo", "texto_humanizado": "qualquer texto"})
+
+    assert len(fake.chamadas) == 1
+
+
+def test_revisor_ia_cidade_promocional_ainda_chama_modelo(monkeypatch):
+    # A exceção é só pra categoria "empresa" — cidade/promocional continua
+    # sendo julgada normalmente (ainda cita a Buser, não muda).
+    fake = _FakeModelo('{"tom_ok": true, "motivos": []}')
+    monkeypatch.setattr("grafo_descricao.modelo", fake)
+
+    no_revisor_ia({"categoria": "cidade", "tom": "promocional", "texto_humanizado": "qualquer texto"})
+
+    assert len(fake.chamadas) == 1

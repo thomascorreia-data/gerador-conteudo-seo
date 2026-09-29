@@ -16380,5 +16380,115 @@
       "palavra": "viagem",
       "instrucao": "Não foi possível identificar com clareza, nas fontes coletadas, se Expresso Batatais opera linha regular ou só fretamento/turismo. Use \"viagem\" em vez de \"passagem\" em todas as menções — é o termo mais seguro nesse caso, evita afirmar algo que pode não ser verdade."
     }
+  },
+  "guerinoseiscento": {
+    "empresa": "Guerino Seiscento",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": "A Guerino Seiscento é uma tradicional empresa brasileira de transporte rodoviário de passageiros, com mais de 75 anos de história e forte atuação no interior do estado de São Paulo e em outras regiões do país. Principais Atividades e Serviços Transporte Rodoviário: Realiza viagens intermunicipais e interestaduais, conectando cidades de estados como São Paulo, Paraná, Minas Gerais, Goiás, Mato Grosso do Sul e o Distrito Federal. Frota e Conforto: Conta com centenas de veículos modernos, incluindo ônibus do tipo Double Deck (dois andares) equipados com itens como ar-condicionado, Wi-Fi e poltronas reclináveis em couro ecológico. Projetos Especiais: A companhia se destaca por iniciativas voltadas à segurança e à inovação nos serviços, a exemplo do projeto de acolhimento voltado para passageiras. Você pode consultar rotas, horários e passagens diretamente pelo site oficial da Guerino Seiscento . Gostaria de saber os horários de alguma rota específica, os locais de atendimento ou informações sobre a compra de passagens ?",
+        "referencias": [],
+        "erro": null
+      },
+      "Google_TopSites": {
+        "conteudo": "GUERINO SEISCENTO TRANSPORTES S.A.: O CNPJ da empresa GUERINO SEISCENTO TRANSPORTES S.A. é 72.543.978/0020-73. Com sede em BRASILIA, DF, possui 7 anos, 1 mês e 7 dias e foi fundada em 23/07/2019. Guerino Seiscento: Vai viajar de Tupi Paulista para Campinas? A Guerino Seiscento tem essa conexão para você aproveitar o feriado com mais tranquilidade. Acesse o ... Guerino Seiscento - Empresa Séria - Glassdoor: Empresa Séria - Avaliação de funcionários no cargo de Senior DPO na empresa Guerino Seiscento · Qualidade de vida · Cultura e valores · Oportunidades de carreira. Confira as diversas maneiras de garantir a sua passagem para ...: Chegou a hora de embarcar para a minha viagem de férias com a Guerino Seiscento. ... A empresa tem que fazer um comunicado, nos aplicativos ... Guerino Seiscento Transportes Ltda Avaliações e Opiniões: Empresa muito bem conceituada, com funcionários bem treinados e dispostos a fazer a empresa crescer a cada ano. Prós Ambiente de trabalho confortável e os ... Trabalhar na empresa GUERINO SEISCENTO ...: A empresa está ativamente participando de licitações para concessões, sempre disputando com outras do Brasil. Tem uma grande quantidade de trabalho. Guerino Seiscento | Tupã SP: De Tupã a Rio Preto, continuamos levando os nossos passageiros com segurança e responsabilidade. Seguimos juntos conectando pessoas e lugares. Acesse o nosso ...",
+        "sites": [
+          {
+            "titulo": "GUERINO SEISCENTO TRANSPORTES S.A.",
+            "link": "https://empresas.serasaexperian.com.br/consulta-gratis/GUERINO-SEISCENTO-TRANSPORTES-S.A.-72543978002073",
+            "snippet": "O CNPJ da empresa GUERINO SEISCENTO TRANSPORTES S.A. é 72.543.978/0020-73. Com sede em BRASILIA, DF, possui 7 anos, 1 mês e 7 dias e foi fundada em 23/07/2019."
+          },
+          {
+            "titulo": "Guerino Seiscento",
+            "link": "https://www.facebook.com/guerinoseiscento/posts/por-tr%C3%A1s-de-cada-viagem-existem-profissionais-que-carregam-responsabilidade-expe/1411594341001236/",
+            "snippet": "Vai viajar de Tupi Paulista para Campinas? A Guerino Seiscento tem essa conexão para você aproveitar o feriado com mais tranquilidade. Acesse o ..."
+          },
+          {
+            "titulo": "Guerino Seiscento - Empresa Séria - Glassdoor",
+            "link": "https://www.glassdoor.com.br/Avalia%C3%A7%C3%B5es/Avalia%C3%A7%C3%A3o-funcion%C3%A1rio-Guerino-Seiscento-E2652572-RVW33225982.htm",
+            "snippet": "Empresa Séria - Avaliação de funcionários no cargo de Senior DPO na empresa Guerino Seiscento · Qualidade de vida · Cultura e valores · Oportunidades de carreira."
+          },
+          {
+            "titulo": "Confira as diversas maneiras de garantir a sua passagem para ...",
+            "link": "https://www.instagram.com/reel/DNagHv2uRlX/",
+            "snippet": "Chegou a hora de embarcar para a minha viagem de férias com a Guerino Seiscento. ... A empresa tem que fazer um comunicado, nos aplicativos ..."
+          },
+          {
+            "titulo": "Guerino Seiscento Transportes Ltda Avaliações e Opiniões",
+            "link": "https://www.infojobs.com.br/availacoes-guerino-seiscento-transportes-ltda__-2049484.aspx",
+            "snippet": "Empresa muito bem conceituada, com funcionários bem treinados e dispostos a fazer a empresa crescer a cada ano. Prós Ambiente de trabalho confortável e os ..."
+          },
+          {
+            "titulo": "Trabalhar na empresa GUERINO SEISCENTO ...",
+            "link": "https://br.indeed.com/cmp/Guerino-Seiscento-Transportes-S.a/reviews",
+            "snippet": "A empresa está ativamente participando de licitações para concessões, sempre disputando com outras do Brasil. Tem uma grande quantidade de trabalho."
+          },
+          {
+            "titulo": "Guerino Seiscento | Tupã SP",
+            "link": "https://www.facebook.com/guerinoseiscento/?locale=ru_RU",
+            "snippet": "De Tupã a Rio Preto, continuamos levando os nossos passageiros com segurança e responsabilidade. Seguimos juntos conectando pessoas e lugares. Acesse o nosso ..."
+          }
+        ],
+        "site_oficial": null,
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "ambiguo",
+      "palavra": "viagem",
+      "instrucao": "Não foi possível identificar com clareza, nas fontes coletadas, se Guerino Seiscento opera linha regular ou só fretamento/turismo. Use \"viagem\" em vez de \"passagem\" em todas as menções — é o termo mais seguro nesse caso, evita afirmar algo que pode não ser verdade."
+    }
+  },
+  "clickbus": {
+    "empresa": "Clickbus",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": null,
+        "referencias": [],
+        "erro": "Erro ao consultar o AI Overview (tentativa 1): HTTPSConnectionPool(host='serpapi.com', port=443): Read timed out. (read timeout=15)"
+      },
+      "Google_TopSites": {
+        "conteudo": "ClickBus | Passagens de Ônibus Online para mais de 4.800 ...: Para descobrir o Brasil com ClickBus são mais de 4.800 destinos. Conhecer empresas. Principais rotas. Ônibus para Rio de Janeiro, RJ São Paulo, SP ... ClickBus (@clickbus) • Instagram photos and videos: O maior app de viagens de ônibus do Brasil. Mais do que comprar passagens, aqui você tem flexibilidade, conveniência e as melhores ofertas! ClickBus - Passagens de Ônibus - App Store - Apple: Rotas para todo mundo: viajar de ônibus para os melhores destinos. Passagens de ônibus confiáveis, confortáveis e seguras. Com click, fila na rodoviária vira ... ClickBus - Passagens de ônibus – Apps no Google Play: Compare preços e horários de mais de 200 empresas de ônibus parceiras e escolha a melhor rota para mais de 4.800 destinos brasileiros. Na ClickBus, você evita ... João Gomes já deu a dica: passagem de ônibus é na ClickBus ...: João Gomes já deu a dica: passagem de ônibus é na ClickBus O app para viajar de ônibus. ... O segredo que as empresas de ônibus não querem que ...",
+        "sites": [
+          {
+            "titulo": "ClickBus | Passagens de Ônibus Online para mais de 4.800 ...",
+            "link": "https://www.clickbus.com.br/",
+            "snippet": "Para descobrir o Brasil com ClickBus são mais de 4.800 destinos. Conhecer empresas. Principais rotas. Ônibus para Rio de Janeiro, RJ São Paulo, SP ..."
+          },
+          {
+            "titulo": "ClickBus (@clickbus) • Instagram photos and videos",
+            "link": "https://www.instagram.com/clickbus/",
+            "snippet": "O maior app de viagens de ônibus do Brasil. Mais do que comprar passagens, aqui você tem flexibilidade, conveniência e as melhores ofertas!"
+          },
+          {
+            "titulo": "ClickBus - Passagens de Ônibus - App Store - Apple",
+            "link": "https://apps.apple.com/br/app/clickbus-passagens-de-%C3%B4nibus/id889723827",
+            "snippet": "Rotas para todo mundo: viajar de ônibus para os melhores destinos. Passagens de ônibus confiáveis, confortáveis e seguras. Com click, fila na rodoviária vira ..."
+          },
+          {
+            "titulo": "ClickBus - Passagens de ônibus – Apps no Google Play",
+            "link": "https://play.google.com/store/apps/details?id=com.clickbus.mobile&hl=pt_BR",
+            "snippet": "Compare preços e horários de mais de 200 empresas de ônibus parceiras e escolha a melhor rota para mais de 4.800 destinos brasileiros. Na ClickBus, você evita ..."
+          },
+          {
+            "titulo": "João Gomes já deu a dica: passagem de ônibus é na ClickBus ...",
+            "link": "https://www.facebook.com/clickbus/videos/o-app-que-o-jo%C3%A3o-gomes-indica/1790392428810642/",
+            "snippet": "João Gomes já deu a dica: passagem de ônibus é na ClickBus O app para viajar de ônibus. ... O segredo que as empresas de ônibus não querem que ..."
+          }
+        ],
+        "site_oficial": {
+          "titulo": "ClickBus | Passagens de Ônibus Online para mais de 4.800 ...",
+          "link": "https://www.clickbus.com.br/",
+          "snippet": "Para descobrir o Brasil com ClickBus são mais de 4.800 destinos. Conhecer empresas. Principais rotas. Ônibus para Rio de Janeiro, RJ São Paulo, SP ..."
+        },
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "ambiguo",
+      "palavra": "viagem",
+      "instrucao": "Não foi possível identificar com clareza, nas fontes coletadas, se Clickbus opera linha regular ou só fretamento/turismo. Use \"viagem\" em vez de \"passagem\" em todas as menções — é o termo mais seguro nesse caso, evita afirmar algo que pode não ser verdade."
+    }
   }
 }

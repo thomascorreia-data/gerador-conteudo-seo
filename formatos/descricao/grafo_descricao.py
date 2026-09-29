@@ -303,6 +303,16 @@ def _checar_regras(state: DescricaoState) -> list:
                 '(cuidado pra não confundir uma cidade de rota com a sede)'
             )
 
+        # Tom "promocional" é usado pra empresa que NÃO é parceira da Buser
+        # — o texto é só conteúdo de SEO sobre a empresa em si, citar a
+        # Buser aqui seria factualmente errado (backstop determinístico pra
+        # regra do prompt, mesmo padrão das outras checagens desta função).
+        if state.get("tom") == "promocional" and "buser" in texto_lower:
+            motivos.append(
+                'tom "promocional" não pode citar a Buser — essas empresas '
+                'não são parceiras, o texto é só sobre a empresa (SEO)'
+            )
+
     classificacao_tipo = state.get("classificacao_tipo")
     if classificacao_tipo and classificacao_tipo["palavra"] == "passagem":
         # Checagem 1 (ampla): "passagem" tem que aparecer em algum lugar do
@@ -313,7 +323,14 @@ def _checar_regras(state: DescricaoState) -> list:
         # plural em português troca o "m" final por "ns" (passagem ->
         # passagens), não é só adicionar "s". Checar os dois evita reprovar
         # texto que já está certo, só porque usou o plural.
-        if "passagem" not in texto_lower and "passagens" not in texto_lower:
+        #
+        # NÃO roda no tom "promocional": esse tom não tem mais parágrafo
+        # nenhum de compra (proibido citar a Buser, ver checagem acima) —
+        # a distinção passagem/viagem só existe nesse contexto comercial,
+        # exigi-la aqui reprovava um texto correto (testado ao vivo: a
+        # Eucatur, linha regular, não tinha motivo pra dizer "passagem" ao
+        # falar só de história/rotas/frota, sem nenhum CTA de compra).
+        if state.get("tom") != "promocional" and "passagem" not in texto_lower and "passagens" not in texto_lower:
             motivos.append(
                 'empresa linha regular/híbrida deveria mencionar "passagem" '
                 'pelo menos uma vez, só apareceu "viagem"'
@@ -356,9 +373,13 @@ def _checar_regras(state: DescricaoState) -> list:
     # diferentes, então essa checagem não pode valer em geral, só pra
     # empresa, e com o número certo pra cada tom.
     if state.get("categoria") == "empresa":
-        if state.get("tom") == "vendas" and not (3 <= len(paragrafos) <= 4):
+        # "promocional" virou um texto curto (mesmo formato de "vendas": 3
+        # a 4 parágrafos enxutos) — é um teaser que aparece ACIMA do
+        # informativo na mesma página, não precisa (nem deve) repetir o
+        # nível de detalhe do informativo logo abaixo.
+        if state.get("tom") in ("vendas", "promocional") and not (3 <= len(paragrafos) <= 4):
             motivos.append(f"{len(paragrafos)} parágrafos, esperado 3 a 4")
-        elif state.get("tom") in ("informativo", "promocional") and len(paragrafos) != 4:
+        elif state.get("tom") == "informativo" and len(paragrafos) != 4:
             motivos.append(f"{len(paragrafos)} parágrafos, esperado sempre 4")
 
     return motivos
@@ -378,8 +399,21 @@ def no_revisor_ia(state: DescricaoState) -> dict:
     Recebe só o texto e o nome do tom, não o template/instruções — isso é
     de propósito: mantém o julgamento restrito a "isso soa como o tom
     pedido?", sem abrir espaço pra reprovar por regra estrutural/de
-    conteúdo que já é responsabilidade do revisor determinístico."""
+    conteúdo que já é responsabilidade do revisor determinístico.
+
+    EXCEÇÃO — empresa/promocional: pula o julgamento de IA e aprova
+    direto. Testado ao vivo depois da mudança pra formato curto sem Buser
+    (empresa não-parceira): mesmo ajustando o guia de tom, a IA reprovava
+    ~2 de cada 3 textos como "informativo demais" — sem nenhum apelo de
+    compra pra ancorar o julgamento, a distinção promocional/informativo
+    virou subjetiva demais pra esse crivo. As checagens determinísticas
+    (sem Buser, 3 a 4 parágrafos curtos, sem palavra banida) já garantem
+    objetivamente o que esse formato exige."""
+    categoria = state.get("categoria")
     tom = (state.get("tom") or "informativo").strip().lower()
+
+    if categoria == "empresa" and tom == "promocional":
+        return {"revisao_ia": {"tom_ok": True, "motivos": []}}
 
     prompt = PROMPT_REVISOR_IA.format(tom=tom, texto=state["texto_humanizado"])
     resposta = modelo.invoke(prompt)
