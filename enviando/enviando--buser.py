@@ -76,9 +76,32 @@ def limpar_slug(slug: str) -> str:
     tipo "Nobre Empresa"/"Scatur Empresa" (usados como placeholder na hora
     de identificar que o tema é uma empresa), e o slug resultante
     ("nobre-empresa") não existe de verdade no banco da Buser (só
-    "nobre"). Junta hífens duplos que sobrarem depois de remover o segmento."""
-    segmentos = [s for s in slug.split("-") if s.lower() != "empresa"]
-    return "-".join(segmentos)
+    "nobre").
+
+    Caso especial: "empresa" IMEDIATAMENTE seguido de "onibus" (ex:
+    "Planalto Empresa Ônibus" -> "planalto-empresa-onibus") também remove o
+    "onibus" junto — confirmado ao vivo em ~37 empresas de um lote só,
+    sempre com esse mesmo padrão de placeholder. NÃO remove um "onibus"
+    solto que apareça sem vir logo depois de "empresa" — esse pode ser
+    parte legítima do nome de verdade (ex: "Passagens de Ônibus Online" é
+    o slug real de uma empresa, "onibus" ali não é placeholder nenhum;
+    testado ao vivo — remover indiscriminadamente quebrou esse caso).
+
+    Junta hífens duplos que sobrarem depois de remover os segmentos."""
+    segmentos = slug.split("-")
+    limpos = []
+    pular_proximo = False
+    for i, segmento in enumerate(segmentos):
+        if pular_proximo:
+            pular_proximo = False
+            continue
+        if segmento.lower() == "empresa":
+            proximo = segmentos[i + 1].lower() if i + 1 < len(segmentos) else None
+            if proximo == "onibus":
+                pular_proximo = True
+            continue
+        limpos.append(segmento)
+    return "-".join(limpos)
 
 
 def listar_lotes_pendentes() -> list:
