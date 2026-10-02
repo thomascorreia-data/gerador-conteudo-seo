@@ -27700,5 +27700,344 @@
       "palavra": "viagem",
       "instrucao": "Sao Bento EMpresa onibus faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
     }
+  },
+  "industrialturismo": {
+    "empresa": "Industrial Turismo",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": "A Industrial Turismo é uma empresa de transporte de passageiros situada em Contagem, Minas Gerais, especializada em serviços de fretamento, viagens turísticas e excursões religiosas. Detalhes Principais Atuação: Transporte rodoviário coletivo de passageiros sob regime de fretamento intermunicipal e interestadual. Frota: Ônibus modernos e equipados, incluindo modelos Double Decker com assentos do tipo leito e semi-leito, ar-condicionado, Wi-Fi/USB e banheiro isolado. Localização da sede: Contagem (MG), com atuação forte na região metropolitana de Belo Horizonte. Contato oficial: É possível obter mais informações e cotações pelo Site Oficial da Industrial Turismo ou pelo perfil no Instagram @industrialturismobh . Gostaria de saber mais detalhes sobre orçamentos de fretamento, itinerários ou especificações da frota da Industrial Turismo?",
+        "referencias": [],
+        "erro": null
+      },
+      "Google_TopSites": {
+        "conteudo": "INDUSTRIAL TURISMO: A empresa INDUSTRIAL TURISMO, situada na cidade de Contagem/MG, vem com o objetivo de atuar no segmento de prestação de serviços de transporte de ... Industrial Turismo (@industrialturismobh): Sua viagem começa aqui! Melhor custo benefício em fretamento Sua melhor opção em BH e região Faça seu fretamento agora mesmo. NOSSA FROTA: (31) 3361-5382 · (31) 3361-5382 · contato.industrialturismo@hotmail.com · ÔNIBUS PREFIXO 2030 · ÔNIBUS PREFIXO 2028 · ÔNIBUS PREFIXO 2025 · ÔNIBUS PREFIXO 2022. INDUSTRIAL TURISMO LTDA - Consulta CNPJ: O CNPJ da empresa INDUSTRIAL TURISMO LTDA - ME é 06.321.385/0001-75. Com sede em CONTAGEM, MG, possui 22 anos, 1 mês e 26 dias e foi fundada em 22/06/2004. EMPRESA: A empresa INDUSTRIAL TURISMO, situada na cidade de Contagem/MG, vem com o objetivo de atuar no segmento de prestação de serviços de transporte de passageiros ... Turismo industrial: as fábricas contam as histórias da cidade: Fábricas, usinas e empresas podem ir além da produção e se transformar em experiências turísticas, aproximando visitantes da história, ... o turismo industrial como potenciador do desenvolvimento ...: O presente trabalho foi desenvolvido na empresa , que organiza passeios turísticos, e teve como objetivo, mapear as principais dificuldades de uma empresa ... Industrial Turismo Ltda em Contagem, MG - 06.321.385 ...: A empresa com a razão social Industrial Turismo Ltda, opera com o CNPJ 06.321.385/0001-75 (06321385000175) e foi fundada em 22/06/2004.",
+        "sites": [
+          {
+            "titulo": "INDUSTRIAL TURISMO",
+            "link": "https://industrialturismo.com.br/",
+            "snippet": "A empresa INDUSTRIAL TURISMO, situada na cidade de Contagem/MG, vem com o objetivo de atuar no segmento de prestação de serviços de transporte de ..."
+          },
+          {
+            "titulo": "Industrial Turismo (@industrialturismobh)",
+            "link": "https://www.instagram.com/industrialturismobh/",
+            "snippet": "Sua viagem começa aqui! Melhor custo benefício em fretamento Sua melhor opção em BH e região Faça seu fretamento agora mesmo."
+          },
+          {
+            "titulo": "NOSSA FROTA",
+            "link": "https://www.industrialturismo.com.br/nossa_frota.php",
+            "snippet": "(31) 3361-5382 · (31) 3361-5382 · contato.industrialturismo@hotmail.com · ÔNIBUS PREFIXO 2030 · ÔNIBUS PREFIXO 2028 · ÔNIBUS PREFIXO 2025 · ÔNIBUS PREFIXO 2022."
+          },
+          {
+            "titulo": "INDUSTRIAL TURISMO LTDA - Consulta CNPJ",
+            "link": "https://empresas.serasaexperian.com.br/consulta-gratis/INDUSTRIAL-TURISMO-LTDA-06321385000175",
+            "snippet": "O CNPJ da empresa INDUSTRIAL TURISMO LTDA - ME é 06.321.385/0001-75. Com sede em CONTAGEM, MG, possui 22 anos, 1 mês e 26 dias e foi fundada em 22/06/2004."
+          },
+          {
+            "titulo": "EMPRESA",
+            "link": "https://www.industrialturismo.com.br/empresa.php",
+            "snippet": "A empresa INDUSTRIAL TURISMO, situada na cidade de Contagem/MG, vem com o objetivo de atuar no segmento de prestação de serviços de transporte de passageiros ..."
+          },
+          {
+            "titulo": "Turismo industrial: as fábricas contam as histórias da cidade",
+            "link": "https://turismo.uai.com.br/colunistas/olhar-turistico/turismo-industrial-fabrica-historia-cidade/",
+            "snippet": "Fábricas, usinas e empresas podem ir além da produção e se transformar em experiências turísticas, aproximando visitantes da história, ..."
+          },
+          {
+            "titulo": "o turismo industrial como potenciador do desenvolvimento ...",
+            "link": "https://app.fiepr.org.br/revistacientifica/index.php/inovamais/article/download/871/737",
+            "snippet": "O presente trabalho foi desenvolvido na empresa , que organiza passeios turísticos, e teve como objetivo, mapear as principais dificuldades de uma empresa ..."
+          },
+          {
+            "titulo": "Industrial Turismo Ltda em Contagem, MG - 06.321.385 ...",
+            "link": "https://www.econodata.com.br/consulta-empresa/06321385000175-industrial-turismo-ltda",
+            "snippet": "A empresa com a razão social Industrial Turismo Ltda, opera com o CNPJ 06.321.385/0001-75 (06321385000175) e foi fundada em 22/06/2004."
+          }
+        ],
+        "site_oficial": {
+          "titulo": "INDUSTRIAL TURISMO",
+          "link": "https://industrialturismo.com.br/",
+          "snippet": "A empresa INDUSTRIAL TURISMO, situada na cidade de Contagem/MG, vem com o objetivo de atuar no segmento de prestação de serviços de transporte de ..."
+        },
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "Industrial Turismo faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
+  },
+  "rapidomarjao182": {
+    "empresa": "Rapido Marjao 182",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": "A Rápido Marajó é uma tradicional empresa brasileira de transporte rodoviário de passageiros, fundada em 1976 e historicamente sediada em Goiânia (GO). Ela nasceu da fusão entre a Expresso Braga e a Viação Araguarina, integrando o Grupo TTT (Transbrasiliana Transportes e Turismo). O termo \"182\" não faz parte do nome oficial da empresa. No setor de transportes, esse número geralmente refere-se a um prefixo de ônibus específico (o número de identificação pintado na carroceria do veículo), a uma linha de viagem cadastrada ou ao número de um guichê de atendimento em alguma rodoviária de grande porte. Situação Atual da Empresa Embora tenha sido uma gigante que conectava as regiões Norte, Nordeste, Centro-Oeste e Sudeste do Brasil, a empresa passou por graves crises financeiras nos últimos anos: Histórico de Crise: Em 2016, o Grupo TTT entrou em recuperação judicial. Em 2022, a Agência Nacional de Transportes Terrestres (ANTT) cassou a autorização da empresa para operar linhas regulares interestaduais. Falência: A falência da Rápido Marajó e da Transbrasiliana foi oficialmente decretada pela Justiça no final de dezembro de 2024. Leilão de Bens: Em março de 2026, os bens restantes da empresa (como garagens, terrenos e frotas de ônibus antigos) foram levados a leilão judicial para o pagamento de credores. Atualmente, passagens vendidas sob o nome da marca em plataformas digitais costumam ser operadas por empresas parceiras ou frotas terceirizadas autorizadas que assumiram as rotas. Se você estiver procurando uma informação específica sobre esse número \"182\", conte-me se você o viu em uma passagem, em um ônibus antigo ou em um guichê de rodoviária, para que eu possa te ajudar a identificar melhor!",
+        "referencias": [],
+        "erro": null
+      },
+      "Google_TopSites": {
+        "conteudo": "Viação Rápido Marajó - Passagens de Ônibus: A Viação Rapido Marajo atende diversas regiões no Brasil, incluindo estados como Pará e Amazonas, oferecendo rotas que ligam cidades importantes como Belém, ... Comprar passagem de ônibus da Rápido Marajó: Fundada em 1976, a Rápido Marajó nasceu da fusão de duas importantes companhias de ônibus, a Expresso Braga e a Viação Araguarina, e faz parte do grupo ... RÁPIDO MARAJÓ E ITAPEMIRIM: O CONSÓRCIO QUE ...: ... Rápido Marajó era uma empresa tradicional com forte presença nas regiões Centro-Oeste e Norte do país, integrando o Grupo TTT ao lado da ... Encontre passagens de ônibus da Viação Rápido Marajó: Criada em agosto de 1976, a Viação Rápido Marajó é o resultado da fusão de duas importantes companhias de ônibus: Expresso Braga e Viação Araguarina. Atualmente ... Especial Rápido Marajó | Todas as 15 linhas da empresa!!: Sobre a empresa: A Viação Rápido Marajó foi fundada em 1976 após a fusão de duas importantes companhias de ônibus e faz parte do grupo da ... Compre Passagem de Ônibus da Rápido Marajó | Embarca.ai: A Rápido Marajó é uma tradicional empresa de transporte rodoviário que atua com excelência desde 1976. Integrante do grupo Viação Transbrasiliana, a empresa ... O que aconteceu com a Rápido Marajó?🚌 Da expansão à ...: Em 2015, a ANTT autorizou a transferência de diversos serviços da Transbrasiliana para a Rápido Marajó. Entre os mercados estavam Belém–São Luís ... Empresa: Rápido Marajó Modelo: Marcopolo Paradiso G7 ...: Além da Transbrasiliana, outra que foi decretada falência foi a Rápido Marajó, que apesar que menor que a Transbrasiliana, tinha uma parcela ... Viação Rápido Marajó: Telefone, Preços e Horários em 2026: O Rápido Marajó é uma empresa de transporte rodoviário com atuação no Pará. A empresa opera linhas entre Belém e cidades do interior paraense, além de rotas ...",
+        "sites": [
+          {
+            "titulo": "Viação Rápido Marajó - Passagens de Ônibus",
+            "link": "https://queropassagem.com.br/auto-viacao-rapido-marajo",
+            "snippet": "A Viação Rapido Marajo atende diversas regiões no Brasil, incluindo estados como Pará e Amazonas, oferecendo rotas que ligam cidades importantes como Belém, ..."
+          },
+          {
+            "titulo": "Comprar passagem de ônibus da Rápido Marajó",
+            "link": "https://rodon.com.br/viacao/rapido-marajo",
+            "snippet": "Fundada em 1976, a Rápido Marajó nasceu da fusão de duas importantes companhias de ônibus, a Expresso Braga e a Viação Araguarina, e faz parte do grupo ..."
+          },
+          {
+            "titulo": "RÁPIDO MARAJÓ E ITAPEMIRIM: O CONSÓRCIO QUE ...",
+            "link": "https://www.instagram.com/p/DXk0FloFZdg/",
+            "snippet": "... Rápido Marajó era uma empresa tradicional com forte presença nas regiões Centro-Oeste e Norte do país, integrando o Grupo TTT ao lado da ..."
+          },
+          {
+            "titulo": "Encontre passagens de ônibus da Viação Rápido Marajó",
+            "link": "https://www.clickbus.com.br/viacao/rapido-marajo",
+            "snippet": "Criada em agosto de 1976, a Viação Rápido Marajó é o resultado da fusão de duas importantes companhias de ônibus: Expresso Braga e Viação Araguarina. Atualmente ..."
+          },
+          {
+            "titulo": "Especial Rápido Marajó | Todas as 15 linhas da empresa!!",
+            "link": "https://www.youtube.com/watch?v=3GOHh43zips",
+            "snippet": "Sobre a empresa: A Viação Rápido Marajó foi fundada em 1976 após a fusão de duas importantes companhias de ônibus e faz parte do grupo da ..."
+          },
+          {
+            "titulo": "Compre Passagem de Ônibus da Rápido Marajó | Embarca.ai",
+            "link": "https://rapidomarajopassagem.embarca.ai/",
+            "snippet": "A Rápido Marajó é uma tradicional empresa de transporte rodoviário que atua com excelência desde 1976. Integrante do grupo Viação Transbrasiliana, a empresa ..."
+          },
+          {
+            "titulo": "O que aconteceu com a Rápido Marajó?🚌 Da expansão à ...",
+            "link": "https://www.facebook.com/vemdeonibusoficial/posts/o-que-aconteceu-com-a-r%C3%A1pido-maraj%C3%B3da-expans%C3%A3o-%C3%A0-fal%C3%AAncia-de-uma-das-empresas-ma/1631463472357097/",
+            "snippet": "Em 2015, a ANTT autorizou a transferência de diversos serviços da Transbrasiliana para a Rápido Marajó. Entre os mercados estavam Belém–São Luís ..."
+          },
+          {
+            "titulo": "Empresa: Rápido Marajó Modelo: Marcopolo Paradiso G7 ...",
+            "link": "https://www.instagram.com/reel/DDfp0gsJSNk/",
+            "snippet": "Além da Transbrasiliana, outra que foi decretada falência foi a Rápido Marajó, que apesar que menor que a Transbrasiliana, tinha uma parcela ..."
+          },
+          {
+            "titulo": "Viação Rápido Marajó: Telefone, Preços e Horários em 2026",
+            "link": "https://onibuz.com/viacao/rapido-marajo/",
+            "snippet": "O Rápido Marajó é uma empresa de transporte rodoviário com atuação no Pará. A empresa opera linhas entre Belém e cidades do interior paraense, além de rotas ..."
+          }
+        ],
+        "site_oficial": null,
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "hibrida",
+      "palavra": "passagem",
+      "instrucao": "Rapido Marjao 182 opera linha regular de ônibus e também faz fretamento/turismo (classificação automática, baseada nas fontes coletadas). Use \"passagem\" em todas as menções, e pode citar as duas atividades no texto (ex: \"opera linhas regulares e também realiza fretamento para excursões\")."
+    }
+  },
+  "turismoabc": {
+    "empresa": "Turismo ABC",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": "A Turismo ABC (ou ABC Turismo) geralmente se refere à tradicional Turismo ABC de Belo Horizonte , uma empresa de turismo e fretamento famosa por pacotes rodoviários e viagens para destinos como Caldas Novas e o Rio Quente Resort. Como o nome \"ABC\" é bastante comum, existem outras empresas e iniciativas com nomenclaturas similares no Brasil: ABC Agência de Viagens e Turismo (Belo Horizonte - MG): Focada em excursões rodoviárias, pacotes de viagens e fretamento. ABC Turismo e Pedagógico: Agência voltada para roteiros educativos e histórico-culturais. ABCTur (Grande ABC - SP): O órgão gestor da região turística do ABC Paulista, promovendo o turismo regional de natureza e industrial. Outras agências locais: Empresas com nomes parecidos em estados como Rio de Janeiro, São Paulo e Bahia voltadas a turismo de lazer ou corporativo. Se você se refere a uma cidade específica ou a um serviço em particular (como passagens, ônibus ou excursão), me informe para eu trazer os dados exatos.",
+        "referencias": [],
+        "erro": null
+      },
+      "Google_TopSites": {
+        "conteudo": "Abc Viagens: Nossa equipe de agentes estão preparados para assessorá-lo em sua viagem de lazer ou negócios. Contato. Nossa empresa. Logomarca do rodapé. ABC Agência de ... ABC Turismo & MTravel (@abc_e_mtravel): Agência especializada em turismo de luxo, corporativo, eventos e viagens de incentivos. Desde 1955 ressignificando experiências. RJ, SP. ABC Turismo e Pedagógico: Agência de viagens, excursões, assessoria em turismo e elaboração de roteiros turísticos pedagógicos, histórico-culturais, sol e mar. CNPJ: 45.521.987/0001-28. ABC | Turismo: Pedale por planícies aos pés da imponente Cordilheira dos Andes. Deguste vinhos espetaculares, onde são elaborados. Recupere as energias com vistas incríveis. Lista de reclamações: ABC turismo - Belo Horizonte: Qual a reputação de ABC turismo - Belo Horizonte? Sem reputação definida. Essa empresa ainda não possui 10 reclamações avaliadas para calcularmos a reputação. Turismo ABC (@abcturismooficial): Turismo ABC. 4.420 followers · 49 falando sobre isso. Agência de turismo e fretamento. Fretamento: (31)3457-4873 Turismo : (31)3519-8800. ABCTur - Grande ABC: ... Turismo, é o órgão gestor da RegiãoTurística ABCTur, batizada de Roteiro da Natureza e Indústria. Conheça o Grande ABC! 7 cidades e muitas surpresas esperam ... AGENCIA DE VIAGENS ABC TURISMO LTDA - EPP: O CNPJ da empresa AGENCIA DE VIAGENS ABC TURISMO LTDA - EPP ABC TURISMO é 20.406.924/0001-08. Com sede em SALVADOR, BA, possui 12 anos, 2 meses e 10 dias e foi ... Conheça nossa empresa: Nossos serviços não se resumem a viagens. Oferecemos consultoria para emissão de passaportes, vistos, vacinas, ingressos, shows, traslados, conectividade no ...",
+        "sites": [
+          {
+            "titulo": "Abc Viagens",
+            "link": "https://www.abcviagens.com.br/",
+            "snippet": "Nossa equipe de agentes estão preparados para assessorá-lo em sua viagem de lazer ou negócios. Contato. Nossa empresa. Logomarca do rodapé. ABC Agência de ..."
+          },
+          {
+            "titulo": "ABC Turismo & MTravel (@abc_e_mtravel)",
+            "link": "https://www.instagram.com/abc_e_mtravel/",
+            "snippet": "Agência especializada em turismo de luxo, corporativo, eventos e viagens de incentivos. Desde 1955 ressignificando experiências. RJ, SP."
+          },
+          {
+            "titulo": "ABC Turismo e Pedagógico",
+            "link": "https://abcturismopedagogico.com.br/",
+            "snippet": "Agência de viagens, excursões, assessoria em turismo e elaboração de roteiros turísticos pedagógicos, histórico-culturais, sol e mar. CNPJ: 45.521.987/0001-28."
+          },
+          {
+            "titulo": "ABC | Turismo",
+            "link": "http://www.abctur.com.br/site/",
+            "snippet": "Pedale por planícies aos pés da imponente Cordilheira dos Andes. Deguste vinhos espetaculares, onde são elaborados. Recupere as energias com vistas incríveis."
+          },
+          {
+            "titulo": "Lista de reclamações: ABC turismo - Belo Horizonte",
+            "link": "https://www.reclameaqui.com.br/empresa/abc-turismo-belo-horizonte/lista-reclamacoes/",
+            "snippet": "Qual a reputação de ABC turismo - Belo Horizonte? Sem reputação definida. Essa empresa ainda não possui 10 reclamações avaliadas para calcularmos a reputação."
+          },
+          {
+            "titulo": "Turismo ABC (@abcturismooficial)",
+            "link": "https://www.facebook.com/abcturismooficial/?locale=pt_BR",
+            "snippet": "Turismo ABC. 4.420 followers · 49 falando sobre isso. Agência de turismo e fretamento. Fretamento: (31)3457-4873 Turismo : (31)3519-8800."
+          },
+          {
+            "titulo": "ABCTur - Grande ABC",
+            "link": "http://www.consorcioabc.sp.gov.br/pagina/112/abctur/",
+            "snippet": "... Turismo, é o órgão gestor da RegiãoTurística ABCTur, batizada de Roteiro da Natureza e Indústria. Conheça o Grande ABC! 7 cidades e muitas surpresas esperam ..."
+          },
+          {
+            "titulo": "AGENCIA DE VIAGENS ABC TURISMO LTDA - EPP",
+            "link": "https://empresas.serasaexperian.com.br/consulta-gratis/AGENCIA-DE-VIAGENS-ABC-TURISMO-LTDA-EPP-20406924000108",
+            "snippet": "O CNPJ da empresa AGENCIA DE VIAGENS ABC TURISMO LTDA - EPP ABC TURISMO é 20.406.924/0001-08. Com sede em SALVADOR, BA, possui 12 anos, 2 meses e 10 dias e foi ..."
+          },
+          {
+            "titulo": "Conheça nossa empresa",
+            "link": "https://www.abcviagens.com.br/institucional/?id=11&/conhe%C3%A7a-nossa-empresa",
+            "snippet": "Nossos serviços não se resumem a viagens. Oferecemos consultoria para emissão de passaportes, vistos, vacinas, ingressos, shows, traslados, conectividade no ..."
+          }
+        ],
+        "site_oficial": null,
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "Turismo ABC faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
+  },
+  "expressonovafronteirapegasusturismo": {
+    "empresa": "Expresso Nova Fronteira - Pegasus Turismo",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": null,
+        "referencias": [],
+        "erro": "SerpApi não retornou o AI Overview (status: Success)."
+      },
+      "Google_TopSites": {
+        "conteudo": "Expresso Nova Fronteira LTDA - 44424122000180 Assis: A empresa Expresso Nova Fronteira LTDA de CNPJ 44.424.122/0001-80, foi fundada em 30/11/2021 na cidade Assis no estado São Paulo. Sua atividade ... Expresso Nova Fronteira LTDA em Assis, SP - 44.424.122/ ...: Consulte Expresso Nova Fronteira LTDA: CNPJ 44.424.122/0001-80, sede em Assis/SP. Atividade: Agências de viagens. Veja sócios, decisores e faturamento. Expresso Nova Palmira: Expresso Nova Palmira · Viagens · A Empresa · Depoimentos; Álbum de Fotos; Contato. Minhas reservas; Meus dados. Cadastre-se · Login; PT-BR ... Expresso Nova Fronteira LTDA: Consulte os processos de Expresso Nova Fronteira LTDA, Agências de Viagens, em Assis/SP. Busque, acompanhe e seja notificado a cada atualização com o ... PEGASUS TURISMO LTDA - 07342443000100 | Consulte ...: O CNPJ da empresa PEGASUS TURISMO LTDA é 07.342.443/0001-00. Com sede em BELO HORIZONTE, MG, possui 21 anos, 4 meses e 28 dias e foi fundada em 27/04/2005. A ... expresso nova fronteira ltda - Atlas Público: EXPRESSO NOVA FRONTEIRA LTDA (CNPJ 44.424.122/0001-80), sociedade empresária limitada, está sediada em ASSIS/SP e foi aberta em 30/11/2021. Segundo fontes ... Expresso Nova Fronteira Ltda em Assis, SP: A empresa Expresso Nova Fronteira Ltda trabalha desde 2021 na categoria Agências de Turismo na cidade de Assis, SP na Rua Nivaldo Neres Gusmao, Nº 1 - Vila ... A Pegasus Turismo oferece soluções completas em ...: A Pegasus Turismo oferece soluções completas em transporte para diferentes necessidades. Atendemos empresas, excursões, eventos e órgãos ... PEGASUS TURISMO LTDA - CNPJ 20.455.083/0001-10: A PEGASUS TURISMO LTDA tem atividade principal em transporte rodoviário coletivo de passageiros, sob regime de fretamento, intermunicipal, interestadual e ...",
+        "sites": [
+          {
+            "titulo": "Expresso Nova Fronteira LTDA - 44424122000180 Assis",
+            "link": "https://cnpj.biz/44424122000180",
+            "snippet": "A empresa Expresso Nova Fronteira LTDA de CNPJ 44.424.122/0001-80, foi fundada em 30/11/2021 na cidade Assis no estado São Paulo. Sua atividade ..."
+          },
+          {
+            "titulo": "Expresso Nova Fronteira LTDA em Assis, SP - 44.424.122/ ...",
+            "link": "https://www.econodata.com.br/consulta-empresa/44424122000180-expresso-nova-fronteira-ltda",
+            "snippet": "Consulte Expresso Nova Fronteira LTDA: CNPJ 44.424.122/0001-80, sede em Assis/SP. Atividade: Agências de viagens. Veja sócios, decisores e faturamento."
+          },
+          {
+            "titulo": "Expresso Nova Palmira",
+            "link": "https://www.novapalmira.com.br/",
+            "snippet": "Expresso Nova Palmira · Viagens · A Empresa · Depoimentos; Álbum de Fotos; Contato. Minhas reservas; Meus dados. Cadastre-se · Login; PT-BR ..."
+          },
+          {
+            "titulo": "Expresso Nova Fronteira LTDA",
+            "link": "https://www.jusbrasil.com.br/nome/expresso-nova-fronteira-ltda/cnpj-Nd0jKZcmvUd",
+            "snippet": "Consulte os processos de Expresso Nova Fronteira LTDA, Agências de Viagens, em Assis/SP. Busque, acompanhe e seja notificado a cada atualização com o ..."
+          },
+          {
+            "titulo": "PEGASUS TURISMO LTDA - 07342443000100 | Consulte ...",
+            "link": "https://empresas.serasaexperian.com.br/consulta-gratis/PEGASUS-TURISMO-LTDA-07342443000100",
+            "snippet": "O CNPJ da empresa PEGASUS TURISMO LTDA é 07.342.443/0001-00. Com sede em BELO HORIZONTE, MG, possui 21 anos, 4 meses e 28 dias e foi fundada em 27/04/2005. A ..."
+          },
+          {
+            "titulo": "expresso nova fronteira ltda - Atlas Público",
+            "link": "https://atlaspublico.com.br/empresa/44424122000180",
+            "snippet": "EXPRESSO NOVA FRONTEIRA LTDA (CNPJ 44.424.122/0001-80), sociedade empresária limitada, está sediada em ASSIS/SP e foi aberta em 30/11/2021. Segundo fontes ..."
+          },
+          {
+            "titulo": "Expresso Nova Fronteira Ltda em Assis, SP",
+            "link": "https://www.solutudo.com.br/empresas/sp/assis/agencias-de-turismo/expresso-nova-fronteira-ltda-25036870",
+            "snippet": "A empresa Expresso Nova Fronteira Ltda trabalha desde 2021 na categoria Agências de Turismo na cidade de Assis, SP na Rua Nivaldo Neres Gusmao, Nº 1 - Vila ..."
+          },
+          {
+            "titulo": "A Pegasus Turismo oferece soluções completas em ...",
+            "link": "https://www.instagram.com/p/DWg3-EGEQeW/",
+            "snippet": "A Pegasus Turismo oferece soluções completas em transporte para diferentes necessidades. Atendemos empresas, excursões, eventos e órgãos ..."
+          },
+          {
+            "titulo": "PEGASUS TURISMO LTDA - CNPJ 20.455.083/0001-10",
+            "link": "https://monitorcnpj.com.br/cnpj/20455083000110/",
+            "snippet": "A PEGASUS TURISMO LTDA tem atividade principal em transporte rodoviário coletivo de passageiros, sob regime de fretamento, intermunicipal, interestadual e ..."
+          }
+        ],
+        "site_oficial": null,
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "Expresso Nova Fronteira - Pegasus Turismo faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
+  },
+  "rapidomarjao": {
+    "empresa": "Rapido Marjao",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": "A Rápido Marajó foi uma tradicional empresa brasileira de transporte rodoviário de passageiros, integrante do Grupo Transbrasiliana (ligada ao grupo TTT - Transbrasiliana Transporte e Turismo). Principais informações sobre a empresa: História: Fundada na década de 1970 (com origens ligadas a fusões empresariais da época, como as da Viação Araguarina e Expresso Braga), a empresa operava rotas de ônibus ligando o Centro-Oeste e o Distrito Federal a regiões do Nordeste e Norte do Brasil . Parcerias e repasses: Ao longo de sua trajetória, integrou o consórcio com a Itapemirim/Kaissara (do qual saiu em 2017) e repassou linhas expressas para outras viações, como a RodeRotas. Situação atual: A empresa entrou em recuperação judicial e teve sua falência decretada em dezembro de 2024, acumulando dívidas milionárias. Bens e ativos da empresa passaram por processos de leilão judicial em 2026. Gostaria de saber mais sobre as rotas que ela operava ou sobre a situação do grupo Transbrasiliana?",
+        "referencias": [],
+        "erro": null
+      },
+      "Google_TopSites": {
+        "conteudo": "Rápido Marajó 91107, Paradiso G7 1200 Mercedes O-500 ...: Adquirida pela Guanabara em 1995, esta empresa foi um dos símbolos das estradas paraibanas assim como outros nomes de relevância do transporte ... Rápido Marajó passagens de ônibus e horários - CheckMyBus: Você quer viajar com Rápido Marajó? Nesta página você encontrará todas as informações para sua próxima viagem com a Rápido Marajó: melhores conexões, destinos, ... Lista de reclamações: Viação Rápido Marajó: Qual a reputação de Viação Rápido Marajó? Sem reputação definida. Essa empresa ainda não possui 10 reclamações avaliadas para calcularmos a reputação. Rápido Marajó sai do consórcio Itapemirim/Kaissara: A empresa comunicou a saída por meio de um ofício, onde expôs algumas regras que devem ser obedecidas até a devolução total dos veículos. Dentre ... RAPIDO MARAJO LTDA FALIDO - 01017201001489: O CNPJ da empresa RAPIDO MARAJO LTDA FALIDO MARAJO é 01.017.201/0014-89. Com sede em GURUPI, TO, possui 2 anos, 6 meses e 12 dias e foi fundada em 29/02/2024. A ... EMPRESA \"RODEROTAS\" ASSUME LINHAS DA RÁPIDO ...: EMPRESA \"RODEROTAS\" ASSUME LINHAS DA RÁPIDO MARAJÓ A Rápido Marajó (Grupo Transbrasiliana), DF, repassou para a RodeRotas (Viação Rotas do ... Avaliações e comentários para Rápido Marajó - CheckMyBus: Empresa deveria prestar um serviço melhor em relação aos motoristas e aos ônibus, ar condicionado não gela fazendo seus usuários sofrer! RAPIDO MARAJO LTDA FALIDO - Consulta CNPJ: O CNPJ da empresa RAPIDO MARAJO LTDA FALIDO MARAJO é 01.017.201/0004-07. Com sede em BRASILIA, DF, possui 45 anos, 6 meses e 24 dias e foi fundada em 06/03/1981 ... DOES RÁPIDO MARAJÓ STILL EXIST? THE ANSWER IS ...: Quer entrar em contato? Envie um e-mail para fabiopaixaoo@gmail.com Neste vídeo, temos as seguintes empresas: - Matriz - Guanabara - Útil ...",
+        "sites": [
+          {
+            "titulo": "Rápido Marajó 91107, Paradiso G7 1200 Mercedes O-500 ...",
+            "link": "https://www.instagram.com/p/CFS8qiMpRVQ/",
+            "snippet": "Adquirida pela Guanabara em 1995, esta empresa foi um dos símbolos das estradas paraibanas assim como outros nomes de relevância do transporte ..."
+          },
+          {
+            "titulo": "Rápido Marajó passagens de ônibus e horários - CheckMyBus",
+            "link": "https://www.checkmybus.com.br/empresas-de-onibus/rapido-marajo",
+            "snippet": "Você quer viajar com Rápido Marajó? Nesta página você encontrará todas as informações para sua próxima viagem com a Rápido Marajó: melhores conexões, destinos, ..."
+          },
+          {
+            "titulo": "Lista de reclamações: Viação Rápido Marajó",
+            "link": "https://www.reclameaqui.com.br/empresa/viacao-rapido-marajo/lista-reclamacoes/?produto=0000000000000087",
+            "snippet": "Qual a reputação de Viação Rápido Marajó? Sem reputação definida. Essa empresa ainda não possui 10 reclamações avaliadas para calcularmos a reputação."
+          },
+          {
+            "titulo": "Rápido Marajó sai do consórcio Itapemirim/Kaissara",
+            "link": "https://www.mobceara.com/2017/10/itapemirimkaissara-desfaz-sociedade-com.html",
+            "snippet": "A empresa comunicou a saída por meio de um ofício, onde expôs algumas regras que devem ser obedecidas até a devolução total dos veículos. Dentre ..."
+          },
+          {
+            "titulo": "RAPIDO MARAJO LTDA FALIDO - 01017201001489",
+            "link": "https://empresas.serasaexperian.com.br/consulta-gratis/RAPIDO-MARAJO-LTDA-.-EM-RECUPERACAO-JUDICIAL-01017201001489",
+            "snippet": "O CNPJ da empresa RAPIDO MARAJO LTDA FALIDO MARAJO é 01.017.201/0014-89. Com sede em GURUPI, TO, possui 2 anos, 6 meses e 12 dias e foi fundada em 29/02/2024. A ..."
+          },
+          {
+            "titulo": "EMPRESA \"RODEROTAS\" ASSUME LINHAS DA RÁPIDO ...",
+            "link": "https://www.facebook.com/onibus.empresas/posts/empresa-roderotas-assume-linhas-da-r%C3%A1pido-maraj%C3%B3-a-r%C3%A1pido-maraj%C3%B3-grupo-transbras/2932412470108513/?locale=es_LA",
+            "snippet": "EMPRESA \"RODEROTAS\" ASSUME LINHAS DA RÁPIDO MARAJÓ A Rápido Marajó (Grupo Transbrasiliana), DF, repassou para a RodeRotas (Viação Rotas do ..."
+          },
+          {
+            "titulo": "Avaliações e comentários para Rápido Marajó - CheckMyBus",
+            "link": "https://www.checkmybus.com.br/empresas-de-onibus/rapido-marajo/avaliacoes",
+            "snippet": "Empresa deveria prestar um serviço melhor em relação aos motoristas e aos ônibus, ar condicionado não gela fazendo seus usuários sofrer!"
+          },
+          {
+            "titulo": "RAPIDO MARAJO LTDA FALIDO - Consulta CNPJ",
+            "link": "https://empresas.serasaexperian.com.br/consulta-gratis/RAPIDO-MARAJO-LTDA-EM-RECUPERACAO-JUDICIAL-01017201000407",
+            "snippet": "O CNPJ da empresa RAPIDO MARAJO LTDA FALIDO MARAJO é 01.017.201/0004-07. Com sede em BRASILIA, DF, possui 45 anos, 6 meses e 24 dias e foi fundada em 06/03/1981 ..."
+          },
+          {
+            "titulo": "DOES RÁPIDO MARAJÓ STILL EXIST? THE ANSWER IS ...",
+            "link": "https://www.youtube.com/watch?v=nQP4V_bvSLQ",
+            "snippet": "Quer entrar em contato? Envie um e-mail para fabiopaixaoo@gmail.com Neste vídeo, temos as seguintes empresas: - Matriz - Guanabara - Útil ..."
+          }
+        ],
+        "site_oficial": null,
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "Rapido Marjao faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
   }
 }
