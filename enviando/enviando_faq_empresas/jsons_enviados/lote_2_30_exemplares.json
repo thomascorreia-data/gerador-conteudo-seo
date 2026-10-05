@@ -1,0 +1,1172 @@
+[
+    {
+        "id": "thomas-0",
+        "requisitor": "Thomas",
+        "autor": "Thomas",
+        "formato": "FAQ",
+        "tom": "geral",
+        "media_palavras": 100,
+        "palavras_chave": null,
+        "quantidade_perguntas": 6,
+        "tema": "https://penedo-turismo.buser.com.br",
+        "conteudo_gerado": "P: A compra pela Buser é segura?<br>R: Sim, a Buser adota um método de pagamento seguro e protege as informações dos usuários em todas as etapas da compra.<br><br>P: Quais são as opções de bagagem permitidas na Penedo Turismo?<br>R: Na Penedo Turismo, cada passageiro pode levar uma bagagem de até 30 kg, além de uma bagagem de mão que deve ser compacta o suficiente para caber sob o assento. Lembre-se de conferir as orientações específicas durante a compra para garantir que sua bagagem esteja de acordo com as normas.<br><br>P: Quais formas de pagamento a Buser aceita?<br>R: A Buser aceita pagamentos via cartão de crédito, débito, Pix ou boleto, conforme as opções disponíveis para a sua rota.<br><br>P: Posso cancelar minha compra com a Penedo Turismo?<br>R: Sim, a Buser oferece cancelamento gratuito, que pode ser realizado diretamente pelo site ou aplicativo, dentro do prazo estipulado para a tarifa escolhida.<br><br>P: É possível remarcar minha viagem com a Penedo Turismo?<br>R: Sim, a remarcação pode ser feita de maneira simples pelo site ou app da Buser, sem a necessidade de telefonar ou visitar um guichê.<br><br>P: Vale a pena reservar com a Penedo Turismo pela Buser?<br>R: Com certeza! Além de contar com a Penedo Turismo, você ainda desfruta de preços acessíveis, cancelamento gratuito e um processo de reserva totalmente digital através da Buser.",
+        "company_slug": "penedo-turismo",
+        "faqs": [
+            {
+                "question": "A compra pela Buser é segura?",
+                "answer": "Sim, a Buser adota um método de pagamento seguro e protege as informações dos usuários em todas as etapas da compra."
+            },
+            {
+                "question": "Quais são as opções de bagagem permitidas na Penedo Turismo?",
+                "answer": "Na Penedo Turismo, cada passageiro pode levar uma bagagem de até 30 kg, além de uma bagagem de mão que deve ser compacta o suficiente para caber sob o assento. Lembre-se de conferir as orientações específicas durante a compra para garantir que sua bagagem esteja de acordo com as normas."
+            },
+            {
+                "question": "Quais formas de pagamento a Buser aceita?",
+                "answer": "A Buser aceita pagamentos via cartão de crédito, débito, Pix ou boleto, conforme as opções disponíveis para a sua rota."
+            },
+            {
+                "question": "Posso cancelar minha compra com a Penedo Turismo?",
+                "answer": "Sim, a Buser oferece cancelamento gratuito, que pode ser realizado diretamente pelo site ou aplicativo, dentro do prazo estipulado para a tarifa escolhida."
+            },
+            {
+                "question": "É possível remarcar minha viagem com a Penedo Turismo?",
+                "answer": "Sim, a remarcação pode ser feita de maneira simples pelo site ou app da Buser, sem a necessidade de telefonar ou visitar um guichê."
+            },
+            {
+                "question": "Vale a pena reservar com a Penedo Turismo pela Buser?",
+                "answer": "Com certeza! Além de contar com a Penedo Turismo, você ainda desfruta de preços acessíveis, cancelamento gratuito e um processo de reserva totalmente digital através da Buser."
+            }
+        ]
+    },
+    {
+        "id": "thomas-1",
+        "requisitor": "Thomas",
+        "autor": "Thomas",
+        "formato": "FAQ",
+        "tom": "geral",
+        "media_palavras": 100,
+        "palavras_chave": null,
+        "quantidade_perguntas": 6,
+        "tema": "https://turissul.buser.com.br",
+        "conteudo_gerado": "P: É possível remarcar minha viagem com a Turissul?<br>R: Sim, você pode remarcar sua viagem de maneira simples pelo site ou app da Buser, sem precisar fazer ligações ou visitar um guichê.<br><br>P: Vale a pena reservar com a Turissul pela Buser?<br>R: Com certeza! Ao escolher a Turissul, você não só acessa preços atrativos, mas também conta com cancelamento grátis e um processo de reserva totalmente digital através da Buser.<br><br>P: Quais são as comodidades oferecidas nos ônibus da Turissul?<br>R: Os ônibus da Turissul vêm equipados com ar-condicionado e poltronas reclináveis, garantindo que você tenha uma viagem agradável e confortável.<br><br>P: Como recebo a confirmação da minha reserva com a Turissul?<br>R: Assim que o pagamento é confirmado, você recebe um e-mail com a confirmação, e o bilhete ficará disponível na sua conta da Buser.<br><br>P: Tenho atendimento se precisar de ajuda durante a viagem com a Turissul?<br>R: Sim, a Buser disponibiliza atendimento humano 24 horas para esclarecer dúvidas e dar suporte em qualquer fase da sua viagem.<br><br>P: Posso cancelar minha compra com a Turissul?<br>R: Sim, você pode cancelar sua compra sem custo, diretamente pelo site ou aplicativo, respeitando o prazo estabelecido para a tarifa que escolheu.",
+        "company_slug": "turissul",
+        "faqs": [
+            {
+                "question": "É possível remarcar minha viagem com a Turissul?",
+                "answer": "Sim, você pode remarcar sua viagem de maneira simples pelo site ou app da Buser, sem precisar fazer ligações ou visitar um guichê."
+            },
+            {
+                "question": "Vale a pena reservar com a Turissul pela Buser?",
+                "answer": "Com certeza! Ao escolher a Turissul, você não só acessa preços atrativos, mas também conta com cancelamento grátis e um processo de reserva totalmente digital através da Buser."
+            },
+            {
+                "question": "Quais são as comodidades oferecidas nos ônibus da Turissul?",
+                "answer": "Os ônibus da Turissul vêm equipados com ar-condicionado e poltronas reclináveis, garantindo que você tenha uma viagem agradável e confortável."
+            },
+            {
+                "question": "Como recebo a confirmação da minha reserva com a Turissul?",
+                "answer": "Assim que o pagamento é confirmado, você recebe um e-mail com a confirmação, e o bilhete ficará disponível na sua conta da Buser."
+            },
+            {
+                "question": "Tenho atendimento se precisar de ajuda durante a viagem com a Turissul?",
+                "answer": "Sim, a Buser disponibiliza atendimento humano 24 horas para esclarecer dúvidas e dar suporte em qualquer fase da sua viagem."
+            },
+            {
+                "question": "Posso cancelar minha compra com a Turissul?",
+                "answer": "Sim, você pode cancelar sua compra sem custo, diretamente pelo site ou aplicativo, respeitando o prazo estabelecido para a tarifa que escolheu."
+            }
+        ]
+    },
+    {
+        "id": "thomas-2",
+        "requisitor": "Thomas",
+        "autor": "Thomas",
+        "formato": "FAQ",
+        "tom": "geral",
+        "media_palavras": 100,
+        "palavras_chave": null,
+        "quantidade_perguntas": 6,
+        "tema": "https://viacao-arca.buser.com.br",
+        "conteudo_gerado": "P: Como recebo a confirmação da minha reserva com a Viação Arca?<br>R: Assim que o pagamento é aprovado, você recebe um e-mail com a confirmação e o bilhete já fica disponível na sua conta da Buser.<br><br>P: As poltronas da Viação Arca são confortáveis?<br>R: Ao viajar com a Viação Arca pela Buser, você desfruta de poltronas confortáveis, projetadas para tornar sua viagem mais agradável.<br><br>P: Posso cancelar minha compra com a Viação Arca?<br>R: Sim, a Buser oferece cancelamento grátis, que pode ser feito diretamente pelo site ou aplicativo, dentro do prazo da tarifa selecionada.<br><br>P: Vale a pena reservar com a Viação Arca pela Buser?<br>R: Com certeza — ao escolher a Viação Arca, você se beneficia de preços acessíveis, cancelamento grátis e um processo de reserva totalmente digital pela Buser.<br><br>P: Quais documentos eu preciso levar para viajar com a Viação Arca?<br>R: Para embarcar com a Viação Arca, você deve apresentar um documento de identidade com foto, como RG ou CNH.<br><br>P: É possível remarcar minha viagem com a Viação Arca?<br>R: Sim, você pode remarcar sua viagem de forma simples pelo site ou app da Buser, sem a necessidade de ligar ou ir a um guichê.",
+        "company_slug": "viacao-arca",
+        "faqs": [
+            {
+                "question": "Como recebo a confirmação da minha reserva com a Viação Arca?",
+                "answer": "Assim que o pagamento é aprovado, você recebe um e-mail com a confirmação e o bilhete já fica disponível na sua conta da Buser."
+            },
+            {
+                "question": "As poltronas da Viação Arca são confortáveis?",
+                "answer": "Ao viajar com a Viação Arca pela Buser, você desfruta de poltronas confortáveis, projetadas para tornar sua viagem mais agradável."
+            },
+            {
+                "question": "Posso cancelar minha compra com a Viação Arca?",
+                "answer": "Sim, a Buser oferece cancelamento grátis, que pode ser feito diretamente pelo site ou aplicativo, dentro do prazo da tarifa selecionada."
+            },
+            {
+                "question": "Vale a pena reservar com a Viação Arca pela Buser?",
+                "answer": "Com certeza — ao escolher a Viação Arca, você se beneficia de preços acessíveis, cancelamento grátis e um processo de reserva totalmente digital pela Buser."
+            },
+            {
+                "question": "Quais documentos eu preciso levar para viajar com a Viação Arca?",
+                "answer": "Para embarcar com a Viação Arca, você deve apresentar um documento de identidade com foto, como RG ou CNH."
+            },
+            {
+                "question": "É possível remarcar minha viagem com a Viação Arca?",
+                "answer": "Sim, você pode remarcar sua viagem de forma simples pelo site ou app da Buser, sem a necessidade de ligar ou ir a um guichê."
+            }
+        ]
+    },
+    {
+        "id": "thomas-3",
+        "requisitor": "Thomas",
+        "autor": "Thomas",
+        "formato": "FAQ",
+        "tom": "geral",
+        "media_palavras": 100,
+        "palavras_chave": null,
+        "quantidade_perguntas": 6,
+        "tema": "https://jamjoy-viacao.buser.com.br",
+        "conteudo_gerado": "P: Como recebo a confirmação da minha reserva com a Jamjoy Viação?<br>R: Assim que o pagamento é aprovado, você recebe um e-mail de confirmação e o bilhete já fica disponível na sua conta da Buser.<br><br>P: Quais são as condições para transportar animais de estimação na Jamjoy Viação?<br>R: Na Jamjoy Viação, é permitido levar pequenos animais de estimação, desde que estejam em caixas apropriadas e pesem até 5 kg. É essencial que o passageiro informe sobre a presença do animal no momento da compra da passagem.<br><br>P: Como faço pra viajar com a Jamjoy Viação pela Buser?<br>R: Para viajar com a Jamjoy Viação pela Buser, acesse o site ou aplicativo, busque seu destino e escolha a opção operada pela Jamjoy. Todo o processo de reserva é realizado online, sem necessidade de ir a um guichê físico.<br><br>P: Vale a pena reservar com a Jamjoy Viação pela Buser?<br>R: Com certeza! Ao escolher a Jamjoy Viação, você se beneficia de preços acessíveis, cancelamento grátis e de um processo de reserva totalmente digital, tudo pela Buser.<br><br>P: É possível remarcar minha viagem com a Jamjoy Viação?<br>R: Sim, você pode remarcar sua viagem de forma simples pelo site ou app da Buser, sem precisar fazer uma ligação ou ir até um guichê.<br><br>P: Tenho atendimento se precisar de ajuda durante a viagem com a Jamjoy Viação?<br>R: Sim, a Buser disponibiliza atendimento humano 24 horas, pronto para esclarecer dúvidas e oferecer suporte em qualquer etapa da sua viagem.",
+        "company_slug": "jamjoy-viacao",
+        "faqs": [
+            {
+                "question": "Como recebo a confirmação da minha reserva com a Jamjoy Viação?",
+                "answer": "Assim que o pagamento é aprovado, você recebe um e-mail de confirmação e o bilhete já fica disponível na sua conta da Buser."
+            },
+            {
+                "question": "Quais são as condições para transportar animais de estimação na Jamjoy Viação?",
+                "answer": "Na Jamjoy Viação, é permitido levar pequenos animais de estimação, desde que estejam em caixas apropriadas e pesem até 5 kg. É essencial que o passageiro informe sobre a presença do animal no momento da compra da passagem."
+            },
+            {
+                "question": "Como faço pra viajar com a Jamjoy Viação pela Buser?",
+                "answer": "Para viajar com a Jamjoy Viação pela Buser, acesse o site ou aplicativo, busque seu destino e escolha a opção operada pela Jamjoy. Todo o processo de reserva é realizado online, sem necessidade de ir a um guichê físico."
+            },
+            {
+                "question": "Vale a pena reservar com a Jamjoy Viação pela Buser?",
+                "answer": "Com certeza! Ao escolher a Jamjoy Viação, você se beneficia de preços acessíveis, cancelamento grátis e de um processo de reserva totalmente digital, tudo pela Buser."
+            },
+            {
+                "question": "É possível remarcar minha viagem com a Jamjoy Viação?",
+                "answer": "Sim, você pode remarcar sua viagem de forma simples pelo site ou app da Buser, sem precisar fazer uma ligação ou ir até um guichê."
+            },
+            {
+                "question": "Tenho atendimento se precisar de ajuda durante a viagem com a Jamjoy Viação?",
+                "answer": "Sim, a Buser disponibiliza atendimento humano 24 horas, pronto para esclarecer dúvidas e oferecer suporte em qualquer etapa da sua viagem."
+            }
+        ]
+    },
+    {
+        "id": "thomas-4",
+        "requisitor": "Thomas",
+        "autor": "Thomas",
+        "formato": "FAQ",
+        "tom": "geral",
+        "media_palavras": 100,
+        "palavras_chave": null,
+        "quantidade_perguntas": 6,
+        "tema": "https://jbl-turismo.buser.com.br",
+        "conteudo_gerado": "P: Tenho atendimento se precisar de ajuda durante a viagem com a JBL Turismo?<br>R: Sim, a Buser conta com atendimento humano disponível 24 horas para esclarecer dúvidas e oferecer suporte em qualquer fase da sua viagem.<br><br>P: Quais são as opções de conforto disponíveis nos ônibus da JBL Turismo?<br>R: A JBL Turismo disponibiliza ônibus equipados com poltronas reclináveis, ar-condicionado e sanitários. Para quem busca mais conforto, a opção de ônibus executivo permite que as poltronas reclinem até 135º, além de oferecer apoio para os pés e braços compartilhados.<br><br>P: A compra pela Buser é segura?<br>R: Sim. A Buser adota um processo de pagamento seguro e garante a proteção dos dados dos clientes em todas as etapas da compra.<br><br>P: É possível remarcar minha viagem com a JBL Turismo?<br>R: Sim, você pode remarcar sua viagem de maneira fácil pelo site ou app da Buser, sem a necessidade de fazer uma ligação ou ir até um guichê.<br><br>P: Como recebo a confirmação da minha reserva com a JBL Turismo?<br>R: Após a aprovação do pagamento, você receberá a confirmação por e-mail e o bilhete ficará disponível na sua conta da Buser.<br><br>P: Quais formas de pagamento a Buser aceita?<br>R: Você pode optar por pagar com cartão de crédito, débito, Pix ou boleto, conforme as opções disponíveis para a rota que você escolher.",
+        "company_slug": "jbl-turismo",
+        "faqs": [
+            {
+                "question": "Tenho atendimento se precisar de ajuda durante a viagem com a JBL Turismo?",
+                "answer": "Sim, a Buser conta com atendimento humano disponível 24 horas para esclarecer dúvidas e oferecer suporte em qualquer fase da sua viagem."
+            },
+            {
+                "question": "Quais são as opções de conforto disponíveis nos ônibus da JBL Turismo?",
+                "answer": "A JBL Turismo disponibiliza ônibus equipados com poltronas reclináveis, ar-condicionado e sanitários. Para quem busca mais conforto, a opção de ônibus executivo permite que as poltronas reclinem até 135º, além de oferecer apoio para os pés e braços compartilhados."
+            },
+            {
+                "question": "A compra pela Buser é segura?",
+                "answer": "Sim. A Buser adota um processo de pagamento seguro e garante a proteção dos dados dos clientes em todas as etapas da compra."
+            },
+            {
+                "question": "É possível remarcar minha viagem com a JBL Turismo?",
+                "answer": "Sim, você pode remarcar sua viagem de maneira fácil pelo site ou app da Buser, sem a necessidade de fazer uma ligação ou ir até um guichê."
+            },
+            {
+                "question": "Como recebo a confirmação da minha reserva com a JBL Turismo?",
+                "answer": "Após a aprovação do pagamento, você receberá a confirmação por e-mail e o bilhete ficará disponível na sua conta da Buser."
+            },
+            {
+                "question": "Quais formas de pagamento a Buser aceita?",
+                "answer": "Você pode optar por pagar com cartão de crédito, débito, Pix ou boleto, conforme as opções disponíveis para a rota que você escolher."
+            }
+        ]
+    },
+    {
+        "id": "thomas-5",
+        "requisitor": "Thomas",
+        "autor": "Thomas",
+        "formato": "FAQ",
+        "tom": "geral",
+        "media_palavras": 100,
+        "palavras_chave": null,
+        "quantidade_perguntas": 6,
+        "tema": "https://trans-acreana-turismo.buser.com.br",
+        "conteudo_gerado": "P: Vale a pena reservar com a Trans Acreana Turismo pela Buser?<br>R: Com certeza! Ao escolher a Trans Acreana Turismo, você se beneficia de preços acessíveis, cancelamento sem custos e um sistema de reserva totalmente digital, feito diretamente pela Buser.<br><br>P: Quais são as condições para viajar com animais de estimação na Trans Acreana Turismo?<br>R: Na Trans Acreana Turismo, você pode viajar com seu animal de estimação, desde que ele esteja em uma caixa de transporte adequada e que não ultrapasse 10 kg. Também é fundamental que o seu bichinho tenha a documentação em dia, como a carteira de vacinação atualizada.<br><br>P: É possível remarcar minha viagem com a Trans Acreana Turismo?<br>R: Sim, você pode remarcar sua viagem de maneira fácil pelo site ou pelo aplicativo da Buser, sem precisar fazer uma ligação ou visitar um guichê.<br><br>P: Como recebo a confirmação da minha reserva com a Trans Acreana Turismo?<br>R: Assim que o pagamento é confirmado, você recebe um e-mail com a confirmação, e o bilhete já estará acessível na sua conta da Buser.<br><br>P: Tenho atendimento se precisar de ajuda durante a viagem com a Trans Acreana Turismo?<br>R: Sim, a Buser disponibiliza atendimento humano 24 horas para esclarecer dúvidas e oferecer suporte em qualquer fase da sua viagem.<br><br>P: Preciso imprimir o bilhete da Trans Acreana Turismo?<br>R: Não é necessário. O bilhete é digital, e você pode acessá-lo pelo seu e-mail ou na sua conta da Buser, apresentando diretamente pelo celular no momento do embarque.",
+        "company_slug": "trans-acreana-turismo",
+        "faqs": [
+            {
+                "question": "Vale a pena reservar com a Trans Acreana Turismo pela Buser?",
+                "answer": "Com certeza! Ao escolher a Trans Acreana Turismo, você se beneficia de preços acessíveis, cancelamento sem custos e um sistema de reserva totalmente digital, feito diretamente pela Buser."
+            },
+            {
+                "question": "Quais são as condições para viajar com animais de estimação na Trans Acreana Turismo?",
+                "answer": "Na Trans Acreana Turismo, você pode viajar com seu animal de estimação, desde que ele esteja em uma caixa de transporte adequada e que não ultrapasse 10 kg. Também é fundamental que o seu bichinho tenha a documentação em dia, como a carteira de vacinação atualizada."
+            },
+            {
+                "question": "É possível remarcar minha viagem com a Trans Acreana Turismo?",
+                "answer": "Sim, você pode remarcar sua viagem de maneira fácil pelo site ou pelo aplicativo da Buser, sem precisar fazer uma ligação ou visitar um guichê."
+            },
+            {
+                "question": "Como recebo a confirmação da minha reserva com a Trans Acreana Turismo?",
+                "answer": "Assim que o pagamento é confirmado, você recebe um e-mail com a confirmação, e o bilhete já estará acessível na sua conta da Buser."
+            },
+            {
+                "question": "Tenho atendimento se precisar de ajuda durante a viagem com a Trans Acreana Turismo?",
+                "answer": "Sim, a Buser disponibiliza atendimento humano 24 horas para esclarecer dúvidas e oferecer suporte em qualquer fase da sua viagem."
+            },
+            {
+                "question": "Preciso imprimir o bilhete da Trans Acreana Turismo?",
+                "answer": "Não é necessário. O bilhete é digital, e você pode acessá-lo pelo seu e-mail ou na sua conta da Buser, apresentando diretamente pelo celular no momento do embarque."
+            }
+        ]
+    },
+    {
+        "id": "thomas-6",
+        "requisitor": "Thomas",
+        "autor": "Thomas",
+        "formato": "FAQ",
+        "tom": "geral",
+        "media_palavras": 100,
+        "palavras_chave": null,
+        "quantidade_perguntas": 6,
+        "tema": "https://anatur.buser.com.br",
+        "conteudo_gerado": "P: Preciso imprimir o bilhete da Anatur?<br>R: Não é necessário. O bilhete é digital e você o recebe por e-mail e na sua conta da Buser, podendo apresentá-lo diretamente pelo celular no momento do embarque.<br><br>P: Como recebo a confirmação da minha reserva com a Anatur?<br>R: Assim que seu pagamento for aprovado, você receberá a confirmação por e-mail e o bilhete ficará acessível na sua conta da Buser.<br><br>P: Posso cancelar minha compra com a Anatur?<br>R: Sim, a Buser oferece a opção de cancelamento sem custos, que pode ser feito pelo site ou aplicativo, desde que esteja dentro do prazo estipulado para a tarifa escolhida.<br><br>P: Quais comodidades posso encontrar nos ônibus da Anatur?<br>R: Os ônibus da Anatur são modernos e oferecem conforto com ar-condicionado e poltronas reclináveis. Muitos também dispõem de Wi-Fi e tomadas, tornando sua viagem ainda mais agradável.<br><br>P: Vale a pena reservar com a Anatur pela Buser?<br>R: Com certeza! Além de contar com a Anatur, você desfruta de preços acessíveis, cancelamento sem custos e um processo de reserva totalmente digital, tudo pela Buser.<br><br>P: As poltronas da Anatur são confortáveis?<br>R: Ao viajar com a Anatur pela Buser, você encontrará poltronas confortáveis, projetadas para tornar sua jornada mais prazerosa.",
+        "company_slug": "anatur",
+        "faqs": [
+            {
+                "question": "Preciso imprimir o bilhete da Anatur?",
+                "answer": "Não é necessário. O bilhete é digital e você o recebe por e-mail e na sua conta da Buser, podendo apresentá-lo diretamente pelo celular no momento do embarque."
+            },
+            {
+                "question": "Como recebo a confirmação da minha reserva com a Anatur?",
+                "answer": "Assim que seu pagamento for aprovado, você receberá a confirmação por e-mail e o bilhete ficará acessível na sua conta da Buser."
+            },
+            {
+                "question": "Posso cancelar minha compra com a Anatur?",
+                "answer": "Sim, a Buser oferece a opção de cancelamento sem custos, que pode ser feito pelo site ou aplicativo, desde que esteja dentro do prazo estipulado para a tarifa escolhida."
+            },
+            {
+                "question": "Quais comodidades posso encontrar nos ônibus da Anatur?",
+                "answer": "Os ônibus da Anatur são modernos e oferecem conforto com ar-condicionado e poltronas reclináveis. Muitos também dispõem de Wi-Fi e tomadas, tornando sua viagem ainda mais agradável."
+            },
+            {
+                "question": "Vale a pena reservar com a Anatur pela Buser?",
+                "answer": "Com certeza! Além de contar com a Anatur, você desfruta de preços acessíveis, cancelamento sem custos e um processo de reserva totalmente digital, tudo pela Buser."
+            },
+            {
+                "question": "As poltronas da Anatur são confortáveis?",
+                "answer": "Ao viajar com a Anatur pela Buser, você encontrará poltronas confortáveis, projetadas para tornar sua jornada mais prazerosa."
+            }
+        ]
+    },
+    {
+        "id": "thomas-7",
+        "requisitor": "Thomas",
+        "autor": "Thomas",
+        "formato": "FAQ",
+        "tom": "geral",
+        "media_palavras": 100,
+        "palavras_chave": null,
+        "quantidade_perguntas": 6,
+        "tema": "https://expresso-diamante.buser.com.br",
+        "conteudo_gerado": "P: A compra pela Buser é segura?<br>R: Sim, a Buser adota um processo de pagamento seguro e se preocupa em proteger os dados dos compradores em todas as etapas.<br><br>P: Quais são os tipos de ônibus disponíveis na Expresso Diamante?<br>R: A Expresso Diamante disponibiliza ônibus semi-leito e Double Decker, todos equipados com ar-condicionado, Wi-Fi e banheiros, garantindo uma viagem confortável e agradável.<br><br>P: Quais formas de pagamento a Buser aceita?<br>R: Você pode optar por pagar com cartão de crédito, débito, Pix ou boleto, conforme as opções disponíveis para a rota que escolher.<br><br>P: Como faço pra viajar com a Expresso Diamante pela Buser?<br>R: Basta acessar o site ou o aplicativo da Buser, buscar seu destino e selecionar a opção operada pela Expresso Diamante. Todo o processo de reserva é feito online, sem a necessidade de ir a um guichê.<br><br>P: Preciso imprimir o bilhete da Expresso Diamante?<br>R: Não é necessário. O bilhete é digital e ficará disponível no seu e-mail e na sua conta da Buser, podendo ser apresentado diretamente pelo celular no embarque.<br><br>P: As poltronas da Expresso Diamante são confortáveis?<br>R: Ao viajar com a Expresso Diamante pela Buser, você encontrará poltronas confortáveis, projetadas para tornar seu trajeto mais agradável.",
+        "company_slug": "expresso-diamante",
+        "faqs": [
+            {
+                "question": "A compra pela Buser é segura?",
+                "answer": "Sim, a Buser adota um processo de pagamento seguro e se preocupa em proteger os dados dos compradores em todas as etapas."
+            },
+            {
+                "question": "Quais são os tipos de ônibus disponíveis na Expresso Diamante?",
+                "answer": "A Expresso Diamante disponibiliza ônibus semi-leito e Double Decker, todos equipados com ar-condicionado, Wi-Fi e banheiros, garantindo uma viagem confortável e agradável."
+            },
+            {
+                "question": "Quais formas de pagamento a Buser aceita?",
+                "answer": "Você pode optar por pagar com cartão de crédito, débito, Pix ou boleto, conforme as opções disponíveis para a rota que escolher."
+            },
+            {
+                "question": "Como faço pra viajar com a Expresso Diamante pela Buser?",
+                "answer": "Basta acessar o site ou o aplicativo da Buser, buscar seu destino e selecionar a opção operada pela Expresso Diamante. Todo o processo de reserva é feito online, sem a necessidade de ir a um guichê."
+            },
+            {
+                "question": "Preciso imprimir o bilhete da Expresso Diamante?",
+                "answer": "Não é necessário. O bilhete é digital e ficará disponível no seu e-mail e na sua conta da Buser, podendo ser apresentado diretamente pelo celular no embarque."
+            },
+            {
+                "question": "As poltronas da Expresso Diamante são confortáveis?",
+                "answer": "Ao viajar com a Expresso Diamante pela Buser, você encontrará poltronas confortáveis, projetadas para tornar seu trajeto mais agradável."
+            }
+        ]
+    },
+    {
+        "id": "thomas-8",
+        "requisitor": "Thomas",
+        "autor": "Thomas",
+        "formato": "FAQ",
+        "tom": "geral",
+        "media_palavras": 100,
+        "palavras_chave": null,
+        "quantidade_perguntas": 6,
+        "tema": "https://galaxia-turismo.buser.com.br",
+        "conteudo_gerado": "P: As poltronas da Galaxia Turismo são confortáveis?<br>R: Ao viajar com a Galaxia Turismo pela Buser, você encontra poltronas confortáveis, projetadas para tornar sua viagem mais agradável.<br><br>P: Como recebo a confirmação da minha reserva com a Galaxia Turismo?<br>R: Assim que o pagamento é aprovado, você receberá a confirmação por e-mail e o bilhete ficará disponível na sua conta da Buser.<br><br>P: Quais formas de pagamento a Buser aceita?<br>R: Você pode optar por pagar com cartão de crédito, débito, Pix ou boleto, conforme as opções disponíveis para a rota que escolher.<br><br>P: Como faço pra viajar com a Galaxia Turismo pela Buser?<br>R: Para viajar com a Galaxia Turismo, acesse o site ou aplicativo da Buser, busque seu destino e selecione a opção operada pela Galaxia Turismo. Todo o processo de reserva é feito online, sem a necessidade de ir a um guichê.<br><br>P: Quais são os serviços adicionais oferecidos pela Galaxia Turismo?<br>R: A Galaxia Turismo oferece serviços como reserva de hotéis e guias turísticos credenciados, além de fretamento de ônibus para viagens em grupo, proporcionando conforto e praticidade durante a sua jornada.<br><br>P: A compra pela Buser é segura?<br>R: Com certeza. A Buser adota um processo de pagamento seguro e garante a proteção dos dados dos compradores em todas as fases.",
+        "company_slug": "galaxia-turismo",
+        "faqs": [
+            {
+                "question": "As poltronas da Galaxia Turismo são confortáveis?",
+                "answer": "Ao viajar com a Galaxia Turismo pela Buser, você encontra poltronas confortáveis, projetadas para tornar sua viagem mais agradável."
+            },
+            {
+                "question": "Como recebo a confirmação da minha reserva com a Galaxia Turismo?",
+                "answer": "Assim que o pagamento é aprovado, você receberá a confirmação por e-mail e o bilhete ficará disponível na sua conta da Buser."
+            },
+            {
+                "question": "Quais formas de pagamento a Buser aceita?",
+                "answer": "Você pode optar por pagar com cartão de crédito, débito, Pix ou boleto, conforme as opções disponíveis para a rota que escolher."
+            },
+            {
+                "question": "Como faço pra viajar com a Galaxia Turismo pela Buser?",
+                "answer": "Para viajar com a Galaxia Turismo, acesse o site ou aplicativo da Buser, busque seu destino e selecione a opção operada pela Galaxia Turismo. Todo o processo de reserva é feito online, sem a necessidade de ir a um guichê."
+            },
+            {
+                "question": "Quais são os serviços adicionais oferecidos pela Galaxia Turismo?",
+                "answer": "A Galaxia Turismo oferece serviços como reserva de hotéis e guias turísticos credenciados, além de fretamento de ônibus para viagens em grupo, proporcionando conforto e praticidade durante a sua jornada."
+            },
+            {
+                "question": "A compra pela Buser é segura?",
+                "answer": "Com certeza. A Buser adota um processo de pagamento seguro e garante a proteção dos dados dos compradores em todas as fases."
+            }
+        ]
+    },
+    {
+        "id": "thomas-9",
+        "requisitor": "Thomas",
+        "autor": "Thomas",
+        "formato": "FAQ",
+        "tom": "geral",
+        "media_palavras": 100,
+        "palavras_chave": null,
+        "quantidade_perguntas": 6,
+        "tema": "https://horizonte-turismo.buser.com.br",
+        "conteudo_gerado": "P: Preciso imprimir o bilhete da Horizonte Turismo?<br>R: Não é necessário. O bilhete é digital e fica disponível no seu e-mail e na sua conta da Buser, podendo ser mostrado diretamente pelo celular no momento do embarque.<br><br>P: Quais são as comodidades oferecidas nos ônibus da Horizonte Turismo?<br>R: Os ônibus da Horizonte Turismo são equipados com ar-condicionado e poltronas reclináveis. Além disso, em alguns casos, você pode encontrar modelos Double Decker, que oferecem ainda mais conforto durante a viagem. Esses recursos foram pensados para proporcionar uma experiência agradável nas rotas de longa distância.<br><br>P: Como recebo a confirmação da minha reserva com a Horizonte Turismo?<br>R: Assim que o pagamento for aprovado, você receberá a confirmação por e-mail, e o bilhete ficará disponível na sua conta da Buser.<br><br>P: A compra pela Buser é segura?<br>R: Sim, a Buser adota um processo de pagamento seguro e cuida para que os dados dos compradores estejam protegidos em todas as etapas.<br><br>P: As poltronas da Horizonte Turismo são confortáveis?<br>R: Ao viajar com a Horizonte Turismo pela Buser, você pode contar com poltronas confortáveis, projetadas para tornar o trajeto mais agradável.<br><br>P: Como faço pra viajar com a Horizonte Turismo pela Buser?<br>R: Para viajar com a Horizonte Turismo pela Buser, basta acessar o site ou o aplicativo da Buser, procurar seu destino e selecionar a opção operada pela Horizonte Turismo. Todo o processo de reserva é feito online, sem a necessidade de ir a um guichê.",
+        "company_slug": "horizonte-turismo",
+        "faqs": [
+            {
+                "question": "Preciso imprimir o bilhete da Horizonte Turismo?",
+                "answer": "Não é necessário. O bilhete é digital e fica disponível no seu e-mail e na sua conta da Buser, podendo ser mostrado diretamente pelo celular no momento do embarque."
+            },
+            {
+                "question": "Quais são as comodidades oferecidas nos ônibus da Horizonte Turismo?",
+                "answer": "Os ônibus da Horizonte Turismo são equipados com ar-condicionado e poltronas reclináveis. Além disso, em alguns casos, você pode encontrar modelos Double Decker, que oferecem ainda mais conforto durante a viagem. Esses recursos foram pensados para proporcionar uma experiência agradável nas rotas de longa distância."
+            },
+            {
+                "question": "Como recebo a confirmação da minha reserva com a Horizonte Turismo?",
+                "answer": "Assim que o pagamento for aprovado, você receberá a confirmação por e-mail, e o bilhete ficará disponível na sua conta da Buser."
+            },
+            {
+                "question": "A compra pela Buser é segura?",
+                "answer": "Sim, a Buser adota um processo de pagamento seguro e cuida para que os dados dos compradores estejam protegidos em todas as etapas."
+            },
+            {
+                "question": "As poltronas da Horizonte Turismo são confortáveis?",
+                "answer": "Ao viajar com a Horizonte Turismo pela Buser, você pode contar com poltronas confortáveis, projetadas para tornar o trajeto mais agradável."
+            },
+            {
+                "question": "Como faço pra viajar com a Horizonte Turismo pela Buser?",
+                "answer": "Para viajar com a Horizonte Turismo pela Buser, basta acessar o site ou o aplicativo da Buser, procurar seu destino e selecionar a opção operada pela Horizonte Turismo. Todo o processo de reserva é feito online, sem a necessidade de ir a um guichê."
+            }
+        ]
+    },
+    {
+        "id": "thomas-10",
+        "requisitor": "Thomas",
+        "autor": "Thomas",
+        "formato": "FAQ",
+        "tom": "geral",
+        "media_palavras": 100,
+        "palavras_chave": null,
+        "quantidade_perguntas": 6,
+        "tema": "https://matriz-transportes.buser.com.br",
+        "conteudo_gerado": "P: Tenho atendimento se precisar de ajuda durante a viagem com a Matriz Transportes?<br>R: Sim, a Buser disponibiliza atendimento humano 24 horas para esclarecer dúvidas e ajudar em qualquer fase da sua viagem.<br><br>P: Posso cancelar minha compra com a Matriz Transportes?<br>R: Sim, a Buser oferece cancelamento grátis diretamente pelo site ou aplicativo, desde que esteja dentro do prazo estipulado para a tarifa escolhida.<br><br>P: Vale a pena reservar com a Matriz Transportes pela Buser?<br>R: Com certeza! Além de contar com a Matriz Transportes, você se beneficia de preços acessíveis, cancelamento grátis e um processo de reserva totalmente digital, tudo isso pela Buser.<br><br>P: Quais são as opções de bagagem ao viajar com a Matriz Transportes?<br>R: A Matriz Transportes permite que cada passageiro leve até 2 volumes de bagagem, com um peso total máximo de 30 kg. Além disso, você pode portar um item de mão, como uma mochila ou bolsa, que não pode ultrapassar 5 kg.<br><br>P: Como faço pra viajar com a Matriz Transportes pela Buser?<br>R: É simples! Acesse o site ou aplicativo da Buser, busque seu destino e escolha a opção operada pela Matriz Transportes. Todo o processo de reserva é feito online, sem a necessidade de ir a um guichê.<br><br>P: As poltronas da Matriz Transportes são confortáveis?<br>R: Ao viajar com a Matriz Transportes pela Buser, você desfruta de poltronas confortáveis, projetadas para tornar a sua viagem mais agradável.",
+        "company_slug": "matriz-transportes",
+        "faqs": [
+            {
+                "question": "Tenho atendimento se precisar de ajuda durante a viagem com a Matriz Transportes?",
+                "answer": "Sim, a Buser disponibiliza atendimento humano 24 horas para esclarecer dúvidas e ajudar em qualquer fase da sua viagem."
+            },
+            {
+                "question": "Posso cancelar minha compra com a Matriz Transportes?",
+                "answer": "Sim, a Buser oferece cancelamento grátis diretamente pelo site ou aplicativo, desde que esteja dentro do prazo estipulado para a tarifa escolhida."
+            },
+            {
+                "question": "Vale a pena reservar com a Matriz Transportes pela Buser?",
+                "answer": "Com certeza! Além de contar com a Matriz Transportes, você se beneficia de preços acessíveis, cancelamento grátis e um processo de reserva totalmente digital, tudo isso pela Buser."
+            },
+            {
+                "question": "Quais são as opções de bagagem ao viajar com a Matriz Transportes?",
+                "answer": "A Matriz Transportes permite que cada passageiro leve até 2 volumes de bagagem, com um peso total máximo de 30 kg. Além disso, você pode portar um item de mão, como uma mochila ou bolsa, que não pode ultrapassar 5 kg."
+            },
+            {
+                "question": "Como faço pra viajar com a Matriz Transportes pela Buser?",
+                "answer": "É simples! Acesse o site ou aplicativo da Buser, busque seu destino e escolha a opção operada pela Matriz Transportes. Todo o processo de reserva é feito online, sem a necessidade de ir a um guichê."
+            },
+            {
+                "question": "As poltronas da Matriz Transportes são confortáveis?",
+                "answer": "Ao viajar com a Matriz Transportes pela Buser, você desfruta de poltronas confortáveis, projetadas para tornar a sua viagem mais agradável."
+            }
+        ]
+    },
+    {
+        "id": "thomas-11",
+        "requisitor": "Thomas",
+        "autor": "Thomas",
+        "formato": "FAQ",
+        "tom": "geral",
+        "media_palavras": 100,
+        "palavras_chave": null,
+        "quantidade_perguntas": 6,
+        "tema": "https://mm-turismo.buser.com.br",
+        "conteudo_gerado": "P: As poltronas da MM Turismo são confortáveis?<br>R: Ao viajar com a MM Turismo pela Buser, você vai encontrar poltronas projetadas para oferecer conforto, tornando o trajeto mais prazeroso.<br><br>P: Posso cancelar minha compra com a MM Turismo?<br>R: Sim, a Buser permite o cancelamento sem custo, diretamente pelo site ou aplicativo, desde que esteja dentro do prazo estipulado para a tarifa escolhida.<br><br>P: Como faço pra viajar com a MM Turismo pela Buser?<br>R: É simples! Acesse o site ou aplicativo da Buser, busque seu destino e selecione a opção operada pela MM Turismo. Todo o processo de reserva é feito online, sem necessidade de visitar um guichê.<br><br>P: Tenho atendimento se precisar de ajuda durante a viagem com a MM Turismo?<br>R: Sim, a Buser disponibiliza atendimento humano 24 horas, pronto para responder suas perguntas e auxiliar em qualquer fase da sua viagem.<br><br>P: Quais são as comodidades disponíveis nos ônibus da MM Turismo?<br>R: Os ônibus da MM Turismo contam com diversas comodidades para o conforto dos passageiros, como Wi-Fi, poltronas reclináveis, ar-condicionado e sanitários, tudo para proporcionar uma viagem agradável.<br><br>P: Quais formas de pagamento a Buser aceita?<br>R: Você pode optar por pagar com cartão de crédito, débito, Pix ou boleto, dependendo das opções disponíveis para a sua rota.",
+        "company_slug": "mm-turismo",
+        "faqs": [
+            {
+                "question": "As poltronas da MM Turismo são confortáveis?",
+                "answer": "Ao viajar com a MM Turismo pela Buser, você vai encontrar poltronas projetadas para oferecer conforto, tornando o trajeto mais prazeroso."
+            },
+            {
+                "question": "Posso cancelar minha compra com a MM Turismo?",
+                "answer": "Sim, a Buser permite o cancelamento sem custo, diretamente pelo site ou aplicativo, desde que esteja dentro do prazo estipulado para a tarifa escolhida."
+            },
+            {
+                "question": "Como faço pra viajar com a MM Turismo pela Buser?",
+                "answer": "É simples! Acesse o site ou aplicativo da Buser, busque seu destino e selecione a opção operada pela MM Turismo. Todo o processo de reserva é feito online, sem necessidade de visitar um guichê."
+            },
+            {
+                "question": "Tenho atendimento se precisar de ajuda durante a viagem com a MM Turismo?",
+                "answer": "Sim, a Buser disponibiliza atendimento humano 24 horas, pronto para responder suas perguntas e auxiliar em qualquer fase da sua viagem."
+            },
+            {
+                "question": "Quais são as comodidades disponíveis nos ônibus da MM Turismo?",
+                "answer": "Os ônibus da MM Turismo contam com diversas comodidades para o conforto dos passageiros, como Wi-Fi, poltronas reclináveis, ar-condicionado e sanitários, tudo para proporcionar uma viagem agradável."
+            },
+            {
+                "question": "Quais formas de pagamento a Buser aceita?",
+                "answer": "Você pode optar por pagar com cartão de crédito, débito, Pix ou boleto, dependendo das opções disponíveis para a sua rota."
+            }
+        ]
+    },
+    {
+        "id": "thomas-12",
+        "requisitor": "Thomas",
+        "autor": "Thomas",
+        "formato": "FAQ",
+        "tom": "geral",
+        "media_palavras": 100,
+        "palavras_chave": null,
+        "quantidade_perguntas": 6,
+        "tema": "https://viacao-marlim.buser.com.br",
+        "conteudo_gerado": "P: Tenho atendimento se precisar de ajuda durante a viagem com a Viação Marlim?<br>R: Sim, a Buser conta com atendimento humano 24 horas, pronto para esclarecer dúvidas e auxiliar em qualquer fase da sua viagem.<br><br>P: As poltronas da Viação Marlim são confortáveis?<br>R: Ao viajar com a Viação Marlim pela Buser, você encontrará poltronas projetadas para oferecer conforto e tornar seu trajeto mais agradável.<br><br>P: A compra pela Buser é segura?<br>R: Sim. A Buser adota um processo de pagamento seguro e cuida da proteção dos dados dos usuários em todas as etapas.<br><br>P: É possível remarcar minha viagem com a Viação Marlim?<br>R: Sim, você pode remarcar sua viagem de maneira simples pelo site ou aplicativo da Buser, sem precisar fazer ligações ou ir até um guichê.<br><br>P: Quais formas de pagamento a Buser aceita?<br>R: Você pode optar por pagar com cartão de crédito, débito, Pix ou boleto, conforme as opções disponíveis para a rota escolhida.<br><br>P: Quais são as comodidades disponíveis nos ônibus da Viação Marlim?<br>R: Os ônibus da Viação Marlim são equipados com ar-condicionado, Wi-Fi e oferecem poltronas confortáveis, proporcionando uma experiência agradável durante a viagem.",
+        "company_slug": "viacao-marlim",
+        "faqs": [
+            {
+                "question": "Tenho atendimento se precisar de ajuda durante a viagem com a Viação Marlim?",
+                "answer": "Sim, a Buser conta com atendimento humano 24 horas, pronto para esclarecer dúvidas e auxiliar em qualquer fase da sua viagem."
+            },
+            {
+                "question": "As poltronas da Viação Marlim são confortáveis?",
+                "answer": "Ao viajar com a Viação Marlim pela Buser, você encontrará poltronas projetadas para oferecer conforto e tornar seu trajeto mais agradável."
+            },
+            {
+                "question": "A compra pela Buser é segura?",
+                "answer": "Sim. A Buser adota um processo de pagamento seguro e cuida da proteção dos dados dos usuários em todas as etapas."
+            },
+            {
+                "question": "É possível remarcar minha viagem com a Viação Marlim?",
+                "answer": "Sim, você pode remarcar sua viagem de maneira simples pelo site ou aplicativo da Buser, sem precisar fazer ligações ou ir até um guichê."
+            },
+            {
+                "question": "Quais formas de pagamento a Buser aceita?",
+                "answer": "Você pode optar por pagar com cartão de crédito, débito, Pix ou boleto, conforme as opções disponíveis para a rota escolhida."
+            },
+            {
+                "question": "Quais são as comodidades disponíveis nos ônibus da Viação Marlim?",
+                "answer": "Os ônibus da Viação Marlim são equipados com ar-condicionado, Wi-Fi e oferecem poltronas confortáveis, proporcionando uma experiência agradável durante a viagem."
+            }
+        ]
+    },
+    {
+        "id": "thomas-13",
+        "requisitor": "Thomas",
+        "autor": "Thomas",
+        "formato": "FAQ",
+        "tom": "geral",
+        "media_palavras": 100,
+        "palavras_chave": null,
+        "quantidade_perguntas": 6,
+        "tema": "https://evt-transportes.buser.com.br",
+        "conteudo_gerado": "P: Quais formas de pagamento a Buser aceita?<br>R: Você pode optar por pagar com cartão de crédito, débito, Pix ou boleto, conforme as opções disponíveis para a rota que você escolher.<br><br>P: Quais são as políticas de bagagem da EVT Transportes?<br>R: Cada passageiro pode levar uma bagagem de até 30 kg sem custo extra. Além disso, é permitido um item de mão, como uma bolsa ou mochila, com até 5 kg. Itens que ultrapassarem essas quantidades podem estar sujeitos a taxas adicionais.<br><br>P: Preciso imprimir o bilhete da EVT Transportes?<br>R: Não é necessário. O bilhete é digital e está disponível no seu e-mail e na sua conta da Buser, podendo ser apresentado diretamente pelo celular no momento do embarque.<br><br>P: Tenho atendimento se precisar de ajuda durante a viagem com a EVT Transportes?<br>R: Sim, a Buser disponibiliza atendimento humano 24 horas para esclarecer dúvidas e oferecer suporte em qualquer fase da sua viagem.<br><br>P: As poltronas da EVT Transportes são confortáveis?<br>R: Ao viajar com a EVT Transportes pela Buser, você encontrará poltronas confortáveis, projetadas para tornar sua viagem mais prazerosa.<br><br>P: Como faço pra viajar com a EVT Transportes pela Buser?<br>R: É simples! Acesse o site ou o aplicativo da Buser, procure seu destino e escolha a opção operada pela EVT Transportes. Todo o processo de reserva é realizado online, sem necessidade de ir a um guichê físico.",
+        "company_slug": "evt-transportes",
+        "faqs": [
+            {
+                "question": "Quais formas de pagamento a Buser aceita?",
+                "answer": "Você pode optar por pagar com cartão de crédito, débito, Pix ou boleto, conforme as opções disponíveis para a rota que você escolher."
+            },
+            {
+                "question": "Quais são as políticas de bagagem da EVT Transportes?",
+                "answer": "Cada passageiro pode levar uma bagagem de até 30 kg sem custo extra. Além disso, é permitido um item de mão, como uma bolsa ou mochila, com até 5 kg. Itens que ultrapassarem essas quantidades podem estar sujeitos a taxas adicionais."
+            },
+            {
+                "question": "Preciso imprimir o bilhete da EVT Transportes?",
+                "answer": "Não é necessário. O bilhete é digital e está disponível no seu e-mail e na sua conta da Buser, podendo ser apresentado diretamente pelo celular no momento do embarque."
+            },
+            {
+                "question": "Tenho atendimento se precisar de ajuda durante a viagem com a EVT Transportes?",
+                "answer": "Sim, a Buser disponibiliza atendimento humano 24 horas para esclarecer dúvidas e oferecer suporte em qualquer fase da sua viagem."
+            },
+            {
+                "question": "As poltronas da EVT Transportes são confortáveis?",
+                "answer": "Ao viajar com a EVT Transportes pela Buser, você encontrará poltronas confortáveis, projetadas para tornar sua viagem mais prazerosa."
+            },
+            {
+                "question": "Como faço pra viajar com a EVT Transportes pela Buser?",
+                "answer": "É simples! Acesse o site ou o aplicativo da Buser, procure seu destino e escolha a opção operada pela EVT Transportes. Todo o processo de reserva é realizado online, sem necessidade de ir a um guichê físico."
+            }
+        ]
+    },
+    {
+        "id": "thomas-14",
+        "requisitor": "Thomas",
+        "autor": "Thomas",
+        "formato": "FAQ",
+        "tom": "geral",
+        "media_palavras": 100,
+        "palavras_chave": null,
+        "quantidade_perguntas": 6,
+        "tema": "https://lopes-tur.buser.com.br",
+        "conteudo_gerado": "P: Como faço pra viajar com a Lopes Tur pela Buser?<br>R: É simples! Você só precisa acessar o site ou o aplicativo da Buser, procurar o seu destino e escolher a opção oferecida pela Lopes Tur. Todo o processo de reserva acontece online, sem a necessidade de ir a um guichê físico.<br><br>P: Quais são as opções de ônibus disponíveis na Lopes Tur?<br>R: A Lopes Tur possui uma frota variada, que inclui ônibus das categorias convencional, executivo e semi-leito/leito. Todos os veículos são equipados com ar-condicionado e poltronas reclináveis, proporcionando conforto durante sua viagem.<br><br>P: Quais formas de pagamento a Buser aceita?<br>R: Você pode optar por pagar com cartão de crédito, débito, Pix ou boleto, conforme as opções disponíveis para a rota que você escolher.<br><br>P: Posso cancelar minha compra com a Lopes Tur?<br>R: Sim, você pode cancelar sua compra sem custo adicional, diretamente pelo site ou aplicativo, dentro do prazo estipulado para a tarifa que você escolheu.<br><br>P: É possível remarcar minha viagem com a Lopes Tur?<br>R: Com certeza! A remarcação pode ser feita de maneira fácil pelo site ou app da Buser, sem a necessidade de fazer uma ligação ou visitar um guichê.<br><br>P: As poltronas da Lopes Tur são confortáveis?<br>R: Ao viajar com a Lopes Tur pela Buser, você encontrará poltronas projetadas para proporcionar conforto, tornando seu trajeto mais agradável.",
+        "company_slug": "lopes-tur",
+        "faqs": [
+            {
+                "question": "Como faço pra viajar com a Lopes Tur pela Buser?",
+                "answer": "É simples! Você só precisa acessar o site ou o aplicativo da Buser, procurar o seu destino e escolher a opção oferecida pela Lopes Tur. Todo o processo de reserva acontece online, sem a necessidade de ir a um guichê físico."
+            },
+            {
+                "question": "Quais são as opções de ônibus disponíveis na Lopes Tur?",
+                "answer": "A Lopes Tur possui uma frota variada, que inclui ônibus das categorias convencional, executivo e semi-leito/leito. Todos os veículos são equipados com ar-condicionado e poltronas reclináveis, proporcionando conforto durante sua viagem."
+            },
+            {
+                "question": "Quais formas de pagamento a Buser aceita?",
+                "answer": "Você pode optar por pagar com cartão de crédito, débito, Pix ou boleto, conforme as opções disponíveis para a rota que você escolher."
+            },
+            {
+                "question": "Posso cancelar minha compra com a Lopes Tur?",
+                "answer": "Sim, você pode cancelar sua compra sem custo adicional, diretamente pelo site ou aplicativo, dentro do prazo estipulado para a tarifa que você escolheu."
+            },
+            {
+                "question": "É possível remarcar minha viagem com a Lopes Tur?",
+                "answer": "Com certeza! A remarcação pode ser feita de maneira fácil pelo site ou app da Buser, sem a necessidade de fazer uma ligação ou visitar um guichê."
+            },
+            {
+                "question": "As poltronas da Lopes Tur são confortáveis?",
+                "answer": "Ao viajar com a Lopes Tur pela Buser, você encontrará poltronas projetadas para proporcionar conforto, tornando seu trajeto mais agradável."
+            }
+        ]
+    },
+    {
+        "id": "thomas-15",
+        "requisitor": "Thomas",
+        "autor": "Thomas",
+        "formato": "FAQ",
+        "tom": "geral",
+        "media_palavras": 100,
+        "palavras_chave": null,
+        "quantidade_perguntas": 6,
+        "tema": "https://natal-turismo.buser.com.br",
+        "conteudo_gerado": "P: Quais formas de pagamento a Buser aceita?<br>R: Você pode optar por cartão de crédito, débito, Pix ou boleto, conforme as opções disponíveis para a rota que você escolheu.<br><br>P: Posso cancelar minha compra com a Natal Turismo?<br>R: Sim, a Buser oferece a possibilidade de cancelamento sem custos, que pode ser feito diretamente pelo site ou aplicativo, respeitando o prazo da tarifa selecionada.<br><br>P: Tenho atendimento se precisar de ajuda durante a viagem com a Natal Turismo?<br>R: Com certeza! A Buser disponibiliza atendimento humano 24 horas para esclarecer dúvidas e ajudar em qualquer fase da sua viagem.<br><br>P: Quais são as comodidades oferecidas nos ônibus da Natal Turismo?<br>R: Os ônibus da Natal Turismo contam com ar-condicionado e poltronas confortáveis, proporcionando uma viagem agradável para todos os passageiros.<br><br>P: É possível remarcar minha viagem com a Natal Turismo?<br>R: Sim, você pode remarcar sua viagem de maneira simples pelo site ou pelo app da Buser, sem a necessidade de ligar ou ir a um guichê.<br><br>P: As poltronas da Natal Turismo são confortáveis?<br>R: Ao viajar com a Natal Turismo pela Buser, você vai desfrutar de poltronas projetadas para tornar o trajeto mais confortável.",
+        "company_slug": "natal-turismo",
+        "faqs": [
+            {
+                "question": "Quais formas de pagamento a Buser aceita?",
+                "answer": "Você pode optar por cartão de crédito, débito, Pix ou boleto, conforme as opções disponíveis para a rota que você escolheu."
+            },
+            {
+                "question": "Posso cancelar minha compra com a Natal Turismo?",
+                "answer": "Sim, a Buser oferece a possibilidade de cancelamento sem custos, que pode ser feito diretamente pelo site ou aplicativo, respeitando o prazo da tarifa selecionada."
+            },
+            {
+                "question": "Tenho atendimento se precisar de ajuda durante a viagem com a Natal Turismo?",
+                "answer": "Com certeza! A Buser disponibiliza atendimento humano 24 horas para esclarecer dúvidas e ajudar em qualquer fase da sua viagem."
+            },
+            {
+                "question": "Quais são as comodidades oferecidas nos ônibus da Natal Turismo?",
+                "answer": "Os ônibus da Natal Turismo contam com ar-condicionado e poltronas confortáveis, proporcionando uma viagem agradável para todos os passageiros."
+            },
+            {
+                "question": "É possível remarcar minha viagem com a Natal Turismo?",
+                "answer": "Sim, você pode remarcar sua viagem de maneira simples pelo site ou pelo app da Buser, sem a necessidade de ligar ou ir a um guichê."
+            },
+            {
+                "question": "As poltronas da Natal Turismo são confortáveis?",
+                "answer": "Ao viajar com a Natal Turismo pela Buser, você vai desfrutar de poltronas projetadas para tornar o trajeto mais confortável."
+            }
+        ]
+    },
+    {
+        "id": "thomas-16",
+        "requisitor": "Thomas",
+        "autor": "Thomas",
+        "formato": "FAQ",
+        "tom": "geral",
+        "media_palavras": 100,
+        "palavras_chave": null,
+        "quantidade_perguntas": 6,
+        "tema": "https://star-bus.buser.com.br",
+        "conteudo_gerado": "P: As poltronas da Star Bus são confortáveis?<br>R: Ao viajar com a Star Bus pela Buser, você desfruta de poltronas projetadas para proporcionar mais conforto e tornar sua jornada mais agradável.<br><br>P: A Star Bus permite o transporte de animais de estimação nas viagens?<br>R: Sim, a Star Bus aceita animais de estimação, desde que estejam em transportadoras adequadas e que você informe sobre a presença do animal ao fazer a reserva. É sempre bom conferir as condições específicas para sua viagem.<br><br>P: Tenho atendimento se precisar de ajuda durante a viagem com a Star Bus?<br>R: Com certeza! A Buser disponibiliza atendimento humano 24 horas para esclarecer dúvidas e oferecer suporte em qualquer parte da sua viagem.<br><br>P: Preciso imprimir o bilhete da Star Bus?<br>R: Não é necessário. Seu bilhete é digital, enviado para o seu e-mail e disponível na sua conta da Buser, podendo ser apresentado diretamente pelo celular no momento do embarque.<br><br>P: Quais formas de pagamento a Buser aceita?<br>R: Você pode optar por pagar com cartão de crédito, débito, Pix ou boleto, conforme as opções disponíveis para a rota que você escolher.<br><br>P: Posso cancelar minha compra com a Star Bus?<br>R: Sim, a Buser oferece a possibilidade de cancelamento sem custo, que pode ser feito pelo site ou aplicativo, dentro do prazo determinado para a tarifa selecionada.",
+        "company_slug": "star-bus",
+        "faqs": [
+            {
+                "question": "As poltronas da Star Bus são confortáveis?",
+                "answer": "Ao viajar com a Star Bus pela Buser, você desfruta de poltronas projetadas para proporcionar mais conforto e tornar sua jornada mais agradável."
+            },
+            {
+                "question": "A Star Bus permite o transporte de animais de estimação nas viagens?",
+                "answer": "Sim, a Star Bus aceita animais de estimação, desde que estejam em transportadoras adequadas e que você informe sobre a presença do animal ao fazer a reserva. É sempre bom conferir as condições específicas para sua viagem."
+            },
+            {
+                "question": "Tenho atendimento se precisar de ajuda durante a viagem com a Star Bus?",
+                "answer": "Com certeza! A Buser disponibiliza atendimento humano 24 horas para esclarecer dúvidas e oferecer suporte em qualquer parte da sua viagem."
+            },
+            {
+                "question": "Preciso imprimir o bilhete da Star Bus?",
+                "answer": "Não é necessário. Seu bilhete é digital, enviado para o seu e-mail e disponível na sua conta da Buser, podendo ser apresentado diretamente pelo celular no momento do embarque."
+            },
+            {
+                "question": "Quais formas de pagamento a Buser aceita?",
+                "answer": "Você pode optar por pagar com cartão de crédito, débito, Pix ou boleto, conforme as opções disponíveis para a rota que você escolher."
+            },
+            {
+                "question": "Posso cancelar minha compra com a Star Bus?",
+                "answer": "Sim, a Buser oferece a possibilidade de cancelamento sem custo, que pode ser feito pelo site ou aplicativo, dentro do prazo determinado para a tarifa selecionada."
+            }
+        ]
+    },
+    {
+        "id": "thomas-17",
+        "requisitor": "Thomas",
+        "autor": "Thomas",
+        "formato": "FAQ",
+        "tom": "geral",
+        "media_palavras": 100,
+        "palavras_chave": null,
+        "quantidade_perguntas": 6,
+        "tema": "https://viacao-pai-eterno.buser.com.br",
+        "conteudo_gerado": "P: Como faço pra viajar com a Viação Pai Eterno pela Buser?<br>R: Para viajar com a Viação Pai Eterno pela Buser, você só precisa acessar o site ou o aplicativo, procurar o seu destino e escolher a opção da Viação Pai Eterno. Todo o processo de reserva é realizado online, sem a necessidade de visitar um guichê.<br><br>P: Tenho atendimento se precisar de ajuda durante a viagem com a Viação Pai Eterno?<br>R: Sim, a Buser disponibiliza atendimento ao cliente 24 horas para esclarecer dúvidas e oferecer suporte em qualquer momento da sua viagem.<br><br>P: Quais são as opções de paradas da Viação Pai Eterno entre Minas Gerais e São Paulo?<br>R: A Viação Pai Eterno conecta Frutal (MG) a São Paulo (SP) e faz paradas em várias cidades, incluindo Fronteira (MG), Icém (SP), Nova Granada (SP), São José do Rio Preto (SP) e Campinas (SP).<br><br>P: Preciso imprimir o bilhete da Viação Pai Eterno?<br>R: Não é necessário. O bilhete é digital e fica disponível no seu e-mail e na sua conta da Buser, podendo ser apresentado diretamente pelo celular no momento do embarque.<br><br>P: Como recebo a confirmação da minha reserva com a Viação Pai Eterno?<br>R: Após a aprovação do pagamento, você receberá a confirmação por e-mail e o bilhete estará acessível na sua conta da Buser.<br><br>P: As poltronas da Viação Pai Eterno são confortáveis?<br>R: Ao viajar com a Viação Pai Eterno pela Buser, você encontra poltronas confortáveis, projetadas para tornar sua viagem mais agradável.",
+        "company_slug": "viacao-pai-eterno",
+        "faqs": [
+            {
+                "question": "Como faço pra viajar com a Viação Pai Eterno pela Buser?",
+                "answer": "Para viajar com a Viação Pai Eterno pela Buser, você só precisa acessar o site ou o aplicativo, procurar o seu destino e escolher a opção da Viação Pai Eterno. Todo o processo de reserva é realizado online, sem a necessidade de visitar um guichê."
+            },
+            {
+                "question": "Tenho atendimento se precisar de ajuda durante a viagem com a Viação Pai Eterno?",
+                "answer": "Sim, a Buser disponibiliza atendimento ao cliente 24 horas para esclarecer dúvidas e oferecer suporte em qualquer momento da sua viagem."
+            },
+            {
+                "question": "Quais são as opções de paradas da Viação Pai Eterno entre Minas Gerais e São Paulo?",
+                "answer": "A Viação Pai Eterno conecta Frutal (MG) a São Paulo (SP) e faz paradas em várias cidades, incluindo Fronteira (MG), Icém (SP), Nova Granada (SP), São José do Rio Preto (SP) e Campinas (SP)."
+            },
+            {
+                "question": "Preciso imprimir o bilhete da Viação Pai Eterno?",
+                "answer": "Não é necessário. O bilhete é digital e fica disponível no seu e-mail e na sua conta da Buser, podendo ser apresentado diretamente pelo celular no momento do embarque."
+            },
+            {
+                "question": "Como recebo a confirmação da minha reserva com a Viação Pai Eterno?",
+                "answer": "Após a aprovação do pagamento, você receberá a confirmação por e-mail e o bilhete estará acessível na sua conta da Buser."
+            },
+            {
+                "question": "As poltronas da Viação Pai Eterno são confortáveis?",
+                "answer": "Ao viajar com a Viação Pai Eterno pela Buser, você encontra poltronas confortáveis, projetadas para tornar sua viagem mais agradável."
+            }
+        ]
+    },
+    {
+        "id": "thomas-18",
+        "requisitor": "Thomas",
+        "autor": "Thomas",
+        "formato": "FAQ",
+        "tom": "geral",
+        "media_palavras": 100,
+        "palavras_chave": null,
+        "quantidade_perguntas": 6,
+        "tema": "https://amado-turismo.buser.com.br",
+        "conteudo_gerado": "P: A compra pela Buser é segura?<br>R: Sim. A Buser utiliza um sistema de pagamento seguro e protege os dados dos compradores em todas as etapas do processo.<br><br>P: Quais são as condições para viajar com animais de estimação na Amado Turismo?<br>R: A Amado Turismo permite que você leve seu animal de estimação, desde que ele esteja em uma caixa de transporte adequada e não ultrapasse o peso de 5 kg. É importante apresentar a documentação correta do animal no momento do embarque.<br><br>P: Quais formas de pagamento a Buser aceita?<br>R: Você pode optar por pagar com cartão de crédito, débito, Pix ou boleto, dependendo das opções disponíveis para a rota que escolher.<br><br>P: Posso cancelar minha compra com a Amado Turismo?<br>R: Sim, a Buser oferece a possibilidade de cancelamento sem custo, diretamente pelo site ou aplicativo, dentro do prazo estabelecido para a tarifa escolhida.<br><br>P: Preciso imprimir o bilhete da Amado Turismo?<br>R: Não é necessário. O bilhete é digital e estará disponível no seu e-mail e na sua conta da Buser, podendo ser apresentado diretamente pelo celular no momento do embarque.<br><br>P: Como faço pra viajar com a Amado Turismo pela Buser?<br>R: É simples! Acesse o site ou aplicativo da Buser, busque seu destino e escolha a opção operada pela Amado Turismo. Todo o processo de reserva é feito online, sem precisar visitar um guichê físico.",
+        "company_slug": "amado-turismo",
+        "faqs": [
+            {
+                "question": "A compra pela Buser é segura?",
+                "answer": "Sim. A Buser utiliza um sistema de pagamento seguro e protege os dados dos compradores em todas as etapas do processo."
+            },
+            {
+                "question": "Quais são as condições para viajar com animais de estimação na Amado Turismo?",
+                "answer": "A Amado Turismo permite que você leve seu animal de estimação, desde que ele esteja em uma caixa de transporte adequada e não ultrapasse o peso de 5 kg. É importante apresentar a documentação correta do animal no momento do embarque."
+            },
+            {
+                "question": "Quais formas de pagamento a Buser aceita?",
+                "answer": "Você pode optar por pagar com cartão de crédito, débito, Pix ou boleto, dependendo das opções disponíveis para a rota que escolher."
+            },
+            {
+                "question": "Posso cancelar minha compra com a Amado Turismo?",
+                "answer": "Sim, a Buser oferece a possibilidade de cancelamento sem custo, diretamente pelo site ou aplicativo, dentro do prazo estabelecido para a tarifa escolhida."
+            },
+            {
+                "question": "Preciso imprimir o bilhete da Amado Turismo?",
+                "answer": "Não é necessário. O bilhete é digital e estará disponível no seu e-mail e na sua conta da Buser, podendo ser apresentado diretamente pelo celular no momento do embarque."
+            },
+            {
+                "question": "Como faço pra viajar com a Amado Turismo pela Buser?",
+                "answer": "É simples! Acesse o site ou aplicativo da Buser, busque seu destino e escolha a opção operada pela Amado Turismo. Todo o processo de reserva é feito online, sem precisar visitar um guichê físico."
+            }
+        ]
+    },
+    {
+        "id": "thomas-19",
+        "requisitor": "Thomas",
+        "autor": "Thomas",
+        "formato": "FAQ",
+        "tom": "geral",
+        "media_palavras": 100,
+        "palavras_chave": null,
+        "quantidade_perguntas": 6,
+        "tema": "https://belos-montes-viagens.buser.com.br",
+        "conteudo_gerado": "P: Como faço pra viajar com a Belos Montes Viagens pela Buser?<br>R: Para viajar com a Belos Montes Viagens pela Buser, é só acessar o site ou o aplicativo, buscar o seu destino e escolher a opção da Belos Montes. Todo o processo de reserva acontece online, dispensando a necessidade de ir a um guichê.<br><br>P: Posso cancelar minha compra com a Belos Montes Viagens?<br>R: Sim, você pode cancelar sua compra sem custos, diretamente pelo site ou aplicativo, desde que esteja dentro do prazo da tarifa que você escolheu.<br><br>P: É possível remarcar minha viagem com a Belos Montes Viagens?<br>R: Com certeza! A remarcação é simples e pode ser feita pelo site ou app da Buser, sem necessidade de ligações ou visitas a um guichê.<br><br>P: A compra pela Buser é segura?<br>R: Sim. A Buser adota um sistema de pagamento seguro e protege os dados dos usuários em todas as etapas da compra.<br><br>P: Quais destinos a Belos Montes Viagens atende?<br>R: A Belos Montes Viagens conecta Montes Claros a destinos relevantes como Belo Horizonte e Brasília, além de oferecer pacotes turísticos para locais populares como Porto Seguro, Aparecida e Maceió.<br><br>P: As poltronas da Belos Montes Viagens são confortáveis?<br>R: Ao viajar com a Belos Montes Viagens pela Buser, você encontrará poltronas confortáveis, projetadas para tornar sua viagem mais agradável.",
+        "company_slug": "belos-montes-viagens",
+        "faqs": [
+            {
+                "question": "Como faço pra viajar com a Belos Montes Viagens pela Buser?",
+                "answer": "Para viajar com a Belos Montes Viagens pela Buser, é só acessar o site ou o aplicativo, buscar o seu destino e escolher a opção da Belos Montes. Todo o processo de reserva acontece online, dispensando a necessidade de ir a um guichê."
+            },
+            {
+                "question": "Posso cancelar minha compra com a Belos Montes Viagens?",
+                "answer": "Sim, você pode cancelar sua compra sem custos, diretamente pelo site ou aplicativo, desde que esteja dentro do prazo da tarifa que você escolheu."
+            },
+            {
+                "question": "É possível remarcar minha viagem com a Belos Montes Viagens?",
+                "answer": "Com certeza! A remarcação é simples e pode ser feita pelo site ou app da Buser, sem necessidade de ligações ou visitas a um guichê."
+            },
+            {
+                "question": "A compra pela Buser é segura?",
+                "answer": "Sim. A Buser adota um sistema de pagamento seguro e protege os dados dos usuários em todas as etapas da compra."
+            },
+            {
+                "question": "Quais destinos a Belos Montes Viagens atende?",
+                "answer": "A Belos Montes Viagens conecta Montes Claros a destinos relevantes como Belo Horizonte e Brasília, além de oferecer pacotes turísticos para locais populares como Porto Seguro, Aparecida e Maceió."
+            },
+            {
+                "question": "As poltronas da Belos Montes Viagens são confortáveis?",
+                "answer": "Ao viajar com a Belos Montes Viagens pela Buser, você encontrará poltronas confortáveis, projetadas para tornar sua viagem mais agradável."
+            }
+        ]
+    },
+    {
+        "id": "thomas-20",
+        "requisitor": "Thomas",
+        "autor": "Thomas",
+        "formato": "FAQ",
+        "tom": "geral",
+        "media_palavras": 100,
+        "palavras_chave": null,
+        "quantidade_perguntas": 6,
+        "tema": "https://brasil-way-tour.buser.com.br",
+        "conteudo_gerado": "P: Como faço pra viajar com a Brasil Way Tour pela Buser?<br>R: É simples! Acesse o site ou o aplicativo da Buser, procure seu destino e selecione a opção da Brasil Way Tour. Todo o processo de reserva é feito online, sem a necessidade de ir a um guichê.<br><br>P: Posso cancelar minha compra com a Brasil Way Tour?<br>R: Sim, você pode cancelar sem custos pelo site ou aplicativo da Buser, desde que esteja dentro do prazo da tarifa que escolheu.<br><br>P: Vale a pena reservar com a Brasil Way Tour pela Buser?<br>R: Com certeza! Ao escolher a Brasil Way Tour, você desfruta de preços acessíveis, cancelamento sem custos e uma reserva totalmente digital pela Buser.<br><br>P: Preciso imprimir o bilhete da Brasil Way Tour?<br>R: Não é necessário. O bilhete é digital e estará disponível no seu e-mail e na sua conta da Buser, podendo ser apresentado diretamente pelo celular na hora do embarque.<br><br>P: As poltronas da Brasil Way Tour são confortáveis?<br>R: Sim, ao viajar com a Brasil Way Tour pela Buser, você encontrará poltronas confortáveis, projetadas para tornar sua viagem mais agradável.<br><br>P: Quais são as comodidades oferecidas nos ônibus da Brasil Way Tour?<br>R: Os ônibus da Brasil Way Tour são equipados com ar-condicionado e poltronas reclináveis, oferecendo uma experiência confortável durante toda a viagem.",
+        "company_slug": "brasil-way-tour",
+        "faqs": [
+            {
+                "question": "Como faço pra viajar com a Brasil Way Tour pela Buser?",
+                "answer": "É simples! Acesse o site ou o aplicativo da Buser, procure seu destino e selecione a opção da Brasil Way Tour. Todo o processo de reserva é feito online, sem a necessidade de ir a um guichê."
+            },
+            {
+                "question": "Posso cancelar minha compra com a Brasil Way Tour?",
+                "answer": "Sim, você pode cancelar sem custos pelo site ou aplicativo da Buser, desde que esteja dentro do prazo da tarifa que escolheu."
+            },
+            {
+                "question": "Vale a pena reservar com a Brasil Way Tour pela Buser?",
+                "answer": "Com certeza! Ao escolher a Brasil Way Tour, você desfruta de preços acessíveis, cancelamento sem custos e uma reserva totalmente digital pela Buser."
+            },
+            {
+                "question": "Preciso imprimir o bilhete da Brasil Way Tour?",
+                "answer": "Não é necessário. O bilhete é digital e estará disponível no seu e-mail e na sua conta da Buser, podendo ser apresentado diretamente pelo celular na hora do embarque."
+            },
+            {
+                "question": "As poltronas da Brasil Way Tour são confortáveis?",
+                "answer": "Sim, ao viajar com a Brasil Way Tour pela Buser, você encontrará poltronas confortáveis, projetadas para tornar sua viagem mais agradável."
+            },
+            {
+                "question": "Quais são as comodidades oferecidas nos ônibus da Brasil Way Tour?",
+                "answer": "Os ônibus da Brasil Way Tour são equipados com ar-condicionado e poltronas reclináveis, oferecendo uma experiência confortável durante toda a viagem."
+            }
+        ]
+    },
+    {
+        "id": "thomas-21",
+        "requisitor": "Thomas",
+        "autor": "Thomas",
+        "formato": "FAQ",
+        "tom": "geral",
+        "media_palavras": 100,
+        "palavras_chave": null,
+        "quantidade_perguntas": 6,
+        "tema": "https://expresso-satelite-norte.buser.com.br",
+        "conteudo_gerado": "P: Posso cancelar minha compra com a Expresso Satélite Norte?<br>R: Sim, a Buser oferece cancelamento grátis, que pode ser feito facilmente pelo site ou aplicativo, dentro do prazo estipulado para a tarifa selecionada.<br><br>P: Quais formas de pagamento a Buser aceita?<br>R: As opções de pagamento incluem cartão de crédito, débito, Pix ou boleto, dependendo do que está disponível para a rota que você escolheu.<br><br>P: As poltronas da Expresso Satélite Norte são confortáveis?<br>R: Ao viajar com a Expresso Satélite Norte pela Buser, você pode esperar poltronas confortáveis, projetadas para tornar sua viagem mais prazerosa.<br><br>P: Quais são as opções de ônibus disponíveis na Expresso Satélite Norte?<br>R: A Expresso Satélite Norte oferece várias categorias de ônibus, como Executivo, Leito e Leito-Cama, todas pensadas para garantir uma experiência de viagem agradável e confortável.<br><br>P: Como recebo a confirmação da minha reserva com a Expresso Satélite Norte?<br>R: Após a aprovação do pagamento, você recebe a confirmação por e-mail e o bilhete fica disponível na sua conta da Buser.<br><br>P: A compra pela Buser é segura?<br>R: Sim, a Buser adota um processo de pagamento seguro e protege os dados dos usuários em todas as etapas da compra.",
+        "company_slug": "expresso-satelite-norte",
+        "faqs": [
+            {
+                "question": "Posso cancelar minha compra com a Expresso Satélite Norte?",
+                "answer": "Sim, a Buser oferece cancelamento grátis, que pode ser feito facilmente pelo site ou aplicativo, dentro do prazo estipulado para a tarifa selecionada."
+            },
+            {
+                "question": "Quais formas de pagamento a Buser aceita?",
+                "answer": "As opções de pagamento incluem cartão de crédito, débito, Pix ou boleto, dependendo do que está disponível para a rota que você escolheu."
+            },
+            {
+                "question": "As poltronas da Expresso Satélite Norte são confortáveis?",
+                "answer": "Ao viajar com a Expresso Satélite Norte pela Buser, você pode esperar poltronas confortáveis, projetadas para tornar sua viagem mais prazerosa."
+            },
+            {
+                "question": "Quais são as opções de ônibus disponíveis na Expresso Satélite Norte?",
+                "answer": "A Expresso Satélite Norte oferece várias categorias de ônibus, como Executivo, Leito e Leito-Cama, todas pensadas para garantir uma experiência de viagem agradável e confortável."
+            },
+            {
+                "question": "Como recebo a confirmação da minha reserva com a Expresso Satélite Norte?",
+                "answer": "Após a aprovação do pagamento, você recebe a confirmação por e-mail e o bilhete fica disponível na sua conta da Buser."
+            },
+            {
+                "question": "A compra pela Buser é segura?",
+                "answer": "Sim, a Buser adota um processo de pagamento seguro e protege os dados dos usuários em todas as etapas da compra."
+            }
+        ]
+    },
+    {
+        "id": "thomas-22",
+        "requisitor": "Thomas",
+        "autor": "Thomas",
+        "formato": "FAQ",
+        "tom": "geral",
+        "media_palavras": 100,
+        "palavras_chave": null,
+        "quantidade_perguntas": 6,
+        "tema": "https://jc-turismo.buser.com.br",
+        "conteudo_gerado": "P: Como recebo a confirmação da minha reserva com a JC Turismo?<br>R: Assim que o pagamento é aprovado, você receberá a confirmação por e-mail, e o bilhete ficará disponível na sua conta da Buser.<br><br>P: Preciso imprimir o bilhete da JC Turismo?<br>R: Não é necessário. O bilhete é digital e pode ser acessado pelo seu e-mail ou na sua conta da Buser, podendo ser apresentado diretamente no celular durante o embarque.<br><br>P: Vale a pena reservar com a JC Turismo pela Buser?<br>R: Com certeza! Além de contar com a JC Turismo, você se beneficia de preços acessíveis, cancelamento grátis e um processo de reserva totalmente digital, tudo pela Buser.<br><br>P: Como faço pra viajar com a JC Turismo pela Buser?<br>R: É simples! Acesse o site ou aplicativo da Buser, procure seu destino e escolha a opção da JC Turismo. Todo o processo de reserva é feito online, sem a necessidade de ir a um guichê físico.<br><br>P: A compra pela Buser é segura?<br>R: Sim, a Buser adota um processo de pagamento seguro e protege os dados dos compradores em todas as etapas.<br><br>P: Quais são as opções de veículos disponíveis na JC Turismo?<br>R: A JC Turismo possui uma frota diversificada, incluindo ônibus e micro-ônibus, todos projetados para garantir conforto e segurança aos passageiros durante as viagens, seja em trajetos municipais ou intermunicipais.",
+        "company_slug": "jc-turismo",
+        "faqs": [
+            {
+                "question": "Como recebo a confirmação da minha reserva com a JC Turismo?",
+                "answer": "Assim que o pagamento é aprovado, você receberá a confirmação por e-mail, e o bilhete ficará disponível na sua conta da Buser."
+            },
+            {
+                "question": "Preciso imprimir o bilhete da JC Turismo?",
+                "answer": "Não é necessário. O bilhete é digital e pode ser acessado pelo seu e-mail ou na sua conta da Buser, podendo ser apresentado diretamente no celular durante o embarque."
+            },
+            {
+                "question": "Vale a pena reservar com a JC Turismo pela Buser?",
+                "answer": "Com certeza! Além de contar com a JC Turismo, você se beneficia de preços acessíveis, cancelamento grátis e um processo de reserva totalmente digital, tudo pela Buser."
+            },
+            {
+                "question": "Como faço pra viajar com a JC Turismo pela Buser?",
+                "answer": "É simples! Acesse o site ou aplicativo da Buser, procure seu destino e escolha a opção da JC Turismo. Todo o processo de reserva é feito online, sem a necessidade de ir a um guichê físico."
+            },
+            {
+                "question": "A compra pela Buser é segura?",
+                "answer": "Sim, a Buser adota um processo de pagamento seguro e protege os dados dos compradores em todas as etapas."
+            },
+            {
+                "question": "Quais são as opções de veículos disponíveis na JC Turismo?",
+                "answer": "A JC Turismo possui uma frota diversificada, incluindo ônibus e micro-ônibus, todos projetados para garantir conforto e segurança aos passageiros durante as viagens, seja em trajetos municipais ou intermunicipais."
+            }
+        ]
+    },
+    {
+        "id": "thomas-23",
+        "requisitor": "Thomas",
+        "autor": "Thomas",
+        "formato": "FAQ",
+        "tom": "geral",
+        "media_palavras": 100,
+        "palavras_chave": null,
+        "quantidade_perguntas": 6,
+        "tema": "https://marlim-azul-turismo.buser.com.br",
+        "conteudo_gerado": "P: Posso cancelar minha compra com a Marlim Azul Turismo?<br>R: Sim, a Buser oferece cancelamento grátis, que pode ser feito diretamente pelo site ou aplicativo, desde que você esteja dentro do prazo estipulado para a tarifa que escolheu.<br><br>P: Como recebo a confirmação da minha reserva com a Marlim Azul Turismo?<br>R: Assim que o pagamento é aprovado, você recebe um e-mail de confirmação e o bilhete fica disponível na sua conta da Buser.<br><br>P: É possível remarcar minha viagem com a Marlim Azul Turismo?<br>R: Sim, a remarcação pode ser realizada de maneira simples pelo site ou app da Buser, sem a necessidade de ligar ou visitar um guichê.<br><br>P: Quais são as comodidades oferecidas nos ônibus da Marlim Azul Turismo?<br>R: Os ônibus da Marlim Azul Turismo oferecem ar-condicionado, poltronas confortáveis e tecnologia moderna, garantindo uma experiência agradável durante toda a viagem.<br><br>P: Vale a pena reservar com a Marlim Azul Turismo pela Buser?<br>R: Com certeza — ao escolher a Marlim Azul Turismo, você ainda se beneficia de preços acessíveis, cancelamento grátis e um processo de reserva totalmente digital, tudo pela Buser.<br><br>P: A compra pela Buser é segura?<br>R: Sim. A Buser adota um processo de pagamento seguro e se preocupa em proteger os dados dos usuários em todas as etapas.",
+        "company_slug": "marlim-azul-turismo",
+        "faqs": [
+            {
+                "question": "Posso cancelar minha compra com a Marlim Azul Turismo?",
+                "answer": "Sim, a Buser oferece cancelamento grátis, que pode ser feito diretamente pelo site ou aplicativo, desde que você esteja dentro do prazo estipulado para a tarifa que escolheu."
+            },
+            {
+                "question": "Como recebo a confirmação da minha reserva com a Marlim Azul Turismo?",
+                "answer": "Assim que o pagamento é aprovado, você recebe um e-mail de confirmação e o bilhete fica disponível na sua conta da Buser."
+            },
+            {
+                "question": "É possível remarcar minha viagem com a Marlim Azul Turismo?",
+                "answer": "Sim, a remarcação pode ser realizada de maneira simples pelo site ou app da Buser, sem a necessidade de ligar ou visitar um guichê."
+            },
+            {
+                "question": "Quais são as comodidades oferecidas nos ônibus da Marlim Azul Turismo?",
+                "answer": "Os ônibus da Marlim Azul Turismo oferecem ar-condicionado, poltronas confortáveis e tecnologia moderna, garantindo uma experiência agradável durante toda a viagem."
+            },
+            {
+                "question": "Vale a pena reservar com a Marlim Azul Turismo pela Buser?",
+                "answer": "Com certeza — ao escolher a Marlim Azul Turismo, você ainda se beneficia de preços acessíveis, cancelamento grátis e um processo de reserva totalmente digital, tudo pela Buser."
+            },
+            {
+                "question": "A compra pela Buser é segura?",
+                "answer": "Sim. A Buser adota um processo de pagamento seguro e se preocupa em proteger os dados dos usuários em todas as etapas."
+            }
+        ]
+    },
+    {
+        "id": "thomas-24",
+        "requisitor": "Thomas",
+        "autor": "Thomas",
+        "formato": "FAQ",
+        "tom": "geral",
+        "media_palavras": 100,
+        "palavras_chave": null,
+        "quantidade_perguntas": 6,
+        "tema": "https://marlu-turismo.buser.com.br",
+        "conteudo_gerado": "P: Vale a pena reservar com a Marlu Turismo pela Buser?<br>R: Com certeza! Ao escolher a Marlu Turismo, você ainda se beneficia de preços acessíveis, cancelamento grátis e um processo de reserva totalmente digital através da Buser.<br><br>P: Quais são as opções de ônibus disponíveis na frota da Marlu Turismo?<br>R: A frota da Marlu Turismo é formada por veículos modernos, incluindo os ônibus de dois andares Marcopolo Paradiso G8 DD, que contam com ar-condicionado e poltronas reclináveis, proporcionando uma viagem bem confortável.<br><br>P: Quais formas de pagamento a Buser aceita?<br>R: Você pode optar por pagar com cartão de crédito, débito, Pix ou boleto, conforme as opções disponíveis para a rota que escolher.<br><br>P: Como recebo a confirmação da minha reserva com a Marlu Turismo?<br>R: Assim que seu pagamento é aprovado, você recebe a confirmação por e-mail, e o bilhete ficará disponível na sua conta da Buser.<br><br>P: Preciso imprimir o bilhete da Marlu Turismo?<br>R: Não é necessário. O bilhete é digital e pode ser acessado no seu e-mail ou na sua conta da Buser, podendo ser apresentado diretamente pelo celular na hora do embarque.<br><br>P: A compra pela Buser é segura?<br>R: Sim, a Buser assegura um processo de pagamento seguro e protege os dados dos usuários durante todas as etapas da compra.",
+        "company_slug": "marlu-turismo",
+        "faqs": [
+            {
+                "question": "Vale a pena reservar com a Marlu Turismo pela Buser?",
+                "answer": "Com certeza! Ao escolher a Marlu Turismo, você ainda se beneficia de preços acessíveis, cancelamento grátis e um processo de reserva totalmente digital através da Buser."
+            },
+            {
+                "question": "Quais são as opções de ônibus disponíveis na frota da Marlu Turismo?",
+                "answer": "A frota da Marlu Turismo é formada por veículos modernos, incluindo os ônibus de dois andares Marcopolo Paradiso G8 DD, que contam com ar-condicionado e poltronas reclináveis, proporcionando uma viagem bem confortável."
+            },
+            {
+                "question": "Quais formas de pagamento a Buser aceita?",
+                "answer": "Você pode optar por pagar com cartão de crédito, débito, Pix ou boleto, conforme as opções disponíveis para a rota que escolher."
+            },
+            {
+                "question": "Como recebo a confirmação da minha reserva com a Marlu Turismo?",
+                "answer": "Assim que seu pagamento é aprovado, você recebe a confirmação por e-mail, e o bilhete ficará disponível na sua conta da Buser."
+            },
+            {
+                "question": "Preciso imprimir o bilhete da Marlu Turismo?",
+                "answer": "Não é necessário. O bilhete é digital e pode ser acessado no seu e-mail ou na sua conta da Buser, podendo ser apresentado diretamente pelo celular na hora do embarque."
+            },
+            {
+                "question": "A compra pela Buser é segura?",
+                "answer": "Sim, a Buser assegura um processo de pagamento seguro e protege os dados dos usuários durante todas as etapas da compra."
+            }
+        ]
+    },
+    {
+        "id": "thomas-25",
+        "requisitor": "Thomas",
+        "autor": "Thomas",
+        "formato": "FAQ",
+        "tom": "geral",
+        "media_palavras": 100,
+        "palavras_chave": null,
+        "quantidade_perguntas": 6,
+        "tema": "https://nobre.buser.com.br",
+        "conteudo_gerado": "P: Quais formas de pagamento a Buser aceita?<br>R: Você pode pagar com cartão de crédito, débito, Pix ou boleto, conforme as opções disponíveis para a rota que você escolher.<br><br>P: A compra pela Buser é segura?<br>R: Sim. A Buser adota um processo de pagamento seguro e protege os dados dos clientes em todas as etapas da compra.<br><br>P: Vale a pena reservar com a Nobre pela Buser?<br>R: Com certeza! Ao escolher a Nobre, você se beneficia de preços baixos, cancelamento grátis e um processo de reserva totalmente digital, diretamente pela Buser.<br><br>P: Como recebo a confirmação da minha reserva com a Nobre?<br>R: Assim que seu pagamento é aprovado, você recebe a confirmação por e-mail e o bilhete já fica disponível na sua conta da Buser.<br><br>P: Quais são as comodidades oferecidas nos ônibus da Nobre?<br>R: Os ônibus da Nobre são modernos e oferecem comodidades como Wi-Fi, poltronas reclináveis e ar-condicionado, proporcionando uma viagem confortável e agradável.<br><br>P: Como faço pra viajar com a Nobre pela Buser?<br>R: É simples! Acesse o site ou aplicativo da Buser, busque seu destino e escolha a opção operada pela Nobre. Todo o processo de reserva é realizado online, sem a necessidade de ir a um guichê.",
+        "company_slug": "nobre",
+        "faqs": [
+            {
+                "question": "Quais formas de pagamento a Buser aceita?",
+                "answer": "Você pode pagar com cartão de crédito, débito, Pix ou boleto, conforme as opções disponíveis para a rota que você escolher."
+            },
+            {
+                "question": "A compra pela Buser é segura?",
+                "answer": "Sim. A Buser adota um processo de pagamento seguro e protege os dados dos clientes em todas as etapas da compra."
+            },
+            {
+                "question": "Vale a pena reservar com a Nobre pela Buser?",
+                "answer": "Com certeza! Ao escolher a Nobre, você se beneficia de preços baixos, cancelamento grátis e um processo de reserva totalmente digital, diretamente pela Buser."
+            },
+            {
+                "question": "Como recebo a confirmação da minha reserva com a Nobre?",
+                "answer": "Assim que seu pagamento é aprovado, você recebe a confirmação por e-mail e o bilhete já fica disponível na sua conta da Buser."
+            },
+            {
+                "question": "Quais são as comodidades oferecidas nos ônibus da Nobre?",
+                "answer": "Os ônibus da Nobre são modernos e oferecem comodidades como Wi-Fi, poltronas reclináveis e ar-condicionado, proporcionando uma viagem confortável e agradável."
+            },
+            {
+                "question": "Como faço pra viajar com a Nobre pela Buser?",
+                "answer": "É simples! Acesse o site ou aplicativo da Buser, busque seu destino e escolha a opção operada pela Nobre. Todo o processo de reserva é realizado online, sem a necessidade de ir a um guichê."
+            }
+        ]
+    },
+    {
+        "id": "thomas-26",
+        "requisitor": "Thomas",
+        "autor": "Thomas",
+        "formato": "FAQ",
+        "tom": "geral",
+        "media_palavras": 100,
+        "palavras_chave": null,
+        "quantidade_perguntas": 6,
+        "tema": "https://vanzella-transportes.buser.com.br",
+        "conteudo_gerado": "P: Tenho atendimento se precisar de ajuda durante a viagem com a Vanzella Transportes?<br>R: Sim, a Buser disponibiliza atendimento humano 24 horas para esclarecer dúvidas e auxiliar em qualquer fase da sua viagem.<br><br>P: Preciso imprimir o bilhete da Vanzella Transportes?<br>R: Não é necessário. O bilhete é digital e fica disponível no seu e-mail e na sua conta da Buser, podendo ser mostrado diretamente pelo celular no embarque.<br><br>P: Como recebo a confirmação da minha reserva com a Vanzella Transportes?<br>R: Assim que o pagamento é aprovado, você receberá a confirmação por e-mail e o bilhete estará acessível na sua conta da Buser.<br><br>P: Vale a pena reservar com a Vanzella Transportes pela Buser?<br>R: Com certeza! Além de viajar com a Vanzella Transportes, você se beneficia de preços acessíveis, cancelamento grátis e um processo de reserva totalmente digital, tudo pela Buser.<br><br>P: Quais são os tipos de veículos disponíveis na Vanzella Transportes?<br>R: A Vanzella Transportes possui uma frota variada, que inclui vans para até 15 passageiros, micro-ônibus para 26 passageiros e ônibus semi-leito ou leito, proporcionando um alto nível de conforto durante as viagens.<br><br>P: É possível remarcar minha viagem com a Vanzella Transportes?<br>R: Sim, você pode remarcar sua viagem de forma simples pelo site ou aplicativo da Buser, sem necessidade de ligar ou ir a um guichê.",
+        "company_slug": "vanzella-transportes",
+        "faqs": [
+            {
+                "question": "Tenho atendimento se precisar de ajuda durante a viagem com a Vanzella Transportes?",
+                "answer": "Sim, a Buser disponibiliza atendimento humano 24 horas para esclarecer dúvidas e auxiliar em qualquer fase da sua viagem."
+            },
+            {
+                "question": "Preciso imprimir o bilhete da Vanzella Transportes?",
+                "answer": "Não é necessário. O bilhete é digital e fica disponível no seu e-mail e na sua conta da Buser, podendo ser mostrado diretamente pelo celular no embarque."
+            },
+            {
+                "question": "Como recebo a confirmação da minha reserva com a Vanzella Transportes?",
+                "answer": "Assim que o pagamento é aprovado, você receberá a confirmação por e-mail e o bilhete estará acessível na sua conta da Buser."
+            },
+            {
+                "question": "Vale a pena reservar com a Vanzella Transportes pela Buser?",
+                "answer": "Com certeza! Além de viajar com a Vanzella Transportes, você se beneficia de preços acessíveis, cancelamento grátis e um processo de reserva totalmente digital, tudo pela Buser."
+            },
+            {
+                "question": "Quais são os tipos de veículos disponíveis na Vanzella Transportes?",
+                "answer": "A Vanzella Transportes possui uma frota variada, que inclui vans para até 15 passageiros, micro-ônibus para 26 passageiros e ônibus semi-leito ou leito, proporcionando um alto nível de conforto durante as viagens."
+            },
+            {
+                "question": "É possível remarcar minha viagem com a Vanzella Transportes?",
+                "answer": "Sim, você pode remarcar sua viagem de forma simples pelo site ou aplicativo da Buser, sem necessidade de ligar ou ir a um guichê."
+            }
+        ]
+    },
+    {
+        "id": "thomas-27",
+        "requisitor": "Thomas",
+        "autor": "Thomas",
+        "formato": "FAQ",
+        "tom": "geral",
+        "media_palavras": 100,
+        "palavras_chave": null,
+        "quantidade_perguntas": 6,
+        "tema": "https://expresso-joia.buser.com.br",
+        "conteudo_gerado": "P: Quais são as condições para viajar com pets na Expresso Joia?<br>R: Na Expresso Joia, você pode viajar com seu animal de estimação, desde que ele pese até 10 kg. É necessário que o pet esteja em uma bolsa ou caixa adequada para transporte. Além disso, é fundamental apresentar a documentação que comprove a vacinação do seu bichinho.<br><br>P: É possível remarcar minha viagem com a Expresso Joia?<br>R: Sim, você pode remarcar sua viagem de maneira simples pelo site ou pelo aplicativo da Buser, sem precisar fazer ligação ou ir a um guichê.<br><br>P: Como recebo a confirmação da minha reserva com a Expresso Joia?<br>R: Assim que o pagamento é confirmado, você recebe um e-mail com a confirmação e o bilhete fica disponível na sua conta na Buser.<br><br>P: Posso cancelar minha compra com a Expresso Joia?<br>R: Sim, a Buser oferece cancelamento grátis, que pode ser feito diretamente pelo site ou aplicativo, desde que você esteja dentro do prazo estipulado para a tarifa que escolheu.<br><br>P: Vale a pena reservar com a Expresso Joia pela Buser?<br>R: Com certeza! Ao reservar com a Expresso Joia, você desfruta de preços acessíveis, cancelamento grátis e um processo de reserva totalmente digital através da Buser.<br><br>P: Quais formas de pagamento a Buser aceita?<br>R: Você pode optar por pagar com cartão de crédito, débito, Pix ou boleto, conforme as opções disponíveis para a rota que você escolheu.",
+        "company_slug": "expresso-joia",
+        "faqs": [
+            {
+                "question": "Quais são as condições para viajar com pets na Expresso Joia?",
+                "answer": "Na Expresso Joia, você pode viajar com seu animal de estimação, desde que ele pese até 10 kg. É necessário que o pet esteja em uma bolsa ou caixa adequada para transporte. Além disso, é fundamental apresentar a documentação que comprove a vacinação do seu bichinho."
+            },
+            {
+                "question": "É possível remarcar minha viagem com a Expresso Joia?",
+                "answer": "Sim, você pode remarcar sua viagem de maneira simples pelo site ou pelo aplicativo da Buser, sem precisar fazer ligação ou ir a um guichê."
+            },
+            {
+                "question": "Como recebo a confirmação da minha reserva com a Expresso Joia?",
+                "answer": "Assim que o pagamento é confirmado, você recebe um e-mail com a confirmação e o bilhete fica disponível na sua conta na Buser."
+            },
+            {
+                "question": "Posso cancelar minha compra com a Expresso Joia?",
+                "answer": "Sim, a Buser oferece cancelamento grátis, que pode ser feito diretamente pelo site ou aplicativo, desde que você esteja dentro do prazo estipulado para a tarifa que escolheu."
+            },
+            {
+                "question": "Vale a pena reservar com a Expresso Joia pela Buser?",
+                "answer": "Com certeza! Ao reservar com a Expresso Joia, você desfruta de preços acessíveis, cancelamento grátis e um processo de reserva totalmente digital através da Buser."
+            },
+            {
+                "question": "Quais formas de pagamento a Buser aceita?",
+                "answer": "Você pode optar por pagar com cartão de crédito, débito, Pix ou boleto, conforme as opções disponíveis para a rota que você escolheu."
+            }
+        ]
+    },
+    {
+        "id": "thomas-28",
+        "requisitor": "Thomas",
+        "autor": "Thomas",
+        "formato": "FAQ",
+        "tom": "geral",
+        "media_palavras": 100,
+        "palavras_chave": null,
+        "quantidade_perguntas": 6,
+        "tema": "https://expresso-solucao.buser.com.br",
+        "conteudo_gerado": "P: Vale a pena reservar com a Expresso Solução pela Buser?<br>R: Com certeza! Ao escolher a Expresso Solução, você ainda se beneficia de preços acessíveis, cancelamento sem custo e um sistema de reserva totalmente digital através da Buser.<br><br>P: Tenho atendimento se precisar de ajuda durante a viagem com a Expresso Solução?<br>R: Sim, a Buser disponibiliza atendimento humano 24 horas para esclarecer dúvidas e oferecer suporte em qualquer parte da sua viagem.<br><br>P: A compra pela Buser é segura?<br>R: Sim, a Buser adota um método de pagamento seguro e garante a proteção dos dados dos compradores em todas as fases da transação.<br><br>P: Como faço pra viajar com a Expresso Solução pela Buser?<br>R: É simples! Acesse o site ou aplicativo da Buser, procure seu destino e selecione a opção oferecida pela Expresso Solução. Todo o processo de reserva é feito online, sem necessidade de ir a um guichê.<br><br>P: As poltronas da Expresso Solução são confortáveis?<br>R: Sim, ao viajar com a Expresso Solução pela Buser, você encontrará poltronas confortáveis, projetadas para tornar sua viagem mais agradável.<br><br>P: Quais formas de pagamento a Buser aceita?<br>R: Você pode efetuar o pagamento com cartão de crédito, débito, Pix ou boleto, dependendo das opções disponíveis para o trajeto que você escolher.",
+        "company_slug": "expresso-solucao",
+        "faqs": [
+            {
+                "question": "Vale a pena reservar com a Expresso Solução pela Buser?",
+                "answer": "Com certeza! Ao escolher a Expresso Solução, você ainda se beneficia de preços acessíveis, cancelamento sem custo e um sistema de reserva totalmente digital através da Buser."
+            },
+            {
+                "question": "Tenho atendimento se precisar de ajuda durante a viagem com a Expresso Solução?",
+                "answer": "Sim, a Buser disponibiliza atendimento humano 24 horas para esclarecer dúvidas e oferecer suporte em qualquer parte da sua viagem."
+            },
+            {
+                "question": "A compra pela Buser é segura?",
+                "answer": "Sim, a Buser adota um método de pagamento seguro e garante a proteção dos dados dos compradores em todas as fases da transação."
+            },
+            {
+                "question": "Como faço pra viajar com a Expresso Solução pela Buser?",
+                "answer": "É simples! Acesse o site ou aplicativo da Buser, procure seu destino e selecione a opção oferecida pela Expresso Solução. Todo o processo de reserva é feito online, sem necessidade de ir a um guichê."
+            },
+            {
+                "question": "As poltronas da Expresso Solução são confortáveis?",
+                "answer": "Sim, ao viajar com a Expresso Solução pela Buser, você encontrará poltronas confortáveis, projetadas para tornar sua viagem mais agradável."
+            },
+            {
+                "question": "Quais formas de pagamento a Buser aceita?",
+                "answer": "Você pode efetuar o pagamento com cartão de crédito, débito, Pix ou boleto, dependendo das opções disponíveis para o trajeto que você escolher."
+            }
+        ]
+    },
+    {
+        "id": "thomas-29",
+        "requisitor": "Thomas",
+        "autor": "Thomas",
+        "formato": "FAQ",
+        "tom": "geral",
+        "media_palavras": 100,
+        "palavras_chave": null,
+        "quantidade_perguntas": 6,
+        "tema": "https://gimenes-turismo.buser.com.br",
+        "conteudo_gerado": "P: Tenho atendimento se precisar de ajuda durante a viagem com a Gimenes Turismo?<br>R: Sim, a Buser oferece suporte humano 24 horas para esclarecer dúvidas e auxiliar em qualquer fase da sua viagem.<br><br>P: Vale a pena reservar com a Gimenes Turismo pela Buser?<br>R: Sim — ao escolher a Gimenes Turismo, você se beneficia de preços acessíveis, a possibilidade de cancelar sem custo e um processo de reserva totalmente digital, feito diretamente pela Buser.<br><br>P: Posso cancelar minha compra com a Gimenes Turismo?<br>R: Sim, a Buser proporciona cancelamento sem custo, que pode ser feito pelo site ou aplicativo, respeitando o prazo da tarifa escolhida.<br><br>P: Quais são as comodidades disponíveis nos ônibus da Gimenes Turismo?<br>R: Os ônibus da Gimenes Turismo estão equipados com poltronas reclináveis, ar-condicionado, Wi-Fi a bordo e criam um ambiente confortável para suas viagens.<br><br>P: A compra pela Buser é segura?<br>R: Sim. A Buser adota um método de pagamento seguro e protege os dados dos compradores em todas as etapas do processo.<br><br>P: As poltronas da Gimenes Turismo são confortáveis?<br>R: Ao viajar com a Gimenes Turismo pela Buser, você pode contar com poltronas projetadas para oferecer conforto e tornar sua viagem mais agradável.",
+        "company_slug": "gimenes-turismo",
+        "faqs": [
+            {
+                "question": "Tenho atendimento se precisar de ajuda durante a viagem com a Gimenes Turismo?",
+                "answer": "Sim, a Buser oferece suporte humano 24 horas para esclarecer dúvidas e auxiliar em qualquer fase da sua viagem."
+            },
+            {
+                "question": "Vale a pena reservar com a Gimenes Turismo pela Buser?",
+                "answer": "Sim — ao escolher a Gimenes Turismo, você se beneficia de preços acessíveis, a possibilidade de cancelar sem custo e um processo de reserva totalmente digital, feito diretamente pela Buser."
+            },
+            {
+                "question": "Posso cancelar minha compra com a Gimenes Turismo?",
+                "answer": "Sim, a Buser proporciona cancelamento sem custo, que pode ser feito pelo site ou aplicativo, respeitando o prazo da tarifa escolhida."
+            },
+            {
+                "question": "Quais são as comodidades disponíveis nos ônibus da Gimenes Turismo?",
+                "answer": "Os ônibus da Gimenes Turismo estão equipados com poltronas reclináveis, ar-condicionado, Wi-Fi a bordo e criam um ambiente confortável para suas viagens."
+            },
+            {
+                "question": "A compra pela Buser é segura?",
+                "answer": "Sim. A Buser adota um método de pagamento seguro e protege os dados dos compradores em todas as etapas do processo."
+            },
+            {
+                "question": "As poltronas da Gimenes Turismo são confortáveis?",
+                "answer": "Ao viajar com a Gimenes Turismo pela Buser, você pode contar com poltronas projetadas para oferecer conforto e tornar sua viagem mais agradável."
+            }
+        ]
+    }
+]
