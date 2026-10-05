@@ -1,0 +1,217 @@
+[
+    {
+        "id": "thomas-0",
+        "requisitor": "Thomas",
+        "autor": "Thomas",
+        "formato": "FAQ",
+        "tom": "geral",
+        "media_palavras": 100,
+        "palavras_chave": null,
+        "quantidade_perguntas": 7,
+        "tema": "https://expresso-nordeste.buser.com.br",
+        "conteudo_gerado": "P: Tenho atendimento se precisar de ajuda durante a viagem com a Expresso Nordeste?<br>R: Sim, a Buser disponibiliza atendimento humano 24 horas para esclarecer dúvidas e oferecer suporte em qualquer momento da sua viagem.<br><br>P: As poltronas da Expresso Nordeste são confortáveis?<br>R: Ao viajar com a Expresso Nordeste pela Buser, você encontra poltronas projetadas para proporcionar conforto, tornando o trajeto mais agradável.<br><br>P: Quais são as opções de ônibus disponíveis na Expresso Nordeste?<br>R: A Expresso Nordeste conta com uma frota variada, que inclui ônibus Executivo e Semi-Leito, todos equipados com ar-condicionado, poltronas reclináveis e Wi-Fi, para garantir uma viagem confortável.<br><br>P: A Expresso Nordeste tem política de transporte de animais de estimação?<br>R: Sim, a Expresso Nordeste permite que animais de estimação sejam transportados, desde que sejam de pequeno porte e estejam em caixas apropriadas. É sempre bom conferir a disponibilidade e as condições específicas com antecedência.<br><br>P: Preciso imprimir o bilhete da Expresso Nordeste?<br>R: Não é necessário. O bilhete é digital e fica disponível no seu e-mail e na sua conta da Buser, podendo ser apresentado diretamente pelo celular no momento do embarque.<br><br>P: Quais formas de pagamento a Buser aceita?<br>R: Você pode efetuar o pagamento com cartão de crédito, débito, Pix ou boleto, conforme as opções disponíveis para a rota selecionada.<br><br>P: Como recebo a confirmação da minha reserva com a Expresso Nordeste?<br>R: Após a aprovação do pagamento, você recebe a confirmação por e-mail e o bilhete já fica acessível na sua conta da Buser.",
+        "company_slug": "expresso-nordeste",
+        "faqs": [
+            {
+                "question": "Tenho atendimento se precisar de ajuda durante a viagem com a Expresso Nordeste?",
+                "answer": "Sim, a Buser disponibiliza atendimento humano 24 horas para esclarecer dúvidas e oferecer suporte em qualquer momento da sua viagem."
+            },
+            {
+                "question": "As poltronas da Expresso Nordeste são confortáveis?",
+                "answer": "Ao viajar com a Expresso Nordeste pela Buser, você encontra poltronas projetadas para proporcionar conforto, tornando o trajeto mais agradável."
+            },
+            {
+                "question": "Quais são as opções de ônibus disponíveis na Expresso Nordeste?",
+                "answer": "A Expresso Nordeste conta com uma frota variada, que inclui ônibus Executivo e Semi-Leito, todos equipados com ar-condicionado, poltronas reclináveis e Wi-Fi, para garantir uma viagem confortável."
+            },
+            {
+                "question": "A Expresso Nordeste tem política de transporte de animais de estimação?",
+                "answer": "Sim, a Expresso Nordeste permite que animais de estimação sejam transportados, desde que sejam de pequeno porte e estejam em caixas apropriadas. É sempre bom conferir a disponibilidade e as condições específicas com antecedência."
+            },
+            {
+                "question": "Preciso imprimir o bilhete da Expresso Nordeste?",
+                "answer": "Não é necessário. O bilhete é digital e fica disponível no seu e-mail e na sua conta da Buser, podendo ser apresentado diretamente pelo celular no momento do embarque."
+            },
+            {
+                "question": "Quais formas de pagamento a Buser aceita?",
+                "answer": "Você pode efetuar o pagamento com cartão de crédito, débito, Pix ou boleto, conforme as opções disponíveis para a rota selecionada."
+            },
+            {
+                "question": "Como recebo a confirmação da minha reserva com a Expresso Nordeste?",
+                "answer": "Após a aprovação do pagamento, você recebe a confirmação por e-mail e o bilhete já fica acessível na sua conta da Buser."
+            }
+        ]
+    },
+    {
+        "id": "thomas-1",
+        "requisitor": "Thomas",
+        "autor": "Thomas",
+        "formato": "FAQ",
+        "tom": "geral",
+        "media_palavras": 100,
+        "palavras_chave": null,
+        "quantidade_perguntas": 7,
+        "tema": "https://expresso-sao-luiz.buser.com.br",
+        "conteudo_gerado": "P: Quais formas de pagamento a Buser aceita?<br>R: Você pode optar por pagar com cartão de crédito, débito, Pix ou boleto, de acordo com as opções disponíveis para a rota que você escolher.<br><br>P: Como faço pra viajar com a Expresso Sao Luiz pela Buser?<br>R: Para viajar com a Expresso Sao Luiz, acesse o site ou o aplicativo da Buser, busque seu destino e selecione a opção operada pela Expresso Sao Luiz. Todo o processo de reserva é feito online, evitando a necessidade de ir até um guichê.<br><br>P: Como recebo a confirmação da minha reserva com a Expresso Sao Luiz?<br>R: Assim que o pagamento for aprovado, você receberá a confirmação por e-mail, e o bilhete ficará disponível na sua conta da Buser.<br><br>P: Qual é a política de transporte de animais de estimação na Expresso São Luiz?<br>R: A Expresso São Luiz aceita o transporte de animais de estimação, desde que estejam em caixas apropriadas e pesem até 10 kg. É importante apresentar a documentação do animal durante a viagem.<br><br>P: Preciso imprimir o bilhete da Expresso Sao Luiz?<br>R: Não é necessário. O bilhete é digital e pode ser acessado pelo seu e-mail ou na conta da Buser, podendo ser mostrado diretamente pelo celular no embarque.<br><br>P: Quais são as comodidades oferecidas nos ônibus da Expresso São Luiz?<br>R: Os ônibus da Expresso São Luiz contam com ar-condicionado, poltronas reclináveis e Wi-Fi, garantindo uma viagem confortável.<br><br>P: Posso cancelar minha compra com a Expresso Sao Luiz?<br>R: Sim, a Buser oferece a opção de cancelamento grátis, que pode ser feito pelo site ou aplicativo, respeitando o prazo definido para a tarifa escolhida.",
+        "company_slug": "expresso-sao-luiz",
+        "faqs": [
+            {
+                "question": "Quais formas de pagamento a Buser aceita?",
+                "answer": "Você pode optar por pagar com cartão de crédito, débito, Pix ou boleto, de acordo com as opções disponíveis para a rota que você escolher."
+            },
+            {
+                "question": "Como faço pra viajar com a Expresso Sao Luiz pela Buser?",
+                "answer": "Para viajar com a Expresso Sao Luiz, acesse o site ou o aplicativo da Buser, busque seu destino e selecione a opção operada pela Expresso Sao Luiz. Todo o processo de reserva é feito online, evitando a necessidade de ir até um guichê."
+            },
+            {
+                "question": "Como recebo a confirmação da minha reserva com a Expresso Sao Luiz?",
+                "answer": "Assim que o pagamento for aprovado, você receberá a confirmação por e-mail, e o bilhete ficará disponível na sua conta da Buser."
+            },
+            {
+                "question": "Qual é a política de transporte de animais de estimação na Expresso São Luiz?",
+                "answer": "A Expresso São Luiz aceita o transporte de animais de estimação, desde que estejam em caixas apropriadas e pesem até 10 kg. É importante apresentar a documentação do animal durante a viagem."
+            },
+            {
+                "question": "Preciso imprimir o bilhete da Expresso Sao Luiz?",
+                "answer": "Não é necessário. O bilhete é digital e pode ser acessado pelo seu e-mail ou na conta da Buser, podendo ser mostrado diretamente pelo celular no embarque."
+            },
+            {
+                "question": "Quais são as comodidades oferecidas nos ônibus da Expresso São Luiz?",
+                "answer": "Os ônibus da Expresso São Luiz contam com ar-condicionado, poltronas reclináveis e Wi-Fi, garantindo uma viagem confortável."
+            },
+            {
+                "question": "Posso cancelar minha compra com a Expresso Sao Luiz?",
+                "answer": "Sim, a Buser oferece a opção de cancelamento grátis, que pode ser feito pelo site ou aplicativo, respeitando o prazo definido para a tarifa escolhida."
+            }
+        ]
+    },
+    {
+        "id": "thomas-2",
+        "requisitor": "Thomas",
+        "autor": "Thomas",
+        "formato": "FAQ",
+        "tom": "geral",
+        "media_palavras": 100,
+        "palavras_chave": null,
+        "quantidade_perguntas": 7,
+        "tema": "https://viacao-sertaneja.buser.com.br",
+        "conteudo_gerado": "P: Quais são as políticas de bagagem da Viação Sertaneja?<br>R: Na Viação Sertaneja, cada passageiro pode levar uma mala de até 30 kg e um item de mão, como uma mochila ou bolsa, que não ultrapasse 5 kg. É essencial que as bagagens estejam corretamente identificadas.<br><br>P: Preciso imprimir o bilhete da Viacao Sertaneja?<br>R: Não é necessário. O bilhete é digital e está disponível no seu e-mail e na sua conta da Buser, podendo ser mostrado diretamente pelo celular no momento do embarque.<br><br>P: Quais documentos são necessários para viajar com a Viação Sertaneja?<br>R: Para embarcar com a Viação Sertaneja, é preciso apresentar um documento de identidade com foto, como RG ou CNH, que deve ser o mesmo utilizado na compra da passagem.<br><br>P: Quais formas de pagamento a Buser aceita?<br>R: Você pode optar por pagar com cartão de crédito, débito, Pix ou boleto, conforme as opções disponíveis para a rota que escolher.<br><br>P: Vale a pena reservar com a Viacao Sertaneja pela Buser?<br>R: Com certeza — ao reservar com a Viação Sertaneja, você se beneficia de preços acessíveis, cancelamento grátis e um processo de reserva totalmente digital, feito pela Buser.<br><br>P: As poltronas da Viacao Sertaneja são confortáveis?<br>R: Ao viajar com a Viação Sertaneja pela Buser, você desfruta de poltronas confortáveis, projetadas para tornar sua viagem mais agradável.<br><br>P: É possível remarcar minha viagem com a Viacao Sertaneja?<br>R: Sim, a remarcação é simples e pode ser realizada pelo site ou app da Buser, sem a necessidade de telefonar ou ir até um guichê.",
+        "company_slug": "viacao-sertaneja",
+        "faqs": [
+            {
+                "question": "Quais são as políticas de bagagem da Viação Sertaneja?",
+                "answer": "Na Viação Sertaneja, cada passageiro pode levar uma mala de até 30 kg e um item de mão, como uma mochila ou bolsa, que não ultrapasse 5 kg. É essencial que as bagagens estejam corretamente identificadas."
+            },
+            {
+                "question": "Preciso imprimir o bilhete da Viacao Sertaneja?",
+                "answer": "Não é necessário. O bilhete é digital e está disponível no seu e-mail e na sua conta da Buser, podendo ser mostrado diretamente pelo celular no momento do embarque."
+            },
+            {
+                "question": "Quais documentos são necessários para viajar com a Viação Sertaneja?",
+                "answer": "Para embarcar com a Viação Sertaneja, é preciso apresentar um documento de identidade com foto, como RG ou CNH, que deve ser o mesmo utilizado na compra da passagem."
+            },
+            {
+                "question": "Quais formas de pagamento a Buser aceita?",
+                "answer": "Você pode optar por pagar com cartão de crédito, débito, Pix ou boleto, conforme as opções disponíveis para a rota que escolher."
+            },
+            {
+                "question": "Vale a pena reservar com a Viacao Sertaneja pela Buser?",
+                "answer": "Com certeza — ao reservar com a Viação Sertaneja, você se beneficia de preços acessíveis, cancelamento grátis e um processo de reserva totalmente digital, feito pela Buser."
+            },
+            {
+                "question": "As poltronas da Viacao Sertaneja são confortáveis?",
+                "answer": "Ao viajar com a Viação Sertaneja pela Buser, você desfruta de poltronas confortáveis, projetadas para tornar sua viagem mais agradável."
+            },
+            {
+                "question": "É possível remarcar minha viagem com a Viacao Sertaneja?",
+                "answer": "Sim, a remarcação é simples e pode ser realizada pelo site ou app da Buser, sem a necessidade de telefonar ou ir até um guichê."
+            }
+        ]
+    },
+    {
+        "id": "thomas-3",
+        "requisitor": "Thomas",
+        "autor": "Thomas",
+        "formato": "FAQ",
+        "tom": "geral",
+        "media_palavras": 100,
+        "palavras_chave": null,
+        "quantidade_perguntas": 7,
+        "tema": "https://cruzeiro-do-sul-transportes.buser.com.br",
+        "conteudo_gerado": "P: Como funciona a política de bagagem da Cruzeiro do Sul Transportes?<br>R: Na Cruzeiro do Sul Transportes, os passageiros podem levar uma bagagem de até 30 kg e uma bagagem de mão de até 5 kg, permitindo que você viaje com tudo o que precisa.<br><br>P: Vale a pena reservar com a Cruzeiro Do Sul Transportes pela Buser?<br>R: Com certeza! Além de viajar com a Cruzeiro Do Sul Transportes, você se beneficia de preços acessíveis, cancelamento grátis e um processo de reserva totalmente digital na Buser.<br><br>P: As poltronas da Cruzeiro Do Sul Transportes são confortáveis?<br>R: Sim, ao viajar com a Cruzeiro Do Sul Transportes pela Buser, você desfruta de poltronas projetadas para garantir um trajeto mais agradável.<br><br>P: Quais são as comodidades oferecidas nos ônibus da Cruzeiro do Sul Transportes?<br>R: Os ônibus da Cruzeiro do Sul Transportes vêm equipados com ar-condicionado, poltronas reclináveis e Wi-Fi, tornando sua viagem mais agradável e confortável.<br><br>P: Como faço pra viajar com a Cruzeiro Do Sul Transportes pela Buser?<br>R: Para viajar com a Cruzeiro Do Sul Transportes pela Buser, acesse o site ou aplicativo da Buser, procure seu destino e escolha a opção da Cruzeiro Do Sul. Todo o processo de reserva é feito online, sem a necessidade de ir a um guichê.<br><br>P: A compra pela Buser é segura?<br>R: Sim, a Buser adota um sistema de pagamento seguro e protege os dados dos usuários em todas as fases da compra.<br><br>P: Quais formas de pagamento a Buser aceita?<br>R: Na Buser, você pode optar por pagar com cartão de crédito, débito, Pix ou boleto, tudo dependendo das opções disponíveis para a rota que você escolher.",
+        "company_slug": "cruzeiro-do-sul-transportes",
+        "faqs": [
+            {
+                "question": "Como funciona a política de bagagem da Cruzeiro do Sul Transportes?",
+                "answer": "Na Cruzeiro do Sul Transportes, os passageiros podem levar uma bagagem de até 30 kg e uma bagagem de mão de até 5 kg, permitindo que você viaje com tudo o que precisa."
+            },
+            {
+                "question": "Vale a pena reservar com a Cruzeiro Do Sul Transportes pela Buser?",
+                "answer": "Com certeza! Além de viajar com a Cruzeiro Do Sul Transportes, você se beneficia de preços acessíveis, cancelamento grátis e um processo de reserva totalmente digital na Buser."
+            },
+            {
+                "question": "As poltronas da Cruzeiro Do Sul Transportes são confortáveis?",
+                "answer": "Sim, ao viajar com a Cruzeiro Do Sul Transportes pela Buser, você desfruta de poltronas projetadas para garantir um trajeto mais agradável."
+            },
+            {
+                "question": "Quais são as comodidades oferecidas nos ônibus da Cruzeiro do Sul Transportes?",
+                "answer": "Os ônibus da Cruzeiro do Sul Transportes vêm equipados com ar-condicionado, poltronas reclináveis e Wi-Fi, tornando sua viagem mais agradável e confortável."
+            },
+            {
+                "question": "Como faço pra viajar com a Cruzeiro Do Sul Transportes pela Buser?",
+                "answer": "Para viajar com a Cruzeiro Do Sul Transportes pela Buser, acesse o site ou aplicativo da Buser, procure seu destino e escolha a opção da Cruzeiro Do Sul. Todo o processo de reserva é feito online, sem a necessidade de ir a um guichê."
+            },
+            {
+                "question": "A compra pela Buser é segura?",
+                "answer": "Sim, a Buser adota um sistema de pagamento seguro e protege os dados dos usuários em todas as fases da compra."
+            },
+            {
+                "question": "Quais formas de pagamento a Buser aceita?",
+                "answer": "Na Buser, você pode optar por pagar com cartão de crédito, débito, Pix ou boleto, tudo dependendo das opções disponíveis para a rota que você escolher."
+            }
+        ]
+    },
+    {
+        "id": "thomas-4",
+        "requisitor": "Thomas",
+        "autor": "Thomas",
+        "formato": "FAQ",
+        "tom": "geral",
+        "media_palavras": 100,
+        "palavras_chave": null,
+        "quantidade_perguntas": 7,
+        "tema": "https://gadotti-turismo.buser.com.br",
+        "conteudo_gerado": "P: É possível remarcar minha viagem com a Gadotti Turismo?<br>R: Sim, você pode remarcar sua viagem de forma simples pelo site ou aplicativo da Buser, sem precisar fazer uma ligação ou ir até um guichê.<br><br>P: Como faço pra viajar com a Gadotti Turismo pela Buser?<br>R: Para viajar com a Gadotti Turismo, acesse o site ou o aplicativo da Buser, procure seu destino e escolha a opção da Gadotti Turismo. Todo o processo de reserva é feito online, sem a necessidade de ir a um guichê físico.<br><br>P: Que tipo de documentos são necessários para embarcar com a Gadotti Turismo?<br>R: Para embarcar com a Gadotti Turismo, você precisa apresentar um documento oficial com foto, como RG ou CNH. Se comprou sua passagem pela Buser, é essencial ter esse documento à mão para facilitar o embarque.<br><br>P: Quais são as opções de bagagem permitidas na Gadotti Turismo?<br>R: Na Gadotti Turismo, cada passageiro pode levar uma bagagem de até 30 kg, além de um item de mão, como uma mochila ou bolsa, que deve ser transportado na cabine. É importante conferir as orientações específicas durante a compra.<br><br>P: Como recebo a confirmação da minha reserva com a Gadotti Turismo?<br>R: Após a aprovação do pagamento, você receberá a confirmação por e-mail, e o bilhete ficará disponível na sua conta da Buser.<br><br>P: A compra pela Buser é segura?<br>R: Sim. A Buser adota um processo de pagamento seguro e protege os dados dos compradores em todas as etapas da compra.<br><br>P: Quais formas de pagamento a Buser aceita?<br>R: Você pode efetuar o pagamento com cartão de crédito, débito, Pix ou boleto, conforme as opções disponíveis para a rota selecionada.",
+        "company_slug": "gadotti-turismo",
+        "faqs": [
+            {
+                "question": "É possível remarcar minha viagem com a Gadotti Turismo?",
+                "answer": "Sim, você pode remarcar sua viagem de forma simples pelo site ou aplicativo da Buser, sem precisar fazer uma ligação ou ir até um guichê."
+            },
+            {
+                "question": "Como faço pra viajar com a Gadotti Turismo pela Buser?",
+                "answer": "Para viajar com a Gadotti Turismo, acesse o site ou o aplicativo da Buser, procure seu destino e escolha a opção da Gadotti Turismo. Todo o processo de reserva é feito online, sem a necessidade de ir a um guichê físico."
+            },
+            {
+                "question": "Que tipo de documentos são necessários para embarcar com a Gadotti Turismo?",
+                "answer": "Para embarcar com a Gadotti Turismo, você precisa apresentar um documento oficial com foto, como RG ou CNH. Se comprou sua passagem pela Buser, é essencial ter esse documento à mão para facilitar o embarque."
+            },
+            {
+                "question": "Quais são as opções de bagagem permitidas na Gadotti Turismo?",
+                "answer": "Na Gadotti Turismo, cada passageiro pode levar uma bagagem de até 30 kg, além de um item de mão, como uma mochila ou bolsa, que deve ser transportado na cabine. É importante conferir as orientações específicas durante a compra."
+            },
+            {
+                "question": "Como recebo a confirmação da minha reserva com a Gadotti Turismo?",
+                "answer": "Após a aprovação do pagamento, você receberá a confirmação por e-mail, e o bilhete ficará disponível na sua conta da Buser."
+            },
+            {
+                "question": "A compra pela Buser é segura?",
+                "answer": "Sim. A Buser adota um processo de pagamento seguro e protege os dados dos compradores em todas as etapas da compra."
+            },
+            {
+                "question": "Quais formas de pagamento a Buser aceita?",
+                "answer": "Você pode efetuar o pagamento com cartão de crédito, débito, Pix ou boleto, conforme as opções disponíveis para a rota selecionada."
+            }
+        ]
+    }
+]

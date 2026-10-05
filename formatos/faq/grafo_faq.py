@@ -4,28 +4,41 @@ formatos/descricao/grafo_descricao.py): coleta a página, gera as perguntas
 e respostas, humaniza e revisa — voltando pra geração se algum revisor
 reprovar, até um teto de tentativas.
 
+Geração (nó "gerar") muda de estratégia por foco:
+  - foco "geral": usa o sistema híbrido de base_empresas_faq.py — parte
+    das perguntas vem de um banco pronto (as universais sobre a Buser,
+    sem custo de IA), só a parte específica da empresa é gerada, na
+    proporção de 1 gerada a cada 6 pedidas.
+  - foco "compra"/"regras": 100% gerado por IA, filtrado pelo assunto
+    pedido (o banco pronto não serve aqui — ele não cobre "regras").
+
 Existem dois revisores em sequência, barato primeiro:
   1. `revisor` — determinístico (sem LLM): confere se veio a QUANTIDADE de
-     perguntas pedida, e (só quando o foco é "compra" ou "regras") se
-     nenhum par fugiu do assunto pedido, por palavra-chave.
-  2. `revisor_ia` — só roda se o (1) já tiver aprovado, e só de verdade
-     quando o foco NÃO é "geral" (foco "geral" não tem assunto pra
-     restringir, então nem gasta uma chamada de API julgando isso). Usa
-     outro invoke pra julgar semanticamente se as perguntas realmente
-     pertencem ao foco pedido — pega paráfrases que o check de palavra-
-     chave do revisor determinístico deixa passar.
+     perguntas pedida, se nenhuma é "meta" (encaminhamento sem responder
+     nada), e (só quando o foco é "compra" ou "regras") se nenhum par
+     fugiu do assunto pedido, por palavra-chave.
+  2. `revisor_ia` — só roda se o (1) já tiver aprovado. Sempre chama a
+     API (mesmo no foco "geral", pra pegar pergunta "meta" parafraseada),
+     julgando foco (quando aplicável) e pergunta "meta".
 
-Diferente de Descrição, aqui não tem categoria/coleta ramificada — o FAQ
-sempre recebe o link direto (ver transformacaoJson.py: no FAQ, "tema" É o
-link) e coleta do mesmo jeito, então não tem nó de classificação nem
-roteamento condicional na entrada.
+Tem nó de classificação na entrada, igual Descrição — só que lá o "tema"
+é um nome livre (classificado por IA, ver interpretador_descricao.py), e
+aqui o "tema" É o link (ver transformacaoJson.py: no FAQ não tem campo de
+link separado). Por isso a classificação aqui olha a ESTRUTURA da própria
+URL (subdomínio próprio vs caminho em www.buser.com.br), não precisa de
+IA pra isso — é um sinal bem mais confiável que adivinhar pelo nome.
+Só "empresa" tem gerador de FAQ implementado; as outras categorias são
+reconhecidas (pra dar um erro claro) mas ainda não geram nada.
 """
 
 import json
+import re
 from typing import TypedDict
+from urllib.parse import urlparse
 
 from langgraph.graph import StateGraph, END
 
+from base_empresas_faq import montar_faq_empresa
 from base_faq import coletar_faq
 from interacao_ia_faq import (
     gerar_faq_bruto,
@@ -36,6 +49,48 @@ from interacao_ia_faq import (
     _parsear_perguntas_respostas,
     QUANTIDADE_PERGUNTAS_PADRAO,
 )
+
+# Subdomínio próprio (ex: "expressojk.buser.com.br") — página de empresa
+# fora de "www.buser.com.br". "www"/"buser" sozinho (o domínio raiz) NUNCA
+# é empresa, por isso ficam de fora do grupo capturado abaixo.
+PADRAO_SUBDOMINIO_EMPRESA = re.compile(r"^(?!www\.)([a-z0-9-]+)\.buser\.com\.br$")
+
+
+def classificar_tema_faq(link: str) -> str:
+    """Decide a categoria do link observando a URL — mesma ideia do
+    classificador de Descrição (ver interpretador_descricao.py), adaptada
+    pro fato de que aqui o "tema" é um link, não um nome livre: o sinal
+    mais confiável é a ESTRUTURA da própria URL, não precisa de chamada de
+    IA pra isso.
+
+    Padrões conhecidos do site da Buser (confirmados ao vivo nesta sessão):
+    - "<slug>.buser.com.br" (subdomínio próprio) ou
+      "www.buser.com.br/empresas/<slug>" -> "empresa"
+    - "www.buser.com.br/destinos/<cidade>-<uf>" -> "cidade"
+    - "www.buser.com.br/onibus/..." (rota entre duas cidades) -> "rota"
+    - "www.buser.com.br/pontos/..." (ponto de embarque) -> "ponto_embarque"
+    - qualquer outra coisa -> "desconhecida"
+
+    Só "empresa" tem gerador de FAQ implementado por enquanto (ver
+    _rotear_por_categoria) — as outras ficam reconhecidas, pra dar um erro
+    claro, mas ainda não implementado."""
+    resultado = urlparse((link or "").strip())
+    dominio = resultado.netloc.lower()
+    caminho = resultado.path.strip("/")
+
+    if dominio in ("buser.com.br", "www.buser.com.br"):
+        primeiro_segmento = caminho.split("/")[0] if caminho else ""
+        return {
+            "empresas": "empresa",
+            "destinos": "cidade",
+            "onibus": "rota",
+            "pontos": "ponto_embarque",
+        }.get(primeiro_segmento, "desconhecida")
+
+    if PADRAO_SUBDOMINIO_EMPRESA.match(dominio):
+        return "empresa"
+
+    return "desconhecida"
 
 MAX_TENTATIVAS = 3
 
@@ -133,6 +188,9 @@ class FaqState(TypedDict, total=False):
     quantidade_perguntas: int
     palavras_chave: list
 
+    # depois de classificar_tema_faq
+    categoria: str
+
     # coleta
     fontes: dict
 
@@ -156,35 +214,68 @@ class FaqState(TypedDict, total=False):
 # Nós
 # ---------------------------------------------------------------------------
 
+def no_classificar_tema(state: FaqState) -> dict:
+    return {"categoria": classificar_tema_faq(state["link"])}
+
+
+def _rotear_por_categoria(state: FaqState) -> str:
+    return "coletar" if state.get("categoria") == "empresa" else "categoria_nao_implementada"
+
+
+def no_categoria_nao_implementada(state: FaqState) -> dict:
+    raise NotImplementedError(
+        f"Geração de FAQ pra categoria '{state.get('categoria')}' ainda não "
+        f"foi implementada — só empresa tem gerador por enquanto."
+    )
+
+
 def no_coletar(state: FaqState) -> dict:
     resultado = coletar_faq(state["link"])
     return {"fontes": resultado["fontes"]}
 
 
 def no_gerar(state: FaqState) -> dict:
-    instrucao_extra = None
-    motivos_reprovacao = state.get("motivos_reprovacao")
-    if motivos_reprovacao:
-        motivos_str = "; ".join(motivos_reprovacao)
-        instrucao_extra = (
-            f"ATENÇÃO: a tentativa anterior de gerar este FAQ foi reprovada "
-            f"pelos seguintes motivos: {motivos_str}. Corrija isso "
-            f"especificamente nesta nova tentativa, sem repetir o mesmo erro."
-        )
-
-    texto_bruto = gerar_faq_bruto(
-        entidade=state["entidade"],
-        fontes=state["fontes"],
-        tom=state.get("foco") or "geral",
-        quantidade_perguntas=state.get("quantidade_perguntas"),
-        palavras_chave=state.get("palavras_chave"),
-        instrucao_extra=instrucao_extra,
-    )
-    perguntas = _parsear_perguntas_respostas(texto_bruto)
-
+    foco = (state.get("foco") or "geral").strip().lower()
     fontes = state.get("fontes") or {}
-    sem_fontes = not montar_fontes_texto(fontes) and not _coletar_faq_existente(fontes)
 
+    if foco == "geral":
+        # Foco "geral" usa o sistema híbrido de base_empresas_faq.py: parte
+        # das perguntas (as universais sobre a Buser — como comprar,
+        # cancelar, atendimento etc.) vem de um banco pronto, sem custo de
+        # IA; só a parte específica da empresa é gerada, na proporção de 1
+        # gerada a cada 6 pedidas (calcular_divisao). Isso só se aplica ao
+        # foco "geral": o banco é todo sobre assunto geral/compra, não tem
+        # nada de "regras" (bagagem, documento, pet, desconto) — misturar
+        # nos outros focos devolveria pergunta fora do assunto pedido.
+        resultado = montar_faq_empresa(
+            entidade=state["entidade"],
+            fontes=fontes,
+            quantidade_perguntas=state.get("quantidade_perguntas") or QUANTIDADE_PERGUNTAS_PADRAO,
+            palavras_chave=state.get("palavras_chave"),
+        )
+        perguntas = resultado["perguntas"]
+    else:
+        instrucao_extra = None
+        motivos_reprovacao = state.get("motivos_reprovacao")
+        if motivos_reprovacao:
+            motivos_str = "; ".join(motivos_reprovacao)
+            instrucao_extra = (
+                f"ATENÇÃO: a tentativa anterior de gerar este FAQ foi reprovada "
+                f"pelos seguintes motivos: {motivos_str}. Corrija isso "
+                f"especificamente nesta nova tentativa, sem repetir o mesmo erro."
+            )
+
+        texto_bruto = gerar_faq_bruto(
+            entidade=state["entidade"],
+            fontes=fontes,
+            tom=foco,
+            quantidade_perguntas=state.get("quantidade_perguntas"),
+            palavras_chave=state.get("palavras_chave"),
+            instrucao_extra=instrucao_extra,
+        )
+        perguntas = _parsear_perguntas_respostas(texto_bruto)
+
+    sem_fontes = not montar_fontes_texto(fontes) and not _coletar_faq_existente(fontes)
     return {"perguntas_geradas": perguntas, "sem_fontes": sem_fontes}
 
 
@@ -331,6 +422,8 @@ def no_marcar_erro(state: FaqState) -> dict:
 def construir_grafo():
     grafo = StateGraph(FaqState)
 
+    grafo.add_node("classificar_tema", no_classificar_tema)
+    grafo.add_node("categoria_nao_implementada", no_categoria_nao_implementada)
     grafo.add_node("coletar", no_coletar)
     grafo.add_node("gerar", no_gerar)
     grafo.add_node("humanizar", no_humanizar)
@@ -339,7 +432,16 @@ def construir_grafo():
     grafo.add_node("incrementar_tentativa", no_incrementar_tentativa)
     grafo.add_node("marcar_erro", no_marcar_erro)
 
-    grafo.set_entry_point("coletar")
+    grafo.set_entry_point("classificar_tema")
+
+    grafo.add_conditional_edges("classificar_tema", _rotear_por_categoria, {
+        "coletar": "coletar",
+        "categoria_nao_implementada": "categoria_nao_implementada",
+    })
+    # Na prática a exceção sobe antes de chegar no END; a aresta só existe
+    # pra o grafo ficar bem-formado (todo nó precisa levar a algum lugar) —
+    # mesmo padrão de categoria_nao_implementada em grafo_descricao.py.
+    grafo.add_edge("categoria_nao_implementada", END)
 
     grafo.add_edge("coletar", "gerar")
     grafo.add_edge("gerar", "humanizar")
@@ -373,7 +475,13 @@ def gerar_faq_via_grafo(
 ) -> dict:
     """
     Ponto de entrada único: recebe o link, o nome de exibição da empresa, o
-    foco e roda o grafo inteiro. Devolve o state final — a lista final de
+    foco e roda o grafo inteiro. Primeiro classifica a categoria do link
+    (ver classificar_tema_faq) — se não for "empresa", a exceção
+    NotImplementedError sobe normalmente (mesmo contrato de
+    gerar_descricao_via_grafo pra categoria sem coleta implementada),
+    quem chama (formatos/gerando.py) já captura e vira "erro" no item.
+
+    Pra categoria "empresa", devolve o state final — a lista final de
     perguntas/respostas fica em resultado["perguntas_humanizadas"] mesmo se
     o revisor nunca aprovou dentro do teto de tentativas (nesse caso
     resultado["erro"] também vem preenchido, como aviso de que essa última

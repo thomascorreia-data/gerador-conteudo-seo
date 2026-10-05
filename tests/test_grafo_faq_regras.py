@@ -4,12 +4,19 @@ respeito ao foco), a lógica de retry/esgotamento, e o humanizador de FAQ em
 interacao_ia_faq.py. Nada aqui chama a OpenAI de verdade.
 """
 
+import pytest
+
 from grafo_faq import (
     _checar_regras,
     _apos_revisor,
     _apos_revisor_ia,
     _decidir_retry_ou_esgotado,
     _motivos_da_reprovacao,
+    _rotear_por_categoria,
+    classificar_tema_faq,
+    no_categoria_nao_implementada,
+    no_classificar_tema,
+    no_gerar,
     no_revisor,
     no_revisor_ia,
     no_incrementar_tentativa,
@@ -51,6 +58,61 @@ def _state(perguntas: list, foco: str = "geral", quantidade_perguntas: int = Non
     }
     base.update(extra)
     return base
+
+
+# --- classificar_tema_faq: categoria pela estrutura da URL ------------------
+
+def test_subdominio_proprio_e_empresa():
+    assert classificar_tema_faq("https://expressojk.buser.com.br/") == "empresa"
+    assert classificar_tema_faq("https://eucatur.buser.com.br") == "empresa"
+
+
+def test_www_buser_com_br_sozinho_nao_e_empresa():
+    assert classificar_tema_faq("https://www.buser.com.br/") != "empresa"
+    assert classificar_tema_faq("https://buser.com.br/") != "empresa"
+
+
+def test_caminho_empresas_em_www_e_empresa():
+    assert classificar_tema_faq("https://www.buser.com.br/empresas/lopes-tur") == "empresa"
+
+
+def test_caminho_destinos_e_cidade():
+    assert classificar_tema_faq("https://www.buser.com.br/destinos/batatais-sp") == "cidade"
+
+
+def test_caminho_onibus_e_rota():
+    assert classificar_tema_faq("https://www.buser.com.br/onibus/sao-paulo-sp/batatais-sp") == "rota"
+
+
+def test_caminho_pontos_e_ponto_embarque():
+    assert classificar_tema_faq("https://www.buser.com.br/pontos/sp/batatais") == "ponto_embarque"
+
+
+def test_link_fora_do_padrao_e_desconhecida():
+    assert classificar_tema_faq("https://outrosite.com.br/qualquer-coisa") == "desconhecida"
+    assert classificar_tema_faq("") == "desconhecida"
+    assert classificar_tema_faq(None) == "desconhecida"
+
+
+# --- roteamento por categoria (empresa segue, resto dá erro claro) ---------
+
+def test_no_classificar_tema_preenche_categoria():
+    resultado = no_classificar_tema({"link": "https://eucatur.buser.com.br/"})
+    assert resultado == {"categoria": "empresa"}
+
+
+def test_roteamento_empresa_segue_pra_coletar():
+    assert _rotear_por_categoria({"categoria": "empresa"}) == "coletar"
+
+
+def test_roteamento_outra_categoria_vai_pra_nao_implementada():
+    assert _rotear_por_categoria({"categoria": "cidade"}) == "categoria_nao_implementada"
+    assert _rotear_por_categoria({"categoria": "desconhecida"}) == "categoria_nao_implementada"
+
+
+def test_no_categoria_nao_implementada_levanta_excecao_clara():
+    with pytest.raises(NotImplementedError, match="cidade"):
+        no_categoria_nao_implementada({"categoria": "cidade"})
 
 
 # --- quantidade de perguntas -------------------------------------------------
@@ -162,6 +224,51 @@ def test_foco_regras_nao_reprova_perguntas_so_de_regras():
     ]
     motivos = _checar_regras(_state(perguntas, foco="regras"))
     assert not any("foge do foco" in m for m in motivos)
+
+
+# --- no_gerar: foco "geral" usa o banco híbrido, outros focos não ----------
+
+def test_no_gerar_foco_geral_usa_montar_faq_empresa(monkeypatch):
+    chamadas = []
+
+    def _stub(entidade, fontes, quantidade_perguntas, palavras_chave=None):
+        chamadas.append((entidade, quantidade_perguntas))
+        return {
+            "perguntas": [_par("Pergunta do banco", "Resposta do banco")],
+            "quantidade_pedida": quantidade_perguntas,
+            "quantidade_gerada": 0,
+            "quantidade_do_banco": 1,
+        }
+
+    monkeypatch.setattr("grafo_faq.montar_faq_empresa", _stub)
+
+    def _explode(*a, **k):
+        raise AssertionError("não deveria chamar gerar_faq_bruto no foco 'geral'")
+    monkeypatch.setattr("grafo_faq.gerar_faq_bruto", _explode)
+
+    resultado = no_gerar({
+        "entidade": "Eucatur", "fontes": {}, "foco": "geral", "quantidade_perguntas": 5,
+    })
+
+    assert chamadas == [("Eucatur", 5)]
+    assert resultado["perguntas_geradas"] == [_par("Pergunta do banco", "Resposta do banco")]
+
+
+def test_no_gerar_foco_compra_nao_usa_banco_hibrido(monkeypatch):
+    def _explode(*a, **k):
+        raise AssertionError("não deveria chamar montar_faq_empresa fora do foco 'geral'")
+    monkeypatch.setattr("grafo_faq.montar_faq_empresa", _explode)
+
+    monkeypatch.setattr(
+        "grafo_faq.gerar_faq_bruto",
+        lambda **kwargs: '[{"pergunta": "P", "resposta": "R"}]',
+    )
+
+    resultado = no_gerar({
+        "entidade": "Eucatur", "fontes": {}, "foco": "compra", "quantidade_perguntas": 5,
+    })
+
+    assert resultado["perguntas_geradas"] == [_par("P", "R")]
 
 
 # --- pergunta "meta" (não é FAQ de verdade) ---------------------------------

@@ -10,7 +10,7 @@ import os
 
 _CAMINHO = os.path.join(
     os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-    "enviando", "enviando--buser.py",
+    "enviando", "enviando_descricao_empresas", "enviando--buser.py",
 )
 _spec = importlib.util.spec_from_file_location("enviando_buser", _CAMINHO)
 enviando_buser = importlib.util.module_from_spec(_spec)
