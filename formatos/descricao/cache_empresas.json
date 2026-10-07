@@ -28039,5 +28039,559 @@
       "palavra": "viagem",
       "instrucao": "Rapido Marjao faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
     }
+  },
+  "rapidofenix": {
+    "empresa": "Rápido Fenix",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": null,
+        "referencias": [],
+        "erro": "SerpApi não retornou o AI Overview (status: Success)."
+      },
+      "Google_TopSites": {
+        "conteudo": "Empresa Fácil PR: ... Empresa Fácil. A medida reforça o compromisso com a segurança, agilidade e autenticidade dos registros empresariais. Clique aqui e confira o passo a passo ... Empresa – Wikipédia, a enciclopédia livre: A empresa é a atividade do empresário, e não se confunde com o seu estabelecimento, com a pessoa jurídica, com a sociedade, ponto comercial ou com os seus ... Mostre seu negócio no Google – Perfil da Empresa no ...: Mostre seu negócio no Google com um Perfil da Empresa sem custo financeiro. Transforme em clientes quem encontrar você no Maps e na Pesquisa. Empresário de Campinas diz ter prejuízo de R$ 300 mil e ... - G1: A empresa de comércio de móveis de escritório foi aberta em 2014. Em janeiro deste ano, foi protocolada na Jucesp uma alteração contratual que ... Empresa Fácil MA: Empreendedor, bem-vindo ao Empresa Fácil MA. Encontre tudo o que precisa para sua empresa, informações sobre registro, licenciamento e órgãos responsáveis. CHAMADA FAPEMIG-SEDE 013/2026 - PESQUISADOR ...: Apoiar a inserção e fixação de pesquisadores em empresas, startups e cooperativas, por meio da concessão de bolsas e auxílio à pesquisa, visando fortalecer ... Por Que Sua Empresa NÃO CRESCE e Como RESOLVER ...: Turma! Agora temos uma comunidade exclusiva do Jota Jota Podcast! Acompanhe bastidores e conteúdos exclusivos que só rolam lá. Licença de Empresa Digital: Plataforma que realiza o licenciamento digital urbanístico, ambiental, sanitário, bombeiros e de localização e funcionamento de negócios, ...",
+        "sites": [
+          {
+            "titulo": "Empresa Fácil PR",
+            "link": "https://www.empresafacil.pr.gov.br/",
+            "snippet": "... Empresa Fácil. A medida reforça o compromisso com a segurança, agilidade e autenticidade dos registros empresariais. Clique aqui e confira o passo a passo ..."
+          },
+          {
+            "titulo": "Empresa – Wikipédia, a enciclopédia livre",
+            "link": "https://pt.wikipedia.org/wiki/Empresa",
+            "snippet": "A empresa é a atividade do empresário, e não se confunde com o seu estabelecimento, com a pessoa jurídica, com a sociedade, ponto comercial ou com os seus ...",
+            "paragrafos": [
+              "No direito comercial, empresa é uma atividade econômica exercida profissionalmente pelo empresário por meio da articulação dos fatores produtivos para a produção ou a circulação de bens ou de serviços. A empresa não pode ser confundida com um sujeito de direito, com uma pessoa jurídica, tampouco com o local onde aquela atividade econômica é desenvolvida.",
+              "Conforme Mônica Gusmão:",
+              "A empresa é a atividade do empresário, e não se confunde com o seu estabelecimento, com a pessoa jurídica, com a sociedade, ponto comercial ou com os seus sócios. A empresa não é dotada de personalidade jurídica, nem considerada sujeito de direitos. Quem exerce direitos e contrai obrigações é o empresário, e não a empresa. A empresa é a atividade por ele desenvolvida.",
+              "Segundo explica o civilista Carlos Roberto Gonçalves:",
+              "Empresa e estabelecimento são conceitos diversos, embora essencialmente vinculados, distinguindo-se ambos do empresário e da sociedade empresária, que são os titulares da empresa.",
+              "Da mesma forma, entende a professora Elisabete Vido:",
+              "É importante por fim, saber que a empresa não se confunde com as pessoas que exercem a atividade, ou seja, o empresário individual ou a sociedade empresária. Da mesma forma não se pode confundir a empresa com o estabelecimento onde ela é exercida."
+            ],
+            "erro": null
+          },
+          {
+            "titulo": "Mostre seu negócio no Google – Perfil da Empresa no ...",
+            "link": "https://business.google.com/br/business-profile/",
+            "snippet": "Mostre seu negócio no Google com um Perfil da Empresa sem custo financeiro. Transforme em clientes quem encontrar você no Maps e na Pesquisa."
+          },
+          {
+            "titulo": "Empresário de Campinas diz ter prejuízo de R$ 300 mil e ... - G1",
+            "link": "https://g1.globo.com/sp/campinas-regiao/noticia/2026/09/24/empresario-de-campinas-diz-ter-prejuizo-de-r-300-mil-e-espera-ha-6-meses-para-recuperar-empresa-transferida-sem-autorizacao.ghtml",
+            "snippet": "A empresa de comércio de móveis de escritório foi aberta em 2014. Em janeiro deste ano, foi protocolada na Jucesp uma alteração contratual que ..."
+          },
+          {
+            "titulo": "Empresa Fácil MA",
+            "link": "https://www.empresafacil.ma.gov.br/",
+            "snippet": "Empreendedor, bem-vindo ao Empresa Fácil MA. Encontre tudo o que precisa para sua empresa, informações sobre registro, licenciamento e órgãos responsáveis."
+          },
+          {
+            "titulo": "Portaria DTI/DIRBEN/INSS nº 156/2026",
+            "link": "https://www.in.gov.br/web/dou/-/portaria-dti/dirben/inss-n-156-de-28-de-abril-de-2026-703477073",
+            "snippet": ""
+          },
+          {
+            "titulo": "CHAMADA FAPEMIG-SEDE 013/2026 - PESQUISADOR ...",
+            "link": "https://fapemig.br/oportunidades/chamadas-e-editais/chamada-fapemig-sede-013-2026-pesquisador-na-empresa",
+            "snippet": "Apoiar a inserção e fixação de pesquisadores em empresas, startups e cooperativas, por meio da concessão de bolsas e auxílio à pesquisa, visando fortalecer ..."
+          },
+          {
+            "titulo": "Por Que Sua Empresa NÃO CRESCE e Como RESOLVER ...",
+            "link": "https://www.youtube.com/watch?v=2jeNuXF6bI8",
+            "snippet": "Turma! Agora temos uma comunidade exclusiva do Jota Jota Podcast! Acompanhe bastidores e conteúdos exclusivos que só rolam lá."
+          },
+          {
+            "titulo": "Licença de Empresa Digital",
+            "link": "https://redencao-pa.desenvolvecidade.com.br/empresadigital/",
+            "snippet": "Plataforma que realiza o licenciamento digital urbanístico, ambiental, sanitário, bombeiros e de localização e funcionamento de negócios, ..."
+          }
+        ],
+        "site_oficial": null,
+        "wikipedia": {
+          "titulo": "Empresa – Wikipédia, a enciclopédia livre",
+          "link": "https://pt.wikipedia.org/wiki/Empresa",
+          "snippet": "A empresa é a atividade do empresário, e não se confunde com o seu estabelecimento, com a pessoa jurídica, com a sociedade, ponto comercial ou com os seus ...",
+          "paragrafos": [
+            "No direito comercial, empresa é uma atividade econômica exercida profissionalmente pelo empresário por meio da articulação dos fatores produtivos para a produção ou a circulação de bens ou de serviços. A empresa não pode ser confundida com um sujeito de direito, com uma pessoa jurídica, tampouco com o local onde aquela atividade econômica é desenvolvida.",
+            "Conforme Mônica Gusmão:",
+            "A empresa é a atividade do empresário, e não se confunde com o seu estabelecimento, com a pessoa jurídica, com a sociedade, ponto comercial ou com os seus sócios. A empresa não é dotada de personalidade jurídica, nem considerada sujeito de direitos. Quem exerce direitos e contrai obrigações é o empresário, e não a empresa. A empresa é a atividade por ele desenvolvida.",
+            "Segundo explica o civilista Carlos Roberto Gonçalves:",
+            "Empresa e estabelecimento são conceitos diversos, embora essencialmente vinculados, distinguindo-se ambos do empresário e da sociedade empresária, que são os titulares da empresa.",
+            "Da mesma forma, entende a professora Elisabete Vido:",
+            "É importante por fim, saber que a empresa não se confunde com as pessoas que exercem a atividade, ou seja, o empresário individual ou a sociedade empresária. Da mesma forma não se pode confundir a empresa com o estabelecimento onde ela é exercida."
+          ],
+          "erro": null
+        },
+        "erro": null
+      },
+      "Wikipedia": {
+        "conteudo": "No direito comercial, empresa é uma atividade econômica exercida profissionalmente pelo empresário por meio da articulação dos fatores produtivos para a produção ou a circulação de bens ou de serviços. A empresa não pode ser confundida com um sujeito de direito, com uma pessoa jurídica, tampouco com o local onde aquela atividade econômica é desenvolvida. Conforme Mônica Gusmão: A empresa é a atividade do empresário, e não se confunde com o seu estabelecimento, com a pessoa jurídica, com a sociedade, ponto comercial ou com os seus sócios. A empresa não é dotada de personalidade jurídica, nem considerada sujeito de direitos. Quem exerce direitos e contrai obrigações é o empresário, e não a empresa. A empresa é a atividade por ele desenvolvida. Segundo explica o civilista Carlos Roberto Gonçalves: Empresa e estabelecimento são conceitos diversos, embora essencialmente vinculados, distinguindo-se ambos do empresário e da sociedade empresária, que são os titulares da empresa. Da mesma forma, entende a professora Elisabete Vido: É importante por fim, saber que a empresa não se confunde com as pessoas que exercem a atividade, ou seja, o empresário individual ou a sociedade empresária. Da mesma forma não se pode confundir a empresa com o estabelecimento onde ela é exercida.",
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "ambiguo",
+      "palavra": "viagem",
+      "instrucao": "Não foi possível identificar com clareza, nas fontes coletadas, se Rápido Fenix opera linha regular ou só fretamento/turismo. Use \"viagem\" em vez de \"passagem\" em todas as menções — é o termo mais seguro nesse caso, evita afirmar algo que pode não ser verdade."
+    }
+  },
+  "caliman": {
+    "empresa": "Caliman",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": "Existem algumas empresas e negócios no Brasil que levam o sobrenome Caliman, sendo as mais conhecidas: 1. Caliman Agrícola S/A O que é: Uma das maiores produtoras e exportadoras de mamão () do Brasil. História: Fundada no início da década de 1980 pelos irmãos Antero e Ermando Caliman. Sede: Linhares, Espírito Santo (com atuação e unidades em outras regiões, como Pureza, RN). Atuação: Focada no cultivo, embalagem e exportação de frutas (com destaque para o mamão Golden e Formosa) para mercados nacionais e internacionais. 2. Caliman Pedras do Brasil (Caliman Stones) O que é: Empresa especializada na extração, beneficiamento e exportação de rochas ornamentais (mármores, granitos e quartzitos). Sede: Cachoeiro de Itapemirim, Espírito Santo. Atuação: Possui jazidas próprias e um vasto portfólio de pedras naturais voltadas ao mercado de arquitetura e decoração de alto padrão. 3. Transportes Caliman O que é: Empresa de transporte rodoviário, fretamento e turismo. Sede: Paragominas, Pará. Atuação: Atua há mais de 40 anos com transporte de passageiros, fretamento para empresas e encomendas. 4. Outros Negócios Locais Caliman Laminados e Madeiras: Empresa de revenda de MDF, fitas de borda e tintas (com unidades no Espírito Santo e Rio de Janeiro). Caliman Comércio de Roupas e Acessórios: Tradicional loja voltada para artigos de dança, ballet e natação localizada em Santos, SP. Se você estava procurando por uma delas em específico (como a produtora de mamão ou de pedras), me diga qual cidade ou setor você tem em mente para que eu traga mais detalhes.",
+        "referencias": [],
+        "erro": null
+      },
+      "Google_TopSites": {
+        "conteudo": "Empresa Fácil PR: ... Empresa Fácil. A medida reforça o compromisso com a segurança, agilidade e autenticidade dos registros empresariais. Clique aqui e confira o passo a passo ... Empresa – Wikipédia, a enciclopédia livre: Empresa. atividade econômica organizada exercida profissionalmente pelo empresário para a produção ou a circulação de bens ou de serviços. Mostre seu negócio no Google – Perfil da Empresa no ...: Mostre seu negócio no Google com um Perfil da Empresa sem custo financeiro. Transforme em clientes quem encontrar você no Maps e na Pesquisa. Empresas & Negócios - GOV: Empresas & Negócios · Elas Empreendem · MEI · Inova Simples · CRED+ · Artesanato · Redesim · DREI · Mapa de Empresas ... Empresa Fácil MA: Empreendedor, bem-vindo ao Empresa Fácil MA. Encontre tudo o que precisa para sua empresa, informações sobre registro, licenciamento e órgãos responsáveis. A Embrapa - Portal Embrapa: A Empresa Brasileira de Pesquisa Agropecuária (Embrapa) é uma empresa pública, vinculada ao Ministério da Agricultura e Pecuária (Mapa), que foi criada em ... Para sua empresa: A CAIXA oferece soluções adequadas em crédito e serviços para o desenvolvimento da sua empresa. Por Que Sua Empresa NÃO CRESCE e Como RESOLVER ...: Turma! Agora temos uma comunidade exclusiva do Jota Jota Podcast! Acompanhe bastidores e conteúdos exclusivos que só rolam lá.",
+        "sites": [
+          {
+            "titulo": "Empresa Fácil PR",
+            "link": "https://www.empresafacil.pr.gov.br/",
+            "snippet": "... Empresa Fácil. A medida reforça o compromisso com a segurança, agilidade e autenticidade dos registros empresariais. Clique aqui e confira o passo a passo ..."
+          },
+          {
+            "titulo": "Empresa – Wikipédia, a enciclopédia livre",
+            "link": "https://pt.wikipedia.org/wiki/Empresa",
+            "snippet": "Empresa. atividade econômica organizada exercida profissionalmente pelo empresário para a produção ou a circulação de bens ou de serviços.",
+            "paragrafos": [
+              "No direito comercial, empresa é uma atividade econômica exercida profissionalmente pelo empresário por meio da articulação dos fatores produtivos para a produção ou a circulação de bens ou de serviços. A empresa não pode ser confundida com um sujeito de direito, com uma pessoa jurídica, tampouco com o local onde aquela atividade econômica é desenvolvida.",
+              "Conforme Mônica Gusmão:",
+              "A empresa é a atividade do empresário, e não se confunde com o seu estabelecimento, com a pessoa jurídica, com a sociedade, ponto comercial ou com os seus sócios. A empresa não é dotada de personalidade jurídica, nem considerada sujeito de direitos. Quem exerce direitos e contrai obrigações é o empresário, e não a empresa. A empresa é a atividade por ele desenvolvida.",
+              "Segundo explica o civilista Carlos Roberto Gonçalves:",
+              "Empresa e estabelecimento são conceitos diversos, embora essencialmente vinculados, distinguindo-se ambos do empresário e da sociedade empresária, que são os titulares da empresa.",
+              "Da mesma forma, entende a professora Elisabete Vido:",
+              "É importante por fim, saber que a empresa não se confunde com as pessoas que exercem a atividade, ou seja, o empresário individual ou a sociedade empresária. Da mesma forma não se pode confundir a empresa com o estabelecimento onde ela é exercida."
+            ],
+            "erro": null
+          },
+          {
+            "titulo": "Mostre seu negócio no Google – Perfil da Empresa no ...",
+            "link": "https://business.google.com/br/business-profile/",
+            "snippet": "Mostre seu negócio no Google com um Perfil da Empresa sem custo financeiro. Transforme em clientes quem encontrar você no Maps e na Pesquisa."
+          },
+          {
+            "titulo": "Empresas & Negócios - GOV",
+            "link": "https://www.gov.br/empresas-e-negocios/pt-br",
+            "snippet": "Empresas & Negócios · Elas Empreendem · MEI · Inova Simples · CRED+ · Artesanato · Redesim · DREI · Mapa de Empresas ..."
+          },
+          {
+            "titulo": "Empresa Fácil MA",
+            "link": "https://www.empresafacil.ma.gov.br/",
+            "snippet": "Empreendedor, bem-vindo ao Empresa Fácil MA. Encontre tudo o que precisa para sua empresa, informações sobre registro, licenciamento e órgãos responsáveis."
+          },
+          {
+            "titulo": "A Embrapa - Portal Embrapa",
+            "link": "https://www.embrapa.br/",
+            "snippet": "A Empresa Brasileira de Pesquisa Agropecuária (Embrapa) é uma empresa pública, vinculada ao Ministério da Agricultura e Pecuária (Mapa), que foi criada em ..."
+          },
+          {
+            "titulo": "Portaria DTI/DIRBEN/INSS nº 156/2026",
+            "link": "https://www.in.gov.br/web/dou/-/portaria-dti/dirben/inss-n-156-de-28-de-abril-de-2026-703477073",
+            "snippet": ""
+          },
+          {
+            "titulo": "Para sua empresa",
+            "link": "http://www.caixa.gov.br/empresa/paginas/default.aspx",
+            "snippet": "A CAIXA oferece soluções adequadas em crédito e serviços para o desenvolvimento da sua empresa."
+          },
+          {
+            "titulo": "Por Que Sua Empresa NÃO CRESCE e Como RESOLVER ...",
+            "link": "https://www.youtube.com/watch?v=2jeNuXF6bI8",
+            "snippet": "Turma! Agora temos uma comunidade exclusiva do Jota Jota Podcast! Acompanhe bastidores e conteúdos exclusivos que só rolam lá."
+          }
+        ],
+        "site_oficial": null,
+        "wikipedia": {
+          "titulo": "Empresa – Wikipédia, a enciclopédia livre",
+          "link": "https://pt.wikipedia.org/wiki/Empresa",
+          "snippet": "Empresa. atividade econômica organizada exercida profissionalmente pelo empresário para a produção ou a circulação de bens ou de serviços.",
+          "paragrafos": [
+            "No direito comercial, empresa é uma atividade econômica exercida profissionalmente pelo empresário por meio da articulação dos fatores produtivos para a produção ou a circulação de bens ou de serviços. A empresa não pode ser confundida com um sujeito de direito, com uma pessoa jurídica, tampouco com o local onde aquela atividade econômica é desenvolvida.",
+            "Conforme Mônica Gusmão:",
+            "A empresa é a atividade do empresário, e não se confunde com o seu estabelecimento, com a pessoa jurídica, com a sociedade, ponto comercial ou com os seus sócios. A empresa não é dotada de personalidade jurídica, nem considerada sujeito de direitos. Quem exerce direitos e contrai obrigações é o empresário, e não a empresa. A empresa é a atividade por ele desenvolvida.",
+            "Segundo explica o civilista Carlos Roberto Gonçalves:",
+            "Empresa e estabelecimento são conceitos diversos, embora essencialmente vinculados, distinguindo-se ambos do empresário e da sociedade empresária, que são os titulares da empresa.",
+            "Da mesma forma, entende a professora Elisabete Vido:",
+            "É importante por fim, saber que a empresa não se confunde com as pessoas que exercem a atividade, ou seja, o empresário individual ou a sociedade empresária. Da mesma forma não se pode confundir a empresa com o estabelecimento onde ela é exercida."
+          ],
+          "erro": null
+        },
+        "erro": null
+      },
+      "Wikipedia": {
+        "conteudo": "No direito comercial, empresa é uma atividade econômica exercida profissionalmente pelo empresário por meio da articulação dos fatores produtivos para a produção ou a circulação de bens ou de serviços. A empresa não pode ser confundida com um sujeito de direito, com uma pessoa jurídica, tampouco com o local onde aquela atividade econômica é desenvolvida. Conforme Mônica Gusmão: A empresa é a atividade do empresário, e não se confunde com o seu estabelecimento, com a pessoa jurídica, com a sociedade, ponto comercial ou com os seus sócios. A empresa não é dotada de personalidade jurídica, nem considerada sujeito de direitos. Quem exerce direitos e contrai obrigações é o empresário, e não a empresa. A empresa é a atividade por ele desenvolvida. Segundo explica o civilista Carlos Roberto Gonçalves: Empresa e estabelecimento são conceitos diversos, embora essencialmente vinculados, distinguindo-se ambos do empresário e da sociedade empresária, que são os titulares da empresa. Da mesma forma, entende a professora Elisabete Vido: É importante por fim, saber que a empresa não se confunde com as pessoas que exercem a atividade, ou seja, o empresário individual ou a sociedade empresária. Da mesma forma não se pode confundir a empresa com o estabelecimento onde ela é exercida.",
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "Caliman faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
+  },
+  "neuzatur": {
+    "empresa": "Neuzatur",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": "A Neuzatur (cujo nome fantasia oficial e mais comum é Neuza Turismo) é uma marca associada principalmente ao setor de transporte rodoviário e turismo. No Brasil, esse nome se refere a duas frentes operacionais principais: Empresa de Transporte Rodoviário de Passageiros: Atua fortemente na região central do país, realizando linhas regulares e fretamentos conectando principalmente cidades dos estados de Goiás e (como as rotas entre Araguaína, Goiânia, Gurupi e Colinas do Tocantins). Suas passagens de ônibus costumam ser comercializadas em plataformas de viagem integradas como a e a Buser . Agência de Viagens e Excursões: Sob o domínio oficial da internet neuzatur.com.br, funciona como uma agência com mais de 30 anos de experiência focada em pacotes turísticos completos e excursões rodoviárias e aéreas saindo de Sete Lagoas e Belo Horizonte (MG) para destinos litorâneos e religiosos do Brasil. Se você estiver planejando comprar uma passagem ou fechar um pacote, me informe: Você busca passagens de linha na região de Goiás/Tocantins ou pacotes de excursão saindo de Minas Gerais ? Deseja encontrar os canais de atendimento oficiais para reservas?",
+        "referencias": [],
+        "erro": null
+      },
+      "Google_TopSites": {
+        "conteudo": "Neuza Turismo | Excursão e Viagens (@neuzatur): ✈️ Sua viagem dos sonhos começa aqui +30 anos de experiência no turismo Faça a sua reserva agora. Neuza Turismo: Sua agência de viagens de confiança. Pacotes completos de viagem (rodoviários e aéreos) e excursões saindo de Sete Lagoas e Belo Horizonte, com conforto e ... Passagens Neuzatur — Compre Online | Buser: Viaje de ônibus com a Neuzatur: viagem confortável, segura e barata. Compre passagens da Neuzatur online pela Buser. Rotas para Goiânia, Araguaína, ... Reel by Neuza Turismo | Excursão e Viagens (@neuzatur): Transporte ida e volta de ônibus Hospedagem em pousada 🍽️ Café da manhã e jantar inclusos VALOR: R$ 990,00 Parcelamento em até ... Jotamar e Neuzatur têm pedidos de autorização ...: A Agência Nacional de Transportes Terrestres (ANTT) indeferiu os pedidos de autorização das empresas Jotamar Comércio de Peças e Transportes ... Garanta sua vaga pra viajar pra um dos cartões postais do ...: neuzatur on June 17, 2024: \"Garanta sua vaga pra viajar pra um dos cartões postais do brasil, aqui você coleciona momentos inesquecíveis ... Antonio de Neuza Tur | São Bento MA: Antonio de Neuza Tur ; 1 avaliação ; $$ ; Aberto agora ; Rua Professor Tito Soares, 747, São Bento, MA, Brazil, 65235-000 ; São Bento, MA · São Luís, MA ... Guarapari - ES - Neuza Turismo: Sua agência de viagens de confiança. Pacotes completos de viagem (rodoviários e aéreos) e excursões saindo de Sete Lagoas e Belo Horizonte, com conforto e ... Praia das Galhetas - Paraty/RJ Garanta agora sua vaga ...: neuzatur on August 6, 2023: \" Praia das Galhetas - Paraty/RJ Garanta agora sua vaga conosco! Últimas vagas com desconto ✓ Viagem com ...",
+        "sites": [
+          {
+            "titulo": "Neuza Turismo | Excursão e Viagens (@neuzatur)",
+            "link": "https://www.instagram.com/neuzatur/",
+            "snippet": "✈️ Sua viagem dos sonhos começa aqui +30 anos de experiência no turismo Faça a sua reserva agora."
+          },
+          {
+            "titulo": "Neuza Turismo",
+            "link": "https://www.neuzatur.com.br/",
+            "snippet": "Sua agência de viagens de confiança. Pacotes completos de viagem (rodoviários e aéreos) e excursões saindo de Sete Lagoas e Belo Horizonte, com conforto e ..."
+          },
+          {
+            "titulo": "Passagens Neuzatur — Compre Online | Buser",
+            "link": "https://neuzatur.buser.com.br/",
+            "snippet": "Viaje de ônibus com a Neuzatur: viagem confortável, segura e barata. Compre passagens da Neuzatur online pela Buser. Rotas para Goiânia, Araguaína, ..."
+          },
+          {
+            "titulo": "Reel by Neuza Turismo | Excursão e Viagens (@neuzatur)",
+            "link": "https://www.instagram.com/reel/DNBFho-gTdX/",
+            "snippet": "Transporte ida e volta de ônibus Hospedagem em pousada 🍽️ Café da manhã e jantar inclusos VALOR: R$ 990,00 Parcelamento em até ..."
+          },
+          {
+            "titulo": "Jotamar e Neuzatur têm pedidos de autorização ...",
+            "link": "https://diariodotransporte.com.br/2025/09/18/jotamar-e-neuzatur-tem-pedidos-de-autorizacao-indeferidos-pela-antt/",
+            "snippet": "A Agência Nacional de Transportes Terrestres (ANTT) indeferiu os pedidos de autorização das empresas Jotamar Comércio de Peças e Transportes ..."
+          },
+          {
+            "titulo": "Garanta sua vaga pra viajar pra um dos cartões postais do ...",
+            "link": "https://www.instagram.com/reel/C8UyH7rgmcX/",
+            "snippet": "neuzatur on June 17, 2024: \"Garanta sua vaga pra viajar pra um dos cartões postais do brasil, aqui você coleciona momentos inesquecíveis ..."
+          },
+          {
+            "titulo": "Antonio de Neuza Tur | São Bento MA",
+            "link": "https://www.facebook.com/antoniodeneuzatur/?locale=pt_BR",
+            "snippet": "Antonio de Neuza Tur ; 1 avaliação ; $$ ; Aberto agora ; Rua Professor Tito Soares, 747, São Bento, MA, Brazil, 65235-000 ; São Bento, MA · São Luís, MA ..."
+          },
+          {
+            "titulo": "Guarapari - ES - Neuza Turismo",
+            "link": "https://www.neuzatur.com.br/destinos/guarapari-es",
+            "snippet": "Sua agência de viagens de confiança. Pacotes completos de viagem (rodoviários e aéreos) e excursões saindo de Sete Lagoas e Belo Horizonte, com conforto e ..."
+          },
+          {
+            "titulo": "Praia das Galhetas - Paraty/RJ Garanta agora sua vaga ...",
+            "link": "https://www.instagram.com/reel/CvnVALHLWZa/",
+            "snippet": "neuzatur on August 6, 2023: \" Praia das Galhetas - Paraty/RJ Garanta agora sua vaga conosco! Últimas vagas com desconto ✓ Viagem com ..."
+          }
+        ],
+        "site_oficial": {
+          "titulo": "Neuza Turismo",
+          "link": "https://www.neuzatur.com.br/",
+          "snippet": "Sua agência de viagens de confiança. Pacotes completos de viagem (rodoviários e aéreos) e excursões saindo de Sete Lagoas e Belo Horizonte, com conforto e ..."
+        },
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "hibrida",
+      "palavra": "passagem",
+      "instrucao": "Neuzatur opera linha regular de ônibus e também faz fretamento/turismo (classificação automática, baseada nas fontes coletadas). Use \"passagem\" em todas as menções, e pode citar as duas atividades no texto (ex: \"opera linhas regulares e também realiza fretamento para excursões\")."
+    }
+  },
+  "uniaocascaveldetransporteseturismo": {
+    "empresa": "Uniao Cascavel De Transportes E Turismo",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": null,
+        "referencias": [],
+        "erro": "Erro ao consultar o AI Overview (tentativa 1): HTTPSConnectionPool(host='serpapi.com', port=443): Read timed out. (read timeout=15)"
+      },
+      "Google_TopSites": {
+        "conteudo": "Empresa Fácil PR: ... Empresa Fácil. A medida reforça o compromisso com a segurança, agilidade e autenticidade dos registros empresariais. Clique aqui e confira o passo a passo ... Empresa – Wikipédia, a enciclopédia livre: Empresa. atividade econômica organizada exercida profissionalmente pelo empresário para a produção ou a circulação de bens ou de serviços. Empresa União: Passagens de Ônibus: Fundada em 27 de Dezembro de 1956, no distrito de Ermo, município de Turvo/SC, a Empresa iniciou suas atividades no transporte rodoviário de passageiros com a ... Mostre seu negócio no Google – Perfil da Empresa no ...: Mostre seu negócio no Google com um Perfil da Empresa sem custo financeiro. Transforme em clientes quem encontrar você no Maps e na Pesquisa. Empresas & Negócios - GOV: Empresas & Negócios · Elas Empreendem · MEI · Inova Simples · CRED+ · Artesanato · Redesim · DREI · Mapa de Empresas ... Empresa Fácil MA: Empreendedor, bem-vindo ao Empresa Fácil MA. Encontre tudo o que precisa para sua empresa, informações sobre registro, licenciamento e órgãos responsáveis. Empresário de Campinas diz ter prejuízo de R$ 300 mil e ... - G1: Empresário de Campinas diz ter prejuízo de R$ 300 mil e espera há 6 meses para recuperar empresa transferida sem autorização · Entenda o caso.",
+        "sites": [
+          {
+            "titulo": "Empresa Fácil PR",
+            "link": "https://www.empresafacil.pr.gov.br/",
+            "snippet": "... Empresa Fácil. A medida reforça o compromisso com a segurança, agilidade e autenticidade dos registros empresariais. Clique aqui e confira o passo a passo ..."
+          },
+          {
+            "titulo": "Empresa – Wikipédia, a enciclopédia livre",
+            "link": "https://pt.wikipedia.org/wiki/Empresa",
+            "snippet": "Empresa. atividade econômica organizada exercida profissionalmente pelo empresário para a produção ou a circulação de bens ou de serviços.",
+            "paragrafos": [
+              "No direito comercial, empresa é uma atividade econômica exercida profissionalmente pelo empresário por meio da articulação dos fatores produtivos para a produção ou a circulação de bens ou de serviços. A empresa não pode ser confundida com um sujeito de direito, com uma pessoa jurídica, tampouco com o local onde aquela atividade econômica é desenvolvida.",
+              "Conforme Mônica Gusmão:",
+              "A empresa é a atividade do empresário, e não se confunde com o seu estabelecimento, com a pessoa jurídica, com a sociedade, ponto comercial ou com os seus sócios. A empresa não é dotada de personalidade jurídica, nem considerada sujeito de direitos. Quem exerce direitos e contrai obrigações é o empresário, e não a empresa. A empresa é a atividade por ele desenvolvida.",
+              "Segundo explica o civilista Carlos Roberto Gonçalves:",
+              "Empresa e estabelecimento são conceitos diversos, embora essencialmente vinculados, distinguindo-se ambos do empresário e da sociedade empresária, que são os titulares da empresa.",
+              "Da mesma forma, entende a professora Elisabete Vido:",
+              "É importante por fim, saber que a empresa não se confunde com as pessoas que exercem a atividade, ou seja, o empresário individual ou a sociedade empresária. Da mesma forma não se pode confundir a empresa com o estabelecimento onde ela é exercida."
+            ],
+            "erro": null
+          },
+          {
+            "titulo": "Empresa União: Passagens de Ônibus",
+            "link": "https://www.empresauniao.com.br/",
+            "snippet": "Fundada em 27 de Dezembro de 1956, no distrito de Ermo, município de Turvo/SC, a Empresa iniciou suas atividades no transporte rodoviário de passageiros com a ..."
+          },
+          {
+            "titulo": "Mostre seu negócio no Google – Perfil da Empresa no ...",
+            "link": "https://business.google.com/br/business-profile/",
+            "snippet": "Mostre seu negócio no Google com um Perfil da Empresa sem custo financeiro. Transforme em clientes quem encontrar você no Maps e na Pesquisa."
+          },
+          {
+            "titulo": "Empresas & Negócios - GOV",
+            "link": "https://www.gov.br/empresas-e-negocios/pt-br",
+            "snippet": "Empresas & Negócios · Elas Empreendem · MEI · Inova Simples · CRED+ · Artesanato · Redesim · DREI · Mapa de Empresas ..."
+          },
+          {
+            "titulo": "Empresa Fácil MA",
+            "link": "https://www.empresafacil.ma.gov.br/",
+            "snippet": "Empreendedor, bem-vindo ao Empresa Fácil MA. Encontre tudo o que precisa para sua empresa, informações sobre registro, licenciamento e órgãos responsáveis."
+          },
+          {
+            "titulo": "Portaria DTI/DIRBEN/INSS nº 156/2026",
+            "link": "https://www.in.gov.br/web/dou/-/portaria-dti/dirben/inss-n-156-de-28-de-abril-de-2026-703477073",
+            "snippet": ""
+          },
+          {
+            "titulo": "Empresário de Campinas diz ter prejuízo de R$ 300 mil e ... - G1",
+            "link": "https://g1.globo.com/sp/campinas-regiao/noticia/2026/09/24/empresario-de-campinas-diz-ter-prejuizo-de-r-300-mil-e-espera-ha-6-meses-para-recuperar-empresa-transferida-sem-autorizacao.ghtml",
+            "snippet": "Empresário de Campinas diz ter prejuízo de R$ 300 mil e espera há 6 meses para recuperar empresa transferida sem autorização · Entenda o caso."
+          }
+        ],
+        "site_oficial": null,
+        "wikipedia": {
+          "titulo": "Empresa – Wikipédia, a enciclopédia livre",
+          "link": "https://pt.wikipedia.org/wiki/Empresa",
+          "snippet": "Empresa. atividade econômica organizada exercida profissionalmente pelo empresário para a produção ou a circulação de bens ou de serviços.",
+          "paragrafos": [
+            "No direito comercial, empresa é uma atividade econômica exercida profissionalmente pelo empresário por meio da articulação dos fatores produtivos para a produção ou a circulação de bens ou de serviços. A empresa não pode ser confundida com um sujeito de direito, com uma pessoa jurídica, tampouco com o local onde aquela atividade econômica é desenvolvida.",
+            "Conforme Mônica Gusmão:",
+            "A empresa é a atividade do empresário, e não se confunde com o seu estabelecimento, com a pessoa jurídica, com a sociedade, ponto comercial ou com os seus sócios. A empresa não é dotada de personalidade jurídica, nem considerada sujeito de direitos. Quem exerce direitos e contrai obrigações é o empresário, e não a empresa. A empresa é a atividade por ele desenvolvida.",
+            "Segundo explica o civilista Carlos Roberto Gonçalves:",
+            "Empresa e estabelecimento são conceitos diversos, embora essencialmente vinculados, distinguindo-se ambos do empresário e da sociedade empresária, que são os titulares da empresa.",
+            "Da mesma forma, entende a professora Elisabete Vido:",
+            "É importante por fim, saber que a empresa não se confunde com as pessoas que exercem a atividade, ou seja, o empresário individual ou a sociedade empresária. Da mesma forma não se pode confundir a empresa com o estabelecimento onde ela é exercida."
+          ],
+          "erro": null
+        },
+        "erro": null
+      },
+      "Wikipedia": {
+        "conteudo": "No direito comercial, empresa é uma atividade econômica exercida profissionalmente pelo empresário por meio da articulação dos fatores produtivos para a produção ou a circulação de bens ou de serviços. A empresa não pode ser confundida com um sujeito de direito, com uma pessoa jurídica, tampouco com o local onde aquela atividade econômica é desenvolvida. Conforme Mônica Gusmão: A empresa é a atividade do empresário, e não se confunde com o seu estabelecimento, com a pessoa jurídica, com a sociedade, ponto comercial ou com os seus sócios. A empresa não é dotada de personalidade jurídica, nem considerada sujeito de direitos. Quem exerce direitos e contrai obrigações é o empresário, e não a empresa. A empresa é a atividade por ele desenvolvida. Segundo explica o civilista Carlos Roberto Gonçalves: Empresa e estabelecimento são conceitos diversos, embora essencialmente vinculados, distinguindo-se ambos do empresário e da sociedade empresária, que são os titulares da empresa. Da mesma forma, entende a professora Elisabete Vido: É importante por fim, saber que a empresa não se confunde com as pessoas que exercem a atividade, ou seja, o empresário individual ou a sociedade empresária. Da mesma forma não se pode confundir a empresa com o estabelecimento onde ela é exercida.",
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "ambiguo",
+      "palavra": "viagem",
+      "instrucao": "Não foi possível identificar com clareza, nas fontes coletadas, se Uniao Cascavel De Transportes E Turismo opera linha regular ou só fretamento/turismo. Use \"viagem\" em vez de \"passagem\" em todas as menções — é o termo mais seguro nesse caso, evita afirmar algo que pode não ser verdade."
+    }
+  },
+  "realmaiaazul": {
+    "empresa": "Real Maia Azul",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": null,
+        "referencias": [],
+        "erro": "SerpApi não retornou o AI Overview (status: Success)."
+      },
+      "Google_TopSites": {
+        "conteudo": "Real Maia | Vamos viajar??💙 #turismo #ônibus ...: Você já sonhou em viajar com todo conforto? ✨ Conheça nosso ônibus DD semi leito, perfeito para suas viagens de trabalho. Com poltronas super ... Real Maia (@realmaiaonibus): Atuamos no segmento de transporte terrestre de passageiros e temos uma equipe de primeira pronta para te atender. 󱞴 Voyage et transports · ... Os ônibus Real Maia são acessíveis para todos que desejam ...: Os ônibus Real Maia são acessíveis para todos que desejam viajar no melhor conforto e qualidade, aqui ninguém fica de fora. Mais um ônibus da Real Maia Azul Pegando Fogo em ...: Sejam Bem Vindos ao Canal Pé na Estrada !! O Canal trás noticias do mundo rodoviário das empresas do Brasil tais como Reunidas Paulista ... Agência Marabá PA - Real Maia | *LEMBRETE PRA QUEM ...: A compra de passagens Real Maia é feita de forma prática e segura pelo WhatsApp Oficial. Atendimento autorizado Emissão segura ... venha com - #realmaia - #viagem - #partiuviagem - #onibus: Top essa empresa. Sticker, Avatar is smirking over their shoulder and holding their hands up, clapping in. 12mo. Last viewed on: Oct 5, 2026 ... Real Maia | O centro do nosso país com a melhor ...: Compre sua passagem na palma de sua mão! Real Maia, facilitando o seu destino! #realmaia #onibus #comill #turismo #viagemeturismo. (94) 99248-2447 EMISSÃO DE PASSAGENS REAL MAIA ...: REAL MAIA – ATENDIMENTO NACIONAL A Real Maia atende diversas rotas interestaduais, conectando regiões do: Norte Centro-Oeste Nordeste Demais ...",
+        "sites": [
+          {
+            "titulo": "Real Maia | Vamos viajar??💙 #turismo #ônibus ...",
+            "link": "https://www.instagram.com/p/DZAQJTBDTOW/",
+            "snippet": "Você já sonhou em viajar com todo conforto? ✨ Conheça nosso ônibus DD semi leito, perfeito para suas viagens de trabalho. Com poltronas super ..."
+          },
+          {
+            "titulo": "Real Maia (@realmaiaonibus)",
+            "link": "https://www.facebook.com/realmaiaonibus/?locale=fr_FR",
+            "snippet": "Atuamos no segmento de transporte terrestre de passageiros e temos uma equipe de primeira pronta para te atender. 󱞴 Voyage et transports · ..."
+          },
+          {
+            "titulo": "Os ônibus Real Maia são acessíveis para todos que desejam ...",
+            "link": "https://www.facebook.com/realmaiaonibus/videos/os-%C3%B4nibus-real-maia-s%C3%A3o-acess%C3%ADveis-para-todos-que-desejam-viajar-no-melhor-confo/532230605021990/",
+            "snippet": "Os ônibus Real Maia são acessíveis para todos que desejam viajar no melhor conforto e qualidade, aqui ninguém fica de fora."
+          },
+          {
+            "titulo": "Mais um ônibus da Real Maia Azul Pegando Fogo em ...",
+            "link": "https://www.youtube.com/watch?v=NP-TrzWDV6E",
+            "snippet": "Sejam Bem Vindos ao Canal Pé na Estrada !! O Canal trás noticias do mundo rodoviário das empresas do Brasil tais como Reunidas Paulista ..."
+          },
+          {
+            "titulo": "Agência Marabá PA - Real Maia | *LEMBRETE PRA QUEM ...",
+            "link": "https://www.instagram.com/reel/DPixXAgDhFm/",
+            "snippet": "A compra de passagens Real Maia é feita de forma prática e segura pelo WhatsApp Oficial. Atendimento autorizado Emissão segura ..."
+          },
+          {
+            "titulo": "venha com - #realmaia - #viagem - #partiuviagem - #onibus",
+            "link": "https://www.facebook.com/realmaiaonibus/videos/-venha-com-realmaia-viagem-partiuviagem-onibus-viajar%C3%A9viver-viajecomconforto/2252797308559262/",
+            "snippet": "Top essa empresa. Sticker, Avatar is smirking over their shoulder and holding their hands up, clapping in. 12mo. Last viewed on: Oct 5, 2026 ..."
+          },
+          {
+            "titulo": "Real Maia | O centro do nosso país com a melhor ...",
+            "link": "https://www.instagram.com/p/DLXpkidxbD8/",
+            "snippet": "Compre sua passagem na palma de sua mão! Real Maia, facilitando o seu destino! #realmaia #onibus #comill #turismo #viagemeturismo."
+          },
+          {
+            "titulo": "(94) 99248-2447 EMISSÃO DE PASSAGENS REAL MAIA ...",
+            "link": "https://www.instagram.com/reel/DWQErM_jPR2/",
+            "snippet": "REAL MAIA – ATENDIMENTO NACIONAL A Real Maia atende diversas rotas interestaduais, conectando regiões do: Norte Centro-Oeste Nordeste Demais ..."
+          }
+        ],
+        "site_oficial": null,
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "Real Maia Azul faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
+  },
+  "samatur": {
+    "empresa": "Samatur",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": null,
+        "referencias": [],
+        "erro": "SerpApi não retornou o AI Overview (status: Success)."
+      },
+      "Google_TopSites": {
+        "conteudo": "Samatur Turismo added a new photo.: Samatur Turismo added a new photo. Samatur Transporte e Turismo 50260 em Brasília por ...: Samatur Transporte e Turismo 50260 na cidade de Brasília, Distrito Federal, Brasil, por Gustavo Cruz Bezerra. Número da foto: #12010124. Sama Turismo (@sama_turismo) · São Paulo, SP: Os países estão abrindo as fronteiras para os brasileiros e a Sama Turismo já está trabalhando em novos grupos. E a Índia será um dos nossos ... Samatur Transporte e Turismo 50280 em Brasília por ...: Samatur Transporte e Turismo 50280 na cidade de Brasília, Distrito Federal, Brasil, por Marcos Sá Carneiro. Número da foto: #5742234. Samatur Transporte e Turismo 50270 em Brasília por ...: Samatur Transporte e Turismo 50270 na cidade de Brasília, Distrito Federal, Brasil, por Marlon Mendes da Silva Souza. Samatur Transporte e Turismo 2008 em Brasília por Rafael ...: A imagem exibe a foto do ônibus número 2008 que se encontra na identidade visual da empresa Samatur Transporte e Turismo, de Brasília, Distrito ... SamaTur (@voudesamatur) • Instagram photos and videos: SamaTur. 2,406 followers. 552 following. Brasília/Goiânia/Tocantins/Maranhão Passagens | Cargas e encomendas (61) 99984-0725. Follow. Message. Samatur Transporte e Turismo 50260 em Porangatu por ...: Samatur Transporte e Turismo 50260 na cidade de Porangatu, Goiás, Brasil, por Matheus Reis. Número da foto: #4808425. Samatur Transporte e Turismo 50210 em Brasília por ...: Samatur Transporte e Turismo 50210 na cidade de Brasília, Distrito Federal, Brasil, por Marlon Mendes da Silva Souza. Número da foto: #10786136.",
+        "sites": [
+          {
+            "titulo": "Samatur Turismo added a new photo.",
+            "link": "https://www.facebook.com/100068132234128/photos/999371466780603/",
+            "snippet": "Samatur Turismo added a new photo."
+          },
+          {
+            "titulo": "Samatur Transporte e Turismo 50260 em Brasília por ...",
+            "link": "https://onibusbrasil.com/BYGUSTAVOCRUZ/12010124",
+            "snippet": "Samatur Transporte e Turismo 50260 na cidade de Brasília, Distrito Federal, Brasil, por Gustavo Cruz Bezerra. Número da foto: #12010124."
+          },
+          {
+            "titulo": "Sama Turismo (@sama_turismo) · São Paulo, SP",
+            "link": "https://www.instagram.com/sama_turismo/",
+            "snippet": "Os países estão abrindo as fronteiras para os brasileiros e a Sama Turismo já está trabalhando em novos grupos. E a Índia será um dos nossos ..."
+          },
+          {
+            "titulo": "Samatur Transporte e Turismo 50280 em Brasília por ...",
+            "link": "https://onibusbrasil.com/marcoscarneiro/5742234?context=gallery_prefix",
+            "snippet": "Samatur Transporte e Turismo 50280 na cidade de Brasília, Distrito Federal, Brasil, por Marcos Sá Carneiro. Número da foto: #5742234."
+          },
+          {
+            "titulo": "Samatur Transporte e Turismo 50270 em Brasília por ...",
+            "link": "https://onibusbrasil.com/marlononibus/11320586",
+            "snippet": "Samatur Transporte e Turismo 50270 na cidade de Brasília, Distrito Federal, Brasil, por Marlon Mendes da Silva Souza."
+          },
+          {
+            "titulo": "Samatur Transporte e Turismo 2008 em Brasília por Rafael ...",
+            "link": "https://onibusbrasil.com/rafaelcaldas/11724256",
+            "snippet": "A imagem exibe a foto do ônibus número 2008 que se encontra na identidade visual da empresa Samatur Transporte e Turismo, de Brasília, Distrito ..."
+          },
+          {
+            "titulo": "SamaTur (@voudesamatur) • Instagram photos and videos",
+            "link": "https://www.instagram.com/voudesamatur/",
+            "snippet": "SamaTur. 2,406 followers. 552 following. Brasília/Goiânia/Tocantins/Maranhão Passagens | Cargas e encomendas (61) 99984-0725. Follow. Message."
+          },
+          {
+            "titulo": "Samatur Transporte e Turismo 50260 em Porangatu por ...",
+            "link": "https://onibusbrasil.com/matbus/4808425",
+            "snippet": "Samatur Transporte e Turismo 50260 na cidade de Porangatu, Goiás, Brasil, por Matheus Reis. Número da foto: #4808425."
+          },
+          {
+            "titulo": "Samatur Transporte e Turismo 50210 em Brasília por ...",
+            "link": "https://onibusbrasil.com/marlononibus/10786136",
+            "snippet": "Samatur Transporte e Turismo 50210 na cidade de Brasília, Distrito Federal, Brasil, por Marlon Mendes da Silva Souza. Número da foto: #10786136."
+          }
+        ],
+        "site_oficial": null,
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "Samatur faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
+  },
+  "monicatransportes": {
+    "empresa": "Monica transportes",
+    "fontes": {
+      "Google_AIOverview": {
+        "conteudo": null,
+        "referencias": [],
+        "erro": "SerpApi não retornou o AI Overview (status: Success)."
+      },
+      "Google_TopSites": {
+        "conteudo": "(51) 99746-7176 Mônica Transportes ✨ Movendo o que ...: A Mônica Transportes tem saídas de São Paulo todas as segundas e quintas-feiras, levando sua mercadoria para o Rio Grande do Sul com segurança, ... MONICA LUCIANA PETEFFI KLEIN & CIA LTDA: Atividade econômica (CNAE). Atividade principal. 4930202 - Transporte rodoviário de carga, exceto produtos perigosos e mudanças, intermunicipal, interestadual e ... Mônica Turismo | Novo Hamburgo RS: Mônica Turismo: viagens e fretamento no RS. Especializada em roteiros de compras para lojistas em São Paulo, com ônibus de primeira classe, ... Monica Transportes - CNPJ 25.058.195/0001-51: 49.30-2-01 Transporte rodoviário de carga, exceto produtos perigosos e mudanças, municipal. Endereco Copiar. SANTO ANDRE ... Monica Transportes em Jesuânia, MG - 32.699.446/0001-42: Consulte Monica Transportes: CNPJ 32.699.446/0001-42, sede em Jesuânia/MG. Atividade: Transporte escolar. Veja sócios, decisores e faturamento. Consulta CNPJ Monica Turismo LTDA: O transporte rodoviário coletivo de passageiros, sob regime de fretamento, intermunicipal, interestadual e internacional, refere-se ao aluguel de veículos ... Ir pra São Paulo em ônibus leito cama com conforto Aqui na ...: SUA MERCADORIA EM BOAS MÃOS, DO BRÁS PARA O RS! Comprou em São Paulo? A Mônica Transportes cuida do caminho até você, com segurança, ... MONICA MORAIS PEREIRA RODRIGUES TRANSPORTE ...: O CNPJ da empresa MONICA MORAIS PEREIRA RODRIGUES TRANSPORTE LTDA - EPP (MONICA TRANSPORTE) é 61.704.868/0001-67. Com sede em SAO PAULO, SP, ... Mônica Turismo - Fretamento de Ônibus Premium: Logística de transporte de alto padrão para. Bandas. A segurança e a pontualidade que o seu grupo exige, com o conforto que ele merece.",
+        "sites": [
+          {
+            "titulo": "(51) 99746-7176 Mônica Transportes ✨ Movendo o que ...",
+            "link": "https://www.instagram.com/p/DdGivMchZYZ/",
+            "snippet": "A Mônica Transportes tem saídas de São Paulo todas as segundas e quintas-feiras, levando sua mercadoria para o Rio Grande do Sul com segurança, ..."
+          },
+          {
+            "titulo": "MONICA LUCIANA PETEFFI KLEIN & CIA LTDA",
+            "link": "https://guiadotrc.com.br/transportadora/04002928000166",
+            "snippet": "Atividade econômica (CNAE). Atividade principal. 4930202 - Transporte rodoviário de carga, exceto produtos perigosos e mudanças, intermunicipal, interestadual e ..."
+          },
+          {
+            "titulo": "Mônica Turismo | Novo Hamburgo RS",
+            "link": "https://www.facebook.com/p/M%C3%B4nica-Turismo-100065360835484/",
+            "snippet": "Mônica Turismo: viagens e fretamento no RS. Especializada em roteiros de compras para lojistas em São Paulo, com ônibus de primeira classe, ..."
+          },
+          {
+            "titulo": "Monica Transportes - CNPJ 25.058.195/0001-51",
+            "link": "https://cnpjcheck.com.br/empresa/rosa-maria-benetti-fernandes-monica-transportes-25058195000151",
+            "snippet": "49.30-2-01 Transporte rodoviário de carga, exceto produtos perigosos e mudanças, municipal. Endereco Copiar. SANTO ANDRE ..."
+          },
+          {
+            "titulo": "Monica Transportes em Jesuânia, MG - 32.699.446/0001-42",
+            "link": "https://www.econodata.com.br/consulta-empresa/32699446000142-monica-meirelles-do-amaral",
+            "snippet": "Consulte Monica Transportes: CNPJ 32.699.446/0001-42, sede em Jesuânia/MG. Atividade: Transporte escolar. Veja sócios, decisores e faturamento."
+          },
+          {
+            "titulo": "Consulta CNPJ Monica Turismo LTDA",
+            "link": "http://cnpj.info/Monica-Turismo-Ltda-Monica-Turismo",
+            "snippet": "O transporte rodoviário coletivo de passageiros, sob regime de fretamento, intermunicipal, interestadual e internacional, refere-se ao aluguel de veículos ..."
+          },
+          {
+            "titulo": "Ir pra São Paulo em ônibus leito cama com conforto Aqui na ...",
+            "link": "https://www.instagram.com/reel/C225gTAPCfh/",
+            "snippet": "SUA MERCADORIA EM BOAS MÃOS, DO BRÁS PARA O RS! Comprou em São Paulo? A Mônica Transportes cuida do caminho até você, com segurança, ..."
+          },
+          {
+            "titulo": "MONICA MORAIS PEREIRA RODRIGUES TRANSPORTE ...",
+            "link": "https://empresas.serasaexperian.com.br/consulta-gratis/MONICA-MORAIS-TRANSPORTE-LTDA-EPP-61704868000167",
+            "snippet": "O CNPJ da empresa MONICA MORAIS PEREIRA RODRIGUES TRANSPORTE LTDA - EPP (MONICA TRANSPORTE) é 61.704.868/0001-67. Com sede em SAO PAULO, SP, ..."
+          },
+          {
+            "titulo": "Mônica Turismo - Fretamento de Ônibus Premium",
+            "link": "https://lp.viajedemonicaturismo.com.br/",
+            "snippet": "Logística de transporte de alto padrão para. Bandas. A segurança e a pontualidade que o seu grupo exige, com o conforto que ele merece."
+          }
+        ],
+        "site_oficial": null,
+        "wikipedia": null,
+        "erro": null
+      }
+    },
+    "classificacao_tipo": {
+      "tipo": "fretamento",
+      "palavra": "viagem",
+      "instrucao": "Monica transportes faz SOMENTE fretamento/turismo/viagens, sem operar nenhuma linha regular (classificação automática, baseada nas fontes coletadas). Use \"viagem\" em vez de \"passagem\" em todas as menções, e não restrinja o texto exclusivamente a \"transporte rodoviário\" — pode incluir roteiros, destinos e serviços de viagem coerentes com o fretamento. NÃO use \"compra\"/\"comprar\"/\"compre\" em nenhuma menção: passagem se compra, viagem (fretamento) se reserva — use \"reservar\", \"adquirir\" ou \"encontrar\" no lugar de \"comprar\"."
+    }
   }
 }
