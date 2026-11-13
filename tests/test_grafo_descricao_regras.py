@@ -1,4 +1,4 @@
-from grafo_descricao import _checar_regras, _rotear_por_categoria, no_coletar_lugar_generico, no_coletar_evento, no_revisor_ia
+from grafo_descricao import _checar_regras, _rotear_por_categoria, no_coletar_lugar_generico, no_coletar_evento, no_coletar_feriado, no_revisor_ia, no_gerar
 
 
 class _FakeModelo:
@@ -29,6 +29,7 @@ def test_roteamento_reconhece_todas_as_categorias_implementadas():
         "terminal_rodoviaria": "coletar_terminal_rodoviaria",
         "lugar_generico": "coletar_lugar_generico",
         "evento": "coletar_evento",
+        "feriado": "coletar_feriado",
     }
     for categoria, no_esperado in esperado.items():
         assert _rotear_por_categoria({"categoria": categoria}) == no_esperado
@@ -73,6 +74,81 @@ def test_coletar_evento_chama_o_coletor_com_entidade_e_cidade(monkeypatch):
 
     assert chamadas == [("Oktoberfest", "Blumenau")]
     assert resultado == {"fontes": {"Wikipedia": {"url": "u", "conteudo": "c", "erro": None}}}
+
+
+def test_coletar_feriado_chama_o_coletor_so_com_a_entidade(monkeypatch):
+    # Mesmo padrão de no_coletar_lugar_generico — feriado não tem lógica
+    # de cidade (diferente de evento): é data nacional/regional, não tem
+    # "edição local" pra desambiguar.
+    chamadas = []
+
+    def _fake_coletar(nome_feriado):
+        chamadas.append(nome_feriado)
+        return {"feriado": nome_feriado, "fontes": {"Wikipedia": {"url": "u", "conteudo": "c", "erro": None}}}
+
+    monkeypatch.setattr("grafo_descricao.coletar_feriado", _fake_coletar)
+
+    resultado = no_coletar_feriado({"entidade": "Ano Novo"})
+
+    assert chamadas == ["Ano Novo"]
+    assert resultado == {"fontes": {"Wikipedia": {"url": "u", "conteudo": "c", "erro": None}}}
+
+
+# --- no_gerar: data calculada só pra categoria "feriado" --------------------
+
+def test_no_gerar_feriado_passa_data_calculada_quando_reconhecida(monkeypatch):
+    import datetime
+    data_fake = datetime.date(2027, 2, 9)
+    monkeypatch.setattr("grafo_descricao.calcular_data_feriado", lambda entidade: data_fake)
+
+    recebido = {}
+
+    def _stub(**kwargs):
+        recebido.update(kwargs)
+        return "texto qualquer"
+
+    monkeypatch.setattr("grafo_descricao.gerar_texto_bruto", _stub)
+    monkeypatch.setattr("grafo_descricao.montar_fontes_texto", lambda fontes: "algo")
+
+    no_gerar({"categoria": "feriado", "entidade": "Carnaval", "fontes": {}, "tom": "informativo"})
+
+    assert recebido["data_calculada"] == "9 de fevereiro de 2027 (terça-feira)"
+
+
+def test_no_gerar_feriado_nao_reconhecido_passa_data_calculada_none(monkeypatch):
+    monkeypatch.setattr("grafo_descricao.calcular_data_feriado", lambda entidade: None)
+
+    recebido = {}
+
+    def _stub(**kwargs):
+        recebido.update(kwargs)
+        return "texto qualquer"
+
+    monkeypatch.setattr("grafo_descricao.gerar_texto_bruto", _stub)
+    monkeypatch.setattr("grafo_descricao.montar_fontes_texto", lambda fontes: "algo")
+
+    no_gerar({"categoria": "feriado", "entidade": "Feriado Desconhecido", "fontes": {}, "tom": "informativo"})
+
+    assert recebido["data_calculada"] is None
+
+
+def test_no_gerar_outra_categoria_nunca_calcula_data(monkeypatch):
+    def _explode(entidade):
+        raise AssertionError("não deveria calcular data fora da categoria 'feriado'")
+    monkeypatch.setattr("grafo_descricao.calcular_data_feriado", _explode)
+
+    recebido = {}
+
+    def _stub(**kwargs):
+        recebido.update(kwargs)
+        return "texto qualquer"
+
+    monkeypatch.setattr("grafo_descricao.gerar_texto_bruto", _stub)
+    monkeypatch.setattr("grafo_descricao.montar_fontes_texto", lambda fontes: "algo")
+
+    no_gerar({"categoria": "cidade", "entidade": "Blumenau", "fontes": {}, "tom": "informativo"})
+
+    assert recebido["data_calculada"] is None
 
 
 def _state(texto_humanizado: str, **extra) -> dict:
@@ -292,6 +368,22 @@ def test_cidade_nao_exige_contagem_de_paragrafos():
     assert not any("parágrafos" in m for m in motivos)
 
 
+def test_feriado_informativo_exige_exatamente_3_paragrafos():
+    dois_paragrafos = "Um.\n\nDois."
+    motivos = _checar_regras(_state(dois_paragrafos, categoria="feriado", tom="informativo"))
+    assert any("esperado sempre 3" in m for m in motivos)
+
+    tres_paragrafos = "Um.\n\nDois.\n\nTrês."
+    motivos = _checar_regras(_state(tres_paragrafos, categoria="feriado", tom="informativo"))
+    assert not any("esperado sempre 3" in m for m in motivos)
+
+
+def test_feriado_vendas_nao_exige_contagem_de_paragrafos():
+    texto = "Só um parágrafo aqui."
+    motivos = _checar_regras(_state(texto, categoria="feriado", tom="vendas"))
+    assert not any("parágrafos" in m for m in motivos)
+
+
 # --- revisor_ia: empresa/promocional pula o julgamento de tom ---------------
 
 def test_revisor_ia_empresa_promocional_aprova_sem_chamar_modelo(monkeypatch):
@@ -304,6 +396,29 @@ def test_revisor_ia_empresa_promocional_aprova_sem_chamar_modelo(monkeypatch):
 
     assert resultado == {"revisao_ia": {"tom_ok": True, "motivos": []}}
     assert fake.chamadas == []
+
+
+def test_revisor_ia_feriado_informativo_aprova_sem_chamar_modelo(monkeypatch):
+    fake = _FakeModelo("não deveria ser chamado")
+    monkeypatch.setattr("grafo_descricao.modelo", fake)
+
+    resultado = no_revisor_ia({
+        "categoria": "feriado", "tom": "informativo", "texto_humanizado": "qualquer texto",
+    })
+
+    assert resultado == {"revisao_ia": {"tom_ok": True, "motivos": []}}
+    assert fake.chamadas == []
+
+
+def test_revisor_ia_feriado_vendas_ainda_chama_modelo(monkeypatch):
+    # A exceção é só pra feriado/informativo — vendas/promocional de
+    # feriado continuam passando pelo julgamento de IA normalmente.
+    fake = _FakeModelo('{"tom_ok": true, "motivos": []}')
+    monkeypatch.setattr("grafo_descricao.modelo", fake)
+
+    no_revisor_ia({"categoria": "feriado", "tom": "vendas", "texto_humanizado": "qualquer texto"})
+
+    assert len(fake.chamadas) == 1
 
 
 def test_revisor_ia_empresa_informativo_ainda_chama_modelo(monkeypatch):
