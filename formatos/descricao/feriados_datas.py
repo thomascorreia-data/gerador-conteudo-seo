@@ -81,6 +81,21 @@ def _data_do_feriado_no_ano(chave_normalizada: str, ano: int):
     return None
 
 
+def calcular_proxima_ocorrencia(mes: int, dia: int, hoje: datetime.date = None) -> datetime.date:
+    """Dado um mês/dia FIXO (ex: dia de santo, sempre o mesmo todo ano),
+    devolve a próxima ocorrência a partir de `hoje` — esse ano se ainda não
+    passou, senão ano que vem. É a mesma regra de "sempre no futuro" de
+    calcular_data_feriado, só que recebendo mês/dia prontos em vez de
+    procurar nas tabelas fixas — usado quando o nome do feriado não está
+    nas tabelas, mas o modelo sabe a data fixa dele (ver
+    interpretador_descricao.obter_mes_dia_fixo_feriado)."""
+    hoje = hoje or datetime.date.today()
+    data_este_ano = datetime.date(hoje.year, mes, dia)
+    if data_este_ano >= hoje:
+        return data_este_ano
+    return datetime.date(hoje.year + 1, mes, dia)
+
+
 def calcular_data_feriado(nome_feriado: str, hoje: datetime.date = None) -> datetime.date:
     """Devolve a próxima ocorrência (a partir de `hoje`) do feriado dado,
     calculada com fórmula verificada — ou None se o nome não for

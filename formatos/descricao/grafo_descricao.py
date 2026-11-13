@@ -31,7 +31,7 @@ from typing import TypedDict
 from langgraph.graph import StateGraph, END
 from unidecode import unidecode
 
-from interpretador_descricao import classificar_tema
+from interpretador_descricao import classificar_tema, classificar_abrangencia_feriado, obter_mes_dia_fixo_feriado
 from base_empresas import coletar_empresa
 from base_pontos_turisticos import coletar_ponto_turistico
 from base_cidade import coletando_conteudo
@@ -39,7 +39,7 @@ from base_rodoviarias import coletar_rodoviaria
 from base_lugares_genericos import coletar_lugar_generico
 from base_eventos import coletar_evento
 from base_feriados import coletar_feriado
-from feriados_datas import calcular_data_feriado, formatar_data_extenso, formatar_dia_semana
+from feriados_datas import calcular_data_feriado, calcular_proxima_ocorrencia, formatar_data_extenso, formatar_dia_semana
 from interacao_ia_descricao import gerar_texto_bruto, humanizar_texto, modelo, montar_fontes_texto
 
 MAX_TENTATIVAS = 3
@@ -132,6 +132,9 @@ class DescricaoState(TypedDict, total=False):
     cidade: str
     estado: str
 
+    # depois de classificar_abrangencia_feriado (só categoria "feriado")
+    abrangencia_feriado: str  # "nacional" | "estadual" | "municipal"
+
     # depois da coleta
     fontes: dict
     classificacao_tipo: dict  # só populado pra categoria "empresa"
@@ -182,8 +185,38 @@ def _rotear_por_categoria(state: DescricaoState) -> str:
         "terminal_rodoviaria": "coletar_terminal_rodoviaria",
         "lugar_generico": "coletar_lugar_generico",
         "evento": "coletar_evento",
-        "feriado": "coletar_feriado",
+        "feriado": "classificar_abrangencia_feriado",
     }.get(state["categoria"], "categoria_nao_implementada")
+
+
+def no_classificar_abrangencia_feriado(state: DescricaoState) -> dict:
+    """Nó só pra categoria "feriado": identifica nacional/estadual/
+    municipal usando o conhecimento do modelo sobre feriados brasileiros
+    reais — classificar_tema só extrai cidade/estado se estiverem escritos
+    no tema original, isso aqui complementa com conhecimento próprio (ex:
+    tema só "Nossa Senhora dos Navegantes", sem cidade nenhuma no texto,
+    ainda assim o modelo pode saber que é de Porto Alegre).
+
+    Nunca trava a descrição inteira se a chamada falhar (erro de rede, de
+    parsing) — cai pro default mais seguro ("nacional", sem cidade/estado
+    novos) em vez de propagar a exceção."""
+    try:
+        resultado = classificar_abrangencia_feriado(
+            entidade=state["entidade"],
+            cidade=state.get("cidade"),
+            estado=state.get("estado"),
+        )
+    except Exception:
+        return {"abrangencia_feriado": "nacional"}
+
+    atualizacao = {"abrangencia_feriado": resultado["abrangencia"]}
+    # Só preenche cidade/estado se classificar_tema ainda não tiver
+    # achado — não sobrescreve o que já veio certo do próprio tema.
+    if not state.get("cidade") and resultado.get("cidade"):
+        atualizacao["cidade"] = resultado["cidade"]
+    if not state.get("estado") and resultado.get("estado"):
+        atualizacao["estado"] = resultado["estado"]
+    return atualizacao
 
 
 def no_coletar_empresa(state: DescricaoState) -> dict:
@@ -241,10 +274,12 @@ def no_coletar_evento(state: DescricaoState) -> dict:
 def no_coletar_feriado(state: DescricaoState) -> dict:
     # Mesma receita de no_coletar_lugar_generico: coletor só de Wikipédia
     # (ver base_feriados.py) — página ausente/desambiguação vira
-    # "sem_fontes" em no_gerar, em vez de travar a descrição inteira. Sem
-    # lógica de cidade (diferente de evento): feriado é data nacional/
-    # regional, não tem "edição local" pra desambiguar.
-    resultado = coletar_feriado(state["entidade"])
+    # "sem_fontes" em no_gerar, em vez de travar a descrição inteira.
+    # Passa "cidade" também (igual no_coletar_evento) — essencial pra
+    # feriado MUNICIPAL (ex: "Nossa Senhora dos Navegantes" é padroeira de
+    # Porto Alegre; sem a cidade, a busca cai numa página genérica sobre a
+    # devoção, sem data nem lugar de verdade).
+    resultado = coletar_feriado(state["entidade"], cidade=state.get("cidade"))
     return {"fontes": resultado["fontes"]}
 
 
@@ -268,6 +303,25 @@ def no_gerar(state: DescricaoState) -> dict:
         # Calculado em código (feriados_datas.py), não pelo modelo — ver o
         # motivo no docstring de gerar_texto_bruto (data_calculada).
         data = calcular_data_feriado(state["entidade"])
+        if data is None:
+            # Não está na tabela verificada (feriado regional/municipal
+            # fora dos grandes nacionais) — pergunta só o mês/dia pro
+            # modelo (fato de calendário) e o ANO/dia-da-semana a gente
+            # calcula aqui, em código. Sem isso, o modelo "inventava" o
+            # ano sozinho e citava anos já passados (ex: "em 2024" citado
+            # num texto gerado em 2026) — mesmo erro de aritmética que
+            # calcular_data_feriado foi criado pra evitar, só que pra
+            # feriados fora da tabela fixa.
+            try:
+                info = obter_mes_dia_fixo_feriado(
+                    state["entidade"],
+                    cidade=state.get("cidade"),
+                    estado=state.get("estado"),
+                )
+                if info.get("tem_data_fixa") and info.get("mes") and info.get("dia"):
+                    data = calcular_proxima_ocorrencia(info["mes"], info["dia"])
+            except Exception:
+                data = None
         if data:
             data_calculada = f"{formatar_data_extenso(data)} ({formatar_dia_semana(data)})"
 
@@ -281,6 +335,9 @@ def no_gerar(state: DescricaoState) -> dict:
         classificacao_tipo=state.get("classificacao_tipo"),
         instrucao_extra=instrucao_extra,
         data_calculada=data_calculada,
+        cidade=state.get("cidade") if state["categoria"] == "feriado" else None,
+        estado=state.get("estado") if state["categoria"] == "feriado" else None,
+        abrangencia_feriado=state.get("abrangencia_feriado") if state["categoria"] == "feriado" else None,
     )
     # gerar_texto_bruto não devolve isso (mantém o retorno simples, uma
     # string só) — recalcula aqui, de graça, só pra sinalizar no state.
@@ -534,6 +591,7 @@ def construir_grafo():
     grafo.add_node("coletar_terminal_rodoviaria", no_coletar_terminal_rodoviaria)
     grafo.add_node("coletar_lugar_generico", no_coletar_lugar_generico)
     grafo.add_node("coletar_evento", no_coletar_evento)
+    grafo.add_node("classificar_abrangencia_feriado", no_classificar_abrangencia_feriado)
     grafo.add_node("coletar_feriado", no_coletar_feriado)
     grafo.add_node("categoria_nao_implementada", no_categoria_nao_implementada)
     grafo.add_node("gerar", no_gerar)
@@ -552,9 +610,13 @@ def construir_grafo():
         "coletar_terminal_rodoviaria": "coletar_terminal_rodoviaria",
         "coletar_lugar_generico": "coletar_lugar_generico",
         "coletar_evento": "coletar_evento",
-        "coletar_feriado": "coletar_feriado",
+        "classificar_abrangencia_feriado": "classificar_abrangencia_feriado",
         "categoria_nao_implementada": "categoria_nao_implementada",
     })
+
+    # "feriado" passa primeiro pela classificação de abrangência (nacional/
+    # estadual/municipal) antes de ir pro coletor de conteúdo de verdade.
+    grafo.add_edge("classificar_abrangencia_feriado", "coletar_feriado")
 
     # Toda coleta converge pro mesmo "gerar" — é aqui que os branches por
     # categoria terminam.

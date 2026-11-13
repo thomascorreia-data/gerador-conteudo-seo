@@ -1,12 +1,13 @@
 """
 Coleta, só na Wikipédia, uma descrição de um feriado (Ano Novo, Natal,
-Carnaval, Tiradentes, etc.) a partir do nome.
+Carnaval, Tiradentes, Nossa Senhora dos Navegantes, etc.) a partir do nome.
 
 Mesma receita simples de base_lugares_genericos.py e base_eventos.py: o
-nome do feriado já é a chave de busca direto na URL da Wikipédia, sem
-precisar de geocodificação nem de identificar cidade — diferente de
-evento, feriado não tem edição local (é uma data nacional/regional fixa),
-então nem precisa da lógica de "{nome} de {cidade}" que base_eventos.py tem.
+nome do feriado já é a chave de busca direto na URL da Wikipédia. Feriados
+MUNICIPAIS (ex: padroeira de uma cidade específica) também reaproveitam a
+lógica de "{nome} de {cidade}" de base_eventos.py, pro mesmo motivo: o
+nome sozinho às vezes cai numa página genérica (sobre o santo/devoção),
+sem a data e o lugar de verdade em que é feriado.
 """
 
 import re
@@ -70,11 +71,22 @@ def _coletar_paragrafos_wikipedia(url: str) -> tuple:
     return paragrafos_limpos, None
 
 
-def coletar_feriado(nome_feriado: str) -> dict:
+def coletar_feriado(nome_feriado: str, cidade: str = None) -> dict:
     """
     Recebe o nome de um feriado (Ano Novo, Natal, Carnaval, Tiradentes,
     etc.) e busca a introdução do artigo correspondente na Wikipédia — só
-    essa fonte, sem geocodificação nem identificação de cidade.
+    essa fonte.
+
+    Muitos feriados são MUNICIPAIS/regionais (ex: "Nossa Senhora dos
+    Navegantes", padroeira de Porto Alegre) — o nome sozinho às vezes cai
+    numa página genérica sobre a devoção/santo, sem nenhuma informação
+    sobre QUANDO e ONDE é feriado de verdade (ver erro real: o modelo
+    chutou "meados de agosto" só porque não tinha fonte nenhuma — a data
+    certa, 2 de fevereiro, só aparece no artigo específico do feriado em
+    Porto Alegre). Mesma receita de base_eventos.py: se `cidade` for
+    passada, tenta primeiro "{nome_feriado} de {cidade}" (padrão comum nos
+    títulos da Wikipédia pra feriado municipal) e só cai pro nome sozinho
+    se essa tentativa não trouxer conteúdo.
 
     Retorna:
         {
@@ -90,10 +102,16 @@ def coletar_feriado(nome_feriado: str) -> dict:
     fontes vazias, gerando o texto do conhecimento geral do modelo nesse
     caso (ver "sem_fontes" no grafo).
     """
-    slug = nome_feriado.strip().replace(" ", "_")
-    url = WIKIPEDIA_URL.format(feriado=slug)
+    nomes_a_tentar = [nome_feriado]
+    if cidade and cidade.strip().lower() not in nome_feriado.strip().lower():
+        nomes_a_tentar.insert(0, f"{nome_feriado} de {cidade}")
 
-    paragrafos, erro = _coletar_paragrafos_wikipedia(url)
+    for nome in nomes_a_tentar:
+        slug = nome.strip().replace(" ", "_")
+        url = WIKIPEDIA_URL.format(feriado=slug)
+        paragrafos, erro = _coletar_paragrafos_wikipedia(url)
+        if paragrafos:
+            break
 
     return {
         "feriado": nome_feriado,
@@ -108,6 +126,5 @@ def coletar_feriado(nome_feriado: str) -> dict:
 
 
 if __name__ == "__main__":
-    nome = "Ano Novo"
-    resultado = coletar_feriado(nome)
-    print(resultado)
+    print(coletar_feriado("Ano Novo"))
+    print(coletar_feriado("Nossa Senhora dos Navegantes", cidade="Porto Alegre"))

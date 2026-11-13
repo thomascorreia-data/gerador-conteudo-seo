@@ -59,6 +59,9 @@ def gerar_texto_bruto(
     classificacao_tipo: dict = None,
     instrucao_extra: str = None,
     data_calculada: str = None,
+    cidade: str = None,
+    estado: str = None,
+    abrangencia_feriado: str = None,
 ) -> str:
     """
     Monta o prompt certo (categoria x tom) a partir de prompts_descricao.json
@@ -82,6 +85,25 @@ def gerar_texto_bruto(
     só repetida. Vazio/None pra feriado não reconhecido (ver
     calcular_data_feriado) ou pra qualquer outra categoria — nesse caso o
     template não cita data nenhuma, mesmo comportamento de antes.
+
+    cidade: só usado pela categoria "feriado" — a cidade já extraída na
+    classificação (ver interpretador_descricao.py), quando o feriado é
+    MUNICIPAL/regional (ex: "Nossa Senhora dos Navegantes" + "Porto
+    Alegre"). É sempre repassada tal como veio da classificação, não
+    depende do conteúdo coletado estar claro sobre qual cidade é — mesmo
+    se a fonte misturar informação de várias cidades diferentes (visto ao
+    vivo: artigo genérico sobre uma devoção cita datas de cidades
+    diferentes juntas), a cidade em si nunca fica ambígua. None pra
+    feriado nacional ou pra qualquer outra categoria.
+
+    estado, abrangencia_feriado: também só "feriado" — vêm de
+    classificar_abrangencia_feriado (nó próprio em grafo_descricao.py).
+    Usados pra decidir o texto certo quando NÃO há cidade (feriado
+    estadual, ou municipal/estadual com local desconhecido) — sem isso, o
+    template assumia "nacional" sempre que não tinha cidade, o que é
+    errado pra um feriado estadual sem cidade (ex: visto ao vivo:
+    "Nossa Senhora da Apresentação" é estadual do RN, mas saía descrito
+    como "feriado nacional" no texto gerado).
     """
     dados_categoria = PROMPTS_POR_CATEGORIA.get(categoria)
     if not dados_categoria:
@@ -132,11 +154,45 @@ def gerar_texto_bruto(
             "ano/dia específico, só explique a regra/período em que ele costuma cair."
         )
 
+    # Só o template de "feriado" tem {cidade_texto} — mesmo caso dos
+    # outros kwargs acima. A cidade vem PRONTA da classificação (não
+    # depende de o conteúdo coletado deixar claro de qual cidade se trata
+    # — testado ao vivo: artigo genérico mistura datas de cidades
+    # diferentes, mas a cidade em si, vinda da classificação, nunca é
+    # ambígua).
+    if cidade:
+        cidade_texto = (
+            f"CIDADE RELACIONADA: este é um feriado MUNICIPAL/regional, específico "
+            f"de {cidade} — cite essa cidade explicitamente no texto (ex: \"é feriado "
+            f"municipal em {cidade}\")."
+        )
+    elif estado:
+        cidade_texto = (
+            f"CIDADE RELACIONADA: não aplicável — mas este é um feriado ESTADUAL, "
+            f"específico do estado de {estado}, NÃO um feriado nacional. Deixe isso "
+            f"claro no texto (ex: \"é feriado no estado de {estado}\"), sem mencionar "
+            f"uma cidade específica."
+        )
+    elif abrangencia_feriado in ("municipal", "estadual"):
+        cidade_texto = (
+            "CIDADE RELACIONADA: não foi possível identificar com certeza a cidade/"
+            "estado exatos, mas este feriado NÃO é nacional (é municipal ou estadual "
+            "de abrangência limitada) — NÃO descreva como \"feriado nacional\" nem "
+            "invente uma cidade/estado; fale de forma genérica que é um feriado "
+            "regional, sem precisar o local."
+        )
+    else:
+        cidade_texto = (
+            "CIDADE RELACIONADA: não aplicável — este é um feriado nacional, não "
+            "mencione nenhuma cidade específica."
+        )
+
     prompt = dados_tom["template"].format(
         entidade=entidade,
         fontes_texto=fontes_texto,
         instrucao_tipo_empresa=instrucao_tipo_empresa,
         data_calculada_texto=data_calculada_texto,
+        cidade_texto=cidade_texto,
     )
 
     kwargs_modelo = {}

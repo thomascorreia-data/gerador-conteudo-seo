@@ -39,6 +39,8 @@ Dado o tema abaixo, identifique a categoria mais adequada entre:
 
 ATENÇÃO — evento x feriado: a diferença não é o quão "festivo" é, é se existe uma DATA FIXA recorrente no calendário. "Carnaval" e "Natal" são feriado (data certa todo ano, mesmo que o Carnaval seja móvel pela Páscoa). Já "Festival de Parintins" ou "Rock in Rio" são evento (edição específica, sem data fixa no calendário civil). Na dúvida entre os dois, pergunte-se: "isso está marcado no calendário nacional de feriados?" — se sim, é "feriado".
 
+ATENÇÃO — feriado MUNICIPAL/regional precisa da cidade: nem todo feriado é nacional — muitos são de uma cidade só (ex: "Nossa Senhora dos Navegantes" é a padroeira de Porto Alegre, não feriado no resto do país). Se o tema trouxer o nome do feriado JUNTO com uma cidade (ex: "Nossa Senhora dos Navegantes de Porto Alegre", "Aniversário de São Paulo feriado"), classifique como "feriado" normalmente, mas preencha o campo "cidade" com essa cidade — isso é essencial pra coleta de conteúdo, que precisa da cidade pra achar a página certa (sem isso, cai numa página genérica sobre o santo/devoção, sem data nem lugar nenhum). Se o tema NÃO trouxer cidade nenhuma (ex: só "Nossa Senhora dos Navegantes"), deixe "cidade" como null mesmo — não invente uma cidade que não foi mencionada.
+
 ATENÇÃO — armadilha comum: muitas empresas de ônibus/fretamento levam o nome
 de uma cidade real (às vezes até uma cidade turística conhecida) seguido de
 uma palavra que indica que é uma EMPRESA, não o lugar em si. Palavras como
@@ -88,6 +90,105 @@ def classificar_tema(tema: str) -> dict:
 
     if resultado.get("categoria") not in CATEGORIAS:
         raise ValueError(f"Categoria retornada inválida: {resultado.get('categoria')}")
+
+    return resultado
+
+
+ABRANGENCIAS_FERIADO = ["nacional", "estadual", "municipal"]
+
+PROMPT_ABRANGENCIA_FERIADO = """Você é um especialista em feriados e datas comemorativas do Brasil.
+
+Dado o feriado abaixo, use seu conhecimento sobre feriados brasileiros reais pra identificar a ABRANGÊNCIA dele:
+- "nacional": válido em todo o Brasil (ex: Natal, Tiradentes, Carnaval, Ano Novo, Dia do Trabalho)
+- "estadual": só um estado específico tem esse feriado (ex: Revolução Constitucionalista, feriado só em SP)
+- "municipal": só uma cidade específica tem esse feriado (ex: aniversário de uma cidade, padroeiro/padroeira de uma cidade)
+
+Feriado: "{entidade}"
+Cidade já identificada no tema original (se houver): {cidade_conhecida}
+Estado já identificado no tema original (se houver): {estado_conhecido}
+
+Se já tiver cidade/estado identificado acima, use isso como pista forte (mas corrija se seu conhecimento disser outra coisa — às vezes o tema original vem incompleto ou errado). Se você NÃO tiver certeza real de qual cidade/estado específico é (feriado municipal/estadual pouco conhecido, ou nome genérico demais), deixe "cidade"/"estado" como null e marque confianca "baixa" — NUNCA invente uma cidade/estado que você não tem certeza de verdade, é melhor devolver null do que chutar errado.
+
+Responda APENAS com um JSON, sem markdown, sem texto adicional, no seguinte formato:
+{{
+  "abrangencia": "nacional" ou "estadual" ou "municipal",
+  "cidade": "cidade específica, só se abrangencia for municipal e você tiver certeza, senão null",
+  "estado": "sigla do estado, se abrangencia for estadual ou municipal e você tiver certeza, senão null",
+  "confianca": "alta, media ou baixa"
+}}
+"""
+
+
+def classificar_abrangencia_feriado(entidade: str, cidade: str = None, estado: str = None) -> dict:
+    """Identifica se um feriado é nacional, estadual ou municipal, usando o
+    CONHECIMENTO GERAL do modelo sobre feriados brasileiros reais — não só
+    o que está escrito no tema (diferente de classificar_tema, que só
+    extrai cidade/estado quando aparecem literalmente no texto digitado).
+
+    Usado só pra categoria "feriado", como um nó à parte depois da
+    classificação principal (ver no_classificar_abrangencia_feriado em
+    grafo_descricao.py) — pode preencher cidade/estado que
+    classificar_tema não pegou (ex: tema só "Nossa Senhora dos
+    Navegantes", sem cidade nenhuma escrita), mas só quando o modelo tiver
+    confiança real; nunca inventa só pra preencher o campo."""
+    resposta = modelo.invoke(PROMPT_ABRANGENCIA_FERIADO.format(
+        entidade=entidade,
+        cidade_conhecida=cidade or "nenhuma",
+        estado_conhecido=estado or "nenhum",
+    ))
+    texto = resposta.content.strip().replace("```json", "").replace("```", "").strip()
+
+    try:
+        resultado = json.loads(texto)
+    except json.JSONDecodeError:
+        raise ValueError(f"Não foi possível interpretar a resposta do modelo: {texto}")
+
+    if resultado.get("abrangencia") not in ABRANGENCIAS_FERIADO:
+        raise ValueError(f"Abrangência retornada inválida: {resultado.get('abrangencia')}")
+
+    return resultado
+
+
+PROMPT_MES_DIA_FIXO_FERIADO = """Você é um especialista em feriados, datas comemorativas e calendário litúrgico do Brasil.
+
+Dado o feriado abaixo, diga se ele tem uma data FIXA no calendário (mesmo dia e mês todo ano — como a maioria dos dias de santo/padroeiro, ex: Santos Reis é sempre 6 de janeiro) ou se é uma data MÓVEL (calculada a partir da Páscoa, varia de ano pra ano, ex: Carnaval, Corpus Christi).
+
+Feriado: "{entidade}"
+Cidade (se houver): {cidade_conhecida}
+Estado (se houver): {estado_conhecido}
+
+Se for uma data FIXA e você tiver certeza real do dia e mês, devolva eles. Se for uma data MÓVEL, ou se você NÃO tiver certeza de verdade do dia/mês exatos (nome genérico, feriado pouco conhecido, risco de confundir com outro feriado parecido), devolva "tem_data_fixa": false e mes/dia como null — NUNCA invente um dia/mês que você não tem certeza de verdade, é melhor devolver null do que chutar errado.
+
+Responda APENAS com um JSON, sem markdown, sem texto adicional, no seguinte formato:
+{{
+  "tem_data_fixa": true ou false,
+  "mes": numero de 1 a 12, só se tem_data_fixa for true e você tiver certeza, senão null,
+  "dia": numero do dia, só se tem_data_fixa for true e você tiver certeza, senão null,
+  "confianca": "alta, media ou baixa"
+}}
+"""
+
+
+def obter_mes_dia_fixo_feriado(entidade: str, cidade: str = None, estado: str = None) -> dict:
+    """Pra feriados de data FIXA que não estão na tabela verificada de
+    feriados_datas.py (ex: "Santos Reis", "Nossa Senhora da Apresentação")
+    — pergunta ao modelo só o mês/dia (fato de calendário, não aritmética),
+    pra depois o código calcular o ANO/dia-da-semana certos em cima disso
+    (feriados_datas.calcular_proxima_ocorrencia). Evita o mesmo erro que
+    calcular_data_feriado foi criado pra evitar: deixar o modelo "inventar"
+    o ano, que é onde ele historicamente erra (citou 2023/2024 — anos já
+    passados — em vez do próximo ano em que a data realmente cai)."""
+    resposta = modelo.invoke(PROMPT_MES_DIA_FIXO_FERIADO.format(
+        entidade=entidade,
+        cidade_conhecida=cidade or "nenhuma",
+        estado_conhecido=estado or "nenhum",
+    ))
+    texto = resposta.content.strip().replace("```json", "").replace("```", "").strip()
+
+    try:
+        resultado = json.loads(texto)
+    except json.JSONDecodeError:
+        raise ValueError(f"Não foi possível interpretar a resposta do modelo: {texto}")
 
     return resultado
 

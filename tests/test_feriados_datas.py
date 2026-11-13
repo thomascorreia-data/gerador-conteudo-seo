@@ -7,6 +7,7 @@ import datetime
 
 from feriados_datas import (
     calcular_data_feriado,
+    calcular_proxima_ocorrencia,
     formatar_data_extenso,
     formatar_dia_semana,
     _pascoa,
@@ -86,3 +87,23 @@ def test_formatar_data_extenso():
 def test_formatar_dia_semana():
     # 9 de fevereiro de 2027 é uma terça-feira.
     assert formatar_dia_semana(datetime.date(2027, 2, 9)) == "terça-feira"
+
+
+# --- calcular_proxima_ocorrencia (mês/dia já dados, sem tabela) -------------
+
+def test_proxima_ocorrencia_ainda_nao_passou_neste_ano():
+    hoje = datetime.date(2026, 1, 1)
+    assert calcular_proxima_ocorrencia(1, 6, hoje=hoje) == datetime.date(2026, 1, 6)
+
+
+def test_proxima_ocorrencia_ja_passou_pula_pro_ano_que_vem():
+    # Caso real que motivou isso: "Santos Reis" (6 de janeiro) gerado em
+    # novembro de 2026 tem que citar 2027, não repetir 2026 (já passou) e
+    # muito menos um ano antigo qualquer.
+    hoje = datetime.date(2026, 11, 13)
+    assert calcular_proxima_ocorrencia(1, 6, hoje=hoje) == datetime.date(2027, 1, 6)
+
+
+def test_proxima_ocorrencia_e_hoje_mesmo_conta_como_nao_passou():
+    hoje = datetime.date(2026, 11, 21)
+    assert calcular_proxima_ocorrencia(11, 21, hoje=hoje) == datetime.date(2026, 11, 21)

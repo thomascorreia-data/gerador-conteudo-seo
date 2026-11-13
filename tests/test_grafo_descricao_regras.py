@@ -1,4 +1,4 @@
-from grafo_descricao import _checar_regras, _rotear_por_categoria, no_coletar_lugar_generico, no_coletar_evento, no_coletar_feriado, no_revisor_ia, no_gerar
+from grafo_descricao import _checar_regras, _rotear_por_categoria, no_coletar_lugar_generico, no_coletar_evento, no_coletar_feriado, no_classificar_abrangencia_feriado, no_revisor_ia, no_gerar
 
 
 class _FakeModelo:
@@ -29,7 +29,7 @@ def test_roteamento_reconhece_todas_as_categorias_implementadas():
         "terminal_rodoviaria": "coletar_terminal_rodoviaria",
         "lugar_generico": "coletar_lugar_generico",
         "evento": "coletar_evento",
-        "feriado": "coletar_feriado",
+        "feriado": "classificar_abrangencia_feriado",
     }
     for categoria, no_esperado in esperado.items():
         assert _rotear_por_categoria({"categoria": categoria}) == no_esperado
@@ -76,22 +76,79 @@ def test_coletar_evento_chama_o_coletor_com_entidade_e_cidade(monkeypatch):
     assert resultado == {"fontes": {"Wikipedia": {"url": "u", "conteudo": "c", "erro": None}}}
 
 
-def test_coletar_feriado_chama_o_coletor_so_com_a_entidade(monkeypatch):
-    # Mesmo padrão de no_coletar_lugar_generico — feriado não tem lógica
-    # de cidade (diferente de evento): é data nacional/regional, não tem
-    # "edição local" pra desambiguar.
+def test_coletar_feriado_nacional_chama_o_coletor_sem_cidade(monkeypatch):
+    # Feriado nacional: tema não traz cidade nenhuma, "cidade" fica None.
     chamadas = []
 
-    def _fake_coletar(nome_feriado):
-        chamadas.append(nome_feriado)
+    def _fake_coletar(nome_feriado, cidade=None):
+        chamadas.append((nome_feriado, cidade))
         return {"feriado": nome_feriado, "fontes": {"Wikipedia": {"url": "u", "conteudo": "c", "erro": None}}}
 
     monkeypatch.setattr("grafo_descricao.coletar_feriado", _fake_coletar)
 
     resultado = no_coletar_feriado({"entidade": "Ano Novo"})
 
-    assert chamadas == ["Ano Novo"]
+    assert chamadas == [("Ano Novo", None)]
     assert resultado == {"fontes": {"Wikipedia": {"url": "u", "conteudo": "c", "erro": None}}}
+
+
+def test_coletar_feriado_municipal_repassa_a_cidade(monkeypatch):
+    # Feriado municipal (ex: padroeira de uma cidade) — repassa "cidade"
+    # pro coletor, igual no_coletar_evento já faz, pra desambiguar da
+    # página genérica sobre o santo/devoção.
+    chamadas = []
+
+    def _fake_coletar(nome_feriado, cidade=None):
+        chamadas.append((nome_feriado, cidade))
+        return {"feriado": nome_feriado, "fontes": {"Wikipedia": {"url": "u", "conteudo": "c", "erro": None}}}
+
+    monkeypatch.setattr("grafo_descricao.coletar_feriado", _fake_coletar)
+
+    resultado = no_coletar_feriado({"entidade": "Nossa Senhora dos Navegantes", "cidade": "Porto Alegre"})
+
+    assert chamadas == [("Nossa Senhora dos Navegantes", "Porto Alegre")]
+    assert resultado == {"fontes": {"Wikipedia": {"url": "u", "conteudo": "c", "erro": None}}}
+
+
+# --- no_classificar_abrangencia_feriado -------------------------------------
+
+def test_no_classificar_abrangencia_feriado_repassa_resultado(monkeypatch):
+    def _fake_classificar(entidade, cidade=None, estado=None):
+        return {"abrangencia": "municipal", "cidade": "Porto Alegre", "estado": "RS", "confianca": "alta"}
+
+    monkeypatch.setattr("grafo_descricao.classificar_abrangencia_feriado", _fake_classificar)
+
+    resultado = no_classificar_abrangencia_feriado({"entidade": "Nossa Senhora dos Navegantes"})
+
+    assert resultado == {
+        "abrangencia_feriado": "municipal",
+        "cidade": "Porto Alegre",
+        "estado": "RS",
+    }
+
+
+def test_no_classificar_abrangencia_feriado_nao_sobrescreve_cidade_ja_conhecida(monkeypatch):
+    # Se o tema já trazia a cidade (ex: "... de Recife"), a classificação
+    # de abrangência não deve sobrescrever com outra coisa.
+    def _fake_classificar(entidade, cidade=None, estado=None):
+        return {"abrangencia": "municipal", "cidade": "Outra Cidade", "estado": None, "confianca": "alta"}
+
+    monkeypatch.setattr("grafo_descricao.classificar_abrangencia_feriado", _fake_classificar)
+
+    resultado = no_classificar_abrangencia_feriado({"entidade": "Corpus Christi", "cidade": "Recife"})
+
+    assert resultado == {"abrangencia_feriado": "municipal"}
+
+
+def test_no_classificar_abrangencia_feriado_erro_cai_para_nacional(monkeypatch):
+    def _fake_classificar(entidade, cidade=None, estado=None):
+        raise Exception("falha de rede")
+
+    monkeypatch.setattr("grafo_descricao.classificar_abrangencia_feriado", _fake_classificar)
+
+    resultado = no_classificar_abrangencia_feriado({"entidade": "Ano Novo"})
+
+    assert resultado == {"abrangencia_feriado": "nacional"}
 
 
 # --- no_gerar: data calculada só pra categoria "feriado" --------------------
@@ -117,6 +174,12 @@ def test_no_gerar_feriado_passa_data_calculada_quando_reconhecida(monkeypatch):
 
 def test_no_gerar_feriado_nao_reconhecido_passa_data_calculada_none(monkeypatch):
     monkeypatch.setattr("grafo_descricao.calcular_data_feriado", lambda entidade: None)
+    # Sem tabela E sem data fixa segundo o modelo -> continua None (nunca
+    # inventa), sem fazer chamada de rede de verdade.
+    monkeypatch.setattr(
+        "grafo_descricao.obter_mes_dia_fixo_feriado",
+        lambda entidade, cidade=None, estado=None: {"tem_data_fixa": False, "mes": None, "dia": None, "confianca": "baixa"},
+    )
 
     recebido = {}
 
@@ -128,6 +191,58 @@ def test_no_gerar_feriado_nao_reconhecido_passa_data_calculada_none(monkeypatch)
     monkeypatch.setattr("grafo_descricao.montar_fontes_texto", lambda fontes: "algo")
 
     no_gerar({"categoria": "feriado", "entidade": "Feriado Desconhecido", "fontes": {}, "tom": "informativo"})
+
+    assert recebido["data_calculada"] is None
+
+
+def test_no_gerar_feriado_fora_da_tabela_usa_mes_dia_do_modelo(monkeypatch):
+    # Caso real que motivou isso: "Santos Reis" (6 de janeiro) não está na
+    # tabela fixa de feriados_datas.py, mas tem data fixa conhecida -- o
+    # modelo informa mês/dia, e o ANO/dia-da-semana são calculados em
+    # código (nunca pelo modelo, que já citou anos passados por conta
+    # própria, ex: "2024" num texto gerado em 2026).
+    import datetime
+    monkeypatch.setattr("grafo_descricao.calcular_data_feriado", lambda entidade: None)
+    monkeypatch.setattr(
+        "grafo_descricao.obter_mes_dia_fixo_feriado",
+        lambda entidade, cidade=None, estado=None: {"tem_data_fixa": True, "mes": 1, "dia": 6, "confianca": "alta"},
+    )
+    monkeypatch.setattr(
+        "grafo_descricao.calcular_proxima_ocorrencia",
+        lambda mes, dia, hoje=None: datetime.date(2027, 1, 6),
+    )
+
+    recebido = {}
+
+    def _stub(**kwargs):
+        recebido.update(kwargs)
+        return "texto qualquer"
+
+    monkeypatch.setattr("grafo_descricao.gerar_texto_bruto", _stub)
+    monkeypatch.setattr("grafo_descricao.montar_fontes_texto", lambda fontes: "algo")
+
+    no_gerar({"categoria": "feriado", "entidade": "Santos Reis", "fontes": {}, "tom": "informativo"})
+
+    assert recebido["data_calculada"] == "6 de janeiro de 2027 (quarta-feira)"
+
+
+def test_no_gerar_feriado_erro_ao_obter_mes_dia_nao_trava_geracao(monkeypatch):
+    monkeypatch.setattr("grafo_descricao.calcular_data_feriado", lambda entidade: None)
+
+    def _explode(entidade, cidade=None, estado=None):
+        raise Exception("falha de rede")
+    monkeypatch.setattr("grafo_descricao.obter_mes_dia_fixo_feriado", _explode)
+
+    recebido = {}
+
+    def _stub(**kwargs):
+        recebido.update(kwargs)
+        return "texto qualquer"
+
+    monkeypatch.setattr("grafo_descricao.gerar_texto_bruto", _stub)
+    monkeypatch.setattr("grafo_descricao.montar_fontes_texto", lambda fontes: "algo")
+
+    no_gerar({"categoria": "feriado", "entidade": "Feriado Qualquer", "fontes": {}, "tom": "informativo"})
 
     assert recebido["data_calculada"] is None
 
