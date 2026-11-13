@@ -58,6 +58,7 @@ def gerar_texto_bruto(
     palavras_chave: list = None,
     classificacao_tipo: dict = None,
     instrucao_extra: str = None,
+    data_calculada: str = None,
 ) -> str:
     """
     Monta o prompt certo (categoria x tom) a partir de prompts_descricao.json
@@ -71,6 +72,16 @@ def gerar_texto_bruto(
     reprovação — carrega o motivo específico da reprovação anterior, pra
     não repetir o mesmo erro às cegas numa reamostragem sem nenhuma pista
     do que falhou da vez passada.
+
+    data_calculada: só usado pela categoria "feriado" — a data exata da
+    PRÓXIMA ocorrência do feriado, já calculada em código (ver
+    feriados_datas.py), não adivinhada pelo modelo. O modelo não é
+    confiável pra aritmética de calendário (testado ao vivo: afirmou que
+    Carnaval é "60 dias antes da Páscoa" numa rodada e "47 dias" em outra
+    — só o segundo está certo), então essa conta nunca é feita por ele,
+    só repetida. Vazio/None pra feriado não reconhecido (ver
+    calcular_data_feriado) ou pra qualquer outra categoria — nesse caso o
+    template não cita data nenhuma, mesmo comportamento de antes.
     """
     dados_categoria = PROMPTS_POR_CATEGORIA.get(categoria)
     if not dados_categoria:
@@ -107,10 +118,25 @@ def gerar_texto_bruto(
     # passar um nome a mais que não aparece na string).
     instrucao_tipo_empresa = (classificacao_tipo or {}).get("instrucao", "")
 
+    # Só o template de "feriado" tem {data_calculada_texto} — nos demais,
+    # .format() simplesmente ignora esse kwarg (mesmo caso de
+    # instrucao_tipo_empresa, que só "empresa" usa).
+    if data_calculada:
+        data_calculada_texto = (
+            f"DATA EXATA CALCULADA (já conferida, não é palpite — use tal como está, "
+            f"não recalcule nem corrija): {data_calculada}"
+        )
+    else:
+        data_calculada_texto = (
+            "DATA EXATA CALCULADA: não disponível pra este feriado — NÃO cite nenhum "
+            "ano/dia específico, só explique a regra/período em que ele costuma cair."
+        )
+
     prompt = dados_tom["template"].format(
         entidade=entidade,
         fontes_texto=fontes_texto,
         instrucao_tipo_empresa=instrucao_tipo_empresa,
+        data_calculada_texto=data_calculada_texto,
     )
 
     kwargs_modelo = {}

@@ -19,6 +19,7 @@ CATEGORIAS = [
     "ponto_turistico",
     "lugar_generico",
     "evento",
+    "feriado",
     "empresa",
     "terminal_rodoviaria",
 ]
@@ -31,9 +32,12 @@ Dado o tema abaixo, identifique a categoria mais adequada entre:
 - pais
 - ponto_turistico (praia, parque, museu, monumento, avenidas famosas,etc.)
 - lugar_generico (shopping, comércio, restaurante, hotel, aeroporto, etc.)
-- evento (festival, show, feira, etc.)
+- evento (festival, show, feira, etc. — algo pontual, de uma edição/ano específico, não uma data fixa do calendário)
+- feriado (Ano Novo, Natal, Carnaval, Tiradentes, Páscoa, Dia do Trabalho, Independência, etc. — uma data comemorativa fixa do calendário civil/religioso brasileiro, nacional ou regional, que se repete todo ano)
 - empresa (nome de operadora/empresa de transporte)
 - terminal_rodoviaria (terminal ou rodoviária)
+
+ATENÇÃO — evento x feriado: a diferença não é o quão "festivo" é, é se existe uma DATA FIXA recorrente no calendário. "Carnaval" e "Natal" são feriado (data certa todo ano, mesmo que o Carnaval seja móvel pela Páscoa). Já "Festival de Parintins" ou "Rock in Rio" são evento (edição específica, sem data fixa no calendário civil). Na dúvida entre os dois, pergunte-se: "isso está marcado no calendário nacional de feriados?" — se sim, é "feriado".
 
 ATENÇÃO — armadilha comum: muitas empresas de ônibus/fretamento levam o nome
 de uma cidade real (às vezes até uma cidade turística conhecida) seguido de

@@ -38,6 +38,8 @@ from base_cidade import coletando_conteudo
 from base_rodoviarias import coletar_rodoviaria
 from base_lugares_genericos import coletar_lugar_generico
 from base_eventos import coletar_evento
+from base_feriados import coletar_feriado
+from feriados_datas import calcular_data_feriado, formatar_data_extenso, formatar_dia_semana
 from interacao_ia_descricao import gerar_texto_bruto, humanizar_texto, modelo, montar_fontes_texto
 
 MAX_TENTATIVAS = 3
@@ -180,6 +182,7 @@ def _rotear_por_categoria(state: DescricaoState) -> str:
         "terminal_rodoviaria": "coletar_terminal_rodoviaria",
         "lugar_generico": "coletar_lugar_generico",
         "evento": "coletar_evento",
+        "feriado": "coletar_feriado",
     }.get(state["categoria"], "categoria_nao_implementada")
 
 
@@ -235,6 +238,16 @@ def no_coletar_evento(state: DescricaoState) -> dict:
     return {"fontes": resultado["fontes"]}
 
 
+def no_coletar_feriado(state: DescricaoState) -> dict:
+    # Mesma receita de no_coletar_lugar_generico: coletor só de Wikipédia
+    # (ver base_feriados.py) — página ausente/desambiguação vira
+    # "sem_fontes" em no_gerar, em vez de travar a descrição inteira. Sem
+    # lógica de cidade (diferente de evento): feriado é data nacional/
+    # regional, não tem "edição local" pra desambiguar.
+    resultado = coletar_feriado(state["entidade"])
+    return {"fontes": resultado["fontes"]}
+
+
 def no_categoria_nao_implementada(state: DescricaoState) -> dict:
     raise NotImplementedError(f"Coleta para '{state['categoria']}' ainda não implementada")
 
@@ -250,6 +263,14 @@ def no_gerar(state: DescricaoState) -> dict:
             f"nesta nova tentativa, sem repetir o mesmo erro."
         )
 
+    data_calculada = None
+    if state["categoria"] == "feriado":
+        # Calculado em código (feriados_datas.py), não pelo modelo — ver o
+        # motivo no docstring de gerar_texto_bruto (data_calculada).
+        data = calcular_data_feriado(state["entidade"])
+        if data:
+            data_calculada = f"{formatar_data_extenso(data)} ({formatar_dia_semana(data)})"
+
     texto = gerar_texto_bruto(
         categoria=state["categoria"],
         entidade=state["entidade"],
@@ -259,6 +280,7 @@ def no_gerar(state: DescricaoState) -> dict:
         palavras_chave=state.get("palavras_chave"),
         classificacao_tipo=state.get("classificacao_tipo"),
         instrucao_extra=instrucao_extra,
+        data_calculada=data_calculada,
     )
     # gerar_texto_bruto não devolve isso (mantém o retorno simples, uma
     # string só) — recalcula aqui, de graça, só pra sinalizar no state.
@@ -382,6 +404,12 @@ def _checar_regras(state: DescricaoState) -> list:
         elif state.get("tom") == "informativo" and len(paragrafos) != 4:
             motivos.append(f"{len(paragrafos)} parágrafos, esperado sempre 4")
 
+    # "feriado" só tem estrutura fixa de parágrafo no tom "informativo"
+    # (origem+data / oportunidade de viagem / Buser) — vendas/promocional
+    # são mais livres, igual evento.
+    if state.get("categoria") == "feriado" and state.get("tom") == "informativo" and len(paragrafos) != 3:
+        motivos.append(f"{len(paragrafos)} parágrafos, esperado sempre 3")
+
     return motivos
 
 
@@ -408,11 +436,21 @@ def no_revisor_ia(state: DescricaoState) -> dict:
     compra pra ancorar o julgamento, a distinção promocional/informativo
     virou subjetiva demais pra esse crivo. As checagens determinísticas
     (sem Buser, 3 a 4 parágrafos curtos, sem palavra banida) já garantem
-    objetivamente o que esse formato exige."""
+    objetivamente o que esse formato exige.
+
+    EXCEÇÃO — feriado/informativo: mesmo problema, mesma solução. O
+    informativo de feriado inclui de propósito um parágrafo sobre a Buser
+    (ver prompts_descricao.json) — testado ao vivo, a IA reprovava 3 de 3
+    textos corretos (3 parágrafos, sem inventar data) só porque o guia de
+    tom entende "informativo" como "sem apelo comercial", definição que não
+    vale mais pra essa categoria específica. A contagem de parágrafos e a
+    ausência de palavra banida já bastam aqui."""
     categoria = state.get("categoria")
     tom = (state.get("tom") or "informativo").strip().lower()
 
     if categoria == "empresa" and tom == "promocional":
+        return {"revisao_ia": {"tom_ok": True, "motivos": []}}
+    if categoria == "feriado" and tom == "informativo":
         return {"revisao_ia": {"tom_ok": True, "motivos": []}}
 
     prompt = PROMPT_REVISOR_IA.format(tom=tom, texto=state["texto_humanizado"])
@@ -496,6 +534,7 @@ def construir_grafo():
     grafo.add_node("coletar_terminal_rodoviaria", no_coletar_terminal_rodoviaria)
     grafo.add_node("coletar_lugar_generico", no_coletar_lugar_generico)
     grafo.add_node("coletar_evento", no_coletar_evento)
+    grafo.add_node("coletar_feriado", no_coletar_feriado)
     grafo.add_node("categoria_nao_implementada", no_categoria_nao_implementada)
     grafo.add_node("gerar", no_gerar)
     grafo.add_node("humanizar", no_humanizar)
@@ -513,6 +552,7 @@ def construir_grafo():
         "coletar_terminal_rodoviaria": "coletar_terminal_rodoviaria",
         "coletar_lugar_generico": "coletar_lugar_generico",
         "coletar_evento": "coletar_evento",
+        "coletar_feriado": "coletar_feriado",
         "categoria_nao_implementada": "categoria_nao_implementada",
     })
 
@@ -524,6 +564,7 @@ def construir_grafo():
     grafo.add_edge("coletar_terminal_rodoviaria", "gerar")
     grafo.add_edge("coletar_lugar_generico", "gerar")
     grafo.add_edge("coletar_evento", "gerar")
+    grafo.add_edge("coletar_feriado", "gerar")
     # Na prática a exceção sobe antes de chegar no END; a aresta só existe
     # pra o grafo ficar bem-formado (todo nó precisa levar a algum lugar).
     grafo.add_edge("categoria_nao_implementada", END)
